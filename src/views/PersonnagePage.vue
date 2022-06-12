@@ -1,0 +1,338 @@
+<template lang="">
+  <ion-page>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ $route.params.id }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">{{ $route.params.id }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <div id="container">
+        <h1>Création de personnage</h1>
+        <p>
+          Cette page décrit les différentes étapes à suivre pour écrire son
+          personnage et démarrer l'aventure.
+        </p>
+        <h2>1. Déterminer les caractéristiques</h2>
+        <p>
+          Le profil physique et mental d'une créature est défini par quatre
+          caractéristiques :
+        </p>
+        <ul>
+          <li>La Vigueur</li>
+          <li>L'Agilité</li>
+          <li>L'Intelligence</li>
+          <li>Le Charisme</li>
+        </ul>
+        <p>
+          Tous les jets se basent sur les caractéristiques. Chacune des
+          caractéristiques possède une valeur qui définit la performance de la
+          créature. C'est un indicateur de ses talents innés ainsi que son
+          entraînement dans les activités liées à cette caractéristique. Une
+          valeur de 4 correspond à la norme pour un humain moyen, mais les
+          aventuriers et de nombreuses créatures ont des caractéristiques qui se
+          situent généralement au-dessus de la moyenne. Un individu atteint
+          rarement une valeur de plus de 7, mais d'autres créatures peuvent
+          monter au-delà.
+        </p>
+        <p>
+          Vous pouvez repartir vos points de caractéristiques de deux manières
+          différentes :
+        </p>
+        <ul>
+          <li>
+            Attribuez les valeurs de 6,5,4 et 3 sur chacunes des 4
+            caractéristiques selon votre choix
+          </li>
+          <li>
+            Répartissez 18 points entres les 4 caractéristiques, les valeurs
+            finales doivent être comprises entre 1 et 6
+          </li>
+        </ul>
+        <p>
+          Une fois attribuées, vous conserverez ces valeurs pour toute la durée
+          de vie de votre personnage. Les cas de modifications de
+          caractéristiques de manière permanente sont des événements rares.
+        </p>
+        <h2>Vigueur</h2>
+        <p>
+          Traduit la force, la musculature, la vitalité et la robustesse d'un
+          personnage. Cette caractéristique est appelée lors des tests requérant
+          de la puissance physique, et sert également à définir l'endurance d'un
+          personnage face aux agressions ainsi que la capacité de son corps à se
+          soigner.
+        </p>
+        <ul>
+          <li>
+            Dés de vie (DV) : Représente votre capacité naturelle à vous
+            soigner. Au niveau 1, vous avez 3 DV de base. Vous obtenez ensuite 1
+            DV par tranche de 3 niveaux. La valeur du dé est égale à :
+            <ul>
+              <li>1d4 pour les valeurs de Vigueur de 1 et 2.</li>
+              <li>1d6 pour les valeurs de Vigueur de 3 et 4.</li>
+              <li>1d8 pour les valeurs de Vigueur de 5 et 6.</li>
+              <li>1d10 pour les valeurs superieures.</li>
+            </ul>
+          </li>
+          <li>
+            Point de Vie (PV) ou Santé Max. Représente votre résistance
+            naturelle face aux dégâts reçus. Si leur total tombe en dessous de
+            0, vous devenez inconscient. Le total de PV est déterminé par votre
+            nombre de DV de la manière suivante :
+            <ul>
+              <li>
+                Au niveau 1, lancez votre pool de DV et relancez 1 fois chaque
+                DV. Choisissez quel score garder pour chaque dé et additionner
+                le total.
+              </li>
+              <li>
+                Ou,À chaque augmentation de votre pool de DV, vous pouvez
+                choisir soit de lancer le dé et garder sa valeur, soit de
+                prendre la valeur médiane du dé (3 pour 1d4, 4 pour 1d6, 5 pour
+                1d8, 6 pour 1d10).
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>Agilité</h2>
+        <p>
+          Traduit la souplesse, la finesse dans les mouvements et l'adresse d'un
+          personnage. C'est la caractéristique utilisée lors de la plupart des
+          tests basés la capacité à se mouvoir avec précision et vivacité.
+        </p>
+        <ul>
+          <li>
+            Esquive. Augmente avec l'agilité (1 point d'Agilité = 1 point
+            d'Esquive). Permets d'éviter les actions offensives. Chaque point en
+            esquive se traduit par un dé supplémentaire dans la difficulté du
+            jet des adversaires.
+          </li>
+        </ul>
+        <h2>Intelligence</h2>
+        <p>
+          Représente la logique, la mémoire et la sagesse d'un personnage. C'est
+          la caractéristique maîtresse pour beaucoup de capacités utilisant la
+          résonance pour produire des effets physiques, on parle alors
+          d'évocation, et pour les tests de compétences qui demandent de la
+          concentration et de la réflexion.
+        </p>
+        <ul>
+          <li>
+            Concentration. Lors des situations de stress, garder son sang-froid
+            pour continuer à réfléchir efficacement est un exercice difficile.
+            La concentration représente votre capacité à vous maîtriser,
+            principalement pour lancer des évocations par exemple. Elle est
+            égale à votre valeur d'Intelligence. Elle peut être augmentée aussi
+            avec des capacités.
+          </li>
+        </ul>
+        <h2>Charisme</h2>
+        <p>
+          Mesure l'aptitude à communiquer, guider, commander, mais aussi
+          l'empathie et l'intelligence émotionnelle. La plupart des capacités
+          dirigées sur les interactions avec d'autres créatures sont testées
+          avec cette caractéristique. C'est le cas également des capacités de
+          résonances d'altérations, qui demande une grande force mentale pour
+          faire effet.
+        </p>
+        <ul>
+          <li>
+            Volonté. Elle représente votre capacité garder votre sang-froid,
+            votre clairvoyance et votre aplomb en situation de stress. C'est
+            l'attribut utilisé également pour lancer des altérations. Elle est
+            égale à votre valeur de charisme. Elle peut être augmentée aussi
+            avec des capacités.
+          </li>
+        </ul>
+
+        <h1>2. Choix des Compétences</h1>
+        <p>
+          Une compétence est liée à une caractéristique lors des tests comme
+          indiqué ci-dessous. Mais un MJ peut à tout moment décider d'une
+          combinaison plus pertinente. Un test de compétence consiste en un jet
+          de dés dont le nombre de dés dépend de la valeur de la
+          caractéristique, et la valeur du dé dépend du rang de maîtrise de la
+          compétence.
+        </p>
+        <p>
+          Lors de la création de votre personnage, en fonction de votre
+          archétype ou de l'histoire que vous allez lui donner, vous pourrez
+          maîtriser quelques-unes de ces compétences. Maitriser une compétence
+          permet de considérablement augmenter les chances de réussite. La
+          maîtrise des compétences pourra évoluer au fil de l'aventure si vous
+          décidez d'investir dedans.
+        </p>
+        <p>
+          Sélectionnez 1 compétence parmi celles de votre archétype, et une 1
+          compétence supplémentaire sans limitation. Si vous n'avez pas
+          d'archétype, choisissez librement 2 compétences en rapport avec votre
+          histoire personnalisée. Ces compétences deviennent maitrisées.
+        </p>
+        <h4>Vigueur</h4>
+        <ul>
+          <li>Athletisme</li>
+          <li>Corps à Corps</li>
+          <li>Pugilat</li>
+        </ul>
+        <h4>Agilité</h4>
+        <ul>
+          <li>Coordination</li>
+          <li>Discrétion</li>
+          <li>Pilotage</li>
+          <li>Distance léger</li>
+          <li>Distance lourd</li>
+        </ul>
+        <h4>Intelligence</h4>
+        <ul>
+          <li>Connaissance histoire</li>
+          <li>Connaissance religion</li>
+          <li>Connaissance résonance</li>
+          <li>Medecine</li>
+          <li>Survie</li>
+          <li>Ingénierie</li>
+          <li>Evocation</li>
+        </ul>
+        <h4>Charisme</h4>
+        <ul>
+          <li>Charme</li>
+          <li>Négociation</li>
+          <li>Tromperie</li>
+          <li>Perspicacité</li>
+          <li>Altération</li>
+          <li>Intimidation</li>
+        </ul>
+        <h1>3. Choisir des Capacitée</h1>
+        <p>
+          Vous avez 5 emplacements de capacité au début de votre carrière
+          d'aventurier. Certains emplacements sont déjà remplis par votre
+          archétype si vous en avez choisis un. Veillez à compléter les
+          emplacements restant dans votre fiche à l'aide des listes de capacités
+          disponibles (mantras, évocation, altération...).
+        </p>
+        <h1>4. Choisir un equipement de départ</h1>
+        <p>
+          Dépendant de l'avanture dans laquelle vous vous engagé, du passé de
+          votre personnage, et de la générositée du MJ, vous pourrez constituer
+          votre equipement de départ. Voir la partie Equipement pour plus de
+          details.
+        </p>
+        <h1>5. Calculer les attributs induits du personnage</h1>
+        <p>
+          Après avoir sélectionné vos capacités, vous pourrez calculer les
+          valeurs ci-dessous qui traduiront certains aspects de votre
+          personnage.
+        </p>
+        <h3>Initiative</h3>
+        <p>
+          L'initiative permet de déterminer l'ordre des tours pendant un combat.
+          Une grande valeur d'Initiative augmente les chances d'un personnage
+          d'agir en premier, ou de réagir au bon moment lors d'une situation de
+          stress. La valeur d'Initiative est déterminée par : Initiative =
+          Intelligence + Charisme Vous avez un dé d'initiative dont le nombre de
+          faces augmente avec l'initiative :
+        </p>
+        <ul>
+          <li>inferieur à 8 : Votre dé d'initiative est égale a 1d8</li>
+          <li>
+            Initiative Initiative inferieur à 10 : Votre dé d'initiative est
+            égale a 1d10
+          </li>
+          <li>
+            Initiative superieur ou égal à 10 : Votre dé d'initiative est égale
+            a 1d12
+          </li>
+        </ul>
+
+        <h3>Defense</h3>
+        <p>
+          Mesurée avec votre agilité, mais aussi avec les capacité que vous avez
+          choisis, cette attribut augmente la difficultée des adversaire qui
+          souhaitent vous toucher. Elle est également utile pour eviter des
+          obstacles.
+        </p>
+        <h1>Au dela du niveau 1</h1>
+        <h2>Progressions Classique</h2>
+        <p>Lors de vos gains de niveaux, vous obtenez :</p>
+        <ul>
+          <li>
+            Un point d'experience que vous pouvez convertir au choix pour :
+          </li>
+          <li>
+            Augmenter le rang de maitrise d'une compétence. L'expertise est
+            débloquée à partir du niveau 5
+          </li>
+          <li>Ajouter un emplacement de capacité</li>
+          <li>
+            Des PV maximum supplémentaire tout les 3 niveaux (3,6,9...), en
+            appliquant la formule de calcul décrite plus haut.
+          </li>
+          <li>
+            Un point de caractéristique supplémentaire tout les 5 niveau
+            (5,10,15...).
+          </li>
+        </ul>
+        <p>
+          Le niveau 9 est le niveau maximum que peuvent atteindre les
+          aventuriers. Certaines créatures ou adversaires peuvent aller au delà
+          de cette limite.
+        </p>
+        <h2>Progression Narative</h2>
+        <p>
+          Les niveaux sont gagnés après suffisement de tests sur les compétences
+          des PJ. Les choix dans l'apprentissage des compétences est, par
+          conséquent, choisi par les joueurs de manière indirecte.
+        </p>
+        <p>
+          Les points d'experiences ne sont gagnés que lorsque les joueurs font
+          des tests de compétences et des jets d'attaques. Par exemple, si
+          Obi-wan fait un test de Charisme (Charme) face à un adversaire, il
+          incrémente un compteur qui au bout d'un nombre déterminé, incrémente
+          le rang dans la compétence. C'est au MJ de déterminer à l'avance si la
+          progression sera rapide (1 ou 2 tests pour les compétences les plus
+          rarement utilisées, 5 pour les compétences de combat) ou plus lente.
+        </p>
+        <p>
+          Les capacités sont gagnées à chaque fois qu'une créature puissante est
+          mise à terre, ou lors d'événements particuliers. Par exemple, les
+          aventuriers trouvent une source de pouvoir au fond d'un ancien temple
+          abandonné, et décident de l'étudier. Si leurs tests réussissent, ils
+          gagnent tous une capacité parmi un choix réduit ayant un rapport avec
+          la situation et l'histoire.
+        </p>
+        <p>Dans les deux cas:</p>
+        <ul>
+          <li>
+            le passage au rang de maitrise d'une compétence augmente le niveau
+            du personnage de 1
+          </li>
+          <li>
+            le gain d'un nouvel emplacement de capacité augmente le niveau du
+            personnage de 1
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+  </ion-page>
+</template>
+<script>
+import { defineComponent } from "vue";
+import { IonPage } from "@ionic/vue";
+
+export default defineComponent({
+  name: "PersonnagePage",
+  components: {
+    IonPage,
+  },
+});
+</script>
+<style lang=""></style>
