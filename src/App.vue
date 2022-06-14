@@ -4,8 +4,8 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
-            <ion-note>hi@ionicframework.com</ion-note>
+            <ion-list-header>NAMTAR</ion-list-header>
+            <ion-note>Règles de jeu</ion-note>
 
             <ion-menu-toggle
               auto-hide="false"
