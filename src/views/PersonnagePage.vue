@@ -17,6 +17,10 @@
       </ion-header>
 
       <div id="container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="title"></div>
         <h1>Création de personnage</h1>
         <p>
           Cette page décrit les différentes étapes à suivre pour écrire son
@@ -335,4 +339,6 @@ export default defineComponent({
   },
 });
 </script>
-<style lang=""></style>
+<style scoped>
+@import "/src/styles/background.css";
+</style>
