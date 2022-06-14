@@ -21,11 +21,6 @@
                 class="hydrated"
                 :class="{ selected: selectedIndex === i }"
               >
-                <ion-icon
-                  slot="start"
-                  :ios="p.iosIcon"
-                  :md="p.mdIcon"
-                ></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
@@ -44,7 +39,6 @@
                 :ios="bookmarkOutline"
                 :md="bookmarkSharp"
               ></ion-icon>
-              <ion-label>{{ label }}</ion-label>
             </ion-item>
           </ion-list>
         </ion-content>
@@ -108,55 +102,9 @@ export default defineComponent({
     const selectedIndex = ref(0);
     const appPages = [
       {
-        title: "Inbox",
-        url: "/folder/Inbox",
-        iosIcon: mailOutline,
-        mdIcon: mailSharp,
-      },
-      {
-        title: "Outbox",
-        url: "/folder/Outbox",
-        iosIcon: paperPlaneOutline,
-        mdIcon: paperPlaneSharp,
-      },
-      {
-        title: "Favorites",
-        url: "/folder/Favorites",
-        iosIcon: heartOutline,
-        mdIcon: heartSharp,
-      },
-      {
-        title: "Archived",
-        url: "/folder/Archived",
-        iosIcon: archiveOutline,
-        mdIcon: archiveSharp,
-      },
-      {
-        title: "Trash",
-        url: "/folder/Trash",
-        iosIcon: trashOutline,
-        mdIcon: trashSharp,
-      },
-      {
-        title: "Spam",
-        url: "/folder/Spam",
-        iosIcon: warningOutline,
-        mdIcon: warningSharp,
-      },
-      {
-        title: "Perso",
+        title: "Creation de personnage",
         url: "/Personnage",
-        iosIcon: warningOutline,
-        mdIcon: warningSharp,
       },
-    ];
-    const labels = [
-      "Family",
-      "Friends",
-      "Notes",
-      "Work",
-      "Travel",
-      "Reminders",
     ];
 
     const path = window.location.pathname.split("folder/")[1];
@@ -171,7 +119,6 @@ export default defineComponent({
     return {
       selectedIndex,
       appPages,
-      labels,
       archiveOutline,
       archiveSharp,
       bookmarkOutline,
