@@ -25,22 +25,6 @@
               </ion-item>
             </ion-menu-toggle>
           </ion-list>
-
-          <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-
-            <ion-item
-              v-for="(label, index) in labels"
-              lines="none"
-              :key="index"
-            >
-              <ion-icon
-                slot="start"
-                :ios="bookmarkOutline"
-                :md="bookmarkSharp"
-              ></ion-icon>
-            </ion-item>
-          </ion-list>
         </ion-content>
       </ion-menu>
       <ion-router-outlet id="main-content"></ion-router-outlet>
@@ -52,7 +36,6 @@
 import {
   IonApp,
   IonContent,
-  IonIcon,
   IonItem,
   IonLabel,
   IonList,
@@ -87,7 +70,6 @@ export default defineComponent({
   components: {
     IonApp,
     IonContent,
-    IonIcon,
     IonItem,
     IonLabel,
     IonList,
@@ -175,16 +157,6 @@ ion-menu.md ion-list#inbox-list ion-list-header {
   min-height: 20px;
 }
 
-ion-menu.md ion-list#labels-list ion-list-header {
-  font-size: 16px;
-
-  margin-bottom: 18px;
-
-  color: #757575;
-
-  min-height: 26px;
-}
-
 ion-menu.md ion-item {
   --padding-start: 10px;
   --padding-end: 10px;
@@ -233,10 +205,6 @@ ion-menu.ios ion-item.selected ion-icon {
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
   color: #73849a;
-}
-
-ion-menu.ios ion-list#labels-list ion-list-header {
-  margin-bottom: 8px;
 }
 
 ion-menu.ios ion-list-header,
