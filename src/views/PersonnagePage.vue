@@ -26,50 +26,66 @@
           :zoom="true"
         >
           <swiper-slide>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                <ion-card-title>Vigueur</ion-card-title>
-              </ion-card-header>
+            <ion-grid fixed="true" id="grid-carac">
+              <ion-row>
+                <ion-col>
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                      <ion-card-title>Vigueur</ion-card-title>
+                    </ion-card-header>
 
-              <ion-card-content>
-                Traduit la force, la musculature, la vitalité et la robustesse
-                physique.
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                <ion-card-title>Agilité</ion-card-title>
-              </ion-card-header>
+                    <ion-card-content>
+                      Traduit la force, la musculature, la vitalité et la
+                      robustesse physique.
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
 
-              <ion-card-content>
-                Traduit la souplesse, la finesse dans les mouvement et
-                l'adresse.
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                <ion-card-title>Intelligence</ion-card-title>
-              </ion-card-header>
+                <ion-col>
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                      <ion-card-title>Agilité</ion-card-title>
+                    </ion-card-header>
 
-              <ion-card-content>
-                Représente capacitée de raisonnement, la mémoire et la sagesse
-                d'un personnage.
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                <ion-card-title>Charisme</ion-card-title>
-              </ion-card-header>
+                    <ion-card-content>
+                      Traduit la souplesse, la finesse dans les mouvement et
+                      l'adresse.
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
 
-              <ion-card-content>
-                Mesure l'aptitude à communiquer, guider, commander, mais aussi
-                l'empathie et l'intelligence émotionnelle.
-              </ion-card-content>
-            </ion-card>
+              <ion-row>
+                <ion-col>
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                      <ion-card-title>Intelligence</ion-card-title>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                      Représente capacitée de raisonnement, la mémoire et la
+                      sagesse d'un personnage.
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+                <ion-col>
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                      <ion-card-title>Charisme</ion-card-title>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                      Mesure l'aptitude à communiquer, guider, commander, ainsi que l'intelligence émotionnelle.
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <div>Resume</div>
           </swiper-slide>
           <swiper-slide>
             <h1>2. Choix des Compétences</h1>
@@ -98,8 +114,11 @@ import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
-  IonCardContent,
   IonCardSubtitle,
+  IonCardContent,
+  IonGrid,
+  IonRow,
+  IonCol,
 } from "@ionic/vue";
 import { pin } from "ionicons/icons";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -127,6 +146,9 @@ export default defineComponent({
     IonCardContent,
     Swiper,
     SwiperSlide,
+    IonGrid,
+    IonRow,
+    IonCol,
   },
   setup() {
     return { modules: [Keyboard, Pagination], pin };
@@ -138,7 +160,11 @@ export default defineComponent({
 #container {
   height: 100%;
 }
+
 .swiper {
   height: 100%;
+}
+ion-card {
+  height: 200px;
 }
 </style>
