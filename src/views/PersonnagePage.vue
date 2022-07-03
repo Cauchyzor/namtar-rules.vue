@@ -17,54 +17,14 @@
       </ion-header>
 
       <div id="container">
-        <swiper
-          :modules="modules"
-          :autoplay="true"
-          :keyboard="true"
-          :pagination="true"
-          :scrollbar="true"
-          :zoom="true"
-        >
+        <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
           <swiper-slide>
-            <ion-grid fixed="true" id="grid-carac">
-              <ion-row>
-                <ion-col>
-                  <CaracteristiqueCard
-                    :bgImageURL="'mountain'"
-                    :title="'Vigueur'"
-                    :description="'Traduit la force, la musculature, la vitalité et la robustesse physique'"
-                  />
-                </ion-col>
-
-                <ion-col>
-                  <CaracteristiqueCard
-                    :bgImageURL="'beach'"
-                    :title="'Agilité'"
-                    :description="`Traduit la souplesse, la finesse dans les mouvement et
-                      l'adresse.`"
-                  />
-                </ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col>
-                  <CaracteristiqueCard
-                    :bgImageURL="'desert'"
-                    :title="'Intelligence'"
-                    :description="`Représente capacitée de raisonnement, la mémoire et la
-                      sagesse d'un personnage.`"
-                  />
-                </ion-col>
-                <ion-col>
-                  <CaracteristiqueCard
-                    :bgImageURL="'galaxy'"
-                    :title="'Charisme'"
-                    :description="`Mesure l'aptitude à communiquer, guider, commander, ainsi
-                      que l'intelligence émotionnelle.`"
-                  />
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+            <h4>1. Points de Caracteristiques</h4>
+            <ion-text>Répartissez 15 points dans 4 caracteristiques, au maximum 5 et minimum 1.</ion-text>
+            <CaracteristiqueCard :type="'Vigueur'" />
+            <CaracteristiqueCard :type="'Agilité'" />
+            <CaracteristiqueCard :type="'Intelligence'" />
+            <CaracteristiqueCard :type="'Charisme'" />
           </swiper-slide>
           <swiper-slide>
             <h1>2. Choix des Compétences</h1>
@@ -73,9 +33,6 @@
             <h1>Au dela du niveau 1</h1>
           </swiper-slide>
         </swiper>
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
       </div>
     </ion-content>
   </ion-page>
@@ -90,12 +47,9 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonGrid,
-  IonRow,
-  IonCol,
+  IonText
 } from "@ionic/vue";
 
-import { pin } from "ionicons/icons";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 import { Keyboard, Pagination } from "swiper";
@@ -116,28 +70,16 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    IonGrid,
-    IonRow,
-    IonCol,
+    IonText,
     Swiper,
     SwiperSlide,
     CaracteristiqueCard,
   },
   setup() {
-    return { modules: [Keyboard, Pagination], pin };
+    return { modules: [Keyboard, Pagination] };
   },
 });
 </script>
 <style scoped>
-@import "/src/styles/background.css";
-#container {
-  height: 100%;
-}
 
-.swiper {
-  height: 100%;
-}
-ion-card {
-  height: 200px;
-}
 </style>

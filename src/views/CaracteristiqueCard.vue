@@ -1,198 +1,75 @@
 <template>
-  <div :id="bgImageURL" class="card">
-    <div class="content">
-      <h2 class="title">{{ title }}</h2>
-      <p class="copy">{{ description }}</p>
-      <button class="btn">View Trips</button>
-    </div>
-  </div>
+  <ion-card button="true">
+    <ion-card-header>
+      <ion-card-subtitle>{{ description }}</ion-card-subtitle>
+      <ion-card-title>{{ type }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item :key="index" v-for="(item, index) in attributeList">
+          <ion-label :key="index">{{ item }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </template>
 <script>
+import {
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonLabel,
+  IonList,
+} from "@ionic/vue";
+
 export default {
-  props: {
-    title: String,
-    description: String,
-    bgImageURL: String,
+  components: {
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonLabel,
+    IonList
   },
-};
+  props: {
+    type: String
+  },
+  computed: {
+    description() {
+      switch (this.type) {
+        case "Vigueur":
+          return "Traduit la force, la musculature, la vitalité et la robustesse physique"
+        case "Agilité":
+          return "Traduit la souplesse, la finesse dans les mouvement et l'adresse."
+        case "Intelligence":
+          return "Représente capacitée de raisonnement, la mémoire et la sagesse d'un personnage."
+        case "Charisme":
+          return "Mesure l'aptitude à communiquer, guider, commander, ainsi que l'intelligence émotionnelle."
+        default:
+          return ""
+      }
+    },
+    attributeList() {
+      switch (this.type) {
+        case "Vigueur":
+          return ["PV : Votre maximum de PV est egal à 10 + Vigueur",
+            "Résilience : Vous avez 1 point de Résiliance par point de Vigueur"
+          ]
+        case "Agilité":
+          return ["Défense : Vous avez 1 point de Défence par point d'Agilité"]
+        case "Intelligence":
+          return ["Stress : Votre seuil de stress est égale a Intelligence + Charisme"]
+        case "Charisme":
+          return ["Stress : Votre seuil de stress est égale a Intelligence + Charisme"]
+        default:
+          return []
+      }
+    }
+  }
+}
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: grid;
-  place-items: center;
-}
-
-.card {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  color: whitesmoke;
-  background-color: whitesmoke;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
-    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
-    0 16px 16px rgba(0, 0, 0, 0.1);
-}
-
-.card:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110%;
-  background-size: cover;
-  background-position: 0 0;
-  transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-  pointer-events: none;
-}
-.card:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  pointer-events: none;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.009) 11.7%,
-    rgba(0, 0, 0, 0.034) 22.1%,
-    rgba(0, 0, 0, 0.072) 31.2%,
-    rgba(0, 0, 0, 0.123) 39.4%,
-    rgba(0, 0, 0, 0.182) 46.6%,
-    rgba(0, 0, 0, 0.249) 53.1%,
-    rgba(0, 0, 0, 0.32) 58.9%,
-    rgba(0, 0, 0, 0.394) 64.3%,
-    rgba(0, 0, 0, 0.468) 69.3%,
-    rgba(0, 0, 0, 0.54) 74.1%,
-    rgba(0, 0, 0, 0.607) 78.8%,
-    rgba(0, 0, 0, 0.668) 83.6%,
-    rgba(0, 0, 0, 0.721) 88.7%,
-    rgba(0, 0, 0, 0.762) 94.1%,
-    rgba(0, 0, 0, 0.79) 100%
-  );
-  transform: translateY(-50%);
-  transition: transform calc(700ms * 2) cubic-bezier(0.19, 1, 0.22, 1);
-}
-#mountain.card:nth-child(1):before {
-  background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-#beach.card:nth-child(1):before {
-  background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-#desert.card:nth-child(1):before {
-  background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-#galaxy.card:nth-child(1):before {
-  background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-
-.content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: 1;
-}
-.content > * + * {
-  margin-top: 1rem;
-}
-
-.title {
-  font-family: "Cardo", serif;
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.copy {
-  font-family: "Cardo", serif;
-  font-size: 0.8rem;
-  font-style: italic;
-  line-height: 1.35;
-}
-
-.btn {
-  cursor: pointer;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.65rem;
-  font-weight: bold;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: white;
-  background-color: black;
-  border: none;
-}
-.btn:hover {
-  background-color: #0d0d0d;
-}
-.btn:focus {
-  outline: 1px dashed yellow;
-  outline-offset: 3px;
-}
-
-.card:after {
-  transform: translateY(0);
-}
-
-.content {
-  transform: translateY(calc(100% - 4.5rem));
-}
-.content > *:not(.title) {
-  opacity: 0;
-  transform: translateY(1rem);
-  transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1),
-    opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.card:hover,
-.card:focus-within {
-  align-items: center;
-}
-.card:hover:before,
-.card:focus-within:before {
-  transform: translateY(-4%);
-}
-.card:hover:after,
-.card:focus-within:after {
-  transform: translateY(-50%);
-}
-.card:hover .content,
-.card:focus-within .content {
-  transform: translateY(0);
-}
-.card:hover .content > *:not(.title),
-.card:focus-within .content > *:not(.title) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: calc(700ms / 8);
-}
-
-.card:focus-within:before,
-.card:focus-within:after,
-.card:focus-within .content,
-.card:focus-within .content > *:not(.title) {
-  transition-duration: 0s;
-}
 </style>
