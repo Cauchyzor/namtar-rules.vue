@@ -1,75 +1,76 @@
 <template>
-  <ion-card button="true">
+  <ion-card button="true" @click="showAttribute = !showAttribute">
     <ion-card-header>
-      <ion-card-subtitle>{{ description }}</ion-card-subtitle>
-      <ion-card-title>{{ type }}</ion-card-title>
+      <ion-card-subtitle>{{ caracteristique.Description }}</ion-card-subtitle>
+      <ion-card-title>{{ caracteristique.Nom }}</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item :key="index" v-for="(item, index) in attributeList">
-          <ion-label :key="index">{{ item }}</ion-label>
+    <ion-card-content v-show="showAttribute">
+      <ion-list :key="index" v-for="(item, index) in caracteristique.Attributs">
+        <ion-item>
+          <ion-icon :icon="getIcon(item)" slot="start"></ion-icon>
+          <ion-label  class="ion-text-wrap" :key="index"
+            >{{ item.Nom }} : {{ item.Description }}</ion-label
+          >
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
 </template>
 <script>
+import { defineComponent } from "vue";
+
 import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
+  IonIcon,
   IonLabel,
   IonList,
+  IonItem,
 } from "@ionic/vue";
 
-export default {
+import { heart, heartCircle, flash, shieldHalf } from "ionicons/icons";
+
+export default defineComponent({
   components: {
     IonCard,
     IonCardHeader,
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
+    IonIcon,
     IonLabel,
-    IonList
+    IonList,
+    IonItem,
   },
   props: {
-    type: String
+    caracteristique: Object,
   },
-  computed: {
-    description() {
-      switch (this.type) {
-        case "Vigueur":
-          return "Traduit la force, la musculature, la vitalité et la robustesse physique"
-        case "Agilité":
-          return "Traduit la souplesse, la finesse dans les mouvement et l'adresse."
-        case "Intelligence":
-          return "Représente capacitée de raisonnement, la mémoire et la sagesse d'un personnage."
-        case "Charisme":
-          return "Mesure l'aptitude à communiquer, guider, commander, ainsi que l'intelligence émotionnelle."
+  data() {
+    return { showAttribute: false, heart };
+  },
+  methods: {
+    getIcon(item) {
+      switch (item.Nom) {
+        case "PV":
+          return heart;
+        case "Défense":
+          return shieldHalf;
+        case "Résilience":
+          return heartCircle;
+        case "Stress":
+          return flash;
         default:
-          return ""
+          return "";
       }
     },
-    attributeList() {
-      switch (this.type) {
-        case "Vigueur":
-          return ["PV : Votre maximum de PV est egal à 10 + Vigueur",
-            "Résilience : Vous avez 1 point de Résiliance par point de Vigueur"
-          ]
-        case "Agilité":
-          return ["Défense : Vous avez 1 point de Défence par point d'Agilité"]
-        case "Intelligence":
-          return ["Stress : Votre seuil de stress est égale a Intelligence + Charisme"]
-        case "Charisme":
-          return ["Stress : Votre seuil de stress est égale a Intelligence + Charisme"]
-        default:
-          return []
-      }
-    }
-  }
-}
+  },
+});
 </script>
 <style scoped>
+ion-item > ion-label {
+  font-size: 12px;
+}
 </style>
