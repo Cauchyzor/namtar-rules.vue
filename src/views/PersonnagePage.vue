@@ -16,27 +16,18 @@
         </ion-toolbar>
       </ion-header>
 
-      <swiper
-        :modules="modules"
-        :autoplay="true"
-        :keyboard="true"
-        :pagination="true"
-        :scrollbar="true"
-        :zoom="true"
-      >
+      <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
         <swiper-slide>
           <ion-text>
-            <h4>1. Points de Caracteristiques</h4>
-            <p>
-              Répartissez 15 points dans 4 caracteristiques, au maximum 5 et
-              minimum 1.
-            </p></ion-text
-          >
+            <h1>Determiner les Caracteristiques</h1>
+          </ion-text>
+          <ion-text>
+            <p>Répartissez 15 points dans 4 caracteristiques, au maximum 5 et
+              minimum 1.</p>
+          </ion-text>
           <CaracteristiqueCard :caracteristique="Caracteristiques.VIGUEUR" />
           <CaracteristiqueCard :caracteristique="Caracteristiques.AGILITE" />
-          <CaracteristiqueCard
-            :caracteristique="Caracteristiques.INTELLIGENCE"
-          />
+          <CaracteristiqueCard :caracteristique="Caracteristiques.INTELLIGENCE" />
           <CaracteristiqueCard :caracteristique="Caracteristiques.CHARISME" />
         </swiper-slide>
         <swiper-slide>
@@ -145,4 +136,13 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped></style>
+<style scoped>
+ion-text {
+  text-align: center;
+}
+
+ion-text>p {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+</style>
