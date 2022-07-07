@@ -8,9 +8,8 @@
       <ion-list :key="index" v-for="(item, index) in caracteristique.Attributs">
         <ion-item>
           <ion-icon :icon="getIcon(item)" slot="start"></ion-icon>
-          <ion-label  class="ion-text-wrap" :key="index"
-            >{{ item.Nom }} : {{ item.Description }}</ion-label
-          >
+          <ion-label :key="index" slot="start">{{ item.Nom }}</ion-label>
+          <ion-note slot="end">{{ item.Description }}</ion-note>
         </ion-item>
       </ion-list>
     </ion-card-content>
@@ -27,6 +26,7 @@ import {
   IonCardContent,
   IonIcon,
   IonLabel,
+  IonNote,
   IonList,
   IonItem,
 } from "@ionic/vue";
@@ -42,6 +42,7 @@ export default defineComponent({
     IonCardContent,
     IonIcon,
     IonLabel,
+    IonNote,
     IonList,
     IonItem,
   },
@@ -70,7 +71,4 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-ion-item > ion-label {
-  font-size: 12px;
-}
 </style>
