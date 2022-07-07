@@ -122,7 +122,7 @@ export default defineComponent({
       CHARISME: {
         Nom: "Charisme",
         Description:
-          "Mesure la capacitée de raisonnement, la mémoire et la sagesse d'un personnage.",
+          "Représente l'aptitude à communiquer, commander, interagir avec les autres et la force de caractère.",
         Attributs: [
           {
             Nom: "Stress",
