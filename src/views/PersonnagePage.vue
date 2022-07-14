@@ -25,10 +25,12 @@
             <p>Répartissez 15 points dans 4 caracteristiques, au maximum 5 et
               minimum 1.</p>
           </ion-text>
-          <CaracteristiqueCard :caracteristique="Caracteristiques.VIGUEUR" />
-          <CaracteristiqueCard :caracteristique="Caracteristiques.AGILITE" />
-          <CaracteristiqueCard :caracteristique="Caracteristiques.INTELLIGENCE" />
-          <CaracteristiqueCard :caracteristique="Caracteristiques.CHARISME" />
+          <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.VIGUEUR" />
+          <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.AGILITE" />
+          <CaracteristiqueCard
+            :caracteristique="CARACTERISTIQUES.INTELLIGENCE"
+          />
+          <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.CHARISME" />
         </swiper-slide>
         <swiper-slide>
           <h1>2. Choix des Compétences</h1>
@@ -40,7 +42,7 @@
     </ion-content>
   </ion-page>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 import {
@@ -59,6 +61,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Keyboard, Pagination } from "swiper";
 
 import CaracteristiqueCard from "./CaracteristiqueCard.vue";
+import { CARACTERISTIQUES } from "../domain/Caracteristique";
 
 import "swiper/css";
 import "swiper/css/keyboard";
@@ -80,59 +83,7 @@ export default defineComponent({
     CaracteristiqueCard,
   },
   data() {
-    const Caracteristiques = Object.freeze({
-      VIGUEUR: {
-        Nom: "Vigueur",
-        Description:
-          "Traduit la force, la musculature, la vitalité et la robustesse physique",
-        Attributs: [
-          {
-            Nom: "PV",
-            Description: "Votre maximum de PV est egal à 10 + Vigueur",
-          },
-          {
-            Nom: "Résilience",
-            Description: "Vous avez 1 point de Résiliance par point de Vigueur",
-          },
-        ],
-      },
-      AGILITE: {
-        Nom: "Agilité",
-        Description:
-          "Determine la souplesse, la finesse dans les mouvement et l'adresse.",
-        Attributs: [
-          {
-            Nom: "Défense",
-            Description: "Vous avez 1 point de Défence par point d'Agilité",
-          },
-        ],
-      },
-      INTELLIGENCE: {
-        Nom: "Intelligence",
-        Description:
-          "Mesure la capacitée de raisonnement, la mémoire et la sagesse d'un personnage.",
-        Attributs: [
-          {
-            Nom: "Stress",
-            Description:
-              "Votre seuil de stress est égale a Intelligence + Charisme",
-          },
-        ],
-      },
-      CHARISME: {
-        Nom: "Charisme",
-        Description:
-          "Représente l'aptitude à communiquer, commander, interagir avec les autres et la force de caractère.",
-        Attributs: [
-          {
-            Nom: "Stress",
-            Description:
-              "Votre seuil de stress est égale a Intelligence + Charisme",
-          },
-        ],
-      },
-    });
-    return { modules: [Keyboard, Pagination], Caracteristiques };
+    return { modules: [Keyboard, Pagination], CARACTERISTIQUES };
   },
 });
 </script>
