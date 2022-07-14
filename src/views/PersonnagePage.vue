@@ -16,14 +16,22 @@
         </ion-toolbar>
       </ion-header>
 
-      <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
+      <swiper
+        :modules="modules"
+        :autoplay="true"
+        :keyboard="true"
+        :pagination="{ type: 'progressbar' }"
+        :zoom="true"
+      >
         <swiper-slide>
           <ion-text>
             <h1>Determiner les Caracteristiques</h1>
           </ion-text>
           <ion-text>
-            <p>Répartissez 15 points dans 4 caracteristiques, au maximum 5 et
-              minimum 1.</p>
+            <p>
+              Répartissez 15 points dans 4 caracteristiques, au maximum 5 et
+              minimum 1.
+            </p>
           </ion-text>
           <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.VIGUEUR" />
           <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.AGILITE" />
@@ -92,7 +100,7 @@ ion-text {
   text-align: center;
 }
 
-ion-text>p {
+ion-text > p {
   margin-left: 18px;
   margin-right: 18px;
 }
