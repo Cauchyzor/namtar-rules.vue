@@ -61,7 +61,7 @@
           </ion-list>
         </swiper-slide>
         <swiper-slide>
-          <h1>Selectionner des Capacitées</h1>
+          <ion-text><h1>Selectionner des Capacitées</h1></ion-text>
         </swiper-slide>
       </swiper>
     </ion-content>

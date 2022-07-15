@@ -103,6 +103,14 @@ export default defineComponent({
         title: "Règles : Aventure",
         url: "/Aventure",
       },
+      {
+        title: "Règles : Equipement",
+        url: "/Equipement",
+      },
+      {
+        title: "Règles : Véhicules",
+        url: "/Vehicule",
+      },
     ];
 
     const path = window.location.pathname.split("folder/")[1];
