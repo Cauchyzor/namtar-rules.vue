@@ -21,6 +21,7 @@
         :autoplay="true"
         :keyboard="true"
         :pagination="{ type: 'progressbar' }"
+        :parallax="true"
         :zoom="true"
       >
         <swiper-slide>
@@ -41,10 +42,26 @@
           <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.CHARISME" />
         </swiper-slide>
         <swiper-slide>
-          <h1>2. Choix des Compétences</h1>
+          <ion-text><h1>Choisir des Compétences</h1></ion-text>
+          <ion-text>
+            <p>Augmentez 1 fois le rang de 3 compétences au choix</p>
+          </ion-text>
+          <ion-list>
+            <template
+              v-for="[carac, competenceList] in competencesByCarac"
+              :key="carac"
+            >
+              <ion-item-divider sticky="true">
+                <ion-label> {{ carac }} </ion-label>
+              </ion-item-divider>
+              <ion-item v-for="comp in competenceList" :key="comp.Nom">
+                <ion-label>{{ comp.Nom }}</ion-label>
+              </ion-item>
+            </template>
+          </ion-list>
         </swiper-slide>
         <swiper-slide>
-          <h1>Au dela du niveau 1</h1>
+          <h1>Selectionner des Capacitées</h1>
         </swiper-slide>
       </swiper>
     </ion-content>
@@ -62,14 +79,19 @@ import {
   IonTitle,
   IonToolbar,
   IonText,
+  IonItemDivider,
+  IonItem,
+  IonLabel,
+  IonList,
 } from "@ionic/vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-import { Keyboard, Pagination } from "swiper";
+import { Keyboard, Pagination, Parallax } from "swiper";
 
 import CaracteristiqueCard from "./CaracteristiqueCard.vue";
 import { CARACTERISTIQUES } from "../domain/Caracteristique";
+import { Competence, COMPETENCES } from "../domain/Competence";
 
 import "swiper/css";
 import "swiper/css/keyboard";
@@ -89,9 +111,22 @@ export default defineComponent({
     Swiper,
     SwiperSlide,
     CaracteristiqueCard,
+    IonList,
+    IonItem,
+    IonItemDivider,
+    IonLabel,
   },
   data() {
-    return { modules: [Keyboard, Pagination], CARACTERISTIQUES };
+    let competencesByCarac = new Map<string, Competence[]>();
+    Object.values(COMPETENCES).forEach((c) => {
+      let competences = competencesByCarac.get(c.BaseCaracteristique.Nom) || [];
+      competencesByCarac.set(c.BaseCaracteristique.Nom, [...competences, c]);
+    });
+    return {
+      modules: [Keyboard, Pagination, Parallax],
+      CARACTERISTIQUES,
+      competencesByCarac,
+    };
   },
 });
 </script>
