@@ -87,6 +87,10 @@ export default defineComponent({
         title: "Creation de personnage",
         url: "/Personnage",
       },
+      {
+        title: "Règles Core : Tests de compétences ",
+        url: "/Test",
+      },
     ];
 
     const path = window.location.pathname.split("folder/")[1];
