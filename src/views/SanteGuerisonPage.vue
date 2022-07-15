@@ -1,0 +1,341 @@
+<template>
+  <ion-page>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ $route.params.id }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">{{ $route.params.id }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <h1>Dégâts et guérison</h1>
+      <h2>Points de vie</h2>
+      <p>
+        Les points de vie représentent une combinaison de résistance mentale et
+        physique, de volonté de vivre et de chance. Plus une créature de points
+        de vie, plus elle est difficile à tuer. Quand une créature subit des
+        dégâts, ceux-ci sont ôtés de son total actuel de points de vie. Perdre
+        des points de vie n&#39;a pas d&#39;effet sur les capacités d&#39;une
+        créature tant que ses points de vie n&#39;atteignent pas 0.
+      </p>
+      <h2>Soins</h2>
+      <p>
+        Les dégâts ne sont pas permanents, à moins bien sûr qu&#39;ils ne
+        provoquent la mort d&#39;une créature. Lorsqu&#39;une creature subit des
+        dégâts, la seule manière de les regagner est de profiter de repos,
+        d&#39;utiliser certaines capacités ou d&#39;avoir l&#39;intervention
+        d&#39;une personne avec des compétences en médecine.
+      </p>
+      <p>
+        Le nombre de points de vie d&#39;une créature ne peut pas dépasser son
+        maximum de points de vie. Si elle gagne un nombre de points de vie qui
+        lui permettrait théoriquement de dépasser ce maximum, les points de vie
+        surnuméraires sont perdus.
+      </p>
+      <h2>Tomber à 0 point de vie</h2>
+      <p>
+        Quand vous atteignez 0 point de vie, vous pouvez soit mourir, soit
+        perdre conscience. Les différents cas de figure sont expliqués dans les
+        sections ci-dessous.
+      </p>
+      <h3>Perdre conscience</h3>
+      <p>
+        Si les dégâts que vous subissez vous font tomber à 0 point de vie mais
+        ne vous tuent pas, vous êtes inconscient (voir la section États
+        spéciaux). Vous ne pouvez reprendre conscience que si vous regagnez des
+        points de vie.
+      </p>
+      <h3>Sombrer vers la Mort</h3>
+      <p>
+        Quand le personnage est inconscient, il subit automatiquement une
+        Blessure, dont la criticité va dépendre des agressions que le personnage
+        a subit avant de devenir inconscient. Les effets de la Blessure sont
+        conservé tant qu&#39;elle n&#39;est pas soignée.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Blessure</th>
+            <th>Test de Medecine pour stabiliser</th>
+            <th>Perte de point avant stabilisation</th>
+            <th>effets secondaire</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Coups à la tête</td>
+            <td>DD2</td>
+            <td>Aucun</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Epuisement</td>
+            <td>DD1</td>
+            <td>Aucun</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Blessure profonde</td>
+            <td>DD3</td>
+            <td></td>
+            <td>Le total de PV de la cible est réduit de 25%</td>
+          </tr>
+          <tr>
+            <td>Infirmité</td>
+            <td>DD3</td>
+            <td></td>
+            <td>La cible perd sa Manoeuvre</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Mort instantanée</h3>
+      <p>
+        Des dégâts trop importants peuvent vous tuer sur le coup. Pour que cette
+        chose terrible arrive, il faut que les dégâts vous fassent tomber à 0
+        point de vie et que le reliquat des dégâts infligés par l&#39;attaque
+        soit supérieur ou égal à votre maximum de points de vie.
+      </p>
+      <p>
+        Par exemple, une clerc a un nombre de points de vie maximum de 12. Il
+        lui reste actuellement 6 points de vie. Si elle subit 18 dégâts suite à
+        une attaque, elle tombe à 0 point de vie, mais il reste 12 dégâts
+        supplémentaires. Comme ce reliquat de dégâts est égal à son maximum de
+        points de vie (12), la prêtresse meurt sur le coup.
+      </p>
+      <h2>Stabiliser une créature</h2>
+      <p>
+        Le meilleur moyen de sauver une créature qui se trouve à 0 point de vie
+        est de la soigner. S&#39;il n&#39;est pas possible de la soigner, elle
+        peut être stabilisée afin de lui éviter de mourir des suites d&#39;un
+        échec à son jet de sauvegarde contre la mort.
+      </p>
+      <p>
+        Vous pouvez utiliser une action pour administrer les premiers soins à
+        une créature inconsciente et tenter de la stabiliser, mais vous devez
+        pour cela réussir un test d&#39;Intelligence (Médecine) de DD2.
+      </p>
+      <p>
+        Une créature stabilisée n&#39;a pas besoin de faire de jet de sauvegarde
+        contre la mort, même si elle est à 0 point de vie. Cependant, elle reste
+        inconsciente. Si la créature subit de nouveaux dégâts, elle n&#39;est
+        plus considérée comme stabilisée et doit recommencer à faire des jets de
+        sauvegarde contre la mort. Si elle n&#39;est pas soignée, une créature
+        stabilisée regagne 1 point de vie au bout de 1d4 heures.
+      </p>
+      <h2>Premiers soins</h2>
+      <p>
+        A la suite d&#39;un combats ou de la perte de point de vie, un
+        personnage avisé peut tenter d&#39;apporter des premiers soins.
+        Attention cependant, si l&#39;intention est bonnes, une méconnaissance
+        du sujet ou un mauvais contexte pourrait agraver la blessure. Ils faut
+        les outils et une quizaine de minutes minimum pour apporter des soins
+        correctement. Chaques succès soigne de 1 PV, chaque échec fait perdre 1
+        PV a la cible. Les Avantages et les désavantages ne sont généralement
+        pas interprétés.
+      </p>
+      <ul>
+        <li>
+          Si la cible possède plus de 50% des PV max, le Test d&#39;Intelligence
+          (Medecine) est de DD1
+        </li>
+        <li>
+          Si la cible possède moins de 50% des PV max, le Test
+          d&#39;Intelligence (Medecine) est de DD2
+        </li>
+        <li>
+          Si le secouriste n&#39;a pas le temps necessaire, il subit un
+          désavantage
+        </li>
+        <li>
+          En fonction de la blessure, si le secouriste n&#39;as pas de materiel
+          improvisé, ou de medipack, l&#39;intervention n&#39;est pas possible.
+        </li>
+      </ul>
+      <p>
+        Par exemple, un personnage qui aurai subit une vilaine entaille au
+        vibrosabre ne pourra pas bénéficier de soins si personne ne possède de
+        quoi faire des bandages sommaires avec les vêtements.
+      </p>
+      <p>
+        Tout autres informations contextuelle, sur la propretée de
+        l&#39;environnement par exemple, est sujet à apporter Avantages ou
+        désavantages.
+      </p>
+      <h2>Les monstres et la mort</h2>
+      <p>
+        La plupart des MJ font mourir les monstres dès qu&#39;ils atteignent 0
+        point de vie plutôt que de les considérer comme inconscients et de faire
+        pour eux des jets de sauvegarde contre la mort.
+      </p>
+      <p>
+        Les principaux adversaires et personnages non-joueurs spéciaux
+        constituent une exception courante. Le MJ peut les considérer
+        inconscients et suivre les mêmes règles que pour les personnages des
+        joueurs.
+      </p>
+      <h1>Les états spéciaux</h1>
+      <h2>À terre / Renversée</h2>
+      <p>
+        Une créature à terre n&#39;a plus l&#39;option que de ramper pour se
+        déplacer, à moins de se relever et de mettre ainsi un terme à son état.
+        Elle peut également décider d&#39;epauler une arme a distance si
+        celle-ci n&#39;est pas trop encombrante à manoeuvrer. La créature subit
+        un désavantage lors de ses attaques au corps a corps. Si un assaillant
+        est à 1,50 mètre ou moins de la créature, il bénéficie d&#39;un avantage
+        lors de ses attaques contre la créature. Sinon, il subit un désavantage.
+      </p>
+      <h2>Assourdi</h2>
+      <p>
+        Une créature assourdie n&#39;entend plus rien et rate automatiquement
+        tous les tests de caractéristique faisant intervenir des capacités
+        auditives.
+      </p>
+      <h2>Aveuglé</h2>
+      <p>
+        Une créature aveuglée ne voit plus rien et rate automatiquement tout
+        test de caractéristique qui requiert la vue. Sa défense est réduite de
+        1.
+      </p>
+      <h2>Empoigné</h2>
+      <p>
+        La vitesse d&#39;une créature empoignée devient 0 et elle ne peut plus
+        bénéficier de ses éventuels bonus de vitesse. Cet état se termine si
+        l&#39;empoigneur est neutralisé (voir cet état). L&#39;état se termine
+        également si un effet emporte la créature empoignée au-delà de
+        l&#39;allonge de l&#39;empoigneur ou de l&#39;effet d&#39;empoignade.
+      </p>
+      <h2>Entravé</h2>
+      <p>
+        La vitesse de la créature entravée tombe à 0 et elle ne peut plus
+        bénéficier de ses éventuels bonus de vitesse. Les attaques qui visent la
+        créature bénéficient d&#39;un avantage, tandis que les attaques de la
+        créature subissent un désavantage. La créature souffre d&#39;un
+        désavantage lors de ses jets de sauvegarde.
+      </p>
+      <h2>Neutralisé</h2>
+      <p>
+        Une créature neutralisée est incapable d&#39;effectuer une action ou une
+        réaction.
+      </p>
+      <h2>Neutralisé - Étourdi</h2>
+      <p>
+        Une créature étourdie est neutralisée, incapable de se déplacer et parle
+        en balbutiant. La créature rate automatiquement tous ses jets de
+        sauvegarde. Les jets d&#39;attaque qui visent la créature se font avec
+        un avantage.
+      </p>
+      <h2>Neutralisé - Paralysé</h2>
+      <p>
+        Une créature paralysée est neutralisée et ne peut ni parler ni se
+        déplacer. La créature rate automatiquement tous ses jets de sauvegarde.
+        Les attaques visant la créature bénéficient d&#39;un avantage. Toute
+        attaque qui touche la créature est obligatoirement un coup critique si
+        l&#39;assaillant se trouve dans un rayon de 1,50 mètre autour
+        d&#39;elle.
+      </p>
+      <h2>Neutralisé - Inconscient</h2>
+      <p>
+        Une créature inconsciente est neutralisée, incapable de se déplacer et
+        de parler et n&#39;a pas conscience de ce qui l&#39;entoure. La créature
+        lâche tout ce qu&#39;elle tenait et tombe au sol. Si la créature reprend
+        conscience, elle est à terre. Seul la défense de l&#39;équipement est
+        prise en compte sur le total de défense. Toute attaque qui touche la
+        créature inflige le maximum de dégât si l&#39;attaquant est a 1,5m de la
+        créature.
+      </p>
+      <h2>Terrorisé</h2>
+      <p>
+        Une créature terrorisée subit un désavantage lors de ses tests de
+        caractéristique et de ses jets d&#39;attaque tant que la source de sa
+        frayeur se trouve dans son champ de vision. La créature est incapable de
+        se rapprocher de la source de sa frayeur de son plein gré.
+      </p>
+      <h2>Surpris</h2>
+      <p>
+        Une créature surprise est incapable de se déplacer. Une créature
+        surprise ne peut entreprendre ni action ni réaction.
+      </p>
+      <h1>Repos</h1>
+      <p>
+        Au cours d&#39;une journée, les aventuriers peuvent observer des
+        périodes de repos court. À la fin d&#39;une journée, on parle d&#39;une
+        période de repos long. Il est aussi possible de choisir de récupérer
+        pendant un moment de répit (voir Entre les aventures).
+      </p>
+      <h2>Repos court</h2>
+      <p>
+        Un repos court est une période de repos d&#39;au moins 1 heure pendant
+        laquelle un personnage ne fait rien de plus fatigant que de manger,
+        boire, lire et panser ses blessures.
+      </p>
+      <p>
+        A la fin d&#39;une période de repos court, un personnage peut décider de
+        puiser dans sa réserve de DV. Il peut lancer un ou plusieurs DV. Pour
+        chaque dé de vie ainsi utilisé, le joueur lance un dé. Le total
+        correspond au nombre de points de vie regagnés par celui-ci. Le joueur
+        peut décider de lancer ses DV les uns après les autres, et donc
+        d&#39;attendre de connaître le résultat d&#39;un lancer de dé avant de
+        choisir de dépenser un dé de vie supplémentaire. Un personnage regagne
+        une partie des DV utilisés après un repos long, comme expliqué
+        ci-dessous.
+      </p>
+      <h2>Repos long</h2>
+      <p>
+        Un repos long est une période de repos d&#39;au moins 8 heures, pendant
+        laquelle un personnage dort ou n&#39;entreprend que des activités
+        reposantes, comme lire, parler, manger. S&#39;il monte la garde, il ne
+        peut pas le faire pendant plus de 2 heures. Si ce repos est interrompu
+        par une période d&#39;activité soutenue, comme par exemple 1 heure
+        passée à marcher, se battre, lancer des sorts, ou tout autre activité
+        similaire, tout le temps passé dans l&#39;optique d&#39;un repos long
+        est perdu. Le personnage doit recommencer la période de repos long du
+        début pour en tirer bénéfice.
+      </p>
+      <p>
+        À la fin d&#39;un repos long, un personnage regagne une partie des DV
+        qu&#39;il a dépensés : toujours au moins un dé de vie dépensé et au
+        maximum la moitié de son total de DV. Il peut egalement lancer les dès
+        de vie qu&#39;il possède déjà ou qu&#39;il gagne pendant ce repos pour
+        se soigner. Un personnage ne peut profiter qu&#39;une fois par période
+        de 24 heures des bénéfices conférés par un repos long.
+      </p>
+      <p>
+        Par exemple, si un personnage possède 6 DV, il peut en regagner 3 au
+        maximum à la fin d&#39;un repos long.
+      </p>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script>
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+
+export default {
+  components: {
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonMenuButton,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  },
+};
+</script>
+
+<style></style>

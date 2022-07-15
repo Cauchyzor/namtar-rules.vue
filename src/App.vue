@@ -95,6 +95,14 @@ export default defineComponent({
         title: "Règles Core : Combats",
         url: "/Combat",
       },
+      {
+        title: "Règles Core : Santé et Guérison",
+        url: "/Sante",
+      },
+      {
+        title: "Règles : Aventure",
+        url: "/Aventure",
+      },
     ];
 
     const path = window.location.pathname.split("folder/")[1];
