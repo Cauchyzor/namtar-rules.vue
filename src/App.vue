@@ -91,6 +91,10 @@ export default defineComponent({
         title: "Règles Core : Tests de compétences ",
         url: "/Test",
       },
+      {
+        title: "Règles Core : Combats",
+        url: "/Combat",
+      },
     ];
 
     const path = window.location.pathname.split("folder/")[1];

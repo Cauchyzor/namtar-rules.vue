@@ -15,6 +15,10 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/TestCompetencePage.vue"),
   },
   {
+    path: "/Combat",
+    component: () => import("../views/CombatPage.vue"),
+  },
+  {
     path: "/folder/:id",
     component: () => import("../views/FolderPage.vue"),
   },
