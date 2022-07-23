@@ -6,11 +6,11 @@ export type Attribut = {
 export const ATTRIBUTS = Object.freeze({
   PV: {
     Nom: "PV",
-    Description: "Votre maximum de PV est egal à 10 + Vigueur",
+    Description: "Votre maximum de PV est egal à 3 fois la Vigueur + 5",
   },
   DEFENSE: {
     Nom: "Défense",
-    Description: "Vous avez 1 point de Défence par point d'Agilité",
+    Description: "Vous avez 1 point de Défense par point d'Agilité, en plus des bonus de l'équipement",
   },
   STRESS: {
     Nom: "Stress",

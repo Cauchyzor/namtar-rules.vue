@@ -3,7 +3,7 @@ import { Attribut, ATTRIBUTS } from "./Attribut";
 export type Caracteristique = {
   Nom: string;
   Description: string;
-  Attributs: Attribut[];
+  Attributs: Array<Attribut>;
 };
 
 export const CARACTERISTIQUES = Object.freeze({
