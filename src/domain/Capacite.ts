@@ -1,142 +1,138 @@
 export type Capacite = {
-    Nom: string,
-    Type: CapaciteType,
-    Vecteur: Vecteur,
-    Effets: Array<Effet>,
-}
+  Nom: string;
+  Type: CapaciteType;
+  Vecteur: Vecteur;
+  Effets: Array<Effet>;
+};
 export type CapaciteType = {
-    Description: string,
-    Source: string,
-}
+  Description: string;
+  Source: string;
+};
 
 enum CapaciteTypeName {
-    EVOCATION = "Evocation",
-    MALEFICE = "Malefice",
-    NECROMANCIE = "Necromancie",
-    ENVOUTEMENT = "Envoutement",
-    BENEDICTION = "Injonction",
+  EVOCATION = "Evocation",
+  MALEFICE = "Malefice",
+  NECROMANCIE = "Necromancie",
+  ENVOUTEMENT = "Envoutement",
+  BENEDICTION = "Injonction",
 }
 
-const CAPACITE_TYPES_LIST: Map<CapaciteTypeName, CapaciteType> = new Map([
-    [CapaciteTypeName.EVOCATION, {
-        Description: "Desc",
-        Source: "source"
-    }],
-    [CapaciteTypeName.MALEFICE, {
-        Description: "Desc",
-        Source: "source"
-    }],
-    [CapaciteTypeName.NECROMANCIE, {
-        Description: "Desc",
-        Source: "source"
-    }],
-    [CapaciteTypeName.ENVOUTEMENT, {
-        Description: "Desc",
-        Source: "source"
-    }],
-    [CapaciteTypeName.BENEDICTION, {
-        Description: "Desc",
-        Source: "source"
-    }],
-])
-
+const CAPACITE_TYPES = Object.freeze({
+  EVOCATION: {
+    Nom: "Evocation",
+    Description: "L'utilisateur puise dans son endurence pour généré de l'energie. 1 point de Stress est converti en 1 point de Stabilité."
+  },
+  MALEFICE: {
+    Nom: "Malefice",
+    Description: "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 1.",
+  },
+  NECROMANCIE: {
+    Nom: "Necromancie",
+    Description: "La capacité est générée avec l'energie d'un residuelle d'un cadavre ou d'une source d'energie.",
+  },
+  ENVOUTEMENT: {
+    Nom: "Envoutement",
+    Description: "Corrompt les atouts de la cible pour générer ces effets.",
+  },
+  BENEDICTION: {
+    Nom: "Benediction",
+    Description: "Converti les atouts du groupe pour generer ses effets.",
+  },
+});
 
 export type Vecteur = {
-    Difficulte: String
-}
+  Description: string;
+  Difficulte: string;
+};
 
-enum TypeVecteur {
-    CONTACT = "Contact",
-    SOUFFLE = "Souffle",
-    PROJECTILE = "Projectile physique",
-    ONDE = "Onde",
-    EXPLOSION_CADAVRE = "Explosion de cadavre",
-    CHANT = "Chant",
-    INJONCTION = "Injonction",
-    MELODIE = "Mélodie",
-    AUGMENTATION = "Augmentation d'arme",
-}
-
-const VECTEURS_LIST: Map<TypeVecteur, Vecteur> = new Map([
-    [TypeVecteur.CONTACT, {
-        Difficulte: "Pugilat (Intelligence) contre Defense"
-    }],
-    [TypeVecteur.SOUFFLE, {
-        Difficulte: "Evocation (Vigueur) contre Defense"
-    }],
-    [TypeVecteur.PROJECTILE, {
-        Difficulte: "Evocation (Intelligence) contre Protection"
-    }],
-    [TypeVecteur.ONDE, {
-        Difficulte: "Evocation (Intelligence) Difficultée 6"
-    }],
-    [TypeVecteur.EXPLOSION_CADAVRE, {
-        Difficulte: "Medecine (Intelligence) Difficulté egale a la sommes des niveau des cadavres",
-    }]
-])
+const VECTEURS = Object.freeze({
+  CONTACT: {
+    Difficulte: "Pugilat (Intelligence) contre Defense",
+  },
+  SOUFFLE: {
+    Difficulte: "Evocation (Vigueur) contre Defense",
+  },
+  PROJECTILE: {
+    Difficulte: "Evocation (Intelligence) contre Protection",
+  },
+  ONDE: {
+    Difficulte: "Evocation (Intelligence) Difficultée 6",
+  },
+  EXPLOSION_CADAVRE: {
+    Difficulte:
+      "Medecine (Intelligence) Difficulté egale a la sommes des niveau des cadavres",
+  },
+});
 
 export type Effet = {
-    Description: string
-    IsCummulable: boolean,
-    StabiliteParTypeCapacite: Map<CapaciteTypeName, number>
-}
+  Description: string;
+  IsCummulable: boolean;
+  StabiliteParTypeCapacite: Map<CapaciteTypeName, number>;
+};
 
-export const EFFETS_LIST = Object.freeze({
-    CHALEUR: {
-        Description: "Inflige 1 Dommage (Cummulable) par Succes net et par Avantage",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 4,
-            [CapaciteTypeName.MALEFICE]: 3,
-            [CapaciteTypeName.NECROMANCIE]: 1,
-        }
+export const EFFETS = Object.freeze({
+  CHALEUR: {
+    Description:
+      "Inflige 1 Dommage (Cummulable) par Succes net et par Avantage",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 4,
+      [CapaciteTypeName.MALEFICE]: 3,
+      [CapaciteTypeName.NECROMANCIE]: 1,
     },
-    FORCE: {
-        Description: "Inflige 1 Dommage (Cummulable) par Succes net. Les cibles dont la Vigueur est inferieur au nombre d'Avantage générés sont renversés",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 3,
-            [CapaciteTypeName.NECROMANCIE]: 1,
-        }
+  },
+  FORCE: {
+    Description:
+      "Inflige 1 Dommage (Cummulable) par Succes net. Les cibles dont la Vigueur est inferieur au nombre d'Avantage générés sont renversés",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 3,
+      [CapaciteTypeName.NECROMANCIE]: 1,
     },
-    MORAL: {
-        Description: "La cible est soigné d'1 Point de Stress (Cummulable) par Succes net",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 4,
-            [CapaciteTypeName.BENEDICTION]: 2,
-        }
+  },
+  MORAL: {
+    Description:
+      "La cible est soigné d'1 Point de Stress (Cummulable) par Succes net",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 4,
+      [CapaciteTypeName.BENEDICTION]: 2,
     },
-    SOIN: {
-        Description: "La cible dépense immediatement 1 point de Résilience (Cummulable) pour regagner ses PV. Chaque Avantage soigne 1 Point de Stress.",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 4,
-            [CapaciteTypeName.BENEDICTION]: 3,
-        }
+  },
+  SOIN: {
+    Description:
+      "La cible dépense immediatement 1 point de Résilience (Cummulable) pour regagner ses PV. Chaque Avantage soigne 1 Point de Stress.",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 4,
+      [CapaciteTypeName.BENEDICTION]: 3,
     },
-    SOUTIEN: {
-        Description: "La cible gagne 1 Avantage (Cummulable) sur sont prochain test.",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 4,
-            [CapaciteTypeName.BENEDICTION]: 2,
-        }
+  },
+  SOUTIEN: {
+    Description:
+      "La cible gagne 1 Avantage (Cummulable) sur sont prochain test.",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 4,
+      [CapaciteTypeName.BENEDICTION]: 2,
     },
-    VAMPIRISME: {
-        Description: "Inflige 1 Dommage (Cummulable) par Succes net. Si l'effet est appliqué, le lanceur regagne 1 (Cummulable) point de vitalité",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 6,
-            [CapaciteTypeName.MALEFICE]: 4,
-        }
+  },
+  VAMPIRISME: {
+    Description:
+      "Inflige 1 Dommage (Cummulable) par Succes net. Si l'effet est appliqué, le lanceur regagne 1 (Cummulable) point de vitalité",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 6,
+      [CapaciteTypeName.MALEFICE]: 4,
     },
-    VOL: {
-        Description: "La cible de gabarit 1 (Cummulable) au maximum est en levitation pendant un bref instant.",
-        IsCummulable: true,
-        StabiliteParTypeCapacite: {
-            [CapaciteTypeName.EVOCATION]: 6,
-            [CapaciteTypeName.BENEDICTION]: 6,
-        }
-    }
+  },
+  VOL: {
+    Description:
+      "La cible de gabarit 1 (Cummulable) au maximum est en levitation pendant un bref instant.",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: 6,
+      [CapaciteTypeName.BENEDICTION]: 6,
+    },
+  },
 });
