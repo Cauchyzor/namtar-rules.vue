@@ -21,15 +21,18 @@ enum CapaciteTypeName {
 const CAPACITE_TYPES = Object.freeze({
   EVOCATION: {
     Nom: "Evocation",
-    Description: "L'utilisateur puise dans son endurence pour généré de l'energie. 1 point de Stress est converti en 1 point de Stabilité."
+    Description:
+      "L'utilisateur puise dans son endurence pour généré de l'energie. 1 point de Stress est converti en 1 point de Stabilité.",
   },
   MALEFICE: {
     Nom: "Malefice",
-    Description: "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 1.",
+    Description:
+      "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 1.",
   },
   NECROMANCIE: {
     Nom: "Necromancie",
-    Description: "La capacité est générée avec l'energie d'un residuelle d'un cadavre ou d'une source d'energie.",
+    Description:
+      "La capacité est générée avec l'energie d'un residuelle d'un cadavre ou d'une source d'energie.",
   },
   ENVOUTEMENT: {
     Nom: "Envoutement",
@@ -42,24 +45,41 @@ const CAPACITE_TYPES = Object.freeze({
 });
 
 export type Vecteur = {
+  Nom: string;
   Description: string;
   Difficulte: string;
 };
 
 const VECTEURS = Object.freeze({
   CONTACT: {
+    Nom: "Contact",
+    Description: "Les effets sont appliqué a la cible touchée.",
     Difficulte: "Attaque engagée de Pugilat (Intelligence)",
   },
   SOUFFLE: {
-    Difficulte: "Test d'évocation (Vigueur) de difficulté dépendant de la distance couverte",
+    Nom: "Souffle",
+    Description:
+      "Le lanceur canalyse l'energie dans ses poumons, et applique ces effets dans un cône devant lui sur courte distance",
+    Difficulte:
+      "Test d'évocation (Vigueur) de difficulté dépendant de la distance couverte",
   },
   PROJECTILE: {
+    Nom: "Projectile",
+    Description:
+      "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endoit indiqué, et applique ses effets a l'impact avant de s'estomper.",
     Difficulte: "Attaque à distance d'évocation (Intelligence)",
   },
   ONDE: {
-    Difficulte: "Test d'évocation d'évocation (Intelligence) de difficulté dépendant de la distance couverte",
+    Nom: "Onde",
+    Description:
+      "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à porté courte autour de lui.",
+    Difficulte:
+      "Test d'évocation d'évocation (Intelligence) de difficulté dépendant de la distance couverte",
   },
   EXPLOSION_CADAVRE: {
+    Nom: "Explosion de cadavre",
+    Description:
+      "L'energie residuel du cadavre visé a portée longue est utilisé pour appliquer des effets sur tout les cibles a porté courte du cadavre.",
     Difficulte:
       "Medecine (Intelligence) Difficulté egale a la sommes des niveau des cadavres",
   },
@@ -73,8 +93,8 @@ export type Effet = {
 
 export const EFFETS = Object.freeze({
   ATOUT: {
-    Description:
-      "La cible gagne 1 atout (Cummulable) sur sont prochain test.",
+    Nom: "Atout",
+    Description: "La cible gagne 1 atout (Cummulable) sur sont prochain test.",
     IsCummulable: true,
     StabiliteParTypeCapacite: {
       [CapaciteTypeName.EVOCATION]: -4,
@@ -82,6 +102,7 @@ export const EFFETS = Object.freeze({
     },
   },
   CHALEUR: {
+    Nom: "Chaleur",
     Description:
       "Inflige 1 Dommage (Cummulable) par succes net et par avantages",
     IsCummulable: true,
@@ -92,6 +113,7 @@ export const EFFETS = Object.freeze({
     },
   },
   FORCE: {
+    Nom: "Force",
     Description:
       "Inflige 1 Dommage (Cummulable) par succes net. Les cibles dont la Vigueur est inferieur au nombre d'avantage générés sont renversés",
     IsCummulable: true,
@@ -101,6 +123,7 @@ export const EFFETS = Object.freeze({
     },
   },
   MORAL: {
+    Nom: "Moral",
     Description:
       "La cible est soigné d'1 point de stress (Cummulable) par succes net",
     IsCummulable: true,
@@ -111,6 +134,7 @@ export const EFFETS = Object.freeze({
     },
   },
   INFORTUNE: {
+    Nom: "Infortune",
     Description:
       "La cible subit 1 Infortune (Cummulable) sur sont prochain test.",
     IsCummulable: true,
@@ -121,6 +145,7 @@ export const EFFETS = Object.freeze({
     },
   },
   SOIN: {
+    Nom: "Soin",
     Description:
       "La cible dépense immediatement 1 point de résilience (Cummulable) pour regagner ses PV. Chaque avantage soigne 1 Point de stress.",
     IsCummulable: true,
@@ -130,6 +155,7 @@ export const EFFETS = Object.freeze({
     },
   },
   VAMPIRISME: {
+    Nom: "Vampirisme",
     Description:
       "Inflige 1 Dommage (Cummulable) par succes net. Si l'effet est appliqué, le lanceur regagne 1 (Cummulable) point de vitalité",
     IsCummulable: true,
@@ -139,6 +165,7 @@ export const EFFETS = Object.freeze({
     },
   },
   VOL: {
+    Nom: "Vol",
     Description:
       "La cible de gabarit 1 (Cummulable) au maximum est en levitation pendant un bref instant.",
     IsCummulable: true,
@@ -151,51 +178,60 @@ export const EFFETS = Object.freeze({
 
 const AMELIORATION = Object.freeze({
   CATALYSEUR: {
-    Description: "Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.",
-    IsCummulable: false,
-    StabiliteParTypeCapacite: {
-      [CapaciteTypeName.EVOCATION]: -1,
-      [CapaciteTypeName.BENEDICTION]: -1,
-    }
-  }, DIFFICILE: {
-    Description: "Subissez 1 infortune sur votre jet.",
-    IsCummulable: true,
-    StabiliteParTypeCapacite: {
-      [CapaciteTypeName.EVOCATION]: -1,
-      [CapaciteTypeName.BENEDICTION]: -1,
-    }
-  },
-  ENERGIE_ACTIVATION: {
-    Description: "La capacité n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
-    IsCummulable: false,
-    StabiliteParTypeCapacite: {
-      [CapaciteTypeName.EVOCATION]: -1,
-      [CapaciteTypeName.BENEDICTION]: -1,
-    }
-  },
-  INGREDIENT: {
-    Description: "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de la capacité. Le gains de stabilité dépend de la puissance de l'objet",
-    IsCummulable: true,
-    StabiliteParTypeCapacite: {
-      [CapaciteTypeName.EVOCATION]: -1,
-      [CapaciteTypeName.BENEDICTION]: -1,
-    }
-  },
-  CONTRE_COUP: {
-    Description: "Le lanceur subit 1 dommage ignorant la protection pour chaque désavantage généré.",
-    IsCummulable: false,
-    StabiliteParTypeCapacite: {
-      [CapaciteTypeName.EVOCATION]: -1,
-      [CapaciteTypeName.BENEDICTION]: -1,
-    }
-  },
-  PERSONNEL: {
-    Description: "La capacité ne peut être lancé que sur son lanceur.",
+    Nom: "Catalyseur",
+    Description:
+      "Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.",
     IsCummulable: false,
     StabiliteParTypeCapacite: {
       [CapaciteTypeName.EVOCATION]: -1,
       [CapaciteTypeName.BENEDICTION]: -1,
     },
-    VecteurAvailable: ["INJONCTION", "PROJECTILE"]
-  }
-})
+  },
+  DIFFICILE: {
+    Nom: "Difficile",
+    Description: "Subissez 1 infortune sur votre jet.",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: -1,
+      [CapaciteTypeName.BENEDICTION]: -1,
+    },
+  },
+  ENERGIE_ACTIVATION: {
+    Nom: "Energie d'activation",
+    Description:
+      "La capacité n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
+    IsCummulable: false,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: -1,
+      [CapaciteTypeName.BENEDICTION]: -1,
+    },
+  },
+  INGREDIENT: {
+    Nom: "Ingredient",
+    Description:
+      "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de la capacité. Le gains de stabilité dépend de la puissance de l'objet",
+    IsCummulable: true,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: -1,
+      [CapaciteTypeName.BENEDICTION]: -1,
+    },
+  },
+  CONTRE_COUP: {
+    Nom: "Contre-coup",
+    Description:
+      "Le lanceur subit 1 dommage ignorant la protection pour chaque désavantage généré.",
+    IsCummulable: false,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.EVOCATION]: -1,
+      [CapaciteTypeName.BENEDICTION]: -1,
+    },
+  },
+  PERSONNEL: {
+    Nom: "Personel",
+    Description: "La capacité ne peut être lancé que sur son lanceur.",
+    IsCummulable: false,
+    StabiliteParTypeCapacite: {
+      [CapaciteTypeName.BENEDICTION]: -1,
+    },
+  },
+});
