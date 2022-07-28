@@ -7,7 +7,7 @@
     <ion-card-content v-show="showAttribute">
       <ion-list :key="index" v-for="(item, index) in caracteristique.Attributs">
         <ion-item>
-          <ion-icon :icon="getIcon(item)" slot="start"></ion-icon>
+          <ion-icon :icon="item.Icon" slot="start"></ion-icon>
           <ion-label :key="index" slot="start">{{ item.Nom }}</ion-label>
           <ion-note slot="end">{{ item.Description }}</ion-note>
         </ion-item>
@@ -31,8 +31,6 @@ import {
   IonItem,
 } from "@ionic/vue";
 
-import { heart, heartCircle, flash, shieldHalf } from "ionicons/icons";
-
 export default defineComponent({
   components: {
     IonCard,
@@ -50,23 +48,7 @@ export default defineComponent({
     caracteristique: Object,
   },
   data() {
-    return { showAttribute: false, heart };
-  },
-  methods: {
-    getIcon(item) {
-      switch (item.Nom) {
-        case "PV":
-          return heart;
-        case "Défense":
-          return shieldHalf;
-        case "Résilience":
-          return heartCircle;
-        case "Stress":
-          return flash;
-        default:
-          return "";
-      }
-    },
+    return { showAttribute: false };
   },
 });
 </script>
