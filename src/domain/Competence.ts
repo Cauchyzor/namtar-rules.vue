@@ -1,81 +1,110 @@
-import { Caracteristique, CARACTERISTIQUES } from "./Caracteristique";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { CaracteritiqueName } from "./Caracteristique";
 
 export type Competence = {
-  Nom: string;
-  BaseCaracteristique: Caracteristique;
+  Nom: CompetenceName;
+  BaseCaracteristique: CaracteritiqueName;
 };
 
-export const COMPETENCES = Object.freeze({
-  ATHLETISME: {
-    Nom: "Athletisme",
-    BaseCaracteristique: CARACTERISTIQUES.VIGUEUR,
-  },
-  CORPS_A_CORPS: {
-    Nom: "Corps à Corps",
-    BaseCaracteristique: CARACTERISTIQUES.VIGUEUR,
-  },
-  PUGILAT: {
-    Nom: "Pugilat",
-    BaseCaracteristique: CARACTERISTIQUES.VIGUEUR,
-  },
-  COORDINATION: {
-    Nom: "Coordination",
-    BaseCaracteristique: CARACTERISTIQUES.AGILITE,
-  },
-  PILOTAGE: {
-    Nom: "Pilotage",
-    BaseCaracteristique: CARACTERISTIQUES.AGILITE,
-  },
-  ARME_A_ENERGIE: {
-    Nom: "Arme à énergie",
-    BaseCaracteristique: CARACTERISTIQUES.AGILITE,
-  },
-  CONNAISSANCE_HISTOIRE: {
-    Nom: "Connaissance - Histoire",
-    BaseCaracteristique: CARACTERISTIQUES.INTELLIGENCE,
-  },
-  CONNAISSANCE_CULTES: {
-    Nom: "Connaissance - Cultes",
-    BaseCaracteristique: CARACTERISTIQUES.INTELLIGENCE,
-  },
-  MEDECINE: {
-    Nom: "Médecine",
-    BaseCaracteristique: CARACTERISTIQUES.INTELLIGENCE,
-  },
-  SURVIE: {
-    Nom: "Survie",
-    BaseCaracteristique: CARACTERISTIQUES.INTELLIGENCE,
-  },
-  INGENIERIE: {
-    Nom: "Ingénierie",
-    BaseCaracteristique: CARACTERISTIQUES.INTELLIGENCE,
-  },
-  EVOCATION: {
-    Nom: "Evocation",
-    BaseCaracteristique: CARACTERISTIQUES.INTELLIGENCE,
-  },
-  CHARME: {
-    Nom: "Charme",
-    BaseCaracteristique: CARACTERISTIQUES.CHARISME,
-  },
-  NEGOCIATION: {
-    Nom: "Négociation",
-    BaseCaracteristique: CARACTERISTIQUES.CHARISME,
-  },
-  TROMPERIE: {
-    Nom: "Tromperie",
-    BaseCaracteristique: CARACTERISTIQUES.CHARISME,
-  },
-  PERSPICACITE: {
-    Nom: "Perspicacité",
-    BaseCaracteristique: CARACTERISTIQUES.CHARISME,
-  },
-  ALTERATION: {
-    Nom: "Altération",
-    BaseCaracteristique: CARACTERISTIQUES.CHARISME,
-  },
-  Intimidation: {
-    Nom: "Intimidation",
-    BaseCaracteristique: CARACTERISTIQUES.CHARISME,
-  },
-});
+export enum CompetenceName {
+  ATHLETISME = "Athlétisme",
+  CORPS_A_CORPS = "Corps à corps",
+  PUGILAT = "Pugilat",
+  COORDINATION = "Coordination",
+  PILOTAGE = "Pilotage",
+  ARME_A_ENERGIE = "Arme à energie",
+  CONNAISSANCE_HISTOIRE = "Connaissance - Histoire",
+  CONNAISSANCE_CULTES = "Connaissance - Cultes",
+  MEDECINE = "Médecine",
+  SURVIE = "Survie",
+  INGENIERIE = "Ingénierie",
+  EVOCATION = "Evocation",
+  CHARME = "Charme",
+  NEGOCIATION = "Négociation",
+  TROMPERIE = "Tromperie",
+  PERSPICACITE = "Prespicacité",
+  ALTERATION = "Altération",
+  INTIMIDATION = "Intimidation",
+}
+
+export class CompetenceService {
+  private static CompetencesList: Array<Competence> = [
+    {
+      Nom: CompetenceName.ATHLETISME,
+      BaseCaracteristique: CaracteritiqueName.VIGUEUR,
+    },
+    {
+      Nom: CompetenceName.CORPS_A_CORPS,
+      BaseCaracteristique: CaracteritiqueName.VIGUEUR,
+    },
+    {
+      Nom: CompetenceName.PUGILAT,
+      BaseCaracteristique: CaracteritiqueName.VIGUEUR,
+    },
+    {
+      Nom: CompetenceName.COORDINATION,
+      BaseCaracteristique: CaracteritiqueName.AGILITE,
+    },
+    {
+      Nom: CompetenceName.PILOTAGE,
+      BaseCaracteristique: CaracteritiqueName.AGILITE,
+    },
+    {
+      Nom: CompetenceName.ARME_A_ENERGIE,
+      BaseCaracteristique: CaracteritiqueName.AGILITE,
+    },
+    {
+      Nom: CompetenceName.CONNAISSANCE_HISTOIRE,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+    },
+    {
+      Nom: CompetenceName.CONNAISSANCE_CULTES,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+    },
+    {
+      Nom: CompetenceName.MEDECINE,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+    },
+    {
+      Nom: CompetenceName.SURVIE,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+    },
+
+    {
+      Nom: CompetenceName.INGENIERIE,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+    },
+    {
+      Nom: CompetenceName.EVOCATION,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+    },
+    {
+      Nom: CompetenceName.CHARME,
+      BaseCaracteristique: CaracteritiqueName.CHARISME,
+    },
+    {
+      Nom: CompetenceName.NEGOCIATION,
+      BaseCaracteristique: CaracteritiqueName.CHARISME,
+    },
+    {
+      Nom: CompetenceName.TROMPERIE,
+      BaseCaracteristique: CaracteritiqueName.CHARISME,
+    },
+    {
+      Nom: CompetenceName.PERSPICACITE,
+      BaseCaracteristique: CaracteritiqueName.CHARISME,
+    },
+
+    {
+      Nom: CompetenceName.ALTERATION,
+      BaseCaracteristique: CaracteritiqueName.CHARISME,
+    },
+    {
+      Nom: CompetenceName.INTIMIDATION,
+      BaseCaracteristique: CaracteritiqueName.CHARISME,
+    },
+  ]
+  static getCompetencesByCaracteristique(name: CaracteritiqueName){
+    return this.CompetencesList.filter(c => c.BaseCaracteristique === name)
+  }
+}

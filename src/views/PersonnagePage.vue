@@ -16,14 +16,8 @@
         </ion-toolbar>
       </ion-header>
 
-      <swiper
-        :modules="modules"
-        :autoplay="true"
-        :keyboard="true"
-        :pagination="{ type: 'progressbar' }"
-        :parallax="true"
-        :zoom="true"
-      >
+      <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="{ type: 'progressbar' }"
+        :parallax="true" :zoom="true">
         <swiper-slide>
           <ion-text>
             <h1>Determiner les Caracteristiques</h1>
@@ -34,34 +28,33 @@
               minimum 1.
             </p>
           </ion-text>
-          <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.VIGUEUR" />
-          <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.AGILITE" />
-          <CaracteristiqueCard
-            :caracteristique="CARACTERISTIQUES.INTELLIGENCE"
-          />
-          <CaracteristiqueCard :caracteristique="CARACTERISTIQUES.CHARISME" />
+          <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :caracteristique="carac" />
         </swiper-slide>
         <swiper-slide>
-          <ion-text><h1>Choisir des Compétences</h1></ion-text>
+          <ion-text>
+            <h1>Choisir des Compétences</h1>
+          </ion-text>
           <ion-text>
             <p>Augmentez 1 fois le rang de 3 compétences au choix</p>
           </ion-text>
           <ion-list>
-            <template
-              v-for="[carac, competenceList] in competencesByCarac"
-              :key="carac"
-            >
+            <template v-for="(carac) in CaracteritiquesList" :key="carac">
               <ion-item-divider sticky="true">
-                <ion-label> {{ carac }} </ion-label>
+                <ion-label> {{ carac.Nom }} </ion-label>
               </ion-item-divider>
-              <ion-item v-for="comp in competenceList" :key="comp.Nom">
-                <ion-label>{{ comp.Nom }}</ion-label>
+              <ion-item v-for="competence in getCompetencesByCaracteristique(carac.Nom)" :key="competence.Nom">
+                <ion-label>{{ competence.Nom }}</ion-label>
               </ion-item>
             </template>
           </ion-list>
         </swiper-slide>
         <swiper-slide>
-          <ion-text><h1>Selectionner des Capacitées</h1></ion-text>
+          <ion-text>
+            <h1>Selectionner des Capacitées</h1>
+          </ion-text>
+          <ion-item v-for="capacite in CapaciteList" :key="capacite.Nom">
+            <ion-label>{{ capacite.Nom }}</ion-label>
+          </ion-item>
         </swiper-slide>
       </swiper>
     </ion-content>
@@ -90,8 +83,9 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Keyboard, Pagination, Parallax } from "swiper";
 
 import CaracteristiqueCard from "./CaracteristiqueCard.vue";
-import { CARACTERISTIQUES } from "../domain/Caracteristique";
-import { Competence, COMPETENCES } from "../domain/Competence";
+import { CaracteristiqueService, CaracteritiqueName } from "../domain/Caracteristique";
+import { CompetenceService } from "../domain/Competence";
+import { CapaciteService } from "../domain/Capacite";
 
 import "swiper/css";
 import "swiper/css/keyboard";
@@ -117,16 +111,16 @@ export default defineComponent({
     IonLabel,
   },
   data() {
-    let competencesByCarac = new Map<string, Competence[]>();
-    Object.values(COMPETENCES).forEach((c) => {
-      let competences = competencesByCarac.get(c.BaseCaracteristique.Nom) || [];
-      competencesByCarac.set(c.BaseCaracteristique.Nom, [...competences, c]);
-    });
     return {
       modules: [Keyboard, Pagination, Parallax],
-      CARACTERISTIQUES,
-      competencesByCarac,
-    };
+      CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
+      CapaciteList : CapaciteService.getAllCapacites()
+    }
+  },
+  methods: {
+    getCompetencesByCaracteristique(name: CaracteritiqueName) {
+      return CompetenceService.getCompetencesByCaracteristique(name)
+    }
   },
 });
 </script>
@@ -135,7 +129,7 @@ ion-text {
   text-align: center;
 }
 
-ion-text > p {
+ion-text>p {
   margin-left: 18px;
   margin-right: 18px;
 }
