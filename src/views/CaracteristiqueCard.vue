@@ -1,5 +1,5 @@
 <template>
-  <ion-card button="true" @click="showAttribute = !showAttribute">
+  <ion-card button="true">
     <ion-card-header>
       <ion-card-subtitle>{{ caracteristique.Description }}</ion-card-subtitle>
       <ion-card-title>{{ caracteristique.Nom }}</ion-card-title>
@@ -15,7 +15,7 @@
     </ion-card-content>
   </ion-card>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 import {
@@ -31,6 +31,9 @@ import {
   IonItem,
 } from "@ionic/vue";
 
+import type { PropType } from 'vue'
+import type { Caracteristique } from "@/domain/Caracteristique";
+
 export default defineComponent({
   components: {
     IonCard,
@@ -45,11 +48,13 @@ export default defineComponent({
     IonItem,
   },
   props: {
-    caracteristique: Object,
+    showAttribute: Boolean,
+    caracteristique: { type: Object as PropType<Caracteristique>, required: true },
   },
-  data() {
-    return { showAttribute: false };
-  },
+  mounted() {
+    this.showAttribute
+    this.caracteristique
+  }
 });
 </script>
 <style scoped>

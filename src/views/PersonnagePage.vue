@@ -28,7 +28,8 @@
               minimum 1.
             </p>
           </ion-text>
-          <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :caracteristique="carac" />
+          <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :caracteristique="carac"
+            :showAttribute="carac.Nom === selectedCaracteristiqueCard" @click="getClickedCard(carac.Nom)" />
         </swiper-slide>
         <swiper-slide>
           <ion-text>
@@ -79,7 +80,6 @@ import {
 } from "@ionic/vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
-
 import { Keyboard, Pagination, Parallax } from "swiper";
 
 import CaracteristiqueCard from "./CaracteristiqueCard.vue";
@@ -114,12 +114,16 @@ export default defineComponent({
     return {
       modules: [Keyboard, Pagination, Parallax],
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
-      CapaciteList : CapaciteService.getAllCapacites()
+      CapaciteList: CapaciteService.getAllCapacites(),
+      selectedCaracteristiqueCard: CaracteritiqueName.VIGUEUR
     }
   },
   methods: {
     getCompetencesByCaracteristique(name: CaracteritiqueName) {
       return CompetenceService.getCompetencesByCaracteristique(name)
+    },
+    getClickedCard(caracNameSelected: CaracteritiqueName) {
+      this.selectedCaracteristiqueCard = caracNameSelected
     }
   },
 });
