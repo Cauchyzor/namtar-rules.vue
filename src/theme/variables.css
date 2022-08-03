@@ -80,14 +80,6 @@ http://ionicframework.com/docs/theming/ */
 }
 
 @font-face {
-  font-family: "Spaceship 2100";
-  src: url("./spaceship2100.ttf");
-}
-@font-face {
-  font-family: "Contrax";
-  src: url("./conthrax-sb.ttf");
-}
-@font-face {
   font-family: "Nasalisation";
   src: url("./nasalization-rg.otf");
 }
