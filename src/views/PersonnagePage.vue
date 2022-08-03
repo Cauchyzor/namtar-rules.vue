@@ -29,7 +29,7 @@
             </p>
           </ion-text>
           <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :caracteristique="carac"
-            :showAttribute="carac.Nom === selectedCaracteristiqueCard" @click="getClickedCard(carac.Nom)" />
+            :showAttribute="carac.Nom === selectedCaracteristiqueCard" @click="selectCard(carac.Nom)" />
         </swiper-slide>
         <swiper-slide>
           <ion-text>
@@ -122,7 +122,7 @@ export default defineComponent({
     getCompetencesByCaracteristique(name: CaracteritiqueName) {
       return CompetenceService.getCompetencesByCaracteristique(name)
     },
-    getClickedCard(caracNameSelected: CaracteritiqueName) {
+    selectCard(caracNameSelected: CaracteritiqueName) {
       this.selectedCaracteristiqueCard = caracNameSelected
     }
   },
