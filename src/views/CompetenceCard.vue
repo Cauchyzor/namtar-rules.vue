@@ -13,7 +13,7 @@ import {
 
 import type { PropType } from 'vue'
 
-import type { Competence } from "@/domain/competence";
+import type { Competence } from "@/domain/Competence";
 
 export default defineComponent({
     components: {
