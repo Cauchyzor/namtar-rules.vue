@@ -29,7 +29,7 @@
             </p>
           </ion-text>
           <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :Caracteristique="carac"
-            :ShowAttribute="carac.Nom === selectedCaracteristiqueCard" @click="selectCard(carac.Nom)" />
+            :ShowAttribute="carac.Nom === SelectedCaracteristiqueCard" @click="selectCard(carac.Nom)" />
         </swiper-slide>
         <swiper-slide>
           <ion-text>
@@ -38,16 +38,11 @@
           <ion-text>
             <p>Augmentez 1 fois le rang de 3 compétences au choix</p>
           </ion-text>
-          <ion-list>
-            <template v-for="(carac) in CaracteritiquesList" :key="carac">
-              <ion-item-divider sticky="true">
-                <ion-label> {{ carac.Nom }} </ion-label>
-              </ion-item-divider>
-              <ion-item v-for="competence in getCompetencesByCaracteristique(carac.Nom)" :key="competence.Nom">
-                <ion-label>{{ competence.Nom }}</ion-label>
-              </ion-item>
-            </template>
-          </ion-list>
+          <ion-grid>
+            <ion-row v-for="row in CompetencesByRow" :key="row">
+              <CompetenceCard v-for="comp in row" :key="comp.Nom" :Competence="comp"></CompetenceCard>
+            </ion-row>
+          </ion-grid>
         </swiper-slide>
         <swiper-slide>
           <ion-text>
@@ -73,16 +68,18 @@ import {
   IonTitle,
   IonToolbar,
   IonText,
-  IonItemDivider,
   IonItem,
   IonLabel,
-  IonList,
+  IonGrid,
+  IonRow,
 } from "@ionic/vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Keyboard, Pagination, Parallax } from "swiper";
 
 import CaracteristiqueCard from "./CaracteristiqueCard.vue";
+import CompetenceCard from "./CompetenceCard.vue";
+
 import { CaracteristiqueService, CaracteritiqueName } from "../domain/Caracteristique";
 import { CompetenceService } from "../domain/Competence";
 import { CapaciteService } from "../domain/Capacite";
@@ -105,17 +102,29 @@ export default defineComponent({
     Swiper,
     SwiperSlide,
     CaracteristiqueCard,
-    IonList,
+    CompetenceCard,
     IonItem,
-    IonItemDivider,
     IonLabel,
+    IonGrid,
+    IonRow,
   },
   data() {
+    const competencesList = CompetenceService.getAllCompetences()
+    const CompetencesByRow = []
+    CompetencesByRow.push(competencesList.splice(0, 3))
+    CompetencesByRow.push(competencesList.splice(0, 4))
+    CompetencesByRow.push(competencesList.splice(0, 4))
+    CompetencesByRow.push(competencesList.splice(0, 4))
+    CompetencesByRow.push(competencesList.splice(0, 3))
     return {
       modules: [Keyboard, Pagination, Parallax],
+      
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
+      SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
+
+      CompetencesByRow: CompetencesByRow,
+
       CapaciteList: CapaciteService.getAllCapacites(),
-      selectedCaracteristiqueCard: CaracteritiqueName.VIGUEUR
     }
   },
   methods: {
@@ -123,7 +132,7 @@ export default defineComponent({
       return CompetenceService.getCompetencesByCaracteristique(name)
     },
     selectCard(caracNameSelected: CaracteritiqueName) {
-      this.selectedCaracteristiqueCard = caracNameSelected
+      this.SelectedCaracteristiqueCard = caracNameSelected
     }
   },
 });
@@ -142,5 +151,9 @@ ion-text {
 ion-text>p {
   margin-left: 18px;
   margin-right: 18px;
+}
+
+ion-row {
+  justify-content: center;
 }
 </style>

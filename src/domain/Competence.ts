@@ -104,7 +104,19 @@ export class CompetenceService {
       BaseCaracteristique: CaracteritiqueName.CHARISME,
     },
   ]
-  static getCompetencesByCaracteristique(name: CaracteritiqueName){
+  /**
+   * 
+   * @param name List all competences with this Caracteristique by default
+   * @returns 
+   */
+  static getCompetencesByCaracteristique(name: CaracteritiqueName) {
     return this.CompetencesList.filter(c => c.BaseCaracteristique === name)
+  }
+  /**
+   * Returne all Competences with info
+   * @returns 
+   */
+  static getAllCompetences() {
+    return this.CompetencesList
   }
 }
