@@ -48,9 +48,7 @@
           <ion-text>
             <h5 class="page-title">Selectionner des Capacitees</h5>
           </ion-text>
-          <ion-item v-for="capacite in CapaciteList" :key="capacite.Nom">
-            <ion-label>{{ capacite.Nom }}</ion-label>
-          </ion-item>
+          <CapaciteItem v-for="capacite in CapaciteList" :key="capacite.Nom" :Capacite="capacite"></CapaciteItem>
         </swiper-slide>
       </swiper>
     </ion-content>
@@ -68,8 +66,6 @@ import {
   IonTitle,
   IonToolbar,
   IonText,
-  IonItem,
-  IonLabel,
   IonGrid,
   IonRow,
 } from "@ionic/vue";
@@ -79,10 +75,11 @@ import { Keyboard, Pagination, Parallax } from "swiper";
 
 import CaracteristiqueCard from "./CaracteristiqueCard.vue";
 import CompetenceCard from "./CompetenceCard.vue";
+import CapaciteItem from "./CapaciteItem.vue";
 
 import { CaracteristiqueService, CaracteritiqueName } from "../domain/Caracteristique";
-import { CompetenceService } from "../domain/Competence";
-import { CapaciteService } from "../domain/Capacite";
+import { CompetenceService } from "@/domain/Competence";
+import { CapaciteService } from "@/domain/Capacite";
 
 import "swiper/css";
 import "swiper/css/keyboard";
@@ -103,8 +100,7 @@ export default defineComponent({
     SwiperSlide,
     CaracteristiqueCard,
     CompetenceCard,
-    IonItem,
-    IonLabel,
+    CapaciteItem,
     IonGrid,
     IonRow,
   },
@@ -118,7 +114,7 @@ export default defineComponent({
     CompetencesByRow.push(competencesList.splice(0, 3))
     return {
       modules: [Keyboard, Pagination, Parallax],
-      
+
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
 

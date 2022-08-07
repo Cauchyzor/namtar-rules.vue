@@ -2,6 +2,7 @@
 export type Capacite = {
   Nom: string;
   Description: string;
+  Image: string,
   Type: CapaciteType;
   Vecteur: Vecteur;
   Effets: Map<EffetName, number>;
@@ -282,6 +283,7 @@ export class CapaciteService {
       Nom: "Eclat de feu",
       Description:
         "Vous formez une sphère d'energie et la projetez dans la direction de la cible. A son contact, la cible est brulée et subit des dommages.",
+      Image: "",
       Type: this.getCapacityTypeByName(CapaciteTypeName.EVOCATION),
       Vecteur: this.getVecteurByName(VecteurName.PROJECTILE),
       Effets: new Map([[EffetName.CHALEUR, 1]]),
@@ -291,6 +293,7 @@ export class CapaciteService {
       Nom: "Touché guerisseur",
       Description:
         "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de Résiliance pour regagner ses PV perdus.",
+      Image: "",
       Type: this.getCapacityTypeByName(CapaciteTypeName.BENEDICTION),
       Vecteur: this.getVecteurByName(VecteurName.CONTACT),
       Effets: new Map([[EffetName.SOIN, 1]]),
@@ -300,6 +303,7 @@ export class CapaciteService {
       Nom: "Nova mortelle",
       Description:
         "L'energie résiduelle du cadavre visé s'echape violament et renverse les cibles a portée courtes",
+      Image: "",
       Type: this.getCapacityTypeByName(CapaciteTypeName.NECROMANCIE),
       Vecteur: this.getVecteurByName(VecteurName.EXPLOSION_CADAVRE),
       Effets: new Map([[EffetName.FORCE, 2]]),
