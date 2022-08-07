@@ -80,6 +80,11 @@ http://ionicframework.com/docs/theming/ */
 }
 
 @font-face {
+  font-family: "Anurati-Regular";
+  src: url("../theme/Anurati-Regular.otf");
+}
+
+@font-face {
   font-family: "Nasalisation";
   src: url("./nasalization-rg.otf");
 }

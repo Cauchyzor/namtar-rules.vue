@@ -20,7 +20,7 @@
         :parallax="true" :zoom="true">
         <swiper-slide>
           <ion-text>
-            <h1>Determiner les Caracteristiques</h1>
+            <h5 class="page-title">Determiner les caracteritiques</h5>
           </ion-text>
           <ion-text>
             <p>
@@ -33,7 +33,7 @@
         </swiper-slide>
         <swiper-slide>
           <ion-text>
-            <h1>Choisir des Compétences</h1>
+            <h5 class="page-title">Choisir des Competences</h5>
           </ion-text>
           <ion-text>
             <p>Augmentez 1 fois le rang de 3 compétences au choix</p>
@@ -51,7 +51,7 @@
         </swiper-slide>
         <swiper-slide>
           <ion-text>
-            <h1>Selectionner des Capacitées</h1>
+            <h5 class="page-title">Selectionner des Capacitees</h5>
           </ion-text>
           <ion-item v-for="capacite in CapaciteList" :key="capacite.Nom">
             <ion-label>{{ capacite.Nom }}</ion-label>
@@ -129,8 +129,14 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+.page-title {
+  text-transform: Uppercase;
+  font-family: "Anurati-Regular";
+}
+
 ion-text {
   text-align: center;
+  font-size: smaller;
 }
 
 ion-text>p {
