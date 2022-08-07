@@ -28,8 +28,8 @@
               minimum 1.
             </p>
           </ion-text>
-          <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :caracteristique="carac"
-            :showAttribute="carac.Nom === selectedCaracteristiqueCard" @click="selectCard(carac.Nom)" />
+          <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :Caracteristique="carac"
+            :ShowAttribute="carac.Nom === selectedCaracteristiqueCard" @click="selectCard(carac.Nom)" />
         </swiper-slide>
         <swiper-slide>
           <ion-text>

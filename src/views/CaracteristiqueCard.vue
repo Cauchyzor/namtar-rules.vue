@@ -1,11 +1,11 @@
 <template>
   <ion-card button="true">
     <ion-card-header>
-      <ion-card-subtitle>{{ caracteristique.Description }}</ion-card-subtitle>
-      <ion-card-title>{{ caracteristique.Nom }}</ion-card-title>
+      <ion-card-subtitle>{{ Caracteristique.Description }}</ion-card-subtitle>
+      <ion-card-title>{{ Caracteristique.Nom }}</ion-card-title>
     </ion-card-header>
-    <ion-card-content v-show="showAttribute">
-      <ion-list :key="index" v-for="(item, index) in caracteristique.Attributs">
+    <ion-card-content v-show="ShowAttribute">
+      <ion-list :key="index" v-for="(item, index) in Caracteristique.Attributs">
         <ion-item>
           <ion-icon :icon="item.Icon" slot="start"></ion-icon>
           <ion-label :key="index" slot="start">{{ item.Nom }}</ion-label>
@@ -48,12 +48,12 @@ export default defineComponent({
     IonItem,
   },
   props: {
-    showAttribute: Boolean,
-    caracteristique: { type: Object as PropType<Caracteristique>, required: true },
+    ShowAttribute: Boolean,
+    Caracteristique: { type: Object as PropType<Caracteristique>, required: true },
   },
   mounted() {
-    this.showAttribute
-    this.caracteristique
+    this.ShowAttribute
+    this.Caracteristique
   }
 });
 </script>
