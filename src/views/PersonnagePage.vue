@@ -15,29 +15,21 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
-
+      <div class="title-section">
+        <ion-text>
+          <h5 class="page-title">{{ slideTitle }}</h5>
+        </ion-text>
+        <ion-text>
+          <p>{{ slideSubtitle }}</p>
+        </ion-text>
+      </div>
       <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="{ type: 'progressbar' }"
-        :parallax="true" :zoom="true">
+        :parallax="true" :zoom="true" @slideChange="sliderChange" @swiper="sliderChange">
         <swiper-slide>
-          <ion-text>
-            <h5 class="page-title">Determiner les caracteritiques</h5>
-          </ion-text>
-          <ion-text>
-            <p>
-              Répartissez 15 points dans 4 caracteristiques, au maximum 5 et
-              minimum 1.
-            </p>
-          </ion-text>
           <CaracteristiqueCard v-for="(carac) in CaracteritiquesList" :key="carac.Nom" :Caracteristique="carac"
             :ShowAttribute="carac.Nom === SelectedCaracteristiqueCard" @click="selectCard(carac.Nom)" />
         </swiper-slide>
         <swiper-slide>
-          <ion-text>
-            <h5 class="page-title">Choisir des Competences</h5>
-          </ion-text>
-          <ion-text>
-            <p>Augmentez 1 fois le rang de 3 compétences au choix</p>
-          </ion-text>
           <ion-grid>
             <ion-row v-for="row in CompetencesByRow" :key="row">
               <CompetenceCard v-for="comp in row" :key="comp.Nom" :Competence="comp"></CompetenceCard>
@@ -45,9 +37,6 @@
           </ion-grid>
         </swiper-slide>
         <swiper-slide>
-          <ion-text>
-            <h5 class="page-title">Selectionner des Capacitees</h5>
-          </ion-text>
           <CapaciteItem v-for="capacite in CapaciteList" :key="capacite.Nom" :Capacite="capacite"></CapaciteItem>
         </swiper-slide>
       </swiper>
@@ -115,6 +104,7 @@ export default defineComponent({
     return {
       modules: [Keyboard, Pagination, Parallax],
 
+      activeSlideNumber: 0,
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
 
@@ -123,17 +113,42 @@ export default defineComponent({
       CapaciteList: CapaciteService.getAllCapacites(),
     }
   },
+  computed: {
+    slideTitle(): string {
+      switch (this.activeSlideNumber) {
+        case 0: return "Determiner les caracteritiques"
+        case 1: return "Choisir des Competences"
+        case 2: return "Selectionner des Capacitees"
+        default: return ""
+      }
+    },
+    slideSubtitle(): string {
+      switch (this.activeSlideNumber) {
+        case 0: return "Répartissez 15 points dans 4 caracteristiques, au maximum 5 et minimum 1."
+        case 1: return "Augmentez 1 fois le rang de 3 compétences au choix"
+        case 2: return "Choisir les 4 Capacitées qui seront connues par votre personnage au debut de l'aventure"
+        default: return ""
+      }
+    },
+  },
   methods: {
     getCompetencesByCaracteristique(name: CaracteritiqueName) {
       return CompetenceService.getCompetencesByCaracteristique(name)
     },
     selectCard(caracNameSelected: CaracteritiqueName) {
       this.SelectedCaracteristiqueCard = caracNameSelected
-    }
+    },
+    sliderChange(e: any): void {
+      this.activeSlideNumber = e.activeIndex
+    },
   },
 });
 </script>
 <style scoped>
+.title-section {
+  height: 100px;
+}
+
 .page-title {
   text-transform: Uppercase;
   font-family: "Anurati-Regular";
