@@ -21,5 +21,6 @@ export default defineComponent({
 .page-title {
     text-transform: Uppercase;
     font-family: "Anurati-Regular";
+    text-align: center;
 }
 </style>
