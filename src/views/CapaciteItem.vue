@@ -1,11 +1,11 @@
 <template>
     <ion-item>
         <ion-thumbnail slot="start">
-            <img :src="Capacite.Image">
+            <img :src="Capacite.Image || 'assets/icon/icon.png'">
         </ion-thumbnail>
-        <ion-label>
-            <h2>{{ Capacite.Nom }}</h2>
-            <p>{{ Capacite.Description }}</p>
+        <ion-label class="ion-text-wrap">
+            <p>{{ Capacite.Nom }}</p>
+            <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
         </ion-label>
         <ion-button fill="outline" slot="end">Détail</ion-button>
     </ion-item>
@@ -17,7 +17,7 @@ import {
     IonItem,
     IonLabel,
     IonThumbnail,
-    IonButton
+    IonButton,
 } from "@ionic/vue";
 
 import type { PropType } from 'vue'
@@ -29,7 +29,7 @@ export default defineComponent({
         IonItem,
         IonLabel,
         IonThumbnail,
-        IonButton
+        IonButton,
     },
     props: {
         Capacite: { type: Object as PropType<Capacite>, required: true },
