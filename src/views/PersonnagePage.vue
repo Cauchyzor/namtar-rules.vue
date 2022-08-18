@@ -16,9 +16,7 @@
         </ion-toolbar>
       </ion-header>
       <div class="title-section">
-        <ion-text>
-          <h5 class="page-title">{{ slideTitle }}</h5>
-        </ion-text>
+        <NamTitle class="page-title">{{ slideTitle }}</NamTitle>
         <ion-text>
           <p>{{ slideSubtitle }}</p>
         </ion-text>
@@ -65,6 +63,7 @@ import { Keyboard, Pagination, Parallax } from "swiper";
 import CaracteristiqueCard from "@/components/CaracteristiqueCard.vue";
 import CompetenceCard from "@/components/CompetenceCard.vue";
 import CapaciteItem from "@/components/CapaciteItem.vue";
+import NamTitle from '@/components/NamTitle.vue'
 
 import { CaracteristiqueService, CaracteritiqueName } from "../domain/Caracteristique";
 import { CompetenceService } from "@/domain/Competence";
@@ -90,6 +89,7 @@ export default defineComponent({
     CaracteristiqueCard,
     CompetenceCard,
     CapaciteItem,
+    NamTitle,
     IonGrid,
     IonRow,
   },
@@ -149,11 +149,6 @@ export default defineComponent({
 <style scoped>
 .title-section {
   height: 100px;
-}
-
-.page-title {
-  text-transform: Uppercase;
-  font-family: "Anurati-Regular";
 }
 
 ion-text {
