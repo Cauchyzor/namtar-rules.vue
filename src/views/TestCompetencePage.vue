@@ -15,159 +15,47 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
-      <h1 class="page-title">Succès et Echecs</h1>
-      <p>
-        À chaque fois qu&#39;une action entreprise par un personnage peut
-        échouer, déterminer le résultat ce fait alors avec un jet de dés. Le
-        score à obtenir dépend de la situation. Parfois, le nombre de succès à
-        obtenir est choisis par le MJ, parfois déterminé par les atouts de
-        l&#39;adversaire, parfois déterminé par un autre jet de dé en
-        opposition. Les dé à utiliser généralement sont des dés à 6 face
-        <strong>(D6)</strong>. Mais certaines capacitées, ou certains equipement
-        vous demanderont d&#39;effectuer des jets avec des dés différents.
-      </p>
+      <NamTitle>Succes et Echecs</NamTitle>
+      <ion-text>Les Tests sont résolut en opposant les résultats d'une pool de dé "positive" versus une pool de dé
+        "négative"</ion-text>
       <h2>Dés positif versus Dés négatif</h2>
-      <p>
-        Prenons exemple : José-Baltazar cherche à sauter au dessus d&#39;un
-        précipice. Le MJ lui demendera surement un test d&#39;Athletisme.
-      </p>
+      <p>Les pool sont constitué de D6</p>
+      <p>Pour les dés positifs</p>
       <ul>
-        <li>
-          Si José-Baltazar à 3 en Vigueur et le rang 1 en compétence
-          d&#39;athletisme, il peut constutuer une réserve de :
-          <strong>3+1=4 D6</strong>
-        </li>
-        <li>
-          Le MJ estime que José-B doit faire un joli saut pour passer au dessus
-          sans tomber. En plus, le précipice est profond. Il va donc definir la
-          <strong>difficultée a 3</strong>. Il constitue une réserve de
-          <strong>3 D6</strong>
-        </li>
+        <li>le résultat 6 génère : 1 succès</li>
+        <li>le résultat 5 génère : 1 avantage</li>
+        <li>les autres résultats ne sont pas interprétés</li>
       </ul>
-      <p>
-        A partir de se momment, José-B va pouvoir faire sont test.. Il réunis
-        4D6 et 3D6 (de deux couleurs differente) et les lances. le MJ interprête
-        ensuite les resultats de la manière suivante :
-      </p>
-      <p>
-        <strong><em>Pour chaque dé positif :</em></strong>
-      </p>
+      <p>Pour les dés négatif</p>
       <ul>
-        <li><strong>5</strong> : Génère 1 avantage.</li>
-        <li><strong>6</strong> : Génère 1 succès.</li>
-      </ul>
-      <p>
-        <strong><em>Pour chaque dé négatif :</em></strong>
-      </p>
-      <ul>
-        <li><strong>1</strong> : Génère 1 échec.</li>
-        <li><strong>2</strong> : Génère 1 désavantage.</li>
+        <li>le résultat 1 génère : 1 échec</li>
+        <li>le résultat 2 génère : 1 désavantage</li>
+        <li>les autres résultats ne sont pas interprétés</li>
       </ul>
       <p>Chaque échec annule un succès Chaque désavantage annule un avantage</p>
       <p>
-        Le score final, qu&#39;on appelle
-        <strong>résultat net, est déterminé par la somme des échecs avec les succès
-          et les avantages avec les désavantage</strong>. Si le tests génère au <strong>moins 1 succès</strong>, le test
-        réussi, sinon il échoue.
-      </p>
-      <h1>Avantage et Désavantage</h1>
-      <p>
-        Vous générez des avantages ou des désavantage lors de vos jets de dés,
-        ou grâce à des capacités spéciales. Le MJ peut également décider que les
-        circonstances influencent un jet de dé dans une direction ou une autre
-        et choisir d&#39;accorder des avantages ou d&#39;imposer un désavantage
-        en conséquence.
+        Le score final, qu&#39;on appelle résultat net, est déterminé par la somme des échecs avec les succès et les
+        avantages avec les désavantage. Si le tests génère au moins 1 succès, le test réussi, sinon il échoue.
       </p>
       <p>
-        C&#39;est l&#39;occasion pour le MJ de décrire une action qui produit
-        des effets de bords qui peuvent influencer sur la réussite future des
-        jets. Une pirouette scénaristique est toujours la bienvenue, comme par
-        exemple : si l&#39;ennemi à beaucoup de désavantage :
-        <em>&quot;Après avoir correctement porté son attaque, et en se
-          repositionnant, la créature pose le pied sur une pile de roches
-          instables. Elle vacille, perd l&#39;équilibre puis chute à
-          terre&quot;</em>.
+        Si il reste des avantages ou des désavantage, il peuvent déclancher respectivemet des effets en faveur ou en
+        défaveur du lanceur
       </p>
-      <p>
-        De manière générale, vous pouvez toujours résoudre les avantages et
-        désavantage de la manière suivante :
-      </p>
-      <ul>
-        <li>
-          <strong>Moral</strong> : Lors du prochain test de compétence ou jet
-          d&#39;attaque,
-          <strong>relancez chaque dé tombé en échec pour chaque avantage</strong>. À l&#39;inverse, relancer chaque dé
-          tombé en succès pour chaque
-          désavantage. Interprétez le résultat après la résolution des avantages
-          ou désavantage
-        </li>
-        <li>
-          <strong>Effets de bord</strong> : Les capacitées utilisées ont parfois
-          des effets de bords qui augmentent leurs puissance. Elles consomment
-          généralement des avantages.
-        </li>
-        <li>
-          <strong>Epuisement</strong> : Les désavantages lors de
-          l&#39;utilisation de compétences traduisent une complexité inattendue,
-          et peuvent être utilisés par le MJ pour faire
-          <strong>perdre des points de concentration ou de volonté au lanceur</strong>.
-        </li>
-      </ul>
+
       <p>
         <strong>Règle optionnelle</strong> : Les avantages et désavantage sont
         partagé avec tout le groupe. Ce sont les joueurs qui décident de comment
         dépenser leurs avantages, et au MJ de déclancher leurs désavantage.
       </p>
-      <h1>Augmenter ou Dimiuer les dé de dégâts</h1>
-      <p>
-        Certaines capacités vous permetterons d&#39;augmenter les chances
-        d&#39;infliger d&#39;avantage de dégâts avec vos armes. Quand il est
-        question d&#39;augmenter un dé de dégât, il suffit de remplacer le dé
-        habituel de l&#39;arme par un dés de valeurs superieurs.
-      </p>
-      <ul>
-        <li>
-          Augmenter une fois une arme avec 1d8 de dégât signifie utiliser 1d10 à
-          la place.
-        </li>
-        <li>
-          Augmenter deux fois une arme avec 1d8 de dégât signifie utiliser 1d12
-          à la place.
-        </li>
-      </ul>
-      <p>
-        Diminuer un dé de dégât revient, à l&#39;inverse , à utiliser un dé avec
-        une valeur inferieur à celui de l&#39;arme.
-      </p>
-      <ul>
-        <li>
-          Diminuer une fois une arme avec 1d8 de dégât signifie utiliser 1d6 à
-          la place.
-        </li>
-        <li>
-          Diminuer deux fois une arme avec 1d8 de dégât signifie utiliser 1d4 à
-          la place.
-        </li>
-      </ul>
-      <p>
-        L&#39;odre des valeurs de dé : <strong>1d4</strong>,
-        <strong>1d6</strong>, <strong>1d8</strong>, <strong>1d10</strong>,
-        <strong>1d12</strong>, <strong>1d20</strong>, <strong>2d12</strong>,
-        <strong>3d10</strong>, <strong>3d12</strong>, <strong>2d20</strong>....
-      </p>
-      <p>
-        <strong>Diminuer un dé de dégat en dessous de 1D4 réduit les dégats de base
-          de l&#39;arme a 1</strong>
-      </p>
 
-      <h1>Utiliser ses compétences</h1>
+      <NamTitle>Test de competence</NamTitle>
       <p>
         Pour chaque test de compétence, le MJ decide da difficulté de la tâche à
         accomplir, qui est représentée par un
         <strong>degré de difficulté (DD)</strong>. Plus une tâche est difficile,
         plus son DD est élevé.
       </p>
-      <h2>Degrés de difficulté</h2>
+      <h5>Degrés de difficulté</h5>
       <p>
         Allant de 0 a +l&#39;infini... Mais voici quelques points pour s&#39;y
         retrouver :
@@ -205,343 +93,28 @@
         <li><strong>15</strong> : Il faut être un cul-bénis</li>
       </ul>
       <p>
-        Pour faire un test de compétence,
-        <strong>préparez autant de d6 que la somme de la valeur de la caractéristique
-          et celle de votre rang de maitrise</strong>
-        (expliqué plus loin). Calculez la somme totale en succès, et si cette
-        somme est égale au nombre de succès nécessaire pour réussir, alors le
-        test est réussi.
+        Pour faire un test de compétence, préparez autant de d6 que la somme de la valeur de la caractéristique
+        et celle de votre rang de maitrise de la competence. Interpretez alors le resultat.
       </p>
-      <h2>Opposition</h2>
+      <NamTitle>Opposition</NamTitle>
       <p>
-        Il peut arriver que les efforts d&#39;un personnage ou d&#39;un monstre
-        se retrouvent directement opposés à ceux d&#39;un autre. Cela peut se
-        produire si tous les deux cherchent à réaliser une même action et
-        qu&#39;un seul peut réussir, comme essayer d&#39;attraper un anneau
-        magique qui est tombé par terre. Cette situation survient aussi quand
-        l&#39;un des deux tente d&#39;empêcher l&#39;autre d&#39;atteindre son
-        but, par exemple quand un monstre tente d&#39;ouvrir de force une porte
-        qu&#39;un aventurier est en train de bloquer. Dans ce type de situation,
-        le résultat est déterminé par un type spécial de test de compétence
-        appelé test opposé ou test en opposition.
+        Les deux créatures qui s&#39;opposent font un test de compétence correspondant à l&#39;action qu&#39;ils tentent
+        de réaliser. Ils
+        appliquent tous les bonus et malus appropriés, puis comparent leurs résultats entre eux. La creature qui a le
+        plus d'avantage peut en tirer profit
       </p>
+      <p>Si les résultats des tests sont identiques, la situation n&#39;évolue pas</p>
+      <NamTitle>Tests de groupe</NamTitle>
       <p>
-        Les deux créatures qui s&#39;opposent font un test de compétence
-        correspondant à l&#39;action qu&#39;ils tentent de réaliser. Ils
-        appliquent tous les bonus et malus appropriés mais, au lieu de comparer
-        leur résultat à un DD,
-        <strong>ils comparent leurs résultats entre eux</strong>. Le personnage
-        ou le monstre qui a le résultat le plus élevé l&#39;emporte et réussit
-        son action, ou empêche son adversaire de réussir sa propre action.
-      </p>
-      <p>
-        Si les
-        <strong>résultats des tests sont identiques, la situation n&#39;évolue
-          pas</strong>
-        et reste la même qu&#39;auparavant. Une des deux créatures peut donc
-        gagner par défaut. Si deux personnages s&#39;opposent pour tenter
-        d&#39;attraper un anneau qui est tombé par terre se retrouvent à
-        égalité, aucun ne réussit à l&#39;attraper. Si un monstre qui cherche à
-        ouvrir de force une porte s&#39;oppose à un aventurier qui essaie de la
-        garder fermée et qu&#39;ils se retrouvent à égalité, cela signifie que
-        la porte reste fermée.
-      </p>
-      <h2>Rangs de maitrise</h2>
-      <p>
-        Chaque compétence régroupe l&#39;ensemble des facultés aquise par
-        l&#39;experience et l&#39;éducation qui lui permettent d&#39;exceller
-        dans une discipline et les actions qui lui sont liées. Les compétences
-        initialement maîtrisées par un personnage sont déterminées au moment de
-        sa création. Une compétence a
-        <strong>une caractéristique associée ainsi qu&#39;un rang de maitrise</strong>, et
-        <strong>les dés à lancer sont déterminés par une combinaison de ces deux
-          valeurs</strong>. Chaque compétences est en général toujour testée avec la même
-        caractéristique. Mais en fonction des situations, le MJ pourra demander
-        une combinaison inhabituelle selon l&#39;action qui devra être réalisée.
-      </p>
-      <ul>
-        <li>
-          Le rang 0, le <strong>Novice</strong> : Le personnage n&#39;a pas
-          d&#39;expériences particulières dans la compétence. Seul sa
-          caractéristique est prise en compte pour établir les dés à utiliser
-          pour les tests liés à cette compétence.
-        </li>
-        <li>
-          Le rang 1, la <strong>Maitrise</strong> : Le personnage a une certaine
-          familiarité, et une éducation adéquate pour la réalisation de
-          certaines actions relative à la compétence. Lorsqu&#39;un jet est
-          maitrisé, <strong>échangez la moitié des d6 en d8</strong>.
-        </li>
-        <li>
-          Le rang 2, l&#39;<strong>Expertise</strong> : C&#39;est le rang de
-          maîtrise plus haut que vous pouvez obtenir. Elle représente un
-          personnage qui bénéficie d&#39;une grande expérience théorique et
-          pratique dans un domaine. Lors d&#39;un jet d&#39;expert,
-          <strong>échangez tous des d6 en d8</strong>.
-        </li>
-      </ul>
-      <p>
-        Le rang de maitrise peut évoluer à chaque gain niveau du personnnage.
-      </p>
-      <h2>Travailler ensemble</h2>
-      <p>
-        Parfois, deux personnages ou plus se rassemblent pour tenter de réaliser
-        une action. Le personnage qui mène cet effort commun – ou celui qui
-        possède le plus haut rang de maitrise – peut faire un test de compétence
-        avec
-        <strong>autant d&#39;avantage que de personne qui l&#39;aident</strong>.
-        En combat, il faut utiliser l&#39;action aider pour obtenir un effet
-        similaire. Un personnage ne peut en aider un autre que si
-        l&#39;association de deux individus ou plus permet de réaliser cette
-        tâche plus facilement. <strong>Certaines tâches</strong>, comme enfiler
-        un fil dans le chas d&#39;une aiguille,
-        <strong>ne sont pas simplifiées</strong> parce qu&#39;on vous aide.
-      </p>
-      <h2>Tests de groupe</h2>
-      <p>
-        Quand plusieurs individus tentent d&#39;accomplir quelque chose en tant
-        que groupe, le MJ peut leur demander de faire un seul test de compétence
-        pour le groupe. Dans une telle situation, les personnages qui sont
-        compétents dans un domaine donné peuvent compenser les carences des
-        autres.
-      </p>
-      <p>
-        Pour faire un test de compétence de groupe, tous les membres du groupe
-        concerné doivent faire un test de compétence. Pour savoir si le test est
-        réussi,
-        <strong>il faut compenser les échecs du groupe avec les succès du groupe, et
-          considérer le score final</strong>.
-      </p>
-      <p>
-        Les tests de groupe ne sont pas fréquents. Ils interviennent quand tous
-        les personnages réussissent ou échouent ensemble. Par exemple, quand les
-        aventuriers traversent un marais, le MJ peut leur demander de réaliser
-        un test de compétence de groupe d&#39;intelligence (Survie) afin de
-        vérifier s&#39;ils évitent les sables mouvants, les trous d&#39;eau ou
-        tout autre danger naturel qui se trouve dans leur environnement. Si au
-        moins la moitié du groupe réussit, les personnages qui ont réussi leur
-        test aident les autres à éviter les dangers. Sinon, l&#39;ensemble du
-        groupe tombe dans l&#39;un de ces pièges.
-      </p>
-      <h1>Les Compétences</h1>
-      <h2>Altération</h2>
-      <p>
-        La discipline de l&#39;altération regroupe toutes les méthodes
-        d&#39;interactions avec le fluide qui implique l&#39;utilisation de
-        vocables ou de sons. Toutes les creatures étants liées par le fluide, il
-        suffit d&#39;une subtile variation pour appliquer des effets notables,
-        comme par exemple des halucinations, des sensations de forces ou de
-        faiblesse voir même une dégradation de l&#39;intégrité physique. La
-        discipline est complexe et demande une grande capacité d&#39;adaptation
-        dans l&#39;utilisation du bon vocable en fonction de la situation, et
-        que l&#39;intention de l&#39;alétateur soit sans faille. La fluide
-        altéré touche généralement toutes les cibles sans dicernement.
-        L&#39;altération ce propage par le biais d&#39;un sens, principalement
-        l&#39;ouïe par exemple.
-      </p>
-      <h2>Athlétisme</h2>
-      <p>
-        Les tests de vigueur (Athlétisme) sont utilisés dans certaines
-        situations que vous rencontrez quand vous escaladez un mur, sautez ou
-        nagez. Le MJ peut par exemple vous demander de faire un test de vigueur
-        (Athlétisme) quand vous tentez d&#39;accomplir des tâches comme celles
-        qui suivent :
-      </p>
-      <ul>
-        <li>Ouvrir de force une porte bloquée, fermée à clef ou barrée.</li>
-        <li>Vous libérer de liens par la force.</li>
-        <li>Forcer votre passage dans un tunnel trop petit pour vous.</li>
-        <li>
-          Rester accroché derrière un chariot en mouvement pendant qu&#39;il
-          vous traîne.
-        </li>
-        <li>Renverser une statue.</li>
-        <li>Empêcher un rocher de tomber.</li>
-      </ul>
-      <p>
-        <strong>Capacité de charge</strong>: Votre capacité de charge maximale
-        est égale à votre valeur de physique multipliée par 5. Il s&#39;agit du
-        poids (en kilogrammes) que vous pouvez porter. Cette capacité est assez
-        élevée pour que la plupart des personnages ne s&#39;en inquiètent pas.
-      </p>
-      <p>
-        <strong>Pousser, tirer, soulever</strong> : Vous pouvez pousser, tirer
-        ou soulever un poids qui fait jusqu&#39;à deux fois votre capacité de
-        charge maximale, soit 10 fois votre valeur de Force. Cela dit, tant que
-        vous poussez ou tirez un poids qui excède votre capacité de charge,
-        votre vitesse est réduite à 1,50 mètres.
-      </p>
-      <p>
-        <strong>Taille et Force</strong> : Les grandes créatures peuvent porter
-        des poids plus importants que les petites. Pour chaque catégorie de
-        taille au-dessus de la taille moyenne, doublez la capacité de charge
-        d&#39;une créature et le poids qu&#39;elle peut pousser, tirer ou
-        soulever. Pour une créature de taille très petite, divisez ces valeurs
-        par deux.
-      </p>
-      <h2>Charme</h2>
-      <p>
-        Cette compétence permet de communiquer avec une créature dans
-        l&#39;objectif d&#39;en obtenir des faveur. À la différence de la
-        négociation, vous agissez d&#39;avantage sur le ressenti de la personne
-        ou la créature dans l&#39;optique de vous faire apprécier d&#39;elle
-        plutôt que que d&#39;établir une entente cordiale. Elle représente aussi
-        votre manière de convaincre uniquement avec votre image et votre
-        comportement.
-      </p>
-      <h2>Connaissance - histoire</h2>
-      <p>
-        Un test d&#39;intelligence (Connaissance - histoire) permet de mesurer
-        votre capacité à vous remémorer vos connaissances concernant les
-        événements historiques, les personnages de légende, les royaumes
-        antiques, les conflits passés, les guerres récentes et les civilisations
-        perdues.
-      </p>
-      <h2>Connaissance - religion</h2>
-      <p>
-        Un test d&#39;intelligence (Connaissance - religion) permet de mesurer
-        votre capacité à vous remémorer vos connaissances relatives aux déités,
-        rites, prières, clergés, symboles sacrés et les pratiques des cultes
-        secrets.
-      </p>
-      <h2>Connaissance - résonance</h2>
-      <p>
-        Un test d&#39;intelligence (Connaissance - résonance) permet de
-        déterminer votre capacité à vous remémorer vos connaissances concernant
-        les sorts, les objets magiques, les symboles mystiques ou les traditions
-        magiques.
-      </p>
-      <h2>Coordination</h2>
-      <p>
-        Les tests d&#39;agilité (Coordination) servent à déterminer si vous
-        restez sur vos pieds dans une situation délicate, ou si vous vous servez
-        de vos mains avec habilité et précision. C&#39;est une compétence utile
-        si vous tentez de réaliser un tour de passe-passe, comme cacher un
-        objet. C&#39;est aussi avec cette compétence que vous réaliserez des
-        larcins, ou des crochetages de serrures mécaniques.
-      </p>
-      <h2>Corps-à-Corps</h2>
-      <p>
-        C&#39;est la compétences maîtresse pour toutes les disciplines de combat
-        rapproché impliquant l&#39;utilisation d&#39;une arme. La plupart des
-        armes courantes nécessitent du corps-à-corps pour determiner si vous
-        êtes plus apte à blesser l&#39;adversaire que vous même.
-      </p>
-      <h2>Discrétion</h2>
-      <p>
-        Cette compétence vous permet de vous mouvoir sans être remarqué, ou
-        d&#39;entreprendre des actions sans éveiller les soupçons. Elle est
-        utile s&#39;il faut vous cacher, prendre une cible en filature, mais
-        aussi voler des objets. Pendant un combat, la plupart des créatures
-        restent attentives aux signes de danger qui les entourent, donc si vous
-        sortez de votre cachette pour vous approcher d&#39;une créature, il est
-        probable qu&#39;elle vous remarque. Néanmoins, dans certaines
-        circonstances, le MJ peut vous permettre de vous approcher d&#39;une
-        créature distraite en restant caché. Vous ne pouvez pas vous cacher
-        d&#39;une créature qui peut déjà vous voir clairement, et si vous faites
-        du bruit, comme lancer un avertissement ou renverser un vase, vous
-        révélez votre position. Une créature invisible peut toujours tenter de
-        se cacher, mais des signes de son passage peuvent être remarqués et elle
-        doit rester silencieuse.
-      </p>
-      <h2>Distance légère</h2>
-      <p>
-        Représente votre expérience avec les armes à distance qui
-        s&#39;utilisent couramment à une main.
-      </p>
-      <h2>Distance lourde</h2>
-      <p>
-        Représente votre expérience avec les armes à distance qui
-        s&#39;utilisent couramment à deux mains.
-      </p>
-      <h2>Evocation</h2>
-      <p>
-        La discipline de l&#39;évocation représente votre capacité à manipuler
-        le fluide qui vous habite, ou qui ce situe a porté de vos membre, et de
-        le transformer en energie sous la forme souhaitée. Chaque rang temoigne
-        d&#39;une manipulation plus précise, plus intuitive et plus efficace. La
-        projection est capable de transformer le fluide pour lui donner de
-        nombreuses propriétés.
-      </p>
-      <h2>Ingénierie</h2>
-      <p>
-        L&#39;Ingénierie représente votre capacité à comprendre les systèmes
-        numériques, électronique ou mécaniques et à les utiliser correctement.
-        Lorsque vous arrivez dans une navette inconnue et voulez collecter des
-        informations de sécurités, le MJ peut vous demander un test
-        d&#39;intelligence (Ingénierie)
-      </p>
-      <h2>Intimidation</h2>
-      <p>
-        Quand vous tentez d&#39;influencer quelqu&#39;un par le biais de menaces
-        directes, d&#39;actions hostiles ou de violence, le MJ peut vous
-        demander de faire un test de charisme ou de vigueur (Intimidation). Ces
-        actions peuvent être de tenter de faire parler un prisonnier, de
-        convaincre des truands qu&#39;ils feraient mieux de ne pas s&#39;en
-        prendre à vous, ou d&#39;utiliser une bouteille brisée pour convaincre
-        un dignitaire de reconsidérer une décision.
-      </p>
-      <h2>Médecine</h2>
-      <p>
-        Un test d&#39;intelligence (Médecine) vous permet de tenter de
-        stabiliser un compagnon à l&#39;agonie ou de diagnostiquer une maladie.
-        Le rang de maitrise quantifie également votre taux de connaissance dans
-        la discipline.
-      </p>
-      <h2>Négociation</h2>
-      <p>
-        Si vous tentez d&#39;obtenir des faveurs en arguant face à des personnes
-        qui ne sont pas prêtes à vous le concéder délibérément, cette compétence
-        vous sera nécessaire. Vous pourrez l&#39;utiliser pour réduire le prix
-        d&#39;un objet, ou pour pouvoir troquer un objet contre un autre. Le MJ
-        peut vous demander de faire un test de charisme (Négociation) quand vous
-        tentez d&#39;influencer une ou plusieurs personnes en faisant preuve de
-        tact, en faisant appel à l&#39;étiquette ou à la bonne volonté de ces
-        gens.
-      </p>
-      <h2>Perspicacité</h2>
-      <p>
-        Un test de charisme (Perspicacité) permet de déterminer si vous parvenez
-        à discerner les véritables intentions d&#39;une créature, par exemple
-        quand vous cherchez à deviner si une personne ment ou que vous tentez de
-        prédire ce qu&#39;elle va faire. Pour y arriver, vous devez percevoir
-        des indices dans son langage corporel, sa manière de parler et son
-        comportement.
-      </p>
-      <h2>Pilotage</h2>
-      <p>
-        Détermine votre capacité à prendre en main les commandes d&#39;un
-        appareil et de le piloter efficacement.
-      </p>
-      <h2>Pugilat</h2>
-      <p>
-        Représente votre capacité a vous battre sans l&#39;aide d&#39;une arme,
-        ou alors à l&#39;aide de prothèses ou d&#39;extension.
-      </p>
-      <h2>Survie</h2>
-      <p>
-        Le MJ peut vous demander de faire un test d&#39;intelligence (Survie) si
-        vous tentez de suivre une piste, de chasser du gibier, de guider votre
-        groupe à travers un désert glacé, de prévoir le temps qu&#39;il fera ou
-        encore d&#39;éviter des sables mouvants ou d&#39;autres dangers
-        naturels.
-      </p>
-      <h2>Tromperie</h2>
-      <p>
-        Un test de charisme (Tromperie) permet de déterminer si vous parvenez à
-        dissimuler la vérité de manière convaincante, verbalement ou par vos
-        actions. Cet acte de dissimulation couvre un large spectre qui va des
-        fausses pistes évoquées par le biais d&#39;ambiguïtés aux mensonges
-        éhontés. On vous demandera généralement ce genre de test dans des
-        situations où vous tentez d&#39;abuser un garde, de gagner de
-        l&#39;argent en pariant, d&#39;être convaincant dans un déguisement, ou
-        de falsifier des documents efficacement.
+        Pour faire un test de compétence de groupe, tous les membres du groupe concerné doivent faire un test de
+        compétence. Pour savoir si le test est réussi, il faut compenser les échecs du groupe avec les succès du groupe,
+        et considérer le score final
       </p>
     </ion-content>
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
 import {
   IonButtons,
   IonContent,
@@ -551,8 +124,11 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/vue";
+import { defineComponent } from "vue";
 
-export default {
+import NamTitle from "@/components/NamTitle.vue";
+
+export default defineComponent({
   components: {
     IonButtons,
     IonContent,
@@ -561,8 +137,9 @@ export default {
     IonPage,
     IonTitle,
     IonToolbar,
+    NamTitle
   },
-};
+});
 </script>
 
 <style>
