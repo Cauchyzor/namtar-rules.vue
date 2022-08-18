@@ -96,11 +96,13 @@ export default defineComponent({
   data() {
     const competencesList = CompetenceService.getAllCompetences()
     const CompetencesByRow = []
+    // TODO : Faire une Hexagrid et cleaner ça
+    CompetencesByRow.push(competencesList.splice(0, 2))
     CompetencesByRow.push(competencesList.splice(0, 3))
-    CompetencesByRow.push(competencesList.splice(0, 4))
-    CompetencesByRow.push(competencesList.splice(0, 4))
-    CompetencesByRow.push(competencesList.splice(0, 4))
     CompetencesByRow.push(competencesList.splice(0, 3))
+    CompetencesByRow.push(competencesList.splice(0, 3))
+    CompetencesByRow.push(competencesList.splice(0, 3))
+    CompetencesByRow.push(competencesList.splice(0, 2))
     return {
       modules: [Keyboard, Pagination, Parallax],
 

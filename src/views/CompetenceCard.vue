@@ -1,6 +1,8 @@
 <template>
     <ion-card button="true">
-        <ion-text>{{ Competence.Nom }}</ion-text>
+        <div class="text-centered">
+            <ion-text>{{ Competence.Nom }}</ion-text>
+        </div>
     </ion-card>
 </template>
 <script lang="ts">
@@ -39,10 +41,17 @@ export default defineComponent({
 </script>
 <style scoped>
 ion-card {
-    width: 83px;
+    width: 110px;
     height: 83px;
     padding: 8px;
     margin: 2px;
+    display: flex;
+}
+
+.text-centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 ion-text {
