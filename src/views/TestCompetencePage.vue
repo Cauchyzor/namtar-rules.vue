@@ -15,7 +15,7 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
-      <h1>Succès et Echecs</h1>
+      <h1 class="page-title">Succès et Echecs</h1>
       <p>
         À chaque fois qu&#39;une action entreprise par un personnage peut
         échouer, déterminer le résultat ce fait alors avec un jet de dés. Le
@@ -66,10 +66,8 @@
       <p>Chaque échec annule un succès Chaque désavantage annule un avantage</p>
       <p>
         Le score final, qu&#39;on appelle
-        <strong
-          >résultat net, est déterminé par la somme des échecs avec les succès
-          et les avantages avec les désavantage</strong
-        >. Si le tests génère au <strong>moins 1 succès</strong>, le test
+        <strong>résultat net, est déterminé par la somme des échecs avec les succès
+          et les avantages avec les désavantage</strong>. Si le tests génère au <strong>moins 1 succès</strong>, le test
         réussi, sinon il échoue.
       </p>
       <h1>Avantage et Désavantage</h1>
@@ -85,12 +83,10 @@
         des effets de bords qui peuvent influencer sur la réussite future des
         jets. Une pirouette scénaristique est toujours la bienvenue, comme par
         exemple : si l&#39;ennemi à beaucoup de désavantage :
-        <em
-          >&quot;Après avoir correctement porté son attaque, et en se
+        <em>&quot;Après avoir correctement porté son attaque, et en se
           repositionnant, la créature pose le pied sur une pile de roches
           instables. Elle vacille, perd l&#39;équilibre puis chute à
-          terre&quot;</em
-        >.
+          terre&quot;</em>.
       </p>
       <p>
         De manière générale, vous pouvez toujours résoudre les avantages et
@@ -100,8 +96,8 @@
         <li>
           <strong>Moral</strong> : Lors du prochain test de compétence ou jet
           d&#39;attaque,
-          <strong>relancez chaque dé tombé en échec pour chaque avantage</strong
-          >. À l&#39;inverse, relancer chaque dé tombé en succès pour chaque
+          <strong>relancez chaque dé tombé en échec pour chaque avantage</strong>. À l&#39;inverse, relancer chaque dé
+          tombé en succès pour chaque
           désavantage. Interprétez le résultat après la résolution des avantages
           ou désavantage
         </li>
@@ -114,9 +110,7 @@
           <strong>Epuisement</strong> : Les désavantages lors de
           l&#39;utilisation de compétences traduisent une complexité inattendue,
           et peuvent être utilisés par le MJ pour faire
-          <strong
-            >perdre des points de concentration ou de volonté au lanceur</strong
-          >.
+          <strong>perdre des points de concentration ou de volonté au lanceur</strong>.
         </li>
       </ul>
       <p>
@@ -162,10 +156,8 @@
         <strong>3d10</strong>, <strong>3d12</strong>, <strong>2d20</strong>....
       </p>
       <p>
-        <strong
-          >Diminuer un dé de dégat en dessous de 1D4 réduit les dégats de base
-          de l&#39;arme a 1</strong
-        >
+        <strong>Diminuer un dé de dégat en dessous de 1D4 réduit les dégats de base
+          de l&#39;arme a 1</strong>
       </p>
 
       <h1>Utiliser ses compétences</h1>
@@ -214,10 +206,8 @@
       </ul>
       <p>
         Pour faire un test de compétence,
-        <strong
-          >préparez autant de d6 que la somme de la valeur de la caractéristique
-          et celle de votre rang de maitrise</strong
-        >
+        <strong>préparez autant de d6 que la somme de la valeur de la caractéristique
+          et celle de votre rang de maitrise</strong>
         (expliqué plus loin). Calculez la somme totale en succès, et si cette
         somme est égale au nombre de succès nécessaire pour réussir, alors le
         test est réussi.
@@ -246,10 +236,8 @@
       </p>
       <p>
         Si les
-        <strong
-          >résultats des tests sont identiques, la situation n&#39;évolue
-          pas</strong
-        >
+        <strong>résultats des tests sont identiques, la situation n&#39;évolue
+          pas</strong>
         et reste la même qu&#39;auparavant. Une des deux créatures peut donc
         gagner par défaut. Si deux personnages s&#39;opposent pour tenter
         d&#39;attraper un anneau qui est tombé par terre se retrouvent à
@@ -265,13 +253,9 @@
         dans une discipline et les actions qui lui sont liées. Les compétences
         initialement maîtrisées par un personnage sont déterminées au moment de
         sa création. Une compétence a
-        <strong
-          >une caractéristique associée ainsi qu&#39;un rang de maitrise</strong
-        >, et
-        <strong
-          >les dés à lancer sont déterminés par une combinaison de ces deux
-          valeurs</strong
-        >. Chaque compétences est en général toujour testée avec la même
+        <strong>une caractéristique associée ainsi qu&#39;un rang de maitrise</strong>, et
+        <strong>les dés à lancer sont déterminés par une combinaison de ces deux
+          valeurs</strong>. Chaque compétences est en général toujour testée avec la même
         caractéristique. Mais en fonction des situations, le MJ pourra demander
         une combinaison inhabituelle selon l&#39;action qui devra être réalisée.
       </p>
@@ -325,10 +309,8 @@
         Pour faire un test de compétence de groupe, tous les membres du groupe
         concerné doivent faire un test de compétence. Pour savoir si le test est
         réussi,
-        <strong
-          >il faut compenser les échecs du groupe avec les succès du groupe, et
-          considérer le score final</strong
-        >.
+        <strong>il faut compenser les échecs du groupe avec les succès du groupe, et
+          considérer le score final</strong>.
       </p>
       <p>
         Les tests de groupe ne sont pas fréquents. Ils interviennent quand tous
@@ -583,4 +565,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

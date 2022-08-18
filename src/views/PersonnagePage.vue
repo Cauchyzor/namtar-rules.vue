@@ -62,9 +62,9 @@ import {
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Keyboard, Pagination, Parallax } from "swiper";
 
-import CaracteristiqueCard from "./CaracteristiqueCard.vue";
-import CompetenceCard from "./CompetenceCard.vue";
-import CapaciteItem from "./CapaciteItem.vue";
+import CaracteristiqueCard from "@/components/CaracteristiqueCard.vue";
+import CompetenceCard from "@/components/CompetenceCard.vue";
+import CapaciteItem from "@/components/CapaciteItem.vue";
 
 import { CaracteristiqueService, CaracteritiqueName } from "../domain/Caracteristique";
 import { CompetenceService } from "@/domain/Competence";
