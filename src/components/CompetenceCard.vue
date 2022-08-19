@@ -55,6 +55,6 @@ ion-card {
 }
 
 ion-text {
-    font-size: 10px;
+    font-size: 12px;
 }
 </style>
