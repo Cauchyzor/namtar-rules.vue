@@ -15,108 +15,19 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
-      <h1>Avant une situation de conflit</h1>
+      <NamTitle>Avant une situation de conflit</NamTitle>
       <h2>Initiative</h2>
+      <p>Si aucun des deux camps ne cherche à être discret, ils se remarquent
+        automatiquement. Test d'initiative de tout les béligerant, puis classement par nombre de success, puis nombre
+        d'avantage si égalité</p>
+      <p>Sinon, test de discretion de groupe des attaquants opposé test de vigilance de chaque mêmbre de l'autre groupe.
+        Les membres qui ne reussisent pas ce test sont surpris</p>
       <p>
-        Le MJ classe les combattants par ordre d&#39;Initiative, en commençant
-        par celui qui a eu le résultat le plus élevé à son jet et en terminant
-        par celui dont le résultat était le moins élevé. C&#39;est dans cet
-        ordre, appelé ordre d&#39;initiative, que les combattants agiront à
-        chaque round. L&#39;ordre d&#39;initiative reste le même d&#39;un round
-        à l&#39;autre.
-      </p>
-      <p>
-        En cas d&#39;égalité, s&#39;il s&#39;agit de créatures contrôlées par le
-        MJ, ce dernier choisit quelle créature agira avant l&#39;autre. Si
-        l&#39;égalité concerne les héros, c&#39;est aux joueurs de décider quel
-        personnage agira le premier. Si un monstre et le personnage d&#39;un
-        joueur se trouvent à égalité, le MJ peut décider de l&#39;ordre. Le MJ
-        peut aussi décider que les personnages et monstres à égalité résolvent
-        la situation par un nouveau jet, auquel cas la créature qui a le
-        résultat le plus haut agira avant l&#39;autre.
-      </p>
-      <h2>Surprise ? Test de vigilance</h2>
-      <p>
-        Si aucun des deux camps ne cherche à être discret, ils se remarquent
-        automatiquement. Sinon, Le MJ détermine qui est susceptible d&#39;être
-        pris par surprise avec un <em>test de vigilance</em>. Le MJ compare les
-        résultats des tests d&#39;agilité (Discrétion) de toutes les créatures
-        qui se cachent avec un test d&#39;intelligence (Survie) de toutes les
-        créatures qui appartiennent à l&#39;autre camp. Tout personnage ou
-        monstre qui ne remarque pas une menace est surpris au début de la
-        rencontre.
-      </p>
-      <p>
-        Si vous êtes surpris, vous ne pouvez pas bouger ou accomplir
-        d&#39;action lors de votre premier tour de combat, et vous ne pouvez pas
-        non plus réagir jusqu&#39;à la fin de ce tour. Il est possible qu&#39;un
-        seul membre d&#39;un groupe soit surpris et pas les autres.
+        Si un béligérent est surpris, il ne pouvez pas bouger ou accomplir d&#39;action lors du premier tour de combat,
+        et il ne peut pas
+        non plus réagir jusqu&#39;à la fin de ce tour.
       </p>
       <h1>Emplacement</h1>
-      <p>
-        L&#39;emplacement d&#39;une créature correspond à la surface qu&#39;elle
-        contrôle lors d&#39;un combat et non à la surface qu&#39;elle occupe
-        réellement. Par exemple, une créature de taille moyenne classique ne
-        fait pas 1,50 mètre de large, mais elle contrôle une surface de 1,50
-        mètre de côté.
-      </p>
-      <p>
-        L&#39;emplacement occupé par une créature donne aussi la taille de
-        l&#39;espace qu&#39;il lui faut pour combattre efficacement. C&#39;est
-        pour cette raison qu&#39;il y a une limite au nombre de créatures qui
-        peuvent en encercler une autre en combat. En imaginant un combat entre
-        des créatures de taille moyenne, huit créatures seulement peuvent tenir
-        dans un rayon de 1,50 mètre autour d&#39;une autre.
-      </p>
-      <p>
-        Les créatures plus grandes occupent un emplacement plus important. Et le
-        nombre maximum d&#39;entre elles qui permet d&#39;encercler en même
-        temps une créature est donc plus réduit. Par exemple, si des grandes
-        créatures veulent encercler une créature de taille moyenne ou plus
-        petite, le chiffre maximum est alors de cinq. En revanche, une créature
-        gigantesque peut être encerclée par vingt créatures de taille moyenne.
-      </p>
-      <h2>Gabarit des créatures</h2>
-      <p>
-        Chaque créature occupe une surface plus ou moins importante en fonction
-        de sa taille. Le tableau des catégories de tailles qui suit indique la
-        taille de la surface occupée et contrôlée en combat par une créature
-        d&#39;une taille donnée.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Gabarit</th>
-            <th>Espace occupé</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>Carré de 0,75 mètre de côté</td>
-          </tr>
-          <tr>
-            <td>1 (norme)</td>
-            <td>Carré de 1,50 mètres de côté</td>
-          </tr>
-          <tr>
-            <td>2-3</td>
-            <td>Carré de 3 mètres de côté</td>
-          </tr>
-          <tr>
-            <td>4-5</td>
-            <td>Carré de 4,50 mètres de côté</td>
-          </tr>
-          <tr>
-            <td>6 et plus</td>
-            <td>Carré de 6 mètres de côté</td>
-          </tr>
-          <tr>
-            <td>----</td>
-            <td>----</td>
-          </tr>
-        </tbody>
-      </table>
       <h1>Votre tour</h1>
       <p>Pendant votre créneau d&#39;initiative, vous avez 3 possibilités :</p>
       <ul>
@@ -153,10 +64,8 @@
         Pendant votre tour, vous pouvez faire de nombreuses choses qui ne vous
         demandent pas de vous déplacer ni d&#39;utiliser une action. Vous pouvez
         a priori effectuer
-        <strong
-          >autant de broutille que vous le souhaitez si le temps le
-          permet</strong
-        >.
+        <strong>autant de broutille que vous le souhaitez si le temps le
+          permet</strong>.
       </p>
       <ul>
         <li>
@@ -178,10 +87,8 @@
       </ul>
       <p>
         Néanmoins, si vous voulez
-        <strong
-          >interagir avec un second objet, alors vous devez utiliser une
-          action</strong
-        >. Par exemple, si vous souhaitez vous déplacer, ouvrir la porte et
+        <strong>interagir avec un second objet, alors vous devez utiliser une
+          action</strong>. Par exemple, si vous souhaitez vous déplacer, ouvrir la porte et
         dégainer votre épée, alors votre tour de jeu sera terminé.
       </p>
       <p>
@@ -194,12 +101,9 @@
         Certaines capacités spéciales, sorts ou situations permettent à votre
         personnage d&#39;accomplir une action spéciale appelée une réaction. Une
         réaction est une
-        <strong
-          >réponse instantanée déclenchée par un stimulus qui peut se produire
-          pendant votre tour ou celui de quelqu&#39;un d&#39;autre</strong
-        >. Le type de réaction le plus courant est l&#39;<strong
-          >attaque d&#39;opportunité</strong
-        >.
+        <strong>réponse instantanée déclenchée par un stimulus qui peut se produire
+          pendant votre tour ou celui de quelqu&#39;un d&#39;autre</strong>. Le type de réaction le plus courant est
+        l&#39;<strong>attaque d&#39;opportunité</strong>.
       </p>
       <h3>Attaque d&#39;opportunité</h3>
       <p>
@@ -244,65 +148,6 @@
         vous déplacer de 3 mètres, faire une action, puis parcourir les 6 mètres
         restant.
       </p>
-      <h3>Terrain difficile</h3>
-      <p>
-        Chaque mètre parcouru sur un terrain difficile coûte un mètre de
-        déplacement supplémentaire.
-        <strong>Votre vitesse est ainsi divisée par deux</strong>. Si plusieurs
-        obstacles qui justifieraient en eux-mêmes de considérer un terrain comme
-        difficile se cumulent sur un seul terrain (un escalier raide ET encombré
-        de gravats), le coût du déplacement reste le même et ne se cumule pas.
-        Votre vitesse reste divisée par deux, et non par trois ou quatre...
-      </p>
-      <h3>Être à terre</h3>
-      <p>
-        Il n&#39;est pas rare que des combattants se trouvent au sol, allongés
-        par terre, qu&#39;ils aient été renversés ou qu&#39;ils se soient
-        eux-mêmes jetés au sol. Dans le cadre du jeu, on dit qu&#39;ils sont à
-        terre, un état décrit plus loin.
-      </p>
-      <p>
-        Vous pouvez vous jeter au sol sans avoir à utiliser de votre
-        déplacement.
-        <strong
-          >Vous relever vous demande plus d&#39;efforts et vous coûte votre
-          mouvement</strong
-        >. Quand vous <strong>rampez</strong>, chaque mètre parcouru vous coûte
-        2 mètres supplémentaires.
-        <strong>Votre vitesse de déplacement est donc divisée par trois</strong
-        >. De plus, si vous rampez sur 1 mètre en terrain difficile, cela vous
-        coûte en réalité 4 mètres de déplacement, votre vitesse est donc divisée
-        par 4.
-      </p>
-      <h3>Se déplacer au milieux d&#39;autres créatures</h3>
-      <p>
-        Vous pouvez traverser l&#39;emplacement d&#39;une créature qui ne vous
-        est pas hostile. En revanche,
-        <strong>vous ne pouvez traverser</strong> l&#39;emplacement occupé par
-        une <strong>créature hostile</strong> que si celle-ci fait
-        <strong>deux tailles de plus ou de moins que vous</strong>.
-        N&#39;oubliez pas que l&#39;emplacement occupé par une autre créature
-        est considéré comme un terrain difficile.
-      </p>
-      <p>
-        Qu&#39;une créature soit amie ou ennemie, vous ne pouvez pas
-        volontairement vous arrêter sur l&#39;emplacement qu&#39;elle occupe.
-      </p>
-      <p>
-        Si vous vous mettez hors de portée de la capacité d&#39;allonge
-        d&#39;une créature pendant votre déplacement, vous provoquez une attaque
-        d&#39;opportunité, ainsi qu&#39;expliqué plus loin dans ce chapitre.
-      </p>
-      <h3>Déplacement en vol</h3>
-      <p>
-        Les créatures volantes bénéficient d&#39;une grande mobilité. En
-        revanche, elles doivent également composer avec le risque de tomber. Si
-        une créature <strong>volante est jetée à terre</strong>, voit sa vitesse
-        réduite à 0 ou se retrouve d&#39;une manière ou d&#39;une autre dans
-        l&#39;<strong>incapacité de bouger</strong>, elle chute, à moins
-        d&#39;être en mesure de faire du vol stationnaire ou d&#39;être
-        maintenue dans les airs par évocation.
-      </p>
       <h2>Actions en combat</h2>
       <p>
         Quand vous accomplissez une action lors de votre tour, vous avez le
@@ -322,10 +167,8 @@
         Vous pouvez apporter votre aide à une autre créature pour réaliser une
         tâche. Quand vous choisissez l&#39;action aider, la créature que vous
         aidez
-        <strong
-          >obtient un avantage, et un avantage supplémentaire par rang de
-          maîtrise</strong
-        >
+        <strong>obtient un avantage, et un avantage supplémentaire par rang de
+          maîtrise</strong>
         sur le prochain test de compétence qu&#39;elle fait dans le but
         d&#39;accomplir la tâche pour laquelle vous coopérez, mais seulement si
         elle fait ce test avant le début de votre prochain tour.
@@ -352,19 +195,7 @@
           </p>
         </li>
         <li>
-          <p>Déterminer le nombre de dés à lancer avec la caractéristique.</p>
-        </li>
-        <li>
-          <p>
-            Déterminer le nombre de dés à Améliorer en fonction du rang de
-            maîtrise dans la compétence.
-          </p>
-        </li>
-        <li>
-          <p>
-            Le MJ détermine si la cible est à l&#39;abri et si vous bénéficiez
-            d&#39;avantages ou subissez des désavantages par rapport à elle.
-          </p>
+          <p>Déterminer les dés a lancer en fonction du jet d'attaque (distance ou contact ou autre).</p>
         </li>
         <li>
           <p>
@@ -375,92 +206,6 @@
           </p>
         </li>
       </ol>
-      <h4>Jets d&#39;attaque</h4>
-      <p>
-        Quand vous faites une attaque, votre jet d&#39;attaque permet de
-        déterminer si vous touchez votre cible ou non. Pour faire un jet
-        d&#39;attaque, Faites un test de compétence avec la compétence adaptée à
-        l&#39;arme que vous utiliser : Corps-à-corps pour une arme de mêlée,
-        Distance - légère pour une arme à distance à une main, etc.
-      </p>
-      <ul>
-        <li>
-          Pour les attaques aux Corps-à-corps : Le DD est établi par la défense
-          au corps à corps de la créature. Il faut surpasser cette valeur pour
-          toucher la cible.
-        </li>
-        <li>
-          Pour les attaques a distance : Le DD dépend de la défense à distance,
-          de la distance et de l&#39;exposition de la cible. Chaque arme possède
-          dans ces caractéristiques une portée efficace, et une portée limite.
-        </li>
-      </ul>
-      <table>
-        <thead>
-          <tr>
-            <th>Porté</th>
-            <th>Modificateur</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>------</td>
-            <td><strong>Arme à distance légère</strong></td>
-            <td><strong>Arme à distance lourde</strong></td>
-          </tr>
-          <tr>
-            <td>Engagé</td>
-            <td>+DD1</td>
-            <td>+DD3</td>
-          </tr>
-          <tr>
-            <td>&lt; Porté efficace</td>
-            <td>+DD1</td>
-            <td>+DD1</td>
-          </tr>
-          <tr>
-            <td>&lt; Porté limite</td>
-            <td>+DD3</td>
-            <td>+DD2</td>
-          </tr>
-          <tr>
-            <td>&gt; Porté limite</td>
-            <td>+DD5</td>
-            <td>+DD3</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        Si la cible est à couvert, le DD augmente en fonction de la couverture
-        comme expliqué plus loin dans ce chapitre.
-      </p>
-      <p>
-        Le DD final à surpasser est donc donné par : DD(Portée) + DD (Défense) +
-        DD (Couverture)
-      </p>
-      <h4>Attaquants et cibles invisibles</h4>
-      <p>
-        Les combattants essaient souvent d&#39;échapper à la vigilance de leurs
-        ennemis en se cachant, en lançant un sort d&#39;invisibilité ou en se
-        fondant dans les ténèbres.
-      </p>
-      <p>
-        Quand vous attaquez une cible que vous ne pouvez pas voir, vous
-        augmentez de +3 le DD pour toucher. Cependant, vous pouvez toujours
-        utiliser une action de mouvement pour effectuer un test de perception,
-        afin d&#39;estimer la position de la cible par le bruit ou par le
-        contact qu&#39;elle a avec les petits objets à proximité. Chaque paire
-        de succès réduit de 1 le DD, jusqu&#39;à un maximum de -3DD.
-      </p>
-      <p>
-        Quand une créature ne peut pas vous voir, vous bénéficiez d&#39;un
-        avantage quand vous faites un jet d&#39;attaque la ciblant. Si vous
-        étiez caché (qu&#39;elle ne vous voit pas et ne vous entend pas) et que
-        vous attaquez, quel que soit le résultat de votre attaque, votre
-        position est immédiatement révélée au moment de la résolution de
-        l&#39;attaque.
-      </p>
       <h4>Attaque au corps-à-corps</h4>
       <p>
         La majorité des créatures possède une allonge de 1,50 mètre. Elles
@@ -532,10 +277,8 @@
         (Coordinations) de la cible (celle-ci choisit la compétence qu&#39;elle
         préfère utiliser). Si vous remportez la confrontation, vous avez le
         choix entre
-        <strong
-          >faire tomber votre cible à terre ou la repousser d&#39;1,50 mètre
-          loin de vous</strong
-        >.
+        <strong>faire tomber votre cible à terre ou la repousser d&#39;1,50 mètre
+          loin de vous</strong>.
       </p>
       <h3>A couvert</h3>
       <p>
@@ -546,10 +289,8 @@
         ce qui sert d&#39;abri.
       </p>
       <p>
-        <strong
-          >En fonction de la qualité de l&#39;abri, le MJ peut décider
-          d&#39;augmenter DD pour toucher</strong
-        >. Par exemple, l&#39;abris d&#39;un bouclier de fortune donne +1DD au
+        <strong>En fonction de la qualité de l&#39;abri, le MJ peut décider
+          d&#39;augmenter DD pour toucher</strong>. Par exemple, l&#39;abris d&#39;un bouclier de fortune donne +1DD au
         jet d&#39;attaque a distance qui vise le porteur.
       </p>
       <p>
@@ -575,9 +316,8 @@
         Quand vous choisissez l&#39;action esquiver, votre unique objectif est
         d&#39;éviter les attaques. Jusqu&#39;au début de votre tour suivant,
         vous
-        <strong
-          >augmentez de 1 votre défense au corps à corps et à distance</strong
-        >. Vous perdez les bénéfices de cette action si vous êtes neutralisé ou
+        <strong>augmentez de 1 votre défense au corps à corps et à distance</strong>. Vous perdez les bénéfices de cette
+        action si vous êtes neutralisé ou
         si votre vitesse est réduite à 0.
       </p>
       <h3>Se tenir prêt</h3>
@@ -586,10 +326,8 @@
         configuration particulière avant d&#39;agir. Pour cela, vous devez
         choisir l&#39;action se tenir prêt pendant votre tour. Ainsi, vous
         décalez votre action
-        <strong
-          >jusqu&#39;à ce que l&#39;événement attendu survient. Sinon, vous
-          jouez à la fin du tour de jeu</strong
-        >.
+        <strong>jusqu&#39;à ce que l&#39;événement attendu survient. Sinon, vous
+          jouez à la fin du tour de jeu</strong>.
       </p>
       <p>
         Vous pouvez également utiliser votre mouvement pendant votre créneau
@@ -647,7 +385,9 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
+
 import {
   IonButtons,
   IonContent,
@@ -658,7 +398,9 @@ import {
   IonToolbar,
 } from "@ionic/vue";
 
-export default {
+import NamTitle from "@/components/NamTitle.vue";
+
+export default defineComponent({
   components: {
     IonButtons,
     IonContent,
@@ -667,8 +409,11 @@ export default {
     IonPage,
     IonTitle,
     IonToolbar,
+    NamTitle,
+    NamTitle
   },
-};
+});
 </script>
 
-<style></style>
+<style>
+</style>
