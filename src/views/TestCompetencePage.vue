@@ -110,6 +110,15 @@
         compétence. Pour savoir si le test est réussi, il faut compenser les échecs du groupe avec les succès du groupe,
         et considérer le score final
       </p>
+      <NamTitle>Jet d'attaque à Distance</NamTitle>
+      <p>La cible doit être en parti découverte. Si elle a attaquée a son dernier tour, elle est considérée comme en
+        parti découverte</p>
+      <p>Dé positif : compétence + caractéristique</p>
+      <p>Dé négatif : distance (et par conséquant de la précision de l'arme) + protection (bouclier ou cachette
+        partielle)</p>
+      <NamTitle>Jet d'attaque au corps à corps</NamTitle>
+      <p>Dé positif : compétence + caractéristique</p>
+      <p>Dé négatif : défense + protection</p>
     </ion-content>
   </ion-page>
 </template>
