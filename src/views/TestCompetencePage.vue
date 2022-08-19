@@ -16,9 +16,9 @@
         </ion-toolbar>
       </ion-header>
       <NamTitle>Succes et Echecs</NamTitle>
-      <ion-text>Les Tests sont résolut en opposant les résultats d'une pool de dé "positive" versus une pool de dé
-        "négative"</ion-text>
-      <h2>Dés positif versus Dés négatif</h2>
+      <p>Les Tests sont résolut en opposant les résultats d'une pool de dé "positive" versus une pool de dé
+        "négative"</p>
+      <h5>Dés positif versus Dés négatif</h5>
       <p>Les pool sont constitué de D6</p>
       <p>Pour les dés positifs</p>
       <ul>
