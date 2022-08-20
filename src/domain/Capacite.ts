@@ -2,7 +2,7 @@
 export type Capacite = {
   Nom: string;
   Description: string;
-  Image: string,
+  Image: string;
   Type: CapaciteType;
   Vecteur: Vecteur;
   Effets: Map<EffetName, number>;

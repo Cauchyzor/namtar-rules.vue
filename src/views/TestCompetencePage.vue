@@ -16,8 +16,10 @@
         </ion-toolbar>
       </ion-header>
       <NamTitle>Succes et Echecs</NamTitle>
-      <p>Les Tests sont résolut en opposant les résultats d'une pool de dé "positive" versus une pool de dé
-        "négative"</p>
+      <p>
+        Les Tests sont résolut en opposant les résultats d'une pool de dé
+        "positive" versus une pool de dé "négative"
+      </p>
       <h5>Dés positif versus Dés négatif</h5>
       <p>Les pool sont constitué de D6</p>
       <p>Pour les dés positifs</p>
@@ -34,12 +36,13 @@
       </ul>
       <p>Chaque échec annule un succès Chaque désavantage annule un avantage</p>
       <p>
-        Le score final, qu&#39;on appelle résultat net, est déterminé par la somme des échecs avec les succès et les
-        avantages avec les désavantage. Si le tests génère au moins 1 succès, le test réussi, sinon il échoue.
+        Le score final, qu&#39;on appelle résultat net, est déterminé par la
+        somme des échecs avec les succès et les avantages avec les désavantage.
+        Si le tests génère au moins 1 succès, le test réussi, sinon il échoue.
       </p>
       <p>
-        Si il reste des avantages ou des désavantage, il peuvent déclancher respectivemet des effets en faveur ou en
-        défaveur du lanceur
+        Si il reste des avantages ou des désavantage, il peuvent déclancher
+        respectivemet des effets en faveur ou en défaveur du lanceur
       </p>
 
       <p>
@@ -93,29 +96,39 @@
         <li><strong>15</strong> : Il faut être un cul-bénis</li>
       </ul>
       <p>
-        Pour faire un test de compétence, préparez autant de d6 que la somme de la valeur de la caractéristique
-        et celle de votre rang de maitrise de la competence. Interpretez alors le resultat.
+        Pour faire un test de compétence, préparez autant de d6 que la somme de
+        la valeur de la caractéristique et celle de votre rang de maitrise de la
+        competence. Interpretez alors le resultat.
       </p>
       <NamTitle>Opposition</NamTitle>
       <p>
-        Les deux créatures qui s&#39;opposent font un test de compétence correspondant à l&#39;action qu&#39;ils tentent
-        de réaliser. Ils
-        appliquent tous les bonus et malus appropriés, puis comparent leurs résultats entre eux. La creature qui a le
-        plus d'avantage peut en tirer profit
+        Les deux créatures qui s&#39;opposent font un test de compétence
+        correspondant à l&#39;action qu&#39;ils tentent de réaliser. Ils
+        appliquent tous les bonus et malus appropriés, puis comparent leurs
+        résultats entre eux. La creature qui a le plus d'avantage peut en tirer
+        profit
       </p>
-      <p>Si les résultats des tests sont identiques, la situation n&#39;évolue pas</p>
+      <p>
+        Si les résultats des tests sont identiques, la situation n&#39;évolue
+        pas
+      </p>
       <NamTitle>Tests de groupe</NamTitle>
       <p>
-        Pour faire un test de compétence de groupe, tous les membres du groupe concerné doivent faire un test de
-        compétence. Pour savoir si le test est réussi, il faut compenser les échecs du groupe avec les succès du groupe,
-        et considérer le score final
+        Pour faire un test de compétence de groupe, tous les membres du groupe
+        concerné doivent faire un test de compétence. Pour savoir si le test est
+        réussi, il faut compenser les échecs du groupe avec les succès du
+        groupe, et considérer le score final
       </p>
       <NamTitle>Jet d'attaque à Distance</NamTitle>
-      <p>La cible doit être en parti découverte. Si elle a attaquée a son dernier tour, elle est considérée comme en
-        parti découverte</p>
+      <p>
+        La cible doit être en parti découverte. Si elle a attaquée a son dernier
+        tour, elle est considérée comme en parti découverte
+      </p>
       <p>Dé positif : compétence + caractéristique</p>
-      <p>Dé négatif : distance (et par conséquant de la précision de l'arme) + protection (bouclier ou cachette
-        partielle)</p>
+      <p>
+        Dé négatif : distance (et par conséquant de la précision de l'arme) +
+        protection (bouclier ou cachette partielle)
+      </p>
       <NamTitle>Jet d'attaque au corps à corps</NamTitle>
       <p>Dé positif : compétence + caractéristique</p>
       <p>Dé négatif : défense + protection</p>
@@ -146,10 +159,9 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    NamTitle
+    NamTitle,
   },
 });
 </script>
 
-<style>
-</style>
+<style></style>

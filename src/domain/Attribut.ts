@@ -42,6 +42,6 @@ export class AttributService {
   ];
 
   static getAttributsByNames(names: Array<AttributsName>) {
-    return this.AttributsList.filter(a => names.includes(a.Nom))
+    return this.AttributsList.filter((a) => names.includes(a.Nom));
   }
 }

@@ -17,15 +17,20 @@
       </ion-header>
       <NamTitle>Avant une situation de conflit</NamTitle>
       <h2>Initiative</h2>
-      <p>Si aucun des deux camps ne cherche à être discret, ils se remarquent
-        automatiquement. Test d'initiative de tout les béligerant, puis classement par nombre de success, puis nombre
-        d'avantage si égalité</p>
-      <p>Sinon, test de discretion de groupe des attaquants opposé test de vigilance de chaque mêmbre de l'autre groupe.
-        Les membres qui ne reussisent pas ce test sont surpris</p>
       <p>
-        Si un béligérent est surpris, il ne pouvez pas bouger ou accomplir d&#39;action lors du premier tour de combat,
-        et il ne peut pas
-        non plus réagir jusqu&#39;à la fin de ce tour.
+        Si aucun des deux camps ne cherche à être discret, ils se remarquent
+        automatiquement. Test d'initiative de tout les béligerant, puis
+        classement par nombre de success, puis nombre d'avantage si égalité
+      </p>
+      <p>
+        Sinon, test de discretion de groupe des attaquants opposé test de
+        vigilance de chaque mêmbre de l'autre groupe. Les membres qui ne
+        reussisent pas ce test sont surpris
+      </p>
+      <p>
+        Si un béligérent est surpris, il ne pouvez pas bouger ou accomplir
+        d&#39;action lors du premier tour de combat, et il ne peut pas non plus
+        réagir jusqu&#39;à la fin de ce tour.
       </p>
       <h1>Emplacement</h1>
       <h1>Votre tour</h1>
@@ -64,8 +69,10 @@
         Pendant votre tour, vous pouvez faire de nombreuses choses qui ne vous
         demandent pas de vous déplacer ni d&#39;utiliser une action. Vous pouvez
         a priori effectuer
-        <strong>autant de broutille que vous le souhaitez si le temps le
-          permet</strong>.
+        <strong
+          >autant de broutille que vous le souhaitez si le temps le
+          permet</strong
+        >.
       </p>
       <ul>
         <li>
@@ -87,8 +94,10 @@
       </ul>
       <p>
         Néanmoins, si vous voulez
-        <strong>interagir avec un second objet, alors vous devez utiliser une
-          action</strong>. Par exemple, si vous souhaitez vous déplacer, ouvrir la porte et
+        <strong
+          >interagir avec un second objet, alors vous devez utiliser une
+          action</strong
+        >. Par exemple, si vous souhaitez vous déplacer, ouvrir la porte et
         dégainer votre épée, alors votre tour de jeu sera terminé.
       </p>
       <p>
@@ -101,9 +110,12 @@
         Certaines capacités spéciales, sorts ou situations permettent à votre
         personnage d&#39;accomplir une action spéciale appelée une réaction. Une
         réaction est une
-        <strong>réponse instantanée déclenchée par un stimulus qui peut se produire
-          pendant votre tour ou celui de quelqu&#39;un d&#39;autre</strong>. Le type de réaction le plus courant est
-        l&#39;<strong>attaque d&#39;opportunité</strong>.
+        <strong
+          >réponse instantanée déclenchée par un stimulus qui peut se produire
+          pendant votre tour ou celui de quelqu&#39;un d&#39;autre</strong
+        >. Le type de réaction le plus courant est l&#39;<strong
+          >attaque d&#39;opportunité</strong
+        >.
       </p>
       <h3>Attaque d&#39;opportunité</h3>
       <p>
@@ -167,8 +179,10 @@
         Vous pouvez apporter votre aide à une autre créature pour réaliser une
         tâche. Quand vous choisissez l&#39;action aider, la créature que vous
         aidez
-        <strong>obtient un avantage, et un avantage supplémentaire par rang de
-          maîtrise</strong>
+        <strong
+          >obtient un avantage, et un avantage supplémentaire par rang de
+          maîtrise</strong
+        >
         sur le prochain test de compétence qu&#39;elle fait dans le but
         d&#39;accomplir la tâche pour laquelle vous coopérez, mais seulement si
         elle fait ce test avant le début de votre prochain tour.
@@ -195,7 +209,10 @@
           </p>
         </li>
         <li>
-          <p>Déterminer les dés a lancer en fonction du jet d'attaque (distance ou contact ou autre).</p>
+          <p>
+            Déterminer les dés a lancer en fonction du jet d'attaque (distance
+            ou contact ou autre).
+          </p>
         </li>
         <li>
           <p>
@@ -277,8 +294,10 @@
         (Coordinations) de la cible (celle-ci choisit la compétence qu&#39;elle
         préfère utiliser). Si vous remportez la confrontation, vous avez le
         choix entre
-        <strong>faire tomber votre cible à terre ou la repousser d&#39;1,50 mètre
-          loin de vous</strong>.
+        <strong
+          >faire tomber votre cible à terre ou la repousser d&#39;1,50 mètre
+          loin de vous</strong
+        >.
       </p>
       <h3>A couvert</h3>
       <p>
@@ -289,8 +308,10 @@
         ce qui sert d&#39;abri.
       </p>
       <p>
-        <strong>En fonction de la qualité de l&#39;abri, le MJ peut décider
-          d&#39;augmenter DD pour toucher</strong>. Par exemple, l&#39;abris d&#39;un bouclier de fortune donne +1DD au
+        <strong
+          >En fonction de la qualité de l&#39;abri, le MJ peut décider
+          d&#39;augmenter DD pour toucher</strong
+        >. Par exemple, l&#39;abris d&#39;un bouclier de fortune donne +1DD au
         jet d&#39;attaque a distance qui vise le porteur.
       </p>
       <p>
@@ -316,8 +337,9 @@
         Quand vous choisissez l&#39;action esquiver, votre unique objectif est
         d&#39;éviter les attaques. Jusqu&#39;au début de votre tour suivant,
         vous
-        <strong>augmentez de 1 votre défense au corps à corps et à distance</strong>. Vous perdez les bénéfices de cette
-        action si vous êtes neutralisé ou
+        <strong
+          >augmentez de 1 votre défense au corps à corps et à distance</strong
+        >. Vous perdez les bénéfices de cette action si vous êtes neutralisé ou
         si votre vitesse est réduite à 0.
       </p>
       <h3>Se tenir prêt</h3>
@@ -326,8 +348,10 @@
         configuration particulière avant d&#39;agir. Pour cela, vous devez
         choisir l&#39;action se tenir prêt pendant votre tour. Ainsi, vous
         décalez votre action
-        <strong>jusqu&#39;à ce que l&#39;événement attendu survient. Sinon, vous
-          jouez à la fin du tour de jeu</strong>.
+        <strong
+          >jusqu&#39;à ce que l&#39;événement attendu survient. Sinon, vous
+          jouez à la fin du tour de jeu</strong
+        >.
       </p>
       <p>
         Vous pouvez également utiliser votre mouvement pendant votre créneau
@@ -410,10 +434,9 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
     NamTitle,
-    NamTitle
+    NamTitle,
   },
 });
 </script>
 
-<style>
-</style>
+<style></style>

@@ -15,9 +15,7 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
-      <h1>
-        Véhicules, Aéronefs et Navettes
-      </h1>
+      <h1>Véhicules, Aéronefs et Navettes</h1>
       <p>
         On distingue généralement deux types de véhicules. Ceux qui peuvent
         voyager à travers les relais galactiques et les autres. Les premiers
@@ -61,9 +59,7 @@
         voler et l&#39;entretenir requière beaucoup plus de fonds. En posséder
         un ne signifie pas qu&#39;on puisse l&#39;utiliser avec facilité.
       </p>
-      <h2>
-        Véhicules terrestre et montures.
-      </h2>
+      <h2>Véhicules terrestre et montures.</h2>
       <p>
         Les véhicules motorisés sont monnaie courante dans la plupart des
         mondes, et peuvent être achetés à des prix raisonnables. Comme toujours,
@@ -76,13 +72,23 @@
         d&#39;écosystèmes florissants, ou de large et puissants animaux peuvent
         être domestiqué.
       </p>
-
     </ion-content>
   </ion-page>
 </template>
 
 <script>
-  import {
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+
+export default {
+  components: {
     IonButtons,
     IonContent,
     IonHeader,
@@ -90,19 +96,8 @@
     IonPage,
     IonTitle,
     IonToolbar,
-  } from "@ionic/vue";
-
-  export default {
-    components: {
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonMenuButton,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  };
+  },
+};
 </script>
 
 <style></style>

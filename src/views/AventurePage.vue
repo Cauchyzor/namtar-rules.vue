@@ -35,7 +35,9 @@
         <strong>Dans le cadre des combats</strong> et d&#39;autres situations de
         jeu où l&#39;action se déroule très vite et où chaque instant peut être
         crucial, le jeu utilise un système de rounds,
-        <strong>le round étant une unité de temps qui dure environ 6 secondes</strong>.
+        <strong
+          >le round étant une unité de temps qui dure environ 6 secondes</strong
+        >.
       </p>
       <h1>Déplacement</h1>
       <p>
@@ -49,8 +51,10 @@
       <p>
         Chaque personnage ou monstre est caractérisé par une vitesse qui
         correspond à la
-        <strong>distance que ce personnage ou monstre peut parcourir en 1
-          round</strong>. Ce nombre correspond à un mouvement rapide et volontaire au cœur
+        <strong
+          >distance que ce personnage ou monstre peut parcourir en 1
+          round</strong
+        >. Ce nombre correspond à un mouvement rapide et volontaire au cœur
         d&#39;une situation dangereuse.
       </p>
       <p>
@@ -128,8 +132,10 @@
         sont tous considérés comme difficiles.
       </p>
       <p>
-        <strong>Sur un terrain difficile, vous vous déplacez à la moitié de votre
-          vitesse</strong>
+        <strong
+          >Sur un terrain difficile, vous vous déplacez à la moitié de votre
+          vitesse</strong
+        >
         (parcourir un mètre vous coûte deux mètres de vitesse), donc vous ne
         pouvez parcourir que la moitié de la distance normale en une minute, une
         heure ou un jour.
@@ -195,8 +201,10 @@
       <p>
         Pour un aventurier, la chute constitue un des risques les plus courants.
         Suite à une chute, une créature subit
-        <strong>1d6 dégâts contondants pour chaque tranche de 3 mètres de chute,
-          jusqu&#39;à un maximum de 10d6</strong>. À moins qu&#39;elle n&#39;ait réussi à éviter de subir les dégâts
+        <strong
+          >1d6 dégâts contondants pour chaque tranche de 3 mètres de chute,
+          jusqu&#39;à un maximum de 10d6</strong
+        >. À moins qu&#39;elle n&#39;ait réussi à éviter de subir les dégâts
         occasionnés par la chute, la créature termine à terre.
       </p>
       <h2>Asphyxie</h2>
@@ -245,9 +253,10 @@
       <h2>Vision aveugle</h2>
       <p>
         Une créature dotée du trait vision aveugle est
-        <strong>capable de percevoir son environnement dans un périmètre donné sans
-          avoir besoin de faire appel à sa vision</strong>. Des créatures dépourvues d&#39;yeux comme les vases, des
-        créatures
+        <strong
+          >capable de percevoir son environnement dans un périmètre donné sans
+          avoir besoin de faire appel à sa vision</strong
+        >. Des créatures dépourvues d&#39;yeux comme les vases, des créatures
         dotées d&#39;écholocation ou de sens particulièrement aiguisés, comme
         les chauves-souris et les vrais dragons, possèdent cette capacité.
       </p>
@@ -346,7 +355,18 @@
 </template>
 
 <script>
-  import {
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+
+export default {
+  components: {
     IonButtons,
     IonContent,
     IonHeader,
@@ -354,19 +374,8 @@
     IonPage,
     IonTitle,
     IonToolbar,
-  } from "@ionic/vue";
-
-  export default {
-    components: {
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonMenuButton,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  };
+  },
+};
 </script>
 
 <style></style>

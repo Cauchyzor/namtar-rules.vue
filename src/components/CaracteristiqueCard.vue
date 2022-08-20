@@ -31,7 +31,7 @@ import {
   IonItem,
 } from "@ionic/vue";
 
-import type { PropType } from 'vue'
+import type { PropType } from "vue";
 import type { Caracteristique } from "@/domain/Caracteristique";
 
 export default defineComponent({
@@ -49,13 +49,15 @@ export default defineComponent({
   },
   props: {
     ShowAttribute: Boolean,
-    Caracteristique: { type: Object as PropType<Caracteristique>, required: true },
+    Caracteristique: {
+      type: Object as PropType<Caracteristique>,
+      required: true,
+    },
   },
   mounted() {
-    this.ShowAttribute
-    this.Caracteristique
-  }
+    this.ShowAttribute;
+    this.Caracteristique;
+  },
 });
 </script>
-<style scoped>
-</style>
+<style scoped></style>

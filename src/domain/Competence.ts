@@ -103,20 +103,20 @@ export class CompetenceService {
       Nom: CompetenceName.INTIMIDATION,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
     },
-  ]
+  ];
   /**
-   * 
+   *
    * @param name List all competences with this Caracteristique by default
-   * @returns 
+   * @returns
    */
   static getCompetencesByCaracteristique(name: CaracteritiqueName) {
-    return this.CompetencesList.filter(c => c.BaseCaracteristique === name)
+    return this.CompetencesList.filter((c) => c.BaseCaracteristique === name);
   }
   /**
    * Returne all Competences with info
-   * @returns 
+   * @returns
    */
   static getAllCompetences() {
-    return this.CompetencesList
+    return this.CompetencesList;
   }
 }
