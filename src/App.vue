@@ -4,7 +4,9 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>NAMTAR</ion-list-header>
+            <ion-list-header>
+              <NamTitle>NAMTAR</NamTitle>
+            </ion-list-header>
             <ion-note>Règles de jeu</ion-note>
 
             <ion-menu-toggle
@@ -64,6 +66,7 @@ import {
   warningOutline,
   warningSharp,
 } from "ionicons/icons";
+import NamTitle from "./components/NamTitle.vue";
 
 export default defineComponent({
   name: "App",
@@ -79,6 +82,7 @@ export default defineComponent({
     IonNote,
     IonRouterOutlet,
     IonSplitPane,
+    NamTitle,
   },
   setup() {
     const selectedIndex = ref(0);
