@@ -368,23 +368,17 @@
       <h3>Se cacher</h3>
       <p>
         Quand vous choisissez l&#39;action se cacher, vous devez faire un test
-        d&#39;agilité (Discrétion) pour tenter de vous cacher en suivant les
-        règles appropriées. Si vous réussissez, vous gagnez certains des
-        bénéfices associés à cet état, tels qu&#39;ils sont décrits dans la
-        section Attaquants et cibles invisibles.
+        d&#39;agilité (Discrétion) pour tenter de vous cacher.
       </p>
       <h1>Dégâts</h1>
       <p>
-        Pour chaque arme, sort ou capacité offensive de monstre, les dégâts
-        infligés sont décrits dans la rubrique correspondante. Les capacités
-        spéciales et d&#39;autres facteurs peuvent infliger des dégâts bonus. Il
-        est également possible qu&#39;un malus vous fasse infliger un nombre de
-        dégâts égal à 0, mais vous ne pouvez jamais infliger de dégâts négatifs.
+        Pour chaque arme ou capacité offensive, les dégâts infligés sont décrits
+        dans la description de l'arme ou la capacité.
       </p>
       <p>
-        Si une évocation ou un effet inflige des dégâts à plus d&#39;une
-        créature au même moment, les dégâts sont lancés une seule fois pour
-        toutes les créatures.
+        Si une arme ou une capaité inflige des dégâts à plus d&#39;une créature
+        au même moment, les dégâts sont lancés une seule fois pour toutes les
+        créatures.
       </p>
       <h2>Assommer une créature</h2>
       <p>
@@ -404,6 +398,88 @@
         fiole à sa ceinture, tout est possible. C&#39;est alors au MJ de
         déterminer les chances de réussite de votre action et de vous demander,
         s&#39;il le souhaite, un lancer de dés.
+      </p>
+      <NamTitle>Les états spéciaux</NamTitle>
+      <h2>À terre / Renversée</h2>
+      <p>
+        Une créature à terre n&#39;a plus l&#39;option que de ramper pour se
+        déplacer, à moins de se relever et de mettre ainsi un terme à son état.
+        Elle peut également décider d&#39;epauler une arme a distance si
+        celle-ci n&#39;est pas trop encombrante à manoeuvrer. La créature subit
+        un désavantage lors de ses attaques au corps a corps. Si un assaillant
+        est à 1,50 mètre ou moins de la créature, il bénéficie d&#39;un avantage
+        lors de ses attaques contre la créature. Sinon, il subit un désavantage.
+      </p>
+      <h2>Assourdi</h2>
+      <p>
+        Une créature assourdie n&#39;entend plus rien et rate automatiquement
+        tous les tests de caractéristique faisant intervenir des capacités
+        auditives.
+      </p>
+      <h2>Aveuglé</h2>
+      <p>
+        Une créature aveuglée ne voit plus rien et rate automatiquement tout
+        test de caractéristique qui requiert la vue. Sa défense est réduite de
+        1.
+      </p>
+      <h2>Empoigné</h2>
+      <p>
+        La vitesse d&#39;une créature empoignée devient 0 et elle ne peut plus
+        bénéficier de ses éventuels bonus de vitesse. Cet état se termine si
+        l&#39;empoigneur est neutralisé (voir cet état). L&#39;état se termine
+        également si un effet emporte la créature empoignée au-delà de
+        l&#39;allonge de l&#39;empoigneur ou de l&#39;effet d&#39;empoignade.
+      </p>
+      <h2>Entravé</h2>
+      <p>
+        La vitesse de la créature entravée tombe à 0 et elle ne peut plus
+        bénéficier de ses éventuels bonus de vitesse. Les attaques qui visent la
+        créature bénéficient d&#39;un avantage, tandis que les attaques de la
+        créature subissent un désavantage. La créature souffre d&#39;un
+        désavantage lors de ses jets de sauvegarde.
+      </p>
+      <h2>Neutralisé</h2>
+      <p>
+        Une créature neutralisée est incapable d&#39;effectuer une action ou une
+        réaction.
+      </p>
+      <h2>Neutralisé - Étourdi</h2>
+      <p>
+        Une créature étourdie est neutralisée, incapable de se déplacer et parle
+        en balbutiant. La créature rate automatiquement tous ses jets de
+        sauvegarde. Les jets d&#39;attaque qui visent la créature se font avec
+        un avantage.
+      </p>
+      <h2>Neutralisé - Paralysé</h2>
+      <p>
+        Une créature paralysée est neutralisée et ne peut ni parler ni se
+        déplacer. La créature rate automatiquement tous ses jets de sauvegarde.
+        Les attaques visant la créature bénéficient d&#39;un avantage. Toute
+        attaque qui touche la créature est obligatoirement un coup critique si
+        l&#39;assaillant se trouve dans un rayon de 1,50 mètre autour
+        d&#39;elle.
+      </p>
+      <h2>Neutralisé - Inconscient</h2>
+      <p>
+        Une créature inconsciente est neutralisée, incapable de se déplacer et
+        de parler et n&#39;a pas conscience de ce qui l&#39;entoure. La créature
+        lâche tout ce qu&#39;elle tenait et tombe au sol. Si la créature reprend
+        conscience, elle est à terre. Seul la défense de l&#39;équipement est
+        prise en compte sur le total de défense. Toute attaque qui touche la
+        créature inflige le maximum de dégât si l&#39;attaquant est a 1,5m de la
+        créature.
+      </p>
+      <h2>Terrorisé</h2>
+      <p>
+        Une créature terrorisée subit un désavantage lors de ses tests de
+        caractéristique et de ses jets d&#39;attaque tant que la source de sa
+        frayeur se trouve dans son champ de vision. La créature est incapable de
+        se rapprocher de la source de sa frayeur de son plein gré.
+      </p>
+      <h2>Surpris</h2>
+      <p>
+        Une créature surprise est incapable de se déplacer. Une créature
+        surprise ne peut entreprendre ni action ni réaction.
       </p>
     </ion-content>
   </ion-page>
@@ -433,7 +509,6 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    NamTitle,
     NamTitle,
   },
 });
