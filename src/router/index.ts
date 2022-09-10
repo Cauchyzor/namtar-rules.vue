@@ -34,6 +34,32 @@ const routes: Array<RouteRecordRaw> = [
     path: "/Vehicule",
     component: () => import("../views/VehiculesPage.vue"),
   },
+  {
+    path: "/Capacite",
+    component: () => import("../views/CapaciteInfoPage.vue"),
+    children: [
+      {
+        path: '',
+        redirect: '/Capacite/TypeTab',
+      },
+      {
+        path: 'TypeTab',
+        component: () => import('@/views/CapaciteInfoTabs/TypeTab.vue'),
+      },
+      {
+        path: 'VecteurTab',
+        component: () => import('@/views/CapaciteInfoTabs/VecteurTab.vue'),
+      },
+      {
+        path: 'EffetTab',
+        component: () => import('@/views/CapaciteInfoTabs/EffetTab.vue'),
+      },
+      {
+        path: 'AmeliorationTab',
+        component: () => import('@/views/CapaciteInfoTabs/AmeliorationTab.vue'),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

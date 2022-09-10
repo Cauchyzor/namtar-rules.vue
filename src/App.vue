@@ -9,20 +9,9 @@
             </ion-list-header>
             <ion-note>Règles de jeu</ion-note>
 
-            <ion-menu-toggle
-              auto-hide="false"
-              v-for="(p, i) in appPages"
-              :key="i"
-            >
-              <ion-item
-                @click="selectedIndex = i"
-                router-direction="root"
-                :router-link="p.url"
-                lines="none"
-                detail="false"
-                class="hydrated"
-                :class="{ selected: selectedIndex === i }"
-              >
+            <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
+              <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none"
+                detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
@@ -115,6 +104,10 @@ export default defineComponent({
         title: "Règles : Véhicules",
         url: "/Vehicule",
       },
+      {
+        title: "Règles : Capacitée",
+        url: "/Capacite",
+      }
     ];
 
     const path = window.location.pathname.split("folder/")[1];
