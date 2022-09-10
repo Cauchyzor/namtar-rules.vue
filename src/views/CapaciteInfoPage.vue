@@ -16,7 +16,7 @@
         </ion-toolbar>
       </ion-header>
       <NamTitle>Capacites</NamTitle>
-
+      <!-- TODO search bar pour filtrer les items dans les tabs -->
       <ion-tabs>
         <ion-router-outlet></ion-router-outlet>
         <ion-tab-bar slot="bottom">

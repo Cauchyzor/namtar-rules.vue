@@ -9,6 +9,11 @@
     <ion-content class="ion-padding">
       <NamTitle>Capacites</NamTitle>
       <NamTitle>Effets</NamTitle>
+      <EffetItem
+        v-for="effet in Effets"
+        :key="effet.Nom"
+        :Effet="effet"
+      ></EffetItem>
     </ion-content>
   </ion-page>
 </template>
@@ -24,6 +29,8 @@ import {
 } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
+import EffetItem from "@/components/EffetItem.vue";
+import { CapaciteService } from "@/domain/Capacite";
 
 export default defineComponent({
   components: {
@@ -33,6 +40,10 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
     NamTitle,
+    EffetItem,
+  },
+  data() {
+    return { Effets: CapaciteService.getAllEffect() };
   },
 });
 </script>

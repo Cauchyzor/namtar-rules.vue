@@ -72,6 +72,7 @@ enum AmeliorationEffetName {
   PERSONNEL = "Personnel",
   ZONE = "Zone d'effet",
 }
+
 export class CapaciteService {
   //TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
   private static Types: Array<CapaciteType> = [
@@ -323,5 +324,14 @@ export class CapaciteService {
   }
   static getAllTypes() {
     return this.Types
+  }
+  static getAllEffect() {
+    return this.EffectsList
+  }
+  static getAllAmelioration() {
+    return this.AmeliorationList
+  }
+  static getAllVecteur() {
+    return this.VecteursList
   }
 }

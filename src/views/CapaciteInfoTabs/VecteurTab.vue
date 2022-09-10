@@ -9,6 +9,11 @@
     <ion-content class="ion-padding">
       <NamTitle>Capacites</NamTitle>
       <NamTitle>Vecteur</NamTitle>
+      <VecteurItem
+        v-for="vecteur in Vecteurs"
+        :key="vecteur.Nom"
+        :Vecteur="vecteur"
+      ></VecteurItem>
     </ion-content>
   </ion-page>
 </template>
@@ -24,6 +29,8 @@ import {
 } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
+import { CapaciteService } from "@/domain/Capacite";
+import VecteurItem from "@/components/VecteurItem.vue";
 
 export default defineComponent({
   components: {
@@ -33,6 +40,12 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
     NamTitle,
+    VecteurItem,
+  },
+  data() {
+    return {
+      Vecteurs: CapaciteService.getAllVecteur(),
+    };
   },
 });
 </script>

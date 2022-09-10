@@ -9,6 +9,11 @@
     <ion-content class="ion-padding">
       <NamTitle>Capacites</NamTitle>
       <NamTitle>Amelioration d'effet</NamTitle>
+      <AmeliorationEffetItem
+        v-for="amelioration in Ameliorations"
+        :key="amelioration.Nom"
+        :Amelioration="amelioration"
+      ></AmeliorationEffetItem>
     </ion-content>
   </ion-page>
 </template>
@@ -24,6 +29,8 @@ import {
 } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
+import { CapaciteService } from "@/domain/Capacite";
+import AmeliorationEffetItem from "@/components/AmeliorationEffetItem.vue";
 
 export default defineComponent({
   components: {
@@ -33,6 +40,12 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
     NamTitle,
+    AmeliorationEffetItem,
+  },
+  data() {
+    return {
+      Ameliorations: CapaciteService.getAllAmelioration(),
+    };
   },
 });
 </script>
