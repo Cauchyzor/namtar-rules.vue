@@ -74,7 +74,7 @@ enum AmeliorationEffetName {
 }
 export class CapaciteService {
   //TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
-  private static CapaciteTypes: Array<CapaciteType> = [
+  private static Types: Array<CapaciteType> = [
     {
       Nom: CapaciteTypeName.EVOCATION,
       Description:
@@ -285,8 +285,8 @@ export class CapaciteService {
       Description:
         "Vous formez une sphère d'energie et la projetez dans la direction de la cible. A son contact, la cible est brulée et subit des dommages.",
       Image: "",
-      Type: this.getCapacityTypeByName(CapaciteTypeName.EVOCATION),
-      Vecteur: this.getVecteurByName(VecteurName.PROJECTILE),
+      Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION),
+      Vecteur: this.findVecteurByName(VecteurName.PROJECTILE),
       Effets: new Map([[EffetName.CHALEUR, 1]]),
       AmeliorationsEffet: new Map(),
     },
@@ -295,8 +295,8 @@ export class CapaciteService {
       Description:
         "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de Résiliance pour regagner ses PV perdus.",
       Image: "",
-      Type: this.getCapacityTypeByName(CapaciteTypeName.BENEDICTION),
-      Vecteur: this.getVecteurByName(VecteurName.CONTACT),
+      Type: this.findCapacityTypeByName(CapaciteTypeName.BENEDICTION),
+      Vecteur: this.findVecteurByName(VecteurName.CONTACT),
       Effets: new Map([[EffetName.SOIN, 1]]),
       AmeliorationsEffet: new Map(),
     },
@@ -305,20 +305,23 @@ export class CapaciteService {
       Description:
         "L'energie résiduelle du cadavre visé s'echape violament et renverse les cibles a portée courtes",
       Image: "",
-      Type: this.getCapacityTypeByName(CapaciteTypeName.NECROMANCIE),
-      Vecteur: this.getVecteurByName(VecteurName.EXPLOSION_CADAVRE),
+      Type: this.findCapacityTypeByName(CapaciteTypeName.NECROMANCIE),
+      Vecteur: this.findVecteurByName(VecteurName.EXPLOSION_CADAVRE),
       Effets: new Map([[EffetName.FORCE, 2]]),
       AmeliorationsEffet: new Map([[AmeliorationEffetName.ZONE, 1]]),
     },
   ];
 
-  static getCapacityTypeByName(name: CapaciteTypeName) {
-    return this.CapaciteTypes.find((ct) => ct.Nom === name)!;
+  static findCapacityTypeByName(name: CapaciteTypeName) {
+    return this.Types.find((ct) => ct.Nom === name)!;
   }
-  static getVecteurByName(name: VecteurName) {
+  static findVecteurByName(name: VecteurName) {
     return this.VecteursList.find((vt) => vt.Nom === name)!;
   }
   static getAllCapacites() {
     return this.CapaciteList;
+  }
+  static getAllTypes() {
+    return this.Types
   }
 }
