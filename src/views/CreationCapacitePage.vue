@@ -1,0 +1,34 @@
+<template>
+  <ion-page>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ $route.params.id }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">{{ $route.params.id }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <NamTitle>Outil de creation de capacité</NamTitle>
+    </ion-content>
+    <!-- TODO : Stepper -->
+    <!-- Tableau des Types de Capacitée + Selection-->
+    <!-- Tableau des Vecteurs + Selection-->
+    <!-- Tableau des Effets + Amelioration d'effets-->
+    <!-- Info générales + Sauvegarde -->
+  </ion-page>
+</template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+
+export default defineComponent({
+  name: 'CreationCapacitePage'
+})
+</script>
