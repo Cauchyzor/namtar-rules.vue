@@ -15,6 +15,9 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
+      <!-- TODO Faire un stepper avec les différents types de vehicule / Montures -->
+      <!-- TODO Faire le lien avec une liste de vehicule monture de la catégorie en bas de chaque step  -->
+      <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
       <h1>Véhicules, Aéronefs et Navettes</h1>
       <p>
         On distingue généralement deux types de véhicules. Ceux qui peuvent
@@ -100,4 +103,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

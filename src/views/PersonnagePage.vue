@@ -21,6 +21,7 @@
           <p>{{ slideSubtitle }}</p>
         </ion-text>
       </div>
+      <!-- TODO Remplacer le Swipper par un stepper -->
       <swiper
         :modules="modules"
         :autoplay="true"

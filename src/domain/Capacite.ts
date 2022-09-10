@@ -73,6 +73,7 @@ enum AmeliorationEffetName {
   ZONE = "Zone d'effet",
 }
 export class CapaciteService {
+  //TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
   private static CapaciteTypes: Array<CapaciteType> = [
     {
       Nom: CapaciteTypeName.EVOCATION,

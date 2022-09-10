@@ -15,6 +15,8 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
+      <!-- TODO Faire des onglets -->
+      <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
       <h1>Système monétaire</h1>
       <p>
         Depuis l&#39;avènement du commerce galactique, de nombreuses monnaies se

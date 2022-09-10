@@ -15,6 +15,7 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
+      <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
       <NamTitle>Avant une situation de conflit</NamTitle>
       <h2>Initiative</h2>
       <p>

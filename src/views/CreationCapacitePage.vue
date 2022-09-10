@@ -27,8 +27,29 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+
+import NamTitle from "@/components/NamTitle.vue";
 
 export default defineComponent({
+  components: {
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonMenuButton,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+    NamTitle,
+  },
   name: 'CreationCapacitePage'
 })
 </script>
