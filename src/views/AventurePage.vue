@@ -350,6 +350,60 @@
         couvrir les dépenses de cette entreprise. Cette somme s&#39;ajoute au
         coût normal de votre train de vie.
       </p>
+      <h2>Communication</h2>
+      <h3>A l&#39;échelle galactique</h3>
+      <p>
+        Face aux proportions difficilement gigantesques que représente la
+        galaxie en elle-même, communiquer d&#39;un bras à l&#39;autre représente
+        un challenge technique rendu possible par les mêmes découvertes que
+        celles qui on permit le voyage hyperspatiale. Grâce à une grande antenne
+        très sophistiquée, appelée &quot;<strong>beacom</strong>&quot; située
+        loin des zones d&#39;activités dans un système solaire, et alimentée
+        généralement par l&#39;<strong
+          >énergie de l&#39;étoile à proximité, le système bénéficie de toutes
+          les communications du grand réseau galactique</strong
+        >.
+      </p>
+      <p>
+        La couverture galactique est néanmoins très limitée. On parle
+        généralement du monde civilisé quand on parle des secteurs qui ont bâti
+        une beacom, et des contrés sauvage quand on parle des autres. La
+        couverture galactique est extrêmement faible, et beaucoup de mondes
+        n&#39;ont pas encore été découverts.
+      </p>
+      <p>
+        Les communications qui viennent de l&#39;ensemble de la galaxie par le
+        biais des beacoms tombent naturellement sous le contrôle de celui qui
+        maîtrise la beacom. C&#39;est donc des
+        <strong
+          >infrastructures d&#39;une importance capitale pour les systèmes
+          solaires qui en bénéficie</strong
+        >, et souvent source de querelles intestines sur les systèmes les moins
+        stables politiquement.
+      </p>
+      <h3>Dans un système</h3>
+      <p>
+        Il y a généralement sur chaque planète habitée et dite
+        &quot;civilisés&quot;
+        <strong
+          >une grande infrastructure jumelée avec la beacom du système
+          solaire</strong
+        >. Tous les <strong>échanges extra-planétaire</strong> (donc également
+        <strong>au sein d&#39;un même système</strong>) sont fait à partir de
+        là.
+      </p>
+      <p>
+        Pour ce qui est des <strong>communications intra-planétaire</strong>,
+        cela peut grandement varier. Certains mondes ou la population est très
+        concentrée, ou n&#39;est pas très mature sur les technologies de
+        l&#39;information, on a tout simplement jugé qu&#39;il n&#39;était
+        <strong>pas nécessaire d&#39;en bénéficier</strong>. Il n&#39;est pas
+        rare que dans des planètes très peu habitées, on utilise encore des
+        messagers. Dans les mondes les plus
+        <strong>puissants et riches, il y a une bonne couverture réseau</strong
+        >, et on peut communiquer assez facilement tant que l&#39;on possède un
+        terminal approprié.
+      </p>
     </ion-content>
   </ion-page>
 </template>

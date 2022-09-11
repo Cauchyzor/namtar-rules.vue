@@ -30,8 +30,7 @@
         </li>
         <li>
           Le repos long (8h de sommeil dans un environnement sécurisé): le
-          personnage peut consommer 2 point de résiliance et regagne
-          l'équivalant de la moitié de ses point de résilience.
+          personnage peut consommer 2 point de résiliance et régénère la moitié de sont maximum de points de résilience.
         </li>
         <li>Capacité : les effets sont décrits par la capacitée</li>
       </ul>
