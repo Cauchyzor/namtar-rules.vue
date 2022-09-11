@@ -15,90 +15,9 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
+      <NamTitle>Equipement et Marché</NamTitle>
       <!-- TODO Faire des onglets -->
       <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
-      <h1>Système monétaire</h1>
-      <p>
-        Depuis l&#39;avènement du commerce galactique, de nombreuses monnaies se
-        côtoient au quotidien, chacune venant d&#39;un cadran différent de la
-        galaxie. La force de chacune d&#39;entre elle dépend de la puissance
-        d&#39;entité qui la contrôle. Afin de faciliter les échanges, on compare
-        toujours la monnaie à une valeur étalon. Des groupes de recherche en
-        économie intergalactique ont convergé vers la solution de tout rapporté
-        à la valeur d&#39;un bloc de OCH4O312Ex4, qui est un composant chimique
-        dont l&#39;utilité universelle ne peut plus être contestée. Le nom étant
-        difficile à retenir, surtout dans les contrées ou la langue n&#39;est
-        pas &quot;parlée&quot; mais plutôt bourdonnée par exemple, on rabat sa
-        désignation à &quot;pièce&quot;.
-      </p>
-      <ul>
-        <li>
-          <strong
-            >10 pièces suffisent pour acheter n&#39;importe quel repas correct
-            dans la plupart des villes</strong
-          >.
-        </li>
-        <li>
-          <strong
-            >100 pièces vous offrent l&#39;hospitalité et la pitance pour une
-            nuit</strong
-          >.
-        </li>
-      </ul>
-      <h1>Communication</h1>
-      <h2>A l&#39;échelle galactique</h2>
-      <p>
-        Face aux proportions difficilement gigantesques que représente la
-        galaxie en elle-même, communiquer d&#39;un bras à l&#39;autre représente
-        un challenge technique rendu possible par les mêmes découvertes que
-        celles qui on permit le voyage hyperspatiale. Grâce à une grande antenne
-        très sophistiquée, appelée &quot;<strong>beacom</strong>&quot; située
-        loin des zones d&#39;activités dans un système solaire, et alimentée
-        généralement par l&#39;<strong
-          >énergie de l&#39;étoile à proximité, le système bénéficie de toutes
-          les communications du grand réseau galactique</strong
-        >.
-      </p>
-      <p>
-        La couverture galactique est néanmoins très limitée. On parle
-        généralement du monde civilisé quand on parle des secteurs qui ont bâti
-        une beacom, et des contrés sauvage quand on parle des autres. La
-        couverture galactique est extrêmement faible, et beaucoup de mondes
-        n&#39;ont pas encore été découverts.
-      </p>
-      <p>
-        Les communications qui viennent de l&#39;ensemble de la galaxie par le
-        biais des beacoms tombent naturellement sous le contrôle de celui qui
-        maîtrise la beacom. C&#39;est donc des
-        <strong
-          >infrastructures d&#39;une importance capitale pour les systèmes
-          solaires qui en bénéficie</strong
-        >, et souvent source de querelles intestines sur les systèmes les moins
-        stables politiquement.
-      </p>
-      <h2>Dans un système</h2>
-      <p>
-        Il y a généralement sur chaque planète habitée et dite
-        &quot;civilisés&quot;
-        <strong
-          >une grande infrastructure jumelée avec la beacom du système
-          solaire</strong
-        >. Tous les <strong>échanges extra-planétaire</strong> (donc également
-        <strong>au sein d&#39;un même système</strong>) sont fait à partir de
-        là.
-      </p>
-      <p>
-        Pour ce qui est des <strong>communications intra-planétaire</strong>,
-        cela peut grandement varier. Certains mondes ou la population est très
-        concentrée, ou n&#39;est pas très mature sur les technologies de
-        l&#39;information, on a tout simplement jugé qu&#39;il n&#39;était
-        <strong>pas nécessaire d&#39;en bénéficier</strong>. Il n&#39;est pas
-        rare que dans des planètes très peu habitées, on utilise encore des
-        messagers. Dans les mondes les plus
-        <strong>puissants et riches, il y a une bonne couverture réseau</strong
-        >, et on peut communiquer assez facilement tant que l&#39;on possède un
-        terminal approprié.
-      </p>
       <h1>Équipement</h1>
       <h2>Encombrement</h2>
       <p>
@@ -236,26 +155,10 @@
       </p>
       <ul>
         <li>
-          Vous pouvez porter
-          <strong
-            >une attaque de pugiat par action pour chaque rang de maitrise que
-            vous avez en pugilat</strong
-          >.
-          <ul>
-            <li>
-              Vous infligez <strong>1d4</strong> de dégâts sur une valeur de
-              <strong>vigueur de 4 ou moins</strong>.
-            </li>
-            <li>
-              Vous infligez <strong>1d6</strong> de dégâts sur une valeur de
-              <strong>vigueur de 6 ou moins</strong>.
-            </li>
-            <li>
-              Vous infligez <strong>1d8</strong> de dégâts sur une valeur de
-              <strong>vigueur au dela de 6</strong>.
-            </li>
-          </ul>
+          Vous pouvez porter une attaque de pugiat par action pour chaque rang
+          de maitrise que vous avez en pugilat.
         </li>
+        <li>Vous infligez 1 point de dommage tout les 2 succès</li>
       </ul>
       <h3>Munitions et projectiles</h3>
       <p>
@@ -287,26 +190,29 @@
           <tr>
             <td>Carreau</td>
             <td>15 p</td>
-            <td>1d12</td>
+            <td>2 point de dégats par succès</td>
             <td></td>
           </tr>
           <tr>
             <td>Flèches</td>
             <td>10 p</td>
-            <td>1d10</td>
+            <td>1 point de dégats par succès</td>
             <td></td>
           </tr>
           <tr>
             <td>Balle</td>
             <td>5 p</td>
-            <td>2d8</td>
+            <td>1 point de dégats par succès</td>
             <td></td>
           </tr>
           <tr>
             <td>&quot;Gros sel&quot;</td>
-            <td>5 p</td>
-            <td>1d8</td>
-            <td>Porté réduite de moitiée, Reduit de 1 le DD pour toucher</td>
+            <td>10 p</td>
+            <td>1 point de dégats par succès</td>
+            <td>
+              Porté courte au maximum; Frappe une cible adjacente supplémentaire
+              tout les 2 avantages
+            </td>
           </tr>
           <tr>
             <td><strong>Munitions et celulles limité</strong></td>
@@ -315,26 +221,31 @@
             <td></td>
           </tr>
           <tr>
-            <td>Cellules à haute densitée</td>
+            <td>Celulles à haute densitée</td>
             <td>200 p</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>Munition à fusion</td>
-            <td>100 p</td>
-            <td></td>
+            <td>Munition à fusion (6 charges)</td>
+            <td>600 p</td>
+            <td>4 dégats par succès</td>
+            <td>
+              L'arme qui tire cette munitions peut explosée si 3 désavantages
+              sont générés sur un jet d'attaque
+            </td>
           </tr>
         </tbody>
       </table>
       <h3>Armes conventionnelles</h3>
-      <div class="nam-cards-wrapper">
-        <div class="card nam-card">
-          <div class="card__content">
-            <div class="card__header">
+      <div>
+        <div>
+          <div>
+            <div>
               <h4>Bâton de force</h4>
             </div>
             <ul>
-              <li><strong>Dégât: </strong>1d6 + 1d4 (avec celulle)</li>
+              <li>Dégât: 1 point de dommage par succès</li>
               <li><strong>Prix de base: </strong>50 p</li>
               <li><strong>Encombrement: </strong>3</li>
               <li>
@@ -364,10 +275,7 @@
               <li><strong>Prix de base: </strong>50p</li>
               <li><strong>Encombrement: </strong>1</li>
               <li>
-                <strong>Spécial: </strong>Chaque Succès net aux jets
-                d&#39;attaques infligent 2 point de dégâts au lieu d&#39;1. Vous
-                avez un désavantage face au cibles maniant des armes au corps à
-                corps à cause de sa petite portée
+                <strong>Spécial: </strong>
               </li>
             </ul>
             <p>
@@ -396,7 +304,7 @@
               </li>
             </ul>
             <p>
-              Précis et maniable, c&#39;est l&#39;arme de prédilection de la
+              Précis et maniable, c'est l'arme de prédilection de la
               pluparts des bagarreurs qui veulent ce faire respecter
             </p>
           </div>
@@ -418,8 +326,8 @@
             </ul>
             <p>
               Arme de corps à corps redoutable, comprenant dans un sa conçeption
-              une celulle énergetique remplaçable qui décharge de solide
-              détonations à l&#39;impact
+              deux celulle énergetique remplaçable qui décharge de solide
+              détonations à l'impact
             </p>
           </div>
         </div>
@@ -439,9 +347,7 @@
               <li><strong>Encombrement: </strong>4</li>
             </ul>
             <p>
-              Plus lourde qu&#39;un sabre, la vibro-hache est aussi plus
-              difficile à manier efficacement, mais peut infliger de terribles
-              dégâts.
+              Plus lourde qu'un sabre, la vibro-hache est aussi plus difficile à manier efficacement, mais peut infliger de terribles dégâts.
             </p>
           </div>
         </div>
@@ -722,7 +628,8 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
+import NamTitle from "@/components/NamTitle.vue";
 import {
   IonButtons,
   IonContent,
@@ -732,8 +639,9 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/vue";
+import { defineComponent } from "@vue/runtime-core";
 
-export default {
+export default defineComponent({
   components: {
     IonButtons,
     IonContent,
@@ -742,8 +650,9 @@ export default {
     IonPage,
     IonTitle,
     IonToolbar,
+    NamTitle,
   },
-};
+});
 </script>
 
 <style></style>
