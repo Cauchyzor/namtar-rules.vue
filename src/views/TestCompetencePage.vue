@@ -58,42 +58,47 @@
         <strong>degré de difficulté (DD)</strong>. Plus une tâche est difficile,
         plus son DD est élevé.
       </p>
-      <h5>Degrés de difficulté</h5>
+      <h5>Degrés de difficulté (DD)</h5>
       <p>
-        Allant de 0 a +l&#39;infini... Mais voici quelques points pour s&#39;y
-        retrouver :
+        Allant de 0 a +l&#39;infini. Chaque cran est plus difficile a passé que
+        le précédant.
       </p>
       <ul>
         <li>
-          <strong>0</strong> : Aucune difficultée. Si c&#39;est raté, c&#39;est
-          vraiment, vraiment pas de chance..
+          <strong>Routinier - 0 </strong> : Aucune difficultée. Si c&#39;est
+          raté, c&#39;est vraiment, vraiment pas de chance..
         </li>
         <li>
-          <strong>2</strong> : Une personne sans vraiment et mal équipé pourrait
-          se planter plus de la moitiée du temps.
+          <strong>Facile - 1</strong> : Une personne sans vraiment de talent et
+          mal équipé pourrait se planter plus de la moitiée du temps.
         </li>
         <li>
-          <strong>4</strong> : Quelqu&#39;un d&#39;affuté pour le job, et avec
-          un peu d&#39;entrainement pourrai avoir quand même quelques
+          <strong>Normal - 2 </strong> : Quelqu&#39;un d&#39;affuté pour le job,
+          et avec un peu d&#39;entrainement pourrai avoir quand même quelques
           difficultées
         </li>
         <li>
-          <strong>6</strong> : Quelqu&#39;un de compétent et bien taillé ne
-          voudra pas s&#39;y risquer sans un bon materiel adequat..
+          <strong>Complexe - 3</strong> : Quelqu&#39;un de compétent ne voudra
+          pas s&#39;y risquer sans un bon materiel adequat..
         </li>
         <li>
-          <strong>8</strong> : Les meilleurs considèrent ça entre eux comme une
-          &quot;prise de risque&quot;
+          <strong>Difficile - 5</strong> : Les meilleurs considèrent ça entre
+          eux comme une &quot;prise de risque&quot;
         </li>
         <li>
-          <strong>10</strong> : Il faut être un expert talentueux et bien equipé
-          pour pouvoir dire &quot;qu&#39;on peut y arriver&quot;
+          <strong>Très Difficile - 8</strong> : Il faut être un expert
+          talentueux et bien equipé pour pouvoir dire &quot;qu&#39;on peut y
+          arriver&quot;
         </li>
         <li>
-          <strong>12</strong> : Il faut être un expert talentueux et bien equipé
-          pour pouvoir dire &quot;on va se planter, c&#39;est quasi sûr&quot;
+          <strong>Exceptionnel - 13</strong> : Il faut être un expert talentueux
+          et bien equipé pour ésperer peut-être réussir
         </li>
-        <li><strong>15</strong> : Il faut être un cul-bénis</li>
+        <li>
+          Pour des niveaux de difficulté superieures : le DD est égal au DD du
+          niveau précédant additionné à celui du niveau avant le niveau
+          précédant (exemple après le DD 13 -> 13 + 8 = 21)
+        </li>
       </ul>
       <p>
         Pour faire un test de compétence, préparez autant de d6 que la somme de
