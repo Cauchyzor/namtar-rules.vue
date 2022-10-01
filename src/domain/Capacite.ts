@@ -36,6 +36,7 @@ enum VecteurName {
   SOUFFLE = "Souffle",
   PROJECTILE = "Projectile",
   ONDE = "Onde",
+  MANTRA = "Mantra",
 }
 
 export type Effet = {
@@ -54,6 +55,7 @@ enum EffetName {
   SOIN = "Soin",
   VAMPIRISME = "Vampirisme",
   VOL = "Vol",
+  MANTRA = "Mantra",
 }
 
 export type AmeliorationEffet = {
@@ -311,6 +313,37 @@ export class CapaciteService {
       Effets: new Map([[EffetName.FORCE, 2]]),
       AmeliorationsEffet: new Map([[AmeliorationEffetName.ZONE, 1]]),
     },
+    {
+      Nom: "Mantra: le Berserk",
+      Description:
+        "Vous devenez colerique et inconsient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de 'sacrifier' vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ces dès ne sont plus utilisable pour vous defendre jusqu'au prochain tour",
+      Image: "",
+      Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
+      Effets: new Map(),
+      AmeliorationsEffet: new Map(),
+    },
+    {
+      Nom: "Mantra: l'échophagique",
+      Description:
+        "Vous êtes constament affamé, et ne sembler être rassasié qu'après avoir voler de l'echo auprès d'une source exterieur. Vous vous comportez comme un drogué vis a vis de cette source d'energie. Chaque jours passé sans consommer de l'echo baisse votre santé max de 1 point. Lorsque vous récupez de l'echo, vous pouvez dépenser un point de résiliance, ou dépenser 3 atout pour regagner un point de résiliance.",
+      Image: "",
+      Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
+      Effets: new Map(),
+      AmeliorationsEffet: new Map(),
+    },
+    {
+      Nom: "Morsure de Namtar",
+      Description:
+        "",
+      Image: "",
+      Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION),
+      Vecteur: this.findVecteurByName(VecteurName.CONTACT),
+      Effets: new Map([[EffetName.VAMPIRISME, 1]]),
+      AmeliorationsEffet: new Map(),
+    },
+
   ];
 
   static findCapacityTypeByName(name: CapaciteTypeName) {
