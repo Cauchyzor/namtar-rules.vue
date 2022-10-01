@@ -101,6 +101,10 @@ export class CapaciteService {
       Nom: CapaciteTypeName.BENEDICTION,
       Description: "Converti les atouts du groupe pour generer ses effets.",
     },
+    {
+      Nom: CapaciteTypeName.MANTRA,
+      Description: "Les effets sont passif.",
+    }
   ];
 
   private static VecteursList: Array<Vecteur> = [
@@ -135,6 +139,13 @@ export class CapaciteService {
         "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à porté courte autour de lui.",
       Difficulte:
         "Test d'évocation d'évocation (Intelligence) de difficulté dépendant de la distance couverte",
+    },
+    {
+      Nom: VecteurName.MANTRA,
+      Description:
+        "Voir la description",
+      Difficulte:
+        "Aucune",
     },
   ];
 
@@ -221,6 +232,13 @@ export class CapaciteService {
         [CapaciteTypeName.EVOCATION, -6],
         [CapaciteTypeName.BENEDICTION, -6],
       ]),
+    },
+    {
+      Nom: EffetName.MANTRA,
+      Description:
+        "Voir la description",
+      IsCummulable: false,
+      StabiliteParTypeCapacite: new Map(),
     },
   ];
 
@@ -352,6 +370,12 @@ export class CapaciteService {
   static findVecteurByName(name: VecteurName) {
     return this.VecteursList.find((vt) => vt.Nom === name)!;
   }
+  static findEffetByName(name: EffetName) {
+    return this.EffectsList.find((e) => e.Nom === name)!;
+  }
+  static findAmeliorationEffetByName(name: AmeliorationEffetName) {
+    return this.AmeliorationList.find((e) => e.Nom === name)!;
+  }
   static getAllCapacites() {
     return this.CapaciteList;
   }
@@ -366,5 +390,18 @@ export class CapaciteService {
   }
   static getAllVecteur() {
     return this.VecteursList
+  }
+  static computeCost(capacity: Capacite) {
+    if (capacity.Type.Nom === CapaciteTypeName.MANTRA) {
+      return 0
+    }
+    let totalCost = 0
+    capacity.Effets.forEach((rank, effectName) => {
+      totalCost += rank * (this.findEffetByName(effectName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 0)
+    })
+    capacity.AmeliorationsEffet.forEach((rank, ameliorationName) => {
+      totalCost += rank * (this.findAmeliorationEffetByName(ameliorationName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 0)
+    })
+    return totalCost
   }
 }
