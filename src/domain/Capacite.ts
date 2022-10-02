@@ -21,7 +21,6 @@ enum CapaciteTypeName {
   ENVOUTEMENT = "Envoutement",
   BENEDICTION = "Bénédiction",
   MANTRA = "Mantra",
-  INCONNUE = "Inconnue",
 }
 
 export type Vecteur = {
@@ -36,7 +35,7 @@ enum VecteurName {
   SOUFFLE = "Souffle",
   PROJECTILE = "Projectile",
   ONDE = "Onde",
-  MANTRA = "Mantra",
+  AUCUN = "Aucun",
 }
 
 export type Effet = {
@@ -49,12 +48,14 @@ export type Effet = {
 enum EffetName {
   ATOUT = "Atout",
   CHALEUR = "Chaleur",
+  ENTRAVE = "Entrave",
   FORCE = "Force",
-  MORAL = "Moral",
+  LEVITATION = "Levitation",
+  SOIN_DE_STRESS = "Soin de stress",
+  TELEPATHE = "Télépathe",
   INFORTUNE = "Infortune",
   SOIN = "Soin",
   VAMPIRISME = "Vampirisme",
-  VOL = "Vol",
   MANTRA = "Mantra",
 }
 
@@ -66,12 +67,12 @@ export type AmeliorationEffet = {
 };
 
 enum AmeliorationEffetName {
+  ANGLE_MORT = 'Angle mort',
   CATALYSEUR = "Catalyseur",
   CONTRE_COUP = "Contre-coup",
   DIFFICILE = "Difficile",
   ENERGIE_ACTIVATION = "Energie d'activation",
   INGREDIENT = "Ingredient",
-  PERSONNEL = "Personnel",
   ZONE = "Zone d'effet",
 }
 
@@ -86,7 +87,7 @@ export class CapaciteService {
     {
       Nom: CapaciteTypeName.MALEFICE,
       Description:
-        "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 1.",
+        "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 3.",
     },
     {
       Nom: CapaciteTypeName.NECROMANCIE,
@@ -141,9 +142,9 @@ export class CapaciteService {
         "Test d'évocation d'évocation (Intelligence) de difficulté dépendant de la distance couverte",
     },
     {
-      Nom: VecteurName.MANTRA,
+      Nom: VecteurName.AUCUN,
       Description:
-        "Voir la description",
+        "Les effets sont appliqués à la source de la capacité (dépends du type de la capacité).",
       Difficulte:
         "Aucune",
     },
@@ -156,25 +157,27 @@ export class CapaciteService {
         "La cible gagne 1 atout (Cummulable) sur sont prochain test.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -4],
         [CapaciteTypeName.BENEDICTION, -2],
+        [CapaciteTypeName.EVOCATION, -4],
+        [CapaciteTypeName.NECROMANCIE, -2],
       ]),
     },
     {
       Nom: EffetName.CHALEUR,
       Description:
-        "Inflige 1 Dommage (Cummulable) par succes net et par avantages",
+        "Inflige 2 Dommage (Cummulable) par succes net et par avantage",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.ENVOUTEMENT, -8],
         [CapaciteTypeName.EVOCATION, -4],
         [CapaciteTypeName.MALEFICE, -3],
         [CapaciteTypeName.NECROMANCIE, -1],
       ]),
     },
     {
-      Nom: EffetName.FORCE,
+      Nom: EffetName.ENTRAVE,
       Description:
-        "Inflige 1 Dommage (Cummulable) par succes net. Les cibles dont la Vigueur est inferieur au nombre d'avantage générés sont renversés",
+        "La cible perd sa capacité de déplacement si 1 succès. Elle est neutralisée a partir de 2 succès. Elle est complètment paralysé et ne peut pas pensé a partir de 3 succès.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
         [CapaciteTypeName.EVOCATION, -3],
@@ -182,14 +185,25 @@ export class CapaciteService {
       ]),
     },
     {
-      Nom: EffetName.MORAL,
+      Nom: EffetName.FORCE,
       Description:
-        "La cible est soigné d'1 point de stress (Cummulable) par succes net",
+        "Inflige 1 Dommage (Cummulable) par succes net. Les cibles dont la Vigueur est inferieur au nombre de succès générés sont renversés",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -4],
-        [CapaciteTypeName.BENEDICTION, -2],
-        [CapaciteTypeName.NECROMANCIE, -2],
+        [CapaciteTypeName.EVOCATION, -3],
+        [CapaciteTypeName.NECROMANCIE, -1],
+      ]),
+    },
+    {
+      Nom: EffetName.TELEPATHE,
+      Description:
+        "Permet de communiquer brievement avec la cible par la pensée. Chaque succès permet soit de faire durer le liens quelques seconde de plus.",
+      IsCummulable: true,
+      StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.EVOCATION, -2],
+        [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.MALEFICE, -1],
+        [CapaciteTypeName.ENVOUTEMENT, -1],
       ]),
     },
     {
@@ -204,13 +218,25 @@ export class CapaciteService {
       ]),
     },
     {
+      Nom: EffetName.SOIN_DE_STRESS,
+      Description:
+        "La cible est soigné d'1 point de stress (Cummulable) par succes net",
+      IsCummulable: true,
+      StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.BENEDICTION, -2],
+        [CapaciteTypeName.EVOCATION, -3],
+        [CapaciteTypeName.NECROMANCIE, -2],
+      ]),
+    },
+    {
       Nom: EffetName.SOIN,
       Description:
         "La cible dépense immediatement 1 point de résilience (Cummulable) pour regagner ses PV. Chaque avantage soigne 1 Point de stress.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -4],
         [CapaciteTypeName.BENEDICTION, -3],
+        [CapaciteTypeName.EVOCATION, -4],
+        [CapaciteTypeName.NECROMANCIE, -3],
       ]),
     },
     {
@@ -219,12 +245,13 @@ export class CapaciteService {
         "Inflige 1 Dommage (Cummulable) par succes net. Si l'effet est appliqué, le lanceur regagne 1 (Cummulable) point de vitalité",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.ENVOUTEMENT, -10],
         [CapaciteTypeName.EVOCATION, -6],
         [CapaciteTypeName.MALEFICE, -4],
       ]),
     },
     {
-      Nom: EffetName.VOL,
+      Nom: EffetName.LEVITATION,
       Description:
         "La cible de gabarit 1 (Cummulable) au maximum est en levitation pendant un bref instant.",
       IsCummulable: true,
@@ -244,22 +271,39 @@ export class CapaciteService {
 
   private static AmeliorationList: Array<AmeliorationEffet> = [
     {
+      Nom: AmeliorationEffetName.ANGLE_MORT,
+      Description:
+        "Vous devez vous situer en dehors du champs de vision de la cible.",
+      IsCummulable: false,
+      StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.ENVOUTEMENT, -2],
+        [CapaciteTypeName.EVOCATION, -1],
+        [CapaciteTypeName.MALEFICE, -2],
+      ]),
+    },
+    {
       Nom: AmeliorationEffetName.CATALYSEUR,
       Description:
         "Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -1],
         [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.ENVOUTEMENT, -2],
+        [CapaciteTypeName.EVOCATION, -1],
+        [CapaciteTypeName.MALEFICE, -2],
+        [CapaciteTypeName.NECROMANCIE, -2],
       ]),
     },
     {
       Nom: AmeliorationEffetName.DIFFICILE,
-      Description: "Subissez 1 infortune sur votre jet.",
+      Description: "Ajouter 1 dé de difficulté sur votre jet.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -1],
         [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.ENVOUTEMENT, -1],
+        [CapaciteTypeName.EVOCATION, -1],
+        [CapaciteTypeName.MALEFICE, -1],
+        [CapaciteTypeName.NECROMANCIE, -1],
       ]),
     },
     {
@@ -268,8 +312,10 @@ export class CapaciteService {
         "La capacité n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -1],
-        [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.BENEDICTION, -2],
+        [CapaciteTypeName.ENVOUTEMENT, -2],
+        [CapaciteTypeName.EVOCATION, -2],
+        [CapaciteTypeName.MALEFICE, -2],
       ]),
     },
     {
@@ -291,12 +337,6 @@ export class CapaciteService {
         [CapaciteTypeName.EVOCATION, -1],
         [CapaciteTypeName.BENEDICTION, -1],
       ]),
-    },
-    {
-      Nom: AmeliorationEffetName.PERSONNEL,
-      Description: "La capacité ne peut être lancé que sur son lanceur.",
-      IsCummulable: false,
-      StabiliteParTypeCapacite: new Map([[CapaciteTypeName.BENEDICTION, -1]]),
     },
   ];
 
@@ -337,7 +377,7 @@ export class CapaciteService {
         "Vous devenez colerique et inconsient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de 'sacrifier' vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ces dès ne sont plus utilisable pour vous defendre jusqu'au prochain tour",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -347,7 +387,17 @@ export class CapaciteService {
         "Vous êtes constament affamé, et ne sembler être rassasié qu'après avoir voler de l'echo auprès d'une source exterieur. Vous vous comportez comme un drogué vis a vis de cette source d'energie. Chaque jours passé sans consommer de l'echo baisse votre santé max de 1 point. Lorsque vous récupez de l'echo, vous pouvez dépenser un point de résiliance, ou dépenser 3 atout pour regagner un point de résiliance.",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
+      Effets: new Map(),
+      AmeliorationsEffet: new Map(),
+    },
+    {
+      Nom: "Mantra: le distant",
+      Description:
+        "Vous n'aimez pas le contact avec les autres, et vous montrez trés irrassible quand vous etimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire",
+      Image: "",
+      Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -397,10 +447,10 @@ export class CapaciteService {
     }
     let totalCost = 0
     capacity.Effets.forEach((rank, effectName) => {
-      totalCost += rank * (this.findEffetByName(effectName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 0)
+      totalCost += rank * (this.findEffetByName(effectName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 99)
     })
     capacity.AmeliorationsEffet.forEach((rank, ameliorationName) => {
-      totalCost += rank * (this.findAmeliorationEffetByName(ameliorationName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 0)
+      totalCost += rank * (this.findAmeliorationEffetByName(ameliorationName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 99)
     })
     return totalCost
   }
