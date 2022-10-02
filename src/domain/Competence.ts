@@ -18,7 +18,7 @@ export enum CompetenceName {
   MEDECINE = "Médecine",
   SURVIE = "Survie",
   INGENIERIE = "Ingénierie",
-  EVOCATION = "Evocation",
+  MANIPULATION_DU_FLUIDE = "Manipulation du fluide",
   CHARME = "Charme",
   NEGOCIATION = "Négociation",
   TROMPERIE = "Tromperie",
@@ -75,7 +75,7 @@ export class CompetenceService {
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
     },
     {
-      Nom: CompetenceName.EVOCATION,
+      Nom: CompetenceName.MANIPULATION_DU_FLUIDE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
     },
     {

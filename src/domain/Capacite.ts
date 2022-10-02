@@ -119,27 +119,27 @@ export class CapaciteService {
       Description:
         "L'energie residuel du cadavre visé a portée longue est utilisé pour appliquer des effets sur tout les cibles a porté courte du cadavre.",
       Difficulte:
-        "Medecine (Intelligence) Difficulté egale a la sommes des niveau des cadavres",
+        "Medecine (Intelligence) de difficulté égale à la sommes des niveaux des cadavres",
     },
     {
       Nom: VecteurName.SOUFFLE,
       Description:
         "Le lanceur canalyse l'energie dans ses poumons, et applique ces effets dans un cône devant lui sur courte distance",
       Difficulte:
-        "Test d'évocation (Vigueur) de difficulté dépendant de la distance couverte",
+        "Test de maitrise de fluide (Vigueur) de difficulté dépendant de la distance couverte",
     },
     {
       Nom: VecteurName.PROJECTILE,
       Description:
         "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endoit indiqué, et applique ses effets a l'impact avant de s'estomper.",
-      Difficulte: "Attaque à distance d'évocation (Intelligence)",
+      Difficulte: "Attaque à distance de maitrise de fluide (Intelligence)",
     },
     {
       Nom: VecteurName.ONDE,
       Description:
         "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à porté courte autour de lui.",
       Difficulte:
-        "Test d'évocation d'évocation (Intelligence) de difficulté dépendant de la distance couverte",
+        "Test de maitrise de fluide (Intelligence) de difficulté dépendant de la distance couverte",
     },
     {
       Nom: VecteurName.AUCUN,
