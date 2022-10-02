@@ -15,51 +15,25 @@
           <ion-title size="large">{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
-      <div class="title-section">
-        <NamTitle class="page-title">{{ slideTitle }}</NamTitle>
-        <ion-text>
-          <p>{{ slideSubtitle }}</p>
-        </ion-text>
-      </div>
-      <!-- TODO Remplacer le Swipper par un stepper -->
-      <swiper
-        :modules="modules"
-        :autoplay="true"
-        :keyboard="true"
-        :pagination="{ type: 'progressbar' }"
-        :parallax="true"
-        :zoom="true"
-        @slideChange="sliderChange"
-        @swiper="sliderChange"
-      >
-        <swiper-slide>
-          <CaracteristiqueCard
-            v-for="carac in CaracteritiquesList"
-            :key="carac.Nom"
-            :Caracteristique="carac"
-            :ShowAttribute="carac.Nom === SelectedCaracteristiqueCard"
-            @click="selectCard(carac.Nom)"
-          />
-        </swiper-slide>
-        <swiper-slide>
-          <ion-grid>
-            <ion-row v-for="row in CompetencesByRow" :key="row">
-              <CompetenceCard
-                v-for="comp in row"
-                :key="comp.Nom"
-                :Competence="comp"
-              ></CompetenceCard>
-            </ion-row>
-          </ion-grid>
-        </swiper-slide>
-        <swiper-slide>
-          <CapaciteItem
-            v-for="capacite in CapaciteList"
-            :key="capacite.Nom"
-            :Capacite="capacite"
-          ></CapaciteItem>
-        </swiper-slide>
-      </swiper>
+      <ion-tabs>
+        <ion-router-outlet></ion-router-outlet>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button
+            tab="caracteristiques"
+            href="/Personnage/Caracteristiques"
+          >
+            <ion-label>Caracteristiques</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="competences" href="/Personnage/Competences">
+            <ion-label>Compétences</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="capacites" href="/Personnage/Capacites">
+            <ion-label>Capacités</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
     </ion-content>
   </ion-page>
 </template>
@@ -74,29 +48,12 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonText,
-  IonGrid,
-  IonRow,
+  IonTabs,
+  IonTabButton,
+  IonLabel,
+  IonTabBar,
+  IonRouterOutlet,
 } from "@ionic/vue";
-
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Keyboard, Pagination, Parallax } from "swiper";
-
-import CaracteristiqueCard from "@/components/CaracteristiqueCard.vue";
-import CompetenceCard from "@/components/CompetenceCard.vue";
-import CapaciteItem from "@/components/CapaciteItem.vue";
-import NamTitle from "@/components/NamTitle.vue";
-
-import {
-  CaracteristiqueService,
-  CaracteritiqueName,
-} from "../domain/Caracteristique";
-import { CompetenceService } from "@/domain/Competence";
-import { CapaciteService } from "@/domain/Capacite";
-
-import "swiper/css";
-import "swiper/css/keyboard";
-import "swiper/css/pagination";
 
 export default defineComponent({
   name: "PersonnagePage",
@@ -108,93 +65,12 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    IonText,
-    Swiper,
-    SwiperSlide,
-    CaracteristiqueCard,
-    CompetenceCard,
-    CapaciteItem,
-    NamTitle,
-    IonGrid,
-    IonRow,
-  },
-  data() {
-    const competencesList = CompetenceService.getAllCompetences();
-    const CompetencesByRow = [];
-    // TODO : Faire une Hexagrid et cleaner ça
-    CompetencesByRow.push(competencesList.splice(0, 2));
-    CompetencesByRow.push(competencesList.splice(0, 3));
-    CompetencesByRow.push(competencesList.splice(0, 3));
-    CompetencesByRow.push(competencesList.splice(0, 3));
-    CompetencesByRow.push(competencesList.splice(0, 3));
-    CompetencesByRow.push(competencesList.splice(0, 2));
-    return {
-      modules: [Keyboard, Pagination, Parallax],
-
-      activeSlideNumber: 0,
-      CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
-      SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
-
-      CompetencesByRow: CompetencesByRow,
-
-      CapaciteList: CapaciteService.getAllCapacites(),
-    };
-  },
-  computed: {
-    slideTitle(): string {
-      switch (this.activeSlideNumber) {
-        case 0:
-          return "Determiner les caracteritiques";
-        case 1:
-          return "Choisir des Competences";
-        case 2:
-          return "Selectionner des Capacitees";
-        default:
-          return "";
-      }
-    },
-    slideSubtitle(): string {
-      switch (this.activeSlideNumber) {
-        case 0:
-          return "Répartissez 15 points dans 4 caracteristiques, au maximum 5 et minimum 1.";
-        case 1:
-          return "Augmentez 1 fois le rang de 3 compétences au choix";
-        case 2:
-          return "Choisir les 4 Capacitées qui seront connues par votre personnage au debut de l'aventure";
-        default:
-          return "";
-      }
-    },
-  },
-  methods: {
-    getCompetencesByCaracteristique(name: CaracteritiqueName) {
-      return CompetenceService.getCompetencesByCaracteristique(name);
-    },
-    selectCard(caracNameSelected: CaracteritiqueName) {
-      this.SelectedCaracteristiqueCard = caracNameSelected;
-    },
-    sliderChange(e: any): void {
-      this.activeSlideNumber = e.activeIndex;
-    },
+    IonLabel,
+    IonTabs,
+    IonRouterOutlet,
+    IonTabButton,
+    IonTabBar,
   },
 });
 </script>
-<style scoped>
-.title-section {
-  height: 100px;
-}
-
-ion-text {
-  text-align: center;
-  font-size: smaller;
-}
-
-ion-text > p {
-  margin-left: 18px;
-  margin-right: 18px;
-}
-
-ion-row {
-  justify-content: center;
-}
-</style>
+<style scoped></style>
