@@ -29,6 +29,7 @@ export class ArmesService {
       Nom: "Bâton de force",
       Degats: "1 point de dommage par succès",
       Special: [
+        "Augmentez votre défense liée a l'équipuement de 1 point",
         "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit 1 point de dégat supplémentaire par avantages et la cellule est consommée. Recharger la cellule demande une manoeuvre",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
@@ -40,7 +41,7 @@ export class ArmesService {
     }),
     new Arme({
       Nom: "Mains nues",
-      Degats: "1 point de dommage pour 2 succès",
+      Degats: "1 point de dommage par succès",
       Special: [
         "Vous avez des difficultés pour toucher des cibles maniant des armes avec plus d'allonge face a vous. Vous subissez 1 infortune par rang adverse de corps à corps ou pugilat, dependant de l'arme.",
       ],
@@ -51,33 +52,30 @@ export class ArmesService {
       Prix: 0,
     }),
     new Arme({
-      Nom: "Vibro-lame",
+      Nom: "Lame moleculaire",
       Degats: "2 point de dommage par succès",
-      Special: [
-        "Vous avez des difficultés pour toucher des cibles maniant des armes avec plus d'allonge face a vous. Vous subissez 1 infortune par rang adverse de corps à corps ou pugilat, dependant de l'arme.",
-      ],
+      Special: ["Aucune"],
       Competence: CompetenceName.CORPS_A_CORPS,
-      Description: "Aucun",
+      Description: "Une lame trés tranchante, capable de découper tout ce qui serai moins solide que son metal.",
       Encombrement: 1,
       Rarete: 2,
       Prix: 100,
     }),
     new Arme({
-      Nom: "Vibro-sabre",
-      Degats: "1 point de dommage par succès",
-      Special: ["Aucun"],
+      Nom: "Sabre moleculaire",
+      Degats: "2 point de dommage par succès",
+      Special: ["Augmenter votre defense liée a l'équipement de 1 point"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "Précis et maniable, c'est l'arme de prédilection de la pluparts des bagarreurs qui veulent ce faire respecter",
+        "Précis et maniable, c'est l'arme de prédilection de la plupart des bretteurs partant en territoir hostile.",
       Encombrement: 1,
       Rarete: 2,
       Prix: 100,
     }),
     new Arme({
       Nom: "Marteau à impulsion",
-      Degats: "1 point de dommage par succès",
+      Degats: "2 point de dommage par succès et par avantage",
       Special: [
-        "Vous pouvez dépenser vos avantages pour augmenter les dégats total.",
         "Vous pouvez dépenser 2 avantages pour renverser la cible en consommant la cellule.",
         "Requis 3 en Vigueur",
       ],
@@ -93,7 +91,6 @@ export class ArmesService {
       Degats: "1 point de dommage par succès",
       Special: [
         "Dégat non létal par défaut",
-        "Vous avez des difficultés pour toucher des cibles maniant des armes avec plus d'allonge face a vous. Vous subissez 1 infortune par rang adverse de corps à corps ou pugilat, dependant de l'arme.",
       ],
       Competence: CompetenceName.PUGILAT,
       Description:
@@ -104,7 +101,7 @@ export class ArmesService {
     }),
     new Arme({
       Nom: "Vibro-hache",
-      Degats: "2 point de dommage par succès",
+      Degats: "3 point de dommage par succès",
       Special: ["Requis 3 en Vigueur"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
