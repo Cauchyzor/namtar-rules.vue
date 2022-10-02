@@ -6,11 +6,9 @@
   </ion-card>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
 import { IonCard, IonText } from "@ionic/vue";
-
-import type { PropType } from "vue";
 
 import type { Competence } from "@/domain/Competence";
 
@@ -38,7 +36,7 @@ export default defineComponent({
 </script>
 <style scoped>
 ion-card {
-  width: 110px;
+  width: 100px;
   height: 83px;
   padding: 8px;
   margin: 2px;

@@ -9,6 +9,24 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/Personnage",
     component: () => import("../views/PersonnagePage.vue"),
+    children: [
+      {
+        path: '',
+        redirect: '/Personnage/Caracteristiques',
+      },
+      {
+        path: 'Caracteristiques',
+        component: () => import('@/views/PersonnageTabs/CaracteristiquesTab.vue'),
+      },
+      {
+        path: 'Competences',
+        component: () => import('@/views/PersonnageTabs/CompetencesTab.vue'),
+      },
+      {
+        path: 'Capacites',
+        component: () => import('@/views/PersonnageTabs/CapacitesTab.vue'),
+      },
+    ],
   },
   {
     path: "/Test",
