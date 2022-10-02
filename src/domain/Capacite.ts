@@ -92,15 +92,15 @@ export class CapaciteService {
     {
       Nom: CapaciteTypeName.NECROMANCIE,
       Description:
-        "La capacité est générée avec l'energie d'un residuelle d'un cadavre ou d'une source d'energie.",
+        "La capacité est générée avec l'energie d'un residuelle d'un ou plusieurs cadavre ou d'une source d'energie. 2 points de stabilité par niveau cummulés par les cadavres.",
     },
     {
       Nom: CapaciteTypeName.ENVOUTEMENT,
-      Description: "Corrompt les atouts de la cible pour générer ces effets.",
+      Description: "Corrompt les atouts de la cible pour générer ces effets. 1 stabilité par atouts retiré",
     },
     {
       Nom: CapaciteTypeName.BENEDICTION,
-      Description: "Converti les atouts du groupe pour generer ses effets.",
+      Description: "Converti les atouts du groupe pour generer ses effets. 2 stabilité par atout retiré",
     },
     {
       Nom: CapaciteTypeName.MANTRA,
