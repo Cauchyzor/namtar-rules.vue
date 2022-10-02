@@ -24,10 +24,6 @@
             <ion-label>Types</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="vecteur" href="/Capacite/VecteurTab">
-            <ion-label>Vecteur</ion-label>
-          </ion-tab-button>
-
           <ion-tab-button tab="effet" href="/Capacite/EffetTab">
             <ion-label>Effets</ion-label>
           </ion-tab-button>

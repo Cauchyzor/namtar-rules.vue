@@ -1,49 +1,20 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-export type Capacite = {
-  Nom: string;
-  Description: string;
-  Image: string;
-  Type: CapaciteType;
-  Vecteur: Vecteur;
-  Effets: Map<EffetName, number>;
-  AmeliorationsEffet: Map<AmeliorationEffetName, number>;
-};
-
-export type CapaciteType = {
-  Nom: CapaciteTypeName;
-  Description: string;
-};
-
 enum CapaciteTypeName {
-  EVOCATION = "Evocation",
-  MALEFICE = "Malefice",
-  NECROMANCIE = "Necromancie",
-  ENVOUTEMENT = "Envoutement",
-  BENEDICTION = "Bénédiction",
+  ALTERATION_ARME = "Alteration d'arme",
+  BENEDICTION_CONTACT = "Bénédiction au contact",
+  CANTIQUE = "Cantique",
+  ENVOUTEMENT_CONTACT = "Envoutement au contact",
+  EVOCATION_CONTACT = "Evocation au contact",
+  EVOCATION_ONDE = "Onde",
+  EVOCATION_PROJECTILE = "Projectile materiel",
+  EVOCATION_SOUFFLE = "Souffle",
+  FRAPPE = "Frappe",
+  MALEFICE_CONTACT = "Malefice au contact",
   MANTRA = "Mantra",
+  NECROMANCIE = "Necromancie",
+  ORDRE = "Ordre",
+  PRIERE = "Prière",
 }
-
-export type Vecteur = {
-  Nom: VecteurName;
-  Description: string;
-  Difficulte: string;
-};
-
-enum VecteurName {
-  CONTACT = "Contact",
-  EXPLOSION_CADAVRE = "Explosion de cadavre",
-  SOUFFLE = "Souffle",
-  PROJECTILE = "Projectile",
-  ONDE = "Onde",
-  AUCUN = "Aucun",
-}
-
-export type Effet = {
-  Nom: string;
-  Description: string;
-  IsCummulable: boolean;
-  StabiliteParTypeCapacite: Map<CapaciteTypeName, number>;
-};
 
 enum EffetName {
   ATOUT = "Atout",
@@ -58,6 +29,29 @@ enum EffetName {
   VAMPIRISME = "Vampirisme",
   MANTRA = "Mantra",
 }
+
+export type Capacite = {
+  Nom: string;
+  Description: string;
+  Image: string;
+  Type: CapaciteType;
+  Effets: Map<EffetName, number>;
+  AmeliorationsEffet: Map<AmeliorationEffetName, number>;
+};
+
+export type CapaciteType = {
+  Nom: CapaciteTypeName;
+  Source: string;
+  Description: string;
+  Test: string;
+};
+
+export type Effet = {
+  Nom: string;
+  Description: string;
+  IsCummulable: boolean;
+  StabiliteParTypeCapacite: Map<CapaciteTypeName, number>;
+};
 
 export type AmeliorationEffet = {
   Nom: AmeliorationEffetName;
@@ -80,73 +74,76 @@ export class CapaciteService {
   //TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
   private static Types: Array<CapaciteType> = [
     {
-      Nom: CapaciteTypeName.EVOCATION,
-      Description:
-        "L'utilisateur puise dans son endurence pour généré de l'energie. 1 point de Stress est converti en 1 point de Stabilité.",
+      Nom: CapaciteTypeName.ALTERATION_ARME,
+      Source: "1 point de stress est converti en 1 point de stabilité.",
+      Description: "Le lanceur altère un object pour lui permettre de transmettre des effets par son contact",
+      Test: "Test d'ingenierie (Charisme)",
     },
     {
-      Nom: CapaciteTypeName.MALEFICE,
-      Description:
-        "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 3.",
+      Nom: CapaciteTypeName.BENEDICTION_CONTACT,
+      Description: "Le lanceur consomme les atouts d'une cible consentante pour générer ces effets.",
+      Source: "2 point de stabilité par atout chez la cible.",
+      Test: "Test de medecine (Charisme) de DD1"
     },
     {
-      Nom: CapaciteTypeName.NECROMANCIE,
-      Description:
-        "La capacité est générée avec l'energie d'un residuelle d'un ou plusieurs cadavre ou d'une source d'energie. 2 points de stabilité par niveau cummulés par les cadavres.",
+      Nom: CapaciteTypeName.CANTIQUE,
+      Description: "Le lanceur consomme les atouts des cibles consentantes à porté de sa voix pour générer ses effets.",
+      Source: "2 point de stabilité par atout chez la cible.",
+      Test: "Test de charme (Charisme) de DD égal au nombre de personnes affectées."
     },
     {
-      Nom: CapaciteTypeName.ENVOUTEMENT,
-      Description: "Corrompt les atouts de la cible pour générer ces effets. 1 stabilité par atouts retiré",
+      Nom: CapaciteTypeName.ENVOUTEMENT_CONTACT,
+      Description: "Le lanceur corrompt les atouts de la cible pour générer ces effets. Ces atouts sont consommés",
+      Source: "1 point de stabilité par atout chez la cible.",
+      Test: "Jet d'attaque de pugilat (Charisme)."
     },
     {
-      Nom: CapaciteTypeName.BENEDICTION,
-      Description: "Converti les atouts du groupe pour generer ses effets. 2 stabilité par atout retiré",
+      Nom: CapaciteTypeName.EVOCATION_CONTACT,
+      Source: "1 point de stress est converti en 1 point de stabilité.",
+      Description: "Le lanceur invoque les effets a l'aide de son energie propre et les projette sur la cible a son contact.",
+      Test: "Jet d'attaque de pugilat (Intelligence)",
+    },
+    {
+      Nom: CapaciteTypeName.EVOCATION_ONDE,
+      Source: "1 point de stress est converti en 1 point de stabilité.",
+      Description: "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles adjacentes à lui.",
+      Test: "Test de maitrise de fluide (Intelligence) de DD2",
+    },
+    {
+      Nom: CapaciteTypeName.EVOCATION_PROJECTILE,
+      Source: "1 point de stress est converti en 1 point de stabilité.",
+      Description: "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endoit indiqué, et applique ses effets a l'impact avant de s'estomper.",
+      Test: "Jet d'attaque à distance de maitrise du fluide (Intelligence)",
+    },
+    {
+      Nom: CapaciteTypeName.EVOCATION_SOUFFLE,
+      Source: "1 point de stabilité pour 1 point de stress",
+      Description: "Le lanceur expulse les effets materialisés sous la forme d'un souffle en face de lui, qui affecte les cibles à porté courte.",
+      Test: "Test de maitrise de fluide (Vigueur) de DD2"
+    },
+    {
+      Nom: CapaciteTypeName.FRAPPE,
+      Source: "1 point de stabilité 1 dé de difficulté supplementaire.",
+      Description: "Le lanceur altère l'énergie déployé par son attaque pour appliquer des effets supplémentaire.",
+      Test: "Jet d'attaque dépendant de l'arme "   
+    },
+    {
+      Nom: CapaciteTypeName.MALEFICE_CONTACT,
+      Source: "3 point de stabilitée pour chaque infortune de la cible. Ces infortunes sont consommées",
+      Description: "Le lanceur altère l'energie de la cible a son contact pour produir certain effets",
+      Test: "Jet d'attaque de pugilat (Charisme)"
     },
     {
       Nom: CapaciteTypeName.MANTRA,
-      Description: "Les effets sont passif.",
-    }
-  ];
-
-  private static VecteursList: Array<Vecteur> = [
-    {
-      Nom: VecteurName.CONTACT,
-      Description: "Les effets sont appliqué a la cible touchée.",
-      Difficulte: "Attaque engagée de Pugilat (Intelligence)",
+      Source: "Inhérente au personnage",
+      Description: "La capacitée applique ces effets de manière passive, ou par le biais d'une action gratuite.",
+      Test: "Aucun"
     },
     {
-      Nom: VecteurName.EXPLOSION_CADAVRE,
-      Description:
-        "L'energie residuel du cadavre visé a portée longue est utilisé pour appliquer des effets sur tout les cibles a porté courte du cadavre.",
-      Difficulte:
-        "Medecine (Intelligence) de difficulté égale à la sommes des niveaux des cadavres",
-    },
-    {
-      Nom: VecteurName.SOUFFLE,
-      Description:
-        "Le lanceur canalyse l'energie dans ses poumons, et applique ces effets dans un cône devant lui sur courte distance",
-      Difficulte:
-        "Test de maitrise de fluide (Vigueur) de difficulté dépendant de la distance couverte",
-    },
-    {
-      Nom: VecteurName.PROJECTILE,
-      Description:
-        "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endoit indiqué, et applique ses effets a l'impact avant de s'estomper.",
-      Difficulte: "Attaque à distance de maitrise de fluide (Intelligence)",
-    },
-    {
-      Nom: VecteurName.ONDE,
-      Description:
-        "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à porté courte autour de lui.",
-      Difficulte:
-        "Test de maitrise de fluide (Intelligence) de difficulté dépendant de la distance couverte",
-    },
-    {
-      Nom: VecteurName.AUCUN,
-      Description:
-        "Les effets sont appliqués à la source de la capacité (dépends du type de la capacité).",
-      Difficulte:
-        "Aucune",
+      Nom: CapaciteTypeName.NECROMANCIE,
+      Description: "La capacité est générée avec l'energie d'un residuelle d'un ou plusieurs cadavre. Les effets sont appliqués à toutes les creatures adjacentes au cadavre.",
+      Source: "La stabilité est égale au niveau du cadavre ou la sommes des niveau des cadavres",
+      Test: "Test de medecine (Charisme) de DD égal au niveau du cadavre ou la somme des niveau des cadavres."
     },
   ];
 
@@ -157,8 +154,9 @@ export class CapaciteService {
         "La cible gagne 1 atout (Cummulable) sur sont prochain test.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.BENEDICTION, -2],
-        [CapaciteTypeName.EVOCATION, -4],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -2],
+        [CapaciteTypeName.PRIERE, -2],
+        [CapaciteTypeName.EVOCATION_CONTACT, -4],
         [CapaciteTypeName.NECROMANCIE, -2],
       ]),
     },
@@ -168,9 +166,9 @@ export class CapaciteService {
         "Inflige 2 Dommage (Cummulable) par succes net et par avantage",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.ENVOUTEMENT, -8],
-        [CapaciteTypeName.EVOCATION, -4],
-        [CapaciteTypeName.MALEFICE, -3],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -8],
+        [CapaciteTypeName.EVOCATION_CONTACT, -4],
+        [CapaciteTypeName.MALEFICE_CONTACT, -3],
         [CapaciteTypeName.NECROMANCIE, -1],
       ]),
     },
@@ -180,7 +178,7 @@ export class CapaciteService {
         "La cible perd sa capacité de déplacement si 1 succès. Elle est neutralisée a partir de 2 succès. Elle est complètment paralysé et ne peut pas pensé a partir de 3 succès.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -3],
+        [CapaciteTypeName.EVOCATION_CONTACT, -3],
         [CapaciteTypeName.NECROMANCIE, -1],
       ]),
     },
@@ -190,7 +188,7 @@ export class CapaciteService {
         "Inflige 1 Dommage (Cummulable) par succes net. Les cibles dont la Vigueur est inferieur au nombre de succès générés sont renversés",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -3],
+        [CapaciteTypeName.EVOCATION_CONTACT, -3],
         [CapaciteTypeName.NECROMANCIE, -1],
       ]),
     },
@@ -200,10 +198,10 @@ export class CapaciteService {
         "Permet de communiquer brievement avec la cible par la pensée. Chaque succès permet soit de faire durer le liens quelques seconde de plus.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -2],
-        [CapaciteTypeName.BENEDICTION, -1],
-        [CapaciteTypeName.MALEFICE, -1],
-        [CapaciteTypeName.ENVOUTEMENT, -1],
+        [CapaciteTypeName.EVOCATION_CONTACT, -2],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -1],
+        [CapaciteTypeName.MALEFICE_CONTACT, -1],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -1],
       ]),
     },
     {
@@ -212,9 +210,9 @@ export class CapaciteService {
         "La cible subit 1 Infortune (Cummulable) sur sont prochain test.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -2],
-        [CapaciteTypeName.MALEFICE, -1],
-        [CapaciteTypeName.ENVOUTEMENT, -2],
+        [CapaciteTypeName.EVOCATION_CONTACT, -2],
+        [CapaciteTypeName.MALEFICE_CONTACT, -1],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -2],
       ]),
     },
     {
@@ -223,8 +221,8 @@ export class CapaciteService {
         "La cible est soigné d'1 point de stress (Cummulable) par succes net",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.BENEDICTION, -2],
-        [CapaciteTypeName.EVOCATION, -3],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -2],
+        [CapaciteTypeName.EVOCATION_CONTACT, -3],
         [CapaciteTypeName.NECROMANCIE, -2],
       ]),
     },
@@ -234,8 +232,8 @@ export class CapaciteService {
         "La cible dépense immediatement 1 point de résilience (Cummulable) pour regagner ses PV. Chaque avantage soigne 1 Point de stress.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.BENEDICTION, -3],
-        [CapaciteTypeName.EVOCATION, -4],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -3],
+        [CapaciteTypeName.EVOCATION_CONTACT, -4],
         [CapaciteTypeName.NECROMANCIE, -3],
       ]),
     },
@@ -245,9 +243,9 @@ export class CapaciteService {
         "Inflige 1 Dommage (Cummulable) par succes net. Si l'effet est appliqué, le lanceur regagne 1 (Cummulable) point de vitalité",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.ENVOUTEMENT, -10],
-        [CapaciteTypeName.EVOCATION, -6],
-        [CapaciteTypeName.MALEFICE, -4],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -10],
+        [CapaciteTypeName.EVOCATION_CONTACT, -6],
+        [CapaciteTypeName.MALEFICE_CONTACT, -4],
       ]),
     },
     {
@@ -256,8 +254,8 @@ export class CapaciteService {
         "La cible de gabarit 1 (Cummulable) au maximum est en levitation pendant un bref instant.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -6],
-        [CapaciteTypeName.BENEDICTION, -6],
+        [CapaciteTypeName.EVOCATION_CONTACT, -6],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -6],
       ]),
     },
     {
@@ -276,9 +274,9 @@ export class CapaciteService {
         "Vous devez vous situer en dehors du champs de vision de la cible.",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.ENVOUTEMENT, -2],
-        [CapaciteTypeName.EVOCATION, -1],
-        [CapaciteTypeName.MALEFICE, -2],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -2],
+        [CapaciteTypeName.EVOCATION_CONTACT, -1],
+        [CapaciteTypeName.MALEFICE_CONTACT, -2],
       ]),
     },
     {
@@ -287,10 +285,10 @@ export class CapaciteService {
         "Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.BENEDICTION, -1],
-        [CapaciteTypeName.ENVOUTEMENT, -2],
-        [CapaciteTypeName.EVOCATION, -1],
-        [CapaciteTypeName.MALEFICE, -2],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -1],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -2],
+        [CapaciteTypeName.EVOCATION_CONTACT, -1],
+        [CapaciteTypeName.MALEFICE_CONTACT, -2],
         [CapaciteTypeName.NECROMANCIE, -2],
       ]),
     },
@@ -299,10 +297,10 @@ export class CapaciteService {
       Description: "Ajouter 1 dé de difficulté sur votre jet.",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.BENEDICTION, -1],
-        [CapaciteTypeName.ENVOUTEMENT, -1],
-        [CapaciteTypeName.EVOCATION, -1],
-        [CapaciteTypeName.MALEFICE, -1],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -1],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -1],
+        [CapaciteTypeName.EVOCATION_CONTACT, -1],
+        [CapaciteTypeName.MALEFICE_CONTACT, -1],
         [CapaciteTypeName.NECROMANCIE, -1],
       ]),
     },
@@ -312,10 +310,10 @@ export class CapaciteService {
         "La capacité n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.BENEDICTION, -2],
-        [CapaciteTypeName.ENVOUTEMENT, -2],
-        [CapaciteTypeName.EVOCATION, -2],
-        [CapaciteTypeName.MALEFICE, -2],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -2],
+        [CapaciteTypeName.ENVOUTEMENT_CONTACT, -2],
+        [CapaciteTypeName.EVOCATION_CONTACT, -2],
+        [CapaciteTypeName.MALEFICE_CONTACT, -2],
       ]),
     },
     {
@@ -324,8 +322,8 @@ export class CapaciteService {
         "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de la capacité. Le gains de stabilité dépend de la puissance de l'objet",
       IsCummulable: true,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -1],
-        [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.EVOCATION_CONTACT, -1],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -1],
       ]),
     },
     {
@@ -334,8 +332,8 @@ export class CapaciteService {
         "Le lanceur subit 1 dommage ignorant la protection pour chaque désavantage généré.",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map([
-        [CapaciteTypeName.EVOCATION, -1],
-        [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.EVOCATION_CONTACT, -1],
+        [CapaciteTypeName.BENEDICTION_CONTACT, -1],
       ]),
     },
   ];
@@ -346,8 +344,7 @@ export class CapaciteService {
       Description:
         "Vous formez une sphère d'energie et la projetez dans la direction de la cible. A son contact, la cible est brulée et subit des dommages.",
       Image: "",
-      Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION),
-      Vecteur: this.findVecteurByName(VecteurName.PROJECTILE),
+      Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION_CONTACT),
       Effets: new Map([[EffetName.CHALEUR, 1]]),
       AmeliorationsEffet: new Map(),
     },
@@ -356,8 +353,7 @@ export class CapaciteService {
       Description:
         "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de Résiliance pour regagner ses PV perdus.",
       Image: "",
-      Type: this.findCapacityTypeByName(CapaciteTypeName.BENEDICTION),
-      Vecteur: this.findVecteurByName(VecteurName.CONTACT),
+      Type: this.findCapacityTypeByName(CapaciteTypeName.BENEDICTION_CONTACT),
       Effets: new Map([[EffetName.SOIN, 1]]),
       AmeliorationsEffet: new Map(),
     },
@@ -367,7 +363,6 @@ export class CapaciteService {
         "L'energie résiduelle du cadavre visé s'echape violament et renverse les cibles a portée courtes",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.NECROMANCIE),
-      Vecteur: this.findVecteurByName(VecteurName.EXPLOSION_CADAVRE),
       Effets: new Map([[EffetName.FORCE, 2]]),
       AmeliorationsEffet: new Map([[AmeliorationEffetName.ZONE, 1]]),
     },
@@ -377,7 +372,6 @@ export class CapaciteService {
         "Vous devenez colerique et inconsient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de 'sacrifier' vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ces dès ne sont plus utilisable pour vous defendre jusqu'au prochain tour",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -387,7 +381,6 @@ export class CapaciteService {
         "Vous êtes constament affamé, et ne sembler être rassasié qu'après avoir voler de l'echo auprès d'une source exterieur. Vous vous comportez comme un drogué vis a vis de cette source d'energie. Chaque jours passé sans consommer de l'echo baisse votre santé max de 1 point. Lorsque vous récupez de l'echo, vous pouvez dépenser un point de résiliance, ou dépenser 3 atout pour regagner un point de résiliance.",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -397,7 +390,6 @@ export class CapaciteService {
         "Vous n'aimez pas le contact avec les autres, et vous montrez trés irrassible quand vous etimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -406,8 +398,7 @@ export class CapaciteService {
       Description:
         "",
       Image: "",
-      Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION),
-      Vecteur: this.findVecteurByName(VecteurName.CONTACT),
+      Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION_CONTACT),
       Effets: new Map([[EffetName.VAMPIRISME, 1]]),
       AmeliorationsEffet: new Map(),
     },
@@ -416,9 +407,6 @@ export class CapaciteService {
 
   static findCapacityTypeByName(name: CapaciteTypeName) {
     return this.Types.find((ct) => ct.Nom === name)!;
-  }
-  static findVecteurByName(name: VecteurName) {
-    return this.VecteursList.find((vt) => vt.Nom === name)!;
   }
   static findEffetByName(name: EffetName) {
     return this.EffectsList.find((e) => e.Nom === name)!;
@@ -437,9 +425,6 @@ export class CapaciteService {
   }
   static getAllAmelioration() {
     return this.AmeliorationList
-  }
-  static getAllVecteur() {
-    return this.VecteursList
   }
   static computeCost(capacity: Capacite) {
     if (capacity.Type.Nom === CapaciteTypeName.MANTRA) {

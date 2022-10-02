@@ -23,9 +23,6 @@
     </ion-header>
     <ion-content class="ion-padding">
       <p>Type: {{ Capacite.Type.Nom }} - {{ Capacite.Type.Description }}</p>
-      <p>
-        Vecteur: {{ Capacite.Vecteur.Nom }} - {{ Capacite.Vecteur.Description }}
-      </p>
       <p>Description: {{ Capacite.Description }}</p>
       <p>Effets: {{ Array.from(Capacite.Effets.keys()).join(",") }}</p>
       <p>

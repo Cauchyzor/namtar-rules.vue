@@ -19,7 +19,6 @@
     </ion-content>
     <!-- TODO : Stepper -->
     <!-- Tableau des Types de Capacitée + Selection-->
-    <!-- Tableau des Vecteurs + Selection-->
     <!-- Tableau des Effets + Amelioration d'effets-->
     <!-- Info générales + Sauvegarde -->
   </ion-page>

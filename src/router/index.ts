@@ -65,10 +65,6 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/CapaciteInfoTabs/TypeTab.vue'),
       },
       {
-        path: 'VecteurTab',
-        component: () => import('@/views/CapaciteInfoTabs/VecteurTab.vue'),
-      },
-      {
         path: 'EffetTab',
         component: () => import('@/views/CapaciteInfoTabs/EffetTab.vue'),
       },
