@@ -8,7 +8,12 @@
 
     <ion-content class="ion-padding">
       <NamTitle>Determiner les caracteritiques</NamTitle>
-      <ion-text>Répartissez 12 points dans 4 caracteristiques, au maximum 5 et minimum 1.</ion-text>
+      <div class="ion-padding-vertical ion-text-center">
+        <ion-text
+          >Répartissez 12 points dans 4 caracteristiques, au maximum 5 et
+          minimum 1.</ion-text
+        >
+      </div>
 
       <CaracteristiqueCard
         v-for="carac in CaracteritiquesList"
@@ -62,23 +67,4 @@ export default defineComponent({
   },
 });
 </script>
-<style>
-  .title-section {
-    height: 100px;
-  }
-  
-  ion-text {
-    text-align: center;
-    font-size: smaller;
-  }
-  
-  ion-text > p {
-    margin-left: 18px;
-    margin-right: 18px;
-  }
-  
-  ion-row {
-    justify-content: center;
-  }
-  </style>
-  
+<style></style>

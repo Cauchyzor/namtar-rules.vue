@@ -1,6 +1,6 @@
 <template>
   <ion-card button="true">
-    <div class="text-centered">
+    <div class="ion-text-center">
       <ion-text>{{ Competence.Nom }}</ion-text>
     </div>
   </ion-card>
@@ -37,19 +37,13 @@ export default defineComponent({
 <style scoped>
 ion-card {
   width: 100px;
-  height: 83px;
+  height: 73px;
   padding: 8px;
   margin: 2px;
   display: flex;
 }
-
-.text-centered {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 ion-text {
-  font-size: 12px;
+  font-size: smaller;
 }
+
 </style>

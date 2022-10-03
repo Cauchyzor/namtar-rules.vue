@@ -8,10 +8,16 @@
 
     <ion-content class="ion-padding">
       <NamTitle>Choisir des Competences</NamTitle>
-      <ion-text>Augmentez 1 fois le rang de 4 compétences au choix</ion-text>
+      <div class="ion-padding-vertical ion-text-center">
+        <ion-text>Augmentez 1 fois le rang de 4 compétences au choix</ion-text>
+      </div>
 
       <ion-grid>
-        <ion-row v-for="row in CompetencesByRow" :key="row">
+        <ion-row
+          class="ion-justify-content-center"
+          v-for="row in CompetencesByRow"
+          :key="row"
+        >
           <CompetenceCard
             v-for="comp in row"
             :key="comp.Nom"
@@ -69,18 +75,4 @@ export default defineComponent({
   },
 });
 </script>
-<style>
-.title-section {
-  height: 100px;
-}
-
-ion-text {
-  text-align: center;
-  font-size: smaller;
-}
-
-ion-text > p {
-  margin-left: 18px;
-  margin-right: 18px;
-}
-</style>
+<style scoped></style>
