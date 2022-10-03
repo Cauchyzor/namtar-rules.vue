@@ -8,7 +8,12 @@
 
     <ion-content class="ion-padding">
       <NamTitle>Selectionner des Capacités</NamTitle>
-      <ion-text>Choisir les 3 Capacitées qui seront connues par votre personnage au debut de l'aventure</ion-text>
+      <div class="ion-padding-vertical ion-text-center">
+        <ion-text class="ion-text-justify"
+          >Choisir les 3 Capacitées qui seront connues par votre personnage au
+          debut de l'aventure</ion-text
+        >
+      </div>
 
       <CapaciteItem
         v-for="capacite in CapaciteList"
@@ -26,12 +31,12 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonText
+  IonText,
 } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 import { CapaciteService } from "@/domain/Capacite";
-import CapaciteItem from "@/components/CapaciteItem.vue"
+import CapaciteItem from "@/components/CapaciteItem.vue";
 
 export default defineComponent({
   components: {
@@ -46,28 +51,9 @@ export default defineComponent({
   },
   data() {
     return {
-        CapaciteList: CapaciteService.getAllCapacites(),
+      CapaciteList: CapaciteService.getAllCapacites(),
     };
   },
 });
 </script>
-<style>
-  .title-section {
-    height: 100px;
-  }
-  
-  ion-text {
-    text-align: center;
-    font-size: smaller;
-  }
-  
-  ion-text > p {
-    margin-left: 18px;
-    margin-right: 18px;
-  }
-  
-  ion-row {
-    justify-content: center;
-  }
-  </style>
-  
+<style></style>
