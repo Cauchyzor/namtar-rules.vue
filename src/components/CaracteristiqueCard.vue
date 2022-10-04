@@ -60,9 +60,6 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-ion-card-title {
-  font-family: "Anurati-Regular";
-}
 ion-card-subtitle {
   font-size: smaller;
 }
