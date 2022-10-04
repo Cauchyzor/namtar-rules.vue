@@ -76,17 +76,22 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-tint: #f5f6f9;
 
   /* Set the font family of the entire app */
-  --ion-font-family: "Nasalisation";
+  --ion-font-family: "NovaSquare";
 }
 
 @font-face {
   font-family: "Anurati-Regular";
-  src: url("../theme/Anurati-Regular.otf");
+  src: url("../theme/font/Anurati-Regular.otf");
 }
 
 @font-face {
   font-family: "Nasalisation";
-  src: url("./nasalization-rg.otf");
+  src: url("./font/nasalization-rg.otf");
+}
+
+@font-face {
+  font-family: "NovaSquare";
+  src: url("./font/NovaSquare.ttf");
 }
 
 @media (prefers-color-scheme: dark) {
