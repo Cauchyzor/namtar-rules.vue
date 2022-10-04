@@ -1,6 +1,6 @@
 <template>
   <ion-text>
-    <h5 class="page-title">
+    <h5 class="ion-text-uppercase ion-text-center">
       <slot></slot>
     </h5>
   </ion-text>
@@ -18,9 +18,7 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.page-title {
-  text-transform: Uppercase;
+ion-text {
   font-family: "Anurati-Regular";
-  text-align: center;
 }
 </style>
