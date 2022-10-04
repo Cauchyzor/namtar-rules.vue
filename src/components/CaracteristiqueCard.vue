@@ -2,7 +2,7 @@
   <ion-card button="true">
     <ion-card-header>
       <ion-card-subtitle>{{ Caracteristique.Description }}</ion-card-subtitle>
-      <ion-card-title>{{ Caracteristique.Nom }}</ion-card-title>
+      <ion-card-title class="ion-text-uppercase">{{ Caracteristique.Nom }}</ion-card-title>
     </ion-card-header>
     <ion-card-content v-show="ShowAttribute">
       <ion-list :key="index" v-for="(item, index) in Caracteristique.Attributs">
@@ -16,7 +16,7 @@
   </ion-card>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
 import {
   IonCard,
@@ -31,7 +31,6 @@ import {
   IonItem,
 } from "@ionic/vue";
 
-import type { PropType } from "vue";
 import type { Caracteristique } from "@/domain/Caracteristique";
 
 export default defineComponent({
@@ -61,6 +60,9 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+ion-card-title {
+  font-family: "Anurati-Regular";
+}
 ion-card-subtitle {
   font-size: smaller;
 }
