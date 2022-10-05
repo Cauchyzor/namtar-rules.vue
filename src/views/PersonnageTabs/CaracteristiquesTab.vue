@@ -19,7 +19,6 @@
         v-for="carac in CaracteritiquesList"
         :key="carac.Nom"
         :Caracteristique="carac"
-        :ShowAttribute="carac.Nom === SelectedCaracteristiqueCard"
         @click="selectCard(carac.Nom)"
       />
     </ion-content>
