@@ -35,7 +35,7 @@ enum VecteurName {
   SOUFFLE = "Souffle",
   PROJECTILE = "Projectile",
   ONDE = "Onde",
-  AUCUN = "Aucun",
+  SOURCE_UNIQUEMENT = "Source uniquement",
 }
 
 export type Effet = {
@@ -67,11 +67,13 @@ export type AmeliorationEffet = {
 };
 
 enum AmeliorationEffetName {
-  ANGLE_MORT = 'Angle mort',
+  ANGLE_MORT = "Angle mort",
   CATALYSEUR = "Catalyseur",
   CONTRE_COUP = "Contre-coup",
   DIFFICILE = "Difficile",
+  ECHANGE_DE_REGARD = "Echange de regards",
   ENERGIE_ACTIVATION = "Energie d'activation",
+  INCENTATION_RAPIDE = "Incantation rapide",
   INGREDIENT = "Ingredient",
   ZONE = "Zone d'effet",
 }
@@ -96,16 +98,18 @@ export class CapaciteService {
     },
     {
       Nom: CapaciteTypeName.ENVOUTEMENT,
-      Description: "Corrompt les atouts de la cible pour générer ces effets. 1 stabilité par atouts retiré",
+      Description:
+        "Corrompt les atouts de la cible pour générer ces effets. 1 stabilité par atouts retiré",
     },
     {
       Nom: CapaciteTypeName.BENEDICTION,
-      Description: "Converti les atouts du groupe pour generer ses effets. 2 stabilité par atout retiré",
+      Description:
+        "Converti les atouts du groupe pour generer ses effets. 2 stabilité par atout retiré",
     },
     {
       Nom: CapaciteTypeName.MANTRA,
       Description: "Les effets sont passif.",
-    }
+    },
   ];
 
   private static VecteursList: Array<Vecteur> = [
@@ -142,11 +146,10 @@ export class CapaciteService {
         "Test de maitrise de fluide (Intelligence) de difficulté dépendant de la distance couverte",
     },
     {
-      Nom: VecteurName.AUCUN,
+      Nom: VecteurName.SOURCE_UNIQUEMENT,
       Description:
         "Les effets sont appliqués à la source de la capacité (dépends du type de la capacité).",
-      Difficulte:
-        "Aucune",
+      Difficulte: "Aucune",
     },
   ];
 
@@ -262,8 +265,7 @@ export class CapaciteService {
     },
     {
       Nom: EffetName.MANTRA,
-      Description:
-        "Voir la description",
+      Description: "Voir la description",
       IsCummulable: false,
       StabiliteParTypeCapacite: new Map(),
     },
@@ -304,6 +306,30 @@ export class CapaciteService {
         [CapaciteTypeName.EVOCATION, -1],
         [CapaciteTypeName.MALEFICE, -1],
         [CapaciteTypeName.NECROMANCIE, -1],
+      ]),
+    },
+    {
+      Nom: AmeliorationEffetName.INCENTATION_RAPIDE,
+      Description: "Augmentez 3 fois la difficultée. de la capacité. La capacité est lancée comme une manoeuvre plutot qu'une action",
+      IsCummulable: true,
+      StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.BENEDICTION, -1],
+        [CapaciteTypeName.ENVOUTEMENT, -1],
+        [CapaciteTypeName.EVOCATION, -1],
+        [CapaciteTypeName.MALEFICE, -1],
+        [CapaciteTypeName.NECROMANCIE, -1],
+      ]),
+    },
+    {
+      Nom: AmeliorationEffetName.ECHANGE_DE_REGARD,
+      Description:
+        "La capacité ne necessite pas de mains libres pour reussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
+      IsCummulable: false,
+      StabiliteParTypeCapacite: new Map([
+        [CapaciteTypeName.BENEDICTION, -4],
+        [CapaciteTypeName.ENVOUTEMENT, -2],
+        [CapaciteTypeName.EVOCATION, -2],
+        [CapaciteTypeName.MALEFICE, -2],
       ]),
     },
     {
@@ -377,7 +403,7 @@ export class CapaciteService {
         "Vous devenez colerique et inconsient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de 'sacrifier' vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ces dès ne sont plus utilisable pour vous defendre jusqu'au prochain tour",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
+      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -387,7 +413,7 @@ export class CapaciteService {
         "Vous êtes constament affamé, et ne sembler être rassasié qu'après avoir voler de l'echo auprès d'une source exterieur. Vous vous comportez comme un drogué vis a vis de cette source d'energie. Chaque jours passé sans consommer de l'echo baisse votre santé max de 1 point. Lorsque vous récupez de l'echo, vous pouvez dépenser un point de résiliance, ou dépenser 3 atout pour regagner un point de résiliance.",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
+      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
@@ -397,21 +423,19 @@ export class CapaciteService {
         "Vous n'aimez pas le contact avec les autres, et vous montrez trés irrassible quand vous etimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.AUCUN),
+      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map(),
       AmeliorationsEffet: new Map(),
     },
     {
       Nom: "Morsure de Namtar",
-      Description:
-        "",
+      Description: "",
       Image: "",
       Type: this.findCapacityTypeByName(CapaciteTypeName.EVOCATION),
       Vecteur: this.findVecteurByName(VecteurName.CONTACT),
       Effets: new Map([[EffetName.VAMPIRISME, 1]]),
       AmeliorationsEffet: new Map(),
     },
-
   ];
 
   static findCapacityTypeByName(name: CapaciteTypeName) {
@@ -430,28 +454,36 @@ export class CapaciteService {
     return this.CapaciteList;
   }
   static getAllTypes() {
-    return this.Types
+    return this.Types;
   }
   static getAllEffect() {
-    return this.EffectsList
+    return this.EffectsList;
   }
   static getAllAmelioration() {
-    return this.AmeliorationList
+    return this.AmeliorationList;
   }
   static getAllVecteur() {
-    return this.VecteursList
+    return this.VecteursList;
   }
   static computeCost(capacity: Capacite) {
     if (capacity.Type.Nom === CapaciteTypeName.MANTRA) {
-      return 0
+      return 0;
     }
-    let totalCost = 0
+    let totalCost = 0;
     capacity.Effets.forEach((rank, effectName) => {
-      totalCost += rank * (this.findEffetByName(effectName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 99)
-    })
+      totalCost +=
+        rank *
+        (this.findEffetByName(effectName)?.StabiliteParTypeCapacite.get(
+          capacity.Type.Nom
+        ) || 99);
+    });
     capacity.AmeliorationsEffet.forEach((rank, ameliorationName) => {
-      totalCost += rank * (this.findAmeliorationEffetByName(ameliorationName)?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 99)
-    })
-    return totalCost
+      totalCost +=
+        rank *
+        (this.findAmeliorationEffetByName(
+          ameliorationName
+        )?.StabiliteParTypeCapacite.get(capacity.Type.Nom) || 99);
+    });
+    return totalCost;
   }
 }
