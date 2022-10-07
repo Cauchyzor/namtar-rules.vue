@@ -1,11 +1,5 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Amelioration d'effets</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
     <ion-content class="ion-padding">
       <NamTitle>Choisir des Competences</NamTitle>
       <div class="ion-padding-vertical ion-text-center">
@@ -30,16 +24,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonText,
-  IonGrid,
-  IonRow,
-} from "@ionic/vue";
+import { IonContent, IonPage, IonText, IonGrid, IonRow } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 import { CompetenceService } from "@/domain/Competence";
@@ -48,12 +33,9 @@ import CompetenceCard from "@/components/CompetenceCard.vue";
 export default defineComponent({
   components: {
     IonContent,
-    IonHeader,
     IonPage,
-    IonTitle,
     IonGrid,
     IonRow,
-    IonToolbar,
     IonText,
     NamTitle,
     CompetenceCard,

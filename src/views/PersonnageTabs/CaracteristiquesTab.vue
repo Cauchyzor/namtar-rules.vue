@@ -1,11 +1,5 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Amelioration d'effets</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
     <ion-content class="ion-padding">
       <NamTitle>Determiner les caracteritiques</NamTitle>
       <div class="ion-padding-vertical ion-text-center">
@@ -26,14 +20,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonText,
-  IonToolbar,
-} from "@ionic/vue";
+import { IonContent, IonPage, IonText } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 import {
@@ -45,10 +32,7 @@ import CaracteristiqueCard from "@/components/CaracteristiqueCard.vue";
 export default defineComponent({
   components: {
     IonContent,
-    IonHeader,
     IonPage,
-    IonTitle,
-    IonToolbar,
     NamTitle,
     IonText,
     CaracteristiqueCard,
