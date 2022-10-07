@@ -9,12 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content>
       <NamTitle>Capacites</NamTitle>
       <!-- TODO search bar pour filtrer les items dans les tabs -->
       <ion-tabs>
