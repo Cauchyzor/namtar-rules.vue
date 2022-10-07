@@ -1,14 +1,8 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>{{ $route.params.id }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
     <ion-content>
       <NamTitle>Systeme de des</NamTitle>
-      <NamTitle>Succes et Echecs</NamTitle>
+      <h5>Succes et Echecs</h5>
       <p>
         Les Tests sont résolut en opposant les résultats d'une pool de dé
         "positive" versus une pool de dé "négative"
@@ -135,13 +129,7 @@
 </template>
 
 <script lang="ts">
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/vue";
+import { IonContent, IonPage } from "@ionic/vue";
 import { defineComponent } from "vue";
 
 import NamTitle from "@/components/NamTitle.vue";
@@ -149,10 +137,7 @@ import NamTitle from "@/components/NamTitle.vue";
 export default defineComponent({
   components: {
     IonContent,
-    IonHeader,
     IonPage,
-    IonTitle,
-    IonToolbar,
     NamTitle,
   },
 });

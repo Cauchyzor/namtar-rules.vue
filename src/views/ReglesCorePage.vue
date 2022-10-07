@@ -1,5 +1,5 @@
 <template>
-  <ion-page>
+  <ion-page class="ion-page" >
     <ion-header :translucent="true">
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -9,12 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content>
       <ion-tabs>
         <ion-router-outlet></ion-router-outlet>
         <ion-tab-bar slot="bottom">

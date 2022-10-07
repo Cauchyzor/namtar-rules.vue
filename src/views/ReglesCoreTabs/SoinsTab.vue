@@ -1,11 +1,5 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>{{ $route.params.id }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
     <ion-content>
       <NamTitle>Repos et guerison</NamTitle>
       <h2>Soins</h2>
@@ -92,13 +86,7 @@
 </template>
 
 <script lang="ts">
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/vue";
+import { IonContent, IonPage } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 import { defineComponent } from "@vue/runtime-core";
@@ -106,10 +94,7 @@ import { defineComponent } from "@vue/runtime-core";
 export default defineComponent({
   components: {
     IonContent,
-    IonHeader,
     IonPage,
-    IonTitle,
-    IonToolbar,
     NamTitle,
   },
 });

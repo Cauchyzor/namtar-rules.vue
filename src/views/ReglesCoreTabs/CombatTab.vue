@@ -1,11 +1,5 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>{{ $route.params.id }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
     <ion-content>
       <NamTitle>Combats et conflits</NamTitle>
       <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
@@ -482,23 +476,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/vue";
+import { IonContent, IonPage } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 
 export default defineComponent({
   components: {
     IonContent,
-    IonHeader,
     IonPage,
-    IonTitle,
-    IonToolbar,
     NamTitle,
   },
 });
