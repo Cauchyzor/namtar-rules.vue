@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-content>
+    <ion-content  class="ion-padding">
       <NamTitle>Combats et conflits</NamTitle>
       <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
       <NamTitle>Avant une situation de conflit</NamTitle>

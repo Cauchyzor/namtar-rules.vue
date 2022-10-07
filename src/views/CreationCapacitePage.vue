@@ -9,12 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content  class="ion-padding">
       <NamTitle>Outil de creation de capacité</NamTitle>
     </ion-content>
     <!-- TODO : Stepper -->

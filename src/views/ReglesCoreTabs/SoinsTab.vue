@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-content>
+    <ion-content class="ion-padding">
       <NamTitle>Repos et guerison</NamTitle>
       <h2>Soins</h2>
       <p>

@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-content>
+    <ion-content  class="ion-padding">
       <NamTitle>Systeme de des</NamTitle>
       <h5>Succes et Echecs</h5>
       <p>

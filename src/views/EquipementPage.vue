@@ -9,12 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content class="ion-padding">
       <NamTitle>Equipement et Marché</NamTitle>
       <!-- TODO Faire des onglets -->
       <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
@@ -304,8 +299,8 @@
               </li>
             </ul>
             <p>
-              Précis et maniable, c'est l'arme de prédilection de la
-              pluparts des bagarreurs qui veulent ce faire respecter
+              Précis et maniable, c'est l'arme de prédilection de la pluparts
+              des bagarreurs qui veulent ce faire respecter
             </p>
           </div>
         </div>
@@ -347,7 +342,8 @@
               <li><strong>Encombrement: </strong>4</li>
             </ul>
             <p>
-              Plus lourde qu'un sabre, la vibro-hache est aussi plus difficile à manier efficacement, mais peut infliger de terribles dégâts.
+              Plus lourde qu'un sabre, la vibro-hache est aussi plus difficile à
+              manier efficacement, mais peut infliger de terribles dégâts.
             </p>
           </div>
         </div>

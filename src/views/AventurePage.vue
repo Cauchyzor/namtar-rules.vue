@@ -9,12 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content  class="ion-padding">
       <h1>Écoulement du temps</h1>
       <p>
         Le MJ peut utiliser une échelle de temps différente en fonction des

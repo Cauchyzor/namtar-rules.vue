@@ -9,12 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content class="ion-padding">
       <!-- TODO Faire un stepper avec les différents types de vehicule / Montures -->
       <!-- TODO Faire le lien avec une liste de vehicule monture de la catégorie en bas de chaque step  -->
       <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
