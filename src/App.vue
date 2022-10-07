@@ -81,18 +81,6 @@ export default defineComponent({
         url: "/Personnage",
       },
       {
-        title: "Règles Core : Tests de compétences ",
-        url: "/Test",
-      },
-      {
-        title: "Règles Core : Combats",
-        url: "/Combat",
-      },
-      {
-        title: "Règles Core : Santé et Guérison",
-        url: "/Sante",
-      },
-      {
         title: "Règles : Aventure",
         url: "/Aventure",
       },
@@ -107,6 +95,10 @@ export default defineComponent({
       {
         title: "Règles : Capacitée",
         url: "/Capacite",
+      },
+      {
+        title: "Règles : Cores",
+        url: "/ReglesCore",
       }
     ];
 

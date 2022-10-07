@@ -1,21 +1,13 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button color="primary"></ion-menu-button>
-        </ion-buttons>
         <ion-title>{{ $route.params.id }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <NamTitle>Repos et guérison</NamTitle>
+    <ion-content>
+      <NamTitle>Repos et guerison</NamTitle>
       <h2>Soins</h2>
       <p>
         La restitution des PV perdus n'est possible d'une seul manière :
@@ -30,7 +22,8 @@
         </li>
         <li>
           Le repos long (8h de sommeil dans un environnement sécurisé): le
-          personnage peut consommer 2 point de résiliance et régénère la moitié de sont maximum de points de résilience.
+          personnage peut consommer 2 point de résiliance et régénère la moitié
+          de sont maximum de points de résilience.
         </li>
         <li>Capacité : les effets sont décrits par la capacitée</li>
       </ul>
@@ -100,10 +93,8 @@
 
 <script lang="ts">
 import {
-  IonButtons,
   IonContent,
   IonHeader,
-  IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -114,10 +105,8 @@ import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
   components: {
-    IonButtons,
     IonContent,
     IonHeader,
-    IonMenuButton,
     IonPage,
     IonTitle,
     IonToolbar,

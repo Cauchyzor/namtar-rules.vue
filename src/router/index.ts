@@ -11,34 +11,45 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/PersonnagePage.vue"),
     children: [
       {
-        path: '',
-        redirect: '/Personnage/Caracteristiques',
+        path: "",
+        redirect: "/Personnage/Caracteristiques",
       },
       {
-        path: 'Caracteristiques',
-        component: () => import('@/views/PersonnageTabs/CaracteristiquesTab.vue'),
+        path: "Caracteristiques",
+        component: () =>
+          import("@/views/PersonnageTabs/CaracteristiquesTab.vue"),
       },
       {
-        path: 'Competences',
-        component: () => import('@/views/PersonnageTabs/CompetencesTab.vue'),
+        path: "Competences",
+        component: () => import("@/views/PersonnageTabs/CompetencesTab.vue"),
       },
       {
-        path: 'Capacites',
-        component: () => import('@/views/PersonnageTabs/CapacitesTab.vue'),
+        path: "Capacites",
+        component: () => import("@/views/PersonnageTabs/CapacitesTab.vue"),
       },
     ],
   },
   {
-    path: "/Test",
-    component: () => import("../views/TestCompetencePage.vue"),
-  },
-  {
-    path: "/Combat",
-    component: () => import("../views/CombatPage.vue"),
-  },
-  {
-    path: "/Sante",
-    component: () => import("../views/SanteGuerisonPage.vue"),
+    path: "/ReglesCore",
+    component: () => import("../views/ReglesCorePage.vue"),
+    children: [
+      {
+        path: "",
+        redirect: "/ReglesCore/System",
+      },
+      {
+        path: "System",
+        component: () => import("@/views/ReglesCoreTabs/DiceSystemTab.vue"),
+      },
+      {
+        path: "Combats",
+        component: () => import("@/views/ReglesCoreTabs/CombatTab.vue"),
+      },
+      {
+        path: "Soins",
+        component: () => import("@/views/ReglesCoreTabs/SoinsTab.vue"),
+      },
+    ],
   },
   {
     path: "/Aventure",
@@ -57,24 +68,24 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/CapaciteInfoPage.vue"),
     children: [
       {
-        path: '',
-        redirect: '/Capacite/TypeTab',
+        path: "",
+        redirect: "/Capacite/TypeTab",
       },
       {
-        path: 'TypeTab',
-        component: () => import('@/views/CapaciteInfoTabs/TypeTab.vue'),
+        path: "TypeTab",
+        component: () => import("@/views/CapaciteInfoTabs/TypeTab.vue"),
       },
       {
-        path: 'VecteurTab',
-        component: () => import('@/views/CapaciteInfoTabs/VecteurTab.vue'),
+        path: "VecteurTab",
+        component: () => import("@/views/CapaciteInfoTabs/VecteurTab.vue"),
       },
       {
-        path: 'EffetTab',
-        component: () => import('@/views/CapaciteInfoTabs/EffetTab.vue'),
+        path: "EffetTab",
+        component: () => import("@/views/CapaciteInfoTabs/EffetTab.vue"),
       },
       {
-        path: 'AmeliorationTab',
-        component: () => import('@/views/CapaciteInfoTabs/AmeliorationTab.vue'),
+        path: "AmeliorationTab",
+        component: () => import("@/views/CapaciteInfoTabs/AmeliorationTab.vue"),
       },
     ],
   },

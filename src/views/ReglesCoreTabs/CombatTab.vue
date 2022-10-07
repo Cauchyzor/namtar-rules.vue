@@ -1,20 +1,13 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button color="primary"></ion-menu-button>
-        </ion-buttons>
         <ion-title>{{ $route.params.id }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content>
+      <NamTitle>Combats et conflits</NamTitle>
       <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
       <NamTitle>Avant une situation de conflit</NamTitle>
       <h2>Initiative</h2>
@@ -490,10 +483,8 @@
 import { defineComponent } from "vue";
 
 import {
-  IonButtons,
   IonContent,
   IonHeader,
-  IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -503,10 +494,8 @@ import NamTitle from "@/components/NamTitle.vue";
 
 export default defineComponent({
   components: {
-    IonButtons,
     IonContent,
     IonHeader,
-    IonMenuButton,
     IonPage,
     IonTitle,
     IonToolbar,
