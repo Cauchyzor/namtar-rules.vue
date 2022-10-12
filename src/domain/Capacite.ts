@@ -12,6 +12,7 @@ export type Capacite = {
 export type CapaciteType = {
   Nom: CapaciteTypeName;
   Description: string;
+  DescriptionDetails: string;
 };
 
 enum CapaciteTypeName {
@@ -84,31 +85,37 @@ export class CapaciteService {
     {
       Nom: CapaciteTypeName.EVOCATION,
       Description:
-        "L'utilisateur puise dans son endurence pour généré de l'energie. 1 point de Stress est converti en 1 point de Stabilité.",
+        "L'utilisateur puise dans son endurance pour généré de l'energie.",
+      DescriptionDetails: "Chaque point de stress investi produit 1 point de stabilité."
     },
     {
       Nom: CapaciteTypeName.MALEFICE,
       Description:
-        "L'energie du malefice est nouris par l'infortune de la cible. Chaque menaces de la cible augmente la Stabilité de 3.",
-    },
+        "L'energie du malefice est nouris par l'infortune de la cible.",
+        DescriptionDetails: "Chaque menaces subit par la cible genère 2 point de stabilité."
+      },
     {
       Nom: CapaciteTypeName.NECROMANCIE,
       Description:
         "La capacité est générée avec l'energie d'un residuelle d'un ou plusieurs cadavre ou d'une source d'energie. 2 points de stabilité par niveau cummulés par les cadavres.",
+      DescriptionDetails: "Chaque niveau du cadavre genère 1 point de stabilité. Plusieurs cadavres peuvent être utilisé en additionnant leurs niveaux."
     },
     {
       Nom: CapaciteTypeName.ENVOUTEMENT,
       Description:
-        "Corrompt les atouts de la cible pour générer ces effets. 1 stabilité par atouts retiré",
-    },
+        "Corrompt les atouts de la cible pour générer ces effets.",
+        DescriptionDetails: "Chaque atout supprimé genère 1 point de stabilité."
+      },
     {
       Nom: CapaciteTypeName.BENEDICTION,
       Description:
-        "Converti les atouts du groupe pour generer ses effets. 2 stabilité par atout retiré",
+        "Converti les atouts du groupe pour generer des effets.",
+        DescriptionDetails: "Chaque atout supprimé genère 1 point de stabilité."
     },
     {
       Nom: CapaciteTypeName.MANTRA,
       Description: "Les effets sont passif.",
+      DescriptionDetails: "Les mantras sont toujours stable."
     },
   ];
 
