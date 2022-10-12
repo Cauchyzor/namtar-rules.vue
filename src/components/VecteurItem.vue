@@ -2,6 +2,7 @@
   <ion-item>
     <ion-label class="ion-text-wrap">
       <p>{{ Vecteur.Nom }}</p>
+      <ion-text>{{Vecteur.Description}}</ion-text>
       <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
     </ion-label>
     <ion-button fill="outline" slot="end">Détail</ion-button>
@@ -26,4 +27,8 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped></style>
+<style scoped>
+ion-text {
+  font-size: smaller;
+}
+</style>
