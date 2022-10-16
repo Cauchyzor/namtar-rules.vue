@@ -2,7 +2,7 @@
   <ion-item>
     <ion-label class="ion-text-wrap">
       <p>{{ EquipementItem.Nom }}</p>
-      <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
+      <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
     </ion-label>
     <ion-button fill="outline" slot="end">Détail</ion-button>
   </ion-item>

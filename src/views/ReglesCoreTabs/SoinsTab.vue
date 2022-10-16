@@ -5,7 +5,7 @@
       <h2>Soins</h2>
       <p>
         La restitution des PV perdus n'est possible d'une seul manière :
-        consommer des point de résiliance. La résiliance représente la capacitée
+        consommer des point de résiliance. La résiliance représente la capacité
         du corps à combatre les infections et réparer les tissus. L'utilisation
         des point de résiliance ne peux que ce faire dans certaine situation :
       </p>
@@ -16,23 +16,23 @@
         </li>
         <li>
           Le repos long (8h de sommeil dans un environnement sécurisé): le
-          personnage peut consommer 2 point de résiliance et régénère la moitié
-          de sont maximum de points de résilience.
+          personnage peut consommer jusqu'à 2 points de résiliances et régénère la moitié
+          de son maximum de points de résilience.
         </li>
-        <li>Capacité : les effets sont décrits par la capacitée</li>
+        <li>Utiliser une aptitude : les effets sont décrits par la l'aptitude en question</li>
       </ul>
       <h2>Premiers soins</h2>
       <p>
         Après chaque rencontre ou situation de stress, si un personnage a subit
         des blesure, il peut faire l'objet d'une intervention pour les premiers
-        soins. Cecis requiert un test de medecine (intelligence) à l'aide
-        d'outils appropriés et d'une quizaine de minutes. La difficultée du test
-        augmente en fonction du % de PV perdu : +1DD tout les 10%. Une
+        soins. Cecis requiert un test de medecine (intelligence) ainsi que des
+        outils appropriés et d'une quizaine de minutes. La difficultée du test
+        augmente en fonction du % de PV perdu : +1DD tout les 20%. Une
         intervention réussie permet aux personnages de gagner autant de PV que
-        de reussite, et autant de point de stresse que d'avantage.
+        de reussite, et autant de point de stress que d'avantage.
       </p>
       <p>
-        Attention, chaque échecs infligent 1 point de dégat et chaque menace
+        Attention, chaque échecs infligent 1 point de dégat et chaque désavantage
         peut soit rallonger le temps de l'opperation, ou infliger 1 point de
         stress.
       </p>

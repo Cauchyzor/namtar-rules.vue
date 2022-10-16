@@ -108,7 +108,7 @@ export default defineComponent({
         url: "/Vehicule",
       },
       {
-        title: "Règles : Capacitée",
+        title: "Règles : Aptitude",
         url: "/Aptitude",
       },
     ];

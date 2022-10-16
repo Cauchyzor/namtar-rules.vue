@@ -97,7 +97,7 @@ export class AptitudeService {
     {
       Nom: AptitudeTypeName.NECROMANCIE,
       Description:
-        "La capacité est générée avec l'energie residuelle d'un ou plusieurs cadavre ou d'une source d'energie.",
+        "L'aptitude est générée avec l'energie residuelle d'un ou plusieurs cadavre ou d'une source d'energie.",
       DescriptionDetails: "Chaque niveau du cadavre genère 2 point de stabilité. Plusieurs cadavres peuvent être utilisé en additionnant leurs niveaux."
     },
     {
@@ -147,7 +147,7 @@ export class AptitudeService {
     {
       Nom: VecteurName.SOURCE_UNIQUEMENT,
       Description:
-        "Les effets sont appliqués à la source de la capacité (dépends du type de la capacité). Aucune difficulté sur les cibles dépourvues de volonté, consantentes ou sur vous même. ",
+        "Les effets sont appliqués à la source de l'aptitude (dépends du type de aptitude). Aucune difficulté sur les cibles dépourvues de volonté, consantentes ou sur vous même. ",
       Difficulte: "Aucune à Test opposé d'alteration du fluide (Charisme).",
     },
   ];
@@ -309,7 +309,7 @@ export class AptitudeService {
     },
     {
       Nom: AmeliorationEffetName.INCENTATION_RAPIDE,
-      Description: "Augmentez 3 fois la difficultée. de la capacité. La capacité est lancée comme une manoeuvre plutot qu'une action",
+      Description: "Augmentez 3 fois la difficultée. de l'aptitude. l'aptitude est lancée comme une manoeuvre plutot qu'une action",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -1],
@@ -322,7 +322,7 @@ export class AptitudeService {
     {
       Nom: AmeliorationEffetName.ECHANGE_DE_REGARD,
       Description:
-        "La capacité ne necessite pas de mains libres pour reussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
+        "L'aptitude ne necessite pas de mains libres pour reussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -4],
@@ -334,7 +334,7 @@ export class AptitudeService {
     {
       Nom: AmeliorationEffetName.ENERGIE_ACTIVATION,
       Description:
-        "La capacité n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
+        "L'aptitude n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -346,7 +346,7 @@ export class AptitudeService {
     {
       Nom: AmeliorationEffetName.INGREDIENT,
       Description:
-        "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de la capacité. Le gains de stabilité dépend de la puissance de l'objet",
+        "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de l'aptitude. Le gains de stabilité dépend de la puissance de l'objet",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -1],

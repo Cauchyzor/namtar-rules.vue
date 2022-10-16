@@ -11,14 +11,14 @@
       <p>Les pool sont constitué de D6</p>
       <p>Pour les dés positifs</p>
       <ul>
-        <li>le résultat 6 génère : 1 succès</li>
-        <li>le résultat 5 génère : 1 avantage</li>
+        <li>le résultat 6, 5 ou 4 génère : 1 succès</li>
+        <li>le résultat 3 génère : 1 avantage</li>
         <li>les autres résultats ne sont pas interprétés</li>
       </ul>
       <p>Pour les dés négatif</p>
       <ul>
-        <li>le résultat 1 génère : 1 échec</li>
-        <li>le résultat 2 génère : 1 désavantage</li>
+        <li>le résultat 1, 2 ou 3 génère : 1 échec</li>
+        <li>le résultat 4 génère : 1 désavantage</li>
         <li>les autres résultats ne sont pas interprétés</li>
       </ul>
       <p>Chaque échec annule un succès Chaque désavantage annule un avantage</p>

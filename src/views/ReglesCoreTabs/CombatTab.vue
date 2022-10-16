@@ -1,14 +1,15 @@
 <template>
   <ion-page>
-    <ion-content  class="ion-padding">
+    <ion-content class="ion-padding">
       <NamTitle>Combats et conflits</NamTitle>
       <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
       <NamTitle>Avant une situation de conflit</NamTitle>
       <h2>Initiative</h2>
       <p>
         Si aucun des deux camps ne cherche à être discret, ils se remarquent
-        automatiquement. Test d'initiative de tout les béligerant, puis
-        classement par nombre de success, puis nombre d'avantage si égalité
+        automatiquement. Test d'initiative sans difficulté de tout les
+        béligerant, puis classement par nombre de success, puis nombre
+        d'avantage si égalité
       </p>
       <p>
         Sinon, test de discretion de groupe des attaquants opposé test de
@@ -26,81 +27,42 @@
       <ul>
         <li>
           Effectuer une <strong>action</strong> : comme réaliser une attaque,
-          lancer une Évocation.
+          utilser une aptitude, ou tout autre action décrite qui demanderai
+          toute votre attention pendant les secondes du tour de jeu.
         </li>
         <li>
-          Effectuer une <strong>manoeuvre</strong> : comme vous déplacer ou vous
-          mettre à couvert.
+          Effectuer une <strong>manoeuvre</strong> : comme vous déplacer, vous
+          mettre à couvert ou vous désengager d'un adversaire au corps à corps
         </li>
         <li>
           Effectuer des <strong>broutilles</strong> : comme crier des phrases
           brèves, sortir un objet de votre ceinture, lâcher l&#39;objet que vous
-          tenez.
+          tenez. Si le MJ estime que la sommes de broutilles demandent trop de
+          temps ou de concentration, il peut les considérer commes une manoeuvre
+          ou une action, et prendre la place de ce creneau.
         </li>
       </ul>
       <p>
         Vous pouvez décider de ne pas vous déplacer, ne pas agir, ou même de ne
-        rien faire pendant votre tour. Si vous ne savez pas quoi faire pendant
-        votre tour, vous pouvez envisager de choisir d&#39;esquiver ou de se
-        tenir prêt, décrites dans les sections ci-dessous.
+        rien faire pendant votre tour. Dans ce cas précis, vous gagnez une
+        réaction supplémentaire.
       </p>
       <p>
         Vous pouvez decider d&#39;échanger une action contre une manoeuvre, mais
         vous ne pouvez jamais excéder 2 manoeuvre par tour.
       </p>
       <p>
-        En dehors de votre créneau d&#39;initiative, vous pouvez effectuer une
-        réaction.
-      </p>
-      <h2>Broutilles</h2>
-      <p>
-        Pendant votre tour, vous pouvez faire de nombreuses choses qui ne vous
-        demandent pas de vous déplacer ni d&#39;utiliser une action. Vous pouvez
-        a priori effectuer
-        <strong
-          >autant de broutille que vous le souhaitez si le temps le
-          permet</strong
-        >.
-      </p>
-      <ul>
-        <li>
-          <p>
-            Vous pouvez communiquer : dans la mesure du possible, par
-            <strong>phrases brèves ou par gestes</strong>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Vous pouvez aussi librement
-            <strong>interagir avec un objet</strong> ou un élément de
-            l&#39;environnement, soit pendant votre déplacement, soit pendant
-            votre action : Par exemple, vous pouvez profiter de votre mouvement
-            vers un ennemi pour ouvrir une porte. Ou alors, vous pouvez dégainer
-            votre arme pendant la même action que vous utilisez pour attaquer.
-          </p>
-        </li>
-      </ul>
-      <p>
-        Néanmoins, si vous voulez
-        <strong
-          >interagir avec un second objet, alors vous devez utiliser une
-          action</strong
-        >. Par exemple, si vous souhaitez vous déplacer, ouvrir la porte et
-        dégainer votre épée, alors votre tour de jeu sera terminé.
-      </p>
-      <p>
-        Pour utiliser certains objets spéciaux, vous devrez toujours utiliser
-        une action, conformément à ce qui est indiqué dans la description de ces
-        objets.
+        En dehors de votre créneau d&#39;initiative, vous pouvez effectuer des
+        réactions. Chaques personnage bénéficie
+        <strong>d'une réaction par tour</strong>. Il peut beneficier de
+        reactions supplementaires grâce à des aptitudes ou en choisissant de ne
+        pas agir pendant son créneau d'initiative.
       </p>
       <h2>Réaction</h2>
       <p>
-        Certaines capacités spéciales, sorts ou situations permettent à votre
-        personnage d&#39;accomplir une action spéciale appelée une réaction. Une
-        réaction est une
-        <strong
+        C'est une<strong
           >réponse instantanée déclenchée par un stimulus qui peut se produire
-          pendant votre tour ou celui de quelqu&#39;un d&#39;autre</strong
+          pendant le créneau d'initiative d'un autre béligérant</strong
         >. Le type de réaction le plus courant est l&#39;<strong
           >attaque d&#39;opportunité</strong
         >.
@@ -113,24 +75,18 @@
         d&#39;opportunité.
       </p>
       <p>
-        Vous pouvez porter une attaque d&#39;opportunité quand une créature
-        hostile qui se trouve dans votre champ de vision se déplace hors de
-        portée de votre allonge. Pour porter cette attaque d&#39;opportunité,
-        vous utilisez votre réaction pour porter une attaque de corps-à-corps à
-        cette créature. L&#39;attaque intervient juste avant que celle-ci ne se
-        mette hors de votre portée.
+        Si vous êtes au corps à corps: vous pouvez porter une attaque
+        d'opportunité au corps a corps jusque avant de sortir de votre portée.
+        Ceci consomme votre réaction et la cible subit cette attaque avant tout
+        autre actions ou manoeuvre de sa part.
       </p>
       <p>
-        Vous pouvez éviter de provoquer une attaque d&#39;opportunité en
-        utilisant l&#39;action se désengager.
+        Si vous êtes equipé d'une arme à distance ou que vous pouvez utiliser
+        une aptitude à distance qui cible l'adversaire : vous pouvez porter une
+        attaque d'opportunitée et que l'adversaire qui ce dépace est à porté.
       </p>
       <h2>Mouvement</h2>
-      <p>
-        Lors de votre tour, vous pouvez vous déplacer d&#39;une distance
-        inférieure ou égale à votre vitesse. Dans les limites de votre vitesse,
-        vous pouvez parcourir la distance que vous souhaitez pendant votre tour
-        en suivant les règles présentées ici.
-      </p>
+      <p>Lors de votre tour, vous pouvez vous déplacer d'un niveau de portée</p>
       <p>
         Dans le cadre de votre mouvement, vous pouvez sauter, escalader et
         nager. Ces différents modes de déplacement peuvent être combinés avec la
@@ -168,7 +124,7 @@
         tâche. Quand vous choisissez l&#39;action aider, la créature que vous
         aidez
         <strong
-          >obtient un avantage, et un avantage supplémentaire par rang de
+          >obtient un atout, et un atout supplémentaire par rang de
           maîtrise</strong
         >
         sur le prochain test de compétence qu&#39;elle fait dans le but
@@ -177,11 +133,11 @@
       </p>
       <p>
         Vous pouvez aussi aider une créature amicale qui veut attaquer une autre
-        créature qui se trouve dans un rayon de 1,50 mètre de vous. Vous faites
-        une feinte, tentez de distraire la cible ou participez d&#39;une manière
-        ou d&#39;une autre afin de rendre l&#39;attaque de votre allié plus
-        efficace. Si votre allié attaque la cible avant le début de votre
-        prochain tour, il obtient un avantage sur son premier jet d&#39;attaque.
+        créature qui est engagée avec vous. Vous faites une feinte, tentez de
+        distraire la cible ou participez d&#39;une manière ou d&#39;une autre
+        afin de rendre l&#39;attaque de votre allié plus efficace. Si votre
+        allié attaque la cible avant le début de votre prochain tour, il obtient
+        un avantage sur son premier jet d&#39;attaque.
       </p>
       <h3>Attaquer</h3>
       <p>
@@ -346,22 +302,23 @@
         d&#39;initiative, et décider de Se tenir prêt pour uniquement retarder
         votre action.
       </p>
-      <h3>Utiliser une capacité</h3>
+      <h3>Utiliser une aptitude</h3>
       <p>
-        Le descriptif de la capacité indique si son lancement nécessite
+        Le descriptif de l'aptitude indique si son lancement nécessite
         d&#39;utiliser une action, une réaction, une broutille ou un mouvement,
-        ou doit être préparé pendant plusieurs minutes ou heures. Tout est
-        indiqué dans la description de la capacité.
+        ou doit être préparé pendant plusieurs minutes ou heures. Leurs effets sont
+        indiqué dans la description de l'aptitude.
       </p>
       <h3>Se cacher</h3>
       <p>
         Quand vous choisissez l&#39;action se cacher, vous devez faire un test
-        d&#39;agilité (Discrétion) pour tenter de vous cacher.
+        d&#39;agilité (Discrétion) de DD égale à la sommes des scores de
+        vigilance des adversaires à proximité.
       </p>
       <h1>Dégâts</h1>
       <p>
         Pour chaque arme ou capacité offensive, les dégâts infligés sont décrits
-        dans la description de l'arme ou la capacité.
+        dans la description de l'arme ou l'aptitude.
       </p>
       <p>
         Si une arme ou une capaité inflige des dégâts à plus d&#39;une créature
@@ -394,9 +351,10 @@
         déplacer, à moins de se relever et de mettre ainsi un terme à son état.
         Elle peut également décider d&#39;epauler une arme a distance si
         celle-ci n&#39;est pas trop encombrante à manoeuvrer. La créature subit
-        un désavantage lors de ses attaques au corps a corps. Si un assaillant
-        est à 1,50 mètre ou moins de la créature, il bénéficie d&#39;un avantage
-        lors de ses attaques contre la créature. Sinon, il subit un désavantage.
+        une menacce lors de ses attaques au corps a corps. les assaillant
+        engagés bénéficient d'un atout sur tout leurs jets pour toucher. La
+        creature beneficie d'une couverture face aux attaques à distance dont la
+        qualitée dépend du terrain.
       </p>
       <h2>Assourdi</h2>
       <p>
@@ -410,21 +368,16 @@
         test de caractéristique qui requiert la vue. Sa défense est réduite de
         1.
       </p>
-      <h2>Empoigné</h2>
+      <h2>Immobilisé - Empoigné</h2>
       <p>
         La vitesse d&#39;une créature empoignée devient 0 et elle ne peut plus
-        bénéficier de ses éventuels bonus de vitesse. Cet état se termine si
-        l&#39;empoigneur est neutralisé (voir cet état). L&#39;état se termine
-        également si un effet emporte la créature empoignée au-delà de
-        l&#39;allonge de l&#39;empoigneur ou de l&#39;effet d&#39;empoignade.
+        bénéficier de ses éventuels bonus de vitesse.
       </p>
-      <h2>Entravé</h2>
+      <h2>Immobilisé - Entravé</h2>
       <p>
         La vitesse de la créature entravée tombe à 0 et elle ne peut plus
-        bénéficier de ses éventuels bonus de vitesse. Les attaques qui visent la
-        créature bénéficient d&#39;un avantage, tandis que les attaques de la
-        créature subissent un désavantage. La créature souffre d&#39;un
-        désavantage lors de ses jets de sauvegarde.
+        bénéficier de ses éventuels bonus de vitesse. Le score d'agilité pour
+        calculé la défense est divisé par deux.
       </p>
       <h2>Neutralisé</h2>
       <p>
@@ -459,10 +412,9 @@
       </p>
       <h2>Terrorisé</h2>
       <p>
-        Une créature terrorisée subit un désavantage lors de ses tests de
-        caractéristique et de ses jets d&#39;attaque tant que la source de sa
-        frayeur se trouve dans son champ de vision. La créature est incapable de
-        se rapprocher de la source de sa frayeur de son plein gré.
+        Une créature terrorisée subit une menace chaque tours tant que la source
+        de sa frayeur se trouve dans son champ de vision. La créature est
+        incapable de se rapprocher de la source de sa frayeur de son plein gré.
       </p>
       <h2>Surpris</h2>
       <p>

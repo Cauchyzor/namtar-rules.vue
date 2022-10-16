@@ -3,7 +3,7 @@
     <ion-label class="ion-text-wrap">
       <p>{{ Type.Nom }}</p>
       <ion-text>{{ Type.Description }}</ion-text>
-      <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
+      <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
     </ion-label>
 
     <ion-button fill="outline" slot="end">Détail</ion-button>

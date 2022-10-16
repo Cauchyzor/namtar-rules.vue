@@ -34,7 +34,7 @@ export class CaracteristiqueService {
     {
       Nom: CaracteritiqueName.INTELLIGENCE,
       Description:
-        "Mesure la capacitée de raisonnement, la mémoire et la sagesse d'un personnage.",
+        "Mesure la capacité de raisonnement, la mémoire et la sagesse d'un personnage.",
       Attributs: AttributService.getAttributsByNames([AttributsName.STRESS]),
     },
     {

@@ -5,7 +5,7 @@
     </ion-thumbnail>
     <ion-label class="ion-text-wrap">
       <p>{{ Aptitude.Nom }}</p>
-      <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
+      <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
     </ion-label>
     <ion-button fill="outline" slot="end" @click="openDetail = true"
       >Détail</ion-button
