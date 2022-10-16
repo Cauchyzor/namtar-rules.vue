@@ -18,12 +18,12 @@ export enum CompetenceName {
   MEDECINE = "Médecine",
   SURVIE = "Survie",
   INGENIERIE = "Ingénierie",
-  MANIPULATION_DU_FLUIDE = "Manipulation du fluide",
+  MANIPULATION_DU_FLUIDE = "Entropie du fluide",
   CHARME = "Charme",
   NEGOCIATION = "Négociation",
   TROMPERIE = "Tromperie",
   PERSPICACITE = "Prespicacité",
-  ALTERATION = "Altération",
+  ALTERATION = "Altération du fluide",
   INTIMIDATION = "Intimidation",
 }
 

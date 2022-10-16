@@ -85,34 +85,33 @@ export class CapaciteService {
     {
       Nom: CapaciteTypeName.EVOCATION,
       Description:
-        "L'utilisateur puise dans son endurance pour généré de l'energie.",
+        "L'utilisateur puise dans son endurance pour générer de l'energie.",
       DescriptionDetails: "Chaque point de stress investi produit 1 point de stabilité."
     },
     {
       Nom: CapaciteTypeName.MALEFICE,
       Description:
-        "L'energie du malefice est nouris par l'infortune de la cible.",
+        "L'energie du malefice est nouris par les menaces accumulées par la cible.",
         DescriptionDetails: "Chaque menaces subit par la cible genère 2 point de stabilité."
       },
     {
       Nom: CapaciteTypeName.NECROMANCIE,
       Description:
-        "La capacité est générée avec l'energie d'un residuelle d'un ou plusieurs cadavre ou d'une source d'energie. 2 points de stabilité par niveau cummulés par les cadavres.",
-      DescriptionDetails: "Chaque niveau du cadavre genère 1 point de stabilité. Plusieurs cadavres peuvent être utilisé en additionnant leurs niveaux."
+        "La capacité est générée avec l'energie residuelle d'un ou plusieurs cadavre ou d'une source d'energie.",
+      DescriptionDetails: "Chaque niveau du cadavre genère 2 point de stabilité. Plusieurs cadavres peuvent être utilisé en additionnant leurs niveaux."
     },
     {
       Nom: CapaciteTypeName.ENVOUTEMENT,
       Description:
-        "Corrompt les atouts de la cible pour générer ces effets.",
+        "Corrompt et consume les atouts de la cible pour générer des effets.",
         DescriptionDetails: "Chaque atout supprimé genère 1 point de stabilité."
       },
     {
       Nom: CapaciteTypeName.BENEDICTION,
       Description:
-        "Converti les atouts du groupe pour generer des effets.",
-        DescriptionDetails: "Chaque atout supprimé genère 1 point de stabilité."
-    },
-    {
+        "Consomme les atouts du groupe pour generer des effets.",
+        DescriptionDetails: "Chaque atout supprimé genère 2 point de stabilité."
+    },    {
       Nom: CapaciteTypeName.MANTRA,
       Description: "Les effets sont passif.",
       DescriptionDetails: "Les mantras sont toujours stable."
@@ -122,15 +121,8 @@ export class CapaciteService {
   private static VecteursList: Array<Vecteur> = [
     {
       Nom: VecteurName.CONTACT,
-      Description: "Les effets sont appliqué a la cible touchée.",
+      Description: "Les effets sont appliqués à la cible touchée.",
       Difficulte: "Attaque engagée de Pugilat (Intelligence)",
-    },
-    {
-      Nom: VecteurName.EXPLOSION_CADAVRE,
-      Description:
-        "L'energie residuel du cadavre visé a portée longue est utilisé pour appliquer des effets sur tout les cibles a porté courte du cadavre.",
-      Difficulte:
-        "Medecine (Intelligence) de difficulté égale à la sommes des niveaux des cadavres",
     },
     {
       Nom: VecteurName.SOUFFLE,
@@ -155,8 +147,8 @@ export class CapaciteService {
     {
       Nom: VecteurName.SOURCE_UNIQUEMENT,
       Description:
-        "Les effets sont appliqués à la source de la capacité (dépends du type de la capacité).",
-      Difficulte: "Aucune",
+        "Les effets sont appliqués à la source de la capacité (dépends du type de la capacité). Aucune difficulté sur les cibles dépourvues de volonté, consantentes ou sur vous même. ",
+      Difficulte: "Aucune à Test opposé d'alteration du fluide (Charisme).",
     },
   ];
 
