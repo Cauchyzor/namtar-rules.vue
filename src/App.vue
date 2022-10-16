@@ -94,7 +94,7 @@ export default defineComponent({
       },
       {
         title: "Règles : Capacitée",
-        url: "/Capacite",
+        url: "/Aptitude",
       },
       {
         title: "Règles : Cores",

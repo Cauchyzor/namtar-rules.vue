@@ -12,7 +12,7 @@
 import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
 
-import { AmeliorationEffet } from "@/domain/Capacite";
+import { AmeliorationEffet } from "@/domain/Aptitude";
 
 export default defineComponent({
   components: {

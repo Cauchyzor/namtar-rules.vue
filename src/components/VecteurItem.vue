@@ -12,7 +12,7 @@
 import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton } from "@ionic/vue";
 
-import { Vecteur } from "@/domain/Capacite";
+import { Vecteur } from "@/domain/Aptitude";
 
 export default defineComponent({
   components: {

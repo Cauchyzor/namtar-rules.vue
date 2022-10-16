@@ -12,7 +12,7 @@
 import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
 
-import { Effet } from "@/domain/Capacite";
+import { Effet } from "@/domain/Aptitude";
 
 export default defineComponent({
   components: {

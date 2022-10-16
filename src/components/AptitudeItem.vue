@@ -1,10 +1,10 @@
 <template>
   <ion-item>
     <ion-thumbnail slot="start">
-      <img :src="Capacite.Image || 'assets/icon/icon.png'" />
+      <img :src="Aptitude.Image || 'assets/icon/icon.png'" />
     </ion-thumbnail>
     <ion-label class="ion-text-wrap">
-      <p>{{ Capacite.Nom }}</p>
+      <p>{{ Aptitude.Nom }}</p>
       <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
     </ion-label>
     <ion-button fill="outline" slot="end" @click="openDetail = true"
@@ -15,22 +15,22 @@
   <ion-modal :is-open="openDetail">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Details : {{ Capacite.Nom }}</ion-title>
+        <ion-title>Details : {{ Aptitude.Nom }}</ion-title>
         <ion-buttons slot="end">
           <ion-button @click="openDetail = false">Close</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <p>Type: {{ Capacite.Type.Nom }} - {{ Capacite.Type.Description }}</p>
+      <p>Type: {{ Aptitude.Type.Nom }} - {{ Aptitude.Type.Description }}</p>
       <p>
-        Vecteur: {{ Capacite.Vecteur.Nom }} - {{ Capacite.Vecteur.Description }}
+        Vecteur: {{ Aptitude.Vecteur.Nom }} - {{ Aptitude.Vecteur.Description }}
       </p>
-      <p>Description: {{ Capacite.Description }}</p>
-      <p>Effets: {{ Array.from(Capacite.Effets.keys()).join(",") }}</p>
+      <p>Description: {{ Aptitude.Description }}</p>
+      <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(",") }}</p>
       <p>
         Amelioration:
-        {{ Array.from(Capacite.AmeliorationsEffet.keys()).join(",") }}
+        {{ Array.from(Aptitude.AmeliorationsEffet.keys()).join(",") }}
       </p>
       <p>Cout: {{ computeCapacityCost() }}</p>
     </ion-content>
@@ -51,7 +51,7 @@ import {
   IonButtons,
 } from "@ionic/vue";
 
-import { Capacite, CapaciteService } from "@/domain/Capacite";
+import { Aptitude, AptitudeService } from "@/domain/Aptitude";
 
 export default defineComponent({
   components: {
@@ -67,14 +67,14 @@ export default defineComponent({
     IonContent,
   },
   props: {
-    Capacite: { type: Object as PropType<Capacite>, required: true },
+    Aptitude: { type: Object as PropType<Aptitude>, required: true },
   },
   data() {
     return { openDetail: false };
   },
   methods: {
     computeCapacityCost() {
-      return CapaciteService.computeCost(this.Capacite);
+      return AptitudeService.computeCost(this.Aptitude);
     },
   },
 });

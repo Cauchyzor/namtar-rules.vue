@@ -10,24 +10,24 @@
     </ion-header>
 
     <ion-content>
-      <NamTitle>Capacites</NamTitle>
+      <NamTitle>Aptitudes</NamTitle>
       <!-- TODO search bar pour filtrer les items dans les tabs -->
       <ion-tabs>
         <ion-router-outlet></ion-router-outlet>
         <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="type" href="/Capacite/TypeTab">
+          <ion-tab-button tab="type" href="/Aptitude/TypeTab">
             <ion-label>Types</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="vecteur" href="/Capacite/VecteurTab">
+          <ion-tab-button tab="vecteur" href="/Aptitude/VecteurTab">
             <ion-label>Vecteur</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="effet" href="/Capacite/EffetTab">
+          <ion-tab-button tab="effet" href="/Aptitude/EffetTab">
             <ion-label>Effets</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="amelioration" href="/Capacite/AmeliorationTab">
+          <ion-tab-button tab="amelioration" href="/Aptitude/AmeliorationTab">
             <ion-label>Amelioration d'effet</ion-label>
           </ion-tab-button>
         </ion-tab-bar>
@@ -71,6 +71,6 @@ export default defineComponent({
     IonTabBar,
     IonTabButton,
   },
-  name: "CapaciteInfoPage",
+  name: "AptitudeInfoPage",
 });
 </script>

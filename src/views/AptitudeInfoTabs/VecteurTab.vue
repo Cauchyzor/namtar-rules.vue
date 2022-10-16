@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <NamTitle>Capacites</NamTitle>
+      <NamTitle>Aptitudes</NamTitle>
       <NamTitle>Vecteur</NamTitle>
       <VecteurItem
         v-for="vecteur in Vecteurs"
@@ -17,7 +17,7 @@ import { defineComponent } from "vue";
 import { IonContent, IonPage } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
-import { CapaciteService } from "@/domain/Capacite";
+import { AptitudeService } from "@/domain/Aptitude";
 import VecteurItem from "@/components/VecteurItem.vue";
 
 export default defineComponent({
@@ -29,7 +29,7 @@ export default defineComponent({
   },
   data() {
     return {
-      Vecteurs: CapaciteService.getAllVecteur(),
+      Vecteurs: AptitudeService.getAllVecteur(),
     };
   },
 });

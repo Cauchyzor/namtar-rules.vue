@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <NamTitle>Capacites</NamTitle>
+      <NamTitle>Aptitudes</NamTitle>
       <NamTitle>Effets</NamTitle>
       <EffetItem
         v-for="effet in Effets"
@@ -18,7 +18,7 @@ import { IonContent, IonPage } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 import EffetItem from "@/components/EffetItem.vue";
-import { CapaciteService } from "@/domain/Capacite";
+import { AptitudeService } from "@/domain/Aptitude";
 
 export default defineComponent({
   components: {
@@ -28,7 +28,7 @@ export default defineComponent({
     EffetItem,
   },
   data() {
-    return { Effets: CapaciteService.getAllEffect() };
+    return { Effets: AptitudeService.getAllEffect() };
   },
 });
 </script>

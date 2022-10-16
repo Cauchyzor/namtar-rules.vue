@@ -9,11 +9,11 @@
         >
       </div>
 
-      <CapaciteItem
-        v-for="capacite in CapaciteList"
-        :key="capacite.Nom"
-        :Capacite="capacite"
-      ></CapaciteItem>
+      <AptitudeItem
+        v-for="Aptitude in AptitudeList"
+        :key="Aptitude.Nom"
+        :Aptitude="Aptitude"
+      ></AptitudeItem>
     </ion-content>
   </ion-page>
 </template>
@@ -22,8 +22,8 @@ import { defineComponent } from "vue";
 import { IonContent, IonPage, IonText } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
-import { CapaciteService } from "@/domain/Capacite";
-import CapaciteItem from "@/components/CapaciteItem.vue";
+import { AptitudeService } from "@/domain/Aptitude";
+import AptitudeItem from "@/components/AptitudeItem.vue";
 
 export default defineComponent({
   components: {
@@ -31,11 +31,11 @@ export default defineComponent({
     IonPage,
     IonText,
     NamTitle,
-    CapaciteItem,
+    AptitudeItem,
   },
   data() {
     return {
-      CapaciteList: CapaciteService.getAllCapacites(),
+      AptitudeList: AptitudeService.getAllAptitudes(),
     };
   },
 });

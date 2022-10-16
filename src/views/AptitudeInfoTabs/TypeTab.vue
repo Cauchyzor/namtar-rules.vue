@@ -1,13 +1,13 @@
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <NamTitle>Capacites</NamTitle>
+      <NamTitle>Aptitudes</NamTitle>
       <NamTitle>Types</NamTitle>
-      <TypeCapaciteItem
-        v-for="typeCapacite in TypesCapacite"
-        :key="typeCapacite.Nom"
-        :Type="typeCapacite"
-      ></TypeCapaciteItem>
+      <TypeAptitudeItem
+        v-for="typeAptitude in TypesAptitude"
+        :key="typeAptitude.Nom"
+        :Type="typeAptitude"
+      ></TypeAptitudeItem>
     </ion-content>
   </ion-page>
 </template>
@@ -19,20 +19,20 @@ import { IonContent, IonPage } from "@ionic/vue";
 
 import NamTitle from "@/components/NamTitle.vue";
 
-import { CapaciteService } from "@/domain/Capacite";
+import { AptitudeService } from "@/domain/Aptitude";
 
-import TypeCapaciteItem from "@/components/TypeCapaciteItem.vue";
+import TypeAptitudeItem from "@/components/TypeAptitudeItem.vue";
 
 export default defineComponent({
   components: {
     IonContent,
     IonPage,
     NamTitle,
-    TypeCapaciteItem,
+    TypeAptitudeItem,
   },
   data() {
     return {
-      TypesCapacite: CapaciteService.getAllTypes(),
+      TypesAptitude: AptitudeService.getAllTypes(),
     };
   },
 });

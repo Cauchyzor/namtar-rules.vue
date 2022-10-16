@@ -45,6 +45,6 @@ export default defineComponent({
     IonToolbar,
     NamTitle,
   },
-  name: 'CreationCapacitePage'
+  name: 'CreationAptitudePage'
 })
 </script>

@@ -13,7 +13,7 @@
 import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
 
-import { CapaciteType } from "@/domain/Capacite";
+import { AptitudeType } from "@/domain/Aptitude";
 
 export default defineComponent({
   components: {
@@ -23,7 +23,7 @@ export default defineComponent({
     IonText,
   },
   props: {
-    Type: { type: Object as PropType<CapaciteType>, required: true },
+    Type: { type: Object as PropType<AptitudeType>, required: true },
   },
 });
 </script>

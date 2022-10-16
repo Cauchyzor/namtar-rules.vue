@@ -24,8 +24,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/PersonnageTabs/CompetencesTab.vue"),
       },
       {
-        path: "Capacites",
-        component: () => import("@/views/PersonnageTabs/CapacitesTab.vue"),
+        path: "Aptitudes",
+        component: () => import("@/views/PersonnageTabs/AptitudesTab.vue"),
       },
     ],
   },
@@ -64,28 +64,28 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/VehiculesPage.vue"),
   },
   {
-    path: "/Capacite",
-    component: () => import("../views/CapaciteInfoPage.vue"),
+    path: "/Aptitude",
+    component: () => import("../views/AptitudeInfoPage.vue"),
     children: [
       {
         path: "",
-        redirect: "/Capacite/TypeTab",
+        redirect: "/Aptitude/TypeTab",
       },
       {
         path: "TypeTab",
-        component: () => import("@/views/CapaciteInfoTabs/TypeTab.vue"),
+        component: () => import("@/views/AptitudeInfoTabs/TypeTab.vue"),
       },
       {
         path: "VecteurTab",
-        component: () => import("@/views/CapaciteInfoTabs/VecteurTab.vue"),
+        component: () => import("@/views/AptitudeInfoTabs/VecteurTab.vue"),
       },
       {
         path: "EffetTab",
-        component: () => import("@/views/CapaciteInfoTabs/EffetTab.vue"),
+        component: () => import("@/views/AptitudeInfoTabs/EffetTab.vue"),
       },
       {
         path: "AmeliorationTab",
-        component: () => import("@/views/CapaciteInfoTabs/AmeliorationTab.vue"),
+        component: () => import("@/views/AptitudeInfoTabs/AmeliorationTab.vue"),
       },
     ],
   },

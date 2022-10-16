@@ -24,7 +24,7 @@
             <ion-label>Compétences</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="capacites" href="/Personnage/Capacites">
+          <ion-tab-button tab="Aptitudes" href="/Personnage/Aptitudes">
             <ion-label>Capacités</ion-label>
           </ion-tab-button>
         </ion-tab-bar>
