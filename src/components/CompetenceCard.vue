@@ -7,7 +7,6 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-
 import { IonCard, IonText } from "@ionic/vue";
 
 import type { Competence } from "@/domain/Competence";

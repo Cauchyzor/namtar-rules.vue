@@ -2,16 +2,14 @@
   <ion-item>
     <ion-label class="ion-text-wrap">
       <p>{{ Vecteur.Nom }}</p>
-      <ion-text>{{Vecteur.Description}}</ion-text>
+      <ion-text>{{ Vecteur.Description }}</ion-text>
       <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
     </ion-label>
     <ion-button fill="outline" slot="end">Détail</ion-button>
   </ion-item>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
+import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton } from "@ionic/vue";
 
 import { Vecteur } from "@/domain/Capacite";

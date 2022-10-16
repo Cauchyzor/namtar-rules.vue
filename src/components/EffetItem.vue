@@ -9,9 +9,7 @@
   </ion-item>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
+import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
 
 import { Effet } from "@/domain/Capacite";
@@ -29,7 +27,7 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-  ion-text{
-    font-size: x-small;
-  }
+ion-text {
+  font-size: x-small;
+}
 </style>

@@ -37,8 +37,7 @@
   </ion-modal>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-
+import { defineComponent, PropType } from "vue";
 import {
   IonItem,
   IonLabel,
@@ -51,8 +50,6 @@ import {
   IonToolbar,
   IonButtons,
 } from "@ionic/vue";
-
-import type { PropType } from "vue";
 
 import { Capacite, CapaciteService } from "@/domain/Capacite";
 

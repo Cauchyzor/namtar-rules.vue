@@ -7,7 +7,6 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-
 import { IonText } from "@ionic/vue";
 
 export default defineComponent({

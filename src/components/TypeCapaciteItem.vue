@@ -2,7 +2,7 @@
   <ion-item>
     <ion-label class="ion-text-wrap">
       <p>{{ Type.Nom }}</p>
-      <ion-text>{{Type.Description}}</ion-text>
+      <ion-text>{{ Type.Description }}</ion-text>
       <!-- TODO : Ajouter Description de la capacitée et travailler un look concis -->
     </ion-label>
 
@@ -10,9 +10,7 @@
   </ion-item>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
+import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
 
 import { CapaciteType } from "@/domain/Capacite";

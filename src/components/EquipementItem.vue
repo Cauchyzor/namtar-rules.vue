@@ -8,9 +8,7 @@
   </ion-item>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
+import { defineComponent, PropType } from "vue";
 import { IonItem, IonLabel, IonButton } from "@ionic/vue";
 
 import { Equipement } from "@/domain/Equipement";
