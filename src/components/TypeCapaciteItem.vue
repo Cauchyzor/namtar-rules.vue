@@ -31,6 +31,6 @@ export default defineComponent({
 </script>
 <style scoped>
 ion-text {
-  font-size: smaller;
+  font-size: x-small;
 }
 </style>
