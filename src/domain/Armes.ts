@@ -27,10 +27,10 @@ export class ArmesService {
   private static ARMES: Array<Arme> = [
     new Arme({
       Nom: "Bâton de force",
-      Degats: "1 point de dommage par succès",
+      Degats: "2 point de dommage par succès",
       Special: [
-        "Augmentez votre défense liée a l'équipuement de 1 point",
-        "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit 1 point de dégat supplémentaire par avantages et la cellule est consommée. Recharger la cellule demande une manoeuvre",
+        "Augmente votre défense liée à l'équipuement de 1 point",
+        "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit 1 point de dégat supplémentaire par avantages et la cellule est consommée. Recharger la cellule demande une action",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -42,9 +42,7 @@ export class ArmesService {
     new Arme({
       Nom: "Mains nues",
       Degats: "1 point de dommage par succès",
-      Special: [
-        "Vous avez des difficultés pour toucher des cibles maniant des armes avec plus d'allonge face a vous. Vous subissez 1 infortune par rang adverse de corps à corps ou pugilat, dependant de l'arme.",
-      ],
+      Special: ["Aucun"],
       Competence: CompetenceName.PUGILAT,
       Description: "Aucun",
       Encombrement: 0,
@@ -56,7 +54,8 @@ export class ArmesService {
       Degats: "2 point de dommage par succès",
       Special: ["Aucune"],
       Competence: CompetenceName.CORPS_A_CORPS,
-      Description: "Une lame trés tranchante, capable de découper tout ce qui serai moins solide que son metal.",
+      Description:
+        "Une lame trés tranchante, capable de découper tout ce qui serai moins solide que son metal.",
       Encombrement: 1,
       Rarete: 2,
       Prix: 100,
@@ -64,7 +63,7 @@ export class ArmesService {
     new Arme({
       Nom: "Sabre moleculaire",
       Degats: "2 point de dommage par succès",
-      Special: ["Augmenter votre defense liée a l'équipement de 1 point"],
+      Special: ["Augmente votre defense liée à l'équipement de 1 point"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
         "Précis et maniable, c'est l'arme de prédilection de la plupart des bretteurs partant en territoir hostile.",
@@ -76,25 +75,23 @@ export class ArmesService {
       Nom: "Marteau à impulsion",
       Degats: "2 point de dommage par succès et par avantage",
       Special: [
-        "Vous pouvez dépenser 2 avantages pour renverser la cible en consommant la cellule.",
+        "Vous pouvez dépenser 2 avantages pour renverser la cible et consommant la cellule.",
         "Requis 3 en Vigueur",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "Arme de corps à corps redoutable, comprenant dans un sa conçeption une celulle à fusion remplaçable qui décharge de solide détonations à l'impact",
+        "Arme de corps à corps redoutable, comprenant dans un sa conception une celulle à fusion remplaçable qui se décharge à l'impact",
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
     }),
     new Arme({
       Nom: "Gants renforcés",
-      Degats: "1 point de dommage par succès",
-      Special: [
-        "Dégat non létal par défaut",
-      ],
+      Degats: "1 point de dommage par succès et par avantages.",
+      Special: ["Aucun"],
       Competence: CompetenceName.PUGILAT,
       Description:
-        "Plus lourde qu'un sabre, la vibro-hache est aussi plus difficile à manier efficacement, mais peut infliger de terribles dégâts",
+        "Equipement des pugilites, ils permettent de ne pas s'abimer les mains, et d'infliger de sevères contusions.",
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
