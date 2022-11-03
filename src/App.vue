@@ -92,10 +92,6 @@ export default defineComponent({
         url: "/ReglesCore",
       },
       {
-        title: "Creation de personnage",
-        url: "/Personnage",
-      },
-      {
         title: "Règles : Aventure",
         url: "/Aventure",
       },
@@ -110,6 +106,10 @@ export default defineComponent({
       {
         title: "Règles : Aptitude",
         url: "/Aptitude",
+      },
+      {
+        title: "Creation de personnage",
+        url: "/Personnage",
       },
     ];
 
