@@ -1,31 +1,19 @@
 import { CompetenceName } from "./Competence";
-import { Equipement } from "./Equipement";
 
-export class Arme extends Equipement {
+export type ArmeItem = {
+  Nom: string;
   Degats: string;
   Special: Array<string>;
   Competence: CompetenceName;
-
-  constructor({
-    Nom = "Arme inconnue",
-    Degats = "1 point de dommage par succès",
-    Special = ["Aucun"],
-    Competence = CompetenceName.CORPS_A_CORPS,
-    Description = "Aucune",
-    Encombrement = 3,
-    Rarete = 3,
-    Prix = 100,
-  }) {
-    super({ Nom, Encombrement, Rarete, Description, Prix });
-    this.Degats = Degats;
-    this.Special = Special;
-    this.Competence = Competence;
-  }
-}
+  Encombrement: number;
+  Rarete: number;
+  Description: string;
+  Prix: number;
+};
 
 export class ArmesService {
-  private static ARMES: Array<Arme> = [
-    new Arme({
+  private static ARMES: Array<ArmeItem> = [
+    {
       Nom: "Bâton de force",
       Degats: "2 point de dommage par succès",
       Special: [
@@ -38,8 +26,8 @@ export class ArmesService {
       Encombrement: 3,
       Rarete: 3,
       Prix: 100,
-    }),
-    new Arme({
+    },
+    {
       Nom: "Mains nues",
       Degats: "1 point de dommage par succès",
       Special: ["Aucun"],
@@ -48,8 +36,8 @@ export class ArmesService {
       Encombrement: 0,
       Rarete: 0,
       Prix: 0,
-    }),
-    new Arme({
+    },
+    {
       Nom: "Lame moleculaire",
       Degats: "2 point de dommage par succès",
       Special: ["Aucune"],
@@ -59,8 +47,8 @@ export class ArmesService {
       Encombrement: 1,
       Rarete: 2,
       Prix: 100,
-    }),
-    new Arme({
+    },
+    {
       Nom: "Sabre moleculaire",
       Degats: "2 point de dommage par succès",
       Special: ["Augmente votre defense liée à l'équipement de 1 point"],
@@ -70,8 +58,8 @@ export class ArmesService {
       Encombrement: 1,
       Rarete: 2,
       Prix: 100,
-    }),
-    new Arme({
+    },
+    {
       Nom: "Marteau à impulsion",
       Degats: "2 point de dommage par succès et par avantage",
       Special: [
@@ -84,8 +72,8 @@ export class ArmesService {
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
-    }),
-    new Arme({
+    },
+    {
       Nom: "Gants renforcés",
       Degats: "1 point de dommage par succès et par avantages.",
       Special: ["Aucun"],
@@ -95,8 +83,8 @@ export class ArmesService {
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
-    }),
-    new Arme({
+    },
+    {
       Nom: "Vibro-hache",
       Degats: "3 point de dommage par succès",
       Special: ["Requis 3 en Vigueur"],
@@ -106,6 +94,10 @@ export class ArmesService {
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
-    }),
+    },
   ];
+
+  static getAllArmesList() {
+    return this.ARMES;
+  }
 }
