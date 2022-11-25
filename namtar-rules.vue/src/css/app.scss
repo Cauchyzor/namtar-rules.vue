@@ -1,0 +1,14 @@
+// app global css in SCSS form
+@font-face {
+  font-family: 'Nova Square';
+  src: url('./fonts/NovaSquare.ttf');
+}
+
+@font-face {
+  font-family: 'Anurati';
+  src: url('./fonts/Anurati-Regular.otf');
+}
+
+body {
+  font-family: 'Nova Square';
+}
