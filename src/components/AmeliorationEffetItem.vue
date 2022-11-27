@@ -1,26 +1,21 @@
 <template>
-  <ion-item>
-    <ion-label class="ion-text-wrap">
-      <p>{{ Amelioration.Nom }}</p>
-      <ion-text>{{ Amelioration.Description }}</ion-text>
+  <q-item>
+    <q-item-section>
+      <q-item-label lines="1">{{ Amelioration.Nom }}</q-item-label>
+      <q-item-label caption lines="4">{{ Amelioration.Description }}</q-item-label>
       <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
-    </ion-label>
-    <ion-button fill="outline" slot="end">Détail</ion-button>
-  </ion-item>
+    </q-item-section>
+    <q-item-section>
+      <q-btn flat>Détail</q-btn>
+    </q-item-section>
+  </q-item>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import { AmeliorationEffet } from "@/domain/Aptitude";
+import { AmeliorationEffet } from 'src/domain/Aptitude';
 
 export default defineComponent({
-  components: {
-    IonItem,
-    IonLabel,
-    IonButton,
-    IonText,
-  },
   props: {
     Amelioration: {
       type: Object as PropType<AmeliorationEffet>,

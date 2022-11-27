@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { CaracteritiqueName } from "./Caracteristique";
+import { CaracteritiqueName } from './Caracteristique';
 
 export type Competence = {
   Nom: CompetenceName;
@@ -7,24 +7,24 @@ export type Competence = {
 };
 
 export enum CompetenceName {
-  ATHLETISME = "Athlétisme",
-  CORPS_A_CORPS = "Corps à corps",
-  PUGILAT = "Pugilat",
-  COORDINATION = "Coordination",
-  PILOTAGE = "Pilotage",
-  ARME_A_ENERGIE = "Arme à energie",
-  CONNAISSANCE_HISTOIRE = "Connaissance - Histoire",
-  CONNAISSANCE_CULTES = "Connaissance - Cultes",
-  MEDECINE = "Médecine",
-  SURVIE = "Survie",
-  INGENIERIE = "Ingénierie",
-  MANIPULATION_DU_FLUIDE = "Entropie du fluide",
-  CHARME = "Charme",
-  NEGOCIATION = "Négociation",
-  TROMPERIE = "Tromperie",
-  PERSPICACITE = "Prespicacité",
-  ALTERATION = "Altération du fluide",
-  INTIMIDATION = "Intimidation",
+  ATHLETISME = 'Athlétisme',
+  CORPS_A_CORPS = 'Corps à corps',
+  PUGILAT = 'Pugilat',
+  COORDINATION = 'Coordination',
+  PILOTAGE = 'Pilotage',
+  ARME_A_ENERGIE = 'Arme à energie',
+  CONNAISSANCE_HISTOIRE = 'Connaissance - Histoire',
+  CONNAISSANCE_CULTES = 'Connaissance - Cultes',
+  MEDECINE = 'Médecine',
+  SURVIE = 'Survie',
+  INGENIERIE = 'Ingénierie',
+  MANIPULATION_DU_FLUIDE = 'Entropie du fluide',
+  CHARME = 'Charme',
+  NEGOCIATION = 'Négociation',
+  TROMPERIE = 'Tromperie',
+  PERSPICACITE = 'Prespicacité',
+  ALTERATION = 'Altération du fluide',
+  INTIMIDATION = 'Intimidation',
 }
 
 export class CompetenceService {

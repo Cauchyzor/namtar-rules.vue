@@ -1,23 +1,19 @@
 <template>
-  <ion-text>
-    <h5 class="ion-text-uppercase ion-text-center">
+  <div class="text">
+    <h5 class="text-uppercase text-center">
       <slot></slot>
     </h5>
-  </ion-text>
+  </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import { IonText } from "@ionic/vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "NamTitle",
-  components: {
-    IonText,
-  },
+  name: 'NamTitle',
 });
 </script>
 <style scoped>
-ion-text {
-  font-family: "Anurati-Regular";
+.text {
+  font-family: 'Anurati';
 }
 </style>

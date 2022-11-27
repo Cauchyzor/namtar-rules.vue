@@ -1,46 +1,25 @@
 <template>
-  <ion-card>
-    <img
-      alt="Silhouette of mountains"
-      src="https://ionicframework.com/docs/img/demos/card-media.png"
-    />
-    <ion-card-header>
-      <ion-card-title>{{ Arme.Nom }}</ion-card-title>
-      <ion-card-subtitle
-        >Encombrement : {{ Arme.Encombrement }} - Prix :
+  <q-card>
+    <q-card-section vertical>
+      <div class="text-overline">
+        Encombrement : {{ Arme.Encombrement }} - Prix :
         {{ Arme.Prix }}
-      </ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      {{ Arme.Description }}
-    </ion-card-content>
-    <ion-button fill="clear">Detail</ion-button>
-  </ion-card>
+      </div>
+      <div class="text-h5 q-mt-sm q-mb-xs">
+        {{ Arme.Nom }}
+      </div>
+      <div class="text-caption text-grey">{{ Arme.Description }}</div>
+    </q-card-section>
+  </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import {
-  IonCard,
-  IonButton,
-  IonCardContent,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-} from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import { ArmeItem } from "@/domain/Armes";
+import { ArmeItem } from 'src/domain/Armes';
 
 export default defineComponent({
-  name: "EquipementCard",
-  components: {
-    IonCard,
-    IonCardHeader,
-    IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonButton,
-  },
+  name: 'EquipementCard',
+
   props: {
     Arme: { type: Object as PropType<ArmeItem>, required: true },
   },

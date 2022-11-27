@@ -1,25 +1,23 @@
 <template>
-  <ion-item>
-    <ion-label class="ion-text-wrap">
-      <p>{{ Vecteur.Nom }}</p>
-      <ion-text>{{ Vecteur.Description }}</ion-text>
-      <!-- TODO : Ajouter Description de l'aptitude et travailler un look concis -->
-    </ion-label>
-    <ion-button fill="outline" slot="end">Détail</ion-button>
-  </ion-item>
+  <q-item>
+    <q-item-section>
+      <q-item-label> {{ Vecteur.Nom }}</q-item-label>
+    </q-item-section>
+    <q-item-label>
+      <p>{{ Vecteur.Description }}</p>
+      <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
+    </q-item-label>
+    <q-item-section side>
+      <q-btn>Détail</q-btn>
+    </q-item-section>
+  </q-item>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { IonItem, IonLabel, IonButton } from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import { Vecteur } from "@/domain/Aptitude";
+import { Vecteur } from 'src/domain/Aptitude';
 
 export default defineComponent({
-  components: {
-    IonItem,
-    IonLabel,
-    IonButton,
-  },
   props: {
     Vecteur: { type: Object as PropType<Vecteur>, required: true },
   },
