@@ -1,15 +1,11 @@
 import { CompetenceName } from './Competence';
+import { EquipementItem } from './Equipement';
 
-export type ArmeItem = {
-  Nom: string;
+export interface ArmeItem extends EquipementItem {
   Degats: string;
   Special: Array<string>;
   Competence: CompetenceName;
-  Encombrement: number;
-  Rarete: number;
-  Description: string;
-  Prix: number;
-};
+}
 
 export class ArmesService {
   private static ARMES: Array<ArmeItem> = [
