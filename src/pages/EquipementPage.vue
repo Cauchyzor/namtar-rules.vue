@@ -151,123 +151,14 @@
     </div>
 
     <h5>Armures</h5>
-    <table>
-      <thead>
-        <tr>
-          <th>Armure</th>
-          <th>Prix unitaire</th>
-          <th>Bonus</th>
-          <th>Encombrement</th>
-          <th>Effets supplémentaire</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Equipement</strong></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Ceinture multi-usage</td>
-          <td>50p</td>
-          <td></td>
-          <td>1</td>
-          <td>Accès rapides sur des objets jusqu&#39;a 2 d&#39;Encombrement</td>
-        </tr>
-        <tr>
-          <td>Cartouchière</td>
-          <td>50p</td>
-          <td></td>
-          <td>1</td>
-          <td>
-            Accès rapides sur des celulles ou munitions jusqu&#39;a 8
-            d&#39;Encombrement
-          </td>
-        </tr>
-        <tr>
-          <td><strong>Armures legères</strong></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Combinaison spatiale</td>
-          <td>450p</td>
-          <td>+1 Encaissement</td>
-          <td>3</td>
-          <td>La combinaisons peut être scéllée pour resister au vide</td>
-        </tr>
-        <tr>
-          <td>Vêtements banals</td>
-          <td>100p</td>
-          <td></td>
-          <td>2</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Protections improvisées</td>
-          <td>200p</td>
-          <td>+1 Encaissement</td>
-          <td>3</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Vêtements renforcés</td>
-          <td>2000p</td>
-          <td>+2 Encaissement</td>
-          <td>3</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>Armures intermediaires</strong></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Armure matelassé</td>
-          <td>800p</td>
-          <td>+2 Encaissement</td>
-          <td>4</td>
-          <td>désavantage en discrétion</td>
-        </tr>
-        <tr>
-          <td><strong>Armures Lourdes</strong></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Cuirasse métalique</td>
-          <td>4000p</td>
-          <td>+1 défense (DaC et DaD)</td>
-          <td>5</td>
-          <td>désavantage en discrétion</td>
-        </tr>
-        <tr>
-          <td>Armure de plates</td>
-          <td>8000p</td>
-          <td>+2 défense (DaC et DaD)</td>
-          <td>6</td>
-          <td>désavantage en discrétion</td>
-        </tr>
-        <tr>
-          <td>Armure lourde scellée</td>
-          <td>15000p</td>
-          <td>+2 défense (DaC et DaD)</td>
-          <td>10</td>
-          <td>
-            désavantage en discrétion, La défense est conservée face aux armes à
-            énergie
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row q-col-gutter-xs">
+      <ArmureCard
+        v-for="armure in ArmureItemsList"
+        :key="armure.Nom"
+        :Armure="armure"
+        class="col-12 col-md-4"
+      ></ArmureCard>
+    </div>
     <h4>Véhicules et montures</h4>
     <p>//TODO</p>
   </q-page>
@@ -279,8 +170,10 @@ import { defineComponent } from '@vue/runtime-core';
 import NamTitle from 'src/components/NamTitle.vue';
 import EquipementCard from 'src/components/EquipementCard.vue';
 import ArmeCard from 'src/components/ArmeCard.vue';
+import ArmureCard from 'src/components/ArmureCard.vue';
 
 import { EquipementService } from 'src/domain/Equipement';
+import { ArmureService } from 'src/domain/Armures';
 import { ArmesService } from 'src/domain/Armes';
 
 export default defineComponent({
@@ -288,11 +181,13 @@ export default defineComponent({
     NamTitle,
     EquipementCard,
     ArmeCard,
+    ArmureCard,
   },
   data() {
     return {
       EquipementItemsList: EquipementService.getAllEquipementItems(),
       ArmeItemsList: ArmesService.getAllArmesList(),
+      ArmureItemsList: ArmureService.getAllArmureItems(),
     };
   },
 });
