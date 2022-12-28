@@ -1,59 +1,34 @@
 <template>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>{{ Caracteristique.Description }}</ion-card-subtitle>
-      <ion-card-title class="ion-text-uppercase">{{
-        Caracteristique.Nom
-      }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="ion-align-items-baseline">
-      <ion-button
-        :id="attribut.Nom"
-        :key="index"
+  <q-card bordered>
+    <q-card-section>
+      <p class="text-caption text-grey">{{ Caracteristique.Description }}</p>
+      <p class="text-h5">{{ Caracteristique.Nom }}</p>
+    </q-card-section>
+    <q-card-actions align="right">
+      <q-chip
         v-for="(attribut, index) in Caracteristique.Attributs"
-        fill="outline"
-        shape="round"
+        clickable
+        :key="index"
+        color="primary"
+        text-color="white"
+        :icon="attribut.Icon"
+        outline
         @click="showAttributeDetail(attribut)"
+        >{{ attribut.Nom }}</q-chip
       >
-        <ion-icon :icon="attribut.Icon" slot="start"></ion-icon>
-        <ion-label :key="index" slot="start">{{ attribut.Nom }}</ion-label>
-      </ion-button>
-    </ion-card-content>
-    <ion-card-content v-if="ShowAttribute">
-      <ion-text>{{ selectedAttributDetail }}</ion-text>
-    </ion-card-content>
-  </ion-card>
+    </q-card-actions>
+    <q-card-section v-if="ShowAttribute">
+      <p>{{ selectedAttributDetail }}</p>
+    </q-card-section>
+  </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import {
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
-  IonIcon,
-  IonLabel,
-  IonButton,
-  IonText,
-} from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import { closeCircleOutline } from "ionicons/icons";
-import type { Caracteristique } from "@/domain/Caracteristique";
-import { Attribut } from "@/domain/Attribut";
+import type { Caracteristique } from 'src/domain/Caracteristique';
+import { Attribut } from 'src/domain/Attribut';
 
 export default defineComponent({
-  components: {
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonCardContent,
-    IonIcon,
-    IonLabel,
-    IonButton,
-    IonText,
-  },
   props: {
     Caracteristique: {
       type: Object as PropType<Caracteristique>,
@@ -66,8 +41,7 @@ export default defineComponent({
   data() {
     return {
       ShowAttribute: false,
-      selectedAttributDetail: "",
-      closeCircleOutline,
+      selectedAttributDetail: '',
     };
   },
   methods: {
@@ -75,7 +49,7 @@ export default defineComponent({
       this.ShowAttribute = this.selectedAttributDetail !== attribut.Description;
       this.selectedAttributDetail = this.ShowAttribute
         ? attribut.Description
-        : "";
+        : '';
     },
   },
 });

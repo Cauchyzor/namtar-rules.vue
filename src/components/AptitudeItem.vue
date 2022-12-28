@@ -1,71 +1,52 @@
 <template>
-  <ion-item>
-    <ion-thumbnail slot="start">
-      <img :src="Aptitude.Image || 'assets/icon/icon.png'" />
-    </ion-thumbnail>
-    <ion-label class="ion-text-wrap">
-      <p>{{ Aptitude.Nom }}</p>
-      <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
-    </ion-label>
-    <ion-button fill="outline" slot="end" @click="openDetail = true"
-      >Détail</ion-button
-    >
-  </ion-item>
+  <q-item clickable v-ripple @click="openDetail = true">
+    <q-item-section top avatar>
+      <q-avatar rounded>
+        <img :src="Aptitude.Image || 'src/assets/icon/icon.png'" />
+      </q-avatar>
+    </q-item-section>
 
-  <ion-modal :is-open="openDetail">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Details : {{ Aptitude.Nom }}</ion-title>
-        <ion-buttons slot="end">
-          <ion-button @click="openDetail = false">Close</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <p>Type: {{ Aptitude.Type.Nom }} - {{ Aptitude.Type.Description }}</p>
-      <p>
-        Vecteur: {{ Aptitude.Vecteur.Nom }} - {{ Aptitude.Vecteur.Description }}
-      </p>
-      <p>Description: {{ Aptitude.Description }}</p>
-      <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(",") }}</p>
-      <p>
-        Amelioration:
-        {{ Array.from(Aptitude.AmeliorationsEffet.keys()).join(",") }}
-      </p>
-      <p>Cout: {{ computeCapacityCost() }}</p>
-    </ion-content>
-  </ion-modal>
+    <q-item-section>
+      <q-item-label class="text-overline"> {{ Aptitude.Nom }}</q-item-label>
+      <q-item-label caption>{{ Aptitude.Description }}</q-item-label>
+    </q-item-section>
+
+    <q-item-section side top>
+      <q-item-label caption>{{ Aptitude.Type.Nom }}</q-item-label>
+    </q-item-section>
+  </q-item>
+
+  <q-dialog v-model="openDetail">
+    <q-card>
+      <q-card-section class="row items-center q-pb-none">
+        <div class="text-overline">Details : {{ Aptitude.Nom }}</div>
+        <q-space></q-space>
+        <q-btn icon="close" flat round dense v-close-popup></q-btn>
+      </q-card-section>
+
+      <q-card-section>
+        <p>Type: {{ Aptitude.Type.Nom }} - {{ Aptitude.Type.Description }}</p>
+        <p>
+          Vecteur: {{ Aptitude.Vecteur.Nom }} -
+          {{ Aptitude.Vecteur.Description }}
+        </p>
+        <p>Description: {{ Aptitude.Description }}</p>
+        <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(',') }}</p>
+        <p>
+          Amelioration:
+          {{ Array.from(Aptitude.AmeliorationsEffet.keys()).join(',') }}
+        </p>
+        <p>Cout: {{ computeCapacityCost() }}</p>
+      </q-card-section>
+    </q-card>
+  </q-dialog>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import {
-  IonItem,
-  IonLabel,
-  IonThumbnail,
-  IonButton,
-  IonModal,
-  IonTitle,
-  IonHeader,
-  IonContent,
-  IonToolbar,
-  IonButtons,
-} from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import { Aptitude, AptitudeService } from "@/domain/Aptitude";
+import { Aptitude, AptitudeService } from 'src/domain/Aptitude';
 
 export default defineComponent({
-  components: {
-    IonItem,
-    IonLabel,
-    IonThumbnail,
-    IonButtons,
-    IonButton,
-    IonModal,
-    IonTitle,
-    IonHeader,
-    IonToolbar,
-    IonContent,
-  },
   props: {
     Aptitude: { type: Object as PropType<Aptitude>, required: true },
   },

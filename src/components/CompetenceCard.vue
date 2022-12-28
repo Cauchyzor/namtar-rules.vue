@@ -1,21 +1,24 @@
 <template>
-  <ion-card button="true">
-    <div class="ion-text-center">
-      <ion-text>{{ Competence.Nom }}</ion-text>
-    </div>
-  </ion-card>
+  <q-item>
+    <q-item-section>
+      <q-item-label class="text-overline">{{ Competence.Nom }}</q-item-label>
+      <q-item-label caption lines="2"
+        >Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit
+        elit.</q-item-label
+      >
+    </q-item-section>
+
+    <q-item-section side top>
+      <q-item-label caption>{{ Competence.BaseCaracteristique }}</q-item-label>
+    </q-item-section>
+  </q-item>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { IonCard, IonText } from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import type { Competence } from "@/domain/Competence";
+import type { Competence } from 'src/domain/Competence';
 
 export default defineComponent({
-  components: {
-    IonCard,
-    IonText,
-  },
   props: {
     showAttribute: Boolean,
     Competence: { type: Object as PropType<Competence>, required: true },
@@ -44,5 +47,4 @@ ion-card {
 ion-text {
   font-size: smaller;
 }
-
 </style>

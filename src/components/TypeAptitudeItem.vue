@@ -1,34 +1,27 @@
 <template>
-  <ion-item>
-    <ion-label class="ion-text-wrap">
-      <p>{{ Type.Nom }}</p>
-      <ion-text>{{ Type.Description }}</ion-text>
+  <q-item>
+    <q-item-section>
+      <q-item-label> {{ Type.Nom }}</q-item-label>
+    </q-item-section>
+    <q-item-label>
+      <p>{{ Type.Description }}</p>
       <!-- TODO : Ajouter Description de la Aptitude et travailler un look concis -->
-    </ion-label>
-
-    <ion-button fill="outline" slot="end">Détail</ion-button>
-  </ion-item>
+    </q-item-label>
+    <q-item-section side>
+      <q-btn>Détail</q-btn>
+    </q-item-section>
+  </q-item>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { IonItem, IonLabel, IonButton, IonText } from "@ionic/vue";
+import { defineComponent, PropType } from 'vue';
 
-import { AptitudeType } from "@/domain/Aptitude";
+import { AptitudeType } from 'src/domain/Aptitude';
 
 export default defineComponent({
-  components: {
-    IonItem,
-    IonLabel,
-    IonButton,
-    IonText,
-  },
   props: {
     Type: { type: Object as PropType<AptitudeType>, required: true },
   },
 });
 </script>
 <style scoped>
-ion-text {
-  font-size: x-small;
-}
 </style>
