@@ -13,13 +13,18 @@
     </p>
     <h5>Quotidien</h5>
 
-    <div class="row q-col-gutter-md">
-      <EquipementCard
+    <div class="row q-col-gutter-sm">
+      <div
         v-for="equipementItem in EquipementItemsList"
         :key="equipementItem.Nom"
-        :EquipementItem="equipementItem"
         class="col-12 col-md-4"
-      ></EquipementCard>
+      >
+        <EquipementCard
+          v-for="equipementItem in EquipementItemsList"
+          :key="equipementItem.Nom"
+          :EquipementItem="equipementItem"
+        ></EquipementCard>
+      </div>
     </div>
 
     <h5>Armes</h5>
@@ -141,23 +146,29 @@
       </tbody>
     </table>
     <h4>Armes conventionnelles</h4>
-    <div class="row q-col-gutter-xs">
-      <ArmeCard
+    <div class="row q-col-gutter-sm">
+      <div
         v-for="arme in ArmeItemsList"
         :key="arme.Nom"
-        :Arme="arme"
         class="col-12 col-md-4"
-      ></ArmeCard>
+      >
+        <ArmeCard
+          v-for="arme in ArmeItemsList"
+          :key="arme.Nom"
+          :Arme="arme"
+        ></ArmeCard>
+      </div>
     </div>
 
     <h5>Armures</h5>
-    <div class="row q-col-gutter-xs">
-      <ArmureCard
+    <div class="row q-col-gutter-sm">
+      <div
         v-for="armure in ArmureItemsList"
         :key="armure.Nom"
-        :Armure="armure"
         class="col-12 col-md-4"
-      ></ArmureCard>
+      >
+        <ArmureCard :key="armure.Nom" :Armure="armure"></ArmureCard>
+      </div>
     </div>
     <h4>Véhicules et montures</h4>
     <p>//TODO</p>
