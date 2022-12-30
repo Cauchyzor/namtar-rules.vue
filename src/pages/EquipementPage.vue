@@ -3,31 +3,30 @@
     <NamTitle>Equipement et Marché</NamTitle>
     <!-- TODO Faire des onglets -->
     <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
-    <h4>Équipement</h4>
+    <h4>Concepts</h4>
     <h5>Encombrement</h5>
     <p>
-      Chaque objet transporté part les personnages représente une place dans son
+      Chaque objet transporté par les personnages représente une place dans son
       inventaire par le biais de l&#39;encombrement. Les petits objets ont une
       valeurs de 0 ( ce qui ne signifie pas pour autant que l&#39;ont peut en
       prendre autant que voulut, c&#39;est au MJ de doser ).
     </p>
-    <h5>Quotidien</h5>
+    <h4>Équipement quotidien</h4>
 
-    <div class="row q-col-gutter-sm">
+    <div class="row q-col-gutter-sm justify-center">
       <div
         v-for="equipementItem in EquipementItemsList"
         :key="equipementItem.Nom"
-        class="col-12 col-md-4"
+        class="col-12 col-md-auto"
       >
         <EquipementCard
-          v-for="equipementItem in EquipementItemsList"
           :key="equipementItem.Nom"
           :EquipementItem="equipementItem"
         ></EquipementCard>
       </div>
     </div>
 
-    <h5>Armes</h5>
+    <h4>Armes</h4>
     <p>
       La technologie n&#39;a souvent pas suivi une progression
       &quot;naturelle&quot;. C&#39;est dû au fait que de nombreuses
@@ -54,118 +53,22 @@
         d&#39;accès.</strong
       >
     </p>
-    <h4>A mains nues</h4>
-    <p>
-      Il est possible de se défendre en utilisant uniquement ses poings et ses
-      pieds. Cette methode n&#39;inflige généralement que trés peu de dégâts,
-      mais un pugiliste bien entrainé peut rapidement dominer son adversaire
-      avec un déluge de coups.
-    </p>
-    <ul>
-      <li>
-        Vous pouvez porter une attaque de pugiat par action pour chaque rang de
-        maitrise que vous avez en pugilat.
-      </li>
-      <li>Vous infligez 1 point de dommage tout les 2 succès</li>
-    </ul>
-    <h4>Munitions et projectiles</h4>
-    <p>
-      Toutes les munitions et celulles ont un Encombrement de 1 et
-      s&#39;achettent à l&#39;unité.
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Prix unitaire</th>
-          <th>Dégâts</th>
-          <th>Propriétés</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Munitions et celulles conventionnelles</strong></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Celulle énergetique universelle</td>
-          <td>25 p</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Carreau</td>
-          <td>15 p</td>
-          <td>2 point de dégats par succès</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Flèches</td>
-          <td>10 p</td>
-          <td>1 point de dégats par succès</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Balle</td>
-          <td>5 p</td>
-          <td>1 point de dégats par succès</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>&quot;Gros sel&quot;</td>
-          <td>10 p</td>
-          <td>1 point de dégats par succès</td>
-          <td>
-            Porté courte au maximum; Frappe une cible adjacente supplémentaire
-            tout les 2 avantages
-          </td>
-        </tr>
-        <tr>
-          <td><strong>Munitions et celulles limité</strong></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Celulles à haute densitée</td>
-          <td>200 p</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Munition à fusion (6 charges)</td>
-          <td>600 p</td>
-          <td>4 dégats par succès</td>
-          <td>
-            L'arme qui tire cette munitions peut explosée si 3 désavantages sont
-            générés sur un jet d'attaque
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <h4>Armes conventionnelles</h4>
-    <div class="row q-col-gutter-sm">
+    <div class="row q-col-gutter-sm justify-center">
       <div
         v-for="arme in ArmeItemsList"
         :key="arme.Nom"
-        class="col-12 col-md-4"
+        class="col-12 col-md-auto"
       >
-        <ArmeCard
-          v-for="arme in ArmeItemsList"
-          :key="arme.Nom"
-          :Arme="arme"
-        ></ArmeCard>
+        <ArmeCard :key="arme.Nom" :Arme="arme"></ArmeCard>
       </div>
     </div>
 
-    <h5>Armures</h5>
-    <div class="row q-col-gutter-sm">
+    <h4>Armures</h4>
+    <div class="row q-col-gutter-sm justify-center">
       <div
         v-for="armure in ArmureItemsList"
         :key="armure.Nom"
-        class="col-12 col-md-4"
+        class="col-12 col-md-auto"
       >
         <ArmureCard :key="armure.Nom" :Armure="armure"></ArmureCard>
       </div>
