@@ -16,8 +16,8 @@
     </ul>
     <p>Pour les dés négatif</p>
     <ul>
-      <li>le résultat 1, 2 ou 3 génère : 1 échec</li>
-      <li>le résultat 4 génère : 1 désavantage</li>
+      <li>le résultat 6, 5 ou 4 génère : 1 échec</li>
+      <li>le résultat 3 génère : 1 désavantage</li>
       <li>les autres résultats ne sont pas interprétés</li>
     </ul>
     <p>Chaque échec annule un succès Chaque désavantage annule un avantage</p>
@@ -108,19 +108,19 @@
       réussi, il faut compenser les échecs du groupe avec les succès du groupe,
       et considérer le score final
     </p>
-    <NamTitle>Jet d'attaque à Distance</NamTitle>
+    <NamTitle>Jet d'attaque a Distance</NamTitle>
     <p>
       La cible doit être en parti découverte. Si elle a attaquée a son dernier
       tour, elle est considérée comme en parti découverte
     </p>
     <p>Dé positif : compétence + caractéristique</p>
     <p>
-      Dé négatif : distance (et par conséquant de la précision de l'arme) +
-      protection (bouclier ou cachette partielle)
+      Dé négatif : distance (voir aussi la précision de l'arme) + protection
+      (equipement, bouclier ou cachette partielle)
     </p>
-    <NamTitle>Jet d'attaque au corps à corps</NamTitle>
+    <NamTitle>Jet d'attaque au corps a corps</NamTitle>
     <p>Dé positif : compétence + caractéristique</p>
-    <p>Dé négatif : défense + protection</p>
+    <p>Dé négatif : défense + équipement</p>
   </q-tab-panel>
 </template>
 

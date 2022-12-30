@@ -2,8 +2,35 @@
   <q-tab-panel name="Combat">
     <NamTitle>Combats et conflits</NamTitle>
     <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
-    <NamTitle>Avant une situation de conflit</NamTitle>
-    <h5>Initiative</h5>
+    <p>Les combats ce déroulent selon la boucle suivante :</p>
+    <ul>
+      <li>Etape 1 : Les béligérants determinent (secrêtement) leurs actions</li>
+      <li>Etape 2 : Les béligérants effectuent leurs jet d'initiative</li>
+      <li>
+        Etape 3 : Résolutions des actions dans l'ordre déterminé par
+        l'initiative
+      </li>
+    </ul>
+
+    <h4>Etape 1 : Les béligérants determinent (secrêtement) leurs actions</h4>
+    <p>
+      Les tours de jeu représente des moments de quelques secondes pendant
+      lesquelles chaque acteur de la rencontre essaye de tirer parti de la
+      situation, ou tout simplement de survire. Pendant ce laps de temps, on
+      suppose que chaque personne effectue une action.
+    </p>
+    <ul>
+      <li>Action : Se déplacer/Se désengager/Se mettre a couvert</li>
+      <li>Action : Se jeter à terre/Se relever</li>
+      <li>Action : Attaquer</li>
+      <li>Action : Recharger</li>
+      <li>Action : Utiliser un objet a porté de main</li>
+      <li>Action : Fouiller</li>
+      <li>Action : Utiliser une aptitude</li>
+      <li>Action : Autre (description libre)</li>
+    </ul>
+
+    <h4>Etape 2 : Les béligérants effectuent leurs jet d'initiative</h4>
     <p>
       Si aucun des deux camps ne cherche à être discret, ils se remarquent
       automatiquement. Test d'initiative sans difficulté de tout les béligerant,
@@ -19,128 +46,36 @@
       d&#39;action lors du premier tour de combat, et il ne peut pas non plus
       réagir jusqu&#39;à la fin de ce tour.
     </p>
-    <h4>Emplacement</h4>
-    <h4>Votre tour</h4>
-    <p>Pendant votre créneau d&#39;initiative, vous avez 3 possibilités :</p>
+    <h4>
+      Etape 3 : Résolutions des actions dans l'ordre déterminé par l'initiative
+    </h4>
+    <h5>Les niveaux de porté</h5>
+    <p>
+      Pour facilité la lecture d'une scène de combat, les distances relatives
+      entre les personnages sont décrite avec des niveau de portée.
+    </p>
     <ul>
-      <li>
-        Effectuer une <strong>action</strong> : comme réaliser une attaque,
-        utilser une aptitude, ou tout autre action décrite qui demanderai toute
-        votre attention pendant les secondes du tour de jeu.
-      </li>
-      <li>
-        Effectuer une <strong>manoeuvre</strong> : comme vous déplacer, vous
-        mettre à couvert ou vous désengager d'un adversaire au corps à corps
-      </li>
-      <li>
-        Effectuer des <strong>broutilles</strong> : comme crier des phrases
-        brèves, sortir un objet de votre ceinture, lâcher l&#39;objet que vous
-        tenez. Si le MJ estime que la sommes de broutilles demandent trop de
-        temps ou de concentration, il peut les considérer commes une manoeuvre
-        ou une action, et prendre la place de ce creneau.
-      </li>
+      <li>Engagé - de 0 à 1m environ</li>
+      <li>Courte - de 1m à 9m</li>
+      <li>Moyenne - de 10 à 20m</li>
+      <li>Longue - de 20 à 50m</li>
+      <li>Extreme - de 50 à 100m</li>
     </ul>
     <p>
-      Vous pouvez décider de ne pas vous déplacer, ne pas agir, ou même de ne
-      rien faire pendant votre tour. Dans ce cas précis, vous gagnez une
-      réaction supplémentaire.
+      Les niveaux de porté au dela de 100m peuvent encore être fragmenter selon
+      la volonté du MJ
     </p>
-    <p>
-      Vous pouvez decider d&#39;échanger une action contre une manoeuvre, mais
-      vous ne pouvez jamais excéder 2 manoeuvre par tour.
-    </p>
-    <p>
-      En dehors de votre créneau d&#39;initiative, vous pouvez effectuer des
-      réactions. Chaques personnage bénéficie
-      <strong>d'une réaction par tour</strong>. Il peut beneficier de reactions
-      supplementaires grâce à des aptitudes ou en choisissant de ne pas agir
-      pendant son créneau d'initiative.
-    </p>
-    <h5>Réaction</h5>
-    <p>
-      C'est une<strong
-        >réponse instantanée déclenchée par un stimulus qui peut se produire
-        pendant le créneau d'initiative d'un autre béligérant</strong
-      >. Le type de réaction le plus courant est l&#39;<strong
-        >attaque d&#39;opportunité</strong
-      >.
-    </p>
-    <h4>Attaque d&#39;opportunité</h4>
-    <p>
-      Au cœur d&#39;un combat, chacun reste à l&#39;affût d&#39;une chance de
-      frapper un ennemi qui baisse sa garde parce qu&#39;il est en train de fuir
-      ou de passer devant soi. Une telle attaque est appelée une attaque
-      d&#39;opportunité.
-    </p>
-    <p>
-      Si vous êtes au corps à corps: vous pouvez porter une attaque
-      d'opportunité au corps a corps jusque avant de sortir de votre portée.
-      Ceci consomme votre réaction et la cible subit cette attaque avant tout
-      autre actions ou manoeuvre de sa part.
-    </p>
-    <p>
-      Si vous êtes equipé d'une arme à distance ou que vous pouvez utiliser une
-      aptitude à distance qui cible l'adversaire : vous pouvez porter une
-      attaque d'opportunitée et que l'adversaire qui ce dépace est à porté.
-    </p>
-    <h5>Mouvement</h5>
-    <p>Lors de votre tour, vous pouvez vous déplacer d'un niveau de portée</p>
-    <p>
-      Dans le cadre de votre mouvement, vous pouvez sauter, escalader et nager.
-      Ces différents modes de déplacement peuvent être combinés avec la marche
-      ou constituer l&#39;ensemble de votre déplacement. Quelle que soit la
-      manière dont vous vous déplacez, vous devez déduire de votre vitesse la
-      distance utilisée par chacun de vos modes de déplacement jusqu&#39;à ce
-      que vous ayez épuisé votre jauge de déplacement ou que vous ayez décidé de
-      vous arrêter.
-    </p>
-    <h4>Fragmenter votre mouvement</h4>
-    <p>
-      Pendant votre tour, vous pouvez fragmenter votre déplacement et utiliser
-      une partie de votre déplacement avant votre action et le reste après
-      celle-ci. Par exemple, si votre vitesse est de 9 mètres, vous pouvez vous
-      déplacer de 3 mètres, faire une action, puis parcourir les 6 mètres
-      restant.
-    </p>
-    <h5>Actions en combat</h5>
-    <p>
-      Quand vous accomplissez une action lors de votre tour, vous avez le choix
-      entre les actions présentées ci-dessous, une capacité ou, enfin, une
-      action que vous improvisez. De nombreux monstres possèdent des actions qui
-      leurs sont propres et qui sont présentées dans leur profil statistiques.
-    </p>
-    <p>
-      Quand vous décrivez une action qui n&#39;est pas présentée dans les
-      règles, c&#39;est au MJ de décider si vous pouvez accomplir cette action
-      et si vous devez faire un jet de dés spécifique pour déterminer votre
-      succès ou votre échec.
-    </p>
-    <h4>Aider</h4>
-    <p>
-      Vous pouvez apporter votre aide à une autre créature pour réaliser une
-      tâche. Quand vous choisissez l&#39;action aider, la créature que vous
-      aidez
-      <strong
-        >obtient un atout, et un atout supplémentaire par rang de
-        maîtrise</strong
-      >
-      sur le prochain test de compétence qu&#39;elle fait dans le but
-      d&#39;accomplir la tâche pour laquelle vous coopérez, mais seulement si
-      elle fait ce test avant le début de votre prochain tour.
-    </p>
-    <p>
-      Vous pouvez aussi aider une créature amicale qui veut attaquer une autre
-      créature qui est engagée avec vous. Vous faites une feinte, tentez de
-      distraire la cible ou participez d&#39;une manière ou d&#39;une autre afin
-      de rendre l&#39;attaque de votre allié plus efficace. Si votre allié
-      attaque la cible avant le début de votre prochain tour, il obtient un
-      avantage sur son premier jet d&#39;attaque.
-    </p>
-    <h4>Attaquer</h4>
+    <h5>Resoudre les déplacements</h5>
+    Chaque personnage qui decide d'effectuer un déplacement ce déplace d'un
+    niveau de porté, soit l'equivalent d'une dizaine de mètres. Si un personnage
+    choisi de se déplacer alors qu'il est engagé avec un adversaire, ou qu'il
+    passe a un niveau de porté engagé avec un adversaire sur son chemin, il
+    rique une attaque d'opportunité.
+    <h5>Resoudre les Attaques</h5>
     <p>
       Que vous portiez une attaque avec une arme de corps-à-corps, une arme à
       distance ou que vous fassiez un jet d&#39;attaque dans le cadre d&#39;une
-      Évocation, cette attaque se décompose ainsi :
+      aptitude, cette attaque se décompose ainsi :
     </p>
     <ol>
       <li>
@@ -164,7 +99,8 @@
         </p>
       </li>
     </ol>
-    <h4>Attaque au corps-à-corps</h4>
+    <h4>Les Actions en détail</h4>
+    <h5>Attaques au corps-à-corps</h5>
     <p>
       La majorité des créatures possède une allonge de 1,50 mètre. Elles peuvent
       donc porter une attaque de corps-à-corps contre les cibles qui se trouvent
@@ -177,20 +113,26 @@
       tête ou un coup similaire (aucune de ces parties du corps n&#39;étant
       considérée comme une arme).
     </p>
-    <h4>Combat à deux armes</h4>
+    <h5>Attaques d'opportunité</h5>
     <p>
-      Quand vous choisissez l&#39;action attaquer et que vous utilisez pour
-      attaquer une arme de corps-à-corps légère que vous tenez dans une main,
-      vous pouvez dépenser des avantages pour infliger également des dégâts avec
-      votre deuxième arme. Le nombre d&#39;avantages nécessaire dépend de
-      l&#39;arme utilisée.
+      Au cœur d&#39;un combat, chacun reste à l&#39;affût d&#39;une chance de
+      frapper un ennemi qui baisse sa garde parce qu&#39;il est en train de fuir
+      ou de passer devant soi. Une telle attaque est appelée une attaque
+      d&#39;opportunité.
     </p>
-    <h5>Opposition en combat</h5>
     <p>
-      Au cours d&#39;une bataille, certaines de vos prouesses ne valent que si
-      elles sont supérieures à celles de votre ennemi.
+      Si vous êtes au corps à corps: vous pouvez porter une attaque
+      d'opportunité au corps a corps jusque avant de sortir de votre portée.
+      Ceci consomme votre réaction et la cible subit cette attaque avant tout
+      autre actions ou manoeuvre de sa part.
     </p>
-    <h4>Empoignade</h4>
+    <p>
+      Si vous êtes equipé d'une arme à distance ou que vous pouvez utiliser une
+      aptitude à distance qui cible l'adversaire : vous pouvez porter une
+      attaque d'opportunitée et que l'adversaire qui ce dépace est à porté.
+    </p>
+
+    <h5>Empoignade</h5>
     <p>
       La cible de votre empoignade ne doit pas faire plus d&#39;une taille de
       plus que vous et doit se trouver à portée de votre allonge à mains nues.
@@ -226,7 +168,7 @@
         </p>
       </li>
     </ul>
-    <h4>Bousculer une créature</h4>
+    <h5>Bousculer une créature</h5>
     <p>
       La cible ne doit pas faire plus d&#39;une taille de plus que vous et doit
       se trouver à porté de votre allonge. Au lieu de faire un jet
@@ -239,7 +181,7 @@
         de vous</strong
       >.
     </p>
-    <h4>A couvert</h4>
+    <h5>Se mettre a couvert</h5>
     <p>
       Les murs, les arbres, les créatures, et d&#39;autres obstacles constituent
       pendant un combat autant d&#39;abris potentiels qui rendent une cible plus
@@ -255,24 +197,26 @@
       d&#39;attaque a distance qui vise le porteur.
     </p>
     <p>
-      Une cible qui bénéficie d&#39;un abri total ne peut pas être ciblée
-      directement par des attaques à distances ou des évocations. Cela dit, elle
-      peut être affectée par certains sorts qui ont une zone d&#39;effet.
+      <strong
+        >Une cible qui bénéficie d&#39;un abri total ne peut pas être ciblée
+        directement par des attaques à distances ou des évocations</strong
+      >. Cela dit, elle peut être affectée par certains sorts qui ont une zone
+      d&#39;effet.
     </p>
-    <h4>Se désengager</h4>
+    <h5>Se désengager</h5>
     <p>
       Si vous choisissez l&#39;action se désengager, vous pouvez vous déplacer
       sans risquer de créer des attaques d&#39;opportunités jusqu&#39;à la fin
       du tour.
     </p>
-    <h4>Chercher</h4>
+    <h5>Chercher</h5>
     <p>
       Quand vous choisissez l&#39;action chercher, toute votre attention est
       tournée vers l&#39;objet de votre recherche. En fonction de ce que vous
       cherchez, le MJ peut vous demander de faire un test d&#39;intelligence
       (Perception).
     </p>
-    <h4>Esquiver</h4>
+    <h5>Esquiver</h5>
     <p>
       Quand vous choisissez l&#39;action esquiver, votre unique objectif est
       d&#39;éviter les attaques. Jusqu&#39;au début de votre tour suivant, vous
@@ -281,7 +225,7 @@
       >. Vous perdez les bénéfices de cette action si vous êtes neutralisé ou si
       votre vitesse est réduite à 0.
     </p>
-    <h4>Se tenir prêt</h4>
+    <h5>Se tenir prêt</h5>
     <p>
       Il peut vous arriver de vouloir surprendre un ennemi ou attendre une
       configuration particulière avant d&#39;agir. Pour cela, vous devez choisir
@@ -297,14 +241,14 @@
       d&#39;initiative, et décider de Se tenir prêt pour uniquement retarder
       votre action.
     </p>
-    <h4>Utiliser une aptitude</h4>
+    <h5>Utiliser une aptitude</h5>
     <p>
       Le descriptif de l'aptitude indique si son lancement nécessite
       d&#39;utiliser une action, une réaction, une broutille ou un mouvement, ou
       doit être préparé pendant plusieurs minutes ou heures. Leurs effets sont
       indiqué dans la description de l'aptitude.
     </p>
-    <h4>Se cacher</h4>
+    <h5>Se cacher</h5>
     <p>
       Quand vous choisissez l&#39;action se cacher, vous devez faire un test
       d&#39;agilité (Discrétion) de DD égale à la sommes des scores de vigilance
