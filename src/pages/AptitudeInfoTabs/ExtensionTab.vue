@@ -2,13 +2,11 @@
   <q-tab-panel name="Amelioration d'effet">
     <div class="row q-col-gutter-sm justify-center">
       <div
-        v-for="amelioration in Ameliorations"
-        :key="amelioration.Nom"
-        class="col-12 col-md-auto"
+        v-for="extension in ExtentionsEffet"
+        :key="extension.Nom"
+        class="col-12"
       >
-        <AmeliorationEffetItem
-          :Extension="amelioration"
-        ></AmeliorationEffetItem>
+        <ExtensionCard :Extension="extension"></ExtensionCard>
       </div>
     </div>
   </q-tab-panel>
@@ -18,15 +16,15 @@
 import { defineComponent } from 'vue';
 
 import { AptitudeService } from 'src/domain/Aptitude';
-import AmeliorationEffetItem from 'src/components/ExtentionCard.vue';
+import ExtensionCard from 'src/components/ExtentionCard.vue';
 
 export default defineComponent({
   components: {
-    AmeliorationEffetItem,
+    ExtensionCard,
   },
   data() {
     return {
-      Ameliorations: AptitudeService.getAllAmelioration(),
+      ExtentionsEffet: AptitudeService.getAllAmelioration(),
     };
   },
 });

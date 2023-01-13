@@ -1,7 +1,7 @@
 <template>
   <q-tab-panel name="Effets">
     <div class="row q-col-gutter-sm justify-center">
-      <div v-for="effet in Effets" :key="effet.Nom" class="col-12 col-md-auto">
+      <div v-for="effet in Effets" :key="effet.Nom" class="col-12">
         <EffetItem :Effet="effet"></EffetItem>
       </div>
     </div>

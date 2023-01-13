@@ -1,11 +1,7 @@
 <template>
   <q-tab-panel name="Vecteur">
     <div class="row q-col-gutter-sm justify-center">
-      <div
-        v-for="vecteur in Vecteurs"
-        :key="vecteur.Nom"
-        class="col-12 col-md-auto"
-      >
+      <div v-for="vecteur in Vecteurs" :key="vecteur.Nom" class="col-12">
         <VecteurItem :Vecteur="vecteur"></VecteurItem>
       </div>
     </div>

@@ -4,7 +4,7 @@
       <div
         v-for="typeAptitude in TypesAptitude"
         :key="typeAptitude.Nom"
-        class="col-12 col-md-auto"
+        class="col-12"
       >
         <TypeAptitudeItem :Type="typeAptitude"></TypeAptitudeItem>
       </div>
