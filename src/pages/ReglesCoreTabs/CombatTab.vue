@@ -283,7 +283,7 @@
       chances de réussite de votre action et de vous demander, s&#39;il le
       souhaite, un lancer de dés.
     </p>
-    <NamTitle>Les états spéciaux</NamTitle>
+    <NamTitle>Les etats speciaux</NamTitle>
     <h5>À terre / Renversée</h5>
     <p>
       Une créature à terre n&#39;a plus l&#39;option que de ramper pour se
