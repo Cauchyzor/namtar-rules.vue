@@ -2,20 +2,23 @@
   <q-card bordered>
     <q-card-section vertical>
       <div class="text-h5 q-mt-sm q-mb-xs">
-        {{ Effet.Nom }}
+        {{ Extension.Nom }}
       </div>
-      <div class="text-caption text-grey">{{ Effet.Description }}</div>
+      <div class="text-caption text-grey">{{ Extension.Description }}</div>
     </q-card-section>
   </q-card>
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import { Effet } from 'src/domain/Aptitude';
+import { ExtensionEffet } from 'src/domain/Aptitude';
 
 export default defineComponent({
   props: {
-    Effet: { type: Object as PropType<Effet>, required: true },
+    Extension: {
+      type: Object as PropType<ExtensionEffet>,
+      required: true,
+    },
   },
 });
 </script>

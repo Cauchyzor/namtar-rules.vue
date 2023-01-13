@@ -6,7 +6,7 @@ export type Aptitude = {
   Type: AptitudeType;
   Vecteur: Vecteur;
   Effets: Map<EffetName, number>;
-  AmeliorationsEffet: Map<AmeliorationEffetName, number>;
+  ExtensionsEffet: Map<ExtensionEffetName, number>;
 };
 
 export type AptitudeType = {
@@ -59,14 +59,14 @@ enum EffetName {
   MANTRA = 'Mantra',
 }
 
-export type AmeliorationEffet = {
-  Nom: AmeliorationEffetName;
+export type ExtensionEffet = {
+  Nom: ExtensionEffetName;
   Description: string;
   IsCummulable: boolean;
   StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
 };
 
-enum AmeliorationEffetName {
+enum ExtensionEffetName {
   ANGLE_MORT = 'Angle mort',
   CATALYSEUR = 'Catalyseur',
   CONTRE_COUP = 'Contre-coup',
@@ -272,9 +272,9 @@ export class AptitudeService {
     },
   ];
 
-  private static AmeliorationList: Array<AmeliorationEffet> = [
+  private static AmeliorationList: Array<ExtensionEffet> = [
     {
-      Nom: AmeliorationEffetName.ANGLE_MORT,
+      Nom: ExtensionEffetName.ANGLE_MORT,
       Description:
         'Vous devez vous situer en dehors du champs de vision de la cible.',
       IsCummulable: false,
@@ -285,7 +285,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.CATALYSEUR,
+      Nom: ExtensionEffetName.CATALYSEUR,
       Description:
         'Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.',
       IsCummulable: false,
@@ -298,7 +298,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.DIFFICILE,
+      Nom: ExtensionEffetName.DIFFICILE,
       Description: 'Ajouter 1 dé de difficulté sur votre jet.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
@@ -310,7 +310,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.INCENTATION_RAPIDE,
+      Nom: ExtensionEffetName.INCENTATION_RAPIDE,
       Description:
         "Augmentez 3 fois la difficultée. de l'aptitude. l'aptitude est lancée comme une manoeuvre plutot qu'une action",
       IsCummulable: true,
@@ -323,7 +323,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.ECHANGE_DE_REGARD,
+      Nom: ExtensionEffetName.ECHANGE_DE_REGARD,
       Description:
         "L'aptitude ne necessite pas de mains libres pour reussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
       IsCummulable: false,
@@ -335,7 +335,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.ENERGIE_ACTIVATION,
+      Nom: ExtensionEffetName.ENERGIE_ACTIVATION,
       Description:
         "L'aptitude n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
       IsCummulable: false,
@@ -347,7 +347,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.INGREDIENT,
+      Nom: ExtensionEffetName.INGREDIENT,
       Description:
         "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de l'aptitude. Le gains de stabilité dépend de la puissance de l'objet",
       IsCummulable: true,
@@ -357,7 +357,7 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: AmeliorationEffetName.CONTRE_COUP,
+      Nom: ExtensionEffetName.CONTRE_COUP,
       Description:
         'Le lanceur subit 1 dommage ignorant la protection pour chaque désavantage généré.',
       IsCummulable: false,
@@ -377,7 +377,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.EVOCATION),
       Vecteur: this.findVecteurByName(VecteurName.PROJECTILE),
       Effets: new Map([[EffetName.CHALEUR, 1]]),
-      AmeliorationsEffet: new Map(),
+      ExtensionsEffet: new Map(),
     },
     {
       Nom: 'Touché guerisseur',
@@ -387,7 +387,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.BENEDICTION),
       Vecteur: this.findVecteurByName(VecteurName.CONTACT),
       Effets: new Map([[EffetName.SOIN, 1]]),
-      AmeliorationsEffet: new Map(),
+      ExtensionsEffet: new Map(),
     },
     {
       Nom: 'Nova mortelle',
@@ -397,7 +397,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.NECROMANCIE),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map([[EffetName.FORCE, 2]]),
-      AmeliorationsEffet: new Map([[AmeliorationEffetName.ZONE, 1]]),
+      ExtensionsEffet: new Map([[ExtensionEffetName.ZONE, 1]]),
     },
     {
       Nom: 'Mantra: le Berserk',
@@ -407,7 +407,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map(),
-      AmeliorationsEffet: new Map(),
+      ExtensionsEffet: new Map(),
     },
     {
       Nom: "Mantra: l'échophagique",
@@ -417,7 +417,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map(),
-      AmeliorationsEffet: new Map(),
+      ExtensionsEffet: new Map(),
     },
     {
       Nom: 'Mantra: le distant',
@@ -427,7 +427,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
       Effets: new Map(),
-      AmeliorationsEffet: new Map(),
+      ExtensionsEffet: new Map(),
     },
     {
       Nom: 'Morsure de Namtar',
@@ -436,7 +436,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.EVOCATION),
       Vecteur: this.findVecteurByName(VecteurName.CONTACT),
       Effets: new Map([[EffetName.VAMPIRISME, 1]]),
-      AmeliorationsEffet: new Map(),
+      ExtensionsEffet: new Map(),
     },
   ];
 
@@ -449,7 +449,7 @@ export class AptitudeService {
   static findEffetByName(name: EffetName) {
     return this.EffectsList.find((e) => e.Nom === name)!;
   }
-  static findAmeliorationEffetByName(name: AmeliorationEffetName) {
+  static findAmeliorationEffetByName(name: ExtensionEffetName) {
     return this.AmeliorationList.find((e) => e.Nom === name)!;
   }
   static getAllAptitudes() {
@@ -479,7 +479,7 @@ export class AptitudeService {
           capacity.Type.Nom
         ) || 99);
     });
-    capacity.AmeliorationsEffet.forEach((rank, ameliorationName) => {
+    capacity.ExtensionsEffet.forEach((rank, ameliorationName) => {
       totalCost +=
         rank *
         (this.findAmeliorationEffetByName(

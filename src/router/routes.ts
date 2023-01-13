@@ -80,7 +80,7 @@ const routes: RouteRecordRaw[] = [
             name: 'Amelioration',
             path: 'amelioration',
             component: () =>
-              import('src/pages/AptitudeInfoTabs/AmeliorationTab.vue'),
+              import('src/pages/AptitudeInfoTabs/ExtensionTab.vue'),
           },
         ],
       },

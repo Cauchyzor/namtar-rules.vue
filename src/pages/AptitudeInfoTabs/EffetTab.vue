@@ -1,10 +1,10 @@
 <template>
   <q-tab-panel name="Effets">
-    <EffetItem
-      v-for="effet in Effets"
-      :key="effet.Nom"
-      :Effet="effet"
-    ></EffetItem>
+    <div class="row q-col-gutter-sm justify-center">
+      <div v-for="effet in Effets" :key="effet.Nom" class="col-12 col-md-auto">
+        <EffetItem :Effet="effet"></EffetItem>
+      </div>
+    </div>
   </q-tab-panel>
 </template>
 
