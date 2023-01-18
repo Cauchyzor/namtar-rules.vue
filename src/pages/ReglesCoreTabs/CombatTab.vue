@@ -23,9 +23,9 @@
       <li>Action : Se déplacer/Se désengager/Se mettre a couvert</li>
       <li>Action : Se jeter à terre/Se relever</li>
       <li>Action : Attaquer</li>
-      <li>Action : Recharger</li>
-      <li>Action : Utiliser un objet a porté de main</li>
-      <li>Action : Fouiller</li>
+      <li>Action : Recharger un equipement</li>
+      <li>Action : Utiliser un objet à porté de main</li>
+      <li>Action : Fouiller a son emplacement</li>
       <li>Action : Utiliser une aptitude</li>
       <li>Action : Autre (description libre)</li>
     </ul>
@@ -52,7 +52,9 @@
     <h5>Les niveaux de porté</h5>
     <p>
       Pour facilité la lecture d'une scène de combat, les distances relatives
-      entre les personnages sont décrite avec des niveau de portée.
+      entre les personnages sont décrite avec des niveau de portée. Ils sont
+      necessaire pour calculer la difficulter d'un jet d'attaque a distance
+      (voir plus loin)
     </p>
     <ul>
       <li>Engagé - de 0 à 1m environ</li>
@@ -134,21 +136,23 @@
 
     <h5>Empoignade</h5>
     <p>
-      La cible de votre empoignade ne doit pas faire plus d&#39;une taille de
-      plus que vous et doit se trouver à portée de votre allonge à mains nues.
-      Vous devez avoir au moins une main de libre pour tenter d&#39;empoigner la
-      cible. Pour cela, vous faites un test d&#39;empoignade à la place d&#39;un
-      jet d&#39;attaque. Il s&#39;agit d&#39;un test de vigueur (Athlétisme) ou
+      La cible de votre empoignade doit être engagée avec vous. Vous devez avoir
+      au moins une main de libre pour tenter d&#39;empoigner la cible. Pour
+      cela, vous faites un test d&#39;empoignade à la place d&#39;un jet
+      d&#39;attaque. Il s&#39;agit d&#39;un test de vigueur (Athlétisme) ou
       d&#39;agilité (Coordination) opposé à un test de vigueur (Athlétisme) ou
       de Agilité (Coordinations) de la cible (celle-ci choisit la
       caractéristique qu&#39;elle préfère utiliser). Si vous réussissez, votre
-      cible se trouve soumise à l&#39;état empoigné. La description de cet état
-      indique les conditions qui y mettent fin. En ce qui vous concerne, vous
-      pouvez relâcher votre cible quand vous le voulez et gratuitement (aucune
-      action requise).
+      cible se trouve soumise à l&#39;état empoigné. Vous pouvez relâcher votre
+      cible quand vous le voulez et gratuitement (aucune action requise).
     </p>
     <ul>
       <li>
+        <p>
+          <strong>Etat Empoigné</strong> : Une créature empoignée est
+          immobilisé, mais elle peut toujours réaliser cetaines actions (a
+          discretion du MJ). <strong>Sa défense est réduite a 1</strong>.
+        </p>
         <p>
           <strong>Échapper à une empoignade</strong> : Une créature empoignée
           peut utiliser une action pour tenter de s&#39;échapper. Elle doit pour
@@ -163,19 +167,18 @@
         <p>
           <strong>Déplacer une créature empoignée</strong> : Quand vous vous
           déplacez, vous pouvez traîner ou porter la créature que vous avez
-          empoignée, mais votre vitesse est divisée par deux, sauf si la
-          créature fait au moins deux tailles de moins que vous.
+          empoignée, mais votre vitesse est divisée par deux.
         </p>
       </li>
     </ul>
     <h5>Bousculer une créature</h5>
     <p>
-      La cible ne doit pas faire plus d&#39;une taille de plus que vous et doit
-      se trouver à porté de votre allonge. Au lieu de faire un jet
-      d&#39;attaque, vous faites un test de vigueur (Athlétisme) opposé à un
-      test de vigueur (Athlétisme) ou à un test ou d&#39;agilité (Coordinations)
-      de la cible (celle-ci choisit la compétence qu&#39;elle préfère utiliser).
-      Si vous remportez la confrontation, vous avez le choix entre
+      La cible doit être engagée avec vous ou se trouver sur la trajectoire de
+      votre mouvement. Au lieu de faire un jet d&#39;attaque, vous faites un
+      test de vigueur (Athlétisme) opposé à un test de vigueur (Athlétisme) ou à
+      un test ou d&#39;agilité (Coordinations) de la cible (celle-ci choisit la
+      compétence qu&#39;elle préfère utiliser). Si vous remportez la
+      confrontation, vous avez le choix entre
       <strong
         >faire tomber votre cible à terre ou la repousser d&#39;1,50 mètre loin
         de vous</strong
@@ -192,7 +195,7 @@
     <p>
       <strong
         >En fonction de la qualité de l&#39;abri, le MJ peut décider
-        d&#39;augmenter DD pour toucher</strong
+        d&#39;augmenter le DD pour toucher</strong
       >. Par exemple, l&#39;abris d&#39;un bouclier de fortune donne +1DD au jet
       d&#39;attaque a distance qui vise le porteur.
     </p>
@@ -209,12 +212,16 @@
       sans risquer de créer des attaques d&#39;opportunités jusqu&#39;à la fin
       du tour.
     </p>
-    <h5>Chercher</h5>
+    <h5>Fouiller sur son emplacement</h5>
     <p>
       Quand vous choisissez l&#39;action chercher, toute votre attention est
       tournée vers l&#39;objet de votre recherche. En fonction de ce que vous
       cherchez, le MJ peut vous demander de faire un test d&#39;intelligence
       (Perception).
+    </p>
+    <p>
+      Fouiller son sac permet de récuperer un objet à l'interieur et de
+      l'utiliser au prochain tour.
     </p>
     <h5>Esquiver</h5>
     <p>
@@ -222,8 +229,8 @@
       d&#39;éviter les attaques. Jusqu&#39;au début de votre tour suivant, vous
       <strong
         >augmentez de 1 votre défense au corps à corps et à distance</strong
-      >. Vous perdez les bénéfices de cette action si vous êtes neutralisé ou si
-      votre vitesse est réduite à 0.
+      >. Vous perdez les bénéfices de cette action si vous êtes neutralisé ou
+      immobilisé.
     </p>
     <h5>Se tenir prêt</h5>
     <p>
@@ -286,31 +293,27 @@
     <NamTitle>Les etats speciaux</NamTitle>
     <h5>À terre / Renversée</h5>
     <p>
-      Une créature à terre n&#39;a plus l&#39;option que de ramper pour se
-      déplacer, à moins de se relever et de mettre ainsi un terme à son état.
-      Elle peut également décider d&#39;epauler une arme a distance si celle-ci
-      n&#39;est pas trop encombrante à manoeuvrer. La créature subit une menacce
-      lors de ses attaques au corps a corps. les assaillant engagés bénéficient
-      d'un atout sur tout leurs jets pour toucher. La creature beneficie d'une
-      couverture face aux attaques à distance dont la qualitée dépend du
-      terrain.
+      La créature subit une menacce lors de ses attaques au corps a corps. les
+      assaillant engagés bénéficient d'un atout sur tout leurs jets pour
+      toucher. La creature beneficie d'une couverture face aux attaques à
+      distance dont la qualitée dépend du terrain.
     </p>
     <h5>Assourdi</h5>
     <p>
       Une créature assourdie n&#39;entend plus rien et rate automatiquement tous
-      les tests de caractéristique faisant intervenir des capacités auditives.
+      les tests faisant intervenir des capacités auditives.
     </p>
     <h5>Aveuglé</h5>
     <p>
       Une créature aveuglée ne voit plus rien et rate automatiquement tout test
-      de caractéristique qui requiert la vue. Sa défense est réduite de 1.
+      qui requiert la vue. Sa défense est réduite de 1.
     </p>
-    <h5>Immobilisé - Empoigné</h5>
+    <h5>Immobilisé</h5>
     <p>
       La vitesse d&#39;une créature empoignée devient 0 et elle ne peut plus
-      bénéficier de ses éventuels bonus de vitesse.
+      bénéficier de ses éventuels bonus de vitesse. La défense réduite à 1.
     </p>
-    <h5>Immobilisé - Entravé</h5>
+    <h5>Entravé</h5>
     <p>
       La vitesse de la créature entravée tombe à 0 et elle ne peut plus
       bénéficier de ses éventuels bonus de vitesse. Le score d'agilité pour
@@ -319,32 +322,12 @@
     <h5>Neutralisé</h5>
     <p>
       Une créature neutralisée est incapable d&#39;effectuer une action ou une
-      réaction.
-    </p>
-    <h5>Neutralisé - Étourdi</h5>
-    <p>
-      Une créature étourdie est neutralisée, incapable de se déplacer et parle
-      en balbutiant. La créature rate automatiquement tous ses jets de
-      sauvegarde. Les jets d&#39;attaque qui visent la créature se font avec un
-      avantage.
-    </p>
-    <h5>Neutralisé - Paralysé</h5>
-    <p>
-      Une créature paralysée est neutralisée et ne peut ni parler ni se
-      déplacer. La créature rate automatiquement tous ses jets de sauvegarde.
-      Les attaques visant la créature bénéficient d&#39;un avantage. Toute
-      attaque qui touche la créature est obligatoirement un coup critique si
-      l&#39;assaillant se trouve dans un rayon de 1,50 mètre autour d&#39;elle.
+      réaction. Sa défense est réduite à 1
     </p>
     <h5>Neutralisé - Inconscient</h5>
     <p>
-      Une créature inconsciente est neutralisée, incapable de se déplacer et de
-      parler et n&#39;a pas conscience de ce qui l&#39;entoure. La créature
-      lâche tout ce qu&#39;elle tenait et tombe au sol. Si la créature reprend
-      conscience, elle est à terre. Seul la défense de l&#39;équipement est
-      prise en compte sur le total de défense. Toute attaque qui touche la
-      créature inflige le maximum de dégât si l&#39;attaquant est a 1,5m de la
-      créature.
+      Une créature inconsciente est neutralisée, lâche tout ce qu&#39;elle
+      tenait et tombe au sol. Sa défense est réduite a 0.
     </p>
     <h5>Terrorisé</h5>
     <p>
@@ -353,10 +336,7 @@
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
     <h5>Surpris</h5>
-    <p>
-      Une créature surprise est incapable de se déplacer. Une créature surprise
-      ne peut entreprendre ni action ni réaction.
-    </p>
+    <p>Une créature surprise ne peut entreprendre ni action ni réaction.</p>
   </q-tab-panel>
 </template>
 
