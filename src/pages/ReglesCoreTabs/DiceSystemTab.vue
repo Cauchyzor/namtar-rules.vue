@@ -108,19 +108,6 @@
       réussi, il faut compenser les échecs du groupe avec les succès du groupe,
       et considérer le score final
     </p>
-    <NamTitle>Jet d'attaque a Distance</NamTitle>
-    <p>
-      La cible doit être en parti découverte. Si elle a attaquée a son dernier
-      tour, elle est considérée comme en parti découverte
-    </p>
-    <p>Dé positif : compétence + caractéristique</p>
-    <p>
-      Dé négatif : distance (voir aussi la précision de l'arme) + protection
-      (equipement, bouclier ou cachette partielle)
-    </p>
-    <NamTitle>Jet d'attaque au corps a corps</NamTitle>
-    <p>Dé positif : compétence + caractéristique</p>
-    <p>Dé négatif : défense + équipement</p>
   </q-tab-panel>
 </template>
 

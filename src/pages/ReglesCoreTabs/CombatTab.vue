@@ -103,6 +103,9 @@
     </ol>
     <h4>Les Actions en détail</h4>
     <h5>Attaques au corps-à-corps</h5>
+    <p>Dé positif : compétence + caractéristique</p>
+    <p>Dé négatif : défense + équipement</p>
+
     <p>
       La majorité des créatures possède une allonge de 1,50 mètre. Elles peuvent
       donc porter une attaque de corps-à-corps contre les cibles qui se trouvent
@@ -114,6 +117,18 @@
       mains nues au lieu d&#39;utiliser une arme : un coup-de-poing, de pied, de
       tête ou un coup similaire (aucune de ces parties du corps n&#39;étant
       considérée comme une arme).
+    </p>
+
+    <h5>Attaques à distance</h5>
+
+    <p>Dé positif : compétence + caractéristique</p>
+    <p>
+      Dé négatif : distance (+1DD par niveau de porté) + protection (equipement,
+      bouclier ou cachette partielle)
+    </p>
+    <p>
+      La cible doit être en parti découverte. Si elle a attaquée a son dernier
+      tour, elle est considérée comme en parti découverte
     </p>
     <h5>Attaques d'opportunité</h5>
     <p>
