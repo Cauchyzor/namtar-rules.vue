@@ -6,9 +6,9 @@
       <q-route-tab tab="Vecteur" label="Vecteur" to="vecteur" exact />
       <q-route-tab tab="Effet" label="Effets" to="effet" exact />
       <q-route-tab
-        tab="Amelioration"
-        label="Amelioration d'effet"
-        to="amelioration"
+        tab="Extension"
+        label="Extension d'effet"
+        to="extension"
         exact
       />
     </q-tabs>

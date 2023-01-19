@@ -4,7 +4,7 @@
     <!-- TODO : Stepper -->
     <!-- Tableau des Types de Capacitée + Selection-->
     <!-- Tableau des Vecteurs + Selection-->
-    <!-- Tableau des Effets + Amelioration d'effets-->
+    <!-- Tableau des Effets + Extension d'effets-->
     <!-- Info générales + Sauvegarde -->
   </q-page>
 </template>

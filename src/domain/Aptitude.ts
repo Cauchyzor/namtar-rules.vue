@@ -272,7 +272,7 @@ export class AptitudeService {
     },
   ];
 
-  private static AmeliorationList: Array<ExtensionEffet> = [
+  private static ExtensionList: Array<ExtensionEffet> = [
     {
       Nom: ExtensionEffetName.ANGLE_MORT,
       Description:
@@ -449,8 +449,8 @@ export class AptitudeService {
   static findEffetByName(name: EffetName) {
     return this.EffectsList.find((e) => e.Nom === name)!;
   }
-  static findAmeliorationEffetByName(name: ExtensionEffetName) {
-    return this.AmeliorationList.find((e) => e.Nom === name)!;
+  static findExtensionByName(name: ExtensionEffetName) {
+    return this.ExtensionList.find((e) => e.Nom === name)!;
   }
   static getAllAptitudes() {
     return this.AptitudeList;
@@ -461,8 +461,8 @@ export class AptitudeService {
   static getAllEffect() {
     return this.EffectsList;
   }
-  static getAllAmelioration() {
-    return this.AmeliorationList;
+  static getAllExtension() {
+    return this.ExtensionList;
   }
   static getAllVecteur() {
     return this.VecteursList;
@@ -479,12 +479,12 @@ export class AptitudeService {
           capacity.Type.Nom
         ) || 99);
     });
-    capacity.ExtensionsEffet.forEach((rank, ameliorationName) => {
+    capacity.ExtensionsEffet.forEach((rank, extensionName) => {
       totalCost +=
         rank *
-        (this.findAmeliorationEffetByName(
-          ameliorationName
-        )?.StabiliteParTypeAptitude.get(capacity.Type.Nom) || 99);
+        (this.findExtensionByName(extensionName)?.StabiliteParTypeAptitude.get(
+          capacity.Type.Nom
+        ) || 99);
     });
     return totalCost;
   }

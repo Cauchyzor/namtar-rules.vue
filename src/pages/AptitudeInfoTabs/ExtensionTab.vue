@@ -1,5 +1,5 @@
 <template>
-  <q-tab-panel name="Amelioration d'effet">
+  <q-tab-panel name="Extension d'effet">
     <div class="row q-col-gutter-sm justify-center">
       <div
         v-for="extension in ExtentionsEffet"
@@ -24,7 +24,7 @@ export default defineComponent({
   },
   data() {
     return {
-      ExtentionsEffet: AptitudeService.getAllAmelioration(),
+      ExtentionsEffet: AptitudeService.getAllExtension(),
     };
   },
 });

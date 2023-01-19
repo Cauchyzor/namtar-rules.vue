@@ -77,8 +77,8 @@ const routes: RouteRecordRaw[] = [
             component: () => import('src/pages/AptitudeInfoTabs/EffetTab.vue'),
           },
           {
-            name: 'Amelioration',
-            path: 'amelioration',
+            name: 'Extension',
+            path: 'extension',
             component: () =>
               import('src/pages/AptitudeInfoTabs/ExtensionTab.vue'),
           },

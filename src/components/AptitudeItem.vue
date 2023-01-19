@@ -33,8 +33,8 @@
         <p>Description: {{ Aptitude.Description }}</p>
         <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(',') }}</p>
         <p>
-          Amelioration:
-          {{ Array.from(Aptitude.AmeliorationsEffet.keys()).join(',') }}
+          Extension:
+          {{ Array.from(Aptitude.ExtensionsEffet.keys()).join(',') }}
         </p>
         <p>Cout: {{ computeCapacityCost() }}</p>
       </q-card-section>
