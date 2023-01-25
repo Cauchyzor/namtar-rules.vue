@@ -21,48 +21,50 @@
       <q-list>
         <q-item-label header> <NamTitle>Namtar rules</NamTitle> </q-item-label>
 
-        <q-item clickable to="/regles" exact>
-          <q-item-section avatar>
-            <q-icon name="settings" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Règles : Cores</q-item-label>
-          </q-item-section>
-        </q-item>
+        <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
+          <q-item clickable to="/regles" exact>
+            <q-item-section avatar>
+              <q-icon name="school" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Règles : Essentiel</q-item-label>
+            </q-item-section>
+          </q-item>
 
-        <q-item clickable to="/aventure" exact>
-          <q-item-section avatar>
-            <q-icon name="settings" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Règles : Aventure</q-item-label>
-          </q-item-section>
-        </q-item>
+          <q-item clickable to="/aventure" exact>
+            <q-item-section avatar>
+              <q-icon name="school" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Règles : Aventure</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
 
         <q-item clickable to="/equipement" exact>
           <q-item-section avatar>
-            <q-icon name="settings" />
+            <q-icon name="backpack" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Règles : Equipement</q-item-label>
+            <q-item-label>Equipement</q-item-label>
           </q-item-section>
         </q-item>
 
         <q-item clickable to="/vehicule" exact>
           <q-item-section avatar>
-            <q-icon name="settings" />
+            <q-icon name="rocket_launch" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Règles : Véhicules</q-item-label>
+            <q-item-label>Véhicules</q-item-label>
           </q-item-section>
         </q-item>
 
         <q-item clickable to="/aptitude" exact>
           <q-item-section avatar>
-            <q-icon name="settings" />
+            <q-icon name="graphic_eq" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Règles : Aptitude</q-item-label>
+            <q-item-label>Aptitude</q-item-label>
           </q-item-section>
         </q-item>
 
