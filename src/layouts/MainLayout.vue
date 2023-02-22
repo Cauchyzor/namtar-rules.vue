@@ -68,14 +68,29 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable to="/pj" exact>
-          <q-item-section avatar>
-            <q-icon name="settings" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Creation de personnage</q-item-label>
-          </q-item-section>
-        </q-item>
+        <q-expansion-item
+          icon="settings"
+          label="Personnage"
+          :content-inset-level="1"
+        >
+          <q-item clickable to="/pj" exact>
+            <q-item-section avatar>
+              <q-icon name="settings" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Creation de personnage</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/niveau" exact>
+            <q-item-section avatar>
+              <q-icon name="settings" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Gain de niveau</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
       </q-list>
     </q-drawer>
 
