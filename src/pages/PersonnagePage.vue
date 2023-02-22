@@ -8,8 +8,9 @@
       </p>
     </div>
 
-    <div class="q-pa-md q-gutter-md">
+    <div class="q-pa-md q-gutter-md row">
       <CaracteristiqueCard
+        class="col-md col-sm-12"
         v-for="carac in CaracteritiquesList"
         :key="carac.Nom"
         :Caracteristique="carac"
@@ -36,7 +37,7 @@
       </p>
     </div>
 
-    <q-list separator >
+    <q-list separator>
       <AptitudeItem
         v-for="Aptitude in AptitudeList"
         :key="Aptitude.Nom"
