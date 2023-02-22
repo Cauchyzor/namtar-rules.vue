@@ -51,33 +51,34 @@
     </p>
     <ul>
       <li>
-        <strong>Routinier - 0 </strong> : Aucune difficultée. Si c&#39;est raté,
-        c&#39;est vraiment, vraiment pas de chance..
+        <strong>Routinier - DD0 - 0 dés</strong> : Aucune difficultée. Si
+        c&#39;est raté, c&#39;est vraiment, vraiment pas de chance..
       </li>
       <li>
-        <strong>Facile - 1</strong> : Une personne sans vraiment de talent et
-        mal équipé pourrait se planter plus de la moitiée du temps.
+        <strong>Facile - DD1 - 1 dés</strong> : Une personne sans vraiment de
+        talent et mal équipé pourrait se planter plus de la moitiée du temps.
       </li>
       <li>
-        <strong>Normal - 2 </strong> : Quelqu&#39;un d&#39;affuté pour le job,
-        et avec un peu d&#39;entrainement pourrai avoir quand même quelques
-        difficultées
+        <strong>Normal - DD2 - 2 dés </strong> : Quelqu&#39;un d&#39;affuté pour
+        le job, et avec un peu d&#39;entrainement pourrai avoir quand même
+        quelques difficultées
       </li>
       <li>
-        <strong>Complexe - 3</strong> : Quelqu&#39;un de compétent ne voudra pas
-        s&#39;y risquer sans un bon materiel adequat..
+        <strong>Complexe - DD3 - 3 dés</strong> : Quelqu&#39;un de compétent ne
+        voudra pas s&#39;y risquer sans un bon materiel adequat..
       </li>
       <li>
-        <strong>Difficile - 5</strong> : Les meilleurs considèrent ça entre eux
-        comme une &quot;prise de risque&quot;
+        <strong>Difficile - DD4 - 5 dés</strong> : Les meilleurs considèrent ça
+        entre eux comme une &quot;prise de risque&quot;
       </li>
       <li>
-        <strong>Très Difficile - 8</strong> : Il faut être un expert talentueux
-        et bien equipé pour pouvoir dire &quot;qu&#39;on peut y arriver&quot;
+        <strong>Très Difficile - DD5 - 8 dés</strong> : Il faut être un expert
+        talentueux et bien equipé pour pouvoir dire &quot;qu&#39;on peut y
+        arriver&quot;
       </li>
       <li>
-        <strong>Exceptionnel - 13</strong> : Il faut être un expert talentueux
-        et bien equipé pour ésperer peut-être réussir
+        <strong>Exceptionnel - DD6 - 13 dés</strong> : Il faut être un expert
+        talentueux et bien equipé pour ésperer peut-être réussir
       </li>
       <li>
         Pour des niveaux de difficulté superieures : le DD est égal au DD du
