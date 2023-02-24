@@ -78,7 +78,7 @@
               <q-icon name="settings" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Creation de personnage</q-item-label>
+              <q-item-label>Fiche personnage</q-item-label>
             </q-item-section>
           </q-item>
 
