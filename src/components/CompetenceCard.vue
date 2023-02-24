@@ -2,10 +2,9 @@
   <q-item>
     <q-item-section>
       <q-item-label class="text-overline">{{ Competence.Nom }}</q-item-label>
-      <q-item-label caption lines="2"
-        >Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit
-        elit.</q-item-label
-      >
+      <q-item-label caption lines="2">{{
+        Competence.ShortDescription
+      }}</q-item-label>
     </q-item-section>
 
     <q-item-section side top>
