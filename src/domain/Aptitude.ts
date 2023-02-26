@@ -32,6 +32,7 @@ export type Vecteur = {
 
 enum VecteurName {
   CONTACT = 'Contact',
+  HALUCINATION = 'Halucination',
   SOUFFLE = 'Souffle',
   PROJECTILE = 'Projectile',
   ONDE = 'Onde',
@@ -51,9 +52,10 @@ enum EffetName {
   ENTRAVE = 'Entrave',
   FORCE = 'Force',
   LEVITATION = 'Levitation',
+  ILLUSION = 'Illusion',
+  INFORTUNE = 'Infortune',
   SOIN_DE_STRESS = 'Soin de stress',
   TELEPATHE = 'Télépathe',
-  INFORTUNE = 'Infortune',
   SOIN = 'Soin',
   VAMPIRISME = 'Vampirisme',
   MANTRA = 'Mantra',
@@ -125,6 +127,12 @@ export class AptitudeService {
       Nom: VecteurName.CONTACT,
       Description: 'Les effets sont appliqués à la cible touchée.',
       Difficulte: 'Attaque engagée de Pugilat (Intelligence)',
+    },
+    {
+      Nom: VecteurName.HALUCINATION,
+      Description: 'Les effet sont appliqué à la cible en visuel.',
+      Difficulte:
+        'Opposition entre Tromperie (Charisme) et Perspicasité (Charisme)',
     },
     {
       Nom: VecteurName.SOUFFLE,
@@ -219,6 +227,17 @@ export class AptitudeService {
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.MALEFICE, -1],
         [AptitudeTypeName.ENVOUTEMENT, -2],
+      ]),
+    },
+    {
+      Nom: EffetName.ILLUSION,
+      Description:
+        "Vous pouvez faire haluciner la cible pour que ses sens lui indique ce que vous voulez (determiné à la creation de l'aptitude). Chaque succès permet de rendre l'illusion plus précise et efficace, et affecte plus de sens.",
+      IsCummulable: true,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.EVOCATION, -2],
+        [AptitudeTypeName.MALEFICE, -1],
+        [AptitudeTypeName.ENVOUTEMENT, -1],
       ]),
     },
     {
