@@ -1,4 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+
+import { CaracteritiqueName } from './Caracteristique';
+import { CompetenceName } from './Competence';
+
+// TODO Augmentation de la défense ?
+// TODO Stepper pour creer une aptitude
+
 export type Aptitude = {
   Nom: string;
   Description: string;
@@ -126,39 +133,36 @@ export class AptitudeService {
     {
       Nom: VecteurName.CONTACT,
       Description: 'Les effets sont appliqués à la cible touchée.',
-      Difficulte: 'Attaque engagée de Pugilat (Intelligence)',
+      Difficulte: `Attaque engagée de ${CompetenceName.PUGILAT} (${CaracteritiqueName.INTELLIGENCE})`,
     },
     {
       Nom: VecteurName.HALUCINATION,
       Description: 'Les effet sont appliqué à la cible en visuel.',
-      Difficulte:
-        'Opposition entre Tromperie (Charisme) et Perspicasité (Charisme)',
+      Difficulte: `Opposition entre ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME})`,
     },
     {
       Nom: VecteurName.SOUFFLE,
       Description:
         "Le lanceur canalyse l'energie dans ses poumons, et applique ces effets dans un cône devant lui sur courte distance",
-      Difficulte:
-        'Test de maitrise de fluide (Vigueur) de difficulté dépendant de la distance couverte',
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}) de difficulté dépendant de la distance couverte`,
     },
     {
       Nom: VecteurName.PROJECTILE,
       Description:
         "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endoit indiqué, et applique ses effets a l'impact avant de s'estomper.",
-      Difficulte: 'Attaque à distance de maitrise de fluide (Intelligence)',
+      Difficulte: `Attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}).`,
     },
     {
       Nom: VecteurName.ONDE,
       Description:
         'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à porté courte autour de lui.',
-      Difficulte:
-        'Test de maitrise de fluide (Intelligence) de difficulté dépendant de la distance couverte',
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 à portée courte, et +1 au DD pour chaque rangs supplémentaires.`,
     },
     {
       Nom: VecteurName.SOURCE_UNIQUEMENT,
       Description:
-        "Les effets sont appliqués à la source de l'aptitude (dépends du type de aptitude). Aucune difficulté sur les cibles dépourvues de volonté, consantentes ou sur vous même. ",
-      Difficulte: "Aucune à Test opposé d'alteration du fluide (Charisme).",
+        "Les effets sont appliqués à la source de l'aptitude (dépends du type de aptitude). Aucune difficulté sur les cibles dépourvues de volonté, consantentes ou sur vous même.",
+      Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) du lanceur contre ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}).`,
     },
   ];
 
