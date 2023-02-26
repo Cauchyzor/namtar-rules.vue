@@ -10,6 +10,7 @@
         {{ Vecteur.Nom }}
       </div>
       <div class="text-caption text-grey">{{ Vecteur.Description }}</div>
+      <div>Action : {{ Vecteur.Difficulte }}</div>
     </q-card-section>
   </q-card>
 </template>
