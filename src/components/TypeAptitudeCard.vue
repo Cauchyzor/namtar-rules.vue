@@ -10,6 +10,7 @@
         {{ Type.Nom }}
       </div>
       <div class="text-caption text-grey">{{ Type.Description }}</div>
+      <div class="">{{ Type.DescriptionDetails }}</div>
     </q-card-section>
   </q-card>
 </template>
