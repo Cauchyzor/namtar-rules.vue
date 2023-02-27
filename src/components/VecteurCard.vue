@@ -1,5 +1,10 @@
 <template>
-  <q-card bordered>
+  <q-card
+    bordered
+    v-ripple
+    @click="$emit('is-selected')"
+    class="cursor-pointer q-hoverable"
+  >
     <q-card-section vertical>
       <div class="text-h5 q-mt-sm q-mb-xs">
         {{ Vecteur.Nom }}
@@ -9,7 +14,7 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, ref } from 'vue';
 
 import { Vecteur } from 'src/domain/Aptitude';
 
@@ -17,6 +22,12 @@ export default defineComponent({
   props: {
     Vecteur: { type: Object as PropType<Vecteur>, required: true },
   },
+  data() {
+    return {
+      Selected: ref(false),
+    };
+  },
+  emits: ['is-selected'],
 });
 </script>
 <style scoped>

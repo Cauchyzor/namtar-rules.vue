@@ -1,5 +1,10 @@
 <template>
-  <q-card bordered>
+  <q-card
+    bordered
+    v-ripple
+    @click="$emit('is-selected')"
+    class="cursor-pointer q-hoverable"
+  >
     <q-card-section vertical>
       <div class="text-h5 q-mt-sm q-mb-xs">
         {{ Type.Nom }}
@@ -17,6 +22,7 @@ export default defineComponent({
   props: {
     Type: { type: Object as PropType<AptitudeType>, required: true },
   },
+  emits: ['is-selected'],
 });
 </script>
 <style scoped></style>
