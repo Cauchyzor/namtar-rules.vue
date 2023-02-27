@@ -60,34 +60,6 @@ const routes: RouteRecordRaw[] = [
         name: 'Aptitude',
         path: '/aptitude',
         component: () => import('src/pages/AptitudeInfoPage.vue'),
-        children: [
-          {
-            path: '',
-            redirect: '/aptitude/type',
-          },
-          {
-            name: 'Type',
-            path: 'type',
-            component: () => import('src/pages/AptitudeInfoTabs/TypeTab.vue'),
-          },
-          {
-            name: 'Vecteur',
-            path: 'vecteur',
-            component: () =>
-              import('src/pages/AptitudeInfoTabs/VecteurTab.vue'),
-          },
-          {
-            name: 'Effet',
-            path: 'effet',
-            component: () => import('src/pages/AptitudeInfoTabs/EffetTab.vue'),
-          },
-          {
-            name: 'Extension',
-            path: 'extension',
-            component: () =>
-              import('src/pages/AptitudeInfoTabs/ExtensionTab.vue'),
-          },
-        ],
       },
     ],
   },
