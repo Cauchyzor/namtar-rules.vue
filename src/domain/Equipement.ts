@@ -5,6 +5,10 @@ export type EquipementItem = {
   Description: string;
   Prix: number;
 };
+
+// TODO Changer désavantage en menace quand c'est necessaire
+// TODO Lame moléculaire et sabre moléculaire trop similaire
+// TODO Ajouter Arme a feu
 export class EquipementService {
   private static EquipementItems: Array<EquipementItem> = [
     {
@@ -19,7 +23,7 @@ export class EquipementService {
       Encombrement: 0,
       Rarete: 1,
       Description:
-        "La créature doit effectuer un test de vigueur (Athlétisme) de DD8 ou d'agilité (Coordination) de DD5 pour ne plus être entravé",
+        "La créature doit effectuer un test de vigueur (Athlétisme) de DD5 ou d'agilité (Coordination) de DD4 pour ne plus être entravé",
       Prix: 50,
     },
     {
