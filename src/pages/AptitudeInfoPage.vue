@@ -63,7 +63,11 @@
 
       <q-tab-panel name="Effet">
         <div class="row q-col-gutter-sm justify-center">
-          <div v-for="effet in Effets" :key="effet.Nom" class="col-12">
+          <div
+            v-for="effet in availableEffects"
+            :key="effet.Nom"
+            class="col-12"
+          >
             <EffetItem
               :Effet="effet"
               @rank-updated="(r) => updateEffectRank(effet, r)"
@@ -75,7 +79,7 @@
       <q-tab-panel name="Extension">
         <div class="row q-col-gutter-sm justify-center">
           <div
-            v-for="extension in ExtentionsEffet"
+            v-for="extension in availableExtentions"
             :key="extension.Nom"
             class="col-12"
           >
@@ -114,14 +118,28 @@ export default defineComponent({
       SelectedTab: ref('Type'),
       TypesAptitude: AptitudeService.getAllTypes(),
       Vecteurs: AptitudeService.getAllVecteur(),
-      Effets: AptitudeService.getAllEffect(),
-      ExtentionsEffet: AptitudeService.getAllExtension(),
-
       SelectedType: ref(),
       SelectedVecteur: ref(),
       SelectedEffects: ref(new Map()),
       SelectedExtension: ref(new Map()),
     };
+  },
+  computed: {
+    availableEffects(): Effet[] {
+      return this.SelectedType && this.SelectedType.Nom
+        ? AptitudeService.getAllEffect().filter((effect: Effet) =>
+            effect.StabiliteParTypeAptitude.has(this.SelectedType.Nom)
+          )
+        : AptitudeService.getAllEffect();
+    },
+    availableExtentions(): ExtensionEffet[] {
+      return this.SelectedType && this.SelectedType.Nom
+        ? AptitudeService.getAllExtension().filter(
+            (extension: ExtensionEffet) =>
+              extension.StabiliteParTypeAptitude.has(this.SelectedType.Nom)
+          )
+        : AptitudeService.getAllExtension();
+    },
   },
   methods: {
     getSelectedEffectsWithRank() {
