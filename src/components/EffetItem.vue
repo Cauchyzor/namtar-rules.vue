@@ -15,7 +15,7 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
 import { Effet } from 'src/domain/Aptitude';
 
@@ -23,22 +23,13 @@ export default defineComponent({
   props: {
     Effet: { type: Object as PropType<Effet>, required: true },
   },
-  emits: ['rank-updated'],
-  data() {
-    return { Rank: ref(0) };
-  },
+  emits: ['rank-increased', 'rank-decreased'],
   methods: {
     increment() {
-      this.Rank = this.Rank + 1;
-      this.$emit('rank-updated', this.Rank);
+      this.$emit('rank-increased');
     },
     decrement() {
-      this.Rank = this.Rank === 0 ? this.Rank : this.Rank - 1;
-      this.$emit('rank-updated', this.Rank);
-    },
-    resetRank() {
-      this.Rank = 0;
-      this.$emit('rank-updated', this.Rank);
+      this.$emit('rank-decreased');
     },
   },
 });

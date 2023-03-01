@@ -3,7 +3,7 @@
     <NamTitle>Aptitude</NamTitle>
     <q-card bordered>
       <q-card-section horizontal>
-        <q-card-section class="col-8" vertical>
+        <q-card-section class="col-6" vertical>
           <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
           <div class="text-caption text-grey">
             Type : {{ SelectedType && SelectedType.Nom }}
@@ -18,7 +18,7 @@
             Extension : {{ getSelectedExtentionWithRank() }}
           </div>
         </q-card-section>
-        <q-card-section class="col-4" vertical>
+        <q-card-section class="col-6" vertical>
           <div class="text-caption text-grey">Cout : {{ computeCost() }}</div>
           <div class="text-caption text-grey">
             Test à réaliser :
@@ -44,7 +44,7 @@
           >
             <TypeAptitudeItem
               :Type="typeAptitude"
-              @is-selected="SelectedType = typeAptitude"
+              @is-selected="changeType(typeAptitude)"
             ></TypeAptitudeItem>
           </div>
         </div>
@@ -70,7 +70,8 @@
           >
             <EffetItem
               :Effet="effet"
-              @rank-updated="(r) => updateEffectRank(effet, r)"
+              @rank-increased="increaseEffectRank(effet)"
+              @rank-decreased="decreaseEffectRank(effet)"
             ></EffetItem>
           </div>
         </div>
@@ -85,7 +86,8 @@
           >
             <ExtensionCard
               :Extension="extension"
-              @rank-updated="(r) => updateExtentionRank(extension, r)"
+              @rank-increased="increaseExtentionRank(extension)"
+              @rank-decreased="decreaseExtentionRank(extension)"
             ></ExtensionCard>
           </div>
         </div>
@@ -96,7 +98,12 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 
-import { AptitudeService, Effet, ExtensionEffet } from 'src/domain/Aptitude';
+import {
+  AptitudeService,
+  AptitudeType,
+  Effet,
+  ExtensionEffet,
+} from 'src/domain/Aptitude';
 
 import EffetItem from 'src/components/EffetItem.vue';
 import NamTitle from 'src/components/NamTitle.vue';
@@ -147,12 +154,45 @@ export default defineComponent({
         .map(([name, rank]) => `${name}(${rank})`)
         .join(' - ');
     },
-    updateEffectRank(effect: Effet, rank: number) {
-      if (rank === 0) {
-        this.SelectedEffects.delete(effect.Nom);
+    increaseEffectRank(effect: Effet) {
+      if (this.SelectedEffects.has(effect.Nom)) {
+        const actualRank = this.SelectedEffects.get(effect.Nom);
+        this.SelectedEffects.set(effect.Nom, actualRank + 1);
         return;
       }
-      this.SelectedEffects.set(effect.Nom, rank);
+      this.SelectedEffects.set(effect.Nom, 1);
+    },
+    decreaseEffectRank(effect: Effet) {
+      if (!this.SelectedEffects.has(effect.Nom)) {
+        return;
+      }
+      const actualRank = this.SelectedEffects.get(effect.Nom);
+      if (actualRank === 1) {
+        this.SelectedEffects.delete(effect.Nom);
+
+        return;
+      }
+      this.SelectedEffects.set(effect.Nom, actualRank - 1);
+    },
+    increaseExtentionRank(extention: ExtensionEffet) {
+      if (this.SelectedExtension.has(extention.Nom)) {
+        const actualRank = this.SelectedExtension.get(extention.Nom);
+        this.SelectedExtension.set(extention.Nom, actualRank + 1);
+        return;
+      }
+      this.SelectedExtension.set(extention.Nom, 1);
+    },
+    decreaseExtentionRank(extention: ExtensionEffet) {
+      if (!this.SelectedExtension.has(extention.Nom)) {
+        return;
+      }
+      const actualRank = this.SelectedExtension.get(extention.Nom);
+      if (actualRank === 1) {
+        this.SelectedExtension.delete(extention.Nom);
+
+        return;
+      }
+      this.SelectedExtension.set(extention.Nom, actualRank - 1);
     },
     getSelectedExtentionWithRank() {
       return Array.from(this.SelectedExtension.entries())
@@ -172,6 +212,11 @@ export default defineComponent({
         Array.from(this.SelectedEffects.values()).length
         ? 'WIP'
         : 'Incomplet';
+    },
+    changeType(type: AptitudeType) {
+      this.SelectedType = type;
+      this.SelectedEffects.clear();
+      this.SelectedExtension.clear();
     },
   },
 });
