@@ -5,22 +5,27 @@
       <q-card-section horizontal>
         <q-card-section class="col-6" vertical>
           <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
-          <div class="text-caption text-grey">Type : {{ SelectedType }}</div>
           <div class="text-caption text-grey">
-            Vecteur : {{ SelectedVecteur && SelectedVecteur.Nom }}
+            Type : <strong>{{ SelectedType }}</strong>
           </div>
           <div class="text-caption text-grey">
-            Effet : {{ getSelectedEffectsWithRank() }}
+            Vecteur :
+            <strong>{{ SelectedVecteur && SelectedVecteur.Nom }}</strong>
           </div>
           <div class="text-caption text-grey">
-            Extension : {{ getSelectedExtentionWithRank() }}
+            Effet : <strong>{{ getSelectedEffectsWithRank() }}</strong>
+          </div>
+          <div class="text-caption text-grey">
+            Extension : <strong>{{ getSelectedExtentionWithRank() }}</strong>
           </div>
         </q-card-section>
         <q-card-section class="col-6" vertical>
-          <div class="text-caption text-grey">Cout : {{ computeCost() }}</div>
+          <div class="text-caption text-grey">
+            Cout : <strong>{{ computeCost() }}</strong>
+          </div>
           <div class="text-caption text-grey">
             Test à réaliser :
-            {{ SelectedVecteur && SelectedVecteur.Difficulte }}
+            <strong>{{ SelectedVecteur && SelectedVecteur.Difficulte }}</strong>
           </div>
         </q-card-section>
       </q-card-section>
