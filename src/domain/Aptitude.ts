@@ -302,9 +302,9 @@ export class AptitudeService {
         'Vous devez vous situer en dehors du champs de vision de la cible.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.ENVOUTEMENT, -2],
-        [AptitudeTypeName.EVOCATION, -1],
-        [AptitudeTypeName.MALEFICE, -2],
+        [AptitudeTypeName.ENVOUTEMENT, 2],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
     {
@@ -313,11 +313,11 @@ export class AptitudeService {
         'Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, -1],
-        [AptitudeTypeName.ENVOUTEMENT, -2],
-        [AptitudeTypeName.EVOCATION, -1],
-        [AptitudeTypeName.MALEFICE, -2],
-        [AptitudeTypeName.NECROMANCIE, -2],
+        [AptitudeTypeName.BENEDICTION, 1],
+        [AptitudeTypeName.ENVOUTEMENT, 2],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.MALEFICE, 2],
+        [AptitudeTypeName.NECROMANCIE, 2],
       ]),
     },
     {
@@ -325,11 +325,11 @@ export class AptitudeService {
       Description: 'Ajouter 1 dé de difficulté sur votre jet.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, -1],
-        [AptitudeTypeName.ENVOUTEMENT, -1],
-        [AptitudeTypeName.EVOCATION, -1],
-        [AptitudeTypeName.MALEFICE, -1],
-        [AptitudeTypeName.NECROMANCIE, -1],
+        [AptitudeTypeName.BENEDICTION, 1],
+        [AptitudeTypeName.ENVOUTEMENT, 1],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.MALEFICE, 1],
+        [AptitudeTypeName.NECROMANCIE, 1],
       ]),
     },
     {
@@ -338,11 +338,11 @@ export class AptitudeService {
         "Augmentez 3 fois la difficultée. de l'aptitude. l'aptitude est lancée comme une manoeuvre plutot qu'une action",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, -1],
-        [AptitudeTypeName.ENVOUTEMENT, -1],
-        [AptitudeTypeName.EVOCATION, -1],
-        [AptitudeTypeName.MALEFICE, -1],
-        [AptitudeTypeName.NECROMANCIE, -1],
+        [AptitudeTypeName.BENEDICTION, 1],
+        [AptitudeTypeName.ENVOUTEMENT, 1],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.MALEFICE, 1],
+        [AptitudeTypeName.NECROMANCIE, 1],
       ]),
     },
     {
@@ -351,10 +351,10 @@ export class AptitudeService {
         "L'aptitude ne necessite pas de mains libres pour reussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, -4],
-        [AptitudeTypeName.ENVOUTEMENT, -2],
-        [AptitudeTypeName.EVOCATION, -2],
-        [AptitudeTypeName.MALEFICE, -2],
+        [AptitudeTypeName.BENEDICTION, 4],
+        [AptitudeTypeName.ENVOUTEMENT, 2],
+        [AptitudeTypeName.EVOCATION, 2],
+        [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
     {
@@ -363,10 +363,10 @@ export class AptitudeService {
         "L'aptitude n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, -2],
-        [AptitudeTypeName.ENVOUTEMENT, -2],
-        [AptitudeTypeName.EVOCATION, -2],
-        [AptitudeTypeName.MALEFICE, -2],
+        [AptitudeTypeName.BENEDICTION, 2],
+        [AptitudeTypeName.ENVOUTEMENT, 2],
+        [AptitudeTypeName.EVOCATION, 2],
+        [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
     {
@@ -375,18 +375,21 @@ export class AptitudeService {
         "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de l'aptitude. Le gains de stabilité dépend de la puissance de l'objet",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.EVOCATION, -1],
-        [AptitudeTypeName.BENEDICTION, -1],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.BENEDICTION, 1],
       ]),
     },
     {
       Nom: ExtensionEffetName.CONTRE_COUP,
       Description:
-        'Le lanceur subit 1 dommage ignorant la protection pour chaque désavantage généré.',
+        'Le lanceur subit 1 blessure pour chaque désavantage généré.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.EVOCATION, -1],
-        [AptitudeTypeName.BENEDICTION, -1],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.BENEDICTION, 1],
+        [AptitudeTypeName.MALEFICE, 1],
+        [AptitudeTypeName.NECROMANCIE, 1],
+        [AptitudeTypeName.ENVOUTEMENT, 2],
       ]),
     },
   ];
