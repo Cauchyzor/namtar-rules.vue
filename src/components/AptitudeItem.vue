@@ -36,7 +36,7 @@
           Extension:
           {{ Array.from(Aptitude.ExtensionsEffet.keys()).join(',') }}
         </p>
-        <p>Cout: {{ computeCapacityCost() }}</p>
+        <p>Cout: {{ computeAptitudeCost() }}</p>
       </q-card-section>
     </q-card>
   </q-dialog>
@@ -54,8 +54,8 @@ export default defineComponent({
     return { openDetail: false };
   },
   methods: {
-    computeCapacityCost() {
-      return AptitudeService.computeCost(
+    computeAptitudeCost() {
+      return AptitudeService.computeStabilityScore(
         this.Aptitude.Type,
         this.Aptitude.Effets,
         this.Aptitude.ExtensionsEffet

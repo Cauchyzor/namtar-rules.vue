@@ -490,7 +490,7 @@ export class AptitudeService {
   static getAllVecteur() {
     return this.VecteursList;
   }
-  static computeCost(
+  static computeStabilityScore(
     type: AptitudeType,
     effects: Map<EffetName, number>,
     extention: Map<ExtensionEffetName, number>

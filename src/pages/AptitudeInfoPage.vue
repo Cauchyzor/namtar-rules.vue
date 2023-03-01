@@ -210,7 +210,7 @@ export default defineComponent({
       return this.SelectedType &&
         this.SelectedVecteur &&
         Array.from(this.SelectedEffects.values()).length
-        ? AptitudeService.computeCost(
+        ? AptitudeService.computeStabilityScore(
             this.SelectedType,
             this.SelectedEffects,
             this.SelectedExtension
