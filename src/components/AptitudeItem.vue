@@ -55,7 +55,11 @@ export default defineComponent({
   },
   methods: {
     computeCapacityCost() {
-      return AptitudeService.computeCost(this.Aptitude);
+      return AptitudeService.computeCost(
+        this.Aptitude.Type,
+        this.Aptitude.Effets,
+        this.Aptitude.ExtensionsEffet
+      );
     },
   },
 });

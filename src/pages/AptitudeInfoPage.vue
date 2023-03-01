@@ -210,7 +210,11 @@ export default defineComponent({
       return this.SelectedType &&
         this.SelectedVecteur &&
         Array.from(this.SelectedEffects.values()).length
-        ? 'WIP'
+        ? AptitudeService.computeCost(
+            this.SelectedType,
+            this.SelectedEffects,
+            this.SelectedExtension
+          )
         : 'Incomplet';
     },
     changeType(type: AptitudeType) {

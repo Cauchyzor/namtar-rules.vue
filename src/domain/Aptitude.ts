@@ -47,7 +47,7 @@ enum VecteurName {
 }
 
 export type Effet = {
-  Nom: string;
+  Nom: EffetName;
   Description: string;
   IsCummulable: boolean;
   StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
@@ -490,24 +490,28 @@ export class AptitudeService {
   static getAllVecteur() {
     return this.VecteursList;
   }
-  static computeCost(capacity: Aptitude) {
-    if (capacity.Type.Nom === AptitudeTypeName.MANTRA) {
+  static computeCost(
+    type: AptitudeType,
+    effects: Map<EffetName, number>,
+    extention: Map<ExtensionEffetName, number>
+  ) {
+    if (type.Nom === AptitudeTypeName.MANTRA) {
       return 0;
     }
     let totalCost = 0;
-    capacity.Effets.forEach((rank, effectName) => {
+    effects.forEach((rank, effectName) => {
       totalCost +=
         rank *
         (this.findEffetByName(effectName)?.StabiliteParTypeAptitude.get(
-          capacity.Type.Nom
-        ) || 99);
+          type.Nom
+        ) || 999);
     });
-    capacity.ExtensionsEffet.forEach((rank, extensionName) => {
+    extention.forEach((rank, extension) => {
       totalCost +=
         rank *
-        (this.findExtensionByName(extensionName)?.StabiliteParTypeAptitude.get(
-          capacity.Type.Nom
-        ) || 99);
+        (this.findExtensionByName(extension)?.StabiliteParTypeAptitude.get(
+          type.Nom
+        ) || 999);
     });
     return totalCost;
   }
