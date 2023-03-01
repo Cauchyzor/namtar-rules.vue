@@ -1,6 +1,29 @@
 <template>
   <q-page padding>
     <NamTitle>Aptitude</NamTitle>
+    <q-card bordered>
+      <q-card-section horizontal>
+        <q-card-section class="col-8" vertical>
+          <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
+          <div class="text-caption text-grey">
+            Type : {{ SelectedType && SelectedType.Nom }}
+          </div>
+          <div class="text-caption text-grey">
+            Vecteur : {{ SelectedVecteur && SelectedVecteur.Nom }}
+          </div>
+          <div class="text-caption text-grey">
+            Effet : {{ getSelectedEffectsWithRank() }}
+          </div>
+          <div class="text-caption text-grey">
+            Extension : {{ getSelectedExtentionWithRank() }}
+          </div>
+        </q-card-section>
+        <q-card-section class="col-4" vertical>
+          <div class="text-caption text-grey">Cout :</div>
+          <div class="text-caption text-grey">Test à réaliser :</div>
+        </q-card-section>
+      </q-card-section>
+    </q-card>
     <q-tabs v-model="SelectedTab">
       <q-tab name="Type" label="Types" />
       <q-tab name="Vecteur" label="Vecteur" />
@@ -18,7 +41,7 @@
           >
             <TypeAptitudeItem
               :Type="typeAptitude"
-              @is-selected="selectType(typeAptitude)"
+              @is-selected="SelectedType = typeAptitude"
             ></TypeAptitudeItem>
           </div>
         </div>
@@ -29,7 +52,7 @@
           <div v-for="vecteur in Vecteurs" :key="vecteur.Nom" class="col-12">
             <VecteurItem
               :Vecteur="vecteur"
-              @is-selected="selectVecteur(vecteur)"
+              @is-selected="SelectedVecteur = vecteur"
             ></VecteurItem>
           </div>
         </div>
@@ -38,7 +61,10 @@
       <q-tab-panel name="Effet">
         <div class="row q-col-gutter-sm justify-center">
           <div v-for="effet in Effets" :key="effet.Nom" class="col-12">
-            <EffetItem :Effet="effet"></EffetItem>
+            <EffetItem
+              :Effet="effet"
+              @rank-updated="(r) => updateEffectRank(effet, r)"
+            ></EffetItem>
           </div>
         </div>
       </q-tab-panel>
@@ -50,7 +76,10 @@
             :key="extension.Nom"
             class="col-12"
           >
-            <ExtensionCard :Extension="extension"></ExtensionCard>
+            <ExtensionCard
+              :Extension="extension"
+              @rank-updated="(r) => updateExtentionRank(extension, r)"
+            ></ExtensionCard>
           </div>
         </div>
       </q-tab-panel>
@@ -60,7 +89,8 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 
-import { AptitudeService, AptitudeType, Vecteur } from 'src/domain/Aptitude';
+import { AptitudeService, Effet, ExtensionEffet } from 'src/domain/Aptitude';
+
 import EffetItem from 'src/components/EffetItem.vue';
 import NamTitle from 'src/components/NamTitle.vue';
 import TypeAptitudeItem from 'src/components/TypeAptitudeCard.vue';
@@ -83,14 +113,37 @@ export default defineComponent({
       Vecteurs: AptitudeService.getAllVecteur(),
       Effets: AptitudeService.getAllEffect(),
       ExtentionsEffet: AptitudeService.getAllExtension(),
+
+      SelectedType: ref(),
+      SelectedVecteur: ref(),
+      SelectedEffects: ref(new Map()),
+      SelectedExtension: ref(new Map()),
     };
   },
   methods: {
-    selectType(type: AptitudeType) {
-      console.log(type);
+    getSelectedEffectsWithRank() {
+      return Array.from(this.SelectedEffects.entries())
+        .map(([name, rank]) => `${name}(${rank})`)
+        .join(' - ');
     },
-    selectVecteur(v: Vecteur) {
-      console.log(v);
+    updateEffectRank(effect: Effet, rank: number) {
+      if (rank === 0) {
+        this.SelectedEffects.delete(effect.Nom);
+        return;
+      }
+      this.SelectedEffects.set(effect.Nom, rank);
+    },
+    getSelectedExtentionWithRank() {
+      return Array.from(this.SelectedExtension.entries())
+        .map(([name, rank]) => `${name}(${rank})`)
+        .join(' - ');
+    },
+    updateExtentionRank(extention: ExtensionEffet, rank: number) {
+      if (rank === 0) {
+        this.SelectedExtension.delete(extention.Nom);
+        return;
+      }
+      this.SelectedExtension.set(extention.Nom, rank);
     },
   },
 });

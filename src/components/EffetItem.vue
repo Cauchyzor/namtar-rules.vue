@@ -23,20 +23,22 @@ export default defineComponent({
   props: {
     Effet: { type: Object as PropType<Effet>, required: true },
   },
+  emits: ['rank-updated'],
   data() {
     return { Rank: ref(0) };
   },
   methods: {
     increment() {
       this.Rank = this.Rank + 1;
-      console.log(this.Rank);
+      this.$emit('rank-updated', this.Rank);
     },
     decrement() {
       this.Rank = this.Rank === 0 ? this.Rank : this.Rank - 1;
-      console.log(this.Rank);
+      this.$emit('rank-updated', this.Rank);
     },
     resetRank() {
       this.Rank = 0;
+      this.$emit('rank-updated', this.Rank);
     },
   },
 });

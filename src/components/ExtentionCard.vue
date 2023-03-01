@@ -29,17 +29,19 @@ export default defineComponent({
   data() {
     return { Rank: ref(0) };
   },
+  emits: ['rank-updated'],
   methods: {
     increment() {
       this.Rank = this.Rank + 1;
-      console.log(this.Rank);
+      this.$emit('rank-updated', this.Rank);
     },
     decrement() {
       this.Rank = this.Rank === 0 ? this.Rank : this.Rank - 1;
-      console.log(this.Rank);
+      this.$emit('rank-updated', this.Rank);
     },
     resetRank() {
       this.Rank = 0;
+      this.$emit('rank-updated', this.Rank);
     },
   },
 });
