@@ -19,8 +19,11 @@
           </div>
         </q-card-section>
         <q-card-section class="col-4" vertical>
-          <div class="text-caption text-grey">Cout :</div>
-          <div class="text-caption text-grey">Test à réaliser :</div>
+          <div class="text-caption text-grey">Cout : {{ computeCost() }}</div>
+          <div class="text-caption text-grey">
+            Test à réaliser :
+            {{ SelectedVecteur && SelectedVecteur.Difficulte }}
+          </div>
         </q-card-section>
       </q-card-section>
     </q-card>
@@ -144,6 +147,13 @@ export default defineComponent({
         return;
       }
       this.SelectedExtension.set(extention.Nom, rank);
+    },
+    computeCost() {
+      return this.SelectedType &&
+        this.SelectedVecteur &&
+        Array.from(this.SelectedEffects.values()).length
+        ? 'WIP'
+        : 'Incomplet';
     },
   },
 });
