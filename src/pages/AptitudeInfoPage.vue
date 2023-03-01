@@ -208,12 +208,14 @@ export default defineComponent({
     },
     computeCost() {
       return this.SelectedType &&
-        this.SelectedVecteur &&
         Array.from(this.SelectedEffects.values()).length
-        ? AptitudeService.computeStabilityScore(
-            this.SelectedType,
-            this.SelectedEffects,
-            this.SelectedExtension
+        ? AptitudeService.printAptitudeCost(
+            AptitudeService.computeStabilityScore(
+              this.SelectedType,
+              this.SelectedEffects,
+              this.SelectedExtension
+            ),
+            this.SelectedType.Nom
           )
         : 'Incomplet';
     },

@@ -515,4 +515,24 @@ export class AptitudeService {
     });
     return totalCost;
   }
+
+  static printAptitudeCost(stability: number, type: AptitudeTypeName) {
+    if (stability > 0) return 'Aucun';
+    switch (type) {
+      case AptitudeTypeName.EVOCATION:
+        return `${Math.abs(stability)} point de stress`;
+      case AptitudeTypeName.BENEDICTION:
+        return `${Math.trunc(Math.abs(stability) / 2)} atouts`;
+      case AptitudeTypeName.MALEFICE:
+        return `${Math.trunc(Math.abs(stability) / 2)} menaces`;
+      case AptitudeTypeName.NECROMANCIE:
+        return `${Math.abs(stability)} niveaux de puissance`;
+      case AptitudeTypeName.ENVOUTEMENT:
+        return `${Math.abs(stability)} atouts`;
+      case AptitudeTypeName.MANTRA:
+        return 'Aucun';
+      case AptitudeTypeName.MANTRA:
+        return 'Non caclulé';
+    }
+  }
 }
