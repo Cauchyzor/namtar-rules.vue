@@ -93,39 +93,39 @@ export class AptitudeService {
     {
       Nom: AptitudeTypeName.EVOCATION,
       Description:
-        "L'utilisateur puise dans son endurance pour générer de l'energie.",
+        "L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
       DescriptionDetails:
         'Chaque point de stress investi produit 1 point de stabilité.',
     },
     {
       Nom: AptitudeTypeName.MALEFICE,
       Description:
-        "L'energie du malefice est nouris par les menaces accumulées par la cible.",
+        "L'énergie du maléfice est nourrie par les menaces accumulées par la cible.",
       DescriptionDetails:
-        'Chaque menaces subit par la cible genère 2 point de stabilité.',
+        'Chaque menaces subit par la cible génère 2 points de stabilité.',
     },
     {
       Nom: AptitudeTypeName.NECROMANCIE,
       Description:
-        "L'aptitude est générée avec l'energie residuelle d'un ou plusieurs cadavre ou d'une source d'energie.",
+        "L'aptitude est générée avec l'énergie résiduelle d'un ou plusieurs cadavres ou d'une source d'énergie.",
       DescriptionDetails:
-        'Chaque niveau du cadavre genère 2 point de stabilité. Plusieurs cadavres peuvent être utilisé en additionnant leurs niveaux.',
+        'Chaque niveau du cadavre génère 2 points de stabilité. Plusieurs cadavres peuvent être utilisés en additionnant leurs niveaux.',
     },
     {
       Nom: AptitudeTypeName.ENVOUTEMENT,
       Description:
-        'Corrompt et consume les atouts de la cible pour générer des effets.',
-      DescriptionDetails: 'Chaque atout supprimé genère 1 point de stabilité.',
+        'le lanceur corrompt et consume les atouts de la cible pour générer des effets.',
+      DescriptionDetails: 'Chaque atout supprimé génère 1 point de stabilité.',
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
-      Description: 'Consomme les atouts du groupe pour generer des effets.',
-      DescriptionDetails: 'Chaque atout supprimé genère 2 point de stabilité.',
+      Description: 'Consomme les atouts du groupe pour générer des effets.',
+      DescriptionDetails: 'Chaque atout supprimé génère 2 points de stabilité.',
     },
     {
       Nom: AptitudeTypeName.MANTRA,
-      Description: 'Les effets sont passif.',
-      DescriptionDetails: 'Les mantras sont toujours stable.',
+      Description: 'Les effets sont passifs.',
+      DescriptionDetails: 'Les mantras sont toujours stables.',
     },
   ];
 
@@ -137,31 +137,31 @@ export class AptitudeService {
     },
     {
       Nom: VecteurName.HALUCINATION,
-      Description: 'Les effet sont appliqué à la cible en visuel.',
+      Description: 'Les effets sont appliqués à la cible en visuel.',
       Difficulte: `Opposition entre ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME})`,
     },
     {
       Nom: VecteurName.SOUFFLE,
       Description:
-        "Le lanceur canalyse l'energie dans ses poumons, et applique ces effets dans un cône devant lui sur courte distance",
+        "Le lanceur canalyse l'energie dans ses poumons, et applique des effets dans un cône devant lui sur courte distance",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}) de difficulté dépendant de la distance couverte`,
     },
     {
       Nom: VecteurName.PROJECTILE,
       Description:
-        "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endoit indiqué, et applique ses effets a l'impact avant de s'estomper.",
+        "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endroit indiqué, et applique ses effets à l'impact avant de s'estomper.",
       Difficulte: `Attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}).`,
     },
     {
       Nom: VecteurName.ONDE,
       Description:
-        'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à porté courte autour de lui.',
+        'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 à portée courte, et +1 au DD pour chaque rangs supplémentaires.`,
     },
     {
       Nom: VecteurName.SOURCE_UNIQUEMENT,
       Description:
-        "Les effets sont appliqués à la source de l'aptitude (dépends du type de aptitude). Aucune difficulté sur les cibles dépourvues de volonté, consantentes ou sur vous même.",
+        "Les effets sont appliqués à la source de l'aptitude (dépends du type d'aptitude.). Aucune difficulté sur les cibles dépourvues de volonté, consentantes ou sur vous-même.",
       Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) du lanceur contre ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}).`,
     },
   ];
@@ -169,8 +169,7 @@ export class AptitudeService {
   private static EffectsList: Array<Effet> = [
     {
       Nom: EffetName.ATOUT,
-      Description:
-        'La cible gagne 1 atout (Cummulable) sur sont prochain test.',
+      Description: 'La cible gagne 1 atout (cumulable) sur son prochain test.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -181,7 +180,7 @@ export class AptitudeService {
     {
       Nom: EffetName.CHALEUR,
       Description:
-        'Inflige 2 Dommage (Cummulable) par succes net et par avantage',
+        'Inflige 2 blessures (cumulable) par succès net et par avantage.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -8],
@@ -193,7 +192,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ENTRAVE,
       Description:
-        'La cible perd sa capacité de déplacement si 1 succès. Elle est neutralisée a partir de 2 succès. Elle est complètment paralysé et ne peut pas pensé a partir de 3 succès.',
+        "La cible perd sa capacité de déplacement au premier succès. Elle est neutralisée à partir de 2 succès. Elle est complètement paralysée et n'est plus en capacité de réfléchir à partir de 3 succès.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -203,7 +202,7 @@ export class AptitudeService {
     {
       Nom: EffetName.FORCE,
       Description:
-        'Inflige 1 Dommage (Cummulable) par succes net. Les cibles dont la Vigueur est inferieur au nombre de succès générés sont renversés',
+        'Inflige 1 blessure (cumulable) par succès net. Les cibles dont la Vigueur est inférieure au nombre de succès générés sont renversées.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -213,7 +212,7 @@ export class AptitudeService {
     {
       Nom: EffetName.TELEPATHE,
       Description:
-        'Permet de communiquer brievement avec la cible par la pensée. Chaque succès permet soit de faire durer le liens quelques seconde de plus.',
+        'Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -224,8 +223,7 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.INFORTUNE,
-      Description:
-        'La cible subit 1 Infortune (Cummulable) sur sont prochain test.',
+      Description: 'La cible subit 1 menace (cumulable) sur son prochain test.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -236,7 +234,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ILLUSION,
       Description:
-        "Vous pouvez faire haluciner la cible pour que ses sens lui indique ce que vous voulez (determiné à la creation de l'aptitude). Chaque succès permet de rendre l'illusion plus précise et efficace, et affecte plus de sens.",
+        "Vous pouvez faire halluciner la cible pour que ses sens lui indiquent ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès permet de rendre l'illusion plus précise et efficace, et affecte plus de sens.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -247,7 +245,7 @@ export class AptitudeService {
     {
       Nom: EffetName.SOIN_DE_STRESS,
       Description:
-        "La cible est soigné d'1 point de stress (Cummulable) par succes net",
+        "La cible est soignée d'1 point de stress (cumulable) par succès net.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -258,7 +256,7 @@ export class AptitudeService {
     {
       Nom: EffetName.SOIN,
       Description:
-        'La cible dépense immediatement 1 point de résilience (Cummulable) pour regagner ses PV. Chaque avantage soigne 1 Point de stress.',
+        'La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque avantage soigne 1 point de stress.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -3],
@@ -269,7 +267,7 @@ export class AptitudeService {
     {
       Nom: EffetName.VAMPIRISME,
       Description:
-        "Inflige 1 Dommage (Cummulable) par succes net. Si l'effet est appliqué, le lanceur regagne 1 (Cummulable) point de vitalité",
+        "Inflige 1 blessure (cumulable) par succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) point de vitalité.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -10],
@@ -280,7 +278,7 @@ export class AptitudeService {
     {
       Nom: EffetName.LEVITATION,
       Description:
-        'La cible de gabarit 1 (Cummulable) au maximum est en levitation pendant un bref instant.',
+        'La cible de gabarit 1 (cumulable) au maximum est en lévitation pendant un bref instant.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -6],
@@ -299,7 +297,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.ANGLE_MORT,
       Description:
-        'Vous devez vous situer en dehors du champs de vision de la cible.',
+        'Vous devez vous situer en dehors du champ de vision de la cible.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, 2],
@@ -310,7 +308,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.CATALYSEUR,
       Description:
-        'Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépends de la qualité du cataliseur.',
+        'Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépend de la qualité du catalyseur.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -335,7 +333,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.INCENTATION_RAPIDE,
       Description:
-        "Augmentez 3 fois la difficultée. de l'aptitude. l'aptitude est lancée comme une manoeuvre plutot qu'une action",
+        "Augmentez 3 fois la difficulté de l'aptitude. L'aptitude peut être lancée pendant un déplacement.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -348,7 +346,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.ECHANGE_DE_REGARD,
       Description:
-        "L'aptitude ne necessite pas de mains libres pour reussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
+        "L'aptitude ne nécessite pas de mains libres pour réussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 4],
@@ -360,7 +358,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.ENERGIE_ACTIVATION,
       Description:
-        "L'aptitude n'applique ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
+        "L'aptitude n'applique pas ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 2],
@@ -372,7 +370,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.INGREDIENT,
       Description:
-        "Vous devez consommer un objet possédant une signature energetique. Cet objet est déterminé lors de la conception de l'aptitude. Le gains de stabilité dépend de la puissance de l'objet",
+        "Vous devez consommer un objet possédant une signature énergétique. Cet objet est déterminé lors de la conception de l'aptitude. Le gain de stabilité dépend de la puissance de l'objet.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
@@ -398,7 +396,7 @@ export class AptitudeService {
     {
       Nom: 'Eclat de feu',
       Description:
-        "Vous formez une sphère d'energie et la projetez dans la direction de la cible. A son contact, la cible est brulée et subit des dommages.",
+        "Vous formez une sphère d'énergie et la projetez dans la direction de la cible. À son contact, la cible est brûlée et subit des dommages.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.EVOCATION),
       Vecteur: this.findVecteurByName(VecteurName.PROJECTILE),
@@ -408,7 +406,7 @@ export class AptitudeService {
     {
       Nom: 'Touché guerisseur',
       Description:
-        'Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de Résiliance pour regagner ses PV perdus.',
+        'Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.',
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.BENEDICTION),
       Vecteur: this.findVecteurByName(VecteurName.CONTACT),
@@ -418,7 +416,7 @@ export class AptitudeService {
     {
       Nom: 'Nova mortelle',
       Description:
-        "L'energie résiduelle du cadavre visé s'echape violament et renverse les cibles a portée courtes",
+        "L'énergie résiduelle du cadavre visé s'échappe violemment et renverse les cibles à portée courte.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.NECROMANCIE),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
@@ -428,7 +426,7 @@ export class AptitudeService {
     {
       Nom: 'Mantra: le Berserk',
       Description:
-        "Vous devenez colerique et inconsient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de 'sacrifier' vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ces dès ne sont plus utilisable pour vous defendre jusqu'au prochain tour",
+        "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
@@ -438,7 +436,7 @@ export class AptitudeService {
     {
       Nom: "Mantra: l'échophagique",
       Description:
-        "Vous êtes constament affamé, et ne sembler être rassasié qu'après avoir voler de l'echo auprès d'une source exterieur. Vous vous comportez comme un drogué vis a vis de cette source d'energie. Chaque jours passé sans consommer de l'echo baisse votre santé max de 1 point. Lorsque vous récupez de l'echo, vous pouvez dépenser un point de résiliance, ou dépenser 3 atout pour regagner un point de résiliance.",
+        "Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
@@ -448,7 +446,7 @@ export class AptitudeService {
     {
       Nom: 'Mantra: le distant',
       Description:
-        "Vous n'aimez pas le contact avec les autres, et vous montrez trés irrassible quand vous etimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire",
+        "Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
@@ -457,7 +455,8 @@ export class AptitudeService {
     },
     {
       Nom: 'Morsure de Namtar',
-      Description: '',
+      Description:
+        "Vous drainez l'énergie de la cible touchée pour vous soigner.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.EVOCATION),
       Vecteur: this.findVecteurByName(VecteurName.CONTACT),
