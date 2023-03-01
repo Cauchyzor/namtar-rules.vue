@@ -494,26 +494,25 @@ export class AptitudeService {
     return this.VecteursList;
   }
   static computeStabilityScore(
-    type: AptitudeType,
+    type: AptitudeTypeName,
     effects: Map<EffetName, number>,
     extention: Map<ExtensionEffetName, number>
   ) {
-    if (type.Nom === AptitudeTypeName.MANTRA) {
+    if (type === AptitudeTypeName.MANTRA) {
       return 0;
     }
     let totalCost = 0;
     effects.forEach((rank, effectName) => {
       totalCost +=
         rank *
-        (this.findEffetByName(effectName)?.StabiliteParTypeAptitude.get(
-          type.Nom
-        ) || 999);
+        (this.findEffetByName(effectName)?.StabiliteParTypeAptitude.get(type) ||
+          999);
     });
     extention.forEach((rank, extension) => {
       totalCost +=
         rank *
         (this.findExtensionByName(extension)?.StabiliteParTypeAptitude.get(
-          type.Nom
+          type
         ) || 999);
     });
     return totalCost;

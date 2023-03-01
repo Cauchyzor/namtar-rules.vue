@@ -5,9 +5,7 @@
       <q-card-section horizontal>
         <q-card-section class="col-6" vertical>
           <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
-          <div class="text-caption text-grey">
-            Type : {{ SelectedType && SelectedType.Nom }}
-          </div>
+          <div class="text-caption text-grey">Type : {{ SelectedType }}</div>
           <div class="text-caption text-grey">
             Vecteur : {{ SelectedVecteur && SelectedVecteur.Nom }}
           </div>
@@ -133,17 +131,17 @@ export default defineComponent({
   },
   computed: {
     availableEffects(): Effet[] {
-      return this.SelectedType && this.SelectedType.Nom
+      return this.SelectedType
         ? AptitudeService.getAllEffect().filter((effect: Effet) =>
-            effect.StabiliteParTypeAptitude.has(this.SelectedType.Nom)
+            effect.StabiliteParTypeAptitude.has(this.SelectedType)
           )
         : AptitudeService.getAllEffect();
     },
     availableExtentions(): ExtensionEffet[] {
-      return this.SelectedType && this.SelectedType.Nom
+      return this.SelectedType && this.SelectedType
         ? AptitudeService.getAllExtension().filter(
             (extension: ExtensionEffet) =>
-              extension.StabiliteParTypeAptitude.has(this.SelectedType.Nom)
+              extension.StabiliteParTypeAptitude.has(this.SelectedType)
           )
         : AptitudeService.getAllExtension();
     },
@@ -215,12 +213,12 @@ export default defineComponent({
               this.SelectedEffects,
               this.SelectedExtension
             ),
-            this.SelectedType.Nom
+            this.SelectedType
           )
         : 'Incomplet';
     },
     changeType(type: AptitudeType) {
-      this.SelectedType = type;
+      this.SelectedType = type.Nom;
       this.SelectedEffects.clear();
       this.SelectedExtension.clear();
     },

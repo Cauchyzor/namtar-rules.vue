@@ -56,7 +56,7 @@ export default defineComponent({
   methods: {
     computeAptitudeCost() {
       return AptitudeService.computeStabilityScore(
-        this.Aptitude.Type,
+        this.Aptitude.Type.Nom,
         this.Aptitude.Effets,
         this.Aptitude.ExtensionsEffet
       );
