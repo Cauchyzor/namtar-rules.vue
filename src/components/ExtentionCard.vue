@@ -8,7 +8,13 @@
         <div class="text-caption text-grey">{{ Extension.Description }}</div>
       </q-card-section>
       <q-card-actions vertical class="col-2">
-        <q-btn flat round @click="increment" icon="add"></q-btn>
+        <q-btn
+          flat
+          round
+          @click="increment"
+          :disable="Disabled"
+          icon="add"
+        ></q-btn>
         <q-btn flat round @click="decrement" icon="remove"></q-btn>
       </q-card-actions>
     </q-card-section>
@@ -25,6 +31,7 @@ export default defineComponent({
       type: Object as PropType<ExtensionEffet>,
       required: true,
     },
+    Disabled: { type: Object as PropType<boolean>, required: false },
   },
   emits: ['rank-increased', 'rank-decreased'],
   methods: {

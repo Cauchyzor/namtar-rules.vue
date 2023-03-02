@@ -75,6 +75,7 @@
               :Effet="effet"
               @rank-increased="increaseEffectRank(effet)"
               @rank-decreased="decreaseEffectRank(effet)"
+              :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
             ></EffetItem>
           </div>
         </div>
@@ -91,6 +92,9 @@
               :Extension="extension"
               @rank-increased="increaseExtentionRank(extension)"
               @rank-decreased="decreaseExtentionRank(extension)"
+              :Disabled="
+                !extension.IsCummulable && SelectedExtension.has(extension.Nom)
+              "
             ></ExtensionCard>
           </div>
         </div>

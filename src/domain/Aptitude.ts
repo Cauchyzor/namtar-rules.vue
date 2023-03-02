@@ -192,8 +192,8 @@ export class AptitudeService {
     {
       Nom: EffetName.ENTRAVE,
       Description:
-        "La cible perd sa capacité de déplacement au premier succès. Elle est neutralisée à partir de 2 succès. Elle est complètement paralysée et n'est plus en capacité de réfléchir à partir de 3 succès.",
-      IsCummulable: true,
+        "La cible perd sa capacité de déplacement au premier succès. Elle est neutralisée à partir de 2 succès. Elle est complètement paralysée et n'est plus en capacité de réfléchir à partir de 3 succès. ",
+      IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.NECROMANCIE, -1],
@@ -213,7 +213,7 @@ export class AptitudeService {
       Nom: EffetName.TELEPATHE,
       Description:
         'Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.',
-      IsCummulable: true,
+      IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.BENEDICTION, -1],
@@ -235,7 +235,7 @@ export class AptitudeService {
       Nom: EffetName.ILLUSION,
       Description:
         "Vous pouvez faire halluciner la cible pour que ses sens lui indiquent ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès permet de rendre l'illusion plus précise et efficace, et affecte plus de sens.",
-      IsCummulable: true,
+      IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.MALEFICE, -1],
