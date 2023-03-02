@@ -381,7 +381,7 @@ export class AptitudeService {
       Nom: ExtensionEffetName.CONTRE_COUP,
       Description:
         'Le lanceur subit 1 blessure pour chaque désavantage généré.',
-      IsCummulable: false,
+      IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
         [AptitudeTypeName.BENEDICTION, 1],
