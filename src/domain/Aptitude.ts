@@ -495,7 +495,7 @@ export class AptitudeService {
   static computeStabilityScore(
     type: AptitudeTypeName,
     effects: Map<EffetName, number>,
-    extention: Map<ExtensionEffetName, number>
+    extension: Map<ExtensionEffetName, number>
   ) {
     if (type === AptitudeTypeName.MANTRA) {
       return 0;
@@ -507,7 +507,7 @@ export class AptitudeService {
         (this.findEffetByName(effectName)?.StabiliteParTypeAptitude.get(type) ||
           999);
     });
-    extention.forEach((rank, extension) => {
+    extension.forEach((rank, extension) => {
       totalCost +=
         rank *
         (this.findExtensionByName(extension)?.StabiliteParTypeAptitude.get(

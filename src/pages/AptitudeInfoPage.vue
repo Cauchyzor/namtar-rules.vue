@@ -16,7 +16,7 @@
             Effet : <strong>{{ getSelectedEffectsWithRank() }}</strong>
           </div>
           <div class="text-caption text-grey">
-            Extension : <strong>{{ getSelectedExtentionWithRank() }}</strong>
+            Extension : <strong>{{ getSelectedExtensionWithRank() }}</strong>
           </div>
         </q-card-section>
         <q-card-section class="col-6" vertical>
@@ -84,14 +84,14 @@
       <q-tab-panel name="Extension">
         <div class="row q-col-gutter-sm justify-center">
           <div
-            v-for="extension in availableExtentions"
+            v-for="extension in availableExtensions"
             :key="extension.Nom"
             class="col-12"
           >
             <ExtensionCard
               :Extension="extension"
-              @rank-increased="increaseExtentionRank(extension)"
-              @rank-decreased="decreaseExtentionRank(extension)"
+              @rank-increased="increaseExtensionRank(extension)"
+              @rank-decreased="decreaseExtensionRank(extension)"
               :Disabled="
                 !extension.IsCummulable && SelectedExtension.has(extension.Nom)
               "
@@ -116,7 +116,7 @@ import EffetItem from 'src/components/EffetItem.vue';
 import NamTitle from 'src/components/NamTitle.vue';
 import TypeAptitudeItem from 'src/components/TypeAptitudeCard.vue';
 import VecteurItem from 'src/components/VecteurCard.vue';
-import ExtensionCard from 'src/components/ExtentionCard.vue';
+import ExtensionCard from 'src/components/ExtensionCard.vue';
 
 export default defineComponent({
   name: 'AptitudeInfoPage',
@@ -146,7 +146,7 @@ export default defineComponent({
           )
         : AptitudeService.getAllEffect();
     },
-    availableExtentions(): ExtensionEffet[] {
+    availableExtensions(): ExtensionEffet[] {
       return this.SelectedType && this.SelectedType
         ? AptitudeService.getAllExtension().filter(
             (extension: ExtensionEffet) =>
@@ -181,37 +181,37 @@ export default defineComponent({
       }
       this.SelectedEffects.set(effect.Nom, actualRank - 1);
     },
-    increaseExtentionRank(extention: ExtensionEffet) {
-      if (this.SelectedExtension.has(extention.Nom)) {
-        const actualRank = this.SelectedExtension.get(extention.Nom);
-        this.SelectedExtension.set(extention.Nom, actualRank + 1);
+    increaseExtensionRank(extension: ExtensionEffet) {
+      if (this.SelectedExtension.has(extension.Nom)) {
+        const actualRank = this.SelectedExtension.get(extension.Nom);
+        this.SelectedExtension.set(extension.Nom, actualRank + 1);
         return;
       }
-      this.SelectedExtension.set(extention.Nom, 1);
+      this.SelectedExtension.set(extension.Nom, 1);
     },
-    decreaseExtentionRank(extention: ExtensionEffet) {
-      if (!this.SelectedExtension.has(extention.Nom)) {
+    decreaseExtensionRank(extension: ExtensionEffet) {
+      if (!this.SelectedExtension.has(extension.Nom)) {
         return;
       }
-      const actualRank = this.SelectedExtension.get(extention.Nom);
+      const actualRank = this.SelectedExtension.get(extension.Nom);
       if (actualRank === 1) {
-        this.SelectedExtension.delete(extention.Nom);
+        this.SelectedExtension.delete(extension.Nom);
 
         return;
       }
-      this.SelectedExtension.set(extention.Nom, actualRank - 1);
+      this.SelectedExtension.set(extension.Nom, actualRank - 1);
     },
-    getSelectedExtentionWithRank() {
+    getSelectedExtensionWithRank() {
       return Array.from(this.SelectedExtension.entries())
         .map(([name, rank]) => `${name}(${rank})`)
         .join(' - ');
     },
-    updateExtentionRank(extention: ExtensionEffet, rank: number) {
+    updateExtensionRank(extension: ExtensionEffet, rank: number) {
       if (rank === 0) {
-        this.SelectedExtension.delete(extention.Nom);
+        this.SelectedExtension.delete(extension.Nom);
         return;
       }
-      this.SelectedExtension.set(extention.Nom, rank);
+      this.SelectedExtension.set(extension.Nom, rank);
     },
     computeCost() {
       return this.SelectedType &&

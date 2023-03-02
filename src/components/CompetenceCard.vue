@@ -16,7 +16,8 @@
 import { defineComponent, PropType } from 'vue';
 
 import type { Competence } from 'src/domain/Competence';
-
+// TODO Caracteristiques de bases en badge
+// TODO Revoir le style
 export default defineComponent({
   props: {
     showAttribute: Boolean,
