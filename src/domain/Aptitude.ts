@@ -138,13 +138,13 @@ export class AptitudeService {
     {
       Nom: VecteurName.HALUCINATION,
       Description: 'Les effets sont appliqués à la cible en visuel.',
-      Difficulte: `Opposition entre ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME})`,
+      Difficulte: `Test opposé de ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
     },
     {
       Nom: VecteurName.SOUFFLE,
       Description:
-        "Le lanceur canalyse l'energie dans ses poumons, et applique des effets dans un cône devant lui sur courte distance",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}) de difficulté dépendant de la distance couverte`,
+        "Le lanceur canalyse l'energie dans ses poumons, et applique des effets dans un cône devant lui sur une courte distance",
+      Difficulte: `Attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}).`,
     },
     {
       Nom: VecteurName.PROJECTILE,
@@ -156,7 +156,7 @@ export class AptitudeService {
       Nom: VecteurName.ONDE,
       Description:
         'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 à portée courte, et +1 au DD pour chaque rangs supplémentaires.`,
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
     },
     {
       Nom: VecteurName.SOURCE_UNIQUEMENT,
