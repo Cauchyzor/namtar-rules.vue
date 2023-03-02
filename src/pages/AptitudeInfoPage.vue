@@ -71,12 +71,12 @@
             :key="effet.Nom"
             class="col-12"
           >
-            <EffetItem
+            <EffetCard
               :Effet="effet"
               @rank-increased="increaseEffectRank(effet)"
               @rank-decreased="decreaseEffectRank(effet)"
               :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
-            ></EffetItem>
+            ></EffetCard>
           </div>
         </div>
       </q-tab-panel>
@@ -112,7 +112,7 @@ import {
   ExtensionEffet,
 } from 'src/domain/Aptitude';
 
-import EffetItem from 'src/components/EffetItem.vue';
+import EffetCard from 'src/components/EffetCard.vue';
 import NamTitle from 'src/components/NamTitle.vue';
 import TypeAptitudeItem from 'src/components/TypeAptitudeCard.vue';
 import VecteurItem from 'src/components/VecteurCard.vue';
@@ -124,7 +124,7 @@ export default defineComponent({
     NamTitle,
     TypeAptitudeItem,
     VecteurItem,
-    EffetItem,
+    EffetCard,
     ExtensionCard,
   },
   data() {

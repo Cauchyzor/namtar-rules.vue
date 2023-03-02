@@ -22,11 +22,11 @@
       <p>Augmentez 1 fois le rang de 4 compétences au choix</p>
     </div>
     <q-list separator bordered>
-      <CompetenceCard
+      <CompetenceItem
         v-for="comp in CompetencesList"
         :key="comp.Nom"
         :Competence="comp"
-      ></CompetenceCard>
+      ></CompetenceItem>
     </q-list>
 
     <NamTitle>Selectionner des Capacites</NamTitle>
@@ -51,7 +51,7 @@ import { defineComponent } from 'vue';
 
 import NamTitle from 'src/components/NamTitle.vue';
 import CaracteristiqueCard from 'src/components/CaracteristiqueCard.vue';
-import CompetenceCard from 'src/components/CompetenceCard.vue';
+import CompetenceItem from 'src/components/CompetenceItem.vue';
 import AptitudeItem from 'src/components/AptitudeItem.vue';
 
 import {
@@ -67,7 +67,7 @@ export default defineComponent({
   components: {
     NamTitle,
     CaracteristiqueCard,
-    CompetenceCard,
+    CompetenceItem,
     AptitudeItem,
   },
   data() {
