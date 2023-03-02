@@ -527,7 +527,7 @@ export class AptitudeService {
       case AptitudeTypeName.MALEFICE:
         return `${Math.trunc(Math.abs(stability) / 2)} menaces`;
       case AptitudeTypeName.NECROMANCIE:
-        return `${Math.abs(stability)} niveaux de puissance`;
+        return `${Math.trunc(Math.abs(stability) / 2)} niveaux de puissance`;
       case AptitudeTypeName.ENVOUTEMENT:
         return `${Math.abs(stability)} atouts`;
       case AptitudeTypeName.MANTRA:
