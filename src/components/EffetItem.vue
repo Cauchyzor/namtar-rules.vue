@@ -1,5 +1,5 @@
 <template>
-  <q-card bordered>
+  <q-card bordered :class="Disabled ? 'transparent' : ''">
     <q-card-section horizontal>
       <q-card-section class="col-10" vertical>
         <div class="text-h5 q-mt-sm q-mb-xs">
