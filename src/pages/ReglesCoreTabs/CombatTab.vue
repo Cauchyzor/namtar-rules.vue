@@ -299,13 +299,12 @@
     </p>
     <h5>Immobilisé</h5>
     <p>
-      La vitesse d&#39;une créature immobilisée devient 0 et elle ne peut plus
-      bénéficier de ses éventuels bonus de vitesse. La défense réduite à 1.
+      La vitesse d&#39;une créature immobilisée devient 0. La défense réduite à
+      1.
     </p>
     <h5>Entravé</h5>
     <p>
-      La vitesse de la créature entravée tombe à 0 et elle ne peut plus
-      bénéficier de ses éventuels bonus de vitesse. Le score d'agilité pour
+      La vitesse de la créature entravée tombe à 0. Le score d'agilité pour
       calculé la défense est divisé par deux.
     </p>
     <h5>Empoigné</h5>
