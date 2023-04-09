@@ -140,8 +140,6 @@
     <p>
       Si vous êtes au corps à corps: vous pouvez porter une attaque
       d'opportunité au corps a corps jusque avant de sortir de votre portée.
-      Ceci consomme votre réaction et la cible subit cette attaque avant tout
-      autre actions ou manoeuvre de sa part.
     </p>
     <p>
       Si vous êtes equipé d'une arme à distance ou que vous pouvez utiliser une
@@ -266,9 +264,8 @@
     <h5>Utiliser une aptitude</h5>
     <p>
       Le descriptif de l'aptitude indique si son lancement nécessite
-      d&#39;utiliser une action, une réaction, une broutille ou un mouvement, ou
-      doit être préparé pendant plusieurs minutes ou heures. Leurs effets sont
-      indiqué dans la description de l'aptitude.
+      d&#39;utiliser une action, ou doit être préparé pendant plusieurs minutes
+      ou heures. Leurs effets sont indiqué dans la description de l'aptitude.
     </p>
     <h5>Se cacher</h5>
     <p>
@@ -336,8 +333,8 @@
     </p>
     <h5>Neutralisé</h5>
     <p>
-      Une créature neutralisée est incapable d&#39;effectuer une action ou une
-      réaction. Sa défense est réduite à 1
+      Une créature neutralisée est incapable d&#39;effectuer une action. Sa
+      défense est réduite à 1.
     </p>
     <h5>Neutralisé - Inconscient</h5>
     <p>
@@ -351,7 +348,7 @@
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
     <h5>Surpris</h5>
-    <p>Une créature surprise ne peut entreprendre ni action ni réaction.</p>
+    <p>Une créature surprise ne peut entreprendre aucune action.</p>
   </q-tab-panel>
 </template>
 
