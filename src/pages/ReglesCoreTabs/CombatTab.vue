@@ -19,6 +19,12 @@
       situation, ou tout simplement de survire. Pendant ce laps de temps, on
       suppose que chaque personne effectue une action.
     </p>
+    <p>
+      Chaque personnages et créatures impliqués dans la rencontre ont tous par
+      défaut <strong>une action</strong> mais également
+      <strong>une réaction</strong>.
+    </p>
+    <p>Action possible :</p>
     <ul>
       <li>Action : Se déplacer/Se désengager/Se mettre a couvert</li>
       <li>Action : Se jeter à terre/Se relever</li>
@@ -28,6 +34,18 @@
       <li>Action : Fouiller a son emplacement</li>
       <li>Action : Utiliser une aptitude</li>
       <li>Action : Autre (description libre)</li>
+    </ul>
+
+    <p>
+      Les réactions n'apparaissent que dans certaine situation ou avec certaine
+      aptitude. Le plus communement, une réaction est dépensée quand :
+    </p>
+    <ul>
+      <li>Un béligérant réalise une attaque d'opportunitée.</li>
+      <li>
+        Un béligérant décide de ne pas effectuer l'action qu'il a déterminée à
+        l'étape 1.
+      </li>
     </ul>
 
     <h4>Etape 2 : Les béligérants effectuent leurs jet d'initiative</h4>
@@ -301,8 +319,8 @@
     </p>
     <h5>Entravé</h5>
     <p>
-      La vitesse de la créature entravée tombe à 0. Le score d'agilité pour
-      calculé la défense est divisé par deux.
+      La vitesse de la créature entravée tombe à 0. Sa défense est réduite de 1
+      point.
     </p>
     <h5>Empoigné</h5>
     <p>
@@ -315,8 +333,8 @@
     </p>
     <h5>Neutralisé</h5>
     <p>
-      Une créature neutralisée est incapable d&#39;effectuer une action. Sa
-      défense est réduite à 1.
+      Une créature neutralisée est incapable d&#39;effectuer une action ou une
+      réaction, et sa vitesse est réduite a 0. Sa défense est réduite à 1.
     </p>
     <h5>Inconscient</h5>
     <p>
@@ -330,7 +348,7 @@
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
     <h5>Surpris</h5>
-    <p>Une créature surprise ne peut entreprendre aucune action.</p>
+    <p>Une créature surprise ne peut entreprendre ni action ni reaction.</p>
   </q-tab-panel>
 </template>
 
