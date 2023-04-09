@@ -156,34 +156,11 @@
       d&#39;agilité (Coordination) opposé à un test de vigueur (Athlétisme) ou
       de Agilité (Coordinations) de la cible (celle-ci choisit la
       caractéristique qu&#39;elle préfère utiliser). Si vous réussissez, votre
-      cible se trouve soumise à l&#39;état empoigné. Vous pouvez relâcher votre
-      cible quand vous le voulez et gratuitement (aucune action requise).
+      cible se trouve soumise à l&#39;état empoignée. Vous pouvez relâcher votre
+      cible quand vous le voulez et gratuitement (aucune action requise). Quand
+      vous vous déplacez, vous pouvez traîner ou porter la créature que vous
+      avez empoignée, mais votre vitesse est divisée par deux.
     </p>
-    <ul>
-      <li>
-        <p>
-          <strong>Etat Empoigné</strong> : Une créature empoignée est
-          immobilisé, mais elle peut toujours réaliser cetaines actions (a
-          discretion du MJ). <strong>Sa défense est réduite a 1</strong>.
-        </p>
-        <p>
-          <strong>Échapper à une empoignade</strong> : Une créature empoignée
-          peut utiliser une action pour tenter de s&#39;échapper. Elle doit pour
-          cela réussir un test de vigueur (Athlétisme) ou d&#39;Agilité
-          (Coordinations) en opposition à un test de vigueur (Athlétisme) ou
-          d&#39;agilité (Coordination) que vous faites. Le choix de la
-          compétence à utiliser dépend de comment vous avez réaliser
-          l&#39;empoignade.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Déplacer une créature empoignée</strong> : Quand vous vous
-          déplacez, vous pouvez traîner ou porter la créature que vous avez
-          empoignée, mais votre vitesse est divisée par deux.
-        </p>
-      </li>
-    </ul>
     <h5>Bousculer une créature</h5>
     <p>
       La cible doit être engagée avec vous ou se trouver sur la trajectoire de
@@ -242,8 +219,8 @@
       d&#39;éviter les attaques. Jusqu&#39;au début de votre tour suivant, vous
       <strong
         >augmentez de 1 votre défense au corps à corps et à distance</strong
-      >. Vous perdez les bénéfices de cette action si vous êtes neutralisé ou
-      immobilisé.
+      >. Vous perdez les bénéfices de cette action si vous êtes immobilisé,
+      empoigné, neutralisé ou inconscient.
     </p>
     <h5>Se tenir prêt</h5>
     <p>
@@ -305,10 +282,10 @@
     <NamTitle>Les etats speciaux</NamTitle>
     <h5>À terre / Renversée</h5>
     <p>
-      La créature subit une menacce lors de ses attaques au corps a corps. les
-      assaillant engagés bénéficient d'un atout sur tout leurs jets pour
-      toucher. La creature beneficie d'une couverture face aux attaques à
-      distance dont la qualitée dépend du terrain.
+      La créature subit une menace lors de ses attaques au corps à corps. Les
+      assaillant engagés bénéficient d'un atout sur tout leurs jets pour toucher
+      contre elle. La créature peut éventuellement trouver une couverture contre
+      les attaques à distances.
     </p>
     <h5>Assourdi</h5>
     <p>
@@ -322,7 +299,7 @@
     </p>
     <h5>Immobilisé</h5>
     <p>
-      La vitesse d&#39;une créature empoignée devient 0 et elle ne peut plus
+      La vitesse d&#39;une créature immobilisée devient 0 et elle ne peut plus
       bénéficier de ses éventuels bonus de vitesse. La défense réduite à 1.
     </p>
     <h5>Entravé</h5>
@@ -331,12 +308,21 @@
       bénéficier de ses éventuels bonus de vitesse. Le score d'agilité pour
       calculé la défense est divisé par deux.
     </p>
+    <h5>Empoigné</h5>
+    <p>
+      Une créature empoignée est immobilisée, mais elle peut utiliser une action
+      pour tenter de s&#39;échapper. Elle doit pour cela réussir un test de
+      vigueur (Athlétisme) ou d&#39;Agilité (Coordinations) en opposition à un
+      test de vigueur (Athlétisme) ou d&#39;agilité (Coordination) de celui qui
+      l'empoigne. Le choix de la compétence à utiliser dépend de comment
+      l'empoignade a été réalisée.
+    </p>
     <h5>Neutralisé</h5>
     <p>
       Une créature neutralisée est incapable d&#39;effectuer une action. Sa
       défense est réduite à 1.
     </p>
-    <h5>Neutralisé - Inconscient</h5>
+    <h5>Inconscient</h5>
     <p>
       Une créature inconsciente est neutralisée, lâche tout ce qu&#39;elle
       tenait et tombe au sol. Sa défense est réduite a 0.

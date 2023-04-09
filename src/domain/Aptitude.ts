@@ -192,7 +192,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ENTRAVE,
       Description:
-        "La cible perd sa capacité de déplacement au premier succès. Elle est neutralisée à partir de 2 succès. Elle est complètement paralysée et n'est plus en capacité de réfléchir à partir de 3 succès. ",
+        'La cible perd sa capacité de déplacement au premier succès. Elle est neutralisée à partir de 2 succès. Elle est inconsciente à partir de 3 succès.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
