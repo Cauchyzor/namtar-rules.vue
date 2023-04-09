@@ -123,8 +123,7 @@
 
     <p>Dé positif : compétence + caractéristique</p>
     <p>
-      Dé négatif : distance (+1DD par niveau de porté) + protection (equipement,
-      bouclier ou cachette partielle)
+      Dé négatif : distance (+1DD par niveau de porté) + equipement + couverture
     </p>
     <p>
       La cible doit être en parti découverte. Si elle a attaquée a son dernier
@@ -176,18 +175,16 @@
     </p>
     <h5>Se mettre a couvert</h5>
     <p>
-      Les murs, les arbres, les créatures, et d&#39;autres obstacles constituent
-      pendant un combat autant d&#39;abris potentiels qui rendent une cible plus
-      difficile à blesser. Une cible ne bénéficie d&#39;un abri que si une
-      attaque ou un autre effet provient depuis l&#39;autre côté de ce qui sert
-      d&#39;abri.
+      Vous profitez d'un abris adjacent à vous. Les murs, les arbres, les
+      créatures, et d&#39;autres obstacles constituent pendant un combat autant
+      d&#39;abris potentiels qui rendent une cible plus difficile à blesser.
     </p>
     <p>
       <strong
-        >En fonction de la qualité de l&#39;abri, le MJ peut décider
-        d&#39;augmenter le DD pour toucher</strong
-      >. Par exemple, l&#39;abris d&#39;un bouclier de fortune donne +1DD au jet
-      d&#39;attaque a distance qui vise le porteur.
+        >En fonction de la qualité de l&#39;abri, le MJ peut décider d'ajouter
+        entre 1 et 3 dés négatifs sur le jet d'attaque de l'assaillant.</strong
+      >. Par exemple, l&#39;abris d&#39;un bouclier de fortune ajoute 1 dé au
+      jet d&#39;attaque à distance qui vise le porteur.
     </p>
     <p>
       <strong
