@@ -119,6 +119,16 @@
         </p>
       </li>
     </ol>
+    <h5>Réagir plutot qu'agir</h5>
+    <p>
+      Dans les cas ou un béligerant effectue un mauvais jet d'initiative, il
+      peut se retrouver dans une situation où il prefère s'interomptre : il
+      n'effectue pas l'action qu'il avait planifié, et
+      <strong>décide d'effectuer une autre action</strong> en réponse à un
+      évenements qui s'est déroulé pendant le tour. Pour illustrer ce
+      changement, <strong>il perd alors sa réaction</strong>.
+    </p>
+
     <h4>Les Actions en détail</h4>
     <h5>Attaques au corps-à-corps</h5>
     <p>Dé positif : compétence + caractéristique</p>
