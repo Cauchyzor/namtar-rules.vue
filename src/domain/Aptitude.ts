@@ -3,11 +3,12 @@
 import { CaracteritiqueName } from './Caracteristique';
 import { CompetenceName } from './Competence';
 
-// TODO Augmentation de la défense ?
+// TODO Effet : Augmentation de la défense ?
 // TODO Stepper pour creer une aptitude
 // TODO Effet : perte de la réaction
 // TODO Extention : consomme une réaction plutot qu'une action ?
 // TODO Type d'aptitude : la frappe (attaque au corps a corps améliorée)
+// TODO Type d'aptitude : Contre-attaque (Capitalise sur les menaces généré par une attaque enemie)
 export type Aptitude = {
   Nom: string;
   Description: string;
