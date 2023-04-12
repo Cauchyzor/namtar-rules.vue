@@ -59,14 +59,29 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable to="/aptitude" exact>
-          <q-item-section avatar>
-            <q-icon name="graphic_eq" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Aptitude</q-item-label>
-          </q-item-section>
-        </q-item>
+        <q-expansion-item
+          icon="graphic_eq"
+          label="Aptitudes"
+          :content-inset-level="1"
+        >
+          <q-item clickable to="/aptitude" exact>
+            <q-item-section avatar>
+              <q-icon name="graphic_eq" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Création d'aptitude</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/catalog" exact>
+            <q-item-section avatar>
+              <q-icon name="graphic_eq" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Catalogue</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
 
         <q-expansion-item
           icon="settings"

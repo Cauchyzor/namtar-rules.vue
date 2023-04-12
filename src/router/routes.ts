@@ -57,9 +57,14 @@ const routes: RouteRecordRaw[] = [
         component: () => import('src/pages/VehiculesPage.vue'),
       },
       {
-        name: 'Aptitude',
+        name: 'Aptitude Creation',
         path: '/aptitude',
         component: () => import('src/pages/AptitudeInfoPage.vue'),
+      },
+      {
+        name: 'Aptitude Catalogue',
+        path: '/catalog',
+        component: () => import('src/pages/AptitudesCataloguePage.vue'),
       },
     ],
   },
