@@ -1,9 +1,19 @@
 <template>
   <q-item clickable v-ripple @click="openDetail = true">
-    <q-item-section top avatar>
-      <q-avatar rounded>
-        <img :src="Aptitude.Image || 'src/assets/icon/icon.png'" />
-      </q-avatar>
+    <!-- <q-card-section horizontal>
+      <q-img src="~assets/apt/apt-benediction-default.jpg" fit="scale-down">
+        <div class="absolute-bottom text-h6">
+          {{ Aptitude.Nom }}
+        </div>
+      </q-img>
+
+      <q-card-section>
+        {{ Aptitude.Description }}
+      </q-card-section>
+    </q-card-section> -->
+
+    <q-item-section thumbnail>
+      <img src="~assets/apt/apt-benediction-default.jpg" fit="scale-down" />
     </q-item-section>
 
     <q-item-section>
