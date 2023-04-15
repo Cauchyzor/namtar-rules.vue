@@ -1,9 +1,9 @@
 <template>
   <q-card
-    bordered
+    flat
     v-ripple
     @click="$emit('is-selected')"
-    class="cursor-pointer q-hoverable"
+    class="cursor-pointer q-hoverable bg-secondary"
   >
     <q-card-section vertical>
       <div class="text-h5 q-mt-sm q-mb-xs">

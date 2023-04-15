@@ -1,5 +1,5 @@
 <template>
-  <q-card>
+  <q-card flat class="bg-secondary">
     <q-card-section vertical>
       <div class="text-overline">
         Encombrement : {{ Arme.Encombrement }} - Prix :
