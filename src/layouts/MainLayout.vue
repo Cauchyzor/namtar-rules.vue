@@ -1,26 +1,38 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+  <q-layout view="hHh Lpr lFf">
+    <q-header class="bg-secondary">
+      <div class="row">
+        <q-toolbar class="col-6">
+          <q-btn
+            flat
+            dense
+            round
+            icon="menu"
+            aria-label="Menu"
+            @click="toggleLeftDrawer"
+          />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+          <q-toolbar-title class="text-uppercase">Namtar rules</q-toolbar-title>
+        </q-toolbar>
+        <q-toolbar class="col-6">
+          <q-input
+            bg-color="accent"
+            color="white"
+            standout
+            v-model="text"
+            label="Not imlemented yet"
+            dense
+          >
+            <template v-slot:append>
+              <q-icon name="search"></q-icon>
+            </template>
+          </q-input>
+        </q-toolbar>
+      </div>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="leftDrawerOpen" show-if-above class="bg-secondary">
       <q-list>
-        <q-item-label header> <NamTitle>Namtar rules</NamTitle> </q-item-label>
-
         <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
           <q-item clickable to="/regles" exact>
             <q-item-section avatar>
@@ -118,16 +130,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
-
 export default defineComponent({
   name: 'MainLayout',
-  components: {
-    NamTitle,
-  },
   data() {
     return {
       leftDrawerOpen: false,
+      text: '',
     };
   },
 
@@ -138,3 +146,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.q-toolbar__title {
+  font-family: 'Anurati';
+}
+</style>
