@@ -43,6 +43,7 @@ export type Vecteur = {
 };
 
 enum VecteurName {
+  ALTERATION_OBJET = "Altération d'objet",
   CONTACT = 'Contact',
   HALUCINATION = 'Halucination',
   SOUFFLE = 'Souffle',
@@ -138,13 +139,6 @@ export class AptitudeService {
         'Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.',
     },
     {
-      Nom: AptitudeTypeName.MANTRA,
-      Description:
-        'Un mantra est une modification permanante de la signature namtarique de la cible pour apprécier certaine caractéristiques. Les effets sont passifs.',
-      DescriptionDetails:
-        'Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.',
-    },
-    {
       Nom: AptitudeTypeName.CYTOMANCIE,
       Description:
         "L'énergie sombre est stockée dans des cellules sacrifiées par le lanceur. Le lanceur sacrifie des PV pour générer ses effets",
@@ -153,6 +147,12 @@ export class AptitudeService {
   ];
 
   private static VecteursList: Array<Vecteur> = [
+    {
+      Nom: VecteurName.ALTERATION_OBJET,
+      Description:
+        "Les effets sont prisonnier d'un objet au contact du lanceur. Le lanceur peut choisir de relacher les effets à sa guise. Sinon, ils sont libérés quelques secondes après que l'objet est été relaché.",
+      Difficulte: `Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3`,
+    },
     {
       Nom: VecteurName.CONTACT,
       Description: 'Les effets sont appliqués à la cible touchée.',
