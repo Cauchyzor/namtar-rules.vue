@@ -211,6 +211,8 @@ export class AptitudeService {
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
+        [AptitudeTypeName.MALEFICE, -2],
+        [AptitudeTypeName.ENVOUTEMENT, -1],
         [AptitudeTypeName.NECROMANCIE, -1],
       ]),
     },
