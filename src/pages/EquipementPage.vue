@@ -26,13 +26,14 @@
     </p>
     <h4>Équipement quotidien</h4>
 
-    <div class="row q-col-gutter-sm justify-center">
+    <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="equipementItem in EquipementItemsList"
         :key="equipementItem.Nom"
-        class="col-12 col-md-auto"
+        class="col-12 col-md-4 col-xl-3"
       >
         <EquipementCard
+          style="height: 100%"
           :key="equipementItem.Nom"
           :EquipementItem="equipementItem"
         ></EquipementCard>
@@ -66,24 +67,28 @@
         d&#39;accès.</strong
       >
     </p>
-    <div class="row q-col-gutter-sm justify-center">
+    <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="arme in ArmeItemsList"
         :key="arme.Nom"
-        class="col-12 col-md-auto"
+        class="col-12 col-md-4 col-xl-3"
       >
-        <ArmeCard :key="arme.Nom" :Arme="arme"></ArmeCard>
+        <ArmeCard style="height: 100%" :key="arme.Nom" :Arme="arme"></ArmeCard>
       </div>
     </div>
 
     <h4>Armures</h4>
-    <div class="row q-col-gutter-sm justify-center">
+    <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="armure in ArmureItemsList"
         :key="armure.Nom"
-        class="col-12 col-md-auto"
+        class="col-12 col-md-4 col-xl-3"
       >
-        <ArmureCard :key="armure.Nom" :Armure="armure"></ArmureCard>
+        <ArmureCard
+          style="height: 100%"
+          :key="armure.Nom"
+          :Armure="armure"
+        ></ArmureCard>
       </div>
     </div>
   </q-page>
