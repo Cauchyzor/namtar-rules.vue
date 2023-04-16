@@ -59,6 +59,7 @@ export type Effet = {
 enum EffetName {
   ATOUT = 'Atout',
   CHALEUR = 'Chaleur',
+  DEBILITANT = 'Débilitant',
   ENTRAVE = 'Entrave',
   FORCE = 'Force',
   LEVITATION = 'Levitation',
@@ -189,6 +190,17 @@ export class AptitudeService {
         [AptitudeTypeName.ENVOUTEMENT, -8],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.MALEFICE, -3],
+        [AptitudeTypeName.NECROMANCIE, -1],
+      ]),
+    },
+    {
+      Nom: EffetName.DEBILITANT,
+      Description: 'La cible perd sa reaction',
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.ENVOUTEMENT, -2],
+        [AptitudeTypeName.EVOCATION, -2],
+        [AptitudeTypeName.MALEFICE, -2],
         [AptitudeTypeName.NECROMANCIE, -1],
       ]),
     },
