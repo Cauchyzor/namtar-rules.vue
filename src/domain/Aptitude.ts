@@ -32,6 +32,7 @@ enum AptitudeTypeName {
   ENVOUTEMENT = 'Envoutement',
   BENEDICTION = 'Bénédiction',
   MANTRA = 'Mantra',
+  ETHNOTRAIT = 'Ethnotrait'
 }
 
 export type Vecteur = {
@@ -97,39 +98,49 @@ export class AptitudeService {
     {
       Nom: AptitudeTypeName.EVOCATION,
       Description:
-        "L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
+        "La conversion de l'energie sombre par le fluide est activée par l'utilisateur qui utilise son corps comme catalyseur. L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
       DescriptionDetails:
         'Chaque point de stress investi produit 1 point de stabilité.',
     },
     {
       Nom: AptitudeTypeName.MALEFICE,
       Description:
-        "L'énergie du maléfice est nourrie par les menaces accumulées par la cible.",
+        "L'utilisateur se sert des menace de la cible pour corompre la signature de la cible qui devient le catalyseur d'une matérialisation néfaste de l'énergie sombre. La puissance du maléfice est nourrie par les menaces accumulées par la cible.",
       DescriptionDetails:
-        'Chaque menaces subit par la cible génère 2 points de stabilité.',
+        'Chaque menaces subit par la cible génère 2 points de stabilité. Les menaces ne sont pas consommées.',
     },
     {
       Nom: AptitudeTypeName.NECROMANCIE,
       Description:
-        "L'aptitude est générée avec l'énergie résiduelle d'un ou plusieurs cadavres ou d'une source d'énergie.",
+        "La force vitale résidelle d'un cadavre est utilisée comme catalyseur de l'énergie sombre. La qualitée de l'individu et le nombre d'individu renforce l'apptitude.",
       DescriptionDetails:
         'Chaque niveau du cadavre génère 2 points de stabilité. Plusieurs cadavres peuvent être utilisés en additionnant leurs niveaux.',
     },
     {
       Nom: AptitudeTypeName.ENVOUTEMENT,
       Description:
-        'le lanceur corrompt et consume les atouts de la cible pour générer des effets.',
+        "Le lanceur utilise la concordance namtarique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est déteriorée dans le processus. L'apptitude consume les atouts de la cible pour générer des effets.",
       DescriptionDetails: 'Chaque atout supprimé génère 1 point de stabilité.',
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
-      Description: 'Consomme les atouts du groupe pour générer des effets.',
-      DescriptionDetails: 'Chaque atout supprimé génère 2 points de stabilité.',
+      Description:
+        "Le lanceur utilise la concordance namtarique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe pour générer des effets.",
+      DescriptionDetails: 'Chaque atout consommé génère 2 points de stabilité.',
     },
     {
       Nom: AptitudeTypeName.MANTRA,
-      Description: 'Les effets sont passifs.',
-      DescriptionDetails: 'Les mantras sont toujours stables.',
+      Description:
+        'Un mantra est une modification permanante de la signature namtarique de la cible pour apprécier certaine caractéristiques. Les effets sont passifs.',
+      DescriptionDetails:
+        'Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.',
+    },
+    {
+      Nom: AptitudeTypeName.MANTRA,
+      Description:
+        'Un mantra est une modification permanante de la signature namtarique de la cible pour apprécier certaine caractéristiques. Les effets sont passifs.',
+      DescriptionDetails:
+        'Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.',
     },
   ];
 
