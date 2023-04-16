@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <NamTitle>Equipement et Marché</NamTitle>
+    <h3 class="text-center">Equipement et Marché</h3>
     <!-- TODO Faire des onglets -->
     <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
     <h4>Concepts</h4>
@@ -92,7 +92,6 @@
 <script lang="ts">
 import { defineComponent } from '@vue/runtime-core';
 
-import NamTitle from 'src/components/NamTitle.vue';
 import EquipementCard from 'src/components/EquipementCard.vue';
 import ArmeCard from 'src/components/ArmeCard.vue';
 import ArmureCard from 'src/components/ArmureCard.vue';
@@ -103,7 +102,6 @@ import { ArmesService } from 'src/domain/Armes';
 
 export default defineComponent({
   components: {
-    NamTitle,
     EquipementCard,
     ArmeCard,
     ArmureCard,

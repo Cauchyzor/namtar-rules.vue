@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <NamTitle>Aptitude</NamTitle>
+    <h3 class="text-center">Aptitude</h3>
     <q-card class="bg-secondary" flat>
       <q-card-section horizontal>
         <q-card-section class="col-6" vertical>
@@ -113,7 +113,6 @@ import {
 } from 'src/domain/Aptitude';
 
 import EffetCard from 'src/components/EffetCard.vue';
-import NamTitle from 'src/components/NamTitle.vue';
 import TypeAptitudeItem from 'src/components/TypeAptitudeCard.vue';
 import VecteurItem from 'src/components/VecteurCard.vue';
 import ExtensionCard from 'src/components/ExtensionCard.vue';
@@ -121,7 +120,6 @@ import ExtensionCard from 'src/components/ExtensionCard.vue';
 export default defineComponent({
   name: 'AptitudeInfoPage',
   components: {
-    NamTitle,
     TypeAptitudeItem,
     VecteurItem,
     EffetCard,

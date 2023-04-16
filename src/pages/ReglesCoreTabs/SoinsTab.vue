@@ -1,6 +1,6 @@
 <template>
   <q-tab-panel name="Soins">
-    <NamTitle>Repos et guerison</NamTitle>
+    <h3 class="text-center">Repos et guerison</h3>
     <h3>Soins</h3>
     <h4>Résilience</h4>
     <p>
@@ -99,14 +99,9 @@
 </template>
 
 <script lang="ts">
-import NamTitle from 'src/components/NamTitle.vue';
 import { defineComponent } from '@vue/runtime-core';
 
-export default defineComponent({
-  components: {
-    NamTitle,
-  },
-});
+export default defineComponent({});
 </script>
 
 <style></style>

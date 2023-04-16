@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <NamTitle>Gain de niveau</NamTitle>
+    <h3 class="text-center">Gain de niveau</h3>
 
     <h3>Progressions Classique</h3>
     <p>Lors de vos gains de niveaux, vous avec deux possibilitée :</p>
@@ -56,12 +56,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
 export default defineComponent({
   name: 'PersonnagePage',
-  components: {
-    NamTitle,
-  },
 });
 </script>
 <style scoped></style>

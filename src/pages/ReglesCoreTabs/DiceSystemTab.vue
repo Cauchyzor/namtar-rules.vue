@@ -1,6 +1,6 @@
 <template>
   <q-tab-panel name="DiceSystem">
-    <NamTitle>Systeme de des</NamTitle>
+    <h3 class="text-center">Systeme de des</h3>
     <h4>Succes et Echecs</h4>
     <p>
       Les tests sont résolus en opposant les résultats d'un pool de dé
@@ -37,7 +37,7 @@
       déclencher leurs désavantages.
     </p>
 
-    <NamTitle>Test de competence</NamTitle>
+    <h3 class="text-center">Test de competence</h3>
     <p>
       Pour chaque test de compétence, le MJ décide da difficulté de la tâche à
       accomplir, qui est représentée par un
@@ -90,7 +90,7 @@
       valeur de la caractéristique et celle de votre rang de maîtrise de la
       compétence. Interprétez alors le résultat.
     </p>
-    <NamTitle>Opposition</NamTitle>
+    <h3 class="text-center">Opposition</h3>
     <p>
       Les deux créatures qui s'opposent font un test de compétence correspondant
       à l'action qu'ils tentent de réaliser. Ils appliquent tous les bonus et
@@ -100,7 +100,7 @@
     <p>
       Si les résultats des tests sont identiques, la situation n'évolue pas.
     </p>
-    <NamTitle>Tests de groupe</NamTitle>
+    <h3 class="text-center">Tests de groupe</h3>
     <p>
       Pour faire un test de compétence de groupe, tous les membres du groupe
       concerné doivent faire un test de compétence. Pour savoir si le test est
@@ -113,13 +113,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
-
-export default defineComponent({
-  components: {
-    NamTitle,
-  },
-});
+export default defineComponent({});
 </script>
 
 <style></style>

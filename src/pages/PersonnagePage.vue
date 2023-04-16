@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <NamTitle>Determiner les caracteritiques</NamTitle>
+    <h3 class="text-center">Determiner les caracteritiques</h3>
     <div>
       <p>
         Répartissez 12 points dans 4 caracteristiques, au maximum 5 et minimum
@@ -17,7 +17,7 @@
         @click="selectCard(carac.Nom)"
       />
     </div>
-    <NamTitle>Choisir des Competences</NamTitle>
+    <h3 class="text-center">Choisir des Competences</h3>
     <div>
       <p>Augmentez 1 fois le rang de 4 compétences au choix</p>
     </div>
@@ -29,7 +29,7 @@
       ></CompetenceItem>
     </q-list>
 
-    <NamTitle>Selectionner des Capacites</NamTitle>
+    <h3 class="text-center">Selectionner des Capacites</h3>
     <div class="ion-padding-vertical ion-text-center">
       <p>
         Choisir les 3 Capacitées qui seront connues par votre personnage au
@@ -49,7 +49,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
 import CaracteristiqueCard from 'src/components/CaracteristiqueCard.vue';
 import CompetenceItem from 'src/components/CompetenceItem.vue';
 import AptitudeItem from 'src/components/AptitudeItem.vue';
@@ -65,7 +64,6 @@ import { AptitudeService } from 'src/domain/Aptitude';
 export default defineComponent({
   name: 'PersonnagePage',
   components: {
-    NamTitle,
     CaracteristiqueCard,
     CompetenceItem,
     AptitudeItem,

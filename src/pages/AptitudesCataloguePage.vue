@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <NamTitle>Liste des Aptitudes</NamTitle>
+    <h3 class="text-center">Liste des Aptitudes</h3>
     <q-list separator>
       <AptitudeItem
         v-for="Aptitude in AptitudeList"
@@ -13,7 +13,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
 import AptitudeItem from 'src/components/AptitudeItem.vue';
 
 import {
@@ -26,7 +25,6 @@ import { AptitudeService } from 'src/domain/Aptitude';
 export default defineComponent({
   name: 'PersonnagePage',
   components: {
-    NamTitle,
     AptitudeItem,
   },
   data() {

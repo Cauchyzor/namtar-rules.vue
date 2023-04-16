@@ -1,6 +1,6 @@
 <template>
   <q-tab-panel name="Combat">
-    <NamTitle>Combats et conflits</NamTitle>
+    <h3 class="text-center">Combats et conflits</h3>
     <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
     <p>Les combats ce déroulent selon la boucle suivante :</p>
     <ul>
@@ -304,7 +304,7 @@
       chances de réussite de votre action et de vous demander, s&#39;il le
       souhaite, un lancer de dés.
     </p>
-    <NamTitle>Les etats speciaux</NamTitle>
+    <h3 class="text-center">Les etats speciaux</h3>
     <h5>À terre / Renversée</h5>
     <p>
       La créature subit une menace lors de ses attaques au corps à corps. Les
@@ -365,13 +365,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
-
-export default defineComponent({
-  components: {
-    NamTitle,
-  },
-});
+export default defineComponent({});
 </script>
 
 <style></style>

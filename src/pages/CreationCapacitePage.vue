@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <NamTitle>Outil de creation de capacité</NamTitle>
+    <h3 class="text-center">Outil de creation de capacité</h3>
     <!-- TODO : Stepper -->
     <!-- Tableau des Types de Capacitée + Selection-->
     <!-- Tableau des Vecteurs + Selection-->
@@ -11,12 +11,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import NamTitle from 'src/components/NamTitle.vue';
-
 export default defineComponent({
   name: 'CreationAptitudePage',
-  components: {
-    NamTitle,
-  },
 });
 </script>
