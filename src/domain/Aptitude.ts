@@ -3,12 +3,13 @@
 import { CaracteritiqueName } from './Caracteristique';
 import { CompetenceName } from './Competence';
 
-// TODO Effet : Augmentation de la défense ?
+// TODO IMPORTANT : Ne pas faire que des apptitude liéee au fluide : exemple Kermit la grenouille.
 // TODO Stepper pour creer une aptitude
-// TODO Effet : perte de la réaction
-// TODO Extention : consomme une réaction plutot qu'une action ?
-// TODO Type d'aptitude : la frappe (attaque au corps a corps améliorée)
 // TODO Type d'aptitude : Contre-attaque (Capitalise sur les menaces généré par une attaque enemie)
+// TODO Vecteur : Enchantement => On a des effets sur des objet
+// TODO Effet : Mega Saut
+// TODO Ethnotraits (en plus des aptitudes)
+
 export type Aptitude = {
   Nom: string;
   Description: string;
@@ -32,7 +33,7 @@ enum AptitudeTypeName {
   ENVOUTEMENT = 'Envoutement',
   BENEDICTION = 'Bénédiction',
   MANTRA = 'Mantra',
-  ETHNOTRAIT = 'Ethnotrait'
+  CYTOMANCIE = 'Cytomancie',
 }
 
 export type Vecteur = {
@@ -59,13 +60,14 @@ export type Effet = {
 
 enum EffetName {
   ATOUT = 'Atout',
+  BOUCLIER = 'Bouclier',
   CHALEUR = 'Chaleur',
   DEBILITANT = 'Débilitant',
   ENTRAVE = 'Entrave',
   FORCE = 'Force',
   LEVITATION = 'Levitation',
   ILLUSION = 'Illusion',
-  INFORTUNE = 'Infortune',
+  OBSTRUCTION = 'Obstruction',
   SOIN_DE_STRESS = 'Soin de stress',
   TELEPATHE = 'Télépathe',
   SOIN = 'Soin',
@@ -142,13 +144,19 @@ export class AptitudeService {
       DescriptionDetails:
         'Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.',
     },
+    {
+      Nom: AptitudeTypeName.CYTOMANCIE,
+      Description:
+        "L'énergie sombre est stockée dans des cellules sacrifiées par le lanceur. Le lanceur sacrifie des PV pour générer ses effets",
+      DescriptionDetails: 'Chaque PV sacrifié genère 1 point de stabilité.',
+    },
   ];
 
   private static VecteursList: Array<Vecteur> = [
     {
       Nom: VecteurName.CONTACT,
       Description: 'Les effets sont appliqués à la cible touchée.',
-      Difficulte: `Attaque engagée de ${CompetenceName.PUGILAT} (${CaracteritiqueName.INTELLIGENCE})`,
+      Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
     },
     {
       Nom: VecteurName.HALUCINATION,
@@ -184,12 +192,26 @@ export class AptitudeService {
   private static EffectsList: Array<Effet> = [
     {
       Nom: EffetName.ATOUT,
-      Description: 'La cible gagne 1 atout (cumulable) sur son prochain test.',
+      Description:
+        "La cible gagne 1 atout (cumulable) sur son prochain test. S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -2],
+        [AptitudeTypeName.CYTOMANCIE, -2],
+      ]),
+    },
+    {
+      Nom: EffetName.BOUCLIER,
+      Description:
+        "La cible gagne augmente sa défense de 1 point. S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      IsCummulable: true,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.BENEDICTION, -6],
+        [AptitudeTypeName.EVOCATION, -8],
+        [AptitudeTypeName.NECROMANCIE, -4],
+        [AptitudeTypeName.CYTOMANCIE, -4],
       ]),
     },
     {
@@ -202,17 +224,19 @@ export class AptitudeService {
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.MALEFICE, -3],
         [AptitudeTypeName.NECROMANCIE, -1],
+        [AptitudeTypeName.CYTOMANCIE, -2],
       ]),
     },
     {
       Nom: EffetName.DEBILITANT,
-      Description: 'La cible perd sa reaction',
+      Description: 'La cible perd sa prochaine reaction.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.ENVOUTEMENT, -2],
-        [AptitudeTypeName.EVOCATION, -2],
-        [AptitudeTypeName.MALEFICE, -2],
-        [AptitudeTypeName.NECROMANCIE, -1],
+        [AptitudeTypeName.ENVOUTEMENT, -4],
+        [AptitudeTypeName.EVOCATION, -4],
+        [AptitudeTypeName.MALEFICE, -4],
+        [AptitudeTypeName.NECROMANCIE, -2],
+        [AptitudeTypeName.CYTOMANCIE, -4],
       ]),
     },
     {
@@ -225,16 +249,18 @@ export class AptitudeService {
         [AptitudeTypeName.MALEFICE, -2],
         [AptitudeTypeName.ENVOUTEMENT, -1],
         [AptitudeTypeName.NECROMANCIE, -1],
+        [AptitudeTypeName.CYTOMANCIE, -2],
       ]),
     },
     {
       Nom: EffetName.FORCE,
       Description:
-        'Inflige 1 blessure (cumulable) par succès net. Les cibles dont la Vigueur est inférieure au nombre de succès générés sont renversées.',
+        'Inflige 1 blessure (cumulable) par succès net. Les cibles dont la vigueur est inférieure au nombre de succès générés sont renversées.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.NECROMANCIE, -1],
+        [AptitudeTypeName.CYTOMANCIE, -1],
       ]),
     },
     {
@@ -250,13 +276,14 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: EffetName.INFORTUNE,
+      Nom: EffetName.OBSTRUCTION,
       Description: 'La cible subit 1 menace (cumulable) sur son prochain test.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.MALEFICE, -1],
         [AptitudeTypeName.ENVOUTEMENT, -2],
+        [AptitudeTypeName.CYTOMANCIE, -2],
       ]),
     },
     {
@@ -279,6 +306,7 @@ export class AptitudeService {
         [AptitudeTypeName.BENEDICTION, -2],
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.NECROMANCIE, -2],
+        [AptitudeTypeName.CYTOMANCIE, -2],
       ]),
     },
     {
@@ -290,17 +318,19 @@ export class AptitudeService {
         [AptitudeTypeName.BENEDICTION, -3],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -3],
+        [AptitudeTypeName.CYTOMANCIE, -''],
       ]),
     },
     {
       Nom: EffetName.VAMPIRISME,
       Description:
-        "Inflige 1 blessure (cumulable) par succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) point de vitalité.",
+        "Inflige 1 blessure (cumulable) par succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) PV.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -10],
         [AptitudeTypeName.EVOCATION, -6],
         [AptitudeTypeName.MALEFICE, -4],
+        [AptitudeTypeName.CYTOMANCIE, -2],
       ]),
     },
     {
@@ -310,6 +340,7 @@ export class AptitudeService {
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -6],
+        [AptitudeTypeName.CYTOMANCIE, -6],
         [AptitudeTypeName.BENEDICTION, -6],
       ]),
     },
@@ -330,6 +361,7 @@ export class AptitudeService {
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, 2],
         [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
@@ -339,11 +371,12 @@ export class AptitudeService {
         'Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépend de la qualité du catalyseur.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, 1],
-        [AptitudeTypeName.ENVOUTEMENT, 2],
-        [AptitudeTypeName.EVOCATION, 1],
-        [AptitudeTypeName.MALEFICE, 2],
-        [AptitudeTypeName.NECROMANCIE, 2],
+        [AptitudeTypeName.BENEDICTION, 0],
+        [AptitudeTypeName.ENVOUTEMENT, 0],
+        [AptitudeTypeName.EVOCATION, 0],
+        [AptitudeTypeName.CYTOMANCIE, 0],
+        [AptitudeTypeName.MALEFICE, 0],
+        [AptitudeTypeName.NECROMANCIE, 0],
       ]),
     },
     {
@@ -354,6 +387,7 @@ export class AptitudeService {
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
         [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
       ]),
@@ -367,6 +401,7 @@ export class AptitudeService {
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
         [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
       ]),
@@ -379,7 +414,6 @@ export class AptitudeService {
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 4],
         [AptitudeTypeName.ENVOUTEMENT, 2],
-        [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
@@ -391,6 +425,7 @@ export class AptitudeService {
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 2],
         [AptitudeTypeName.ENVOUTEMENT, 2],
+        [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.MALEFICE, 2],
       ]),
@@ -402,7 +437,7 @@ export class AptitudeService {
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
-        [AptitudeTypeName.BENEDICTION, 1],
+        [AptitudeTypeName.CYTOMANCIE, 1],
       ]),
     },
     {
@@ -412,6 +447,7 @@ export class AptitudeService {
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
