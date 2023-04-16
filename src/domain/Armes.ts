@@ -7,6 +7,19 @@ export interface ArmeItem extends EquipementItem {
   Competence: CompetenceName;
 }
 
+export enum NiveauPorte {
+  ENGAGE = 'Engagé',
+  COURTE = 'Courte',
+  MOYENNE = 'Moyenne',
+  LONGUE = 'Longue',
+  EXTREME = 'Extrème',
+}
+
+export interface ArmeDistanceItem extends ArmeItem {
+  Munition: string;
+  PorteMax: NiveauPorte;
+}
+// TODO Ajouter Arme a feu
 export class ArmesService {
   private static ARMES: Array<ArmeItem> = [
     {
@@ -34,7 +47,7 @@ export class ArmesService {
       Prix: 0,
     },
     {
-      Nom: 'Lame moleculaire',
+      Nom: 'couteau moleculaire',
       Degats: '2 point de dommage par succès',
       Special: ['Aucune'],
       Competence: CompetenceName.CORPS_A_CORPS,
@@ -42,7 +55,7 @@ export class ArmesService {
         'Une lame trés tranchante, capable de découper tout ce qui serai moins solide que son metal.',
       Encombrement: 1,
       Rarete: 2,
-      Prix: 100,
+      Prix: 50,
     },
     {
       Nom: 'Sabre moleculaire',
@@ -93,7 +106,39 @@ export class ArmesService {
     },
   ];
 
+  private static ARME_DISTANCE: Array<ArmeDistanceItem> = [
+    {
+      Nom: 'Cutter a fusion',
+      Degats: '2 point de dommage par succès',
+      Special: ['Aucun'],
+      Competence: CompetenceName.ARME_A_DISTANCE,
+      Description:
+        'Une "arme a distance non létale" trés utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Trés douloureux.',
+      Encombrement: 5,
+      Rarete: 5,
+      Prix: 400,
+      Munition: '4 Munition hybride a faible densitée',
+      PorteMax: NiveauPorte.MOYENNE,
+    },
+    {
+      Nom: 'Fusil anti-nuisible',
+      Degats: '3 point de dommage par succès',
+      Special: [
+        "Inflige 1 blessure à l'utilisateur par désavantage sur un test ou un jet d'attaque à distance avec cette arme.",
+        'Requis 3 en vigueur.',
+      ],
+      Competence: CompetenceName.ARME_A_DISTANCE,
+      Description:
+        "Un fusil d'une taille démesurée pour lutter contre des creatures démeusurées. Le recul de cette arme est terrible. Mais quel est l'ingénieur à l'origine de ce truc ?",
+      Encombrement: 5,
+      Rarete: 5,
+      Prix: 900,
+      Munition: '1 Munition hybride à haute densité',
+      PorteMax: NiveauPorte.LONGUE,
+    },
+  ];
+
   static getAllArmesList() {
-    return this.ARMES;
+    return [...this.ARMES, ...this.ARME_DISTANCE];
   }
 }

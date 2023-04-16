@@ -6,9 +6,6 @@ export type EquipementItem = {
   Prix: number;
 };
 
-// TODO Changer désavantage en menace quand c'est necessaire
-// TODO Lame moléculaire et sabre moléculaire trop similaire
-// TODO Ajouter Arme a feu
 export class EquipementService {
   private static EquipementItems: Array<EquipementItem> = [
     {
