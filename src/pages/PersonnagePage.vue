@@ -21,13 +21,18 @@
     <div>
       <p>Augmentez 1 fois le rang de 4 compétences au choix</p>
     </div>
-    <q-list separator bordered>
-      <CompetenceItem
+    <div class="row q-col-gutter-sm justify-center items-stretch">
+      <div
         v-for="comp in CompetencesList"
         :key="comp.Nom"
-        :Competence="comp"
-      ></CompetenceItem>
-    </q-list>
+        class="col-12 col-md-3 col-xl-2"
+      >
+        <CompetenceCard
+          style="height: 100%"
+          :Competence="comp"
+        ></CompetenceCard>
+      </div>
+    </div>
 
     <h3 class="text-center">Selectionner des Capacites</h3>
     <div class="ion-padding-vertical ion-text-center">
@@ -50,7 +55,8 @@
 import { defineComponent } from 'vue';
 
 import CaracteristiqueCard from 'src/components/CaracteristiqueCard.vue';
-import CompetenceItem from 'src/components/CompetenceItem.vue';
+// import CompetenceItem from 'src/components/CompetenceItem.vue';
+import CompetenceCard from 'src/components/CompetenceCard.vue';
 import AptitudeItem from 'src/components/AptitudeItem.vue';
 
 import {
@@ -65,7 +71,7 @@ export default defineComponent({
   name: 'PersonnagePage',
   components: {
     CaracteristiqueCard,
-    CompetenceItem,
+    CompetenceCard,
     AptitudeItem,
   },
   data() {
