@@ -1,34 +1,31 @@
 <template>
   <q-layout view="hHh Lpr lFf">
-    <q-header class="bg-secondary">
-      <div class="row">
-        <q-toolbar class="col-6">
-          <q-btn
-            flat
-            dense
-            round
-            icon="menu"
-            aria-label="Menu"
-            @click="toggleLeftDrawer"
-          />
+    <q-header class="q-py-sm">
+      <q-toolbar>
+        <q-btn
+          flat
+          dense
+          round
+          icon="menu"
+          aria-label="Menu"
+          @click="toggleLeftDrawer"
+        />
 
-          <q-toolbar-title class="text-uppercase">Namtar rules</q-toolbar-title>
-        </q-toolbar>
-        <q-toolbar class="col-6">
-          <q-input
-            bg-color="accent"
-            color="white"
-            standout
-            v-model="text"
-            label="Not imlemented yet"
-            dense
-          >
-            <template v-slot:append>
-              <q-icon name="search"></q-icon>
-            </template>
-          </q-input>
-        </q-toolbar>
-      </div>
+        <q-toolbar-title class="text-uppercase" style="max-width: 400px"
+          >Namtar rules</q-toolbar-title
+        >
+        <q-input
+          bg-color="accent"
+          color="white"
+          standout
+          v-model="text"
+          label="Not imlemented yet"
+        >
+          <template v-slot:append>
+            <q-icon name="search"></q-icon>
+          </template>
+        </q-input>
+      </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above class="bg-secondary">
@@ -147,6 +144,9 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+.q-header {
+  background-color: #1a1c23;
+}
 .q-toolbar__title {
   font-family: 'Anurati';
 }
