@@ -1,5 +1,5 @@
 <template>
-  <q-item>
+  <q-item class="bg-secondary">
     <q-item-section>
       <q-item-label class="text-overline">{{ Competence.Nom }}</q-item-label>
       <q-item-label caption lines="2">{{
@@ -8,7 +8,9 @@
     </q-item-section>
 
     <q-item-section side top>
-      <q-item-label caption>{{ Competence.BaseCaracteristique }}</q-item-label>
+      <q-badge color="primary" outline>{{
+        Competence.BaseCaracteristique
+      }}</q-badge>
     </q-item-section>
   </q-item>
 </template>
@@ -36,15 +38,3 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
-ion-card {
-  width: 100px;
-  height: 73px;
-  padding: 8px;
-  margin: 2px;
-  display: flex;
-}
-ion-text {
-  font-size: smaller;
-}
-</style>
