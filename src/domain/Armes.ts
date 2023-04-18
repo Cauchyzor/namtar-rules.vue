@@ -19,7 +19,6 @@ export interface ArmeDistanceItem extends ArmeItem {
   Munition: string;
   PorteMax: NiveauPorte;
 }
-// TODO Ajouter Arme a feu
 export class ArmesService {
   private static ARMES: Array<ArmeItem> = [
     {
@@ -108,17 +107,17 @@ export class ArmesService {
 
   private static ARME_DISTANCE: Array<ArmeDistanceItem> = [
     {
-      Nom: 'Cutter a fusion',
+      Nom: 'Cutter a plasma',
       Degats: '2 point de dommage par succès',
       Special: ['Aucun'],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
-        'Une "arme a distance non létale" trés utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Trés douloureux.',
-      Encombrement: 5,
-      Rarete: 5,
+        "Un bricolage simple permet de surcharger l'apport en energie de l'outil, et d'en faire une 'arme a distance non létale' trés utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Trés douloureux.",
+      Encombrement: 3,
+      Rarete: 2,
       Prix: 400,
-      Munition: '4 Munition hybride a faible densitée',
-      PorteMax: NiveauPorte.MOYENNE,
+      Munition: '2 munition faible densitée',
+      PorteMax: NiveauPorte.COURTE,
     },
     {
       Nom: 'Fusil anti-nuisible',
@@ -129,7 +128,7 @@ export class ArmesService {
       ],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
-        "Un fusil d'une taille démesurée pour lutter contre des creatures démeusurées. Le recul de cette arme est terrible. Mais quel est l'ingénieur à l'origine de ce truc ?",
+        "L'une des rare armes que l'on trouve parmis les populations civiles, pensée pour faire face aux horreures de l'espace depuis la pacifications. C'est un fusil d'une taille démesurée pour lutter contre des creatures démeusurées. Le recul pourrait briser un bras trop faible. Mais quel est l'ingénieur à l'origine de ce truc ?",
       Encombrement: 5,
       Rarete: 5,
       Prix: 900,
