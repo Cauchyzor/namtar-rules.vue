@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh Lpr lFf">
-    <q-header class="q-py-sm">
+    <q-header class="bg-secondary">
       <q-toolbar>
         <q-btn
           flat
@@ -11,20 +11,24 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title class="text-uppercase" style="max-width: 400px"
+        <q-toolbar-title class="text-uppercase" style="max-width: 600px"
           >Namtar rules</q-toolbar-title
         >
-        <q-input
-          bg-color="accent"
-          color="white"
-          standout
-          v-model="text"
-          label="Not imlemented yet"
-        >
-          <template v-slot:append>
-            <q-icon name="search"></q-icon>
-          </template>
-        </q-input>
+        <div class="q-px-md bg-accent">
+          <q-input
+            bg-color="accent"
+            dense
+            borderless
+            color="white"
+            v-model="text"
+            label="Not imlemented yet"
+          >
+            <template v-slot:append>
+              <q-icon name="search"></q-icon>
+            </template>
+          </q-input>
+        </div>
+        <q-space></q-space>
       </q-toolbar>
     </q-header>
 
