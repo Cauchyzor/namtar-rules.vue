@@ -66,6 +66,11 @@ const routes: RouteRecordRaw[] = [
         path: '/catalog',
         component: () => import('src/pages/AptitudesCataloguePage.vue'),
       },
+      {
+        name: 'Ethnotrait',
+        path: '/ethnotrait',
+        component: () => import('src/pages/EthnotraitInfoPage.vue'),
+      },
     ],
   },
 ];
