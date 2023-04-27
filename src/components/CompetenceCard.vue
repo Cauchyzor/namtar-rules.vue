@@ -3,7 +3,9 @@
     <q-card-section horizontal>
       <q-card-section vertical>
         <div class="text-overline">{{ Competence.Nom }}</div>
-        <div class="text-caption">{{ Competence.ShortDescription }}</div>
+        <div class="text-caption text-grey">
+          {{ Competence.ShortDescription }}
+        </div>
       </q-card-section>
 
       <q-card-section>

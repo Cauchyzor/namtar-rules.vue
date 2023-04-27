@@ -1,5 +1,5 @@
 <template>
-  <q-card flat class="bg-secondary">
+  <q-card flat class="bg-accent">
     <q-card-section>
       <p class="text-caption text-grey">{{ Caracteristique.Description }}</p>
       <p class="text-h5">{{ Caracteristique.Nom }}</p>

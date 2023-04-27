@@ -1,24 +1,14 @@
 <template>
   <q-item clickable v-ripple @click="openDetail = true">
-    <!-- <q-card-section horizontal>
-      <q-img src="~assets/apt/apt-benediction-default.jpg" fit="scale-down">
-        <div class="absolute-bottom text-h6">
-          {{ Aptitude.Nom }}
-        </div>
-      </q-img>
-
-      <q-card-section>
-        {{ Aptitude.Description }}
-      </q-card-section>
-    </q-card-section> -->
-
     <q-item-section thumbnail>
       <img src="~assets/apt/apt-benediction-default.jpg" fit="scale-down" />
     </q-item-section>
 
     <q-item-section>
       <q-item-label class="text-overline"> {{ Aptitude.Nom }}</q-item-label>
-      <q-item-label caption>{{ Aptitude.Description }}</q-item-label>
+      <q-item-label caption class="text-grey">{{
+        Aptitude.Description
+      }}</q-item-label>
     </q-item-section>
 
     <q-item-section side top>
