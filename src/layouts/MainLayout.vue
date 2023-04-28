@@ -35,21 +35,39 @@
     <q-drawer v-model="leftDrawerOpen" show-if-above class="bg-secondary">
       <q-list>
         <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
-          <q-item clickable to="/regles" exact>
+          <q-item clickable to="/regles/dice-system" exact>
             <q-item-section avatar>
               <q-icon name="school" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Règles : Essentiel</q-item-label>
+              <q-item-label>Règles : Systeme de Dé</q-item-label>
             </q-item-section>
           </q-item>
 
-          <q-item clickable to="/aventure" exact>
+          <q-item clickable to="/regles/combat" exact>
             <q-item-section avatar>
               <q-icon name="school" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Règles : Aventure</q-item-label>
+              <q-item-label>Règles : Combats</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/regles/soin" exact>
+            <q-item-section avatar>
+              <q-icon name="school" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Règles : Soins</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/regles/aventure" exact>
+            <q-item-section avatar>
+              <q-icon name="school" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Règles : aventure</q-item-label>
             </q-item-section>
           </q-item>
         </q-expansion-item>

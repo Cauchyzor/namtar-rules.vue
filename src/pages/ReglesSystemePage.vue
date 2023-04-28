@@ -1,5 +1,5 @@
 <template>
-  <q-tab-panel name="DiceSystem">
+  <q-page padding>
     <h3 class="text-center">Systeme de des</h3>
     <h4>Succes et Echecs</h4>
     <p>
@@ -107,7 +107,7 @@
       réussi, il faut compenser les échecs du groupe avec les succès du groupe,
       et considérer le score final.
     </p>
-  </q-tab-panel>
+  </q-page>
 </template>
 
 <script lang="ts">

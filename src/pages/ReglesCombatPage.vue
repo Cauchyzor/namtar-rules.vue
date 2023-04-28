@@ -1,5 +1,5 @@
 <template>
-  <q-tab-panel name="Combat">
+  <q-page padding>
     <h3 class="text-center">Combats et conflits</h3>
     <!-- TODO : Trouver le moyen de faire un stepper Circulaire -->
     <p>Les combats ce déroulent selon la boucle suivante :</p>
@@ -359,7 +359,7 @@
     </p>
     <h5>Surpris</h5>
     <p>Une créature surprise ne peut entreprendre ni action ni reaction.</p>
-  </q-tab-panel>
+  </q-page>
 </template>
 
 <script lang="ts">

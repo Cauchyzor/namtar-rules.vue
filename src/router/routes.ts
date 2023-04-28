@@ -7,7 +7,6 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/regles',
-        component: () => import('src/pages/ReglesCorePage.vue'),
         children: [
           {
             path: '',
@@ -16,18 +15,22 @@ const routes: RouteRecordRaw[] = [
           {
             name: 'DiceSystem',
             path: 'dice-system',
-            component: () =>
-              import('src/pages/ReglesCoreTabs/DiceSystemTab.vue'),
+            component: () => import('src/pages/ReglesSystemePage.vue'),
           },
           {
             name: 'CombatSystem',
             path: 'combat',
-            component: () => import('src/pages/ReglesCoreTabs/CombatTab.vue'),
+            component: () => import('src/pages/ReglesCombatPage.vue'),
           },
           {
             name: 'SoinSystem',
             path: 'soin',
-            component: () => import('src/pages/ReglesCoreTabs/SoinsTab.vue'),
+            component: () => import('src/pages/ReglesSoinsPage.vue'),
+          },
+          {
+            name: 'Aventure',
+            path: 'aventure',
+            component: () => import('src/pages/ReglesAventurePage.vue'),
           },
         ],
       },
@@ -42,14 +45,31 @@ const routes: RouteRecordRaw[] = [
         component: () => import('src/pages/NiveauPage.vue'),
       },
       {
-        name: 'Aventure',
-        path: '/aventure',
-        component: () => import('src/pages/AventurePage.vue'),
-      },
-      {
         name: 'Equipement',
         path: '/equipement',
         component: () => import('src/pages/EquipementPage.vue'),
+        children: [
+          {
+            path: '',
+            redirect: '/equipement/quotidien',
+          },
+          {
+            name: 'Quotidien',
+            path: 'quotidien',
+            component: () =>
+              import('src/pages/TabsEquipement/EquipementTab.vue'),
+          },
+          {
+            name: 'Armes',
+            path: 'armes',
+            component: () => import('src/pages/TabsEquipement/ArmeTab.vue'),
+          },
+          {
+            name: 'Armures',
+            path: 'armures',
+            component: () => import('src/pages/TabsEquipement/ArmureTab.vue'),
+          },
+        ],
       },
       {
         name: 'Vehicule',

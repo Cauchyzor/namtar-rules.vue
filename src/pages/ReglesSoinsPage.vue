@@ -1,5 +1,5 @@
 <template>
-  <q-tab-panel name="Soins">
+  <q-page padding>
     <h3 class="text-center">Repos et guerison</h3>
     <h3>Soins</h3>
     <h4>Résilience</h4>
@@ -95,7 +95,7 @@
       sauvegarde contre la mort. Si elle n&#39;est pas soignée, une créature
       stabilisée regagne 1 point de vie au bout de 1D6 heures.
     </p>
-  </q-tab-panel>
+  </q-page>
 </template>
 
 <script lang="ts">
