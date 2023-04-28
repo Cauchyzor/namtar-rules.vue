@@ -1,4 +1,6 @@
 <template>
+  <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
+  <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
   <q-page padding>
     <h3 class="text-center">Caracteristiques</h3>
     <div class="text-center">
