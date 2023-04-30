@@ -31,7 +31,7 @@ export default defineComponent({
       type: Object as PropType<ExtensionEffet>,
       required: true,
     },
-    Disabled: { type: Object as PropType<boolean>, required: false },
+    Disabled: { type: Boolean, required: false },
   },
   emits: ['rank-increased', 'rank-decreased'],
   methods: {

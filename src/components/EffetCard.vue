@@ -28,7 +28,7 @@ import { Effet } from 'src/domain/Aptitude';
 export default defineComponent({
   props: {
     Effet: { type: Object as PropType<Effet>, required: true },
-    Disabled: { type: Object as PropType<boolean>, required: false },
+    Disabled: { type: Boolean, required: false },
   },
   emits: ['rank-increased', 'rank-decreased'],
   methods: {
