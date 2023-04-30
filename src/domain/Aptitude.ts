@@ -545,7 +545,7 @@ export class AptitudeService {
       Type: this.findCapacityTypeByName(AptitudeTypeName.CYTOMANCIE),
       Vecteur: this.findVecteurByName(VecteurName.FRAPPE),
       Effets: new Map([[EffetName.DRAIN_FLUIDE, 1]]),
-      ExtensionsEffet: new Map(),
+      ExtensionsEffet: new Map([[ExtensionEffetName.DIFFICILE, 1]]),
     },
   ];
 
