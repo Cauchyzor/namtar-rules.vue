@@ -67,7 +67,7 @@
               <q-icon name="school" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Règles : aventure</q-item-label>
+              <q-item-label>Règles : Aventure</q-item-label>
             </q-item-section>
           </q-item>
         </q-expansion-item>
@@ -158,6 +158,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+// TODO Transition sur les pages
 export default defineComponent({
   name: 'MainLayout',
   data() {
