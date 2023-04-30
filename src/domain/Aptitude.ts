@@ -130,7 +130,7 @@ export class AptitudeService {
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Le lanceur utilise la concordance namtarique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe pour générer des effets.",
+        "Le lanceur utilise la concordance namtarique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe sont consommé pour générer des effets.",
       DescriptionDetails: 'Chaque atout consommé génère 2 points de stabilité.',
     },
     {
@@ -228,11 +228,11 @@ export class AptitudeService {
         'Inflige 2 blessures (cumulable) par succès net et par avantage.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.ENVOUTEMENT, -8],
+        [AptitudeTypeName.ENVOUTEMENT, -5],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.MALEFICE, -3],
         [AptitudeTypeName.NECROMANCIE, -1],
-        [AptitudeTypeName.CYTOMANCIE, -2],
+        [AptitudeTypeName.CYTOMANCIE, -3],
       ]),
     },
     {
@@ -542,9 +542,9 @@ export class AptitudeService {
       Description:
         "Vous drainez l'énergie de la cible touchée pour vous soigner.",
       Image: '',
-      Type: this.findCapacityTypeByName(AptitudeTypeName.EVOCATION),
-      Vecteur: this.findVecteurByName(VecteurName.CONTACT),
-      Effets: new Map([[EffetName.VAMPIRISME, 1]]),
+      Type: this.findCapacityTypeByName(AptitudeTypeName.CYTOMANCIE),
+      Vecteur: this.findVecteurByName(VecteurName.FRAPPE),
+      Effets: new Map([[EffetName.DRAIN_FLUIDE, 1]]),
       ExtensionsEffet: new Map(),
     },
   ];
@@ -614,6 +614,8 @@ export class AptitudeService {
         return `${Math.trunc(Math.abs(stability) / 2)} niveaux de puissance`;
       case AptitudeTypeName.ENVOUTEMENT:
         return `${Math.abs(stability)} atouts`;
+      case AptitudeTypeName.CYTOMANCIE:
+        return `${Math.trunc(Math.abs(stability))} PV sacrifié`;
       case AptitudeTypeName.MANTRA:
         return 'Aucun';
       case AptitudeTypeName.MANTRA:
