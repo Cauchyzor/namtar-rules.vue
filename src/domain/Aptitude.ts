@@ -45,6 +45,7 @@ export type Vecteur = {
 enum VecteurName {
   ALTERATION_OBJET = "Altération d'objet",
   CONTACT = 'Contact',
+  FRAPPE = 'Frappe',
   HALUCINATION = 'Halucination',
   SOUFFLE = 'Souffle',
   PROJECTILE = 'Projectile',
@@ -64,6 +65,7 @@ enum EffetName {
   BOUCLIER = 'Bouclier',
   CHALEUR = 'Chaleur',
   DEBILITANT = 'Débilitant',
+  DRAIN_FLUIDE = 'Drain de fluide',
   ENTRAVE = 'Entrave',
   FORCE = 'Force',
   LEVITATION = 'Levitation',
@@ -159,6 +161,12 @@ export class AptitudeService {
       Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
     },
     {
+      Nom: VecteurName.FRAPPE,
+      Description:
+        'Les effets sont appliqué sur une attaque a main nue ou avec une arme au corps à corps. ',
+      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR})`,
+    },
+    {
       Nom: VecteurName.HALUCINATION,
       Description: 'Les effets sont appliqués à la cible en visuel.',
       Difficulte: `Test opposé de ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
@@ -237,6 +245,18 @@ export class AptitudeService {
         [AptitudeTypeName.MALEFICE, -4],
         [AptitudeTypeName.NECROMANCIE, -2],
         [AptitudeTypeName.CYTOMANCIE, -4],
+      ]),
+    },
+    {
+      Nom: EffetName.DRAIN_FLUIDE,
+      Description: "Chaque succès vol 1 point de stress à l'adversaire",
+      IsCummulable: true,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.ENVOUTEMENT, -1],
+        [AptitudeTypeName.EVOCATION, -2],
+        [AptitudeTypeName.MALEFICE, -1],
+        [AptitudeTypeName.CYTOMANCIE, -1],
+        [AptitudeTypeName.BENEDICTION, -2],
       ]),
     },
     {
