@@ -8,24 +8,26 @@ export type Competence = {
 };
 
 export enum CompetenceName {
-  ATHLETISME = 'Athlétisme',
-  CORPS_A_CORPS = 'Corps à corps',
-  PUGILAT = 'Pugilat',
-  COORDINATION = 'Coordination',
-  PILOTAGE = 'Pilotage',
   ARME_A_DISTANCE = 'Arme à distance',
-  CONNAISSANCE_HISTOIRE = 'Connaissance - Histoire',
-  CONNAISSANCE_CULTES = 'Connaissance - Cultes',
-  MEDECINE = 'Médecine',
-  SURVIE = 'Survie',
-  INGENIERIE = 'Ingénierie',
-  ENTROPIE_DU_FLUIDE = 'Entropie du fluide',
+  ATHLETISME = 'Athlétisme',
   CHARME = 'Charme',
-  NEGOCIATION = 'Négociation',
-  TROMPERIE = 'Tromperie',
-  PERSPICACITE = 'Prespicacité',
-  ALTERATION = 'Altération du fluide',
+  CONNAISSANCE_CULTES = 'Connaissance - Cultes',
+  CONNAISSANCE_HISTOIRE = 'Connaissance - Histoire',
+  COORDINATION = 'Coordination',
+  CORPS_A_CORPS = 'Corps à corps',
+  DISCRETION = 'Discrétion',
+  ENTROPIE_DU_FLUIDE = 'Entropie du fluide',
+  INGENIERIE = 'Ingénierie',
   INTIMIDATION = 'Intimidation',
+  MAGOUILLE = 'Magouille',
+  MEDECINE = 'Médecine',
+  NEGOCIATION = 'Négociation',
+  PERSPICACITE = 'Prespicacité',
+  PILOTAGE = 'Pilotage',
+  PUGILAT = 'Pugilat',
+  SURVIE = 'Survie',
+  TROMPERIE = 'Tromperie',
+  VIGILANCE = 'Vigilance',
 }
 
 export class CompetenceService {
@@ -36,9 +38,20 @@ export class CompetenceService {
       ShortDescription: 'Sauter, grimper, soulever de lourdes charges.',
     },
     {
+      Nom: CompetenceName.COORDINATION,
+      BaseCaracteristique: CaracteritiqueName.AGILITE,
+      ShortDescription:
+        'Garder un equilibre, effectuer des accrobatie, habilité manuelle.',
+    },
+    {
       Nom: CompetenceName.CORPS_A_CORPS,
       BaseCaracteristique: CaracteritiqueName.VIGUEUR,
       ShortDescription: 'Porter une attaque avec une arme au corps à corps.',
+    },
+    {
+      Nom: CompetenceName.DISCRETION,
+      BaseCaracteristique: CaracteritiqueName.AGILITE,
+      ShortDescription: "S'approcher sans attirer l'attention.",
     },
     {
       Nom: CompetenceName.PUGILAT,
@@ -46,20 +59,9 @@ export class CompetenceService {
       ShortDescription: 'Attaquer a main nue, lutter contre un adversaire.',
     },
     {
-      Nom: CompetenceName.COORDINATION,
-      BaseCaracteristique: CaracteritiqueName.AGILITE,
-      ShortDescription:
-        'Garder un equilibre, effectuer des accrobatie, habilité manuelle.',
-    },
-    {
       Nom: CompetenceName.PILOTAGE,
       BaseCaracteristique: CaracteritiqueName.AGILITE,
       ShortDescription: 'Manoeuvrer un vehicule terrestre ou aerospacial.',
-    },
-    {
-      Nom: CompetenceName.ARME_A_DISTANCE,
-      BaseCaracteristique: CaracteritiqueName.AGILITE,
-      ShortDescription: 'Porter une attaque avec une arme à distance.',
     },
     {
       Nom: CompetenceName.CONNAISSANCE_HISTOIRE,
@@ -119,12 +121,18 @@ export class CompetenceService {
       Nom: CompetenceName.PERSPICACITE,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription:
-        'Capcité passive à detecter le mensonge ou mettre en evidence ce qui ne le sont pas.',
+        "Capcité passive à detecter le mensonge ou mettre en evidence ce qui ne l'est pas.",
     },
     {
       Nom: CompetenceName.INTIMIDATION,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription: 'Obtenir un service ou un objet par la menace.',
+    },
+    {
+      Nom: CompetenceName.VIGILANCE,
+      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      ShortDescription:
+        'Detecter le danger, remarquer des détails significatif.',
     },
   ];
   /**
