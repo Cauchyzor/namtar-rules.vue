@@ -6,9 +6,7 @@ import { CompetenceName } from './Competence';
 // TODO IMPORTANT : Ne pas faire que des apptitude liéee au fluide : exemple Kermit la grenouille.
 // TODO Stepper pour creer une aptitude
 // TODO Type d'aptitude : Contre-attaque (Capitalise sur les menaces généré par une attaque enemie)
-// TODO Vecteur : Enchantement => On a des effets sur des objet
 // TODO Effet : Mega Saut
-// TODO Ethnotraits (en plus des aptitudes)
 
 export type Aptitude = {
   Nom: string;

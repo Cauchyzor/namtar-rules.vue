@@ -38,7 +38,9 @@ export class ArmesService {
     {
       Nom: 'Mains nues',
       Degats: '1 point de dommage par succès',
-      Special: ['Aucun'],
+      Special: [
+        "L'utilisateur subit 1 blessure par désavantages sur son jet d'attaque.",
+      ],
       Competence: CompetenceName.PUGILAT,
       Description: 'Aucun',
       Encombrement: 0,
