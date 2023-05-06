@@ -1,49 +1,84 @@
 <template>
   <q-page padding class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <div class="row q-col-gutter-sm justify-center items-stretch">
+      <div class="col">
+        <q-card flat class="q-py-xl bg-secondary">
+          <q-card-section vertical>
+            <div class="text-h5 q-mt-sm q-mb-xs text-center">Règles</div>
+            <div class="text-caption text-grey">
+              L'ensemble des lois de cet univers qui permettent a vos
+              aventuriers de vivre leur périgrinations.
+            </div>
+            <div class="q-mt-xl row justify-center items-stretch">
+              <q-btn
+                class="text-center"
+                to="/regles/dice-system"
+                label=""
+                size="xl"
+                outline
+                rounded
+                color="primary"
+              >
+                <q-icon name="school" color="primary" size="xl"></q-icon>
+              </q-btn>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="col">
+        <q-card flat class="q-py-xl bg-secondary">
+          <q-card-section vertical>
+            <div class="text-h5 q-mt-sm q-mb-xs text-center">Personnage</div>
+            <div class="text-caption text-grey">
+              Les concepts de creation d'un personnages au sein d'une aventure.
+            </div>
+            <div class="q-mt-xl row justify-center items-stretch">
+              <q-btn
+                class="text-center"
+                to="/pj"
+                label=""
+                size="xl"
+                outline
+                rounded
+                color="primary"
+              >
+                <q-icon name="settings" color="primary" size="xl"></q-icon>
+              </q-btn>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="col">
+        <q-card flat class="q-py-xl bg-secondary">
+          <q-card-section vertical>
+            <div class="text-h5 q-mt-sm q-mb-xs text-center">Lore</div>
+            <div class="text-caption text-grey">
+              Ce qu'il faut savoir de l'univers avant d'y mettre les pieds...
+            </div>
+            <div class="q-mt-xl row justify-center items-stretch">
+              <q-btn
+                class="text-center"
+                to="/pj"
+                label=""
+                size="xl"
+                outline
+                rounded
+                color="primary"
+              >
+                <q-icon name="explore" color="primary" size="xl"></q-icon>
+              </q-btn>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'src/domain/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
-  data() {
-    const todos: Todo[] = [
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ];
-    const meta: Meta = {
-      totalCount: 1200
-    };
-    return { todos, meta };
-  }
 });
 </script>
