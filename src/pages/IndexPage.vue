@@ -2,7 +2,7 @@
   <q-page padding class="row items-center justify-evenly">
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div class="col">
-        <q-card flat class="q-py-xl bg-secondary">
+        <q-card flat class="q-py-xl bg-accent">
           <q-card-section vertical>
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Règles</div>
             <div class="text-caption text-grey">
@@ -26,7 +26,7 @@
         </q-card>
       </div>
       <div class="col">
-        <q-card flat class="q-py-xl bg-secondary">
+        <q-card flat class="q-py-xl bg-accent">
           <q-card-section vertical>
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Personnage</div>
             <div class="text-caption text-grey">
@@ -49,16 +49,17 @@
         </q-card>
       </div>
       <div class="col">
-        <q-card flat class="q-py-xl bg-secondary">
+        <q-card flat class="q-py-xl bg-accent">
           <q-card-section vertical>
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Lore</div>
             <div class="text-caption text-grey">
-              Ce qu'il faut savoir de l'univers avant d'y mettre les pieds...
+              Une introduction à l'histoire connue de l'univers, partagée par
+              toutes les civilisations...
             </div>
             <div class="q-mt-xl row justify-center items-stretch">
               <q-btn
                 class="text-center"
-                to="/pj"
+                to="/lore"
                 label=""
                 size="xl"
                 outline
