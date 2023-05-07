@@ -29,14 +29,13 @@ export class AttributService {
 
     {
       Nom: AttributsName.DEFENSE,
-      Description:
-        "Vous avez 1 point de Défense par point d'Agilité, en plus des bonus de l'équipement",
+      Description: "Vous avez 1 point de Défense par point d'Agilité.",
       Icon: mdiShieldHalfFull,
     },
 
     {
       Nom: AttributsName.STRESS,
-      Description: 'Votre seuil de stress est égale a Intelligence + Charisme',
+      Description: 'Votre seuil de stress est égale à Intelligence + Charisme',
       Icon: mdiLightningBolt,
     },
     {
