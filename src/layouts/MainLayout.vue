@@ -36,36 +36,24 @@
       <q-list>
         <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
           <q-item clickable to="/regles/dice-system" exact>
-            <q-item-section avatar>
-              <q-icon name="school" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Règles : Systeme de Dé</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-item clickable to="/regles/combat" exact>
-            <q-item-section avatar>
-              <q-icon name="school" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Règles : Combats</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-item clickable to="/regles/soin" exact>
-            <q-item-section avatar>
-              <q-icon name="school" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Règles : Soins</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-item clickable to="/regles/aventure" exact>
-            <q-item-section avatar>
-              <q-icon name="school" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Règles : Aventure</q-item-label>
             </q-item-section>
@@ -96,18 +84,12 @@
           :content-inset-level="1"
         >
           <q-item clickable to="/aptitude" exact>
-            <q-item-section avatar>
-              <q-icon name="graphic_eq" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Création d'aptitude</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-item clickable to="/catalog" exact>
-            <q-item-section avatar>
-              <q-icon name="graphic_eq" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Catalogue</q-item-label>
             </q-item-section>
@@ -129,20 +111,22 @@
           :content-inset-level="1"
         >
           <q-item clickable to="/pj" exact>
-            <q-item-section avatar>
-              <q-icon name="settings" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Fiche personnage</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-item clickable to="/niveau" exact>
-            <q-item-section avatar>
-              <q-icon name="settings" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Gain de niveau</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
+
+        <q-expansion-item icon="explore" label="Lore" :content-inset-level="1">
+          <q-item clickable to="/lore" exact>
+            <q-item-section>
+              <q-item-label>Introduction</q-item-label>
             </q-item-section>
           </q-item>
         </q-expansion-item>
