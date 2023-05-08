@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <h3 class="text-center">Aptitude</h3>
-    <q-card class="bg-secondary" flat>
+    <q-card class="bg-accent" flat>
       <q-card-section horizontal>
         <q-card-section class="col-6" vertical>
           <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>

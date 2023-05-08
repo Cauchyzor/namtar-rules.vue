@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable v-ripple @click="openDetail = true">
+  <q-item class="bg-accent" clickable v-ripple @click="openDetail = true">
     <q-item-section thumbnail>
       <img src="~assets/apt/apt-benediction-default.jpg" fit="scale-down" />
     </q-item-section>
