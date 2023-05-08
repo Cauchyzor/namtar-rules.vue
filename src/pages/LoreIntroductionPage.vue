@@ -52,26 +52,25 @@
       Tous réagirent dans l'urgence face à une menace d'ampleur galactique. Il
       fut donc décidé, à la grande majorité, de se résoudre à l’acte le plus
       fiable face à l'inconnu : l’atomiser avec ce qu’il se faisait de plus gros
-      à l’époque en matière de « pacificateur ». L'"Arme" fut développée dans un
-      temps record. L’enfer s’abattit sur les systèmes qui autrefois faisaient
-      les fortunes des plus grandes de la galaxie. Dans un big-bang
-      apocalyptique, les planètes les plus proches du point d'impact furent
-      balayées, la détonation fit changer d’orbite plusieurs étoiles à plusieurs
-      années-lumière, et, les failles d'etherum qui permirent aux explorateurs
-      leurs fortunes se sont effondrées, isolant alors les forces en présence du
+      à l’époque. Le "PACIFICATOR-3003" fut développée dans un temps record.
+      L’enfer s’abattit sur les systèmes qui autrefois faisaient les fortunes
+      les plus grandes de la galaxie. Dans un big-bang apocalyptique, les
+      planètes les plus proches du point d'impact furent balayées. La détonation
+      fit changer d’orbite plusieurs étoiles sur des années-lumières de
+      diametre, et les failles d'etherum, celles qui permirent aux explorateurs
+      l'accès au coeur, s'éffondrèrent, isolant alors les forces en présence du
       reste de la galaxie. Le contact fut perdu.
     </p>
     <p>
       Mais l’histoire ne s’arrêta pas là. Une énergie nouvelle, une sorte de
-      fluide, qui s'éparpilla dans toute la galaxie. Peu de temps après, des
+      fluide, s'éparpilla dans toute la galaxie. Peu de temps après, des
       personnes avec d’étranges pouvoirs firent leurs apparitions aux quatre
       coins de la galaxie, prétendant qu’il pouvait manipuler cette énergie
       malléable pour accomplir de grandes choses. Les possesseurs d'artefacts et
-      d’objets originaires de la planète originelle remarquèrent alors également
-      qu’une force nouvelle habitait leurs inoffensifs ustensiles décoratifs.
-      Certains objets, correctement manipulés, étaient capables de déployer une
-      grande quantité de pouvoir et offraient des capacités improbables à leurs
-      porteurs. Une nouvelle chasse à l'artefact était donnée.
+      d’objets originaires du coeur remarquèrent alors qu’une force nouvelle
+      habitait également leurs inoffensifs ustensiles décoratifs. Des pouvoirs
+      au délà de la raison, des capacitées hors normes. Une nouvelle chasse à
+      l'artefact était donnée.
     </p>
     <p class="text-center">Ainsi débuta l'ère du fluide...</p>
   </q-page>
