@@ -1,8 +1,8 @@
 <template>
   <q-page padding class="row items-center justify-evenly">
     <div class="row q-col-gutter-sm justify-center items-stretch">
-      <div class="col">
-        <q-card flat class="q-py-xl bg-accent">
+      <div class="col-sm-4 col-xs-12">
+        <q-card flat class="q-py-xl bg-accent" style="height: 100%">
           <q-card-section vertical>
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Règles</div>
             <div class="text-caption text-grey">
@@ -25,8 +25,8 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col">
-        <q-card flat class="q-py-xl bg-accent">
+      <div class="col-sm-4 col-xs-12">
+        <q-card flat class="q-py-xl bg-accent" style="height: 100%">
           <q-card-section vertical>
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Personnage</div>
             <div class="text-caption text-grey">
@@ -48,8 +48,8 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col">
-        <q-card flat class="q-py-xl bg-accent">
+      <div class="col-sm-4 col-xs-12">
+        <q-card flat class="q-py-xl bg-accent" style="height: 100%">
           <q-card-section vertical>
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Lore</div>
             <div class="text-caption text-grey">
