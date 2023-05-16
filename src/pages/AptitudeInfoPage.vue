@@ -1,6 +1,170 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Aptitude</h3>
+    <h3 class="text-center">Création d'aptitude</h3>
+    <q-stepper v-model="step" vertical header-nav animated class="bg-accent">
+      <q-step
+        :name="1"
+        title="Type"
+        caption="La source de l'aptitude"
+        icon="settings"
+        :done="SelectedType != null"
+      >
+        <p>
+          Une aptitude est une manifestation fluide dans une forme concrète pour
+          les creatures habitant la galaxie. L'utilisateur canalyse le fluide a
+          partir d'une source de pouvoir avant de le modeler a sa convenance.
+        </p>
+        <div class="row q-col-gutter-sm justify-center">
+          <div
+            v-for="typeAptitude in TypesAptitude"
+            :key="typeAptitude.Nom"
+            class="col-12"
+          >
+            <TypeAptitudeItem
+              :Type="typeAptitude"
+              @is-selected="changeType(typeAptitude)"
+            ></TypeAptitudeItem>
+          </div>
+        </div>
+
+        <q-stepper-navigation>
+          <q-btn @click="step = 2" color="primary" label="Continue"></q-btn>
+        </q-stepper-navigation>
+      </q-step>
+
+      <q-step
+        :name="2"
+        title="Vecteur"
+        caption="La cible de l'aptitude"
+        icon="create_new_folder"
+        :done="SelectedVecteur != null"
+      >
+        <p>
+          Une fois canalysée, l'énergie peut être dirigée vers une cible,
+          s'etendre homogènement depuis sa source, être projetée sur une
+          cible... Certaines méthodes sont plus complexes que d'autre.
+        </p>
+
+        <div class="row q-col-gutter-sm justify-center">
+          <div v-for="vecteur in Vecteurs" :key="vecteur.Nom" class="col-12">
+            <VecteurItem
+              :Vecteur="vecteur"
+              @is-selected="SelectedVecteur = vecteur"
+            ></VecteurItem>
+          </div>
+        </div>
+        <q-stepper-navigation>
+          <q-btn
+            @click="step = SelectedType == null ? 5 : 3"
+            color="primary"
+            label="Continue"
+          ></q-btn>
+          <q-btn
+            flat
+            @click="step = 1"
+            color="primary"
+            label="Back"
+            class="q-ml-sm"
+          ></q-btn>
+        </q-stepper-navigation>
+      </q-step>
+
+      <q-step
+        :name="3"
+        title="Effets"
+        caption="Ce que l'aptitude applique"
+        icon="assignment"
+        :disable="SelectedType == null"
+      >
+        <p>
+          L'aptitude consume son énergie en appliant des effets à la cible.
+          Touts les effets sont appliqués en même temps.
+        </p>
+
+        <div class="row q-col-gutter-sm justify-center">
+          <div
+            v-for="effet in availableEffects"
+            :key="effet.Nom"
+            class="col-12"
+          >
+            <EffetCard
+              :Effet="effet"
+              @rank-increased="increaseEffectRank(effet)"
+              @rank-decreased="decreaseEffectRank(effet)"
+              :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
+            ></EffetCard>
+          </div>
+        </div>
+
+        <q-stepper-navigation>
+          <q-btn @click="step = 4" color="primary" label="Continue"></q-btn>
+          <q-btn
+            flat
+            @click="step = 2"
+            color="primary"
+            label="Back"
+            class="q-ml-sm"
+          ></q-btn>
+        </q-stepper-navigation>
+      </q-step>
+
+      <q-step
+        :name="4"
+        title="Extention"
+        caption="Les conditions de réussites"
+        icon="add_comment"
+        :disable="SelectedType == null"
+      >
+        <p>
+          Pour canalyser et materialiser les formes les plus puissantes du
+          fluide, les utilisateurs peuvent accepter certaines contraintes...
+        </p>
+        <div class="row q-col-gutter-sm justify-center">
+          <div
+            v-for="extension in availableExtensions"
+            :key="extension.Nom"
+            class="col-12"
+          >
+            <ExtensionCard
+              :Extension="extension"
+              @rank-increased="increaseExtensionRank(extension)"
+              @rank-decreased="decreaseExtensionRank(extension)"
+              :Disabled="
+                !extension.IsCummulable && SelectedExtension.has(extension.Nom)
+              "
+            ></ExtensionCard>
+          </div>
+        </div>
+        <q-stepper-navigation>
+          <q-btn @click="step = 5" color="primary" label="Continue"></q-btn>
+          <q-btn
+            flat
+            @click="step = 3"
+            color="primary"
+            label="Back"
+            class="q-ml-sm"
+          ></q-btn>
+        </q-stepper-navigation>
+      </q-step>
+      <q-step
+        :name="5"
+        title="Finalisation"
+        caption="Baptisez votre nouvelle aptitude"
+        icon="add_comment"
+      >
+        Decrivez précisement l'aptitude quand elle est utilisée.
+        <q-stepper-navigation>
+          <q-btn color="primary" label="Creer l'aptitude"></q-btn>
+          <q-btn
+            flat
+            @click="step = SelectedType == null ? 2 : 4"
+            color="primary"
+            label="Back"
+            class="q-ml-sm"
+          ></q-btn>
+        </q-stepper-navigation>
+      </q-step>
+    </q-stepper>
     <q-card class="bg-accent" flat>
       <q-card-section horizontal>
         <q-card-section class="col-6" vertical>
@@ -30,76 +194,6 @@
         </q-card-section>
       </q-card-section>
     </q-card>
-    <q-tabs v-model="SelectedTab">
-      <q-tab name="Type" label="Types" />
-      <q-tab name="Vecteur" label="Vecteur" />
-      <q-tab name="Effet" label="Effets" />
-      <q-tab name="Extension" label="Extension d'effet" />
-    </q-tabs>
-
-    <q-tab-panels class="bg-transparent" v-model="SelectedTab">
-      <q-tab-panel name="Type">
-        <div class="row q-col-gutter-sm justify-center">
-          <div
-            v-for="typeAptitude in TypesAptitude"
-            :key="typeAptitude.Nom"
-            class="col-12"
-          >
-            <TypeAptitudeItem
-              :Type="typeAptitude"
-              @is-selected="changeType(typeAptitude)"
-            ></TypeAptitudeItem>
-          </div>
-        </div>
-      </q-tab-panel>
-
-      <q-tab-panel name="Vecteur">
-        <div class="row q-col-gutter-sm justify-center">
-          <div v-for="vecteur in Vecteurs" :key="vecteur.Nom" class="col-12">
-            <VecteurItem
-              :Vecteur="vecteur"
-              @is-selected="SelectedVecteur = vecteur"
-            ></VecteurItem>
-          </div>
-        </div>
-      </q-tab-panel>
-
-      <q-tab-panel name="Effet">
-        <div class="row q-col-gutter-sm justify-center">
-          <div
-            v-for="effet in availableEffects"
-            :key="effet.Nom"
-            class="col-12"
-          >
-            <EffetCard
-              :Effet="effet"
-              @rank-increased="increaseEffectRank(effet)"
-              @rank-decreased="decreaseEffectRank(effet)"
-              :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
-            ></EffetCard>
-          </div>
-        </div>
-      </q-tab-panel>
-
-      <q-tab-panel name="Extension">
-        <div class="row q-col-gutter-sm justify-center">
-          <div
-            v-for="extension in availableExtensions"
-            :key="extension.Nom"
-            class="col-12"
-          >
-            <ExtensionCard
-              :Extension="extension"
-              @rank-increased="increaseExtensionRank(extension)"
-              @rank-decreased="decreaseExtensionRank(extension)"
-              :Disabled="
-                !extension.IsCummulable && SelectedExtension.has(extension.Nom)
-              "
-            ></ExtensionCard>
-          </div>
-        </div>
-      </q-tab-panel>
-    </q-tab-panels>
   </q-page>
 </template>
 <script lang="ts">
@@ -120,20 +214,21 @@ import ExtensionCard from 'src/components/ExtensionCard.vue';
 export default defineComponent({
   name: 'AptitudeInfoPage',
   components: {
-    TypeAptitudeItem,
-    VecteurItem,
     EffetCard,
     ExtensionCard,
+    VecteurItem,
+    TypeAptitudeItem,
   },
   data() {
     return {
-      SelectedTab: ref('Type'),
       TypesAptitude: AptitudeService.getAllTypes(),
       Vecteurs: AptitudeService.getAllVecteur(),
       SelectedType: ref(),
       SelectedVecteur: ref(),
       SelectedEffects: ref(new Map()),
       SelectedExtension: ref(new Map()),
+
+      step: ref(1),
     };
   },
   computed: {

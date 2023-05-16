@@ -506,7 +506,7 @@ export class AptitudeService {
       ExtensionsEffet: new Map([[ExtensionEffetName.ZONE, 1]]),
     },
     {
-      Nom: 'Mantra: le Berserk',
+      Nom: 'Le Berserk',
       Description:
         "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
       Image: '',
@@ -516,7 +516,7 @@ export class AptitudeService {
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: "Mantra: l'échophagique",
+      Nom: "L'échophagique",
       Description:
         "Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.",
       Image: '',
@@ -526,7 +526,7 @@ export class AptitudeService {
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: 'Mantra: le distant',
+      Nom: 'Le distant',
       Description:
         "Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire.",
       Image: '',
@@ -544,6 +544,26 @@ export class AptitudeService {
       Vecteur: this.findVecteurByName(VecteurName.FRAPPE),
       Effets: new Map([[EffetName.DRAIN_FLUIDE, 1]]),
       ExtensionsEffet: new Map([[ExtensionEffetName.DIFFICILE, 1]]),
+    },
+    {
+      Nom: 'Le Fluidophobie',
+      Description:
+        "Vous avez 1 avantage chaque fois que vous effectuer un jet d'attaque ou un jet d'opposition avec une creature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantra. Vous vous montrez toujours très antiphatique envers les utilisateurs du fluide.",
+      Image: '',
+      Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Effets: new Map(),
+      ExtensionsEffet: new Map(),
+    },
+    {
+      Nom: "L'honorable dueliste",
+      Description:
+        "Pendant une phase de combat, vous avez un avantage sur tout vos jet d'attaque face à un enemie s'il n'a attaqué que vous, et n'a subit aucune attaque autre que les votres. Vous subissez deux menaces si le duel est romput.",
+      Image: '',
+      Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
+      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Effets: new Map(),
+      ExtensionsEffet: new Map(),
     },
   ];
 
