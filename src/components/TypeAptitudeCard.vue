@@ -2,15 +2,20 @@
   <q-card
     flat
     v-ripple
-    @click="$emit('is-selected')"
+    bordered
     class="cursor-pointer q-hoverable bg-secondary"
+    style="height: 100%"
+    @click="$emit('is-selected')"
   >
     <q-card-section vertical>
-      <div class="text-h5 q-mt-sm q-mb-xs">
-        {{ Type.Nom }}
-      </div>
-      <div class="text-caption text-grey">{{ Type.Description }}</div>
-      <div class="">{{ Type.DescriptionDetails }}</div>
+      <q-card-section class="" horizontal>
+        <div class="text-h5 q-mt-sm q-mb-xs">
+          {{ Type.Nom }}
+        </div>
+        <q-btn round flat icon="info"></q-btn>
+      </q-card-section>
+
+      <div class="text-caption text-grey">{{ Type.DescriptionDetails }}</div>
     </q-card-section>
   </q-card>
 </template>

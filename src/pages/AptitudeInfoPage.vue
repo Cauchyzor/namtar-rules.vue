@@ -1,7 +1,14 @@
 <template>
   <q-page padding>
     <h3 class="text-center">Création d'aptitude</h3>
-    <q-stepper v-model="step" vertical header-nav animated class="bg-accent">
+    <q-stepper
+      v-model="step"
+      vertical
+      header-nav
+      animated
+      class="bg-secondary"
+      flat
+    >
       <q-step
         :name="1"
         title="Type"
@@ -14,11 +21,12 @@
           les creatures habitant la galaxie. L'utilisateur canalyse le fluide a
           partir d'une source de pouvoir avant de le modeler a sa convenance.
         </p>
+        <p class="text-center text-overline">Selectionez un type d'aptitude</p>
         <div class="row q-col-gutter-sm justify-center">
           <div
             v-for="typeAptitude in TypesAptitude"
             :key="typeAptitude.Nom"
-            class="col-12"
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
             <TypeAptitudeItem
               :Type="typeAptitude"
