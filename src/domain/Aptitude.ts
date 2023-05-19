@@ -38,6 +38,7 @@ export type Vecteur = {
   Nom: VecteurName;
   Description: string;
   Difficulte: string;
+  TypesCompatibilities: AptitudeTypeName[];
 };
 
 enum VecteurName {
@@ -152,46 +153,91 @@ export class AptitudeService {
       Description:
         "Les effets sont prisonnier d'un objet au contact du lanceur. Le lanceur peut choisir de relacher les effets à sa guise. Sinon, ils sont libérés quelques secondes après que l'objet est été relaché.",
       Difficulte: `Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3`,
+      TypesCompatibilities: [
+        AptitudeTypeName.EVOCATION,
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.BENEDICTION,
+      ],
     },
     {
       Nom: VecteurName.CONTACT,
       Description: 'Les effets sont appliqués à la cible touchée.',
       Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
+      TypesCompatibilities: [
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
     },
     {
       Nom: VecteurName.FRAPPE,
       Description:
         'Les effets sont appliqué sur une attaque a main nue ou avec une arme au corps à corps. ',
       Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR})`,
+      TypesCompatibilities: [
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
     },
     {
       Nom: VecteurName.HALUCINATION,
       Description: 'Les effets sont appliqués à la cible en visuel.',
       Difficulte: `Test opposé de ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
+      TypesCompatibilities: [
+        AptitudeTypeName.MALEFICE,
+        AptitudeTypeName.ENVOUTEMENT,
+      ],
     },
     {
       Nom: VecteurName.SOUFFLE,
       Description:
         "Le lanceur canalyse l'energie dans ses poumons, et applique des effets dans un cône devant lui sur une courte distance",
       Difficulte: `Attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}).`,
+      TypesCompatibilities: [
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
     },
     {
       Nom: VecteurName.PROJECTILE,
       Description:
         "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endroit indiqué, et applique ses effets à l'impact avant de s'estomper.",
       Difficulte: `Attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}).`,
+      TypesCompatibilities: [
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
+      ],
     },
     {
       Nom: VecteurName.ONDE,
       Description:
         'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
+      TypesCompatibilities: [
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
+        AptitudeTypeName.NECROMANCIE,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
     },
     {
-      Nom: VecteurName.SOURCE_UNIQUEMENT,
+      Nom: VecteurName.ONDE,
       Description:
-        "Les effets sont appliqués à la source de l'aptitude (dépends du type d'aptitude.). Aucune difficulté sur les cibles dépourvues de volonté, consentantes ou sur vous-même.",
-      Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) du lanceur contre ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}).`,
+        'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
+      TypesCompatibilities: [
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
+        AptitudeTypeName.NECROMANCIE,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
     },
   ];
 
