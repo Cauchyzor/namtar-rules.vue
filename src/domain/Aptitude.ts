@@ -24,7 +24,7 @@ export type AptitudeType = {
   DescriptionDetails: string;
 };
 
-enum AptitudeTypeName {
+export enum AptitudeTypeName {
   EVOCATION = 'Evocation',
   MALEFICE = 'Malefice',
   NECROMANCIE = 'Necromancie',
@@ -414,7 +414,7 @@ export class AptitudeService {
       Nom: ExtensionEffetName.INCENTATION_RAPIDE,
       Description:
         "Augmentez 3 fois la difficulté de l'aptitude. L'aptitude peut être lancée pendant un déplacement.",
-      IsCummulable: true,
+      IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],

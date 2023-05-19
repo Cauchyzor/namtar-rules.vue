@@ -1,21 +1,25 @@
 <template>
-  <q-card flat :class="Disabled ? 'transparent' : ''" class="bg-secondary">
+  <q-card flat bordered>
     <q-card-section horizontal>
       <q-card-section vertical class="col-10">
         <div class="text-h5 q-mt-sm q-mb-xs">
           {{ Extension.Nom }}
+          <q-badge v-if="Rank && Rank > 0" color="primary" floating>{{
+            Rank
+          }}</q-badge>
         </div>
         <div class="text-caption text-grey">{{ Extension.Description }}</div>
       </q-card-section>
       <q-card-actions vertical class="col-2">
         <q-btn
-          flat
-          round
+          outline
+          color="primary"
+          icon="add"
           @click="increment"
           :disable="Disabled"
-          icon="add"
+          :dimmed="Disabled"
         ></q-btn>
-        <q-btn flat round @click="decrement" icon="remove"></q-btn>
+        <q-btn outline color="primary" @click="decrement" icon="remove"></q-btn>
       </q-card-actions>
     </q-card-section>
   </q-card>
@@ -32,6 +36,7 @@ export default defineComponent({
       required: true,
     },
     Disabled: { type: Boolean, required: false },
+    Rank: { type: Number, required: false },
   },
   emits: ['rank-increased', 'rank-decreased'],
   methods: {

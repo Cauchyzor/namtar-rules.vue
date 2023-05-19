@@ -31,10 +31,11 @@
             <TypeAptitudeItem
               :Type="typeAptitude"
               @is-selected="changeType(typeAptitude)"
+              style="height: 100%"
+              :class="typeAptitude.Nom === SelectedType ? 'bg-accent' : ''"
             ></TypeAptitudeItem>
           </div>
         </div>
-
         <q-stepper-navigation>
           <q-btn @click="step = 2" color="primary" label="Continue"></q-btn>
         </q-stepper-navigation>
@@ -53,11 +54,19 @@
           cible... Certaines méthodes sont plus complexes que d'autre.
         </p>
 
+        <p class="text-center text-overline">Selectionez un vecteur</p>
+
         <div class="row q-col-gutter-sm justify-center">
-          <div v-for="vecteur in Vecteurs" :key="vecteur.Nom" class="col-12">
+          <div
+            v-for="vecteur in Vecteurs"
+            :key="vecteur.Nom"
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
+          >
             <VecteurItem
               :Vecteur="vecteur"
               @is-selected="SelectedVecteur = vecteur"
+              style="height: 100%"
+              :class="vecteur.Nom === SelectedVecteur?.Nom ? 'bg-accent' : ''"
             ></VecteurItem>
           </div>
         </div>
@@ -83,6 +92,7 @@
         caption="Ce que l'aptitude applique"
         icon="assignment"
         :disable="SelectedType == null"
+        :done="SelectedEffects.size > 0"
       >
         <p>
           L'aptitude consume son énergie en appliant des effets à la cible.
@@ -93,13 +103,16 @@
           <div
             v-for="effet in availableEffects"
             :key="effet.Nom"
-            class="col-12"
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
             <EffetCard
+              style="height: 100%"
               :Effet="effet"
+              :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
+              :Rank="SelectedEffects.get(effet.Nom) || 0"
+              :class="SelectedEffects.has(effet.Nom) ? 'bg-accent' : ''"
               @rank-increased="increaseEffectRank(effet)"
               @rank-decreased="decreaseEffectRank(effet)"
-              :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
             ></EffetCard>
           </div>
         </div>
@@ -122,6 +135,7 @@
         caption="Les conditions de réussites"
         icon="add_comment"
         :disable="SelectedType == null"
+        :done="step > 4"
       >
         <p>
           Pour canalyser et materialiser les formes les plus puissantes du
@@ -131,15 +145,18 @@
           <div
             v-for="extension in availableExtensions"
             :key="extension.Nom"
-            class="col-12"
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
             <ExtensionCard
+              style="height: 100%"
               :Extension="extension"
-              @rank-increased="increaseExtensionRank(extension)"
-              @rank-decreased="decreaseExtensionRank(extension)"
               :Disabled="
                 !extension.IsCummulable && SelectedExtension.has(extension.Nom)
               "
+              :Rank="SelectedExtension.get(extension.Nom) || 0"
+              :class="SelectedExtension.has(extension.Nom) ? 'bg-accent' : ''"
+              @rank-increased="increaseExtensionRank(extension)"
+              @rank-decreased="decreaseExtensionRank(extension)"
             ></ExtensionCard>
           </div>
         </div>
@@ -210,6 +227,7 @@ import { defineComponent, ref } from 'vue';
 import {
   AptitudeService,
   AptitudeType,
+  AptitudeTypeName,
   Effet,
   ExtensionEffet,
 } from 'src/domain/Aptitude';
@@ -331,6 +349,9 @@ export default defineComponent({
       this.SelectedType = type.Nom;
       this.SelectedEffects.clear();
       this.SelectedExtension.clear();
+    },
+    getTypeDescription(typeName: AptitudeTypeName) {
+      return this.TypesAptitude.find((t) => t.Nom === typeName)?.Description;
     },
   },
 });
