@@ -14,7 +14,7 @@
         title="Type"
         caption="La source de l'aptitude"
         icon="settings"
-        :done="SelectedType != null"
+        :done="SelectedAptTypeName != null"
       >
         <p>
           Une aptitude est une manifestation fluide dans une forme concrète pour
@@ -24,7 +24,7 @@
         <p class="text-center text-overline">Selectionez un type d'aptitude</p>
         <div class="row q-col-gutter-sm justify-center">
           <div
-            v-for="typeAptitude in TypesAptitude"
+            v-for="typeAptitude in availableAptitudeTypes"
             :key="typeAptitude.Nom"
             class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
@@ -32,7 +32,9 @@
               :Type="typeAptitude"
               @is-selected="changeType(typeAptitude)"
               style="height: 100%"
-              :class="typeAptitude.Nom === SelectedType ? 'bg-accent' : ''"
+              :class="
+                typeAptitude.Nom === SelectedAptTypeName ? 'bg-accent' : ''
+              "
             ></TypeAptitudeItem>
           </div>
         </div>
@@ -46,7 +48,7 @@
         title="Vecteur"
         caption="La cible de l'aptitude"
         icon="create_new_folder"
-        :done="SelectedVecteur != null"
+        :done="SelectedAptVecteur != null"
       >
         <p>
           Une fois canalysée, l'énergie peut être dirigée vers une cible,
@@ -58,21 +60,23 @@
 
         <div class="row q-col-gutter-sm justify-center">
           <div
-            v-for="vecteur in Vecteurs"
+            v-for="vecteur in AptVecteurs"
             :key="vecteur.Nom"
             class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
             <VecteurItem
               :Vecteur="vecteur"
-              @is-selected="SelectedVecteur = vecteur"
+              @is-selected="SelectedAptVecteur = vecteur"
               style="height: 100%"
-              :class="vecteur.Nom === SelectedVecteur?.Nom ? 'bg-accent' : ''"
+              :class="
+                vecteur.Nom === SelectedAptVecteur?.Nom ? 'bg-accent' : ''
+              "
             ></VecteurItem>
           </div>
         </div>
         <q-stepper-navigation>
           <q-btn
-            @click="step = SelectedType == null ? 5 : 3"
+            @click="step = SelectedAptTypeName == null ? 5 : 3"
             color="primary"
             label="Continue"
           ></q-btn>
@@ -91,8 +95,8 @@
         title="Effets"
         caption="Ce que l'aptitude applique"
         icon="assignment"
-        :disable="SelectedType == null"
-        :done="SelectedEffects.size > 0"
+        :disable="SelectedAptTypeName == null"
+        :done="SelectedAptEffets.size > 0"
       >
         <p>
           L'aptitude consume son énergie en appliant des effets à la cible.
@@ -101,18 +105,20 @@
 
         <div class="row q-col-gutter-sm justify-center">
           <div
-            v-for="effet in availableEffects"
+            v-for="effet in availableEffets"
             :key="effet.Nom"
             class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
             <EffetCard
               style="height: 100%"
               :Effet="effet"
-              :Disabled="!effet.IsCummulable && SelectedEffects.has(effet.Nom)"
-              :Rank="SelectedEffects.get(effet.Nom) || 0"
-              :class="SelectedEffects.has(effet.Nom) ? 'bg-accent' : ''"
-              @rank-increased="increaseEffectRank(effet)"
-              @rank-decreased="decreaseEffectRank(effet)"
+              :Disabled="
+                !effet.IsCummulable && SelectedAptEffets.has(effet.Nom)
+              "
+              :Rank="SelectedAptEffets.get(effet.Nom) || 0"
+              :class="SelectedAptEffets.has(effet.Nom) ? 'bg-accent' : ''"
+              @rank-increased="increaseEffetRank(effet)"
+              @rank-decreased="decreaseEffetRank(effet)"
             ></EffetCard>
           </div>
         </div>
@@ -134,7 +140,7 @@
         title="Extention"
         caption="Les conditions de réussites"
         icon="add_comment"
-        :disable="SelectedType == null"
+        :disable="SelectedAptTypeName == null"
         :done="step > 4"
       >
         <p>
@@ -151,10 +157,13 @@
               style="height: 100%"
               :Extension="extension"
               :Disabled="
-                !extension.IsCummulable && SelectedExtension.has(extension.Nom)
+                !extension.IsCummulable &&
+                SelectedAptExtensions.has(extension.Nom)
               "
-              :Rank="SelectedExtension.get(extension.Nom) || 0"
-              :class="SelectedExtension.has(extension.Nom) ? 'bg-accent' : ''"
+              :Rank="SelectedAptExtensions.get(extension.Nom) || 0"
+              :class="
+                SelectedAptExtensions.has(extension.Nom) ? 'bg-accent' : ''
+              "
               @rank-increased="increaseExtensionRank(extension)"
               @rank-decreased="decreaseExtensionRank(extension)"
             ></ExtensionCard>
@@ -182,7 +191,7 @@
           <q-btn color="primary" label="Creer l'aptitude"></q-btn>
           <q-btn
             flat
-            @click="step = SelectedType == null ? 2 : 4"
+            @click="step = SelectedAptTypeName == null ? 2 : 4"
             color="primary"
             label="Back"
             class="q-ml-sm"
@@ -195,14 +204,14 @@
         <q-card-section class="col-6" vertical>
           <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
           <div class="text-caption text-grey">
-            Type : <strong>{{ SelectedType }}</strong>
+            Type : <strong>{{ SelectedAptTypeName }}</strong>
           </div>
           <div class="text-caption text-grey">
             Vecteur :
-            <strong>{{ SelectedVecteur && SelectedVecteur.Nom }}</strong>
+            <strong>{{ SelectedAptVecteur && SelectedAptVecteur.Nom }}</strong>
           </div>
           <div class="text-caption text-grey">
-            Effet : <strong>{{ getSelectedEffectsWithRank() }}</strong>
+            Effet : <strong>{{ getSelectedEffetsWithRank() }}</strong>
           </div>
           <div class="text-caption text-grey">
             Extension : <strong>{{ getSelectedExtensionWithRank() }}</strong>
@@ -214,7 +223,9 @@
           </div>
           <div class="text-caption text-grey">
             Test à réaliser :
-            <strong>{{ SelectedVecteur && SelectedVecteur.Difficulte }}</strong>
+            <strong>{{
+              SelectedAptVecteur && SelectedAptVecteur.Difficulte
+            }}</strong>
           </div>
         </q-card-section>
       </q-card-section>
@@ -247,111 +258,118 @@ export default defineComponent({
   },
   data() {
     return {
-      TypesAptitude: AptitudeService.getAllTypes(),
-      Vecteurs: AptitudeService.getAllVecteur(),
-      SelectedType: ref(),
-      SelectedVecteur: ref(),
-      SelectedEffects: ref(new Map()),
-      SelectedExtension: ref(new Map()),
+      AptTypes: AptitudeService.getAllTypes(),
+      AptVecteurs: AptitudeService.getAllVecteur(),
+      SelectedAptTypeName: ref(),
+      SelectedAptVecteur: ref(),
+      SelectedAptEffets: ref(new Map()),
+      SelectedAptExtensions: ref(new Map()),
 
       step: ref(1),
     };
   },
   computed: {
-    availableEffects(): Effet[] {
-      return this.SelectedType
+    /**
+     * All type can be selected for the creation form except Mantra
+     */
+    availableAptitudeTypes(): AptitudeType[] {
+      return this.AptTypes.filter((t) => t.Nom !== AptitudeTypeName.MANTRA);
+    },
+
+    availableEffets(): Effet[] {
+      return this.SelectedAptTypeName
         ? AptitudeService.getAllEffect().filter((effect: Effet) =>
-            effect.StabiliteParTypeAptitude.has(this.SelectedType)
+            effect.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
         : AptitudeService.getAllEffect();
     },
     availableExtensions(): ExtensionEffet[] {
-      return this.SelectedType && this.SelectedType
+      return this.SelectedAptTypeName && this.SelectedAptTypeName
         ? AptitudeService.getAllExtension().filter(
             (extension: ExtensionEffet) =>
-              extension.StabiliteParTypeAptitude.has(this.SelectedType)
+              extension.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
         : AptitudeService.getAllExtension();
     },
   },
   methods: {
-    getSelectedEffectsWithRank() {
-      return Array.from(this.SelectedEffects.entries())
+    getSelectedEffetsWithRank() {
+      return Array.from(this.SelectedAptEffets.entries())
         .map(([name, rank]) => `${name}(${rank})`)
         .join(' - ');
     },
-    increaseEffectRank(effect: Effet) {
-      if (this.SelectedEffects.has(effect.Nom)) {
-        const actualRank = this.SelectedEffects.get(effect.Nom);
-        this.SelectedEffects.set(effect.Nom, actualRank + 1);
+    increaseEffetRank(effect: Effet) {
+      if (this.SelectedAptEffets.has(effect.Nom)) {
+        const actualRank = this.SelectedAptEffets.get(effect.Nom);
+        this.SelectedAptEffets.set(effect.Nom, actualRank + 1);
         return;
       }
-      this.SelectedEffects.set(effect.Nom, 1);
+      this.SelectedAptEffets.set(effect.Nom, 1);
     },
-    decreaseEffectRank(effect: Effet) {
-      if (!this.SelectedEffects.has(effect.Nom)) {
+    decreaseEffetRank(effect: Effet) {
+      if (!this.SelectedAptEffets.has(effect.Nom)) {
         return;
       }
-      const actualRank = this.SelectedEffects.get(effect.Nom);
+      const actualRank = this.SelectedAptEffets.get(effect.Nom);
       if (actualRank === 1) {
-        this.SelectedEffects.delete(effect.Nom);
+        this.SelectedAptEffets.delete(effect.Nom);
 
         return;
       }
-      this.SelectedEffects.set(effect.Nom, actualRank - 1);
+      this.SelectedAptEffets.set(effect.Nom, actualRank - 1);
     },
     increaseExtensionRank(extension: ExtensionEffet) {
-      if (this.SelectedExtension.has(extension.Nom)) {
-        const actualRank = this.SelectedExtension.get(extension.Nom);
-        this.SelectedExtension.set(extension.Nom, actualRank + 1);
+      if (this.SelectedAptExtensions.has(extension.Nom)) {
+        const actualRank = this.SelectedAptExtensions.get(extension.Nom);
+        this.SelectedAptExtensions.set(extension.Nom, actualRank + 1);
         return;
       }
-      this.SelectedExtension.set(extension.Nom, 1);
+      this.SelectedAptExtensions.set(extension.Nom, 1);
     },
     decreaseExtensionRank(extension: ExtensionEffet) {
-      if (!this.SelectedExtension.has(extension.Nom)) {
+      if (!this.SelectedAptExtensions.has(extension.Nom)) {
         return;
       }
-      const actualRank = this.SelectedExtension.get(extension.Nom);
+      const actualRank = this.SelectedAptExtensions.get(extension.Nom);
       if (actualRank === 1) {
-        this.SelectedExtension.delete(extension.Nom);
+        this.SelectedAptExtensions.delete(extension.Nom);
 
         return;
       }
-      this.SelectedExtension.set(extension.Nom, actualRank - 1);
+      this.SelectedAptExtensions.set(extension.Nom, actualRank - 1);
     },
     getSelectedExtensionWithRank() {
-      return Array.from(this.SelectedExtension.entries())
+      return Array.from(this.SelectedAptExtensions.entries())
         .map(([name, rank]) => `${name}(${rank})`)
         .join(' - ');
     },
     updateExtensionRank(extension: ExtensionEffet, rank: number) {
       if (rank === 0) {
-        this.SelectedExtension.delete(extension.Nom);
+        this.SelectedAptExtensions.delete(extension.Nom);
         return;
       }
-      this.SelectedExtension.set(extension.Nom, rank);
+      this.SelectedAptExtensions.set(extension.Nom, rank);
     },
     computeCost() {
-      return this.SelectedType &&
-        Array.from(this.SelectedEffects.values()).length
+      return this.SelectedAptTypeName &&
+        Array.from(this.SelectedAptEffets.values()).length
         ? AptitudeService.printAptitudeCost(
             AptitudeService.computeStabilityScore(
-              this.SelectedType,
-              this.SelectedEffects,
-              this.SelectedExtension
+              this.SelectedAptTypeName,
+              this.SelectedAptEffets,
+              this.SelectedAptExtensions
             ),
-            this.SelectedType
+            this.SelectedAptTypeName
           )
         : 'Incomplet';
     },
-    changeType(type: AptitudeType) {
-      this.SelectedType = type.Nom;
-      this.SelectedEffects.clear();
-      this.SelectedExtension.clear();
+    changeType(aptTtype: AptitudeType) {
+      this.SelectedAptTypeName = aptTtype.Nom;
+      this.SelectedAptEffets.clear();
+      this.SelectedAptExtensions.clear();
     },
     getTypeDescription(typeName: AptitudeTypeName) {
-      return this.TypesAptitude.find((t) => t.Nom === typeName)?.Description;
+      return this.AptTypes.find((t) => t.Nom === typeName)?.Description;
     },
   },
 });
