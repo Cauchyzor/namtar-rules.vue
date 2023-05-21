@@ -613,9 +613,8 @@ export class AptitudeService {
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: "L'échophagique",
-      Description:
-        "Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.",
+      Nom: "L'Échophage",
+      Description: `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
@@ -623,9 +622,9 @@ export class AptitudeService {
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: 'Le distant',
+      Nom: 'Le Distant',
       Description:
-        "Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire.",
+        "Vous avez 1 point de défense supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous. ",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
@@ -645,7 +644,7 @@ export class AptitudeService {
     {
       Nom: 'Le Fluidophobique',
       Description:
-        "Vous avez 1 avantage chaque fois que vous effectuer un jet d'attaque ou un jet d'opposition avec une creature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantra. Vous vous montrez toujours très antiphatique envers les utilisateurs du fluide.",
+        "Vous gagnez un atout chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
@@ -653,9 +652,9 @@ export class AptitudeService {
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: "L'honorable dueliste",
+      Nom: "L'Honorable Dueliste",
       Description:
-        "Pendant une phase de combat, vous avez un avantage sur tout vos jet d'attaque face à un enemie s'il n'a attaqué que vous, et n'a subit aucune attaque autre que les votres. Vous subissez deux menaces si le duel est romput.",
+        "Pendant une phase de combat, vous avez un avantage sur tous vos jets d'attaque face à un ennemi s'il n'a attaqué que vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux menaces si le duel est rompu. Le personnage à un esprit de compétition très marqué.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
