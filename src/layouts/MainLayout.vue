@@ -96,7 +96,7 @@
               </q-item-section>
             </q-item>
 
-            <q-item clickable to="/apt-catalog" exact>
+            <q-item clickable to="/apt-mantra" exact>
               <q-item-section>
                 <q-item-label>Catalogue</q-item-label>
               </q-item-section>
