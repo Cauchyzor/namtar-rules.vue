@@ -84,12 +84,12 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'Aptitude Creation',
-        path: '/aptitude',
+        path: '/apt-create',
         component: () => import('src/pages/AptitudeCreationPage.vue'),
       },
       {
         name: 'Aptitude Catalogue',
-        path: '/catalog',
+        path: '/apt-catalog',
         component: () => import('src/pages/AptitudesCataloguePage.vue'),
       },
       {

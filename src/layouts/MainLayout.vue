@@ -79,33 +79,6 @@
         </q-item>
 
         <q-expansion-item
-          icon="graphic_eq"
-          label="Aptitudes"
-          :content-inset-level="1"
-        >
-          <q-item clickable to="/aptitude" exact>
-            <q-item-section>
-              <q-item-label>Création d'aptitude</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item clickable to="/catalog" exact>
-            <q-item-section>
-              <q-item-label>Catalogue</q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-expansion-item>
-
-        <q-item clickable to="/ethnotrait" exact>
-          <q-item-section avatar>
-            <q-icon name="biotech" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Ethnotrait</q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-expansion-item
           icon="settings"
           label="Personnage"
           :content-inset-level="1"
@@ -113,6 +86,33 @@
           <q-item clickable to="/pj" exact>
             <q-item-section>
               <q-item-label>Fiche personnage</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-expansion-item
+            icon="graphic_eq"
+            label="Aptitudes"
+            :content-inset-level="1"
+          >
+            <q-item clickable to="/apt-create" exact>
+              <q-item-section>
+                <q-item-label>Création d'aptitude</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable to="/apt-catalog" exact>
+              <q-item-section>
+                <q-item-label>Catalogue</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
+
+          <q-item clickable to="/ethnotrait" exact>
+            <q-item-section avatar>
+              <q-icon name="biotech" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Ethnotrait</q-item-label>
             </q-item-section>
           </q-item>
 
