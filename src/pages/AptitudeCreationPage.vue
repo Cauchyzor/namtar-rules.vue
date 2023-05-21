@@ -29,9 +29,10 @@
         :done="SelectedAptTypeName != null"
       >
         <p>
-          Une aptitude est une manifestation fluide dans une forme concrète pour
-          les creatures habitant la galaxie. L'utilisateur canalyse le fluide a
-          partir d'une source de pouvoir avant de le modeler a sa convenance.
+          Détermine comment l'utilisateur canalise l'énergie sombre avec le
+          fluide. En fonction de la méthode, l'utilisateur produit un certain
+          nombre de points de "stabilité" qui lui sera utile pour choisir les
+          effets de l'aptitude.
         </p>
         <p class="text-center text-overline">Selectionez un type d'aptitude</p>
         <div class="row q-col-gutter-sm justify-center">
@@ -63,7 +64,7 @@
         :done="SelectedAptVecteur != null"
       >
         <p>
-          Une fois canalysée, l'énergie peut être dirigée vers une cible,
+          Une fois canalysée, l'énergie peut être dirigée vers un point,
           s'etendre homogènement depuis sa source, être projetée sur une
           cible... Certaines méthodes sont plus complexes que d'autre.
         </p>
@@ -111,8 +112,10 @@
         :done="SelectedAptEffets.size > 0"
       >
         <p>
-          L'aptitude consume son énergie en appliant des effets à la cible.
-          Touts les effets sont appliqués en même temps.
+          Chaque effet à un coût en stabilité. Une fois que le coût établit, le
+          type d'aptitude (choisi précédemment) détermine ce que le lanceur doit
+          investir pour réussir son aptitude. Tous les effets sont appliqués en
+          même temps lorsque l'aptitude touche sa cible.
         </p>
 
         <div class="row q-col-gutter-sm justify-center">
@@ -156,8 +159,9 @@
         :done="step > 4"
       >
         <p>
-          Pour canalyser et materialiser les formes les plus puissantes du
-          fluide, les utilisateurs peuvent accepter certaines contraintes...
+          Les extensions permettent de gagner en stabilité sous certaines
+          contraintes. Elles peuvent aussi, à l'inverse, décupler les effets
+          d'un sort au prix de points de stabilité.
         </p>
         <div class="row q-col-gutter-sm justify-center">
           <div
