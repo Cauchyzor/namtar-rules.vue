@@ -1,9 +1,5 @@
 <template>
   <q-item class="bg-accent" clickable v-ripple @click="openDetail = true">
-    <q-item-section thumbnail>
-      <img src="~assets/apt/apt-benediction-default.jpg" fit="scale-down" />
-    </q-item-section>
-
     <q-item-section>
       <q-item-label class="text-overline"> {{ Aptitude.Nom }}</q-item-label>
       <q-item-label caption class="text-grey">{{
