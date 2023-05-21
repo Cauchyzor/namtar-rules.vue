@@ -43,13 +43,18 @@ export type Vecteur = {
 
 enum VecteurName {
   ALTERATION_OBJET = "Altération d'objet",
+  CARESSE = 'Caresse',
+  CHANT = 'Chant',
   CONTACT = 'Contact',
   FRAPPE = 'Frappe',
-  HALUCINATION = 'Halucination',
-  SOUFFLE = 'Souffle',
+  EXPLOITATION_CADRAVRE = 'Exploitation de cadavre',
+  EXPLOSION_CADAVRE = 'Explosion de cadavre',
+  MANTRA = 'Mantra',
+  MEDITATION_ECLAIRE = 'Méditation éclaire',
   PROJECTILE = 'Projectile',
   ONDE = 'Onde',
-  SOURCE_UNIQUEMENT = 'Source uniquement',
+  REGARD = 'Regard',
+  SOUFFLE = 'Souffle',
 }
 
 export type Effet = {
@@ -61,6 +66,7 @@ export type Effet = {
 
 enum EffetName {
   ATOUT = 'Atout',
+  ATOUT_GROUPE = 'Atout de groupe',
   BOUCLIER = 'Bouclier',
   CHALEUR = 'Chaleur',
   DEBILITANT = 'Débilitant',
@@ -154,9 +160,9 @@ export class AptitudeService {
         "Les effets sont prisonnier d'un objet au contact du lanceur. Le lanceur peut choisir de relacher les effets à sa guise. Sinon, ils sont libérés quelques secondes après que l'objet est été relaché.",
       Difficulte: `Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3`,
       TypesCompatibilities: [
-        AptitudeTypeName.EVOCATION,
-        AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.BENEDICTION,
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.EVOCATION,
       ],
     },
     {
@@ -165,30 +171,31 @@ export class AptitudeService {
       Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
-        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
       ],
     },
     {
       Nom: VecteurName.FRAPPE,
       Description:
-        'Les effets sont appliqué sur une attaque a main nue ou avec une arme au corps à corps. ',
-      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR})`,
+        "Les effets sont appliqué sur une attaque à main nue ou avec une arme au corps à corps. Un equilibre certain doit être trouver par l'utilisateur pour captialiser sur son arme et l'aptitude.",
+      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages générés et non par les succès. Les dégats de l'armes utilisé sont appliqués normalement.`,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
-        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
       ],
     },
     {
-      Nom: VecteurName.HALUCINATION,
-      Description: 'Les effets sont appliqués à la cible en visuel.',
+      Nom: VecteurName.REGARD,
+      Description:
+        'Les effets sont appliqués à la cible avec qui vous avez un contact visuel.',
       Difficulte: `Test opposé de ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
       TypesCompatibilities: [
-        AptitudeTypeName.MALEFICE,
         AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
       ],
     },
     {
@@ -198,8 +205,8 @@ export class AptitudeService {
       Difficulte: `Attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}).`,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
-        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
       ],
     },
@@ -219,25 +226,57 @@ export class AptitudeService {
         'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
       TypesCompatibilities: [
+        AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
-        AptitudeTypeName.EVOCATION,
-        AptitudeTypeName.NECROMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
       ],
     },
     {
-      Nom: VecteurName.ONDE,
+      Nom: VecteurName.CHANT,
       Description:
-        'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
+        'Le lanceur entonne un discour ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le psaume avec le lanceurs beneficient de ces effets.',
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 du lanceur. Pas de tests pour les créatures.`,
+      TypesCompatibilities: [AptitudeTypeName.BENEDICTION],
+    },
+    {
+      Nom: VecteurName.MEDITATION_ECLAIRE,
+      Description:
+        "Le lanceur pratique une introspection rapide pour effectuer l'aptitude",
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 du lanceur.`,
       TypesCompatibilities: [
+        AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
-        AptitudeTypeName.EVOCATION,
-        AptitudeTypeName.NECROMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
-        AptitudeTypeName.MALEFICE,
+        AptitudeTypeName.EVOCATION,
       ],
+    },
+    {
+      Nom: VecteurName.CARESSE,
+      Description:
+        "Le lanceur applique les effets de l'aptitudes à la cible touchée concentante.",
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD2 du lanceur.`,
+      TypesCompatibilities: [
+        AptitudeTypeName.BENEDICTION,
+        AptitudeTypeName.CYTOMANCIE,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.EVOCATION,
+      ],
+    },
+    {
+      Nom: VecteurName.EXPLOSION_CADAVRE,
+      Description:
+        "Le lanceur utilise le cadavre ou la source d'énergie pour répendre un souffle à portée courte.",
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
+      TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
+    },
+    {
+      Nom: VecteurName.EXPLOITATION_CADRAVRE,
+      Description:
+        "Le lanceur absorbe le cadavre ou la source d'énergie à son contact.",
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2.`,
+      TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
     },
   ];
 
@@ -252,6 +291,18 @@ export class AptitudeService {
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -2],
         [AptitudeTypeName.CYTOMANCIE, -2],
+      ]),
+    },
+    {
+      Nom: EffetName.ATOUT_GROUPE,
+      Description:
+        "Le groupe gagne 1 atout (cumulable). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
+      IsCummulable: true,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.BENEDICTION, -4],
+        [AptitudeTypeName.EVOCATION, -6],
+        [AptitudeTypeName.NECROMANCIE, -3],
+        [AptitudeTypeName.CYTOMANCIE, -3],
       ]),
     },
     {
@@ -537,7 +588,7 @@ export class AptitudeService {
         'Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.',
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.BENEDICTION),
-      Vecteur: this.findVecteurByName(VecteurName.CONTACT),
+      Vecteur: this.findVecteurByName(VecteurName.CARESSE),
       Effets: new Map([[EffetName.SOIN, 1]]),
       ExtensionsEffet: new Map(),
     },
@@ -547,7 +598,7 @@ export class AptitudeService {
         "L'énergie résiduelle du cadavre visé s'échappe violemment et renverse les cibles à portée courte.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.NECROMANCIE),
-      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Vecteur: this.findVecteurByName(VecteurName.ONDE),
       Effets: new Map([[EffetName.FORCE, 2]]),
       ExtensionsEffet: new Map([[ExtensionEffetName.ZONE, 1]]),
     },
@@ -557,7 +608,7 @@ export class AptitudeService {
         "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },
@@ -567,7 +618,7 @@ export class AptitudeService {
         "Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },
@@ -577,7 +628,7 @@ export class AptitudeService {
         "Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous. Vous avez 1 point de défense supplémentaire.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },
@@ -592,12 +643,12 @@ export class AptitudeService {
       ExtensionsEffet: new Map([[ExtensionEffetName.DIFFICILE, 1]]),
     },
     {
-      Nom: 'Le Fluidophobie',
+      Nom: 'Le Fluidophobique',
       Description:
         "Vous avez 1 avantage chaque fois que vous effectuer un jet d'attaque ou un jet d'opposition avec une creature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantra. Vous vous montrez toujours très antiphatique envers les utilisateurs du fluide.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },
@@ -607,7 +658,7 @@ export class AptitudeService {
         "Pendant une phase de combat, vous avez un avantage sur tout vos jet d'attaque face à un enemie s'il n'a attaqué que vous, et n'a subit aucune attaque autre que les votres. Vous subissez deux menaces si le duel est romput.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findVecteurByName(VecteurName.SOURCE_UNIQUEMENT),
+      Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },

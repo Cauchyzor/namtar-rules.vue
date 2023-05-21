@@ -60,7 +60,7 @@
 
         <div class="row q-col-gutter-sm justify-center">
           <div
-            v-for="vecteur in AptVecteurs"
+            v-for="vecteur in availableAptitudeVecteur"
             :key="vecteur.Nom"
             class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
@@ -188,7 +188,12 @@
       >
         Decrivez précisement l'aptitude quand elle est utilisée.
         <q-stepper-navigation>
-          <q-btn color="primary" label="Creer l'aptitude"></q-btn>
+          <q-btn
+            :disable="!isAptValid"
+            color="primary"
+            label="Creer l'aptitude"
+            @click="showAtpCard = true"
+          ></q-btn>
           <q-btn
             flat
             @click="step = SelectedAptTypeName == null ? 2 : 4"
@@ -199,37 +204,41 @@
         </q-stepper-navigation>
       </q-step>
     </q-stepper>
-    <q-card class="bg-accent" flat>
-      <q-card-section horizontal>
-        <q-card-section class="col-6" vertical>
-          <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
-          <div class="text-caption text-grey">
-            Type : <strong>{{ SelectedAptTypeName }}</strong>
-          </div>
-          <div class="text-caption text-grey">
-            Vecteur :
-            <strong>{{ SelectedAptVecteur && SelectedAptVecteur.Nom }}</strong>
-          </div>
-          <div class="text-caption text-grey">
-            Effet : <strong>{{ getSelectedEffetsWithRank() }}</strong>
-          </div>
-          <div class="text-caption text-grey">
-            Extension : <strong>{{ getSelectedExtensionWithRank() }}</strong>
-          </div>
+    <q-dialog v-model="showAtpCard">
+      <q-card flat>
+        <q-card-section horizontal>
+          <q-card-section class="col-6" vertical>
+            <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
+            <div class="text-caption text-grey">
+              Type : <strong>{{ SelectedAptTypeName }}</strong>
+            </div>
+            <div class="text-caption text-grey">
+              Vecteur :
+              <strong>{{
+                SelectedAptVecteur && SelectedAptVecteur.Nom
+              }}</strong>
+            </div>
+            <div class="text-caption text-grey">
+              Effet : <strong>{{ getSelectedEffetsWithRank() }}</strong>
+            </div>
+            <div class="text-caption text-grey">
+              Extension : <strong>{{ getSelectedExtensionWithRank() }}</strong>
+            </div>
+          </q-card-section>
+          <q-card-section class="col-6" vertical>
+            <div class="text-caption text-grey">
+              Cout : <strong>{{ computeCost() }}</strong>
+            </div>
+            <div class="text-caption text-grey">
+              Test à réaliser :
+              <strong>{{
+                SelectedAptVecteur && SelectedAptVecteur.Difficulte
+              }}</strong>
+            </div>
+          </q-card-section>
         </q-card-section>
-        <q-card-section class="col-6" vertical>
-          <div class="text-caption text-grey">
-            Cout : <strong>{{ computeCost() }}</strong>
-          </div>
-          <div class="text-caption text-grey">
-            Test à réaliser :
-            <strong>{{
-              SelectedAptVecteur && SelectedAptVecteur.Difficulte
-            }}</strong>
-          </div>
-        </q-card-section>
-      </q-card-section>
-    </q-card>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 <script lang="ts">
@@ -259,13 +268,13 @@ export default defineComponent({
   data() {
     return {
       AptTypes: AptitudeService.getAllTypes(),
-      AptVecteurs: AptitudeService.getAllVecteur(),
       SelectedAptTypeName: ref(),
       SelectedAptVecteur: ref(),
       SelectedAptEffets: ref(new Map()),
       SelectedAptExtensions: ref(new Map()),
 
       step: ref(1),
+      showAtpCard: ref(false),
     };
   },
   computed: {
@@ -276,6 +285,13 @@ export default defineComponent({
       return this.AptTypes.filter((t) => t.Nom !== AptitudeTypeName.MANTRA);
     },
 
+    availableAptitudeVecteur() {
+      return this.SelectedAptTypeName
+        ? AptitudeService.getAllVecteur().filter((v) =>
+            v.TypesCompatibilities.includes(this.SelectedAptTypeName)
+          )
+        : AptitudeService.getAllVecteur();
+    },
     availableEffets(): Effet[] {
       return this.SelectedAptTypeName
         ? AptitudeService.getAllEffect().filter((effect: Effet) =>
@@ -290,6 +306,13 @@ export default defineComponent({
               extension.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
         : AptitudeService.getAllExtension();
+    },
+    isAptValid() {
+      return (
+        this.SelectedAptTypeName &&
+        this.SelectedAptVecteur &&
+        this.SelectedAptEffets.size > 0
+      );
     },
   },
   methods: {
@@ -365,6 +388,7 @@ export default defineComponent({
     },
     changeType(aptTtype: AptitudeType) {
       this.SelectedAptTypeName = aptTtype.Nom;
+      this.SelectedAptVecteur = ref();
       this.SelectedAptEffets.clear();
       this.SelectedAptExtensions.clear();
     },
