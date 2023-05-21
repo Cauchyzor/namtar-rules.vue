@@ -186,7 +186,23 @@
         caption="Baptisez votre nouvelle aptitude"
         icon="add_comment"
       >
-        Decrivez précisement l'aptitude quand elle est utilisée.
+        <div class="q-gutter-md">
+          <p>
+            Decrivez précisement comment utiliser l'aptitude et ses effets. Vous
+            devez restez cohérent avec les différentes caractéristiques choisies
+            tout au long de sa création.
+          </p>
+          <q-input
+            outlined
+            v-model="aptName"
+            label="Nom de l'aptitude"
+          ></q-input>
+          <q-input
+            outlined
+            v-model="aptDesc"
+            label="Description libre"
+          ></q-input>
+        </div>
         <q-stepper-navigation>
           <q-btn
             :disable="!isAptValid"
@@ -205,37 +221,49 @@
       </q-step>
     </q-stepper>
     <q-dialog v-model="showAtpCard">
-      <q-card flat>
-        <q-card-section horizontal>
-          <q-card-section class="col-6" vertical>
-            <div class="text-h5 q-mt-sm q-mb-xs">Nouvelle Aptitude</div>
-            <div class="text-caption text-grey">
-              Type : <strong>{{ SelectedAptTypeName }}</strong>
-            </div>
-            <div class="text-caption text-grey">
-              Vecteur :
-              <strong>{{
-                SelectedAptVecteur && SelectedAptVecteur.Nom
-              }}</strong>
-            </div>
-            <div class="text-caption text-grey">
-              Effet : <strong>{{ getSelectedEffetsWithRank() }}</strong>
-            </div>
-            <div class="text-caption text-grey">
-              Extension : <strong>{{ getSelectedExtensionWithRank() }}</strong>
-            </div>
+      <q-card flat bordered class="bg-secondary">
+        <q-card-section vertical>
+          <div class="text-h5 q-mt-sm q-mb-xs">{{ aptName }}</div>
+          <div class="text-caption q-mt-sm q-mb-xs">
+            Description : {{ aptDesc }}
+          </div>
+
+          <q-card-section horizontal class="bg-accent">
+            <q-card-section class="col-6" vertical>
+              <div class="text-caption text-grey">
+                Type : <strong>{{ SelectedAptTypeName }}</strong>
+              </div>
+              <div class="text-caption text-grey">
+                Vecteur :
+                <strong>{{
+                  SelectedAptVecteur && SelectedAptVecteur.Nom
+                }}</strong>
+              </div>
+              <div class="text-caption text-grey">
+                Effet : <strong>{{ getSelectedEffetsWithRank() }}</strong>
+              </div>
+              <div class="text-caption text-grey">
+                Extension :
+                <strong>{{ getSelectedExtensionWithRank() }}</strong>
+              </div>
+            </q-card-section>
+            <q-separator vertical inset></q-separator>
+            <q-card-section class="col-6" vertical>
+              <div class="text-caption text-grey">
+                Cout : <strong>{{ computeCost() }}</strong>
+              </div>
+              <div class="text-caption text-grey">
+                Test à réaliser :
+                <strong>{{
+                  SelectedAptVecteur && SelectedAptVecteur.Difficulte
+                }}</strong>
+              </div>
+            </q-card-section>
           </q-card-section>
-          <q-card-section class="col-6" vertical>
-            <div class="text-caption text-grey">
-              Cout : <strong>{{ computeCost() }}</strong>
-            </div>
-            <div class="text-caption text-grey">
-              Test à réaliser :
-              <strong>{{
-                SelectedAptVecteur && SelectedAptVecteur.Difficulte
-              }}</strong>
-            </div>
-          </q-card-section>
+          <p class="text-caption text-grey q-mt-md">
+            L'aptitude ne peut pas être sauvegardée pour l'instant. Notez la sur
+            un bout de papier :)
+          </p>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -272,6 +300,8 @@ export default defineComponent({
       SelectedAptVecteur: ref(),
       SelectedAptEffets: ref(new Map()),
       SelectedAptExtensions: ref(new Map()),
+      aptName: ref(''),
+      aptDesc: ref(''),
 
       step: ref(1),
       showAtpCard: ref(false),
@@ -311,7 +341,11 @@ export default defineComponent({
       return (
         this.SelectedAptTypeName &&
         this.SelectedAptVecteur &&
-        this.SelectedAptEffets.size > 0
+        this.SelectedAptEffets.size > 0 &&
+        this.aptName &&
+        this.aptName !== '' &&
+        this.aptDesc &&
+        this.aptDesc !== ''
       );
     },
   },
