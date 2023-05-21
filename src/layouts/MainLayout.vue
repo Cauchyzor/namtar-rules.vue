@@ -89,11 +89,7 @@
             </q-item-section>
           </q-item>
 
-          <q-expansion-item
-            icon="graphic_eq"
-            label="Aptitudes"
-            :content-inset-level="1"
-          >
+          <q-expansion-item label="Aptitudes" :content-inset-level="1">
             <q-item clickable to="/apt-create" exact>
               <q-item-section>
                 <q-item-label>Création d'aptitude</q-item-label>
@@ -108,9 +104,6 @@
           </q-expansion-item>
 
           <q-item clickable to="/ethnotrait" exact>
-            <q-item-section avatar>
-              <q-icon name="biotech" />
-            </q-item-section>
             <q-item-section>
               <q-item-label>Ethnotrait</q-item-label>
             </q-item-section>
