@@ -92,10 +92,11 @@ export type ExtensionEffet = {
 
 enum ExtensionEffetName {
   ANGLE_MORT = 'Angle mort',
+  MAUDIT = 'Maudit',
+  DESTINE = 'Déstiné',
   CATALYSEUR = 'Catalyseur',
   CONTRE_COUP = 'Contre-coup',
   DIFFICILE = 'Difficile',
-  ECHANGE_DE_REGARD = 'Echange de regards',
   ENERGIE_ACTIVATION = "Energie d'activation",
   INCENTATION_RAPIDE = 'Incantation rapide',
   INGREDIENT = 'Ingredient',
@@ -180,7 +181,7 @@ export class AptitudeService {
       Nom: VecteurName.FRAPPE,
       Description:
         "Les effets sont appliqué sur une attaque à main nue ou avec une arme au corps à corps. Un equilibre certain doit être trouver par l'utilisateur pour captialiser sur son arme et l'aptitude.",
-      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages générés et non par les succès. Les dégats de l'armes utilisé sont appliqués normalement.`,
+      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages générés plutôt que par les succès. Les dégats de l'arme utilisé sont calculés normalement.`,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
@@ -191,7 +192,7 @@ export class AptitudeService {
     {
       Nom: VecteurName.REGARD,
       Description:
-        'Les effets sont appliqués à la cible avec qui vous avez un contact visuel.',
+        'Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.',
       Difficulte: `Test opposé de ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
       TypesCompatibilities: [
         AptitudeTypeName.ENVOUTEMENT,
@@ -236,14 +237,14 @@ export class AptitudeService {
     {
       Nom: VecteurName.CHANT,
       Description:
-        'Le lanceur entonne un discour ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le psaume avec le lanceurs beneficient de ces effets.',
+        'Le lanceur entonne un chant ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le chant avec le lanceurs beneficient alors de ses effets.',
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 du lanceur. Pas de tests pour les créatures.`,
       TypesCompatibilities: [AptitudeTypeName.BENEDICTION],
     },
     {
       Nom: VecteurName.MEDITATION_ECLAIRE,
       Description:
-        "Le lanceur pratique une introspection rapide pour effectuer l'aptitude",
+        "Le lanceur pratique une introspection rapide pour effectuer appliquer les effets de l'aptitude sur lui-même.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 du lanceur.`,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
@@ -433,7 +434,7 @@ export class AptitudeService {
         [AptitudeTypeName.BENEDICTION, -3],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -3],
-        [AptitudeTypeName.CYTOMANCIE, -''],
+        [AptitudeTypeName.CYTOMANCIE, -3],
       ]),
     },
     {
@@ -475,23 +476,36 @@ export class AptitudeService {
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, 2],
-        [AptitudeTypeName.EVOCATION, 1],
-        [AptitudeTypeName.CYTOMANCIE, 1],
+        [AptitudeTypeName.EVOCATION, 2],
+        [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
     {
       Nom: ExtensionEffetName.CATALYSEUR,
       Description:
-        'Vous devez tenir en main un objet qui vous aide à lancer le sort. Le gain en stabilité dépend de la qualité du catalyseur.',
+        'Vous devez tenir en main un objet qui vous aide à lancer le sort. Cette extension convient à un catalyseur simple et commun.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, 0],
-        [AptitudeTypeName.ENVOUTEMENT, 0],
-        [AptitudeTypeName.EVOCATION, 0],
-        [AptitudeTypeName.CYTOMANCIE, 0],
-        [AptitudeTypeName.MALEFICE, 0],
-        [AptitudeTypeName.NECROMANCIE, 0],
+        [AptitudeTypeName.BENEDICTION, 1],
+        [AptitudeTypeName.ENVOUTEMENT, 1],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.CYTOMANCIE, 1],
+        [AptitudeTypeName.MALEFICE, 1],
+        [AptitudeTypeName.NECROMANCIE, 1],
+      ]),
+    },
+    {
+      Nom: ExtensionEffetName.DESTINE,
+      Description:
+        "Vous devez être sous les effets 1 d'atout pour chaque rang de cette extension.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.CYTOMANCIE, 2],
+        [AptitudeTypeName.ENVOUTEMENT, 3],
+        [AptitudeTypeName.EVOCATION, 2],
+        [AptitudeTypeName.NECROMANCIE, 1],
+        [AptitudeTypeName.MALEFICE, 3],
       ]),
     },
     {
@@ -522,17 +536,6 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: ExtensionEffetName.ECHANGE_DE_REGARD,
-      Description:
-        "L'aptitude ne nécessite pas de mains libres pour réussir. Le lanceur doit pouvoir fixer sa cible dans les yeux.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, 4],
-        [AptitudeTypeName.ENVOUTEMENT, 2],
-        [AptitudeTypeName.MALEFICE, 2],
-      ]),
-    },
-    {
       Nom: ExtensionEffetName.ENERGIE_ACTIVATION,
       Description:
         "L'aptitude n'applique pas ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
@@ -545,14 +548,32 @@ export class AptitudeService {
         [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
+
+    {
+      Nom: ExtensionEffetName.MAUDIT,
+      Description:
+        'Vous devez être sous les effets de 1 menace pour chaque rang de cette extension.',
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.CYTOMANCIE, 3],
+        [AptitudeTypeName.ENVOUTEMENT, 3],
+        [AptitudeTypeName.EVOCATION, 3],
+        [AptitudeTypeName.NECROMANCIE, 2],
+        [AptitudeTypeName.MALEFICE, 3],
+      ]),
+    },
     {
       Nom: ExtensionEffetName.INGREDIENT,
       Description:
-        "Vous devez consommer un objet possédant une signature énergétique. Cet objet est déterminé lors de la conception de l'aptitude. Le gain de stabilité dépend de la puissance de l'objet.",
+        "Vous devez consommer un objet possédant une signature énergétique commune. Cet objet est déterminé lors de la conception de l'aptitude.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
+        [AptitudeTypeName.ENVOUTEMENT, 1],
+        [AptitudeTypeName.EVOCATION, 1],
+        [AptitudeTypeName.NECROMANCIE, 1],
+        [AptitudeTypeName.MALEFICE, 1],
       ]),
     },
     {
