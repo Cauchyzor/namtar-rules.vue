@@ -524,8 +524,8 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.INCENTATION_RAPIDE,
       Description:
-        "Augmentez 3 fois la difficulté de l'aptitude. L'aptitude peut être lancée pendant un déplacement.",
-      IsCummulable: false,
+        "Augmentez 2 fois la difficulté de l'aptitude. L'aptitude peut être lancée pendant un déplacement.",
+      IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
