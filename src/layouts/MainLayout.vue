@@ -98,7 +98,7 @@
 
             <q-item clickable to="/apt-mantra" exact>
               <q-item-section>
-                <q-item-label>Catalogue</q-item-label>
+                <q-item-label>Catalogue des mantras</q-item-label>
               </q-item-section>
             </q-item>
           </q-expansion-item>
