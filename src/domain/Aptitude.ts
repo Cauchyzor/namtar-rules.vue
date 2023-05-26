@@ -43,9 +43,11 @@ export type Vecteur = {
 enum VecteurName {
   ALTERATION_OBJET = "Altération d'objet",
   CARESSE = 'Caresse',
+  CARESSE_ONIRIQUE = 'Caresse onirique',
   CHANT = 'Chant',
   CONTACT = 'Contact',
   FRAPPE = 'Frappe',
+  FRAPPE_ONIRIQUE = 'Frappe onirique',
   EXPLOITATION_CADRAVRE = 'Exploitation de cadavre',
   EXPLOSION_CADAVRE = 'Explosion de cadavre',
   MANTRA = 'Mantra',
@@ -65,7 +67,6 @@ export type Effet = {
 
 enum EffetName {
   ATOUT = 'Atout',
-  ATOUT_GROUPE = 'Atout de groupe',
   BOUCLIER = 'Bouclier',
   CHALEUR = 'Chaleur',
   DEBILITANT = 'Débilitant',
@@ -91,14 +92,16 @@ export type ExtensionEffet = {
 
 enum ExtensionEffetName {
   ANGLE_MORT = 'Angle mort',
-  MAUDIT = 'Maudit',
-  DESTINE = 'Déstiné',
+  CIBLE_GALVANISE = 'Cible galvanisée',
+  CIBLE_MAUDITE = 'Cible maudite',
   CATALYSEUR = 'Catalyseur',
   CONTRE_COUP = 'Contre-coup',
   DIFFICILE = 'Difficile',
   ENERGIE_ACTIVATION = "Energie d'activation",
   INCENTATION_RAPIDE = 'Incantation rapide',
   INGREDIENT = 'Ingredient',
+  UTILISATEUR_MAUDIT = 'Utilisateur maudit',
+  UTILISATEUR_GALVANISE = 'Utilisateur galvanisé',
   ZONE = "Zone d'effet",
 }
 
@@ -189,6 +192,17 @@ export class AptitudeService {
       ],
     },
     {
+      Nom: VecteurName.FRAPPE_ONIRIQUE,
+      Description:
+        "La lanceur materialise l'aptitude directement sur la cible à portée de voix grâce a son empreinte laissée dans le fluide. ",
+      Difficulte: `Attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}). Le DD est augmentée 1 fois en plus de la distance.`,
+      TypesCompatibilities: [
+        AptitudeTypeName.BENEDICTION,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
+    },
+    {
       Nom: VecteurName.REGARD,
       Description:
         'Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.',
@@ -265,6 +279,17 @@ export class AptitudeService {
       ],
     },
     {
+      Nom: VecteurName.CARESSE_ONIRIQUE,
+      Description:
+        "La lanceur materialise l'aptitude directement sur la cible consentante à portée de voix grâce a son empreinte laissée dans le fluide. ",
+      Difficulte: `Attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) qui ignore l'équipement et la couverture. Le DD est augmentée 1 fois en plus de la distance.`,
+      TypesCompatibilities: [
+        AptitudeTypeName.BENEDICTION,
+        AptitudeTypeName.ENVOUTEMENT,
+        AptitudeTypeName.MALEFICE,
+      ],
+    },
+    {
       Nom: VecteurName.EXPLOSION_CADAVRE,
       Description:
         "Le lanceur utilise le cadavre ou la source d'énergie pour répendre un souffle à portée courte.",
@@ -291,18 +316,6 @@ export class AptitudeService {
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -2],
         [AptitudeTypeName.CYTOMANCIE, -2],
-      ]),
-    },
-    {
-      Nom: EffetName.ATOUT_GROUPE,
-      Description:
-        "Le groupe gagne 1 atout (cumulable). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.BENEDICTION, -4],
-        [AptitudeTypeName.EVOCATION, -6],
-        [AptitudeTypeName.NECROMANCIE, -3],
-        [AptitudeTypeName.CYTOMANCIE, -3],
       ]),
     },
     {
@@ -384,6 +397,7 @@ export class AptitudeService {
         'Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.CYTOMANCIE, -2],
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.BENEDICTION, -1],
         [AptitudeTypeName.MALEFICE, -1],
@@ -483,8 +497,8 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.CATALYSEUR,
       Description:
-        'Vous devez tenir en main un objet qui vous aide à lancer le sort. Cette extension convient à un catalyseur simple et commun.',
-      IsCummulable: false,
+        'Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension.',
+      IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
@@ -495,9 +509,36 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: ExtensionEffetName.DESTINE,
+      Nom: ExtensionEffetName.CIBLE_GALVANISE,
       Description:
-        "Vous devez être sous les effets 1 d'atout pour chaque rang de cette extension.",
+        "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'atout que le rang de cette extension.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.CYTOMANCIE, 2],
+        [AptitudeTypeName.ENVOUTEMENT, 3],
+        [AptitudeTypeName.EVOCATION, 2],
+        [AptitudeTypeName.NECROMANCIE, 1],
+        [AptitudeTypeName.MALEFICE, 3],
+      ]),
+    },
+    {
+      Nom: ExtensionEffetName.CIBLE_MAUDITE,
+      Description:
+        "La ou les cibles de l'aptitude doivent être sous les effets d'au moins 1 menace pour chaque rang de cette extension.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.CYTOMANCIE, 2],
+        [AptitudeTypeName.ENVOUTEMENT, 3],
+        [AptitudeTypeName.EVOCATION, 2],
+        [AptitudeTypeName.NECROMANCIE, 1],
+        [AptitudeTypeName.MALEFICE, 3],
+      ]),
+    },
+
+    {
+      Nom: ExtensionEffetName.UTILISATEUR_GALVANISE,
+      Description:
+        "Vous devez être sous les effets d'au moins 1 atout pour chaque rang de cette extension.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
@@ -523,7 +564,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.INCENTATION_RAPIDE,
       Description:
-        "Augmentez 2 fois la difficulté de l'aptitude. L'aptitude peut être lancée pendant un déplacement.",
+        "L'aptitude peut être lancée pendant un déplacement, mais vous augmentez 2 fois la difficulté de l'aptitude. ",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -547,11 +588,24 @@ export class AptitudeService {
         [AptitudeTypeName.MALEFICE, 2],
       ]),
     },
+    {
+      Nom: ExtensionEffetName.UTILISATEUR_GALVANISE,
+      Description:
+        "Vous devez être sous les effets d'au moins autant d'atout que le rang de cette extension.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.CYTOMANCIE, 3],
+        [AptitudeTypeName.ENVOUTEMENT, 3],
+        [AptitudeTypeName.EVOCATION, 3],
+        [AptitudeTypeName.NECROMANCIE, 2],
+        [AptitudeTypeName.MALEFICE, 3],
+      ]),
+    },
 
     {
-      Nom: ExtensionEffetName.MAUDIT,
+      Nom: ExtensionEffetName.UTILISATEUR_MAUDIT,
       Description:
-        'Vous devez être sous les effets de 1 menace pour chaque rang de cette extension.',
+        "Vous devez être sous les effets d'au moins autant menace que le rang de cette extension.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, 3],
