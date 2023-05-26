@@ -26,7 +26,7 @@ export class ArmesService {
       Degats: '2 point de dommage par succès',
       Special: [
         "Augmente votre défense liée à l'équipuement de 1 point",
-        "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit 1 point de dégat supplémentaire par avantages et la cellule est consommée. Recharger la cellule demande une action",
+        "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit l'effet Choc(1) et la cellule est consommée. Recharger la cellule demande une action",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -46,6 +46,16 @@ export class ArmesService {
       Encombrement: 0,
       Rarete: 0,
       Prix: 0,
+    },
+    {
+      Nom: 'Matraque électrique',
+      Degats: '1 point de dommage par succès et par avantage',
+      Special: ["Vous pouvez dépenser 2 atout pour étourdir l'enemi."],
+      Competence: CompetenceName.CORPS_A_CORPS,
+      Description: 'Aucun',
+      Encombrement: 1,
+      Rarete: 2,
+      Prix: 100,
     },
     {
       Nom: 'couteau moleculaire',
@@ -123,9 +133,9 @@ export class ArmesService {
     },
     {
       Nom: 'Fusil anti-nuisible',
-      Degats: '3 point de dommage par succès',
+      Degats: '3 point de dommage par succès et avantages',
       Special: [
-        "Inflige 1 blessure à l'utilisateur par désavantage sur un test ou un jet d'attaque à distance avec cette arme.",
+        "Inflige 2 blessure à l'utilisateur par désavantage sur un test ou un jet d'attaque à distance avec cette arme.",
         'Requis 3 en vigueur.',
       ],
       Competence: CompetenceName.ARME_A_DISTANCE,
