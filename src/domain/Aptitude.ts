@@ -206,7 +206,7 @@ export class AptitudeService {
       Nom: VecteurName.REGARD,
       Description:
         'Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.',
-      Difficulte: `Test opposé de ${CompetenceName.TROMPERIE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
+      Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
       TypesCompatibilities: [
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.MALEFICE,
