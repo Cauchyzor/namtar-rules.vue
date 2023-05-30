@@ -4,6 +4,7 @@ import {
   mdiHeart,
   mdiLightningBolt,
   mdiHeartCircleOutline,
+  mdiArrowUp,
 } from '@mdi/js';
 
 export type Attribut = {
@@ -17,6 +18,7 @@ export enum AttributsName {
   DEFENSE = 'DEFENSE',
   STRESS = 'STRESS',
   RESILIENCE = 'RESILIENCE',
+  INITIATIVE = 'INITIATIVE',
 }
 
 export class AttributService {
@@ -31,6 +33,12 @@ export class AttributService {
       Nom: AttributsName.DEFENSE,
       Description: "Vous avez 1 point de Défense par point d'Agilité.",
       Icon: mdiShieldHalfFull,
+    },
+
+    {
+      Nom: AttributsName.INITIATIVE,
+      Description: "Vous avez 1 point d'initiative par point d'Agilité.",
+      Icon: mdiArrowUp,
     },
 
     {

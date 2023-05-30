@@ -29,7 +29,10 @@ export class CaracteristiqueService {
       Nom: CaracteritiqueName.AGILITE,
       Description:
         "Determine la souplesse, la finesse dans les mouvement et l'adresse.",
-      Attributs: AttributService.getAttributsByNames([AttributsName.DEFENSE]),
+      Attributs: AttributService.getAttributsByNames([
+        AttributsName.DEFENSE,
+        AttributsName.INITIATIVE,
+      ]),
     },
     {
       Nom: CaracteritiqueName.INTELLIGENCE,
