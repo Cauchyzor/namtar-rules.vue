@@ -303,6 +303,13 @@ export class AptitudeService {
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2.`,
       TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
     },
+    {
+      Nom: VecteurName.MANTRA,
+      Description:
+        'Un mantra est une caracteristique du corps du lanceur qui lui permet de recevoir des bénefices du fluide. ',
+      Difficulte: 'Aucune (passif)',
+      TypesCompatibilities: [AptitudeTypeName.MANTRA],
+    },
   ];
 
   private static EffectsList: Array<Effet> = [
