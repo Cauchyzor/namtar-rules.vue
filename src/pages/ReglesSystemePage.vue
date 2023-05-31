@@ -7,9 +7,8 @@
       "positifs" versus un pool de dé "négatifs". Les pools sont constituées de
       d6
     </p>
-
-    <q-card flat class="bg-accent q-my-lg">
-      <q-card-section horizontal class="justify-around">
+    <div class="row justify-around">
+      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
         <q-card-section vertical>
           <p class="text-h6">Pour les dés positifs</p>
           <ul>
@@ -22,8 +21,9 @@
             </li>
           </ul>
         </q-card-section>
-        <q-separator vertical inset class="q-mx-lg"></q-separator>
-
+      </q-card>
+      <!-- <q-separator vertical inset class="q-mx-lg"></q-separator> -->
+      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
         <q-card-section vertical>
           <p class="text-h6">Pour les dés négatifs</p>
           <ul>
@@ -36,9 +36,8 @@
             </li>
           </ul>
         </q-card-section>
-      </q-card-section>
-    </q-card>
-
+      </q-card>
+    </div>
     <p>
       <strong>Chaque échec annule un succès</strong>. Le score final, qu&#39;on
       appelle résultat net, est déterminé par la somme des échecs avec les
@@ -61,8 +60,8 @@
       plus son DD est élevé.
     </p>
 
-    <q-card flat class="bg-accent q-my-lg">
-      <q-card-section horizontal class="justify-around">
+    <div class="row justify-around">
+      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
         <q-card-section vertical class="text-center">
           <p>Un pool de d6 avec autant de dé que votre valeur de :</p>
           <p><strong>Caractéristique + Compétence</strong></p>
@@ -71,7 +70,9 @@
             le MJ
           </p>
         </q-card-section>
-        <q-separator vertical inset></q-separator>
+      </q-card>
+      <!-- <q-separator vertical inset></q-separator> -->
+      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
         <q-card-section vertical>
           <p>
             Le pool de d6 est constitué selon le
@@ -120,8 +121,8 @@
             précédant. (Exemple après le DD 13 : 13 + 8 = 21)
           </p>
         </q-card-section>
-      </q-card-section>
-    </q-card>
+      </q-card>
+    </div>
 
     <p>
       Pour faire un test de compétence, préparez autant de d6 que la somme de la
