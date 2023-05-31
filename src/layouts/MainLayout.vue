@@ -127,7 +127,9 @@
     </q-drawer>
 
     <q-page-container class="">
-      <router-view />
+      <Transition>
+        <router-view />
+      </Transition>
     </q-page-container>
   </q-layout>
 </template>
@@ -135,7 +137,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-// TODO Transition sur les pages
 export default defineComponent({
   name: 'MainLayout',
   data() {
@@ -158,5 +159,15 @@ export default defineComponent({
 }
 .q-toolbar__title {
   font-family: 'Anurati';
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

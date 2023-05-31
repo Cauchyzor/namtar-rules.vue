@@ -37,7 +37,8 @@ export class AttributService {
 
     {
       Nom: AttributsName.INITIATIVE,
-      Description: "Vous avez 1 point d'initiative par point d'Agilité.",
+      Description:
+        "Vous avez 1 point d'initiative par point d'Agilité et par niveau.",
       Icon: mdiArrowUp,
     },
 
