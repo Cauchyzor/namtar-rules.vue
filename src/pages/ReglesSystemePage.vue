@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Systeme de des</h3>
+    <h3 class="text-center">Systeme de Dés</h3>
     <h4>Dé positif versus Dé négatif</h4>
     <p>
       Les tests sont résolus en opposant les résultats d'un pool de dé
