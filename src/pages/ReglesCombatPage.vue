@@ -132,7 +132,7 @@
     <h4>Les Actions en détail</h4>
     <h5>Attaques au corps-à-corps</h5>
     <p>Dé positif : compétence + caractéristique</p>
-    <p>Dé négatif : défense + équipement</p>
+    <p>Dé négatif : réflexes + équipement</p>
 
     <p>
       La majorité des créatures possède une allonge de 1,50 mètre. Elles peuvent
@@ -242,10 +242,9 @@
     <p>
       Quand vous choisissez l&#39;action esquiver, votre unique objectif est
       d&#39;éviter les attaques. Jusqu&#39;au début de votre tour suivant, vous
-      <strong
-        >augmentez de 1 votre défense au corps à corps et à distance</strong
-      >. Vous perdez les bénéfices de cette action si vous êtes immobilisé,
-      empoigné, neutralisé ou inconscient.
+      <strong>augmentez de 1 votre score de réflexes</strong>. Vous perdez les
+      bénéfices de cette action si vous êtes immobilisé, empoigné, neutralisé ou
+      inconscient.
     </p>
     <h5>Se tenir prêt</h5>
     <p>

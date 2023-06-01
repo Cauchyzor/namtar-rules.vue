@@ -30,7 +30,7 @@ export class CaracteristiqueService {
       Description:
         "Determine la souplesse, la finesse dans les mouvement et l'adresse.",
       Attributs: AttributService.getAttributsByNames([
-        AttributsName.DEFENSE,
+        AttributsName.REFLEXES,
         AttributsName.INITIATIVE,
       ]),
     },

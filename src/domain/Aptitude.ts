@@ -686,7 +686,7 @@ export class AptitudeService {
     {
       Nom: 'Le Berserk',
       Description:
-        "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
+        "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),

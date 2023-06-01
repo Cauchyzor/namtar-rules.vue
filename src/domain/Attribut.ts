@@ -15,7 +15,7 @@ export type Attribut = {
 
 export enum AttributsName {
   PV = 'PV',
-  DEFENSE = 'DEFENSE',
+  REFLEXES = 'Réflexes',
   STRESS = 'STRESS',
   RESILIENCE = 'RESILIENCE',
   INITIATIVE = 'INITIATIVE',
@@ -30,8 +30,8 @@ export class AttributService {
     },
 
     {
-      Nom: AttributsName.DEFENSE,
-      Description: "Vous avez 1 point de Défense par point d'Agilité.",
+      Nom: AttributsName.REFLEXES,
+      Description: "Vous avez 1 point de Réflexes par point d'Agilité.",
       Icon: mdiShieldHalfFull,
     },
 
