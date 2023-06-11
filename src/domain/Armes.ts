@@ -1,3 +1,4 @@
+import { CaracteritiqueName } from './Caracteristique';
 import { CompetenceName } from './Competence';
 import { EquipementItem } from './Equipement';
 
@@ -23,7 +24,7 @@ export class ArmesService {
   private static ARMES: Array<ArmeItem> = [
     {
       Nom: 'Bâton de force',
-      Degats: '2 point de dommage par succès',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès`,
       Special: [
         "Augmente votre défense liée à l'équipuement de 1 point",
         "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit l'effet Choc(1) et la cellule est consommée. Recharger la cellule demande une action",
@@ -37,7 +38,7 @@ export class ArmesService {
     },
     {
       Nom: 'Mains nues',
-      Degats: '1 point de dommage par succès',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès`,
       Special: [
         "L'utilisateur subit 1 blessure par désavantages sur son jet d'attaque.",
       ],
@@ -49,7 +50,7 @@ export class ArmesService {
     },
     {
       Nom: 'Matraque électrique',
-      Degats: '1 point de dommage par succès et par avantage',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par avantage`,
       Special: ["Vous pouvez dépenser 2 atout pour étourdir l'enemi."],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: 'Aucun',
@@ -59,7 +60,7 @@ export class ArmesService {
     },
     {
       Nom: 'couteau moleculaire',
-      Degats: '2 point de dommage par succès',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès`,
       Special: ['Aucune'],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -70,7 +71,7 @@ export class ArmesService {
     },
     {
       Nom: 'Sabre moleculaire',
-      Degats: '2 point de dommage par succès',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès`,
       Special: ["Augmente votre defense liée à l'équipement de 1 point"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -81,7 +82,7 @@ export class ArmesService {
     },
     {
       Nom: 'Marteau à impulsion',
-      Degats: '2 point de dommage par succès et par avantage',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès et par avantage`,
       Special: [
         'Vous pouvez dépenser 2 avantages pour renverser la cible et consommant la cellule.',
         'Requis 3 en Vigueur',
@@ -95,7 +96,7 @@ export class ArmesService {
     },
     {
       Nom: 'Gants renforcés',
-      Degats: '1 point de dommage par succès et par avantages.',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par avantages.`,
       Special: ['Aucun'],
       Competence: CompetenceName.PUGILAT,
       Description:
@@ -106,7 +107,7 @@ export class ArmesService {
     },
     {
       Nom: 'Vibro-hache',
-      Degats: '3 point de dommage par succès',
+      Degats: `${CaracteritiqueName.VIGUEUR} + 3 point de dommage par succès`,
       Special: ['Requis 3 en Vigueur'],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -120,7 +121,7 @@ export class ArmesService {
   private static ARME_DISTANCE: Array<ArmeDistanceItem> = [
     {
       Nom: 'Cutter a plasma',
-      Degats: '2 point de dommage par succès',
+      Degats: '3 + 2 point de dommage par succès',
       Special: ['Aucun'],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
@@ -128,12 +129,12 @@ export class ArmesService {
       Encombrement: 3,
       Rarete: 2,
       Prix: 400,
-      Munition: '2 munition faible densitée',
+      Munition: '3 Munition faible densitée',
       PorteMax: NiveauPorte.COURTE,
     },
     {
       Nom: 'Fusil anti-nuisible',
-      Degats: '3 point de dommage par succès et avantages',
+      Degats: '5 + 3 point de dommage par succès et avantages',
       Special: [
         "Inflige 2 blessure à l'utilisateur par désavantage sur un test ou un jet d'attaque à distance avec cette arme.",
         'Requis 3 en vigueur.',
