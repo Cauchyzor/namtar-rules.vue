@@ -51,4 +51,8 @@ export class GenotraitService {
       AttributesModifiers: new Map([]),
     },
   ];
+
+  static findAllGenotraits() {
+    return GenotraitService.GenotraitsList;
+  }
 }
