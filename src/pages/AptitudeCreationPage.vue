@@ -2,16 +2,26 @@
   <q-page padding>
     <h3 class="text-center">Création d'aptitude</h3>
     <div class="q-my-xl">
-      Depuis l'apparition du fluide, les créatures sensibles à sa présence ont
-      accès à l'énergie sombre qui constitue une part importante de l'univers.
-      Il existe deux grandes écoles dans l'utilisation du fluide. La première
-      consiste à devenir un catalyseur pour permettre à l'énergie sombre de
-      produire ses effets. Cette méthode est la plus directe et la plus
-      puissante. Elle demande une grande discipline de corps et d'esprit. La
-      seconde joue sur l'empreinte au sein du fluide que toute créature possède.
-      En perturbant cette empreinte, l'utilisateur peut manifester des effets
-      sur sa cible. Plus polyvalente, cette école manipule des effets plus
-      subtils.
+      <p>
+        Les aptitudes représentent les talents ou les différentes techniques
+        qu'utiliseront les personnages et les créatures dans tous les recoins de
+        la galaxie. Certaines sont innées, d'autres acquises après de longues
+        heures de pratiques. Les plus courantes sont les techniques apprises
+        part l'expérience, d'autre plus rare sont intimement liée à
+        l'utilisation du 'Fluide'.
+      </p>
+      <p>
+        Depuis l'apparition du fluide, les créatures sensibles à sa présence ont
+        accès à l'énergie sombre qui constitue une part importante de l'univers.
+        Il existe deux grandes écoles dans l'utilisation du fluide. La première
+        consiste à devenir un catalyseur pour permettre à l'énergie sombre de
+        produire ses effets. Cette méthode est la plus directe et la plus
+        puissante. Elle demande une grande discipline de corps et d'esprit. La
+        seconde joue sur l'empreinte au sein du fluide que toute créature
+        possède. En perturbant cette empreinte, l'utilisateur peut manifester
+        des effets sur sa cible. Plus polyvalente, cette école manipule des
+        effets plus subtils.
+      </p>
     </div>
     <q-stepper
       v-model="step"

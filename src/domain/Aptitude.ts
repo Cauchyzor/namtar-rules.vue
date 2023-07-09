@@ -31,6 +31,8 @@ export enum AptitudeTypeName {
   BENEDICTION = 'Bénédiction',
   MANTRA = 'Mantra',
   CYTOMANCIE = 'Cytomancie',
+  POSTURE = 'Posture',
+  TECHNIQUE = 'Technique',
 }
 
 export type Vecteur = {
@@ -56,6 +58,8 @@ enum VecteurName {
   ONDE = 'Onde',
   REGARD = 'Regard',
   SOUFFLE = 'Souffle',
+  POSTURE = 'Posture',
+  TECHNIQUE_ENGAGEMENT = "Technique d'engagement",
 }
 
 export type Effet = {
@@ -81,6 +85,9 @@ enum EffetName {
   SOIN = 'Soin',
   VAMPIRISME = 'Vampirisme',
   MANTRA = 'Mantra',
+  PUISSANT = 'Puissant',
+  ATTAQUE_DOUBLE = 'Attaque double',
+  RENVERSEMENT = 'Renversement',
 }
 
 export type ExtensionEffet = {
@@ -103,6 +110,9 @@ enum ExtensionEffetName {
   UTILISATEUR_MAUDIT = 'Utilisateur maudit',
   UTILISATEUR_GALVANISE = 'Utilisateur galvanisé',
   ZONE = "Zone d'effet",
+  MAITRISE_CORPS_A_CORPS = 'Maitrise du corps à corps',
+  MAITRISE_PUGILAT = 'Maitrise de la pugilat',
+  FEINTE = 'Feinte',
 }
 
 export class AptitudeService {
@@ -153,6 +163,19 @@ export class AptitudeService {
       Description:
         "L'énergie sombre est stockée dans des cellules sacrifiées par le lanceur. Le lanceur sacrifie des PV pour générer ses effets",
       DescriptionDetails: 'Chaque PV sacrifié genère 1 point de stabilité.',
+    },
+    {
+      Nom: AptitudeTypeName.TECHNIQUE,
+      Description:
+        "Une technique est mouvement ou une attaque complexe portants plus d'effet qu'une simple attaque..",
+      DescriptionDetails: 'Attaque qui consomme votre réaction.',
+    },
+    {
+      Nom: AptitudeTypeName.POSTURE,
+      Description:
+        "Une posture travaillée et maîtrisée permet de mieux appréhender une situation. Elle s'active avec une réaction. Une seule posture active à la fois.",
+      DescriptionDetails:
+        'Les postures sont toujours stables et se déclenchent en consommant une réaction.',
     },
   ];
 
@@ -309,6 +332,19 @@ export class AptitudeService {
         'Un mantra est une caracteristique du corps du lanceur qui lui permet de recevoir des bénefices du fluide. ',
       Difficulte: 'Aucune (passif)',
       TypesCompatibilities: [AptitudeTypeName.MANTRA],
+    },
+    {
+      Nom: VecteurName.POSTURE,
+      Description:
+        "Une posture permet à son utilisateur de bénéficier d'effets passif.",
+      Difficulte: 'Aucune (passif)',
+      TypesCompatibilities: [AptitudeTypeName.POSTURE],
+    },
+    {
+      Nom: VecteurName.TECHNIQUE_ENGAGEMENT,
+      Description: 'Une attaque au corps à corps avec ne arme à main nue.',
+      Difficulte: "Jet d'Attaque au corps à corps ou de pugilat",
+      TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
     },
   ];
 
@@ -486,6 +522,27 @@ export class AptitudeService {
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map(),
     },
+    {
+      Nom: EffetName.PUISSANT,
+      Description: 'Vous infliger 1 point de dégats supplémentaire par succès.',
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -2]]),
+    },
+
+    {
+      Nom: EffetName.RENVERSEMENT,
+      Description:
+        'Si la somme des succès est superieur à la vigueur de la cible, elle est renversée.',
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -1]]),
+    },
+    {
+      Nom: EffetName.ATTAQUE_DOUBLE,
+      Description:
+        "Vous attaquez deux fois pendant l'execution de cette technique.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -4]]),
+    },
   ];
 
   private static ExtensionList: Array<ExtensionEffet> = [
@@ -648,7 +705,26 @@ export class AptitudeService {
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
         [AptitudeTypeName.ENVOUTEMENT, 2],
+        [AptitudeTypeName.TECHNIQUE, 1],
       ]),
+    },
+    {
+      Nom: ExtensionEffetName.MAITRISE_CORPS_A_CORPS,
+      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.CORPS_A_CORPS} doit être supérieur ou égal au rang de cette extension.`,
+      IsCummulable: true,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 1]]),
+    },
+    {
+      Nom: ExtensionEffetName.MAITRISE_PUGILAT,
+      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.PUGILAT} doit être supérieur ou égal au rang de cette extension.`,
+      IsCummulable: true,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 1]]),
+    },
+    {
+      Nom: ExtensionEffetName.FEINTE,
+      Description: "La technique n'inflige pas de dégat.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 2]]),
     },
   ];
 
@@ -811,10 +887,12 @@ export class AptitudeService {
         return `${Math.abs(stability)} atouts`;
       case AptitudeTypeName.CYTOMANCIE:
         return `${Math.trunc(Math.abs(stability))} PV sacrifié`;
+      case AptitudeTypeName.TECHNIQUE:
+        return stability === 0 ? 'stable' : 'Inutilisable';
       case AptitudeTypeName.MANTRA:
         return 'Aucun';
-      case AptitudeTypeName.MANTRA:
-        return 'Non caclulé';
+      case AptitudeTypeName.POSTURE:
+        return 'Aucun';
     }
   }
 }
