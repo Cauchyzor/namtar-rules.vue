@@ -318,12 +318,12 @@
         </p>
         <p>
           <strong>Jet d'initiative :</strong> Lancez autant de dés que votre
-          valeur de réflexe. Le belligérant avec le plus de succès résoudra ses
-          actions en premier dans la phase de résolution, puis le second avec le
-          plus de succès... Etc. Si deux personnages ont le même nombre de
-          succès, on compare alors leurs avantages. S'il subsiste une égalité,
-          c'est au joueur de commencer, et au PNJ de jouer en suite selon
-          l'ordre convenu.
+          valeur d'initiative. Le belligérant avec le plus de succès résoudra
+          ses actions en premier dans la phase de résolution, puis le second
+          avec le plus de succès... Etc. Si deux personnages ont le même nombre
+          de succès, on compare alors leurs avantages. S'il subsiste une
+          égalité, c'est au joueur de commencer, et au PNJ de jouer en suite
+          selon l'ordre convenu.
         </p>
       </q-step>
 
