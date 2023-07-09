@@ -9,6 +9,11 @@
   src: url('./fonts/Anurati-Regular.otf');
 }
 
+@font-face {
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-VariableFont_wght.ttf');
+}
+
 body {
-  font-family: 'Nova Square';
+  font-family: 'Dosis';
 }
