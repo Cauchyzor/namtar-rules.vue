@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Combats et conflits</h3>
+    <h3 class="text-center">Combats</h3>
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
     <q-stepper v-model="step" header-nav animated class="bg-secondary" flat>
