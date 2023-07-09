@@ -15,7 +15,7 @@ export type Attribut = {
 
 export enum AttributsName {
   PV = 'PV',
-  REFLEXES = 'Réflexes',
+  REFLEXES = 'REFLEXES',
   STRESS = 'STRESS',
   RESILIENCE = 'RESILIENCE',
   INITIATIVE = 'INITIATIVE',

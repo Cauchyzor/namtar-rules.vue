@@ -60,7 +60,7 @@ export class CompetenceService {
     },
     {
       Nom: CompetenceName.PILOTAGE,
-      BaseCaracteristique: CaracteritiqueName.AGILITE,
+      BaseCaracteristique: CaracteritiqueName.ADRESSE,
       ShortDescription: 'Manoeuvrer un vehicule terrestre ou aerospacial.',
     },
     {

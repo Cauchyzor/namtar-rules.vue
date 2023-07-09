@@ -10,6 +10,7 @@ export type Caracteristique = {
 export enum CaracteritiqueName {
   VIGUEUR = 'Vigueur',
   AGILITE = 'Agilité',
+  ADRESSE = 'Adresse',
   INTELLIGENCE = 'Intelligence',
   CHARISME = 'Charisme',
 }
@@ -27,12 +28,17 @@ export class CaracteristiqueService {
     },
     {
       Nom: CaracteritiqueName.AGILITE,
-      Description:
-        "Determine la souplesse, la finesse dans les mouvement et l'adresse.",
+      Description: 'Determine la souplesse et la vivacité des mouvements.',
       Attributs: AttributService.getAttributsByNames([
         AttributsName.REFLEXES,
         AttributsName.INITIATIVE,
       ]),
+    },
+    {
+      Nom: CaracteritiqueName.ADRESSE,
+      Description:
+        'Représente la précision et le contrôle des mouvements subtiles.',
+      Attributs: AttributService.getAttributsByNames([]),
     },
     {
       Nom: CaracteritiqueName.INTELLIGENCE,
