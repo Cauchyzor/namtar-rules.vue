@@ -13,9 +13,10 @@
           <p class="text-h6">Pour les dés positifs</p>
           <ul>
             <li class="text-overline">
-              Le résultat 6, 5 ou 4 génère : 1 succès
+              Le résultat 6 génère : 1 Triomphe et 1 succès
             </li>
-            <li class="text-overline">Le résultat 3 génère : 1 avantage</li>
+            <li class="text-overline">Le résultat 5 ou 4 génère : 1 succès</li>
+            <li class="text-overline">Le résultat 3 génère : 1 atout</li>
             <li class="text-overline">
               Les autres résultats ne sont pas interprétés
             </li>
@@ -28,9 +29,10 @@
           <p class="text-h6">Pour les dés négatifs</p>
           <ul>
             <li class="text-overline">
-              Le résultat 6, 5 ou 4 génère : 1 échec
+              Le résultat 6 génère : 1 Désastre et 1 échec
             </li>
-            <li class="text-overline">Le résultat 3 génère : 1 désavantage</li>
+            <li class="text-overline">Le résultat 5 ou 4 génère : 1 échec</li>
+            <li class="text-overline">Le résultat 3 génère : 1 menace</li>
             <li class="text-overline">
               Les autres résultats ne sont pas interprétés
             </li>
@@ -39,17 +41,29 @@
       </q-card>
     </div>
     <p>
-      <strong>Chaque échec annule un succès</strong>. Le score final, qu&#39;on
-      appelle résultat net, est déterminé par la somme des échecs avec les
-      succès et les avantages avec les désavantages. Si le test génère au moins
-      1 succès, le test réussi, sinon il échoue. S'il reste des avantages ou des
-      désavantage, ils peuvent déclencher respectivement des effets en faveur ou
-      en défaveur du lanceur.
+      <strong
+        >Chaque échec annule un succès, un triomphe annule un désastre</strong
+      >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
+      somme des échecs avec les succès. Si le test génère au moins 1 succès, le
+      test réussi, sinon il échoue. S'il reste des avantages ou des désavantage,
+      ils peuvent déclencher respectivement des effets en faveur ou en défaveur
+      du lanceur.
     </p>
     <p>
-      Les avantages et désavantages sont partagés avec tout le groupe. Ce sont
-      les joueurs qui décident de comment dépenser leurs avantages, et au MJ de
-      déclencher leurs désavantages.
+      Les atouts et les menaces servents à alimenter les compétences. Ce sont
+      les joueurs qui décident de comment dépenser leurs atouts, et au MJ de
+      déclencher leurs menaces.
+    </p>
+    <p>
+      Les triomphes et les désastres caractérisent une action charnière et
+      particulièrement épique. Le MJ choisi alors les effets narratifs qui
+      détermineront l'issue de l'action pour le cas des désastres, ou de ses
+      triomphes. Les joueurs décident avec le MJ comment interpréter leurs
+      triomphes. Notez qu'un test peut échouer avec des triomphes ou réussir
+      avec désastres. Exemple d'effets : sur un triomphe au jet d'attaque,
+      l'adversaire est aveuglé et tombe à terre. Un désastre sur un jet de
+      défense réussi : un projectile est dévié, mais il est renvoyé sur un
+      allié....
     </p>
 
     <h3 class="text-center">Test de competence</h3>
