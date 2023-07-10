@@ -40,7 +40,7 @@ export class ArmesService {
       Nom: 'Mains nues',
       Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès`,
       Special: [
-        "L'utilisateur subit 1 blessure par désavantages sur son jet d'attaque.",
+        "L'utilisateur subit 1 blessure par menaces net sur son jet d'attaque.",
       ],
       Competence: CompetenceName.PUGILAT,
       Description: 'Aucun',
@@ -50,7 +50,7 @@ export class ArmesService {
     },
     {
       Nom: 'Matraque électrique',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par avantage`,
+      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par atouts net`,
       Special: ["Vous pouvez dépenser 2 atout pour étourdir l'enemi."],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: 'Aucun',
@@ -82,9 +82,9 @@ export class ArmesService {
     },
     {
       Nom: 'Marteau à impulsion',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès et par avantage`,
+      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès et par atouts net.`,
       Special: [
-        'Vous pouvez dépenser 2 avantages pour renverser la cible et consommant la cellule.',
+        'Vous pouvez dépenser 2 atouts pour renverser la cible et consommant la cellule.',
         'Requis 3 en Vigueur',
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
@@ -96,7 +96,7 @@ export class ArmesService {
     },
     {
       Nom: 'Gants renforcés',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par avantages.`,
+      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par atouts net.`,
       Special: ['Aucun'],
       Competence: CompetenceName.PUGILAT,
       Description:
@@ -134,9 +134,9 @@ export class ArmesService {
     },
     {
       Nom: 'Fusil anti-nuisible',
-      Degats: '5 + 3 point de dommage par succès et avantages',
+      Degats: '5 + 3 point de dommage par succès et par atouts net',
       Special: [
-        "Inflige 2 blessure à l'utilisateur par désavantage sur un test ou un jet d'attaque à distance avec cette arme.",
+        "Inflige 2 blessure à l'utilisateur par menace net sur un jet d'attaque à distance avec cette arme.",
         'Requis 3 en vigueur.',
       ],
       Competence: CompetenceName.ARME_A_DISTANCE,

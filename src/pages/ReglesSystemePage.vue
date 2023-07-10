@@ -44,26 +44,22 @@
       <strong
         >Chaque échec annule un succès, un triomphe annule un désastre</strong
       >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
-      somme des échecs avec les succès. Si le test génère au moins 1 succès, le
-      test réussi, sinon il échoue. S'il reste des avantages ou des désavantage,
-      ils peuvent déclencher respectivement des effets en faveur ou en défaveur
-      du lanceur.
+      somme des échecs avec les succès. Les atouts et les menaces servents à
+      alimenter les compétences, ou d'effectuer des relances de dés en faveur ou
+      en défaveur des béligérents. Ce sont les joueurs qui décident de comment
+      dépenser leurs atouts, et au MJ de déclencher leurs menaces.
     </p>
     <p>
-      Les atouts et les menaces servents à alimenter les compétences. Ce sont
-      les joueurs qui décident de comment dépenser leurs atouts, et au MJ de
-      déclencher leurs menaces.
-    </p>
-    <p>
-      Les triomphes et les désastres caractérisent une action charnière et
+      Les <strong>triomphes</strong> et les
+      <strong>désastres</strong> caractérisent une action charnière et
       particulièrement épique. Le MJ choisi alors les effets narratifs qui
-      détermineront l'issue de l'action pour le cas des désastres, ou de ses
-      triomphes. Les joueurs décident avec le MJ comment interpréter leurs
-      triomphes. Notez qu'un test peut échouer avec des triomphes ou réussir
-      avec désastres. Exemple d'effets : sur un triomphe au jet d'attaque,
-      l'adversaire est aveuglé et tombe à terre. Un désastre sur un jet de
-      défense réussi : un projectile est dévié, mais il est renvoyé sur un
-      allié....
+      détermineront l'issue de l'action pour le cas des désastres, ou des
+      triomphe des PNJ. Les joueurs décident avec le MJ comment interpréter
+      leurs triomphes. Notez qu'un test peut échouer avec des triomphes ou
+      réussir avec désastres. Exemple de résolution : sur un triomphe au jet
+      d'attaque raté, l'adversaire est aveuglé et tombe à terre. Un désastre sur
+      un jet de défense réussi : un projectile est dévié, mais il est renvoyé
+      sur un allié...
     </p>
 
     <h3 class="text-center">Test de competence</h3>
@@ -148,7 +144,7 @@
       Les deux créatures qui s'opposent font un test de compétence correspondant
       à l'action qu'ils tentent de réaliser. Ils appliquent tous les bonus et
       malus appropriés, puis comparent leurs résultats entre eux. La créature
-      qui a le plus d'avantage peut en tirer profit.
+      qui a le plus d'atout peut en tirer profit.
     </p>
     <p>
       Si les résultats des tests sont identiques, la situation n'évolue pas.

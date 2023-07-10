@@ -206,7 +206,7 @@ export class AptitudeService {
       Nom: VecteurName.FRAPPE,
       Description:
         "Les effets sont appliqué sur une attaque à main nue ou avec une arme au corps à corps. Un equilibre certain doit être trouver par l'utilisateur pour captialiser sur son arme et l'aptitude.",
-      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages générés plutôt que par les succès. Les dégats de l'arme utilisé sont calculés normalement.`,
+      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les atouts net plutôt que par les succès. Les dégats de l'arme utilisé sont calculés normalement.`,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
@@ -375,8 +375,7 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.CHALEUR,
-      Description:
-        'Inflige 2 blessures (cumulable) par succès net et par avantage.',
+      Description: 'Inflige 2 blessures (cumulable) par succès et atouts net.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
@@ -426,7 +425,7 @@ export class AptitudeService {
     {
       Nom: EffetName.FORCE,
       Description:
-        'Inflige 1 blessure (cumulable) par succès net. Les cibles dont la vigueur est inférieure au nombre de succès générés sont renversées.',
+        'Inflige 1 blessure (cumulable) par succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -484,7 +483,7 @@ export class AptitudeService {
     {
       Nom: EffetName.SOIN,
       Description:
-        'La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque avantage soigne 1 point de stress.',
+        'La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque atouts net soigne 1 point de stress.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -3],
@@ -695,8 +694,7 @@ export class AptitudeService {
     },
     {
       Nom: ExtensionEffetName.CONTRE_COUP,
-      Description:
-        'Le lanceur subit 1 blessure pour chaque désavantage généré.',
+      Description: 'Le lanceur subit 1 blessure par menace net.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
@@ -811,7 +809,7 @@ export class AptitudeService {
     {
       Nom: "L'Honorable Dueliste",
       Description:
-        "Pendant une phase de combat, vous avez un avantage sur tous vos jets d'attaque face à un ennemi s'il n'a attaqué que vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux menaces si le duel est rompu. Le personnage à un esprit de compétition très marqué.",
+        "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez gagnez un atout avant d'effectuer un jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez immédiatement deux menaces si le duel est rompu.",
       Image: '',
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),

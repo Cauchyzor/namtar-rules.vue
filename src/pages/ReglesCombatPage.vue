@@ -303,8 +303,8 @@
         <p>
           Si aucun des deux camps ne cherche à être discret, ils se remarquent
           automatiquement. Test d'initiative sans difficulté de tout les
-          béligerant, puis classement par nombre de success, puis nombre
-          d'avantage si égalité
+          béligerant, puis classement par nombre de succés net, puis nombre
+          d'atouts net si égalité
         </p>
         <p>
           Sinon, test de discretion de groupe des attaquants opposé test de
@@ -321,7 +321,7 @@
           valeur d'initiative. Le belligérant avec le plus de succès résoudra
           ses actions en premier dans la phase de résolution, puis le second
           avec le plus de succès... Etc. Si deux personnages ont le même nombre
-          de succès, on compare alors leurs avantages. S'il subsiste une
+          de succès, on compare alors leurs atouts net. S'il subsiste une
           égalité, c'est au joueur de commencer, et au PNJ de jouer en suite
           selon l'ordre convenu.
         </p>

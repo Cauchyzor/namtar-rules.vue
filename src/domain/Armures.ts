@@ -6,6 +6,7 @@ export interface ArmureItem extends EquipementItem {
 }
 
 export class ArmureService {
+  // TODO changer les avantages* désaventage automatiquement généré
   private static ArmureItems: Array<ArmureItem> = [
     {
       Nom: 'Ceinture multi-usage',

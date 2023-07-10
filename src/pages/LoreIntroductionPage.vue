@@ -37,7 +37,7 @@
       ils attiraient la curiosité du contemporain, du monarque, de l'homme de
       science, comme de l’historien avide de percer le secret de la
       civilisation. Les excavations des mondes impossibles continuèrent
-      davantage. Chaque planète étant une incroyable mille-feuille de
+      d'avantage. Chaque planète étant une incroyable mille-feuille de
       curiosités. Du candélabre à la masse d’armes, en passant par des
       instruments sortis d’une époque moyenâgeuse, tout était vendu à un prix
       démesuré. Mais ils creusèrent trop profondément, et avec trop d’avidité…

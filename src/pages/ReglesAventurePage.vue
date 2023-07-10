@@ -218,8 +218,8 @@
       généralement entre une zone de lumière vive, comme une torche, et les
       ténèbres alentours. La lumière de l&#39;aube et du crépuscule est aussi
       considéré comme une lumière faible, de même que la lumière dégagée par une
-      pleine lune particulièrement brillante. Les créatures subissent un
-      désavantage sur les tests liés à la vision.
+      pleine lune particulièrement brillante. Les créatures subissent une menace
+      sur les tests liés à la vision.
     </p>
     <p>
       Les <strong>ténèbres sont une zone de visibilité nulle</strong>. Les
@@ -252,11 +252,11 @@
     <p>
       Un personnage a besoin de 1 ration de nourriture par jour. La ration
       comprend également le nécessaire en eau. Pour chaque journée passée sans
-      manger ou boire à sa faim, le personnage subit 1 désavantage. Il suffit de
+      manger ou boire à sa faim, le personnage subit 1 menace. Il suffit de
       manger normalement un jour pour remettre le compteur de journées de jeûne
       à zéro. Si le personnage trouve de quoi grignotter ou boire un peu
       d&#39;eau malgrer le manque, il ne sort pas de l&#39;état
-      d&#39;épuisement, mais évite de cummuler de désavantages
+      d&#39;épuisement, mais évite de cummuler des menaces
     </p>
     <h4>Entre les aventures</h4>
     <h5>Artisanat</h5>
