@@ -3,7 +3,6 @@
 import { CaracteritiqueName } from './Caracteristique';
 import { CompetenceName } from './Competence';
 
-// TODO IMPORTANT : Ne pas faire que des apptitude liéee au fluide : exemple Kermit la grenouille.
 // TODO Type d'aptitude : Contre-attaque (Capitalise sur les menaces généré par une attaque enemie)
 // TODO Effet : Mega Saut
 
