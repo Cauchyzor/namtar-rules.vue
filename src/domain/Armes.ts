@@ -24,7 +24,7 @@ export class ArmesService {
   private static ARMES: Array<ArmeItem> = [
     {
       Nom: 'Bâton de force',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès`,
+      Degats: '2 point de dommage par triomphe + 2 point de dommage par succès',
       Special: [
         "Augmente votre défense liée à l'équipuement de 1 point",
         "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit l'effet Choc(1) et la cellule est consommée. Recharger la cellule demande une action",
@@ -38,7 +38,7 @@ export class ArmesService {
     },
     {
       Nom: 'Mains nues',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès`,
+      Degats: '1 point de dommage par triomphe et par succès',
       Special: [
         "L'utilisateur subit 1 blessure par menaces net sur son jet d'attaque.",
       ],
@@ -50,7 +50,8 @@ export class ArmesService {
     },
     {
       Nom: 'Matraque électrique',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par atouts net`,
+      Degats:
+        '2 point de dommages par triomphe net + 1 point de dommage par succès',
       Special: ["Vous pouvez dépenser 2 atout pour étourdir l'enemi."],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: 'Aucun',
@@ -60,7 +61,8 @@ export class ArmesService {
     },
     {
       Nom: 'couteau moleculaire',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès`,
+      Degats:
+        '4 point de dommages par triomphe net + 2 point de dommage par succès',
       Special: ['Aucune'],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -70,8 +72,23 @@ export class ArmesService {
       Prix: 50,
     },
     {
+      Nom: 'Perce-maille',
+      Degats:
+        '5 point de dommages par triomphe net + 1 point de dommage par succès',
+      Special: [
+        `Vous pouvez utilisez votre caractéristique ${CaracteritiqueName.AGILITE} au lieu de la force pour effectuer votre jet d'attaque au ${CompetenceName.CORPS_A_CORPS}`,
+      ],
+      Competence: CompetenceName.CORPS_A_CORPS,
+      Description:
+        "Un épieu dans un alliage très résistant. Une cellule d'énergie permet une rapide rotation de la pointe avant impact. Très dangereux entre des mains agiles et un alignement chaotique.",
+      Encombrement: 1,
+      Rarete: 2,
+      Prix: 100,
+    },
+    {
       Nom: 'Sabre moleculaire',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès`,
+      Degats:
+        '3 point de dommages par triomphe net + 2 point de dommage par succès',
       Special: ["Augmente votre defense liée à l'équipement de 1 point"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -82,7 +99,8 @@ export class ArmesService {
     },
     {
       Nom: 'Marteau à impulsion',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 2 point de dommage par succès et par atouts net.`,
+      Degats:
+        '2 point de dommages par triomphe, par succès, et par atouts net.',
       Special: [
         'Vous pouvez dépenser 2 atouts pour renverser la cible et consommant la cellule.',
         'Requis 3 en Vigueur',
@@ -96,7 +114,7 @@ export class ArmesService {
     },
     {
       Nom: 'Gants renforcés',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 1 point de dommage par succès et par atouts net.`,
+      Degats: '2 point de dommage par triomphe + 1 point de dommage par succès',
       Special: ['Aucun'],
       Competence: CompetenceName.PUGILAT,
       Description:
@@ -107,7 +125,7 @@ export class ArmesService {
     },
     {
       Nom: 'Vibro-hache',
-      Degats: `${CaracteritiqueName.VIGUEUR} + 3 point de dommage par succès`,
+      Degats: '4 point de dommage par succès + 3 point de dommage par succès',
       Special: ['Requis 3 en Vigueur'],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
@@ -134,7 +152,7 @@ export class ArmesService {
     },
     {
       Nom: 'Fusil anti-nuisible',
-      Degats: '5 + 3 point de dommage par succès et par atouts net',
+      Degats: '3 point de dommage par succès et par atouts net',
       Special: [
         "Inflige 2 blessure à l'utilisateur par menace net sur un jet d'attaque à distance avec cette arme.",
         'Requis 3 en vigueur.',
