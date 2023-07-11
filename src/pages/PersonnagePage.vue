@@ -5,7 +5,7 @@
     <h3 class="text-center">Caracteristiques</h3>
     <div class="text-center">
       <p>
-        Un personnage possède 12 points répartis dans 4 caracteristiques, au
+        Un personnage possède 14 points répartis dans 5 caracteristiques, au
         maximum 5 et minimum 1.
       </p>
     </div>
