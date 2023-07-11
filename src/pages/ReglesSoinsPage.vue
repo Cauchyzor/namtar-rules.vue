@@ -61,10 +61,13 @@
     </p>
     <h4>Sombrer vers la mort</h4>
     <p>
-      À chaque tours passé à 0 PV ou en dessous, si le personnage à subit une
-      blessure létale (par défaut), il doit réaliser un jet de sauvegarde contre
-      la mort : test de vigueur de DD6. Il subit 1 blessure par échec ou est
-      soigné d'une blessure par réussite.
+      À chaque tour passé à 0 PV ou en dessous, si le personnage a subit une
+      létale (par défaut), il doit réaliser un jet de sauvegarde la mort : il
+      lance un d6. Si le résultat est inférieur à 3, il sombre vers la mort.
+      S'il cumule <strong>3 échecs</strong>, il décède. Si à l'inverse, il
+      réussit avec un résultat supérieur à 3, il se stabilise peu à peu, et est
+      complètement <strong>stabilisé à 3 réussites</strong>. Mais il n'est
+      toujours pas conscient.
     </p>
     <p>
       Si la cible perd autant de PV en dessous de 0 qu'elle a de PV maximum,
