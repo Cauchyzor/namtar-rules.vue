@@ -351,7 +351,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ATOUT,
       Description:
-        "La cible gagne 1 atout (cumulable) sur son prochain test. S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
+        "La cible gagne 1 atout (cumulable). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -374,7 +374,8 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.CHALEUR,
-      Description: 'Inflige 2 blessures (cumulable) par succès et atouts net.',
+      Description:
+        'Inflige 2 blessures (cumulable) par triomphe, par succès et par atouts net.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
@@ -386,7 +387,8 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.DEBILITANT,
-      Description: 'La cible perd sa prochaine reaction.',
+      Description:
+        "La cible perd sa prochaine reaction. Si vous avez plus de succès net que sa valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -4],
@@ -398,7 +400,8 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.DRAIN_FLUIDE,
-      Description: "Chaque succès vol 1 point de stress à l'adversaire",
+      Description:
+        "Chaque succès et triomphe vol 1 point de stress à l'adversaire.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -1],
@@ -411,7 +414,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ENTRAVE,
       Description:
-        'La cible perd sa capacité de déplacement au premier succès. Elle est neutralisée à partir de 2 succès. Elle est inconsciente à partir de 3 succès.',
+        'La cible perd sa capacité de déplacement au premier succès. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.',
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -424,7 +427,7 @@ export class AptitudeService {
     {
       Nom: EffetName.FORCE,
       Description:
-        'Inflige 1 blessure (cumulable) par succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.',
+        'Inflige 1 blessure (cumulable) par triomphe et succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -447,7 +450,8 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.OBSTRUCTION,
-      Description: 'La cible subit 1 menace (cumulable) sur son prochain test.',
+      Description:
+        'Pour niveau de résultat (1 succès, 2, 3, 5, 8 ...), une menace est infligée à la cible',
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -470,7 +474,7 @@ export class AptitudeService {
     {
       Nom: EffetName.SOIN_DE_STRESS,
       Description:
-        "La cible est soignée d'1 point de stress (cumulable) par succès net.",
+        "La cible est soignée d'1 point de stress (cumulable) par triomphe et succès net.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -482,7 +486,7 @@ export class AptitudeService {
     {
       Nom: EffetName.SOIN,
       Description:
-        'La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque atouts net soigne 1 point de stress.',
+        "La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque triomphe soigne d'un point de stress",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -3],
@@ -494,7 +498,7 @@ export class AptitudeService {
     {
       Nom: EffetName.VAMPIRISME,
       Description:
-        "Inflige 1 blessure (cumulable) par succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) PV.",
+        "Inflige 1 blessure (cumulable) par triomphe et succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) PV.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -10],
@@ -506,7 +510,7 @@ export class AptitudeService {
     {
       Nom: EffetName.LEVITATION,
       Description:
-        'La cible de gabarit 1 (cumulable) au maximum est en lévitation pendant un bref instant.',
+        "La cible de gabarit 1 (cumulable) au maximum est en lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -6],
@@ -537,7 +541,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ATTAQUE_DOUBLE,
       Description:
-        "Vous attaquez deux fois pendant l'execution de cette technique.",
+        "Vous attaquez et lancez deux fois un jet d'attaque pendant l'execution de cette technique.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -4]]),
     },
