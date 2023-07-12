@@ -254,9 +254,11 @@
                   >Quand vous choisissez l&#39;action esquiver, votre unique
                   objectif est d&#39;éviter les attaques. Jusqu&#39;au début de
                   votre tour suivant, vous
-                  <strong>augmentez de 1 votre score de réflexes</strong>. Vous
-                  perdez les bénéfices de cette action si vous êtes immobilisé,
-                  empoigné, neutralisé ou inconscient.
+                  <strong
+                    >augmentez de 1 votre score de
+                    {{ ATTRIBUTS.REFLEXES }}</strong
+                  >. Vous perdez les bénéfices de cette action si vous êtes
+                  immobilisé, empoigné, neutralisé ou inconscient.
                 </q-item-label>
               </q-item-section>
               <q-item-section side top>
@@ -395,7 +397,7 @@
 
     <h5>Attaques au corps-à-corps</h5>
     <p>Dé positif : compétence + caractéristique</p>
-    <p>Dé négatif : réflexes + équipement</p>
+    <p>Dé négatif : DD = Score de {{ ATTRIBUTS.REFLEXES }} + équipement</p>
 
     <p>
       La majorité des créatures possède une allonge de 1,50 mètre. Elles peuvent
@@ -414,7 +416,8 @@
 
     <p>Dé positif : compétence + caractéristique</p>
     <p>
-      Dé négatif : distance (+1DD par niveau de porté) + equipement + couverture
+      Dé négatif : distance (DD = 1 pour chaque niveau de porté + 1 qualité de
+      la couverture) + dés supplémentaire liée à l'equipement
     </p>
     <p>
       <strong>Couverture </strong> : En fonction de la qualité de l&#39;abri, le
@@ -501,12 +504,14 @@
 </template>
 
 <script lang="ts">
+import { AttributsName } from "src/domain/Attribut";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   data() {
     return {
       step: ref(1),
+      ATTRIBUTS: AttributsName,
     };
   },
 });
