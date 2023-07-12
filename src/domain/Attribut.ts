@@ -25,7 +25,8 @@ export class AttributService {
   private static AttributsList: Array<Attribut> = [
     {
       Nom: AttributsName.PV,
-      Description: "Votre maximum de PV est egal à 3 fois la Vigueur + 5",
+      Description:
+        "Votre maximum de PV est egal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1. ",
       Icon: mdiHeart,
     },
 
