@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Ethnotraits</h3>
+    <h4 class="text-center">Ethnotraits</h4>
     <q-list separator>
       <q-item v-for="ethnotrait of EthnotraitsList" :key="ethnotrait.Nom">
         <q-item-section>

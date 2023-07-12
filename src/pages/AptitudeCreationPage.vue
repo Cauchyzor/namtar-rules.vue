@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Création d'aptitude</h3>
+    <h4 class="text-center">Création d'aptitude</h4>
     <div class="q-my-xl">
       <p>
         Les aptitudes représentent les talents ou les différentes techniques

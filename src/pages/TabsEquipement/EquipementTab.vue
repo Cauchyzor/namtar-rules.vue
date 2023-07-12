@@ -1,6 +1,6 @@
 <template>
   <q-tab-panel name="quotidien">
-    <h3 class="text-center">Équipement quotidien</h3>
+    <h4 class="text-center">Équipement quotidien</h4>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="equipementItem in EquipementItemsList"

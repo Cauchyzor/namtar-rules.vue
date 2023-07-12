@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Aventure</h3>
+    <h4 class="text-center">Aventure</h4>
     <h4>Écoulement du temps</h4>
     <p>
       Le MJ peut utiliser une échelle de temps différente en fonction des

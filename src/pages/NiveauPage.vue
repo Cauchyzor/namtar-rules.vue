@@ -1,8 +1,8 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Gain de niveau</h3>
+    <h4 class="text-center">Gain de niveau</h4>
 
-    <h3>Progressions Classique</h3>
+    <h5>Progressions Classique</h5>
     <p>Lors de vos gains de niveaux, vous avec deux possibilitée :</p>
     <ul>
       <li>
@@ -16,7 +16,7 @@
       Certaines créatures ou adversaires peuvent aller au delà de cette limite.
     </p>
 
-    <h3>Progression Narative</h3>
+    <h5>Progression Narative</h5>
 
     <p>
       Les niveaux sont gagnés après suffisement de tests sur les compétences des

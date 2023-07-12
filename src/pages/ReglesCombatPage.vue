@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Combats</h3>
+    <h4 class="text-center">Combats</h4>
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
     <q-stepper v-model="step" header-nav animated class="bg-secondary" flat>
@@ -445,7 +445,7 @@
       d&#39;attaque. La créature est inconsciente et est considérée comme
       stabilisée.
     </p>
-    <h3 class="text-center">Les états speciaux</h3>
+    <h4 class="text-center">Les états speciaux</h4>
     <h5>À terre / Renversée</h5>
     <p>
       La créature subit une menace lors de ses attaques au corps à corps. Les

@@ -1,68 +1,71 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Systeme de Dés</h3>
-    <h4>Dé positif versus Dé négatif</h4>
-    <p>
-      Les tests sont résolus en opposant les résultats d'un pool de dé
-      "positifs" versus un pool de dé "négatifs". Les pools sont constituées de
-      d6
-    </p>
-    <div class="row justify-around">
-      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
-        <q-card-section vertical>
-          <p class="text-h6">Pour les dés positifs</p>
-          <ul>
-            <li class="text-overline">
-              Le résultat 6 génère : 1 Triomphe et 1 succès
-            </li>
-            <li class="text-overline">Le résultat 5 ou 4 génère : 1 succès</li>
-            <li class="text-overline">Le résultat 3 génère : 1 atout</li>
-            <li class="text-overline">
-              Les autres résultats ne sont pas interprétés
-            </li>
-          </ul>
-        </q-card-section>
-      </q-card>
-      <!-- <q-separator vertical inset class="q-mx-lg"></q-separator> -->
-      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
-        <q-card-section vertical>
-          <p class="text-h6">Pour les dés négatifs</p>
-          <ul>
-            <li class="text-overline">
-              Le résultat 6 génère : 1 Désastre et 1 échec
-            </li>
-            <li class="text-overline">Le résultat 5 ou 4 génère : 1 échec</li>
-            <li class="text-overline">Le résultat 3 génère : 1 menace</li>
-            <li class="text-overline">
-              Les autres résultats ne sont pas interprétés
-            </li>
-          </ul>
-        </q-card-section>
-      </q-card>
+    <h4 class="text-center">Systeme de Dés</h4>
+    <div class="text-justify">
+      <h5>Dé positif versus Dé négatif</h5>
+      <p>
+        Les tests sont résolus en opposant les résultats d'un pool de dé
+        "positifs" versus un pool de dé "négatifs". Les pools sont constituées
+        de d6
+      </p>
+      <div class="row justify-around">
+        <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
+          <q-card-section vertical>
+            <p class="text-h6">Pour les dés positifs</p>
+            <ul>
+              <li class="text-overline">
+                Le résultat 6 génère : 1 Triomphe et 1 succès
+              </li>
+              <li class="text-overline">
+                Le résultat 5 ou 4 génère : 1 succès
+              </li>
+              <li class="text-overline">Le résultat 3 génère : 1 atout</li>
+              <li class="text-overline">
+                Les autres résultats ne sont pas interprétés
+              </li>
+            </ul>
+          </q-card-section>
+        </q-card>
+        <!-- <q-separator vertical inset class="q-mx-lg"></q-separator> -->
+        <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
+          <q-card-section vertical>
+            <p class="text-h6">Pour les dés négatifs</p>
+            <ul>
+              <li class="text-overline">
+                Le résultat 6 génère : 1 Désastre et 1 échec
+              </li>
+              <li class="text-overline">Le résultat 5 ou 4 génère : 1 échec</li>
+              <li class="text-overline">Le résultat 3 génère : 1 menace</li>
+              <li class="text-overline">
+                Les autres résultats ne sont pas interprétés
+              </li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </div>
+      <p>
+        <strong
+          >Chaque échec annule un succès, un triomphe annule un désastre</strong
+        >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
+        somme des échecs avec les succès. Les atouts et les menaces servents à
+        alimenter les compétences, ou d'effectuer des relances de dés en faveur
+        ou en défaveur des béligérents. Ce sont les joueurs qui décident de
+        comment dépenser leurs atouts, et au MJ de déclencher leurs menaces.
+      </p>
+      <p>
+        Les <strong>triomphes</strong> et les
+        <strong>désastres</strong> caractérisent une action charnière et
+        particulièrement épique. Le MJ choisi alors les effets narratifs qui
+        détermineront l'issue de l'action pour le cas des désastres, ou des
+        triomphe des PNJ. Les joueurs décident avec le MJ comment interpréter
+        leurs triomphes. Notez qu'un test peut échouer avec des triomphes ou
+        réussir avec désastres. Exemple de résolution : sur un triomphe au jet
+        d'attaque raté, l'adversaire est aveuglé et tombe à terre. Un désastre
+        sur un jet de défense réussi : un projectile est dévié, mais il est
+        renvoyé sur un allié...
+      </p>
     </div>
-    <p>
-      <strong
-        >Chaque échec annule un succès, un triomphe annule un désastre</strong
-      >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
-      somme des échecs avec les succès. Les atouts et les menaces servents à
-      alimenter les compétences, ou d'effectuer des relances de dés en faveur ou
-      en défaveur des béligérents. Ce sont les joueurs qui décident de comment
-      dépenser leurs atouts, et au MJ de déclencher leurs menaces.
-    </p>
-    <p>
-      Les <strong>triomphes</strong> et les
-      <strong>désastres</strong> caractérisent une action charnière et
-      particulièrement épique. Le MJ choisi alors les effets narratifs qui
-      détermineront l'issue de l'action pour le cas des désastres, ou des
-      triomphe des PNJ. Les joueurs décident avec le MJ comment interpréter
-      leurs triomphes. Notez qu'un test peut échouer avec des triomphes ou
-      réussir avec désastres. Exemple de résolution : sur un triomphe au jet
-      d'attaque raté, l'adversaire est aveuglé et tombe à terre. Un désastre sur
-      un jet de défense réussi : un projectile est dévié, mais il est renvoyé
-      sur un allié...
-    </p>
-
-    <h3 class="text-center">Test de competence</h3>
+    <h4 class="text-center">Test de competence</h4>
     <p>
       Pour chaque test de compétence, le MJ décide da difficulté de la tâche à
       accomplir, qui est représentée par un
@@ -139,7 +142,7 @@
       valeur de la caractéristique et celle de votre rang de maîtrise de la
       compétence. Interprétez alors le résultat.
     </p>
-    <h3 class="text-center">Opposition</h3>
+    <h4 class="text-center">Opposition</h4>
     <p>
       Les deux créatures qui s'opposent font un test de compétence correspondant
       à l'action qu'ils tentent de réaliser. Ils appliquent tous les bonus et
@@ -149,7 +152,7 @@
     <p>
       Si les résultats des tests sont identiques, la situation n'évolue pas.
     </p>
-    <h3 class="text-center">Tests de groupe</h3>
+    <h4 class="text-center">Tests de groupe</h4>
     <p>
       Pour faire un test de compétence de groupe, tous les membres du groupe
       concerné doivent faire un test de compétence. Pour savoir si le test est

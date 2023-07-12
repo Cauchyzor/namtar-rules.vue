@@ -1,8 +1,8 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Repos et guerison</h3>
-    <h3>Soins</h3>
-    <h4>Résilience</h4>
+    <h4 class="text-center">Repos et guerison</h4>
+    <h4>Soins</h4>
+    <h5>Résilience</h5>
     <p>
       La restitution des PV perdus n'est possible que d'une seule manière :
       consommer des points de résilience. La résilience représente la capacité
@@ -30,7 +30,7 @@
         question.
       </li>
     </ul>
-    <h4>Médecine</h4>
+    <h5>Médecine</h5>
     <p>
       Après chaque rencontre ou situation de stress, si un personnage a subi des
       blessures, il peut faire l'objet d'une intervention pour les premiers
@@ -52,14 +52,14 @@
         soit rallonger le temps de l'opération, soit infliger 1 point de stress.
       </li>
     </ul>
-    <h3>Tomber à 0 point de vie</h3>
-    <h4>Perdre conscience</h4>
+    <h4>Tomber à 0 point de vie</h4>
+    <h5>Perdre conscience</h5>
     <p>
       Si les dégâts que vous subissez vous font tomber à 0, vous êtes
       inconscient. Vous ne pouvez reprendre conscience que si vous regagnez des
       points de vie.
     </p>
-    <h4>Sombrer vers la mort</h4>
+    <h5>Sombrer vers la mort</h5>
     <p>
       À chaque tour passé à 0 PV ou en dessous, si le personnage a subit une
       létale (par défaut), il doit réaliser un jet de sauvegarde la mort : il
@@ -73,13 +73,13 @@
       Si la cible perd autant de PV en dessous de 0 qu'elle a de PV maximum,
       elle meurt
     </p>
-    <h4>Mort instantanée</h4>
+    <h5>Mort instantanée</h5>
     <p>
       Si les blessures subit par la cible la font tomber à 0 point de vie et que
       le reliquat des dégâts infligés par l&#39;attaque est supérieur ou égal au
       maximum de points de vie de la cible: elle meurt sur le coup.
     </p>
-    <h3>Stabiliser une créature</h3>
+    <h4>Stabiliser une créature</h4>
     <p>
       Le meilleur moyen de sauver une créature qui se trouve à 0 point de vie
       est de la soigner. S&#39;il n&#39;est pas possible de la soigner, elle

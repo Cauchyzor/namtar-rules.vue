@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3 class="text-center">Liste des Mantra</h3>
+    <h4 class="text-center">Liste des Mantra</h4>
     <div class="q-my-xl">
       Les mantras sont des aptitudes particulières qui représentent un marquage
       profond d'une créature par le fluide. Cette créature développe alors des

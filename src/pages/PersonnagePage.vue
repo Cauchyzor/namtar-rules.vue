@@ -2,7 +2,7 @@
   <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
   <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
   <q-page padding>
-    <h3 class="text-center">Caracteristiques</h3>
+    <h4 class="text-center">Caracteristiques</h4>
     <div class="text-center">
       <p>
         Un personnage possède 14 points répartis dans 5 caracteristiques, au
@@ -19,7 +19,7 @@
         @click="selectCard(carac.Nom)"
       />
     </div>
-    <h3 class="text-center">Compétences</h3>
+    <h4 class="text-center">Compétences</h4>
     <div class="text-center">
       <p>
         Un personnage commence l'aventure avec un rang 1 dans 4 compétences au
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <h3 class="text-center">Ethnotraits</h3>
+    <h4 class="text-center">Ethnotraits</h4>
     <div class="text-center">
       <p>
         Si le personnage n'est pas humain, son espèce est caractérisée par un
@@ -54,7 +54,7 @@
       />
     </div>
 
-    <h3 class="text-center">Aptitudes</h3>
+    <h4 class="text-center">Aptitudes</h4>
     <div class="text-center">
       <p>
         Les aptitudes sont des manifestations du fluide en réponse à la volonté
