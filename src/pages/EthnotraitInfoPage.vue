@@ -2,7 +2,7 @@
   <q-page padding>
     <h3 class="text-center">Ethnotraits</h3>
     <q-list separator>
-      <q-item v-for="ethnotrait of EthnotraitsList" :key="ethnotrait">
+      <q-item v-for="ethnotrait of EthnotraitsList" :key="ethnotrait.Nom">
         <q-item-section>
           <q-item-label class="text-overline">
             {{ ethnotrait.Nom }}</q-item-label
@@ -18,12 +18,12 @@
   </q-page>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
-import { EthnotraitService } from 'src/domain/Ethnotrait';
+import { EthnotraitService } from "src/domain/Ethnotrait";
 
 export default defineComponent({
-  name: 'EthnotraitInfoPage',
+  name: "EthnotraitInfoPage",
   data() {
     return {
       EthnotraitsList: EthnotraitService.getAllEthnotraits(),

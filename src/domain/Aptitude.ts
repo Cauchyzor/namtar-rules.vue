@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
-import { CaracteritiqueName } from './Caracteristique';
-import { CompetenceName } from './Competence';
+import { CaracteritiqueName } from "./Caracteristique";
+import { CompetenceName } from "./Competence";
 
 // TODO Type d'aptitude : Contre-attaque (Capitalise sur les menaces généré par une attaque enemie)
 // TODO Effet : Mega Saut
@@ -23,15 +23,15 @@ export type AptitudeType = {
 };
 
 export enum AptitudeTypeName {
-  EVOCATION = 'Evocation',
-  MALEFICE = 'Malefice',
-  NECROMANCIE = 'Necromancie',
-  ENVOUTEMENT = 'Envoutement',
-  BENEDICTION = 'Bénédiction',
-  MANTRA = 'Mantra',
-  CYTOMANCIE = 'Cytomancie',
-  POSTURE = 'Posture',
-  TECHNIQUE = 'Technique',
+  EVOCATION = "Evocation",
+  MALEFICE = "Malefice",
+  NECROMANCIE = "Necromancie",
+  ENVOUTEMENT = "Envoutement",
+  BENEDICTION = "Bénédiction",
+  MANTRA = "Mantra",
+  CYTOMANCIE = "Cytomancie",
+  POSTURE = "Posture",
+  TECHNIQUE = "Technique",
 }
 
 export type Vecteur = {
@@ -43,21 +43,21 @@ export type Vecteur = {
 
 enum VecteurName {
   ALTERATION_OBJET = "Altération d'objet",
-  CARESSE = 'Caresse',
-  CARESSE_ONIRIQUE = 'Caresse onirique',
-  CHANT = 'Chant',
-  CONTACT = 'Contact',
-  FRAPPE = 'Frappe',
-  FRAPPE_ONIRIQUE = 'Frappe onirique',
-  EXPLOITATION_CADRAVRE = 'Exploitation de cadavre',
-  EXPLOSION_CADAVRE = 'Explosion de cadavre',
-  MANTRA = 'Mantra',
-  MEDITATION_ECLAIRE = 'Méditation éclaire',
-  PROJECTILE = 'Projectile',
-  ONDE = 'Onde',
-  REGARD = 'Regard',
-  SOUFFLE = 'Souffle',
-  POSTURE = 'Posture',
+  CARESSE = "Caresse",
+  CARESSE_ONIRIQUE = "Caresse onirique",
+  CHANT = "Chant",
+  CONTACT = "Contact",
+  FRAPPE = "Frappe",
+  FRAPPE_ONIRIQUE = "Frappe onirique",
+  EXPLOITATION_CADRAVRE = "Exploitation de cadavre",
+  EXPLOSION_CADAVRE = "Explosion de cadavre",
+  MANTRA = "Mantra",
+  MEDITATION_ECLAIRE = "Méditation éclaire",
+  PROJECTILE = "Projectile",
+  ONDE = "Onde",
+  REGARD = "Regard",
+  SOUFFLE = "Souffle",
+  POSTURE = "Posture",
   TECHNIQUE_ENGAGEMENT = "Technique d'engagement",
 }
 
@@ -69,24 +69,24 @@ export type Effet = {
 };
 
 enum EffetName {
-  ATOUT = 'Atout',
-  BOUCLIER = 'Bouclier',
-  CHALEUR = 'Chaleur',
-  DEBILITANT = 'Débilitant',
-  DRAIN_FLUIDE = 'Drain de fluide',
-  ENTRAVE = 'Entrave',
-  FORCE = 'Force',
-  LEVITATION = 'Levitation',
-  ILLUSION = 'Illusion',
-  OBSTRUCTION = 'Obstruction',
-  SOIN_DE_STRESS = 'Soin de stress',
-  TELEPATHE = 'Télépathe',
-  SOIN = 'Soin',
-  VAMPIRISME = 'Vampirisme',
-  MANTRA = 'Mantra',
-  PUISSANT = 'Puissant',
-  ATTAQUE_DOUBLE = 'Attaque double',
-  RENVERSEMENT = 'Renversement',
+  ATOUT = "Atout",
+  BOUCLIER = "Bouclier",
+  CHALEUR = "Chaleur",
+  DEBILITANT = "Débilitant",
+  DRAIN_FLUIDE = "Drain de fluide",
+  ENTRAVE = "Entrave",
+  FORCE = "Force",
+  LEVITATION = "Levitation",
+  ILLUSION = "Illusion",
+  OBSTRUCTION = "Obstruction",
+  SOIN_DE_STRESS = "Soin de stress",
+  TELEPATHE = "Télépathe",
+  SOIN = "Soin",
+  VAMPIRISME = "Vampirisme",
+  MANTRA = "Mantra",
+  PUISSANT = "Puissant",
+  ATTAQUE_DOUBLE = "Attaque double",
+  RENVERSEMENT = "Renversement",
 }
 
 export type ExtensionEffet = {
@@ -97,21 +97,21 @@ export type ExtensionEffet = {
 };
 
 enum ExtensionEffetName {
-  ANGLE_MORT = 'Angle mort',
-  CIBLE_GALVANISE = 'Cible galvanisée',
-  CIBLE_MAUDITE = 'Cible maudite',
-  CATALYSEUR = 'Catalyseur',
-  CONTRE_COUP = 'Contre-coup',
-  DIFFICILE = 'Difficile',
+  ANGLE_MORT = "Angle mort",
+  CIBLE_GALVANISE = "Cible galvanisée",
+  CIBLE_MAUDITE = "Cible maudite",
+  CATALYSEUR = "Catalyseur",
+  CONTRE_COUP = "Contre-coup",
+  DIFFICILE = "Difficile",
   ENERGIE_ACTIVATION = "Energie d'activation",
-  INCENTATION_RAPIDE = 'Incantation rapide',
-  INGREDIENT = 'Ingredient',
-  UTILISATEUR_MAUDIT = 'Utilisateur maudit',
-  UTILISATEUR_GALVANISE = 'Utilisateur galvanisé',
+  INCENTATION_RAPIDE = "Incantation rapide",
+  INGREDIENT = "Ingredient",
+  UTILISATEUR_MAUDIT = "Utilisateur maudit",
+  UTILISATEUR_GALVANISE = "Utilisateur galvanisé",
   ZONE = "Zone d'effet",
-  MAITRISE_CORPS_A_CORPS = 'Maitrise du corps à corps',
-  MAITRISE_PUGILAT = 'Maitrise de la pugilat',
-  FEINTE = 'Feinte',
+  MAITRISE_CORPS_A_CORPS = "Maitrise du corps à corps",
+  MAITRISE_PUGILAT = "Maitrise de la pugilat",
+  FEINTE = "Feinte",
 }
 
 export class AptitudeService {
@@ -122,59 +122,59 @@ export class AptitudeService {
       Description:
         "La conversion de l'energie sombre par le fluide est activée par l'utilisateur qui utilise son corps comme catalyseur. L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
       DescriptionDetails:
-        'Chaque point de stress investi produit 1 point de stabilité.',
+        "Chaque point de stress investi produit 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.MALEFICE,
       Description:
         "L'utilisateur se sert des menace de la cible pour corompre la signature de la cible qui devient le catalyseur d'une matérialisation néfaste de l'énergie sombre. La puissance du maléfice est nourrie par les menaces accumulées par la cible.",
       DescriptionDetails:
-        'Chaque menaces subit par la cible génère 2 points de stabilité. Les menaces ne sont pas consommées.',
+        "Chaque menaces subit par la cible génère 2 points de stabilité. Les menaces ne sont pas consommées.",
     },
     {
       Nom: AptitudeTypeName.NECROMANCIE,
       Description:
         "La force vitale résidelle d'un cadavre est utilisée comme catalyseur de l'énergie sombre. La qualitée de l'individu et le nombre d'individu renforce l'apptitude.",
       DescriptionDetails:
-        'Chaque niveau du cadavre génère 2 points de stabilité. Plusieurs cadavres peuvent être utilisés en additionnant leurs niveaux.',
+        "Chaque niveau du cadavre génère 2 points de stabilité. Plusieurs cadavres peuvent être utilisés en additionnant leurs niveaux.",
     },
     {
       Nom: AptitudeTypeName.ENVOUTEMENT,
       Description:
         "Le lanceur utilise la concordance namtarique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est déteriorée dans le processus. L'apptitude consume les atouts de la cible pour générer des effets.",
-      DescriptionDetails: 'Chaque atout supprimé génère 1 point de stabilité.',
+      DescriptionDetails: "Chaque atout supprimé génère 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
         "Le lanceur utilise la concordance namtarique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe sont consommé pour générer des effets.",
-      DescriptionDetails: 'Chaque atout consommé génère 2 points de stabilité.',
+      DescriptionDetails: "Chaque atout consommé génère 2 points de stabilité.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
-        'Un mantra est une modification permanante de la signature namtarique de la cible pour apprécier certaine caractéristiques. Les effets sont passifs.',
+        "Un mantra est une modification permanante de la signature namtarique de la cible pour apprécier certaine caractéristiques. Les effets sont passifs.",
       DescriptionDetails:
-        'Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.',
+        "Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.",
     },
     {
       Nom: AptitudeTypeName.CYTOMANCIE,
       Description:
         "L'énergie sombre est stockée dans des cellules sacrifiées par le lanceur. Le lanceur sacrifie des PV pour générer ses effets",
-      DescriptionDetails: 'Chaque PV sacrifié genère 1 point de stabilité.',
+      DescriptionDetails: "Chaque PV sacrifié genère 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE,
       Description:
         "Une technique est mouvement ou une attaque complexe portants plus d'effet qu'une simple attaque..",
-      DescriptionDetails: 'Attaque qui consomme votre réaction.',
+      DescriptionDetails: "Attaque qui consomme votre réaction.",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
       Description:
         "Une posture travaillée et maîtrisée permet de mieux appréhender une situation. Elle s'active avec une réaction. Une seule posture active à la fois.",
       DescriptionDetails:
-        'Les postures sont toujours stables et se déclenchent en consommant une réaction.',
+        "Les postures sont toujours stables et se déclenchent en consommant une réaction.",
     },
   ];
 
@@ -192,7 +192,7 @@ export class AptitudeService {
     },
     {
       Nom: VecteurName.CONTACT,
-      Description: 'Les effets sont appliqués à la cible touchée.',
+      Description: "Les effets sont appliqués à la cible touchée.",
       Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
@@ -227,7 +227,7 @@ export class AptitudeService {
     {
       Nom: VecteurName.REGARD,
       Description:
-        'Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.',
+        "Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.",
       Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
       TypesCompatibilities: [
         AptitudeTypeName.ENVOUTEMENT,
@@ -259,7 +259,7 @@ export class AptitudeService {
     {
       Nom: VecteurName.ONDE,
       Description:
-        'Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.',
+        "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
@@ -272,7 +272,7 @@ export class AptitudeService {
     {
       Nom: VecteurName.CHANT,
       Description:
-        'Le lanceur entonne un chant ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le chant avec le lanceurs beneficient alors de ses effets.',
+        "Le lanceur entonne un chant ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le chant avec le lanceurs beneficient alors de ses effets.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 du lanceur. Pas de tests pour les créatures.`,
       TypesCompatibilities: [AptitudeTypeName.BENEDICTION],
     },
@@ -328,20 +328,20 @@ export class AptitudeService {
     {
       Nom: VecteurName.MANTRA,
       Description:
-        'Un mantra est une caracteristique du corps du lanceur qui lui permet de recevoir des bénefices du fluide. ',
-      Difficulte: 'Aucune (passif)',
+        "Un mantra est une caracteristique du corps du lanceur qui lui permet de recevoir des bénefices du fluide. ",
+      Difficulte: "Aucune (passif)",
       TypesCompatibilities: [AptitudeTypeName.MANTRA],
     },
     {
       Nom: VecteurName.POSTURE,
       Description:
         "Une posture permet à son utilisateur de bénéficier d'effets passif.",
-      Difficulte: 'Aucune (passif)',
+      Difficulte: "Aucune (passif)",
       TypesCompatibilities: [AptitudeTypeName.POSTURE],
     },
     {
       Nom: VecteurName.TECHNIQUE_ENGAGEMENT,
-      Description: 'Une attaque au corps à corps avec ne arme à main nue.',
+      Description: "Une attaque au corps à corps avec ne arme à main nue.",
       Difficulte: "Jet d'Attaque au corps à corps ou de pugilat",
       TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
     },
@@ -375,7 +375,7 @@ export class AptitudeService {
     {
       Nom: EffetName.CHALEUR,
       Description:
-        'Inflige 2 blessures (cumulable) par triomphe, par succès et par atouts net.',
+        "Inflige 2 blessures (cumulable) par triomphe, par succès et par atouts net.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
@@ -414,7 +414,7 @@ export class AptitudeService {
     {
       Nom: EffetName.ENTRAVE,
       Description:
-        'La cible perd sa capacité de déplacement au premier succès. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.',
+        "La cible perd sa capacité de déplacement au premier succès. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -427,7 +427,7 @@ export class AptitudeService {
     {
       Nom: EffetName.FORCE,
       Description:
-        'Inflige 1 blessure (cumulable) par triomphe et succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.',
+        "Inflige 1 blessure (cumulable) par triomphe et succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -438,7 +438,7 @@ export class AptitudeService {
     {
       Nom: EffetName.TELEPATHE,
       Description:
-        'Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.',
+        "Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, -2],
@@ -451,7 +451,7 @@ export class AptitudeService {
     {
       Nom: EffetName.OBSTRUCTION,
       Description:
-        'Pour niveau de résultat (1 succès, 2, 3, 5, 8 ...), une menace est infligée à la cible',
+        "Pour niveau de résultat (1 succès, 2, 3, 5, 8 ...), une menace est infligée à la cible",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -520,13 +520,13 @@ export class AptitudeService {
     },
     {
       Nom: EffetName.MANTRA,
-      Description: 'Voir la description',
+      Description: "Voir la description",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map(),
     },
     {
       Nom: EffetName.PUISSANT,
-      Description: 'Vous infliger 1 point de dégats supplémentaire par succès.',
+      Description: "Vous infliger 1 point de dégats supplémentaire par succès.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -2]]),
     },
@@ -534,7 +534,7 @@ export class AptitudeService {
     {
       Nom: EffetName.RENVERSEMENT,
       Description:
-        'Si la somme des succès est superieur à la vigueur de la cible, elle est renversée.',
+        "Si la somme des succès est superieur à la vigueur de la cible, elle est renversée.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -1]]),
     },
@@ -551,7 +551,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.ANGLE_MORT,
       Description:
-        'Vous devez vous situer en dehors du champ de vision de la cible.',
+        "Vous devez vous situer en dehors du champ de vision de la cible.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, 2],
@@ -563,7 +563,7 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.CATALYSEUR,
       Description:
-        'Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension.',
+        "Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -616,7 +616,7 @@ export class AptitudeService {
     },
     {
       Nom: ExtensionEffetName.DIFFICILE,
-      Description: 'Ajouter 1 dé de difficulté sur votre jet.',
+      Description: "Ajouter 1 dé de difficulté sur votre jet.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -697,7 +697,7 @@ export class AptitudeService {
     },
     {
       Nom: ExtensionEffetName.CONTRE_COUP,
-      Description: 'Le lanceur subit 1 blessure par menace net.',
+      Description: "Le lanceur subit 1 blessure par menace net.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
@@ -731,40 +731,40 @@ export class AptitudeService {
 
   private static AptitudeList: Array<Aptitude> = [
     {
-      Nom: 'Eclat de feu',
+      Nom: "Eclat de feu",
       Description:
         "Vous formez une sphère d'énergie et la projetez dans la direction de la cible. À son contact, la cible est brûlée et subit des dommages.",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.EVOCATION),
       Vecteur: this.findVecteurByName(VecteurName.PROJECTILE),
       Effets: new Map([[EffetName.CHALEUR, 1]]),
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: 'Touché guerisseur',
+      Nom: "Touché guerisseur",
       Description:
-        'Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.',
-      Image: '',
+        "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.",
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.BENEDICTION),
       Vecteur: this.findVecteurByName(VecteurName.CARESSE),
       Effets: new Map([[EffetName.SOIN, 1]]),
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: 'Nova mortelle',
+      Nom: "Nova mortelle",
       Description:
         "L'énergie résiduelle du cadavre visé s'échappe violemment et renverse les cibles à portée courte.",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.NECROMANCIE),
       Vecteur: this.findVecteurByName(VecteurName.ONDE),
       Effets: new Map([[EffetName.FORCE, 2]]),
       ExtensionsEffet: new Map([[ExtensionEffetName.ZONE, 1]]),
     },
     {
-      Nom: 'Le Berserk',
+      Nom: "Le Berserk",
       Description:
         "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
@@ -773,37 +773,37 @@ export class AptitudeService {
     {
       Nom: "L'Échophage",
       Description: `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: 'Le Distant',
+      Nom: "Le Distant",
       Description:
         "Vous avez 1 point de défense supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous. ",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
       ExtensionsEffet: new Map(),
     },
     {
-      Nom: 'Morsure de Namtar',
+      Nom: "Morsure de Namtar",
       Description:
         "Vous drainez l'énergie de la cible touchée pour vous soigner.",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.CYTOMANCIE),
       Vecteur: this.findVecteurByName(VecteurName.FRAPPE),
       Effets: new Map([[EffetName.DRAIN_FLUIDE, 1]]),
       ExtensionsEffet: new Map([[ExtensionEffetName.DIFFICILE, 1]]),
     },
     {
-      Nom: 'Le Fluidophobique',
+      Nom: "Le Fluidophobique",
       Description:
         "Vous gagnez un atout chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
@@ -813,7 +813,7 @@ export class AptitudeService {
       Nom: "L'Honorable Dueliste",
       Description:
         "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez gagnez un atout avant d'effectuer un jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez immédiatement deux menaces si le duel est rompu.",
-      Image: '',
+      Image: "",
       Type: this.findCapacityTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findVecteurByName(VecteurName.MANTRA),
       Effets: new Map(),
@@ -874,7 +874,7 @@ export class AptitudeService {
   }
 
   static printAptitudeCost(stability: number, type: AptitudeTypeName) {
-    if (stability > 0) return 'Aucun';
+    if (stability > 0) return "Aucun";
     switch (type) {
       case AptitudeTypeName.EVOCATION:
         return `${Math.abs(stability)} point de stress`;
@@ -889,11 +889,11 @@ export class AptitudeService {
       case AptitudeTypeName.CYTOMANCIE:
         return `${Math.trunc(Math.abs(stability))} PV sacrifié`;
       case AptitudeTypeName.TECHNIQUE:
-        return stability === 0 ? 'stable' : 'Inutilisable';
+        return stability === 0 ? "stable" : "Inutilisable";
       case AptitudeTypeName.MANTRA:
-        return 'Aucun';
+        return "Aucun";
       case AptitudeTypeName.POSTURE:
-        return 'Aucun';
+        return "Aucun";
     }
   }
 }

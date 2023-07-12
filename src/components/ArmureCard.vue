@@ -16,18 +16,18 @@
         v-show="Armure.Special.length > 0"
         class="q-mt-md text-caption text-grey"
       >
-        Spécial : {{ Armure.Special.join(' - ') }}
+        Spécial : {{ Armure.Special.join(" - ") }}
       </div>
     </q-card-section>
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import { ArmureItem } from 'src/domain/Armures';
+import { ArmureItem } from "src/domain/Armures";
 
 export default defineComponent({
-  name: 'ArmureCard',
+  name: "ArmureCard",
   props: {
     Armure: { type: Object as PropType<ArmureItem>, required: true },
   },

@@ -5,7 +5,7 @@ import {
   mdiLightningBolt,
   mdiHeartCircleOutline,
   mdiArrowUp,
-} from '@mdi/js';
+} from "@mdi/js";
 
 export type Attribut = {
   Nom: AttributsName;
@@ -14,18 +14,18 @@ export type Attribut = {
 };
 
 export enum AttributsName {
-  PV = 'PV',
-  REFLEXES = 'REFLEXES',
-  STRESS = 'STRESS',
-  RESILIENCE = 'RESILIENCE',
-  INITIATIVE = 'INITIATIVE',
+  PV = "PV",
+  REFLEXES = "REFLEXES",
+  STRESS = "STRESS",
+  RESILIENCE = "RESILIENCE",
+  INITIATIVE = "INITIATIVE",
 }
 
 export class AttributService {
   private static AttributsList: Array<Attribut> = [
     {
       Nom: AttributsName.PV,
-      Description: 'Votre maximum de PV est egal à 3 fois la Vigueur + 5',
+      Description: "Votre maximum de PV est egal à 3 fois la Vigueur + 5",
       Icon: mdiHeart,
     },
 
@@ -44,12 +44,12 @@ export class AttributService {
 
     {
       Nom: AttributsName.STRESS,
-      Description: 'Votre seuil de stress est égale à Intelligence + Charisme',
+      Description: "Votre seuil de stress est égale à Intelligence + Charisme",
       Icon: mdiLightningBolt,
     },
     {
       Nom: AttributsName.RESILIENCE,
-      Description: 'Vous avez 1 point de Résiliance par point de Vigueur',
+      Description: "Vous avez 1 point de Résiliance par point de Vigueur",
       Icon: mdiHeartCircleOutline,
     },
   ];

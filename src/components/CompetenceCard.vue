@@ -17,9 +17,9 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import type { Competence } from 'src/domain/Competence';
+import type { Competence } from "src/domain/Competence";
 export default defineComponent({
   props: {
     showAttribute: Boolean,

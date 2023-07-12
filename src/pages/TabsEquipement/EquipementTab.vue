@@ -17,11 +17,11 @@
   </q-tab-panel>
 </template>
 <script>
-import { defineComponent } from '@vue/runtime-core';
+import { defineComponent } from "@vue/runtime-core";
 
-import EquipementCard from 'src/components/EquipementCard.vue';
+import EquipementCard from "src/components/EquipementCard.vue";
 
-import { EquipementService } from 'src/domain/Equipement';
+import { EquipementService } from "src/domain/Equipement";
 
 export default defineComponent({
   components: {

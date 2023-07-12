@@ -27,10 +27,10 @@
           {{ Aptitude.Vecteur.Description }}
         </p>
         <p>Description: {{ Aptitude.Description }}</p>
-        <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(',') }}</p>
+        <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(",") }}</p>
         <p>
           Extension:
-          {{ Array.from(Aptitude.ExtensionsEffet.keys()).join(',') }}
+          {{ Array.from(Aptitude.ExtensionsEffet.keys()).join(",") }}
         </p>
         <p>Cout: {{ computeAptitudeCost() }}</p>
       </q-card-section>
@@ -38,9 +38,9 @@
   </q-dialog>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import { Aptitude, AptitudeService } from 'src/domain/Aptitude';
+import { Aptitude, AptitudeService } from "src/domain/Aptitude";
 
 export default defineComponent({
   props: {

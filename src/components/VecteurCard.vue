@@ -16,9 +16,9 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue';
+import { defineComponent, PropType, ref } from "vue";
 
-import { Vecteur } from 'src/domain/Aptitude';
+import { Vecteur } from "src/domain/Aptitude";
 
 export default defineComponent({
   props: {
@@ -29,7 +29,7 @@ export default defineComponent({
       Selected: ref(false),
     };
   },
-  emits: ['is-selected'],
+  emits: ["is-selected"],
 });
 </script>
 <style scoped>

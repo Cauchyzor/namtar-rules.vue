@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Attribut, AttributService, AttributsName } from './Attribut';
+import { Attribut, AttributService, AttributsName } from "./Attribut";
 
 export type Caracteristique = {
   Nom: CaracteritiqueName;
@@ -8,11 +8,11 @@ export type Caracteristique = {
 };
 
 export enum CaracteritiqueName {
-  VIGUEUR = 'Vigueur',
-  AGILITE = 'Agilité',
-  ADRESSE = 'Adresse',
-  INTELLIGENCE = 'Intelligence',
-  CHARISME = 'Charisme',
+  VIGUEUR = "Vigueur",
+  AGILITE = "Agilité",
+  ADRESSE = "Adresse",
+  INTELLIGENCE = "Intelligence",
+  CHARISME = "Charisme",
 }
 
 export class CaracteristiqueService {
@@ -20,7 +20,7 @@ export class CaracteristiqueService {
     {
       Nom: CaracteritiqueName.VIGUEUR,
       Description:
-        'Traduit la force, la musculature, la vitalité et la robustesse physique',
+        "Traduit la force, la musculature, la vitalité et la robustesse physique",
       Attributs: AttributService.getAttributsByNames([
         AttributsName.PV,
         AttributsName.RESILIENCE,
@@ -28,7 +28,7 @@ export class CaracteristiqueService {
     },
     {
       Nom: CaracteritiqueName.AGILITE,
-      Description: 'Determine la souplesse et la vivacité des mouvements.',
+      Description: "Determine la souplesse et la vivacité des mouvements.",
       Attributs: AttributService.getAttributsByNames([
         AttributsName.REFLEXES,
         AttributsName.INITIATIVE,
@@ -37,7 +37,7 @@ export class CaracteristiqueService {
     {
       Nom: CaracteritiqueName.ADRESSE,
       Description:
-        'Représente la précision et le contrôle des mouvements subtiles.',
+        "Représente la précision et le contrôle des mouvements subtiles.",
       Attributs: AttributService.getAttributsByNames([]),
     },
     {

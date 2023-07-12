@@ -16,15 +16,15 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import { AptitudeType } from 'src/domain/Aptitude';
+import { AptitudeType } from "src/domain/Aptitude";
 
 export default defineComponent({
   props: {
     Type: { type: Object as PropType<AptitudeType>, required: true },
   },
-  emits: ['is-selected'],
+  emits: ["is-selected"],
 });
 </script>
 <style scoped></style>

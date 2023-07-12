@@ -22,14 +22,14 @@
   </q-page>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
-import AptitudeItem from 'src/components/AptitudeItem.vue';
+import AptitudeItem from "src/components/AptitudeItem.vue";
 
-import { AptitudeService, AptitudeTypeName } from 'src/domain/Aptitude';
+import { AptitudeService, AptitudeTypeName } from "src/domain/Aptitude";
 
 export default defineComponent({
-  name: 'PersonnagePage',
+  name: "PersonnagePage",
   components: {
     AptitudeItem,
   },

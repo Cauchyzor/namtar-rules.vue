@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { CaracteritiqueName } from './Caracteristique';
+import { CaracteritiqueName } from "./Caracteristique";
 
 export type Competence = {
   Nom: CompetenceName;
@@ -8,26 +8,26 @@ export type Competence = {
 };
 
 export enum CompetenceName {
-  ARME_A_DISTANCE = 'Arme à distance',
-  ATHLETISME = 'Athlétisme',
-  CHARME = 'Charme',
-  CONNAISSANCE_CULTES = 'Connaissance - Cultes',
-  CONNAISSANCE_HISTOIRE = 'Connaissance - Histoire',
-  COORDINATION = 'Coordination',
-  CORPS_A_CORPS = 'Corps à corps',
-  DISCRETION = 'Discrétion',
-  ENTROPIE_DU_FLUIDE = 'Entropie du fluide',
-  INGENIERIE = 'Ingénierie',
-  INTIMIDATION = 'Intimidation',
-  MAGOUILLE = 'Magouille',
-  MEDECINE = 'Médecine',
-  NEGOCIATION = 'Négociation',
-  PERSPICACITE = 'Prespicacité',
-  PILOTAGE = 'Pilotage',
-  PUGILAT = 'Pugilat',
-  SURVIE = 'Survie',
-  TROMPERIE = 'Tromperie',
-  VIGILANCE = 'Vigilance',
+  ARME_A_DISTANCE = "Arme à distance",
+  ATHLETISME = "Athlétisme",
+  CHARME = "Charme",
+  CONNAISSANCE_CULTES = "Connaissance - Cultes",
+  CONNAISSANCE_HISTOIRE = "Connaissance - Histoire",
+  COORDINATION = "Coordination",
+  CORPS_A_CORPS = "Corps à corps",
+  DISCRETION = "Discrétion",
+  ENTROPIE_DU_FLUIDE = "Entropie du fluide",
+  INGENIERIE = "Ingénierie",
+  INTIMIDATION = "Intimidation",
+  MAGOUILLE = "Magouille",
+  MEDECINE = "Médecine",
+  NEGOCIATION = "Négociation",
+  PERSPICACITE = "Prespicacité",
+  PILOTAGE = "Pilotage",
+  PUGILAT = "Pugilat",
+  SURVIE = "Survie",
+  TROMPERIE = "Tromperie",
+  VIGILANCE = "Vigilance",
 }
 
 export class CompetenceService {
@@ -35,18 +35,18 @@ export class CompetenceService {
     {
       Nom: CompetenceName.ATHLETISME,
       BaseCaracteristique: CaracteritiqueName.VIGUEUR,
-      ShortDescription: 'Sauter, grimper, soulever de lourdes charges.',
+      ShortDescription: "Sauter, grimper, soulever de lourdes charges.",
     },
     {
       Nom: CompetenceName.COORDINATION,
       BaseCaracteristique: CaracteritiqueName.AGILITE,
       ShortDescription:
-        'Garder un equilibre, effectuer des accrobatie, habilité manuelle.',
+        "Garder un equilibre, effectuer des accrobatie, habilité manuelle.",
     },
     {
       Nom: CompetenceName.CORPS_A_CORPS,
       BaseCaracteristique: CaracteritiqueName.VIGUEUR,
-      ShortDescription: 'Porter une attaque avec une arme au corps à corps.',
+      ShortDescription: "Porter une attaque avec une arme au corps à corps.",
     },
     {
       Nom: CompetenceName.DISCRETION,
@@ -56,12 +56,12 @@ export class CompetenceService {
     {
       Nom: CompetenceName.PUGILAT,
       BaseCaracteristique: CaracteritiqueName.VIGUEUR,
-      ShortDescription: 'Attaquer a main nue, lutter contre un adversaire.',
+      ShortDescription: "Attaquer a main nue, lutter contre un adversaire.",
     },
     {
       Nom: CompetenceName.PILOTAGE,
       BaseCaracteristique: CaracteritiqueName.ADRESSE,
-      ShortDescription: 'Manoeuvrer un vehicule terrestre ou aerospacial.',
+      ShortDescription: "Manoeuvrer un vehicule terrestre ou aerospacial.",
     },
     {
       Nom: CompetenceName.CONNAISSANCE_HISTOIRE,
@@ -73,25 +73,25 @@ export class CompetenceService {
       Nom: CompetenceName.CONNAISSANCE_CULTES,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        'Réagir et argumenter sur un fait lié à un culte, une religions ou une croyance.',
+        "Réagir et argumenter sur un fait lié à un culte, une religions ou une croyance.",
     },
     {
       Nom: CompetenceName.MEDECINE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        'Appliquer des premier soins ou manipuler des outils de medecine.',
+        "Appliquer des premier soins ou manipuler des outils de medecine.",
     },
     {
       Nom: CompetenceName.SURVIE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        'Trouver un chemin sûr, reconnaitre des substances nutritives ou danguereuses.',
+        "Trouver un chemin sûr, reconnaitre des substances nutritives ou danguereuses.",
     },
     {
       Nom: CompetenceName.INGENIERIE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        'Réparer un objet mecanique ou interagir avec un terminal informatique.',
+        "Réparer un objet mecanique ou interagir avec un terminal informatique.",
     },
     {
       Nom: CompetenceName.ENTROPIE_DU_FLUIDE,
@@ -103,19 +103,19 @@ export class CompetenceService {
       Nom: CompetenceName.CHARME,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription:
-        'Obtenir une faveur de la cible sans avoir recours à la négociation.',
+        "Obtenir une faveur de la cible sans avoir recours à la négociation.",
     },
     {
       Nom: CompetenceName.NEGOCIATION,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription:
-        'Marchander, argumenter sur une decision de manière plus ou moins rationnelle.',
+        "Marchander, argumenter sur une decision de manière plus ou moins rationnelle.",
     },
     {
       Nom: CompetenceName.TROMPERIE,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription:
-        'Déguiser un scène ou une personne, mentir à un individu.',
+        "Déguiser un scène ou une personne, mentir à un individu.",
     },
     {
       Nom: CompetenceName.PERSPICACITE,
@@ -126,13 +126,13 @@ export class CompetenceService {
     {
       Nom: CompetenceName.INTIMIDATION,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
-      ShortDescription: 'Obtenir un service ou un objet par la menace.',
+      ShortDescription: "Obtenir un service ou un objet par la menace.",
     },
     {
       Nom: CompetenceName.VIGILANCE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        'Detecter le danger, remarquer des détails significatif.',
+        "Detecter le danger, remarquer des détails significatif.",
     },
   ];
   /**

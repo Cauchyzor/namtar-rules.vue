@@ -23,10 +23,10 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import type { Caracteristique } from 'src/domain/Caracteristique';
-import { Attribut } from 'src/domain/Attribut';
+import type { Caracteristique } from "src/domain/Caracteristique";
+import { Attribut } from "src/domain/Attribut";
 
 export default defineComponent({
   props: {
@@ -41,7 +41,7 @@ export default defineComponent({
   data() {
     return {
       ShowAttribute: false,
-      selectedAttributDetail: '',
+      selectedAttributDetail: "",
     };
   },
   methods: {
@@ -49,7 +49,7 @@ export default defineComponent({
       this.ShowAttribute = this.selectedAttributDetail !== attribut.Description;
       this.selectedAttributDetail = this.ShowAttribute
         ? attribut.Description
-        : '';
+        : "";
     },
   },
 });

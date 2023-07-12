@@ -13,12 +13,12 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import { EquipementItem } from 'src/domain/Equipement';
+import { EquipementItem } from "src/domain/Equipement";
 
 export default defineComponent({
-  name: 'EquipementCard',
+  name: "EquipementCard",
   props: {
     EquipementItem: {
       type: Object as PropType<EquipementItem>,

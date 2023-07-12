@@ -25,9 +25,9 @@
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import { ExtensionEffet } from 'src/domain/Aptitude';
+import { ExtensionEffet } from "src/domain/Aptitude";
 
 export default defineComponent({
   props: {
@@ -38,13 +38,13 @@ export default defineComponent({
     Disabled: { type: Boolean, required: false },
     Rank: { type: Number, required: false },
   },
-  emits: ['rank-increased', 'rank-decreased'],
+  emits: ["rank-increased", "rank-decreased"],
   methods: {
     increment() {
-      this.$emit('rank-increased');
+      this.$emit("rank-increased");
     },
     decrement() {
-      this.$emit('rank-decreased');
+      this.$emit("rank-decreased");
     },
   },
 });

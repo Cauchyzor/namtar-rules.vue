@@ -16,18 +16,18 @@
         v-show="Arme.Special.length > 0"
         class="q-mt-md text-caption text-grey"
       >
-        Spécial : {{ Arme.Special.join(' - ') }}
+        Spécial : {{ Arme.Special.join(" - ") }}
       </div>
     </q-card-section>
   </q-card>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from "vue";
 
-import { ArmeItem } from 'src/domain/Armes';
+import { ArmeItem } from "src/domain/Armes";
 
 export default defineComponent({
-  name: 'EquipementCard',
+  name: "EquipementCard",
 
   props: {
     Arme: { type: Object as PropType<ArmeItem>, required: true },

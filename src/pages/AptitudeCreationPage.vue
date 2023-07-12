@@ -296,7 +296,7 @@
   </q-page>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from "vue";
 
 import {
   AptitudeService,
@@ -304,15 +304,15 @@ import {
   AptitudeTypeName,
   Effet,
   ExtensionEffet,
-} from 'src/domain/Aptitude';
+} from "src/domain/Aptitude";
 
-import EffetCard from 'src/components/EffetCard.vue';
-import TypeAptitudeItem from 'src/components/TypeAptitudeCard.vue';
-import VecteurItem from 'src/components/VecteurCard.vue';
-import ExtensionCard from 'src/components/ExtensionCard.vue';
+import EffetCard from "src/components/EffetCard.vue";
+import TypeAptitudeItem from "src/components/TypeAptitudeCard.vue";
+import VecteurItem from "src/components/VecteurCard.vue";
+import ExtensionCard from "src/components/ExtensionCard.vue";
 
 export default defineComponent({
-  name: 'AptitudeInfoPage',
+  name: "AptitudeInfoPage",
   components: {
     EffetCard,
     ExtensionCard,
@@ -326,8 +326,8 @@ export default defineComponent({
       SelectedAptVecteur: ref(),
       SelectedAptEffets: ref(new Map()),
       SelectedAptExtensions: ref(new Map()),
-      aptName: ref(''),
-      aptDesc: ref(''),
+      aptName: ref(""),
+      aptDesc: ref(""),
 
       step: ref(1),
       showAtpCard: ref(false),
@@ -369,9 +369,9 @@ export default defineComponent({
         this.SelectedAptVecteur &&
         this.SelectedAptEffets.size > 0 &&
         this.aptName &&
-        this.aptName !== '' &&
+        this.aptName !== "" &&
         this.aptDesc &&
-        this.aptDesc !== ''
+        this.aptDesc !== ""
       );
     },
   },
@@ -379,7 +379,7 @@ export default defineComponent({
     getSelectedEffetsWithRank() {
       return Array.from(this.SelectedAptEffets.entries())
         .map(([name, rank]) => `${name}(${rank})`)
-        .join(' - ');
+        .join(" - ");
     },
     increaseEffetRank(effect: Effet) {
       if (this.SelectedAptEffets.has(effect.Nom)) {
@@ -424,7 +424,7 @@ export default defineComponent({
     getSelectedExtensionWithRank() {
       return Array.from(this.SelectedAptExtensions.entries())
         .map(([name, rank]) => `${name}(${rank})`)
-        .join(' - ');
+        .join(" - ");
     },
     updateExtensionRank(extension: ExtensionEffet, rank: number) {
       if (rank === 0) {
@@ -444,7 +444,7 @@ export default defineComponent({
             ),
             this.SelectedAptTypeName
           )
-        : 'Incomplet';
+        : "Incomplet";
     },
     changeType(aptTtype: AptitudeType) {
       this.SelectedAptTypeName = aptTtype.Nom;

@@ -135,14 +135,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: "MainLayout",
   data() {
     return {
       leftDrawerOpen: false,
-      text: '',
+      text: "",
     };
   },
 
@@ -158,7 +158,7 @@ export default defineComponent({
   background-color: #1a1c23;
 }
 .q-toolbar__title {
-  font-family: 'Anurati';
+  font-family: "Anurati";
 }
 
 .v-enter-active,

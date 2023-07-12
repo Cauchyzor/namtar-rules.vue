@@ -90,23 +90,23 @@
   </q-page>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
-import CaracteristiqueCard from 'src/components/CaracteristiqueCard.vue';
+import CaracteristiqueCard from "src/components/CaracteristiqueCard.vue";
 
-import CompetenceCard from 'src/components/CompetenceCard.vue';
-import AptitudeItem from 'src/components/AptitudeItem.vue';
+import CompetenceCard from "src/components/CompetenceCard.vue";
+import AptitudeItem from "src/components/AptitudeItem.vue";
 
 import {
   CaracteristiqueService,
   CaracteritiqueName,
-} from 'src/domain/Caracteristique';
+} from "src/domain/Caracteristique";
 
-import { CompetenceService } from 'src/domain/Competence';
-import { AptitudeService } from 'src/domain/Aptitude';
+import { CompetenceService } from "src/domain/Competence";
+import { AptitudeService } from "src/domain/Aptitude";
 
 export default defineComponent({
-  name: 'PersonnagePage',
+  name: "PersonnagePage",
   components: {
     CaracteristiqueCard,
     CompetenceCard,

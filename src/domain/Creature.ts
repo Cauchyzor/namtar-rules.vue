@@ -1,7 +1,7 @@
-import { AttributsName } from './Attribut';
-import { CaracteritiqueName } from './Caracteristique';
-import { CompetenceName } from './Competence';
-import { Genotrait } from './Genotrait';
+import { AttributsName } from "./Attribut";
+import { CaracteritiqueName } from "./Caracteristique";
+import { CompetenceName } from "./Competence";
+import { Genotrait } from "./Genotrait";
 
 export class CreatureService {
   /**
