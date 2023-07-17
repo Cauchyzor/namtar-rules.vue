@@ -32,6 +32,7 @@ export enum AptitudeTypeName {
   CYTOMANCIE = "Cytomancie",
   POSTURE = "Posture",
   TECHNIQUE = "Technique",
+  RIPOSTE = "Riposte",
 }
 
 export type Vecteur = {
@@ -59,6 +60,7 @@ enum VecteurName {
   SOUFFLE = "Souffle",
   POSTURE = "Posture",
   TECHNIQUE_ENGAGEMENT = "Technique d'engagement",
+  RIPOSTE = "Riposte",
 }
 
 export type Effet = {
@@ -166,7 +168,13 @@ export class AptitudeService {
     {
       Nom: AptitudeTypeName.TECHNIQUE,
       Description:
-        "Une technique est mouvement ou une attaque complexe portants plus d'effet qu'une simple attaque..",
+        "Un mouvement qui requiert une grande concentration. L'apptitude se déroule comme une action complexe.",
+      DescriptionDetails:
+        "Action ou attaque qui se déroule comme une action complexe.",
+    },
+    {
+      Nom: AptitudeTypeName.RIPOSTE,
+      Description: "Une technique qui s'effectue lors d'une réaction",
       DescriptionDetails: "Attaque qui consomme votre réaction.",
     },
     {
@@ -341,8 +349,15 @@ export class AptitudeService {
     },
     {
       Nom: VecteurName.TECHNIQUE_ENGAGEMENT,
-      Description: "Une attaque au corps à corps avec ne arme à main nue.",
+      Description:
+        "Un mouvement ou une attaque au corps à corps (avec une arme ou à main nue).",
       Difficulte: "Jet d'Attaque au corps à corps ou de pugilat",
+      TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
+    },
+    {
+      Nom: VecteurName.RIPOSTE,
+      Description: "Une attaque ou action qui se déroule lors d'une reaction",
+      Difficulte: "Aucune",
       TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
     },
   ];
