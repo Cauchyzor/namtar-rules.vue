@@ -69,6 +69,7 @@ export type Effet = {
 };
 
 enum EffetName {
+  ATTAQUE_DOUBLE = "Attaque double",
   ATOUT = "Atout",
   BOUCLIER = "Bouclier",
   CHALEUR = "Chaleur",
@@ -78,15 +79,14 @@ enum EffetName {
   FORCE = "Force",
   LEVITATION = "Levitation",
   ILLUSION = "Illusion",
+  MANTRA = "Mantra",
   OBSTRUCTION = "Obstruction",
+  PUISSANT = "Puissant",
+  RENVERSEMENT = "Renversement",
+  SOIN = "Soin",
   SOIN_DE_STRESS = "Soin de stress",
   TELEPATHE = "Télépathe",
-  SOIN = "Soin",
   VAMPIRISME = "Vampirisme",
-  MANTRA = "Mantra",
-  PUISSANT = "Puissant",
-  ATTAQUE_DOUBLE = "Attaque double",
-  RENVERSEMENT = "Renversement",
 }
 
 export type ExtensionEffet = {
@@ -104,14 +104,14 @@ enum ExtensionEffetName {
   CONTRE_COUP = "Contre-coup",
   DIFFICILE = "Difficile",
   ENERGIE_ACTIVATION = "Energie d'activation",
+  FEINTE = "Feinte",
   INCENTATION_RAPIDE = "Incantation rapide",
   INGREDIENT = "Ingredient",
+  MAITRISE_CORPS_A_CORPS = "Maitrise du corps à corps",
+  MAITRISE_PUGILAT = "Maitrise de la pugilat",
   UTILISATEUR_MAUDIT = "Utilisateur maudit",
   UTILISATEUR_GALVANISE = "Utilisateur galvanisé",
   ZONE = "Zone d'effet",
-  MAITRISE_CORPS_A_CORPS = "Maitrise du corps à corps",
-  MAITRISE_PUGILAT = "Maitrise de la pugilat",
-  FEINTE = "Feinte",
 }
 
 export class AptitudeService {
