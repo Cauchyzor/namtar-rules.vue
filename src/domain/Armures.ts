@@ -1,3 +1,4 @@
+import { CaracteritiqueName } from "./Caracteristique";
 import { EquipementItem } from "./Equipement";
 
 export interface ArmureItem extends EquipementItem {
@@ -6,7 +7,6 @@ export interface ArmureItem extends EquipementItem {
 }
 
 export class ArmureService {
-  // TODO changer les avantages* désaventage automatiquement généré
   private static ArmureItems: Array<ArmureItem> = [
     {
       Nom: "Ceinture multi-usage",
@@ -16,7 +16,7 @@ export class ArmureService {
         "Permet un accès rapide sur des objets de 1 d'encombrement ou moins. Maximum 4 emplacements.",
       Prix: 50,
       Defense: 0,
-      Special: ["Aucun"],
+      Special: [],
     },
     {
       Nom: "Cartouchière",
@@ -26,7 +26,7 @@ export class ArmureService {
         "Accès rapides sur des celulles d'énergies ou des munitions. Maximum 8 d'encombrement",
       Prix: 50,
       Defense: 0,
-      Special: ["Aucun"],
+      Special: [],
     },
     {
       Nom: "Armures legères",
@@ -36,7 +36,7 @@ export class ArmureService {
         "Ensemble avec une veste et un pantalon renforcé avec des plaques de metal. Sommaire et bon marché",
       Prix: 50,
       Defense: 1,
-      Special: ["Aucun"],
+      Special: [],
     },
     {
       Nom: "Combinaison spaciale",
@@ -66,7 +66,7 @@ export class ArmureService {
         "Ensemble corps complet contenant des plaques de métal habilement réparties, entres les coutures, aux endroits les plus exposés sans pour autant trop gêner le porteur",
       Prix: 2000,
       Defense: 2,
-      Special: ["Aucun"],
+      Special: [],
     },
     {
       Nom: "Armure matelassée",
@@ -76,7 +76,9 @@ export class ArmureService {
         "Larges bande de tissus et de metal assemblée sous forme de cuirrasse pour fournir une bonnes protections",
       Prix: 800,
       Defense: 2,
-      Special: ["désavantage sur tout les jets d'agilité"],
+      Special: [
+        `Le score d'${CaracteritiqueName.AGILITE} est limité à 4 pour tous les tests`,
+      ],
     },
     {
       Nom: "Cuirasse métalique",
@@ -86,7 +88,9 @@ export class ArmureService {
         "Armure lourde mais capable de résister au assaut les plus violants",
       Prix: 4000,
       Defense: 3,
-      Special: ["désavantage sur tout les jets d'agilité"],
+      Special: [
+        `Le score d'${CaracteritiqueName.AGILITE} est limité à 4 pour tous les tests`,
+      ],
     },
     {
       Nom: "Armure lourde scellée",
@@ -97,7 +101,7 @@ export class ArmureService {
       Prix: 15000,
       Defense: 4,
       Special: [
-        "désavantage sur tout les jets d'agilité",
+        `Le score d'${CaracteritiqueName.AGILITE} est limité à 3 pour tous les tests`,
         "Résistant aux armes énergetiques",
       ],
     },
