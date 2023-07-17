@@ -3,8 +3,7 @@
 import { CaracteritiqueName } from "./Caracteristique";
 import { CompetenceName } from "./Competence";
 
-// TODO Type d'aptitude : Contre-attaque (Capitalise sur les menaces généré par une attaque enemie)
-// TODO Effet : Mega Saut
+// TODO Faire le tire en cloche (vecteur?)
 
 export type Aptitude = {
   Nom: string;
@@ -74,6 +73,7 @@ enum EffetName {
   ATTAQUE_DOUBLE = "Attaque double",
   ATOUT = "Atout",
   BOUCLIER = "Bouclier",
+  BRISE_POSTURE = "Brise Posture",
   CHALEUR = "Chaleur",
   DEBILITANT = "Débilitant",
   DRAIN_FLUIDE = "Drain de fluide",
@@ -107,6 +107,7 @@ enum ExtensionEffetName {
   DIFFICILE = "Difficile",
   ENERGIE_ACTIVATION = "Energie d'activation",
   FEINTE = "Feinte",
+  FIN_POSTURE = "Fin de Posture",
   INCENTATION_RAPIDE = "Incantation rapide",
   INGREDIENT = "Ingredient",
   MAITRISE_CORPS_A_CORPS = "Maitrise du corps à corps",
@@ -560,6 +561,18 @@ export class AptitudeService {
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -4]]),
     },
+    {
+      Nom: EffetName.BRISE_POSTURE,
+      Description: "La cible perd sa posture.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.TECHNIQUE, -2],
+        [AptitudeTypeName.EVOCATION, -3],
+        [AptitudeTypeName.ENVOUTEMENT, -1],
+        [AptitudeTypeName.MALEFICE, -2],
+        [AptitudeTypeName.CYTOMANCIE, -3],
+      ]),
+    },
   ];
 
   private static ExtensionList: Array<ExtensionEffet> = [
@@ -728,7 +741,10 @@ export class AptitudeService {
       Nom: ExtensionEffetName.MAITRISE_CORPS_A_CORPS,
       Description: `Le rang de maîtrise dans la compétence ${CompetenceName.CORPS_A_CORPS} doit être supérieur ou égal au rang de cette extension.`,
       IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 1]]),
+      StabiliteParTypeAptitude: new Map([
+        [AptitudeTypeName.TECHNIQUE, 1],
+        [AptitudeTypeName.RIPOSTE, 1],
+      ]),
     },
     {
       Nom: ExtensionEffetName.MAITRISE_PUGILAT,
@@ -739,6 +755,12 @@ export class AptitudeService {
     {
       Nom: ExtensionEffetName.FEINTE,
       Description: "La technique n'inflige pas de dégat.",
+      IsCummulable: false,
+      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 2]]),
+    },
+    {
+      Nom: ExtensionEffetName.FIN_POSTURE,
+      Description: "La technique met fin à la posture de l'utilisateur.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 2]]),
     },
