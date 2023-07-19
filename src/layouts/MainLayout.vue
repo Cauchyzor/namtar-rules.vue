@@ -1,5 +1,8 @@
 <template>
   <q-layout view="hHh Lpr lFf">
+    <!-- TODO : Fix drawer en mode PC, laisser comme ça pour tablette en smartphone-->
+    <!-- TODO : Faire le suivi des sections en right drawer-->
+    <!-- TODO : Recherche de sections-->
     <q-header class="bg-secondary">
       <q-toolbar>
         <q-btn

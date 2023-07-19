@@ -1,4 +1,5 @@
 <template>
+  <!--TODO : Faire une carte aptitude, et une actionModal pour tout les details-->
   <q-item class="bg-accent" clickable v-ripple @click="openDetail = true">
     <q-item-section>
       <q-item-label class="text-overline"> {{ Aptitude.Nom }}</q-item-label>
