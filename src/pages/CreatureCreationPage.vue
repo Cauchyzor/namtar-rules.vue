@@ -83,10 +83,10 @@
   </q-page>
 </template>
 <script lang="ts">
-import { GenotraitService } from 'src/domain/Genotrait';
-import { defineComponent, ref } from 'vue';
+import { GenotraitService } from "src/domain/Genotrait";
+import { defineComponent, ref } from "vue";
 
-import GenotraitCard from 'src/components/GenotraitCard.vue';
+import GenotraitCard from "src/components/GenotraitCard.vue";
 
 export default defineComponent({
   components: {
@@ -99,8 +99,8 @@ export default defineComponent({
       Intelligence: ref(0),
       Charisme: ref(0),
 
-      Name: '',
-      Description: '',
+      Name: "",
+      Description: "",
 
       AllGenotraits: GenotraitService.findAllGenotraits(),
       SelectedGenotraits: ref(new Map()),
