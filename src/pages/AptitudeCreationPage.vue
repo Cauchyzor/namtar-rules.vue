@@ -426,13 +426,6 @@ export default defineComponent({
         .map(([name, rank]) => `${name}(${rank})`)
         .join(" - ");
     },
-    updateExtensionRank(extension: ExtensionEffet, rank: number) {
-      if (rank === 0) {
-        this.SelectedAptExtensions.delete(extension.Nom);
-        return;
-      }
-      this.SelectedAptExtensions.set(extension.Nom, rank);
-    },
     computeCost() {
       return this.SelectedAptTypeName &&
         Array.from(this.SelectedAptEffets.values()).length
