@@ -61,6 +61,18 @@ export class GenotraitService {
       Description: "La creature possède une paire de bras supplémentaire.",
       Modificateurs: new Map([]),
     },
+    {
+      Nom: "Machine primitive",
+      Description:
+        "La machine n'est pas capables d'utiliser d'aptitude qui necessite le fluide.",
+      Modificateurs: new Map([]),
+    },
+    {
+      Nom: "Volant",
+      Description:
+        "La creature ou la machine est capable de voler pendant de longues durées.",
+      Modificateurs: new Map([]),
+    },
   ];
 
   static findAllGenotraits() {
