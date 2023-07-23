@@ -17,20 +17,6 @@
         <q-toolbar-title class="text-uppercase" style="max-width: 600px"
           >Namtar rules</q-toolbar-title
         >
-        <div class="q-px-md bg-accent">
-          <q-input
-            bg-color="accent"
-            dense
-            borderless
-            color="white"
-            v-model="text"
-            label="Not imlemented yet"
-          >
-            <template v-slot:append>
-              <q-icon name="search"></q-icon>
-            </template>
-          </q-input>
-        </div>
         <q-space></q-space>
       </q-toolbar>
     </q-header>
