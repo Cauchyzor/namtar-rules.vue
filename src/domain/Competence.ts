@@ -33,6 +33,11 @@ export enum CompetenceName {
 export class CompetenceService {
   private static CompetencesList: Array<Competence> = [
     {
+      Nom: CompetenceName.ARME_A_DISTANCE,
+      BaseCaracteristique: CaracteritiqueName.ADRESSE,
+      ShortDescription: "Utiliser une arme à distance avec efficacité.",
+    },
+    {
       Nom: CompetenceName.ATHLETISME,
       BaseCaracteristique: CaracteritiqueName.VIGUEUR,
       ShortDescription: "Sauter, grimper, soulever de lourdes charges.",
