@@ -5,7 +5,7 @@ import { Genotrait } from "./Genotrait";
 
 export class CreatureService {
   /**
-   * Nom de la creatire
+   * Nom de la creature
    */
   Nom: string;
   /**
@@ -42,7 +42,7 @@ export class CreatureService {
       (this.Caracteristiques.get(CaracteritiqueName.VIGUEUR) || 0) +
       5 +
       this.Genotraits.map(
-        (g) => g.AttributesModifiers.get(AttributsName.PV) || 0
+        (g) => g.Modificateurs.get(AttributsName.PV) || 0
       ).reduce((a, b) => a + b) // accumulator
     );
   }
@@ -55,7 +55,7 @@ export class CreatureService {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.VIGUEUR) || 0) +
       this.Genotraits.map(
-        (g) => g.AttributesModifiers.get(AttributsName.RESILIENCE) || 0
+        (g) => g.Modificateurs.get(AttributsName.RESILIENCE) || 0
       ).reduce((a, b) => a + b) // accumulator
     );
   }
@@ -68,7 +68,7 @@ export class CreatureService {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.AGILITE) || 0) +
       this.Genotraits.map(
-        (g) => g.AttributesModifiers.get(AttributsName.REFLEXES) || 0
+        (g) => g.Modificateurs.get(AttributsName.REFLEXES) || 0
       ).reduce((a, b) => a + b) // accumulator
     );
   }
@@ -82,7 +82,7 @@ export class CreatureService {
       (this.Caracteristiques.get(CaracteritiqueName.INTELLIGENCE) || 0) +
       (this.Caracteristiques.get(CaracteritiqueName.CHARISME) || 0) +
       this.Genotraits.map(
-        (g) => g.AttributesModifiers.get(AttributsName.STRESS) || 0
+        (g) => g.Modificateurs.get(AttributsName.STRESS) || 0
       ).reduce((a, b) => a + b) // accumulator
     );
   }
