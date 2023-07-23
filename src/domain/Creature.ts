@@ -3,7 +3,7 @@ import { CaracteritiqueName } from "./Caracteristique";
 import { CompetenceName } from "./Competence";
 import { Genotrait } from "./Genotrait";
 
-export class CreatureService {
+export class Creature {
   /**
    * Nom de la creature
    */
@@ -15,21 +15,23 @@ export class CreatureService {
   /**
    * Liste des attribut génétiques qui modifieront les attributs
    */
-  Genotraits: Array<Genotrait>;
+  Genotraits: Map<Genotrait, number>;
   /**
    * Listes des valeurs pour toutes les compétences accessible par la créatures
    */
   Competences: Map<CompetenceName, number>;
 
-  constructor(
-    nom: string,
-    caracteristiques: Map<CaracteritiqueName, number>,
-    Genotraits: Array<Genotrait>,
-    competences: Map<CompetenceName, number>
-  ) {
-    (this.Nom = nom), (this.Caracteristiques = caracteristiques);
-    this.Competences = competences;
-    this.Genotraits = Genotraits || [];
+  constructor() {
+    this.Nom = "Creature inconnue";
+    this.Caracteristiques = new Map([
+      [CaracteritiqueName.VIGUEUR, 0],
+      [CaracteritiqueName.AGILITE, 0],
+      [CaracteritiqueName.ADRESSE, 0],
+      [CaracteritiqueName.INTELLIGENCE, 0],
+      [CaracteritiqueName.CHARISME, 0],
+    ]);
+    this.Competences = new Map([]);
+    this.Genotraits = new Map([]);
   }
 
   /**
@@ -41,9 +43,9 @@ export class CreatureService {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.VIGUEUR) || 0) +
       5 +
-      this.Genotraits.map(
-        (g) => g.Modificateurs.get(AttributsName.PV) || 0
-      ).reduce((a, b) => a + b) // accumulator
+      Array.from(this.Genotraits.entries())
+        .map(([g, rank]) => (g.Modificateurs.get(AttributsName.PV) || 0) * rank)
+        .reduce((a, b) => a + b) // accumulator
     );
   }
   /**
@@ -54,9 +56,12 @@ export class CreatureService {
   computePoolResilience(): number {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.VIGUEUR) || 0) +
-      this.Genotraits.map(
-        (g) => g.Modificateurs.get(AttributsName.RESILIENCE) || 0
-      ).reduce((a, b) => a + b) // accumulator
+      Array.from(this.Genotraits.entries())
+        .map(
+          ([g, rank]) =>
+            (g.Modificateurs.get(AttributsName.RESILIENCE) || 0) * rank
+        )
+        .reduce((a, b) => a + b) // accumulator
     );
   }
   /**
@@ -67,9 +72,12 @@ export class CreatureService {
   computePoolReflexes(): number {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.AGILITE) || 0) +
-      this.Genotraits.map(
-        (g) => g.Modificateurs.get(AttributsName.REFLEXES) || 0
-      ).reduce((a, b) => a + b) // accumulator
+      Array.from(this.Genotraits.entries())
+        .map(
+          ([g, rank]) =>
+            (g.Modificateurs.get(AttributsName.REFLEXES) || 0) * rank
+        )
+        .reduce((a, b) => a + b) // accumulator
     );
   }
   /**
@@ -81,9 +89,11 @@ export class CreatureService {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.INTELLIGENCE) || 0) +
       (this.Caracteristiques.get(CaracteritiqueName.CHARISME) || 0) +
-      this.Genotraits.map(
-        (g) => g.Modificateurs.get(AttributsName.STRESS) || 0
-      ).reduce((a, b) => a + b) // accumulator
+      Array.from(this.Genotraits.entries())
+        .map(
+          ([g, rank]) => (g.Modificateurs.get(AttributsName.STRESS) || 0) * rank
+        )
+        .reduce((a, b) => a + b) // accumulator
     );
   }
 }
