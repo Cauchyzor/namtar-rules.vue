@@ -15,6 +15,7 @@ const routes: RouteRecordRaw[] = [
         path: "/regles",
         children: [
           {
+            name: "default",
             path: "",
             redirect: "/regles/dice-system",
           },
@@ -56,6 +57,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import("src/pages/EquipementPage.vue"),
         children: [
           {
+            name: "default",
             path: "",
             redirect: "/equipement/quotidien",
           },
