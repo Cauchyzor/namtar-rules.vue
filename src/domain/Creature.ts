@@ -20,6 +20,10 @@ export class Creature {
    * Listes des valeurs pour toutes les compétences accessible par la créatures
    */
   Competences: Map<CompetenceName, number>;
+  /**
+   * Listes des valeurs pour toutes les compétences accessible par la créatures
+   */
+  Aptitudes: Set<string>;
 
   constructor() {
     this.Nom = "Creature inconnue";
@@ -32,6 +36,7 @@ export class Creature {
     ]);
     this.Competences = new Map([]);
     this.Genotraits = new Map([]);
+    this.Aptitudes = new Set([]);
   }
 
   /**

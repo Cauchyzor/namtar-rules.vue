@@ -858,6 +858,9 @@ export class AptitudeService {
     },
   ];
 
+  static findAptitudesByNames(names: Array<string>) {
+    return this.AptitudeList.filter((apt) => names.includes(apt.Nom));
+  }
   static findCapacityTypeByName(name: AptitudeTypeName) {
     return this.Types.find((ct) => ct.Nom === name)!;
   }

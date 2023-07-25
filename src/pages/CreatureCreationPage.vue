@@ -58,10 +58,12 @@
           </div>
         </div>
         <div class="col">
-          <div class="row q-my-md">
+          <div class="row q-gutter-md q-my-md">
             <q-select
+              dense
+              outlined
               class="col-8"
-              v-model="competenceSelected"
+              v-model="CompetenceSelected"
               label="Ajouter une compétence"
               :options="availableCompetence"
             ></q-select>
@@ -102,23 +104,83 @@
           </q-list>
         </div>
       </div>
+      <div class="row q-ma-md">
+        <q-btn
+          outline
+          class="col-4"
+          @click="OpenDialApt = true"
+          label="Ajouter une aptitude"
+          icon="add"
+        ></q-btn>
+        <q-space class="col-8"></q-space>
+      </div>
+      <div class="row q-col-gutter-sm justify-center items-stretch">
+        <div
+          v-for="aptitude in creatureAptitudes"
+          :key="aptitude.Nom"
+          class="col-12 col-md-4 col-xl-3"
+        >
+          <AptitudeCard
+            style="height: 100%"
+            :Aptitude="aptitude"
+          ></AptitudeCard>
+        </div>
+      </div>
+
+      <q-dialog v-model="OpenDialApt">
+        <q-card style="width: 600px">
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-overline">Selectionnez une aptitude</div>
+            <q-space></q-space>
+            <q-btn icon="close" flat round dense v-close-popup></q-btn>
+          </q-card-section>
+          <q-card-section>
+            <q-input
+              dense
+              outlined
+              :modelValue="AptSearch"
+              label="rechercher..."
+            ></q-input>
+          </q-card-section>
+          <q-card-section>
+            <q-scroll-area style="height: 500px">
+              <AptitudeCard
+                v-for="apt in aptFiltered"
+                :key="apt.Nom"
+                :Aptitude="apt"
+                class="q-my-md"
+              ></AptitudeCard>
+            </q-scroll-area>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
     </q-page>
   </q-page>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 
+import AptitudeCard from "src/components/AptitudeCard.vue";
+
 import { Creature } from "src/domain/Creature";
 import { CaracteritiqueName } from "src/domain/Caracteristique";
 import { CompetenceName, CompetenceService } from "src/domain/Competence";
 import { AttributsName } from "src/domain/Attribut";
+import { AptitudeService } from "src/domain/Aptitude";
 
 export default defineComponent({
+  components: {
+    AptitudeCard,
+  },
   data() {
     return {
       AttributsName,
       Creature: new Creature(),
-      competenceSelected: ref(),
+
+      CompetenceSelected: ref(),
+      OpenDialApt: ref(false),
+      AptSearch: ref(""),
+      Apt: AptitudeService.getAllAptitudes().filter((_, index) => index < 4),
     };
   },
   computed: {
@@ -128,6 +190,16 @@ export default defineComponent({
           (c) => !Array.from(this.Creature.Competences.keys()).includes(c.Nom)
         )
         .map((c) => c.Nom);
+    },
+    creatureAptitudes() {
+      return AptitudeService.findAptitudesByNames(
+        Array.from(this.Creature.Aptitudes.values())
+      );
+    },
+    aptFiltered() {
+      return AptitudeService.getAllAptitudes().filter(
+        (apt) => !this.Creature.Aptitudes.has(apt.Nom)
+      );
     },
   },
   methods: {
@@ -140,13 +212,13 @@ export default defineComponent({
     },
     addCompetenceRank1() {
       const competence = CompetenceService.getAllCompetences().find(
-        (c) => c.Nom === this.competenceSelected
+        (c) => c.Nom === this.CompetenceSelected
       );
       if (!competence) {
         return;
       }
       this.Creature.Competences.set(competence?.Nom, 1);
-      this.competenceSelected = ref();
+      this.CompetenceSelected = ref();
     },
     updateCompRank(name: CompetenceName, rank: number) {
       const actualRank = this.Creature.Competences.get(name);
