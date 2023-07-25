@@ -137,7 +137,7 @@
           </q-item>
         </q-list>
         <q-separator padding inset></q-separator>
-        <div class="row q-my-xl">
+        <div class="row q-my-xl q-gutter-md">
           <q-list class="col bg-accent" bordered padding>
             <q-item>
               <q-item-section>
@@ -238,8 +238,8 @@
               <q-item-section>
                 <q-item-label header>Se désengager</q-item-label>
                 <q-item-label caption class="text-grey"
-                  >Se déplacer sans provoquer d'attaques d'opportunités par les
-                  ennemis engagés avec vous.
+                  >Se déplacer sans provoquer d'attaques d'opportunités au corps
+                  à corps par les ennemis engagés avec vous.
                 </q-item-label>
               </q-item-section>
               <q-item-section side top>
@@ -254,6 +254,25 @@
                   >Quand vous choisissez l&#39;action esquiver, votre unique
                   objectif est d&#39;éviter les attaques. Jusqu&#39;au début de
                   votre tour suivant, vous
+                  <strong
+                    >augmentez de 1 votre score de
+                    {{ ATTRIBUTS.REFLEXES }}</strong
+                  >. Vous perdez les bénéfices de cette action si vous êtes
+                  immobilisé, empoigné, neutralisé ou inconscient.
+                </q-item-label>
+              </q-item-section>
+              <q-item-section side top>
+                <q-item-label overline>Action</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>
+                <q-item-label header>Se tenir prêt</q-item-label>
+                <q-item-label caption class="text-grey"
+                  >Vous n'effectuez pas d'action à votre tour de jeux. Vous
+                  bénificiez d'une réaction supplémentaire. Elle s'estompe de la
+                  même manière que votre réaction par défaut.
                   <strong
                     >augmentez de 1 votre score de
                     {{ ATTRIBUTS.REFLEXES }}</strong
@@ -288,9 +307,10 @@
                   d'initiative, il peut se retrouver dans une situation où il
                   prefère s'interomptre : il n'effectue pas l'action qu'il avait
                   planifié, et
-                  <strong>décide d'effectuer une autre action</strong>. Pour
-                  illustrer ce changement,
-                  <strong>il perd alors sa réaction</strong></q-item-label
+                  <strong
+                    >décide d'effectuer une autre action. Pour illustrer ce
+                    changement, il utilise sa réaction</strong
+                  ></q-item-label
                 >
               </q-item-section>
               <q-item-section side top>
