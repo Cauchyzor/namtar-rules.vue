@@ -1,5 +1,5 @@
 <template>
-  <q-card flat class="bg-secondary">
+  <q-card flat class="bg-accent">
     <q-card-section vertical>
       <div class="text-overline">
         {{ Aptitude.Type.Nom }}
@@ -10,19 +10,35 @@
       <div class="text-overline">
         {{ Aptitude.Vecteur.Nom }}
       </div>
-      <div class="text-caption text-grey">{{ Aptitude.Description }}</div>
+      <div class="ellipsis-3-lines text-caption text-grey">
+        {{ Aptitude.Description }}
+      </div>
     </q-card-section>
   </q-card>
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { Aptitude } from "src/domain/Aptitude";
+import { Aptitude, AptitudeService } from "src/domain/Aptitude";
 
 export default defineComponent({
   name: "AptitudeCard",
   props: {
     Aptitude: { type: Object as PropType<Aptitude>, required: true },
+  },
+  data() {
+    return {
+      openDetail: false,
+    };
+  },
+  methods: {
+    computeAptitudeCost() {
+      return AptitudeService.computeStabilityScore(
+        this.Aptitude.Type.Nom,
+        this.Aptitude.Effets,
+        this.Aptitude.ExtensionsEffet
+      );
+    },
   },
 });
 </script>

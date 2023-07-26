@@ -32,10 +32,10 @@
         :key="comp.Nom"
         class="col-12 col-md-3 col-xl-2"
       >
-        <CompetenceCard
+        <CompetenceItem
           style="height: 100%"
           :Competence="comp"
-        ></CompetenceCard>
+        ></CompetenceItem>
       </div>
     </div>
 
@@ -80,13 +80,14 @@
       />
     </div>
 
-    <q-list separator>
-      <AptitudeItem
+    <div class="row justify-center q-gutter-md">
+      <AptitudeCard
+        class="col-12 col-md-3 col-xl-2"
         v-for="Aptitude in AptitudeList"
         :key="Aptitude.Nom"
         :Aptitude="Aptitude"
-      ></AptitudeItem>
-    </q-list>
+      ></AptitudeCard>
+    </div>
   </q-page>
 </template>
 <script lang="ts">
@@ -94,8 +95,8 @@ import { defineComponent } from "vue";
 
 import CaracteristiqueCard from "src/components/CaracteristiqueCard.vue";
 
-import CompetenceCard from "src/components/CompetenceCard.vue";
-import AptitudeItem from "src/components/AptitudeItem.vue";
+import CompetenceItem from "src/components/CompetenceItem.vue";
+import AptitudeCard from "src/components/AptitudeCard.vue";
 
 import {
   CaracteristiqueService,
@@ -109,15 +110,15 @@ export default defineComponent({
   name: "PersonnagePage",
   components: {
     CaracteristiqueCard,
-    CompetenceCard,
-    AptitudeItem,
+    CompetenceItem,
+    AptitudeCard,
   },
   data() {
     return {
       SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
-      AptitudeList: AptitudeService.getAllAptitudes(),
+      AptitudeList: AptitudeService.getAllAptitudes().filter((_, i) => i < 3),
     };
   },
   methods: {
