@@ -144,21 +144,21 @@ export class AptitudeService {
     {
       Nom: AptitudeTypeName.ENVOUTEMENT,
       Description:
-        "Le lanceur utilise la concordance namtarique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est déteriorée dans le processus. L'apptitude consume les atouts de la cible pour générer des effets.",
+        "Le lanceur corrompt l'empreinte onirique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est déteriorée dans le processus. L'apptitude consume les atouts de la cible pour générer des effets.",
       DescriptionDetails: "Chaque atout supprimé génère 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Le lanceur utilise la concordance namtarique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe sont consommé pour générer des effets.",
+        "Le lanceur utilise l'empreinte onirique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe sont consommé pour générer des effets.",
       DescriptionDetails: "Chaque atout consommé génère 2 points de stabilité.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
-        "Un mantra est une modification permanante de la signature namtarique de la cible pour apprécier certaine caractéristiques. Les effets sont passifs.",
+        "Un mantra est une modification permanante de la signature onirique de la cible pour apprécier certain effets du fluide sur son comportement et ses capacités. Les effets sont passifs.",
       DescriptionDetails:
-        "Les mantras sont toujours stables. Leurs effets sont directement établis par le MJ.",
+        "Les mantras sont toujours stables et les effets constants depuis sa creation.",
     },
     {
       Nom: AptitudeTypeName.CYTOMANCIE,
