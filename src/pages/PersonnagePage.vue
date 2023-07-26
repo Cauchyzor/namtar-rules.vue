@@ -65,14 +65,14 @@
 
     <div class="row justify-center">
       <q-btn
-        class="q-mx-sm"
+        class="q-ma-sm"
         to="/catalog"
         label="Liste des aptitudes"
         outline
         color="primary"
       />
       <q-btn
-        class="q-mx-sm"
+        class="q-ma-sm"
         to="/aptitude"
         label="Creer son aptitude"
         outline
