@@ -111,6 +111,11 @@
               <q-item-label>Introduction</q-item-label>
             </q-item-section>
           </q-item>
+          <q-item clickable to="/creature" exact>
+            <q-item-section>
+              <q-item-label>Créatures</q-item-label>
+            </q-item-section>
+          </q-item>
         </q-expansion-item>
       </q-list>
     </q-drawer>

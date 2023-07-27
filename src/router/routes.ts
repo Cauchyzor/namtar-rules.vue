@@ -105,9 +105,20 @@ const routes: RouteRecordRaw[] = [
         component: () => import("src/pages/LoreIntroductionPage.vue"),
       },
       {
-        name: "Creature Creation",
-        path: "/creature-create",
-        component: () => import("src/pages/CreatureCreationPage.vue"),
+        name: "Creature",
+        path: "/creature",
+        children: [
+          {
+            name: "default",
+            path: "",
+            redirect: "/creature/create",
+          },
+          {
+            name: "Creature Creation",
+            path: "create",
+            component: () => import("src/pages/CreatureCreationPage.vue"),
+          },
+        ],
       },
     ],
   },
