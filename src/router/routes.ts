@@ -92,7 +92,7 @@ const routes: RouteRecordRaw[] = [
       {
         name: "Aptitude Catalogue",
         path: "/apt-mantra",
-        component: () => import("src/pages/AptitudesMantrasCataloguePage.vue"),
+        component: () => import("src/pages/PageAptitudesDatabase.vue"),
       },
       {
         name: "Ethnotrait",
