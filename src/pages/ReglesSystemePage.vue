@@ -65,6 +65,37 @@
         renvoyé sur un allié...
       </p>
     </div>
+    <h5>Atout et Menaces</h5>
+    <p>
+      Ils sont générés lors d'un test ou d'un jet. Ils symbolisent des
+      perturbations oniriques qui peuvent être exploitées pour effectuer des
+      aptitudes. Si un personnage possède un ou plusieurs atouts avant
+      d'effectuer un jet ou un test,
+      <strong
+        >il peut en dépenser autant qu'il le souhaite et relancer autant de dés
+        parmi son pool de dé positif</strong
+      >. Les <strong>menaces</strong> sont exploitées de la même manière par le
+      MJ pour <strong>les dés négatif</strong>
+      des joueurs.
+    </p>
+    <p>
+      Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
+      creatures subissent des atouts ou des menaces.
+    </p>
+    <h5>Avantages et désavantages</h5>
+    <p>
+      Grâce à certaines aptitudes, ou sous les effets narratif d'un triomphe ou
+      d'un désastre, les joueurs pourront
+      <strong>ajouter à leur pool de dé positif 1 ou plusieurs d4</strong>. Ils
+      représentent des avantages situationnels qui aident à la réussite de
+      l'action. Le même mécanisme existe avec les désavantages, représenté par 1
+      ou plusieurs d4 ajoutés au pool de dés négatifs.
+    </p>
+    <p>
+      Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
+      creatures subissent des atouts ou des menaces.
+    </p>
+
     <h4 class="text-center">Test de competence</h4>
     <p>
       Pour chaque test de compétence, le MJ décide da difficulté de la tâche à
