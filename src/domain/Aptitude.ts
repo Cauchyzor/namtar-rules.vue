@@ -819,7 +819,7 @@ export class AptitudeService {
     {
       Nom: "Le Distant",
       Description:
-        "Vous avez 1 point de défense supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
+        "Vous avez 1 point de réflexe supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
       Image: "",
       Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
@@ -839,7 +839,7 @@ export class AptitudeService {
     {
       Nom: "Le Fluidophobique",
       Description:
-        "Vous gagnez un atout chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
+        "Vous gagnez un avantage chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
       Image: "",
       Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
@@ -849,7 +849,7 @@ export class AptitudeService {
     {
       Nom: "L'Honorable Dueliste",
       Description:
-        "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez gagnez un atout avant d'effectuer un jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez immédiatement deux menaces si le duel est rompu.",
+        "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux désavantages si le duel est rompu.",
       Image: "",
       Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
       Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
