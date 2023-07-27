@@ -97,7 +97,7 @@ const routes: RouteRecordRaw[] = [
       {
         name: "Ethnotrait",
         path: "/ethnotrait",
-        component: () => import("src/pages/EthnotraitInfoPage.vue"),
+        component: () => import("src/pages/PageEthnotraitDatabase.vue"),
       },
       {
         name: "Lore",
@@ -117,6 +117,11 @@ const routes: RouteRecordRaw[] = [
             name: "Creature Creation",
             path: "create",
             component: () => import("src/pages/CreatureCreationPage.vue"),
+          },
+          {
+            name: "Génotraits",
+            path: "genotrait",
+            component: () => import("src/pages/PageGenotraitDatabase.vue"),
           },
         ],
       },

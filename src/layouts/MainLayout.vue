@@ -111,11 +111,18 @@
               <q-item-label>Introduction</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item clickable to="/creature" exact>
-            <q-item-section>
-              <q-item-label>Créatures</q-item-label>
-            </q-item-section>
-          </q-item>
+          <q-expansion-item label="Creatures" :content-inset-level="1">
+            <!-- <q-item clickable to="/creature/create" exact>
+              <q-item-section>
+                <q-item-label>Création</q-item-label>
+              </q-item-section>
+            </q-item> -->
+            <q-item clickable to="/creature/genotrait" exact>
+              <q-item-section>
+                <q-item-label>Génotraits</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
         </q-expansion-item>
       </q-list>
     </q-drawer>

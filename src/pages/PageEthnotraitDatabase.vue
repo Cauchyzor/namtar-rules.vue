@@ -11,7 +11,9 @@
         </q-item-section>
 
         <q-item-section side top>
-          <q-item-label caption>{{ ethnotrait.Coherence }}</q-item-label>
+          <q-item-label caption>{{
+            ethnotrait.CoherenceGénétiques
+          }}</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
