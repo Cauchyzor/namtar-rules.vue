@@ -26,9 +26,19 @@
     </p>
 
     <q-tabs>
-      <q-route-tab tab="quotidien" label="Objets" to="quotidien" exact />
-      <q-route-tab tab="armes" label="Armes" to="armes" exact />
-      <q-route-tab tab="armures" label="Armures" to="armures" exact />
+      <q-route-tab
+        tab="quotidien"
+        label="Objets"
+        to="/equipement/quotidien"
+        exact
+      />
+      <q-route-tab tab="armes" label="Armes" to="/equipement/armes" exact />
+      <q-route-tab
+        tab="armures"
+        label="Armures"
+        to="/equipement/armures"
+        exact
+      />
     </q-tabs>
 
     <router-view></router-view>
