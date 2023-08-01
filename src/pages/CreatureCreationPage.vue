@@ -6,7 +6,7 @@
         <div
           v-for="[caracName, rank] in Creature.Caracteristiques.entries()"
           :key="rank"
-          class="col"
+          class="col-md-2 col-sm-4"
         >
           <q-card style="height: 100%" flat class="bg-accent">
             <q-card-section>
@@ -40,21 +40,47 @@
       <div class="row justify-center items-baseline q-my-md">
         <div class="col">
           <div class="row justify-center">
-            <p class="q-my-xl q-mx-md text-h4 text-overline">
-              {{ AttributsName.PV }} : 0
-            </p>
-            <p class="q-my-xl q-mx-md text-h4 text-overline">
-              {{ AttributsName.RESILIENCE }} : 0
-            </p>
-            <p class="q-my-xl q-mx-md text-h4 text-overline">
-              {{ AttributsName.REFLEXES }} : 0
-            </p>
-            <p class="q-my-xl q-mx-md text-h4 text-overline">
-              {{ AttributsName.INITIATIVE }} : 0
-            </p>
-            <p class="q-my-xl q-mx-md text-h4 text-overline">
-              {{ AttributsName.STRESS }} : 0
-            </p>
+            <q-chip
+              color="primary"
+              text-color="white"
+              :icon="getAttributeIcon(AttributsName.PV)"
+              outline
+              >{{ AttributsName.PV }} : {{ Creature.computePoolPV() }}</q-chip
+            >
+
+            <q-chip
+              color="primary"
+              text-color="white"
+              :icon="getAttributeIcon(AttributsName.RESILIENCE)"
+              outline
+              >{{ AttributsName.RESILIENCE }} :
+              {{ Creature.computePoolResilience() }}</q-chip
+            >
+            <q-chip
+              color="primary"
+              text-color="white"
+              :icon="getAttributeIcon(AttributsName.REFLEXES)"
+              outline
+              >{{ AttributsName.REFLEXES }} :
+              {{ Creature.computePoolReflexes() }}</q-chip
+            >
+            <q-chip
+              color="primary"
+              text-color="white"
+              :icon="getAttributeIcon(AttributsName.INITIATIVE)"
+              outline
+              >{{ AttributsName.INITIATIVE }} :
+              {{ Creature.computePoolInitiative() }}</q-chip
+            >
+
+            <q-chip
+              color="primary"
+              text-color="white"
+              :icon="getAttributeIcon(AttributsName.STRESS)"
+              outline
+              >{{ AttributsName.STRESS }} :
+              {{ Creature.computePoolStress() }}</q-chip
+            >
           </div>
         </div>
         <div class="col">
@@ -68,7 +94,7 @@
               :options="availableCompetence"
             ></q-select>
             <q-btn
-              class="col-md-3 col-xs-4"
+              class="col-md-3"
               flat
               color="primary"
               icon="add"
@@ -165,7 +191,7 @@ import AptitudeCard from "src/components/AptitudeCard.vue";
 import { Creature } from "src/domain/Creature";
 import { CaracteritiqueName } from "src/domain/Caracteristique";
 import { CompetenceName, CompetenceService } from "src/domain/Competence";
-import { AttributsName } from "src/domain/Attribut";
+import { AttributsName, AttributService } from "src/domain/Attribut";
 import { AptitudeService } from "src/domain/Aptitude";
 
 export default defineComponent({
@@ -230,6 +256,9 @@ export default defineComponent({
         return;
       }
       this.Creature.Competences.set(name, actualRank + rank);
+    },
+    getAttributeIcon(name: AttributsName) {
+      return AttributService.findAttributeIcon(name);
     },
   },
 });

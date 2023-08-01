@@ -55,7 +55,11 @@ export class AttributService {
     },
   ];
 
-  static getAttributsByNames(names: Array<AttributsName>) {
+  static findAttributsByNames(names: Array<AttributsName>) {
     return this.AttributsList.filter((a) => names.includes(a.Nom));
+  }
+
+  static findAttributeIcon(name: AttributsName) {
+    return this.AttributsList.find((attr) => attr.Nom == name)?.Icon || "";
   }
 }

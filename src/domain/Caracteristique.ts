@@ -21,7 +21,7 @@ export class CaracteristiqueService {
       Nom: CaracteritiqueName.VIGUEUR,
       Description:
         "Traduit la force, la musculature, la vitalité et la robustesse physique",
-      Attributs: AttributService.getAttributsByNames([
+      Attributs: AttributService.findAttributsByNames([
         AttributsName.PV,
         AttributsName.RESILIENCE,
       ]),
@@ -29,7 +29,7 @@ export class CaracteristiqueService {
     {
       Nom: CaracteritiqueName.AGILITE,
       Description: "Determine la souplesse et la vivacité des mouvements.",
-      Attributs: AttributService.getAttributsByNames([
+      Attributs: AttributService.findAttributsByNames([
         AttributsName.REFLEXES,
         AttributsName.INITIATIVE,
       ]),
@@ -38,19 +38,19 @@ export class CaracteristiqueService {
       Nom: CaracteritiqueName.ADRESSE,
       Description:
         "Représente la précision et le contrôle des mouvements subtiles.",
-      Attributs: AttributService.getAttributsByNames([]),
+      Attributs: AttributService.findAttributsByNames([]),
     },
     {
       Nom: CaracteritiqueName.INTELLIGENCE,
       Description:
         "Mesure la capacité de raisonnement, la mémoire et la sagesse d'un personnage.",
-      Attributs: AttributService.getAttributsByNames([AttributsName.STRESS]),
+      Attributs: AttributService.findAttributsByNames([AttributsName.STRESS]),
     },
     {
       Nom: CaracteritiqueName.CHARISME,
       Description:
         "Représente la force de caractère, l'assurance et la subtilité du personnage dans sa communication.",
-      Attributs: AttributService.getAttributsByNames([AttributsName.STRESS]),
+      Attributs: AttributService.findAttributsByNames([AttributsName.STRESS]),
     },
   ];
 
