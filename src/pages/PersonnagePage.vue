@@ -2,7 +2,13 @@
   <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
   <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
   <q-page padding>
-    <h4 class="text-center">Caracteristiques</h4>
+    <h4>Caracteristiques innées</h4>
+    <p>
+      Certains aspects du personnage comme son espèce son physique sont
+      déterminé à la création, et ne pourront plus être modifié par la suite.
+      Sauf dans des conditions exceptionnellement autorisées par le MJ.
+    </p>
+    <h5 class="text-center">Caracteristiques</h5>
     <div class="text-center">
       <p>
         Un personnage possède 14 points répartis dans 5 caracteristiques, au
@@ -19,11 +25,40 @@
         @click="selectCard(carac.Nom)"
       />
     </div>
-    <h4 class="text-center">Compétences</h4>
+
+    <h5 class="text-center">Ethnotraits</h5>
     <div class="text-center">
       <p>
-        Un personnage commence l'aventure avec un rang 1 dans 4 compétences au
-        choix.
+        Si le personnage n'est pas humain, son espèce est caractérisée par un
+        ensemble d'ethnotraits. Certains imposent de commencer l'aventure avec
+        moins de points de caractéristique ou d'aptitude. Les ethnotraits ont
+        chacun un score de cohérence. Un personnage peut commencer une aventure
+        avec autant d'ethnotrait qu'il le souhaite, mais sa valeur de cohérence
+        au total doit être égale a 0.
+      </p>
+      <q-btn
+        to="/ethnotrait"
+        label="Voir les ethnotraits"
+        outline
+        color="primary"
+      />
+    </div>
+
+    <h4>Point d'experience : le savoir acquis</h4>
+    <p>
+      Un personnage commence l'aventure avec un ensemble de 8 points
+      d'expérience. À chaque gain de niveau, il en récupère 3 supplémentaire.
+      Ces points d'expérience permettent de progresser dans le rang des
+      compétences.
+    </p>
+    <h5 class="text-center">Compétences</h5>
+    <div class="text-center">
+      <p>
+        Elles traduisent un savoir-faire dans une discipline générique. Plus
+        cette compétence possède un rang élevé, plus les chances de réussir sont
+        élevées. Augmenter son rang dans une compétence coûte autant de points
+        d'expérience que le niveau du rang voulu. (exemple : passer de rang 2 à
+        3 coute 3 points d'expériences)
       </p>
     </div>
     <div class="row q-col-gutter-sm justify-center items-stretch">
@@ -39,27 +74,13 @@
       </div>
     </div>
 
-    <h4 class="text-center">Ethnotraits</h4>
+    <h5 class="text-center">Aptitudes</h5>
     <div class="text-center">
       <p>
-        Si le personnage n'est pas humain, son espèce est caractérisée par un
-        ensemble d'éthnotraits. Certains imposent de commencer l'aventure avec
-        moins de points de caractéristique ou d'aptitude.
-      </p>
-      <q-btn
-        to="/ethnotrait"
-        label="Voir les ethnotraits"
-        outline
-        color="primary"
-      />
-    </div>
-
-    <h4 class="text-center">Aptitudes</h4>
-    <div class="text-center">
-      <p>
-        Les aptitudes sont des manifestations du fluide en réponse à la volonté
-        de son utilisateur. Un personnage débute l'aventure avec 3 aptitudes
-        parmi celles communément connue, ou créée de toute pièce.
+        Les aptitudes sont des talents que possède l'individu. Cela peut aussi
+        bien faire référence à des techniques mise au point par l'individu qu'a
+        manifestation du fluide enseignées par d'autres. Chaque emplacement
+        d'aptitude coute 2 point d'experience.
       </p>
     </div>
 
