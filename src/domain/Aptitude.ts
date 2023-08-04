@@ -683,20 +683,6 @@ export class AptitudeService {
       ]),
     },
     {
-      Nom: ExtensionEffetName.UTILISATEUR_GALVANISE,
-      Description:
-        "Vous devez être sous les effets d'au moins autant d'atout que le rang de cette extension.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
-        [AptitudeTypeName.CYTOMANCIE, 3],
-        [AptitudeTypeName.ENVOUTEMENT, 3],
-        [AptitudeTypeName.EVOCATION, 3],
-        [AptitudeTypeName.NECROMANCIE, 2],
-        [AptitudeTypeName.MALEFICE, 3],
-      ]),
-    },
-
-    {
       Nom: ExtensionEffetName.UTILISATEUR_MAUDIT,
       Description:
         "Vous devez être sous les effets d'au moins autant menace que le rang de cette extension.",
