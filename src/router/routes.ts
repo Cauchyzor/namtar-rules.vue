@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
       {
         name: "Welcome",
         path: "",
-        component: () => import("src/pages/IndexPage.vue"),
+        component: () => import("src/pages/PageIndex.vue"),
       },
       {
         name: "Règles",
@@ -22,39 +22,39 @@ const routes: RouteRecordRaw[] = [
           {
             name: "DiceSystem",
             path: "dice-system",
-            component: () => import("src/pages/ReglesSystemePage.vue"),
+            component: () => import("src/pages/PageReglesSysteme.vue"),
           },
           {
             name: "CombatSystem",
             path: "combat",
-            component: () => import("src/pages/ReglesCombatPage.vue"),
+            component: () => import("src/pages/PageReglesCombat.vue"),
           },
           {
             name: "SoinSystem",
             path: "soin",
-            component: () => import("src/pages/ReglesSoinsPage.vue"),
+            component: () => import("src/pages/PageReglesSoins.vue"),
           },
           {
             name: "Aventure",
             path: "aventure",
-            component: () => import("src/pages/ReglesAventurePage.vue"),
+            component: () => import("src/pages/PageReglesAventure.vue"),
           },
         ],
       },
       {
         name: "Personnage",
         path: "/pj",
-        component: () => import("src/pages/PersonnagePage.vue"),
+        component: () => import("src/pages/PagePersonnage.vue"),
       },
       {
         name: "Niveau",
         path: "/niveau",
-        component: () => import("src/pages/NiveauPage.vue"),
+        component: () => import("src/pages/PageNiveau.vue"),
       },
       {
         name: "Equipement",
         path: "/equipement",
-        component: () => import("src/pages/EquipementPage.vue"),
+        component: () => import("src/pages/PageEquipement.vue"),
         children: [
           {
             name: "default",
@@ -65,29 +65,29 @@ const routes: RouteRecordRaw[] = [
             name: "Quotidien",
             path: "quotidien",
             component: () =>
-              import("src/pages/TabsEquipement/EquipementTab.vue"),
+              import("src/pages/TabsEquipement/TabEquipement.vue"),
           },
           {
             name: "Armes",
             path: "armes",
-            component: () => import("src/pages/TabsEquipement/ArmeTab.vue"),
+            component: () => import("src/pages/TabsEquipement/TabArme.vue"),
           },
           {
             name: "Armures",
             path: "armures",
-            component: () => import("src/pages/TabsEquipement/ArmureTab.vue"),
+            component: () => import("src/pages/TabsEquipement/TabArmure.vue"),
           },
         ],
       },
       {
         name: "Vehicule",
         path: "/vehicule",
-        component: () => import("src/pages/VehiculesPage.vue"),
+        component: () => import("src/pages/PageVehicules.vue"),
       },
       {
         name: "Aptitude Creation",
         path: "/apt-create",
-        component: () => import("src/pages/AptitudeCreationPage.vue"),
+        component: () => import("src/pages/PageAptitudeCreation.vue"),
       },
       {
         name: "Aptitude Catalogue",
@@ -102,7 +102,7 @@ const routes: RouteRecordRaw[] = [
       {
         name: "Lore",
         path: "/lore",
-        component: () => import("src/pages/LoreIntroductionPage.vue"),
+        component: () => import("src/pages/PageLoreIntroduction.vue"),
       },
       {
         name: "Creature",
@@ -116,7 +116,7 @@ const routes: RouteRecordRaw[] = [
           {
             name: "Creature Creation",
             path: "create",
-            component: () => import("src/pages/CreatureCreationPage.vue"),
+            component: () => import("src/pages/PageCreatureCreation.vue"),
           },
           {
             name: "Génotraits",
