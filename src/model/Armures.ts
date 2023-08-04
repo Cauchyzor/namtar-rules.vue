@@ -1,7 +1,7 @@
 import { CaracteritiqueName } from "./Caracteristique";
-import { EquipementItem } from "./Equipement";
+import { Equipement } from "./Equipement";
 
-export interface ArmureItem extends EquipementItem {
+export interface ArmureItem extends Equipement {
   Defense: number;
   Special: Array<string>;
 }

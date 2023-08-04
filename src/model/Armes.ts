@@ -1,8 +1,8 @@
 import { CaracteritiqueName } from "./Caracteristique";
 import { CompetenceName } from "./Competence";
-import { EquipementItem } from "./Equipement";
+import { Equipement } from "./Equipement";
 
-export interface ArmeItem extends EquipementItem {
+export interface Arme extends Equipement {
   Degats: string;
   Special: Array<string>;
   Competence: CompetenceName;
@@ -16,12 +16,12 @@ export enum NiveauPorte {
   EXTREME = "Extrème",
 }
 
-export interface ArmeDistanceItem extends ArmeItem {
+export interface ArmeDistanceItem extends Arme {
   Munition: string;
   PorteMax: NiveauPorte;
 }
 export class ArmesService {
-  private static ARMES: Array<ArmeItem> = [
+  private static ARMES: Array<Arme> = [
     {
       Nom: "Bâton de force",
       Degats: "2 point de dommage par triomphe + 2 point de dommage par succès",

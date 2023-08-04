@@ -1,4 +1,4 @@
-export type EquipementItem = {
+export type Equipement = {
   Nom: string;
   Encombrement: number;
   Rarete: number;
@@ -7,7 +7,7 @@ export type EquipementItem = {
 };
 
 export class EquipementService {
-  private static EquipementItems: Array<EquipementItem> = [
+  private static EquipementItems: Array<Equipement> = [
     {
       Nom: "Lampe torche solaire",
       Encombrement: 1,

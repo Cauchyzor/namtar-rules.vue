@@ -17,7 +17,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { GenotraitService } from "src/domain/Genotrait";
+import { GenotraitService } from "src/model/Genotrait";
 
 export default defineComponent({
   name: "PageGenotraitDatabase",

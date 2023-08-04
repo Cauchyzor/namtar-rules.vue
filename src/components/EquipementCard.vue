@@ -15,13 +15,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { EquipementItem } from "src/domain/Equipement";
+import { Equipement } from "src/model/Equipement";
 
 export default defineComponent({
   name: "EquipementCard",
   props: {
     EquipementItem: {
-      type: Object as PropType<EquipementItem>,
+      type: Object as PropType<Equipement>,
       required: true,
     },
   },

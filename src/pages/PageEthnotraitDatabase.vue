@@ -22,7 +22,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { EthnotraitService } from "src/domain/Ethnotrait";
+import { EthnotraitService } from "src/model/Ethnotrait";
 
 export default defineComponent({
   name: "EthnotraitInfoPage",

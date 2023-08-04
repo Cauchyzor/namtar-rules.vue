@@ -21,7 +21,7 @@ import { defineComponent } from "@vue/runtime-core";
 
 import EquipementCard from "src/components/EquipementCard.vue";
 
-import { EquipementService } from "src/domain/Equipement";
+import { EquipementService } from "src/model/Equipement";
 
 export default defineComponent({
   components: {

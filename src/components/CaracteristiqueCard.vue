@@ -25,8 +25,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import type { Caracteristique } from "src/domain/Caracteristique";
-import { Attribut } from "src/domain/Attribut";
+import type { Caracteristique } from "src/model/Caracteristique";
+import { Attribut } from "src/model/Attribut";
 
 export default defineComponent({
   props: {

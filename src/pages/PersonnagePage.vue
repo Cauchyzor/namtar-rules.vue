@@ -115,10 +115,10 @@ import AptitudeCard from "src/components/AptitudeCard.vue";
 import {
   CaracteristiqueService,
   CaracteritiqueName,
-} from "src/domain/Caracteristique";
+} from "src/model/Caracteristique";
 
-import { CompetenceService } from "src/domain/Competence";
-import { AptitudeService } from "src/domain/Aptitude";
+import { CompetenceService } from "src/model/Competence";
+import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   name: "PersonnagePage",

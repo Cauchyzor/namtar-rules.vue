@@ -16,7 +16,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import type { Competence } from "src/domain/Competence";
+import type { Competence } from "src/model/Competence";
 export default defineComponent({
   props: {
     showAttribute: Boolean,

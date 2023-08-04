@@ -188,11 +188,12 @@ import { defineComponent, ref } from "vue";
 
 import AptitudeCard from "src/components/AptitudeCard.vue";
 
-import { Creature } from "src/domain/Creature";
-import { CaracteritiqueName } from "src/domain/Caracteristique";
-import { CompetenceName, CompetenceService } from "src/domain/Competence";
-import { AttributsName, AttributService } from "src/domain/Attribut";
-import { AptitudeService } from "src/domain/Aptitude";
+import { Creature } from "src/model/Creature";
+import { CaracteritiqueName } from "src/model/Caracteristique";
+import { CompetenceName, CompetenceService } from "src/model/Competence";
+import { AttributsName, AttributService } from "src/model/Attribut";
+
+import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   components: {

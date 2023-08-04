@@ -27,7 +27,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { Effet } from "src/domain/Aptitude";
+import { Effet } from "src/model/Aptitude";
 
 export default defineComponent({
   props: {

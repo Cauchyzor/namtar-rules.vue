@@ -21,7 +21,7 @@ import { defineComponent } from "@vue/runtime-core";
 
 import ArmureCard from "src/components/ArmureCard.vue";
 
-import { ArmureService } from "src/domain/Armures";
+import { ArmureService } from "src/model/Armures";
 
 export default defineComponent({
   components: {

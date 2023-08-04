@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent, PropType, ref } from "vue";
 
-import { Vecteur } from "src/domain/Aptitude";
+import { Vecteur } from "src/model/Aptitude";
 
 export default defineComponent({
   props: {

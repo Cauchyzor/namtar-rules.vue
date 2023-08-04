@@ -298,13 +298,9 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 
-import {
-  AptitudeService,
-  AptitudeType,
-  AptitudeTypeName,
-  Effet,
-  ExtensionEffet,
-} from "src/domain/Aptitude";
+import { AptitudeType, Effet, ExtensionEffet } from "src/model/Aptitude";
+
+import { AptitudeService, AptitudeTypeName } from "src/data/ServiceAptitude";
 
 import EffetCard from "src/components/EffetCard.vue";
 import TypeAptitudeItem from "src/components/TypeAptitudeCard.vue";

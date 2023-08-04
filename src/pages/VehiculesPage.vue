@@ -36,7 +36,7 @@
     </p>
     <h5>Aéronef</h5>
     <p>
-      À l&#39;instar des navettes pour le domaine spatiale, les aéronefs
+      À l&#39;instar des navettes pour le modele spatiale, les aéronefs
       regroupent tous les véhicules capables de voler dans l&#39;atmosphère
       d&#39;une planète. Ils sont relativement peu coûteux en comparaison. Mais
       la maturité technologique nécessaire pour en produire les rend souvent

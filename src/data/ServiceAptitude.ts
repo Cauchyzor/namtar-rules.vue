@@ -1,47 +1,15 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import {
+  Aptitude,
+  AptitudeType,
+  Effet,
+  ExtensionEffet,
+  Vecteur,
+} from "src/model/Aptitude";
+import { CaracteritiqueName } from "src/model/Caracteristique";
+import { CompetenceName } from "src/model/Competence";
 
-import { CaracteritiqueName } from "./Caracteristique";
-import { CompetenceName } from "./Competence";
-
-// TODO Faire le tire en cloche (vecteur?)
-
-export type Aptitude = {
-  Nom: string;
-  Description: string;
-  Image: string;
-  Type: AptitudeType;
-  Vecteur: Vecteur;
-  Effets: Map<EffetName, number>;
-  ExtensionsEffet: Map<ExtensionEffetName, number>;
-};
-
-export type AptitudeType = {
-  Nom: AptitudeTypeName;
-  Description: string;
-  DescriptionDetails: string;
-};
-
-export enum AptitudeTypeName {
-  EVOCATION = "Evocation",
-  MALEFICE = "Malefice",
-  NECROMANCIE = "Necromancie",
-  ENVOUTEMENT = "Envoutement",
-  BENEDICTION = "Bénédiction",
-  MANTRA = "Mantra",
-  CYTOMANCIE = "Cytomancie",
-  POSTURE = "Posture",
-  TECHNIQUE = "Technique",
-  RIPOSTE = "Riposte",
-}
-
-export type Vecteur = {
-  Nom: VecteurName;
-  Description: string;
-  Difficulte: string;
-  TypesCompatibilities: AptitudeTypeName[];
-};
-
-enum VecteurName {
+export enum VecteurName {
   ALTERATION_OBJET = "Altération d'objet",
   CARESSE = "Caresse",
   CARESSE_ONIRIQUE = "Caresse onirique",
@@ -62,14 +30,19 @@ enum VecteurName {
   RIPOSTE = "Riposte",
 }
 
-export type Effet = {
-  Nom: EffetName;
-  Description: string;
-  IsCummulable: boolean;
-  StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
-};
-
-enum EffetName {
+export enum AptitudeTypeName {
+  EVOCATION = "Evocation",
+  MALEFICE = "Malefice",
+  NECROMANCIE = "Necromancie",
+  ENVOUTEMENT = "Envoutement",
+  BENEDICTION = "Bénédiction",
+  MANTRA = "Mantra",
+  CYTOMANCIE = "Cytomancie",
+  POSTURE = "Posture",
+  TECHNIQUE = "Technique",
+  RIPOSTE = "Riposte",
+}
+export enum EffetName {
   ATTAQUE_DOUBLE = "Attaque double",
   ATOUT = "Atout",
   BOUCLIER = "Bouclier",
@@ -91,14 +64,7 @@ enum EffetName {
   VAMPIRISME = "Vampirisme",
 }
 
-export type ExtensionEffet = {
-  Nom: ExtensionEffetName;
-  Description: string;
-  IsCummulable: boolean;
-  StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
-};
-
-enum ExtensionEffetName {
+export enum ExtensionEffetName {
   ANGLE_MORT = "Angle mort",
   CIBLE_GALVANISE = "Cible galvanisée",
   CIBLE_MAUDITE = "Cible maudite",

@@ -27,7 +27,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { ExtensionEffet } from "src/domain/Aptitude";
+import { ExtensionEffet } from "src/model/Aptitude";
 
 export default defineComponent({
   props: {

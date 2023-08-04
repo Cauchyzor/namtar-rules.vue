@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { Genotrait } from "src/domain/Genotrait";
+import { Genotrait } from "src/model/Genotrait";
 
 export default defineComponent({
   props: {

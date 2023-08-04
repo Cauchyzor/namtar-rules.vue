@@ -17,7 +17,7 @@ import { defineComponent } from "vue";
 
 import AptitudeCard from "src/components/AptitudeCard.vue";
 
-import { AptitudeService } from "src/domain/Aptitude";
+import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   name: "PersonnagePage",

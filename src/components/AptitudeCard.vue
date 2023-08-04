@@ -19,7 +19,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { Aptitude, AptitudeService } from "src/domain/Aptitude";
+import { Aptitude } from "src/model/Aptitude";
+import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   name: "AptitudeCard",

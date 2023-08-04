@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { ArmureItem } from "src/domain/Armures";
+import { ArmureItem } from "src/model/Armures";
 
 export default defineComponent({
   name: "ArmureCard",

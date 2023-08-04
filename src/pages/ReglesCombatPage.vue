@@ -524,7 +524,7 @@
 </template>
 
 <script lang="ts">
-import { AttributsName } from "src/domain/Attribut";
+import { AttributsName } from "src/model/Attribut";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({

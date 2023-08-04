@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
-import { AptitudeType } from "src/domain/Aptitude";
+import { AptitudeType } from "src/model/Aptitude";
 
 export default defineComponent({
   props: {
