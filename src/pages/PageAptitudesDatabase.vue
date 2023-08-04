@@ -26,7 +26,7 @@ export default defineComponent({
   },
   data() {
     return {
-      AptitudesList: AptitudeService.getAllAptitudes(),
+      AptitudesList: AptitudeService.findAllAptitudes(),
     };
   },
 });

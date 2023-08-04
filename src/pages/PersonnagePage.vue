@@ -132,7 +132,7 @@ export default defineComponent({
       SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
-      AptitudeList: AptitudeService.getAllAptitudes().filter((_, i) => i < 3),
+      AptitudeList: AptitudeService.findAllAptitudes().filter((_, i) => i < 3),
     };
   },
   methods: {

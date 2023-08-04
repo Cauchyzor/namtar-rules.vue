@@ -321,7 +321,7 @@ export default defineComponent({
   },
   data() {
     return {
-      AptTypes: AptitudeService.getAllTypes(),
+      AptTypes: AptitudeService.findAllTypes(),
       SelectedAptTypeName: ref(),
       SelectedAptVecteur: ref(),
       SelectedAptEffets: ref(new Map()),
@@ -343,25 +343,25 @@ export default defineComponent({
 
     availableAptitudeVecteur() {
       return this.SelectedAptTypeName
-        ? AptitudeService.getAllVecteur().filter((v) =>
+        ? AptitudeService.findAllVecteur().filter((v) =>
             v.TypesCompatibilities.includes(this.SelectedAptTypeName)
           )
-        : AptitudeService.getAllVecteur();
+        : AptitudeService.findAllVecteur();
     },
     availableEffets(): Effet[] {
       return this.SelectedAptTypeName
-        ? AptitudeService.getAllEffect().filter((effect: Effet) =>
-            effect.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
+        ? AptitudeService.findAllEffets().filter((effet: Effet) =>
+            effet.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
-        : AptitudeService.getAllEffect();
+        : AptitudeService.findAllEffets();
     },
     availableExtensions(): ExtensionEffet[] {
       return this.SelectedAptTypeName && this.SelectedAptTypeName
-        ? AptitudeService.getAllExtension().filter(
+        ? AptitudeService.findAllExtensions().filter(
             (extension: ExtensionEffet) =>
               extension.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
-        : AptitudeService.getAllExtension();
+        : AptitudeService.findAllExtensions();
     },
     isAptValid() {
       return (

@@ -859,19 +859,19 @@ export class AptitudeService {
   static findExtensionByName(name: ExtensionEffetName) {
     return this.ExtensionList.find((e) => e.Nom === name)!;
   }
-  static getAllAptitudes() {
+  static findAllAptitudes() {
     return this.AptitudeList;
   }
-  static getAllTypes() {
+  static findAllTypes() {
     return this.Types;
   }
-  static getAllEffect() {
+  static findAllEffets() {
     return this.EffectsList;
   }
-  static getAllExtension() {
+  static findAllExtensions() {
     return this.ExtensionList;
   }
-  static getAllVecteur() {
+  static findAllVecteur() {
     return this.VecteursList;
   }
   static computeStabilityScore(

@@ -206,7 +206,7 @@ export default defineComponent({
       CompetenceSelected: ref(),
       OpenDialApt: ref(false),
       AptSearch: ref(""),
-      Apt: AptitudeService.getAllAptitudes().filter((_, index) => index < 4),
+      Apt: AptitudeService.findAllAptitudes().filter((_, index) => index < 4),
     };
   },
   computed: {
@@ -223,7 +223,7 @@ export default defineComponent({
       );
     },
     aptFiltered() {
-      return AptitudeService.getAllAptitudes().filter(
+      return AptitudeService.findAllAptitudes().filter(
         (apt) => !this.Creature.Aptitudes.has(apt.Nom)
       );
     },
