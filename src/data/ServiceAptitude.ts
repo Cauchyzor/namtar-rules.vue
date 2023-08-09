@@ -84,7 +84,11 @@ export enum ExtensionEffetName {
 }
 
 export class AptitudeService {
-  //TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
+  // TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
+  // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
+  // TODO Posture : Augmente la Défense
+  // TODO Riposte : Premier mouvement de la foudre : Vous vous déplacez a porté courte instantanément si le chemin et dégagé et porté un coups au corps a corps. Une fois par jours.
+
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
