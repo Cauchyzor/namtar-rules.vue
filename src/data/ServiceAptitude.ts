@@ -713,6 +713,30 @@ export class ServiceAptitude {
 
   private static AptitudeList: Array<Aptitude> = [
     new Aptitude(
+      "Eclat de feu",
+      "Vous formez une sphère d'énergie et la projetez dans la direction de la cible. À son contact, la cible est brûlée et subit des dommages.",
+      AptitudeTypeName.EVOCATION,
+      VecteurName.PROJECTILE,
+      new Map([[EffetName.CHALEUR, 1]]),
+      new Map()
+    ),
+    new Aptitude(
+      "Touché guerisseur",
+      "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.",
+      AptitudeTypeName.BENEDICTION,
+      VecteurName.CARESSE,
+      new Map([[EffetName.SOIN, 1]]),
+      new Map()
+    ),
+    new Aptitude(
+      "Nova mortelle",
+      "L'énergie résiduelle du cadavre visé s'échappe violemment et renverse les cibles à portée courte.",
+      AptitudeTypeName.NECROMANCIE,
+      VecteurName.ONDE,
+      new Map([[EffetName.FORCE, 2]]),
+      new Map([[ExtensionEffetName.ZONE, 1]])
+    ),
+    new Aptitude(
       "Le Berserk",
       "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
       AptitudeTypeName.MANTRA,
@@ -735,6 +759,14 @@ export class ServiceAptitude {
       VecteurName.MANTRA,
       new Map(),
       new Map()
+    ),
+    new Aptitude(
+      "Morsure de Namtar",
+      "Vous drainez l'énergie de la cible touchée pour vous soigner.",
+      AptitudeTypeName.CYTOMANCIE,
+      VecteurName.FRAPPE,
+      new Map([[EffetName.DRAIN_FLUIDE, 1]]),
+      new Map([[ExtensionEffetName.DIFFICILE, 1]])
     ),
     new Aptitude(
       "Le Fluidophobique",
@@ -783,5 +815,55 @@ export class ServiceAptitude {
   }
   static findAllVecteur() {
     return this.VecteursList;
+  }
+  static computeStabilityScore(
+    type: AptitudeTypeName,
+    effects: Map<EffetName, number>,
+    extension: Map<ExtensionEffetName, number>
+  ) {
+    if (type === AptitudeTypeName.MANTRA) {
+      return 0;
+    }
+    let totalCost = 0;
+    effects.forEach((rank, effectName) => {
+      totalCost +=
+        rank *
+        (this.findEffetByName(effectName)?.StabiliteParTypeAptitude.get(type) ||
+          999);
+    });
+    extension.forEach((rank, extension) => {
+      totalCost +=
+        rank *
+        (this.findExtensionByName(extension)?.StabiliteParTypeAptitude.get(
+          type
+        ) || 999);
+    });
+    return totalCost;
+  }
+
+  static printAptitudeCost(stability: number, type: AptitudeTypeName) {
+    if (stability > 0) return "Aucun";
+    switch (type) {
+      case AptitudeTypeName.EVOCATION:
+        return `${Math.abs(stability)} point de stress`;
+      case AptitudeTypeName.BENEDICTION:
+        return `${Math.trunc(Math.abs(stability) / 2)} atouts`;
+      case AptitudeTypeName.MALEFICE:
+        return `${Math.trunc(Math.abs(stability) / 2)} menaces`;
+      case AptitudeTypeName.NECROMANCIE:
+        return `${Math.trunc(Math.abs(stability) / 2)} niveaux de puissance`;
+      case AptitudeTypeName.ENVOUTEMENT:
+        return `${Math.abs(stability)} atouts`;
+      case AptitudeTypeName.CYTOMANCIE:
+        return `${Math.trunc(Math.abs(stability))} PV sacrifié`;
+      case AptitudeTypeName.TECHNIQUE:
+        return stability === 0 ? "stable" : "Inutilisable";
+      case AptitudeTypeName.MANTRA:
+        return "Aucun";
+      case AptitudeTypeName.POSTURE:
+        return "Aucun";
+      default:
+        return "Erreur : type non répertorié";
+    }
   }
 }

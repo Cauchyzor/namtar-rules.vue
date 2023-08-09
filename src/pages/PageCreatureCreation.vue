@@ -203,7 +203,6 @@ export default defineComponent({
     return {
       AttributsName,
       Creature: new Creature(),
-
       CompetenceSelected: ref(),
       OpenDialApt: ref(false),
       AptSearch: ref(""),
