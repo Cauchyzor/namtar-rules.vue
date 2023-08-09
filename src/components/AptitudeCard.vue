@@ -20,7 +20,6 @@
 import { defineComponent, PropType } from "vue";
 
 import { Aptitude } from "src/model/Aptitude";
-import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   name: "AptitudeCard",
@@ -31,15 +30,6 @@ export default defineComponent({
     return {
       openDetail: false,
     };
-  },
-  methods: {
-    computeAptitudeCost() {
-      return AptitudeService.computeStabilityScore(
-        this.Aptitude.Type.Nom,
-        this.Aptitude.Effets,
-        this.Aptitude.ExtensionsEffet
-      );
-    },
   },
 });
 </script>

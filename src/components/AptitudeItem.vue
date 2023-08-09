@@ -31,9 +31,9 @@
         <p>Effets: {{ Array.from(Aptitude.Effets.keys()).join(",") }}</p>
         <p>
           Extension:
-          {{ Array.from(Aptitude.ExtensionsEffet.keys()).join(",") }}
+          {{ Array.from(Aptitude.Extensions.keys()).join(",") }}
         </p>
-        <p>Cout: {{ computeAptitudeCost() }}</p>
+        <p>Cout: {{ Aptitude.printAptitudeCost() }}</p>
       </q-card-section>
     </q-card>
   </q-dialog>
@@ -42,7 +42,6 @@
 import { defineComponent, PropType } from "vue";
 
 import { Aptitude } from "src/model/Aptitude";
-import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   props: {
@@ -50,15 +49,6 @@ export default defineComponent({
   },
   data() {
     return { openDetail: false };
-  },
-  methods: {
-    computeAptitudeCost() {
-      return AptitudeService.computeStabilityScore(
-        this.Aptitude.Type.Nom,
-        this.Aptitude.Effets,
-        this.Aptitude.ExtensionsEffet
-      );
-    },
   },
 });
 </script>

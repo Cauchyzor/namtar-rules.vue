@@ -83,11 +83,12 @@ export enum ExtensionEffetName {
   ZONE = "Zone d'effet",
 }
 
-export class AptitudeService {
+export class ServiceAptitude {
   // TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
   // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
   // TODO Posture : Augmente la Défense
   // TODO Riposte : Premier mouvement de la foudre : Vous vous déplacez a porté courte instantanément si le chemin et dégagé et porté un coups au corps a corps. Une fois par jours.
+  // TODO Faire le tire en cloche (vecteur?)
 
   private static Types: Array<AptitudeType> = [
     {
@@ -723,95 +724,78 @@ export class AptitudeService {
   ];
 
   private static AptitudeList: Array<Aptitude> = [
-    {
-      Nom: "Eclat de feu",
-      Description:
-        "Vous formez une sphère d'énergie et la projetez dans la direction de la cible. À son contact, la cible est brûlée et subit des dommages.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.EVOCATION),
-      Vecteur: this.findAptVecteurByName(VecteurName.PROJECTILE),
-      Effets: new Map([[EffetName.CHALEUR, 1]]),
-      ExtensionsEffet: new Map(),
-    },
-    {
-      Nom: "Touché guerisseur",
-      Description:
-        "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.BENEDICTION),
-      Vecteur: this.findAptVecteurByName(VecteurName.CARESSE),
-      Effets: new Map([[EffetName.SOIN, 1]]),
-      ExtensionsEffet: new Map(),
-    },
-    {
-      Nom: "Nova mortelle",
-      Description:
-        "L'énergie résiduelle du cadavre visé s'échappe violemment et renverse les cibles à portée courte.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.NECROMANCIE),
-      Vecteur: this.findAptVecteurByName(VecteurName.ONDE),
-      Effets: new Map([[EffetName.FORCE, 2]]),
-      ExtensionsEffet: new Map([[ExtensionEffetName.ZONE, 1]]),
-    },
-    {
-      Nom: "Le Berserk",
-      Description:
-        "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
-      Effets: new Map(),
-      ExtensionsEffet: new Map(),
-    },
-    {
-      Nom: "L'Échophage",
-      Description: `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
-      Effets: new Map(),
-      ExtensionsEffet: new Map(),
-    },
-    {
-      Nom: "Le Distant",
-      Description:
-        "Vous avez 1 point de réflexe supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
-      Effets: new Map(),
-      ExtensionsEffet: new Map(),
-    },
-    {
-      Nom: "Morsure de Namtar",
-      Description:
-        "Vous drainez l'énergie de la cible touchée pour vous soigner.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.CYTOMANCIE),
-      Vecteur: this.findAptVecteurByName(VecteurName.FRAPPE),
-      Effets: new Map([[EffetName.DRAIN_FLUIDE, 1]]),
-      ExtensionsEffet: new Map([[ExtensionEffetName.DIFFICILE, 1]]),
-    },
-    {
-      Nom: "Le Fluidophobique",
-      Description:
-        "Vous gagnez un avantage chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
-      Effets: new Map(),
-      ExtensionsEffet: new Map(),
-    },
-    {
-      Nom: "L'Honorable Dueliste",
-      Description:
-        "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux désavantages si le duel est rompu.",
-      Image: "",
-      Type: this.findAptTypeByName(AptitudeTypeName.MANTRA),
-      Vecteur: this.findAptVecteurByName(VecteurName.MANTRA),
-      Effets: new Map(),
-      ExtensionsEffet: new Map(),
-    },
+    new Aptitude(
+      "Eclat de feu",
+      "Vous formez une sphère d'énergie et la projetez dans la direction de la cible. À son contact, la cible est brûlée et subit des dommages.",
+      AptitudeTypeName.EVOCATION,
+      VecteurName.PROJECTILE,
+      new Map([[EffetName.CHALEUR, 1]]),
+      new Map()
+    ),
+    new Aptitude(
+      "Touché guerisseur",
+      "Vous posez vos mains sur une cible consentante. La cible dépense immédiatement 1 point de résilience pour regagner ses PV perdus.",
+      AptitudeTypeName.BENEDICTION,
+      VecteurName.CARESSE,
+      new Map([[EffetName.SOIN, 1]]),
+      new Map()
+    ),
+    new Aptitude(
+      "Nova mortelle",
+      "L'énergie résiduelle du cadavre visé s'échappe violemment et renverse les cibles à portée courte.",
+      AptitudeTypeName.NECROMANCIE,
+      VecteurName.ONDE,
+      new Map([[EffetName.FORCE, 2]]),
+      new Map([[ExtensionEffetName.ZONE, 1]])
+    ),
+    new Aptitude(
+      "Le Berserk",
+      "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
+      AptitudeTypeName.MANTRA,
+      VecteurName.MANTRA,
+      new Map(),
+      new Map()
+    ),
+    new Aptitude(
+      "L'Échophage",
+      `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
+      AptitudeTypeName.MANTRA,
+      VecteurName.MANTRA,
+      new Map(),
+      new Map()
+    ),
+    new Aptitude(
+      "Le Distant",
+      "Vous avez 1 point de réflexe supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
+      AptitudeTypeName.MANTRA,
+      VecteurName.MANTRA,
+      new Map(),
+      new Map()
+    ),
+    new Aptitude(
+      "Morsure de Namtar",
+      "Vous drainez l'énergie de la cible touchée pour vous soigner.",
+      AptitudeTypeName.CYTOMANCIE,
+      VecteurName.FRAPPE,
+      new Map([[EffetName.DRAIN_FLUIDE, 1]]),
+      new Map([[ExtensionEffetName.DIFFICILE, 1]])
+    ),
+    new Aptitude(
+      "Le Fluidophobique",
+      "Vous gagnez un avantage chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
+      AptitudeTypeName.MANTRA,
+      VecteurName.MANTRA,
+      new Map(),
+      new Map()
+    ),
+    new Aptitude(
+      "L'Honorable Dueliste",
+      "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux désavantages si le duel est rompu.",
+      AptitudeTypeName.MANTRA,
+      VecteurName.MANTRA,
+      new Map(),
+      new Map()
+    ),
   ];
 
   static findAptitudesByNames(names: Array<string>) {
@@ -890,6 +874,8 @@ export class AptitudeService {
         return "Aucun";
       case AptitudeTypeName.POSTURE:
         return "Aucun";
+      default:
+        return "Erreur : type non répertorié";
     }
   }
 }

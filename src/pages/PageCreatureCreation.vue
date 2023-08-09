@@ -193,7 +193,7 @@ import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName, CompetenceService } from "src/model/Competence";
 import { AttributsName, AttributService } from "src/model/Attribut";
 
-import { AptitudeService } from "src/data/ServiceAptitude";
+import { ServiceAptitude } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   components: {
@@ -203,11 +203,10 @@ export default defineComponent({
     return {
       AttributsName,
       Creature: new Creature(),
-
       CompetenceSelected: ref(),
       OpenDialApt: ref(false),
       AptSearch: ref(""),
-      Apt: AptitudeService.findAllAptitudes().filter((_, index) => index < 4),
+      Apt: ServiceAptitude.findAllAptitudes().filter((_, index) => index < 4),
     };
   },
   computed: {
@@ -219,12 +218,12 @@ export default defineComponent({
         .map((c) => c.Nom);
     },
     creatureAptitudes() {
-      return AptitudeService.findAptitudesByNames(
+      return ServiceAptitude.findAptitudesByNames(
         Array.from(this.Creature.Aptitudes.values())
       );
     },
     aptFiltered() {
-      return AptitudeService.findAllAptitudes().filter(
+      return ServiceAptitude.findAllAptitudes().filter(
         (apt) => !this.Creature.Aptitudes.has(apt.Nom)
       );
     },

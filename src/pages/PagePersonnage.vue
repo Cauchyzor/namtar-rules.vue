@@ -118,7 +118,7 @@ import {
 } from "src/model/Caracteristique";
 
 import { CompetenceService } from "src/model/Competence";
-import { AptitudeService } from "src/data/ServiceAptitude";
+import { ServiceAptitude } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   name: "PersonnagePage",
@@ -132,7 +132,7 @@ export default defineComponent({
       SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
-      AptitudeList: AptitudeService.findAllAptitudes().filter((_, i) => i < 3),
+      AptitudeList: ServiceAptitude.findAllAptitudes().filter((_, i) => i < 3),
     };
   },
   methods: {

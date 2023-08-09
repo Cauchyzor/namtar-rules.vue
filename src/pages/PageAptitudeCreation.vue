@@ -300,7 +300,7 @@ import { defineComponent, ref } from "vue";
 
 import { AptitudeType, Effet, ExtensionEffet } from "src/model/Aptitude";
 
-import { AptitudeService, AptitudeTypeName } from "src/data/ServiceAptitude";
+import { ServiceAptitude, AptitudeTypeName } from "src/data/ServiceAptitude";
 
 import EffetCard from "src/components/EffetCard.vue";
 import TypeAptitudeItem from "src/components/TypeAptitudeCard.vue";
@@ -317,7 +317,7 @@ export default defineComponent({
   },
   data() {
     return {
-      AptTypes: AptitudeService.findAllTypes(),
+      AptTypes: ServiceAptitude.findAllTypes(),
       SelectedAptTypeName: ref(),
       SelectedAptVecteur: ref(),
       SelectedAptEffets: ref(new Map()),
@@ -339,25 +339,25 @@ export default defineComponent({
 
     availableAptitudeVecteur() {
       return this.SelectedAptTypeName
-        ? AptitudeService.findAllVecteur().filter((v) =>
+        ? ServiceAptitude.findAllVecteur().filter((v) =>
             v.TypesCompatibilities.includes(this.SelectedAptTypeName)
           )
-        : AptitudeService.findAllVecteur();
+        : ServiceAptitude.findAllVecteur();
     },
     availableEffets(): Effet[] {
       return this.SelectedAptTypeName
-        ? AptitudeService.findAllEffets().filter((effet: Effet) =>
+        ? ServiceAptitude.findAllEffets().filter((effet: Effet) =>
             effet.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
-        : AptitudeService.findAllEffets();
+        : ServiceAptitude.findAllEffets();
     },
     availableExtensions(): ExtensionEffet[] {
       return this.SelectedAptTypeName && this.SelectedAptTypeName
-        ? AptitudeService.findAllExtensions().filter(
+        ? ServiceAptitude.findAllExtensions().filter(
             (extension: ExtensionEffet) =>
               extension.StabiliteParTypeAptitude.has(this.SelectedAptTypeName)
           )
-        : AptitudeService.findAllExtensions();
+        : ServiceAptitude.findAllExtensions();
     },
     isAptValid() {
       return (
@@ -425,8 +425,8 @@ export default defineComponent({
     computeCost() {
       return this.SelectedAptTypeName &&
         Array.from(this.SelectedAptEffets.values()).length
-        ? AptitudeService.printAptitudeCost(
-            AptitudeService.computeStabilityScore(
+        ? ServiceAptitude.printAptitudeCost(
+            ServiceAptitude.computeStabilityScore(
               this.SelectedAptTypeName,
               this.SelectedAptEffets,
               this.SelectedAptExtensions
