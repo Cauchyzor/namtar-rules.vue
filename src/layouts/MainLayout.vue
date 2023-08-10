@@ -88,7 +88,7 @@
 
             <q-item clickable to="/apt/list" exact>
               <q-item-section>
-                <q-item-label>Catalogue des mantras</q-item-label>
+                <q-item-label>Database des Aptitudes</q-item-label>
               </q-item-section>
             </q-item>
           </q-expansion-item>
