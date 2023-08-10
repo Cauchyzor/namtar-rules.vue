@@ -164,6 +164,8 @@ export class ServiceAptitude {
       Description:
         "Les effets sont prisonnier d'un objet au contact du lanceur. Le lanceur peut choisir de relacher les effets à sa guise. Sinon, ils sont libérés quelques secondes après que l'objet est été relaché.",
       Difficulte: `Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3`,
+      ComputedDesc:
+        "L'arme en main appliquera des effets supplémentaire lors du prochain jet d'attaque réussi. La cible subit, en plus des dégâts de l'arme, ",
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
@@ -174,6 +176,7 @@ export class ServiceAptitude {
       Nom: VecteurName.CONTACT,
       Description: "Les effets sont appliqués à la cible touchée.",
       Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
+      ComputedDesc: `Vous effectuez une attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}). La cible subit `,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
@@ -185,7 +188,9 @@ export class ServiceAptitude {
       Nom: VecteurName.FRAPPE,
       Description:
         "Les effets sont appliqué sur une attaque à main nue ou avec une arme au corps à corps. Un equilibre certain doit être trouver par l'utilisateur pour captialiser sur son arme et l'aptitude.",
-      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les atouts net plutôt que par les succès. Les dégats de l'arme utilisé sont calculés normalement.`,
+      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les atouts net plutôt que par les succès. Les dégats de l'arme utilisé sont calculés normalement. L'attaque inflige en plus `,
+      ComputedDesc:
+        "Sur votre prochain jet d'attaque engagé réussi, vous appliquez les effets suivant pour chaque avantages générés.",
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
@@ -198,6 +203,7 @@ export class ServiceAptitude {
       Description:
         "La lanceur materialise l'aptitude directement sur la cible à portée de voix grâce a son empreinte laissée dans le fluide. ",
       Difficulte: `Attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}). Le DD est augmentée 1 fois en plus de la distance.`,
+      ComputedDesc: `Vous effectuez une attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}). Le DD est augmentée 1 fois en plus de la distance. La cible subit `,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.ENVOUTEMENT,
@@ -209,6 +215,7 @@ export class ServiceAptitude {
       Description:
         "Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.",
       Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
+      ComputedDesc: `Vous effectuez un Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) contre ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible. Si elle echoue, elle subit `,
       TypesCompatibilities: [
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.MALEFICE,
@@ -219,6 +226,7 @@ export class ServiceAptitude {
       Description:
         "Le lanceur canalyse l'energie dans ses poumons, et applique des effets dans un cône devant lui sur une courte distance",
       Difficulte: `Attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}).`,
+      ComputedDesc: `Vous effectuez une attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}) pour frapper toutes les cibles dans un cône à portée courte devant vous. Les cibles subissent `,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
@@ -231,6 +239,7 @@ export class ServiceAptitude {
       Description:
         "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endroit indiqué, et applique ses effets à l'impact avant de s'estomper.",
       Difficulte: `Attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}).`,
+      ComputedDesc: `Vous effectuez une attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) et lancez un projectile immateriel sur la cible. La cible subit `,
       TypesCompatibilities: [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.EVOCATION,
@@ -241,6 +250,7 @@ export class ServiceAptitude {
       Description:
         "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
+      ComputedDesc: `Vous effectuez un Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 et projetez une déflagration immaterielle à portée courte, touchant toutes les créatures autours de vous. Elles subissent `,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
@@ -249,11 +259,13 @@ export class ServiceAptitude {
         AptitudeTypeName.MALEFICE,
       ],
     },
+    // TODO revoir le vecteur chant pour expliciter 'membre du groupe'
     {
       Nom: VecteurName.CHANT,
       Description:
         "Le lanceur entonne un chant ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le chant avec le lanceurs beneficient alors de ses effets.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 du lanceur. Pas de tests pour les créatures.`,
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 du lanceur. Seul les membres du groupe sont affectés.`,
+      ComputedDesc: `Vous effectuez un Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 pour entonner un chant qui applique des effets sur toutes les membres du groupes à porté de voix. Ils reçoivent `,
       TypesCompatibilities: [AptitudeTypeName.BENEDICTION],
     },
     {
@@ -261,6 +273,7 @@ export class ServiceAptitude {
       Description:
         "Le lanceur pratique une introspection rapide pour effectuer appliquer les effets de l'aptitude sur lui-même.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 du lanceur.`,
+      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2. Vous recevez `,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
@@ -273,6 +286,7 @@ export class ServiceAptitude {
       Description:
         "Le lanceur applique les effets de l'aptitudes à la cible touchée concentante.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD2 du lanceur.`,
+      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD2 et appliquez a la cible touchée `,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
@@ -284,18 +298,21 @@ export class ServiceAptitude {
       Nom: VecteurName.CARESSE_ONIRIQUE,
       Description:
         "La lanceur materialise l'aptitude directement sur la cible consentante à portée de voix grâce a son empreinte laissée dans le fluide. ",
-      Difficulte: `Attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) qui ignore l'équipement et la couverture. Le DD est augmentée 1 fois en plus de la distance.`,
+      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3. Le DD est augmentée 1 fois de plus par niveau de porté.`,
+      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3. Le DD est augmentée 1 fois de plus par niveau de porté. La cible a portée de voix reçoit `,
       TypesCompatibilities: [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.MALEFICE,
       ],
     },
+    // TODO : Augmenter la portée effective de l'explosion de cadavre pour appliquer des effets
     {
       Nom: VecteurName.EXPLOSION_CADAVRE,
       Description:
         "Le lanceur utilise le cadavre ou la source d'énergie pour répendre un souffle à portée courte.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
+      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3. Le DD augmente une fois pour chaque rangs de portée supplémentaires. Les cibles à portée courte du cadavre ciblé subissent `,
       TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
     },
     {
@@ -303,6 +320,7 @@ export class ServiceAptitude {
       Description:
         "Le lanceur absorbe le cadavre ou la source d'énergie à son contact.",
       Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2.`,
+      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2. Vous absorbez l'energie du cadavre à votre contact et recevez `,
       TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
     },
     {
@@ -310,6 +328,7 @@ export class ServiceAptitude {
       Description:
         "Un mantra est une caracteristique du corps du lanceur qui lui permet de recevoir des bénefices du fluide. ",
       Difficulte: "Aucune (passif)",
+      ComputedDesc: "",
       TypesCompatibilities: [AptitudeTypeName.MANTRA],
     },
     {
@@ -317,6 +336,7 @@ export class ServiceAptitude {
       Description:
         "Une posture permet à son utilisateur de bénéficier d'effets passif.",
       Difficulte: "Aucune (passif)",
+      ComputedDesc: "",
       TypesCompatibilities: [AptitudeTypeName.POSTURE],
     },
     {
@@ -324,12 +344,14 @@ export class ServiceAptitude {
       Description:
         "Un mouvement ou une attaque au corps à corps (avec une arme ou à main nue).",
       Difficulte: "Jet d'Attaque au corps à corps ou de pugilat",
+      ComputedDesc: "Vous effectuez un jet d'attaque au corps à corps",
       TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
     },
     {
       Nom: VecteurName.RIPOSTE,
       Description: "Une attaque ou action qui se déroule lors d'une reaction",
       Difficulte: "Aucune",
+      ComputedDesc: "",
       TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
     },
   ];

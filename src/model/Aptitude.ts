@@ -90,6 +90,7 @@ export type Vecteur = {
   Nom: VecteurName;
   Description: string;
   Difficulte: string;
+  ComputedDesc: string;
   TypesCompatibilities: AptitudeTypeName[];
 };
 
