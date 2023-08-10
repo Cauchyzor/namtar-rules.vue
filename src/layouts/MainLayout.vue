@@ -128,10 +128,12 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container class="">
-      <Transition>
-        <router-view />
-      </Transition>
+    <q-page-container>
+      <router-view v-slot="{ Component }">
+        <transition>
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </q-page-container>
   </q-layout>
 </template>
