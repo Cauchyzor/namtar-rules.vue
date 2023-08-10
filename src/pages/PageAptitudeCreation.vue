@@ -296,6 +296,7 @@
   </q-page>
 </template>
 <script lang="ts">
+// TODO Finir refacto aptitude : creation d'aptitude avec le q-dialog et utilisation des methodes d'aptitude plutot que du service Aptitudes
 import { defineComponent, ref } from "vue";
 
 import { AptitudeType, Effet, ExtensionEffet } from "src/model/Aptitude";
