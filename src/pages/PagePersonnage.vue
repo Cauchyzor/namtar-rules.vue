@@ -22,7 +22,6 @@
         v-for="carac in CaracteritiquesList"
         :key="carac.Nom"
         :Caracteristique="carac"
-        @click="selectCard(carac.Nom)"
       />
     </div>
 
@@ -113,10 +112,7 @@ import CaracteristiqueCard from "src/components/CaracteristiqueCard.vue";
 import CompetenceItem from "src/components/CompetenceItem.vue";
 import AptitudeCard from "src/components/AptitudeCard.vue";
 
-import {
-  CaracteristiqueService,
-  CaracteritiqueName,
-} from "src/model/Caracteristique";
+import { CaracteristiqueService } from "src/model/Caracteristique";
 
 import { CompetenceService } from "src/model/Competence";
 import { ServiceAptitude } from "src/data/ServiceAptitude";
@@ -130,16 +126,10 @@ export default defineComponent({
   },
   data() {
     return {
-      SelectedCaracteristiqueCard: CaracteritiqueName.CHARISME,
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
       AptitudeList: ServiceAptitude.findAllAptitudes().filter((_, i) => i < 3),
     };
-  },
-  methods: {
-    selectCard(caracNameSelected: CaracteritiqueName) {
-      this.SelectedCaracteristiqueCard = caracNameSelected;
-    },
   },
 });
 </script>
