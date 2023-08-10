@@ -87,7 +87,7 @@
     <div class="row justify-center">
       <q-btn
         class="q-ma-sm"
-        to="/apt-create"
+        to="/apt/create"
         label="Creer son aptitude"
         outline
         color="primary"
