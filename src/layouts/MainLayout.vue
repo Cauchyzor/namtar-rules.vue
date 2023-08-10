@@ -130,7 +130,7 @@
 
     <q-page-container>
       <router-view v-slot="{ Component }">
-        <transition>
+        <transition mode="out-in" :duration="{ enter: 100, leave: 50 }">
           <component :is="Component" />
         </transition>
       </router-view>
