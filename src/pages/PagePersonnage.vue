@@ -65,7 +65,7 @@
       <div
         v-for="comp in CompetencesList"
         :key="comp.Nom"
-        class="col-12 col-md-3 col-xl-2"
+        class="col-12 col-sm-4 col-md-3 col-xl-2"
       >
         <CompetenceItem
           style="height: 100%"
@@ -94,13 +94,14 @@
       />
     </div>
 
-    <div class="row justify-center q-gutter-md">
-      <AptitudeCard
-        class="col-12 col-md-3 col-xl-2"
+    <div class="row justify-center q-col-gutter-md">
+      <div
+        class="col-xs-12 col-sm-6 col-md-3 col-xl-2"
         v-for="Aptitude in AptitudeList"
         :key="Aptitude.Nom"
-        :Aptitude="Aptitude"
-      ></AptitudeCard>
+      >
+        <AptitudeCard style="height: 100%" :Aptitude="Aptitude"></AptitudeCard>
+      </div>
     </div>
   </q-page>
 </template>
