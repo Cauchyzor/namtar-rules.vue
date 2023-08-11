@@ -78,6 +78,37 @@ export class Aptitude {
         return "Aucun";
     }
   }
+
+  /**
+   * Retourne une description complete de l'aptitude a partir du vecteurs des extension et des effets, ainsi que leurs rangs.
+   *
+   */
+  get UsageDescription() {
+    const numericRegex = new RegExp("%(d)x%");
+    const effectsDesc: string[] = [];
+    const extensionsDesc: string[] = [];
+    this.Effets.forEach((_, effet) => {
+      const computedDescription =
+        ServiceAptitude.findEffetByName(effet)?.ComputedDesc || "";
+      const numericValue = computedDescription.match(numericRegex);
+      if (numericValue != null) {
+        computedDescription.replace("%dx%", numericValue[0]);
+      }
+      effectsDesc.push(computedDescription);
+    });
+    this.Extensions.forEach((_, extention) => {
+      const computedDescription =
+        ServiceAptitude.findExtensionByName(extention)?.Description || "";
+      const numericValue = computedDescription.match(numericRegex);
+      if (numericValue != null) {
+        computedDescription.replace("%dx%", numericValue[0]);
+      }
+      extensionsDesc.push(computedDescription);
+    });
+    return `${this.Vecteur.ComputedDesc} ${effectsDesc.join(
+      "La cible "
+    )}. ${extensionsDesc.join(" ")}`;
+  }
 }
 
 export type AptitudeType = {
