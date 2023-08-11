@@ -361,6 +361,8 @@ export class ServiceAptitude {
       Nom: EffetName.ATOUT,
       Description:
         "La cible gagne 1 atout (cumulable). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
+      ComputedDesc:
+        "reçoit %x% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -373,6 +375,8 @@ export class ServiceAptitude {
       Nom: EffetName.BOUCLIER,
       Description:
         "La cible gagne augmente sa défense de 1 point. S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      ComputedDesc:
+        "ajoute %x% point(s) a son score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -6],
@@ -384,7 +388,9 @@ export class ServiceAptitude {
     {
       Nom: EffetName.CHALEUR,
       Description:
-        "Inflige 2 blessures (cumulable) par triomphe, par succès et par atouts net.",
+        "Inflige 2 blessures (cumulable) par triomphe, par succès et par atouts net sur le score de jet.",
+      ComputedDesc:
+        "subit %2x% blessures par triomphe, par succès et par atouts net sur le score de jet.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
@@ -398,6 +404,8 @@ export class ServiceAptitude {
       Nom: EffetName.DEBILITANT,
       Description:
         "La cible perd sa prochaine reaction. Si vous avez plus de succès net que sa valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
+      ComputedDesc:
+        "perd sa prochaine reaction. Si vous avez plus de succès net que sa valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -4],
@@ -411,6 +419,8 @@ export class ServiceAptitude {
       Nom: EffetName.DRAIN_FLUIDE,
       Description:
         "Chaque succès et triomphe vol 1 point de stress à l'adversaire.",
+      ComputedDesc:
+        "subit une perte de %x% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -1],
@@ -424,6 +434,8 @@ export class ServiceAptitude {
       Nom: EffetName.ENTRAVE,
       Description:
         "La cible perd sa capacité de déplacement au premier succès. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
+      ComputedDesc:
+        "est entravée et ne peut plus se déplacer. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -437,6 +449,8 @@ export class ServiceAptitude {
       Nom: EffetName.FORCE,
       Description:
         "Inflige 1 blessure (cumulable) par triomphe et succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
+      ComputedDesc:
+        "subit %2x% blessure(s) par triomphe net et %x% blessure(s)par succès net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -448,6 +462,8 @@ export class ServiceAptitude {
       Nom: EffetName.TELEPATHE,
       Description:
         "Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.",
+      ComputedDesc:
+        "peut communiquer avec vous brièvement la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, -2],
@@ -461,6 +477,8 @@ export class ServiceAptitude {
       Nom: EffetName.OBSTRUCTION,
       Description:
         "Pour niveau de résultat (1 succès, 2, 3, 5, 8 ...), une menace est infligée à la cible",
+      ComputedDesc:
+        "subit %1x% menace(s) pour chaque niveau de résultat (1 succès, 2, 3, 5, 8 ...).",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -469,10 +487,14 @@ export class ServiceAptitude {
         [AptitudeTypeName.CYTOMANCIE, -2],
       ]),
     },
+    //TODO Faire un effets qui génère des désavanges
+    //TODO Faire un effets qui génère des avantages
     {
       Nom: EffetName.ILLUSION,
       Description:
         "Vous pouvez faire halluciner la cible pour que ses sens lui indiquent ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès permet de rendre l'illusion plus précise et efficace, et affecte plus de sens.",
+      ComputedDesc:
+        "est victime d'une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplementaire.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -484,6 +506,8 @@ export class ServiceAptitude {
       Nom: EffetName.SOIN_DE_STRESS,
       Description:
         "La cible est soignée d'1 point de stress (cumulable) par triomphe et succès net.",
+      ComputedDesc:
+        "regagne %1x% point(s) de stress par triomphe et succès net sur le jet.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -496,6 +520,8 @@ export class ServiceAptitude {
       Nom: EffetName.SOIN,
       Description:
         "La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque triomphe soigne d'un point de stress",
+      ComputedDesc:
+        "dépense immédiatement jusqu'à %1x% point de résilience qu'elle possède. Chaque triomphe soigne d'un point de stress.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -3],
@@ -508,6 +534,8 @@ export class ServiceAptitude {
       Nom: EffetName.VAMPIRISME,
       Description:
         "Inflige 1 blessure (cumulable) par triomphe et succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) PV.",
+      ComputedDesc:
+        "subit %1x% blessure(s) par triomphe et succès net sur le jet. Vous regagnez %1x% PV.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -10],
@@ -520,6 +548,8 @@ export class ServiceAptitude {
       Nom: EffetName.LEVITATION,
       Description:
         "La cible de gabarit 1 (cumulable) au maximum est en lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes",
+      ComputedDesc:
+        "de gabarit %1x% au maximum est en lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -6],
@@ -530,12 +560,15 @@ export class ServiceAptitude {
     {
       Nom: EffetName.MANTRA,
       Description: "Voir la description",
+      ComputedDesc: "",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map(),
     },
     {
       Nom: EffetName.PUISSANT,
       Description: "Vous infliger 1 point de dégats supplémentaire par succès.",
+      ComputedDesc:
+        "subit %1x% point de dégât supplémentaire par succès sur le jet d'attaque réussit contre elle.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -2]]),
     },
@@ -544,19 +577,23 @@ export class ServiceAptitude {
       Nom: EffetName.RENVERSEMENT,
       Description:
         "Si la somme des succès est superieur à la vigueur de la cible, elle est renversée.",
+      ComputedDesc: `est renversée si la somme des succès est superieur son score de ${CaracteritiqueName.VIGUEUR}`,
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -1]]),
     },
     {
       Nom: EffetName.ATTAQUE_DOUBLE,
       Description:
-        "Vous attaquez et lancez deux fois un jet d'attaque pendant l'execution de cette technique.",
+        "Vous attaquez deux fois pendant l'execution de cette technique.",
+      ComputedDesc:
+        "peut attaquer deux fois le même tour si elle choisi d'attaquer.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -4]]),
     },
     {
       Nom: EffetName.BRISE_POSTURE,
       Description: "La cible perd sa posture.",
+      ComputedDesc: "perd sa posture.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.TECHNIQUE, -2],
@@ -584,7 +621,7 @@ export class ServiceAptitude {
     {
       Nom: ExtensionEffetName.CATALYSEUR,
       Description:
-        "Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension.",
+        "Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension (%1x%).",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -598,7 +635,7 @@ export class ServiceAptitude {
     {
       Nom: ExtensionEffetName.CIBLE_GALVANISE,
       Description:
-        "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'atout que le rang de cette extension.",
+        "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'atout que le rang de cette extension (%1x%). ",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
@@ -625,7 +662,7 @@ export class ServiceAptitude {
     {
       Nom: ExtensionEffetName.UTILISATEUR_GALVANISE,
       Description:
-        "Vous devez être sous les effets d'au moins 1 atout pour chaque rang de cette extension.",
+        "Vous devez être sous les effets d'au moins %1x% atout pour chaque rang de cette extension.",
       IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
@@ -637,7 +674,7 @@ export class ServiceAptitude {
     },
     {
       Nom: ExtensionEffetName.DIFFICILE,
-      Description: "Ajouter 1 dé de difficulté sur votre jet.",
+      Description: "Ajouter %1x% dé de difficulté sur votre jet.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
@@ -678,8 +715,8 @@ export class ServiceAptitude {
     {
       Nom: ExtensionEffetName.UTILISATEUR_MAUDIT,
       Description:
-        "Vous devez être sous les effets d'au moins autant menace que le rang de cette extension.",
-      IsCummulable: false,
+        "Vous devez être sous les effets d'au moins autant menace que le rang de cette extension. (%1x%)",
+      IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.CYTOMANCIE, 3],
         [AptitudeTypeName.ENVOUTEMENT, 3],
@@ -688,11 +725,12 @@ export class ServiceAptitude {
         [AptitudeTypeName.MALEFICE, 3],
       ]),
     },
+    // TODO Extension ingredient : gérer different types d'ingredients (puissance, nombre...)
     {
       Nom: ExtensionEffetName.INGREDIENT,
       Description:
         "Vous devez consommer un objet possédant une signature énergétique commune. Cet objet est déterminé lors de la conception de l'aptitude.",
-      IsCummulable: true,
+      IsCummulable: false,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
@@ -704,7 +742,7 @@ export class ServiceAptitude {
     },
     {
       Nom: ExtensionEffetName.CONTRE_COUP,
-      Description: "Le lanceur subit 1 blessure par menace net.",
+      Description: "Le lanceur subit %1x% blessure par menace net.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, 1],
@@ -718,7 +756,7 @@ export class ServiceAptitude {
     },
     {
       Nom: ExtensionEffetName.MAITRISE_CORPS_A_CORPS,
-      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.CORPS_A_CORPS} doit être supérieur ou égal au rang de cette extension.`,
+      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.CORPS_A_CORPS} doit être supérieur ou égal au rang de cette extension (%1x%).`,
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.TECHNIQUE, 1],
@@ -727,7 +765,7 @@ export class ServiceAptitude {
     },
     {
       Nom: ExtensionEffetName.MAITRISE_PUGILAT,
-      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.PUGILAT} doit être supérieur ou égal au rang de cette extension.`,
+      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.PUGILAT} doit être supérieur ou égal au rang de cette extension (%1x%).`,
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 1]]),
     },

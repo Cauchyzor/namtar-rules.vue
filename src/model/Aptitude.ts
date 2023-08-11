@@ -97,6 +97,7 @@ export type Vecteur = {
 export type Effet = {
   Nom: EffetName;
   Description: string;
+  ComputedDesc: string;
   IsCummulable: boolean;
   StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
 };
