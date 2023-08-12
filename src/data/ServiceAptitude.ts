@@ -362,7 +362,7 @@ export class ServiceAptitude {
       Description:
         "La cible gagne 1 atout (cumulable). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
       ComputedDesc:
-        "reçoit %x% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+        "reçoit %1x% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -376,7 +376,7 @@ export class ServiceAptitude {
       Description:
         "La cible gagne augmente sa défense de 1 point. S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       ComputedDesc:
-        "ajoute %x% point(s) a son score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+        "ajoute %1x% point(s) a son score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.BENEDICTION, -6],
@@ -420,7 +420,7 @@ export class ServiceAptitude {
       Description:
         "Chaque succès et triomphe vol 1 point de stress à l'adversaire.",
       ComputedDesc:
-        "subit une perte de %x% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
+        "subit une perte de %1x% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.ENVOUTEMENT, -1],
@@ -450,7 +450,7 @@ export class ServiceAptitude {
       Description:
         "Inflige 1 blessure (cumulable) par triomphe et succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
       ComputedDesc:
-        "subit %2x% blessure(s) par triomphe net et %x% blessure(s)par succès net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
+        "subit %2x% blessure(s) par triomphe net et %1x% blessure(s)par succès net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
       IsCummulable: true,
       StabiliteParTypeAptitude: new Map([
         [AptitudeTypeName.EVOCATION, -3],
