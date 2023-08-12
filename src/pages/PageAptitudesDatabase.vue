@@ -5,9 +5,9 @@
       <div
         v-for="Aptitude in AptitudesList"
         :key="Aptitude.Nom"
-        class="col-12 col-sm-4 col-md-3 col-lg-2"
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
       >
-        <AptitudeCard :Aptitude="Aptitude"></AptitudeCard>
+        <AptitudeItem :Aptitude="Aptitude"></AptitudeItem>
       </div>
     </div>
   </q-page>
@@ -15,13 +15,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import AptitudeCard from "src/components/AptitudeCard.vue";
+import AptitudeItem from "src/components/AptitudeItem.vue";
 
 import { ServiceAptitude } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   components: {
-    AptitudeCard,
+    AptitudeItem,
   },
   data() {
     return {
