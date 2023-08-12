@@ -242,61 +242,47 @@
       </q-step>
     </q-stepper>
     <q-dialog v-model="showAtpCard">
-      <q-card flat bordered class="bg-secondary">
+      <q-card flat bordered class="bg-accent">
         <q-card-section vertical>
-          <div class="text-h5 q-mt-sm q-mb-xs">{{ aptName }}</div>
+          <div class="text-h5 q-mt-sm q-mb-xs">
+            {{ createdAptitude?.Nom }}
+          </div>
           <div class="text-caption q-mt-sm q-mb-xs">
-            Description : {{ aptDesc }}
+            {{ createdAptitude?.UsageDescription }}
           </div>
 
           <q-card-section horizontal class="bg-accent">
             <q-card-section class="col-6" vertical>
               <div class="text-caption text-grey">
-                Type : <strong>{{ SelectedAptTypeName }}</strong>
+                Type : <strong>{{ createdAptitude?.Type.Nom }}</strong>
               </div>
               <div class="text-caption text-grey">
-                Vecteur :
-                <strong>{{
-                  SelectedAptVecteur && SelectedAptVecteur.Nom
-                }}</strong>
-              </div>
-              <div class="text-caption text-grey">
-                Effet : <strong>{{ getSelectedEffetsWithRank() }}</strong>
-              </div>
-              <div class="text-caption text-grey">
-                Extension :
-                <strong>{{ getSelectedExtensionWithRank() }}</strong>
+                Vecteur : <strong>{{ createdAptitude?.Vecteur.Nom }}</strong>
               </div>
             </q-card-section>
             <q-separator vertical inset></q-separator>
             <q-card-section class="col-6" vertical>
               <div class="text-caption text-grey">
-                Cout : <strong>{{ computeCost() }}</strong>
-              </div>
-              <div class="text-caption text-grey">
-                Test à réaliser :
-                <strong>{{
-                  SelectedAptVecteur && SelectedAptVecteur.Difficulte
-                }}</strong>
+                Cout :
+                <strong>{{ createdAptitude?.computeStabilityScore() }}</strong>
               </div>
             </q-card-section>
           </q-card-section>
-          <p class="text-caption text-grey q-mt-md">
-            L'aptitude ne peut pas être sauvegardée pour l'instant. Notez la sur
-            un bout de papier :)
-          </p>
         </q-card-section>
       </q-card>
     </q-dialog>
   </q-page>
 </template>
 <script lang="ts">
-// TODO Finir refacto aptitude : creation d'aptitude avec le q-dialog et utilisation des methodes d'aptitude plutot que du service Aptitudes
 import { defineComponent, ref } from "vue";
 
-import { AptitudeType, Effet, ExtensionEffet } from "src/model/Aptitude";
-
 import { ServiceAptitude, AptitudeTypeName } from "src/data/ServiceAptitude";
+import {
+  Aptitude,
+  AptitudeType,
+  Effet,
+  ExtensionEffet,
+} from "src/model/Aptitude";
 
 import EffetCard from "src/components/EffetCard.vue";
 import TypeAptitudeItem from "src/components/TypeAptitudeCard.vue";
@@ -355,13 +341,22 @@ export default defineComponent({
           )
         : ServiceAptitude.findAllExtensions();
     },
-    isAptValid() {
+    isAptValid(): boolean {
       return (
         this.SelectedAptTypeName &&
         this.SelectedAptVecteur &&
         this.SelectedAptEffets.size > 0 &&
         this.aptName &&
         this.aptName !== ""
+      );
+    },
+    createdAptitude(): Aptitude {
+      return new Aptitude(
+        this.aptName,
+        this.SelectedAptTypeName,
+        this.SelectedAptVecteur.Nom,
+        this.SelectedAptEffets,
+        this.SelectedAptExtensions
       );
     },
   },
@@ -415,19 +410,6 @@ export default defineComponent({
       return Array.from(this.SelectedAptExtensions.entries())
         .map(([name, rank]) => `${name}(${rank})`)
         .join(" - ");
-    },
-    computeCost() {
-      return this.SelectedAptTypeName &&
-        Array.from(this.SelectedAptEffets.values()).length
-        ? ServiceAptitude.printAptitudeCost(
-            ServiceAptitude.computeStabilityScore(
-              this.SelectedAptTypeName,
-              this.SelectedAptEffets,
-              this.SelectedAptExtensions
-            ),
-            this.SelectedAptTypeName
-          )
-        : "Incomplet";
     },
     changeType(aptTtype: AptitudeType) {
       this.SelectedAptTypeName = aptTtype.Nom;

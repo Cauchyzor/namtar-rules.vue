@@ -51,6 +51,7 @@ export class Aptitude {
     return totalCost;
   }
 
+  //TODO : Revoir le model pour que le coût vienne du type d'aptitude
   printAptitudeCost() {
     const stability = this.computeStabilityScore();
     if (stability > 0) return "Aucun";
@@ -78,8 +79,8 @@ export class Aptitude {
 
   /**
    * Retourne une description complete de l'aptitude a partir du vecteurs des extension et des effets, ainsi que leurs rangs.
-   *
    */
+  //TODO : Revoir le model plutot que l'utilisation de regex
   get UsageDescription() {
     const numericRegex = new RegExp("%(\\d)x%");
     const effectsDesc: string[] = [];
@@ -120,6 +121,7 @@ export type AptitudeType = {
   DescriptionDetails: string;
 };
 
+//TODO : Passer sur une classe pour generer la description niveau vecteur. Difficultée adaptable
 export type Vecteur = {
   Nom: VecteurName;
   Description: string;
@@ -128,6 +130,8 @@ export type Vecteur = {
   TypesCompatibilities: AptitudeTypeName[];
 };
 
+//TODO : Passer sur une classe et ajouter les getter : printEffectsWithRank
+//TODO : Passer sur une classe et creer la classe/type difficultée : printEffectsWithRank
 export type Effet = {
   Nom: EffetName;
   Description: string;
