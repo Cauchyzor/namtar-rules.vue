@@ -10,7 +10,6 @@ import {
 
 export class Aptitude {
   Nom: string;
-  Description: string;
   Type: AptitudeType;
   Vecteur: Vecteur;
   Effets: Map<EffetName, number>;
@@ -18,14 +17,12 @@ export class Aptitude {
 
   constructor(
     nom: string,
-    desc: string,
     typeName: AptitudeTypeName,
     vecteurName: VecteurName,
     effets: Map<EffetName, number>,
     extentions: Map<ExtensionEffetName, number>
   ) {
     this.Nom = nom;
-    this.Description = desc;
     this.Type = ServiceAptitude.findAptTypeByName(typeName);
     this.Vecteur = ServiceAptitude.findAptVecteurByName(vecteurName);
     this.Effets = effets;

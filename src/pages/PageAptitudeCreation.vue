@@ -223,11 +223,6 @@
             v-model="aptName"
             label="Nom de l'aptitude"
           ></q-input>
-          <q-input
-            outlined
-            v-model="aptDesc"
-            label="Description libre"
-          ></q-input>
         </div>
         <q-stepper-navigation>
           <q-btn
@@ -366,9 +361,7 @@ export default defineComponent({
         this.SelectedAptVecteur &&
         this.SelectedAptEffets.size > 0 &&
         this.aptName &&
-        this.aptName !== "" &&
-        this.aptDesc &&
-        this.aptDesc !== ""
+        this.aptName !== ""
       );
     },
   },
