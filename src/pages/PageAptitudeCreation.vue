@@ -309,7 +309,7 @@ import VecteurItem from "src/components/VecteurCard.vue";
 import ExtensionCard from "src/components/ExtensionCard.vue";
 
 export default defineComponent({
-  name: "AptitudeInfoPage",
+  name: "PageAptitudeCreation",
   components: {
     EffetCard,
     ExtensionCard,

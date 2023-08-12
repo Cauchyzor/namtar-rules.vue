@@ -7,7 +7,7 @@
         :key="Aptitude.Nom"
         class="col-12 col-sm-4 col-md-3 col-lg-2"
       >
-        <AptitudeCard style="height: 100%" :Aptitude="Aptitude"></AptitudeCard>
+        <AptitudeCard :Aptitude="Aptitude"></AptitudeCard>
       </div>
     </div>
   </q-page>
@@ -20,7 +20,6 @@ import AptitudeCard from "src/components/AptitudeCard.vue";
 import { ServiceAptitude } from "src/data/ServiceAptitude";
 
 export default defineComponent({
-  name: "PersonnagePage",
   components: {
     AptitudeCard,
   },
