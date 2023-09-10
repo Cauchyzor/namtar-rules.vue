@@ -83,6 +83,20 @@ export enum ExtensionEffetName {
   ZONE = "Zone d'effet",
 }
 
+export enum Multiplicateur {
+  NON_CUMMULABLE = 0,
+  UN = 1,
+  DEUX = 2,
+  TROIS = 3,
+}
+
+export enum Cible {
+  UTILISATEUR = "Vous",
+  OBJET = "L'objet",
+  UNIQUE = "La cible",
+  MULTIPLE = "Les cibles",
+}
+
 export class ServiceAptitude {
   // TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
   // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
@@ -159,592 +173,506 @@ export class ServiceAptitude {
   ];
 
   private static VecteursList: Array<Vecteur> = [
-    {
-      Nom: VecteurName.ALTERATION_OBJET,
-      Description:
-        "Les effets sont prisonnier d'un objet au contact du lanceur. Le lanceur peut choisir de relacher les effets à sa guise. Sinon, ils sont libérés quelques secondes après que l'objet est été relaché.",
-      Difficulte: `Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3`,
-      ComputedDesc:
-        "L'arme en main appliquera des effets supplémentaire lors du prochain jet d'attaque réussi. La cible subit, en plus des dégâts de l'arme, ",
-      TypesCompatibilities: [
+    new Vecteur(
+      VecteurName.ALTERATION_OBJET,
+      `Vous effectuez un Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3. L'arme en main appliquera des effets supplémentaire en plus des dégâts de l'arme, lors du prochain jet d'attaque réussi.`,
+      Cible.OBJET,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.EVOCATION,
-      ],
-    },
-    {
-      Nom: VecteurName.CONTACT,
-      Description: "Les effets sont appliqués à la cible touchée.",
-      Difficulte: `Attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR})`,
-      ComputedDesc: `Vous effectuez une attaque engagée de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}). La cible subit `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.CONTACT,
+      `Vous effectuez une attaque engagée d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}).`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
-      ],
-    },
-    {
-      Nom: VecteurName.FRAPPE,
-      Description:
-        "Les effets sont appliqué sur une attaque à main nue ou avec une arme au corps à corps. Un equilibre certain doit être trouver par l'utilisateur pour captialiser sur son arme et l'aptitude.",
-      Difficulte: `Attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les atouts net plutôt que par les succès. Les dégats de l'arme utilisé sont calculés normalement. L'attaque inflige en plus `,
-      ComputedDesc:
-        "Sur votre prochain jet d'attaque engagé réussi, vous appliquez les effets suivant pour chaque avantages générés.",
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.FRAPPE,
+      `Vous effectuez une attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages net plutôt que par les succès. Les dégats de l'arme utilisée sont calculés normalement.`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
-      ],
-    },
-    {
-      Nom: VecteurName.FRAPPE_ONIRIQUE,
-      Description:
-        "La lanceur materialise l'aptitude directement sur la cible à portée de voix grâce a son empreinte laissée dans le fluide. ",
-      Difficulte: `Attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}). Le DD est augmentée 1 fois en plus de la distance.`,
-      ComputedDesc: `Vous effectuez une attaque distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}). Le DD est augmentée 1 fois en plus de la distance. La cible subit `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.FRAPPE_ONIRIQUE,
+      `Vous effectuez une attaque distance d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}). Le DD est augmentée 1 fois en plus de la distance.`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.MALEFICE,
-      ],
-    },
-    {
-      Nom: VecteurName.REGARD,
-      Description:
-        "Les effets sont appliqués à la cible avec qui vous avez un contact visuel mutuel.",
-      Difficulte: `Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) et ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
-      ComputedDesc: `Vous effectuez un Test opposé de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) contre ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible. Si elle echoue, elle subit `,
-      TypesCompatibilities: [
-        AptitudeTypeName.ENVOUTEMENT,
-        AptitudeTypeName.MALEFICE,
-      ],
-    },
-    {
-      Nom: VecteurName.SOUFFLE,
-      Description:
-        "Le lanceur canalyse l'energie dans ses poumons, et applique des effets dans un cône devant lui sur une courte distance",
-      Difficulte: `Attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}).`,
-      ComputedDesc: `Vous effectuez une attaque a distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}) pour frapper toutes les cibles dans un cône à portée courte devant vous. Les cibles subissent `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.REGARD,
+      `Vous effectuez un Test opposé d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) contre la ${CompetenceName.PERSPICACITE} (${CaracteritiqueName.CHARISME}) de la cible.`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.ENVOUTEMENT, AptitudeTypeName.MALEFICE]
+    ),
+    new Vecteur(
+      VecteurName.SOUFFLE,
+      `Vous effectuez une attaque a distance d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.VIGUEUR}) pour frapper toutes les cibles dans un cône à portée courte devant vous.`,
+      Cible.MULTIPLE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
-      ],
-    },
-    {
-      Nom: VecteurName.PROJECTILE,
-      Description:
-        "Le lanceur génère un projectile qui se déplace à grande vitesse jusqu'à l'endroit indiqué, et applique ses effets à l'impact avant de s'estomper.",
-      Difficulte: `Attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}).`,
-      ComputedDesc: `Vous effectuez une attaque à distance de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) et lancez un projectile immateriel sur la cible. La cible subit `,
-      TypesCompatibilities: [
-        AptitudeTypeName.CYTOMANCIE,
-        AptitudeTypeName.EVOCATION,
-      ],
-    },
-    {
-      Nom: VecteurName.ONDE,
-      Description:
-        "Le lanceur génère une onde qui applique les effets du sort sur toutes les cibles à portée courte autour de lui.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
-      ComputedDesc: `Vous effectuez un Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 et projetez une déflagration immaterielle à portée courte, touchant toutes les créatures autours de vous. Elles subissent `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.PROJECTILE,
+      `Vous effectuez une attaque à distance d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) et lancez un projectile immateriel sur la cible.`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.CYTOMANCIE, AptitudeTypeName.EVOCATION]
+    ),
+    new Vecteur(
+      VecteurName.ONDE,
+      `Vous effectuez un Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 et projetez une déflagration immaterielle à portée courte, touchant toutes les créatures autours de vous. `,
+      Cible.MULTIPLE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.EVOCATION,
         AptitudeTypeName.MALEFICE,
-      ],
-    },
-    // TODO revoir le vecteur chant pour expliciter 'membre du groupe'
-    {
-      Nom: VecteurName.CHANT,
-      Description:
-        "Le lanceur entonne un chant ou une mélodie galvanisatrice. Les membres du groupes qui marmonnent le chant avec le lanceurs beneficient alors de ses effets.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 du lanceur. Seul les membres du groupe sont affectés.`,
-      ComputedDesc: `Vous effectuez un Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 pour entonner un chant qui applique des effets sur toutes les membres du groupes à porté de voix. Ils reçoivent `,
-      TypesCompatibilities: [AptitudeTypeName.BENEDICTION],
-    },
-    {
-      Nom: VecteurName.MEDITATION_ECLAIRE,
-      Description:
-        "Le lanceur pratique une introspection rapide pour effectuer appliquer les effets de l'aptitude sur lui-même.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 du lanceur.`,
-      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2. Vous recevez `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      // TODO revoir le vecteur chant pour expliciter 'membre du groupe'
+      VecteurName.CHANT,
+      `Vous effectuez un Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 pour entonner un chant qui applique des effets sur toutes les membres du groupes à porté de voix.`,
+      Cible.MULTIPLE,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.BENEDICTION]
+    ),
+    new Vecteur(
+      VecteurName.MEDITATION_ECLAIRE,
+      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2.`,
+      Cible.UTILISATEUR,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.EVOCATION,
-      ],
-    },
-    {
-      Nom: VecteurName.CARESSE,
-      Description:
-        "Le lanceur applique les effets de l'aptitudes à la cible touchée concentante.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD2 du lanceur.`,
-      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD2 et appliquez a la cible touchée `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.CARESSE,
+      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD2 et appliquez des effets à la cible touchée consentante.`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.CYTOMANCIE,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.EVOCATION,
-      ],
-    },
-    {
-      Nom: VecteurName.CARESSE_ONIRIQUE,
-      Description:
-        "La lanceur materialise l'aptitude directement sur la cible consentante à portée de voix grâce a son empreinte laissée dans le fluide. ",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3. Le DD est augmentée 1 fois de plus par niveau de porté.`,
-      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3. Le DD est augmentée 1 fois de plus par niveau de porté. La cible a portée de voix reçoit `,
-      TypesCompatibilities: [
+      ]
+    ),
+    new Vecteur(
+      VecteurName.CARESSE_ONIRIQUE,
+      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.CHARISME}) de DD3 et appliquez des effets à la cible touchée consentante. Le DD est augmentée 1 fois de plus par niveau de porté.`,
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [
         AptitudeTypeName.BENEDICTION,
         AptitudeTypeName.ENVOUTEMENT,
         AptitudeTypeName.MALEFICE,
-      ],
-    },
-    // TODO : Augmenter la portée effective de l'explosion de cadavre pour appliquer des effets
-    {
-      Nom: VecteurName.EXPLOSION_CADAVRE,
-      Description:
-        "Le lanceur utilise le cadavre ou la source d'énergie pour répendre un souffle à portée courte.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 à portée courte. Le DD augmente une fois pour chaque rangs de portée supplémentaires.`,
-      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3. Le DD augmente une fois pour chaque rangs de portée supplémentaires. Les cibles à portée courte du cadavre ciblé subissent `,
-      TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
-    },
-    {
-      Nom: VecteurName.EXPLOITATION_CADRAVRE,
-      Description:
-        "Le lanceur absorbe le cadavre ou la source d'énergie à son contact.",
-      Difficulte: `Test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2.`,
-      ComputedDesc: `Vous effectuez un test de ${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2. Vous absorbez l'energie du cadavre à votre contact et recevez `,
-      TypesCompatibilities: [AptitudeTypeName.NECROMANCIE],
-    },
-    {
-      Nom: VecteurName.MANTRA,
-      Description:
-        "Un mantra est une caracteristique du corps du lanceur qui lui permet de recevoir des bénefices du fluide. ",
-      Difficulte: "Aucune (passif)",
-      ComputedDesc: "",
-      TypesCompatibilities: [AptitudeTypeName.MANTRA],
-    },
-    {
-      Nom: VecteurName.POSTURE,
-      Description:
-        "Une posture permet à son utilisateur de bénéficier d'effets passif.",
-      Difficulte: "Aucune (passif)",
-      ComputedDesc: "",
-      TypesCompatibilities: [AptitudeTypeName.POSTURE],
-    },
-    {
-      Nom: VecteurName.TECHNIQUE_ENGAGEMENT,
-      Description:
-        "Un mouvement ou une attaque au corps à corps (avec une arme ou à main nue).",
-      Difficulte: "Jet d'Attaque au corps à corps ou de pugilat",
-      ComputedDesc: "Vous effectuez un jet d'attaque au corps à corps",
-      TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
-    },
-    {
-      Nom: VecteurName.RIPOSTE,
-      Description: "Une attaque ou action qui se déroule lors d'une reaction",
-      Difficulte: "Aucune",
-      ComputedDesc: "",
-      TypesCompatibilities: [AptitudeTypeName.TECHNIQUE],
-    },
+      ]
+    ),
+    new Vecteur(
+      // TODO : Augmenter la portée effective de l'explosion de cadavre pour appliquer des effets
+      VecteurName.EXPLOSION_CADAVRE,
+      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3. Le DD augmente une fois pour chaque rangs de portée supplémentaires. Les cibles à portée courte du cadavre ciblé subissent `,
+      Cible.MULTIPLE,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.NECROMANCIE]
+    ),
+    new Vecteur(
+      VecteurName.EXPLOITATION_CADRAVRE,
+      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 pour récuperer l'energie résiduelle d'un cadavre.`,
+      Cible.UTILISATEUR,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.NECROMANCIE]
+    ),
+    new Vecteur(
+      VecteurName.MANTRA,
+      "Les mantra dans des capacitées passives.",
+      Cible.UTILISATEUR,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.MANTRA]
+    ),
+    new Vecteur(
+      VecteurName.POSTURE,
+      "Les postures donnent des bonus passif pendant leur utilisation. Se mettre dans une posture consomme une réaction.",
+      Cible.UTILISATEUR,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.POSTURE]
+    ),
+    new Vecteur(
+      VecteurName.TECHNIQUE_ENGAGEMENT,
+      "Vous effectuez un jet d'attaque au corps à corps.",
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.TECHNIQUE]
+    ),
+    new Vecteur(
+      VecteurName.RIPOSTE,
+      "Vous utiliser cette aptitude de la même manière qu'une réaction.",
+      Cible.UNIQUE,
+      Multiplicateur.NON_CUMMULABLE,
+      [AptitudeTypeName.TECHNIQUE]
+    ),
   ];
 
   private static EffectsList: Array<Effet> = [
-    {
-      Nom: EffetName.ATOUT,
-      Description:
-        "La cible gagne 1 atout (cumulable). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes.",
-      ComputedDesc:
-        "reçoit %1x% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+    new Effet(
+      EffetName.ATOUT,
+      "%M% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.BENEDICTION, -2],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -2],
         [AptitudeTypeName.CYTOMANCIE, -2],
-      ]),
-    },
-    {
-      Nom: EffetName.BOUCLIER,
-      Description:
-        "La cible gagne augmente sa défense de 1 point. S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
-      ComputedDesc:
-        "ajoute %1x% point(s) a son score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.BOUCLIER,
+      "%M% point(s) au score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.BENEDICTION, -6],
         [AptitudeTypeName.EVOCATION, -8],
         [AptitudeTypeName.NECROMANCIE, -4],
         [AptitudeTypeName.CYTOMANCIE, -4],
-      ]),
-    },
-    {
-      Nom: EffetName.CHALEUR,
-      Description:
-        "Inflige 2 blessures (cumulable) par triomphe, par succès et par atouts net sur le score de jet.",
-      ComputedDesc:
-        "subit %2x% blessures par triomphe, par succès et par atouts net sur le score de jet.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.CHALEUR,
+      "%M% blessures par triomphe, par succès et par avantage net sur le score de jet.",
+      Multiplicateur.DEUX,
+      new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.MALEFICE, -3],
         [AptitudeTypeName.NECROMANCIE, -1],
         [AptitudeTypeName.CYTOMANCIE, -3],
-      ]),
-    },
-    {
-      Nom: EffetName.DEBILITANT,
-      Description:
-        "La cible perd sa prochaine reaction. Si vous avez plus de succès net que sa valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
-      ComputedDesc:
-        "perd sa prochaine reaction. Si vous avez plus de succès net que sa valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.DEBILITANT,
+      "la perte de sa prochaine reaction. Si vous avez plus de succès net que la valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.ENVOUTEMENT, -4],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.MALEFICE, -4],
         [AptitudeTypeName.NECROMANCIE, -2],
         [AptitudeTypeName.CYTOMANCIE, -4],
-      ]),
-    },
-    {
-      Nom: EffetName.DRAIN_FLUIDE,
-      Description:
-        "Chaque succès et triomphe vol 1 point de stress à l'adversaire.",
-      ComputedDesc:
-        "subit une perte de %1x% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.DRAIN_FLUIDE,
+      "une perte de %M% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.ENVOUTEMENT, -1],
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.MALEFICE, -1],
         [AptitudeTypeName.CYTOMANCIE, -1],
         [AptitudeTypeName.BENEDICTION, -2],
-      ]),
-    },
-    {
-      Nom: EffetName.ENTRAVE,
-      Description:
-        "La cible perd sa capacité de déplacement au premier succès. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
-      ComputedDesc:
-        "est entravée et ne peut plus se déplacer. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.ENTRAVE,
+      "une entrave et ne peut plus se déplacer. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.MALEFICE, -2],
         [AptitudeTypeName.ENVOUTEMENT, -1],
         [AptitudeTypeName.NECROMANCIE, -1],
         [AptitudeTypeName.CYTOMANCIE, -2],
-      ]),
-    },
-    {
-      Nom: EffetName.FORCE,
-      Description:
-        "Inflige 1 blessure (cumulable) par triomphe et succès net. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
-      ComputedDesc:
-        "subit %2x% blessure(s) par triomphe net et %1x% blessure(s)par succès net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.FORCE,
+      "%M% blessure(s) par succes net et le double par triomphe net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.NECROMANCIE, -1],
         [AptitudeTypeName.CYTOMANCIE, -1],
-      ]),
-    },
-    {
-      Nom: EffetName.TELEPATHE,
-      Description:
-        "Permet de communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus.",
-      ComputedDesc:
-        "peut communiquer avec vous brièvement la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.TELEPATHE,
+      "peut/peuvent communiquer avec vous brièvement la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.CYTOMANCIE, -2],
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.BENEDICTION, -1],
         [AptitudeTypeName.MALEFICE, -1],
         [AptitudeTypeName.ENVOUTEMENT, -1],
-      ]),
-    },
-    {
-      Nom: EffetName.OBSTRUCTION,
-      Description:
-        "Pour niveau de résultat (1 succès, 2, 3, 5, 8 ...), une menace est infligée à la cible",
-      ComputedDesc:
-        "subit %1x% menace(s) pour chaque niveau de résultat (1 succès, 2, 3, 5, 8 ...).",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.OBSTRUCTION,
+      "%M% menace(s) pour chaque niveau de résultat (1 succès, 2, 3, 5, 8 ...).",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.MALEFICE, -1],
         [AptitudeTypeName.ENVOUTEMENT, -2],
         [AptitudeTypeName.CYTOMANCIE, -2],
-      ]),
-    },
+      ])
+    ),
     //TODO Faire un effets qui génère des désavanges
     //TODO Faire un effets qui génère des avantages
-    {
-      Nom: EffetName.ILLUSION,
-      Description:
-        "Vous pouvez faire halluciner la cible pour que ses sens lui indiquent ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès permet de rendre l'illusion plus précise et efficace, et affecte plus de sens.",
-      ComputedDesc:
-        "est victime d'une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplementaire.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+    new Effet(
+      EffetName.ILLUSION,
+      "une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplementaire.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.EVOCATION, -2],
         [AptitudeTypeName.MALEFICE, -1],
         [AptitudeTypeName.ENVOUTEMENT, -1],
-      ]),
-    },
-    {
-      Nom: EffetName.SOIN_DE_STRESS,
-      Description:
-        "La cible est soignée d'1 point de stress (cumulable) par triomphe et succès net.",
-      ComputedDesc:
-        "regagne %1x% point(s) de stress par triomphe et succès net sur le jet.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.SOIN_DE_STRESS,
+      "regagne %M% point(s) de stress par triomphe et succès net sur le jet.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.BENEDICTION, -2],
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.NECROMANCIE, -2],
         [AptitudeTypeName.CYTOMANCIE, -2],
-      ]),
-    },
-    {
-      Nom: EffetName.SOIN,
-      Description:
-        "La cible dépense immédiatement 1 point de résilience (cumulable) pour regagner ses PV. Chaque triomphe soigne d'un point de stress",
-      ComputedDesc:
-        "dépense immédiatement jusqu'à %1x% point de résilience qu'elle possède. Chaque triomphe soigne d'un point de stress.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.SOIN,
+      "une dépense immediate de jusqu'à %M% point de résilience qu'elle possède pour effectuez un soin. Chaque triomphe soigne d'un point de stress.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.BENEDICTION, -3],
         [AptitudeTypeName.EVOCATION, -4],
         [AptitudeTypeName.NECROMANCIE, -3],
         [AptitudeTypeName.CYTOMANCIE, -3],
-      ]),
-    },
-    {
-      Nom: EffetName.VAMPIRISME,
-      Description:
-        "Inflige 1 blessure (cumulable) par triomphe et succès net. Si l'effet est appliqué, le lanceur regagne 1 (cumulable) PV.",
-      ComputedDesc:
-        "subit %1x% blessure(s) par triomphe et succès net sur le jet. Vous regagnez %1x% PV.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.VAMPIRISME,
+      "%M% blessure(s) par triomphe et succès net sur le jet. Vous regagnez autant de PV.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.ENVOUTEMENT, -10],
         [AptitudeTypeName.EVOCATION, -6],
         [AptitudeTypeName.MALEFICE, -4],
         [AptitudeTypeName.CYTOMANCIE, -2],
-      ]),
-    },
-    {
-      Nom: EffetName.LEVITATION,
-      Description:
-        "La cible de gabarit 1 (cumulable) au maximum est en lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes",
-      ComputedDesc:
-        "de gabarit %1x% au maximum est en lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.LEVITATION,
+      "la capacité de se déplacer par lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes. Gabarit maximum : %M%.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.EVOCATION, -6],
         [AptitudeTypeName.CYTOMANCIE, -6],
         [AptitudeTypeName.BENEDICTION, -6],
-      ]),
-    },
-    {
-      Nom: EffetName.MANTRA,
-      Description: "Voir la description",
-      ComputedDesc: "",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map(),
-    },
-    {
-      Nom: EffetName.PUISSANT,
-      Description: "Vous infliger 1 point de dégats supplémentaire par succès.",
-      ComputedDesc:
-        "subit %1x% point de dégât supplémentaire par succès sur le jet d'attaque réussit contre elle.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -2]]),
-    },
-
-    {
-      Nom: EffetName.RENVERSEMENT,
-      Description:
-        "Si la somme des succès est superieur à la vigueur de la cible, elle est renversée.",
-      ComputedDesc: `est renversée si la somme des succès est superieur son score de ${CaracteritiqueName.VIGUEUR}`,
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -1]]),
-    },
-    {
-      Nom: EffetName.ATTAQUE_DOUBLE,
-      Description:
-        "Vous attaquez deux fois pendant l'execution de cette technique.",
-      ComputedDesc:
-        "peut attaquer deux fois le même tour si elle choisi d'attaquer.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, -4]]),
-    },
-    {
-      Nom: EffetName.BRISE_POSTURE,
-      Description: "La cible perd sa posture.",
-      ComputedDesc: "perd sa posture.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new Effet(
+      EffetName.MANTRA,
+      "Voir la description",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map()
+    ),
+    new Effet(
+      EffetName.PUISSANT,
+      "%M% blessure(s) supplémentaire(s) par succès sur le jet d'attaque réussit contre elle.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([[AptitudeTypeName.TECHNIQUE, -2]])
+    ),
+    new Effet(
+      EffetName.RENVERSEMENT,
+      `un renversemet si la somme des succès est superieur son score de ${CaracteritiqueName.VIGUEUR}`,
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([[AptitudeTypeName.TECHNIQUE, -1]])
+    ),
+    new Effet(
+      EffetName.ATTAQUE_DOUBLE,
+      "la capacitée d'attaquer deux fois le même tour si elle choisi d'attaquer.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([[AptitudeTypeName.TECHNIQUE, -4]])
+    ),
+    new Effet(
+      EffetName.BRISE_POSTURE,
+      "la perte de sa posture.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.TECHNIQUE, -2],
         [AptitudeTypeName.EVOCATION, -3],
         [AptitudeTypeName.ENVOUTEMENT, -1],
         [AptitudeTypeName.MALEFICE, -2],
         [AptitudeTypeName.CYTOMANCIE, -3],
-      ]),
-    },
+      ])
+    ),
   ];
 
   private static ExtensionList: Array<ExtensionEffet> = [
-    {
-      Nom: ExtensionEffetName.ANGLE_MORT,
-      Description:
-        "Vous devez vous situer en dehors du champ de vision de la cible.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+    new ExtensionEffet(
+      ExtensionEffetName.ANGLE_MORT,
+      "Vous devez vous situer en dehors du champ de vision de la cible.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.ENVOUTEMENT, 2],
         [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.MALEFICE, 2],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.CATALYSEUR,
-      Description:
-        "Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension (%1x%).",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.CATALYSEUR,
+      "Vous devez tenir en main un objet onirique qui vous aide à lancer le sort. La puissance du catalyseur doit être égale ou supérieure au rang de cette extension (%M%).",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
         [AptitudeTypeName.EVOCATION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.CIBLE_GALVANISE,
-      Description:
-        "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'atout que le rang de cette extension (%1x%). ",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.CIBLE_GALVANISE,
+      "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'atout que le rang de cette extension (%M%). ",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.ENVOUTEMENT, 3],
         [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.NECROMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 3],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.CIBLE_MAUDITE,
-      Description:
-        "La ou les cibles de l'aptitude doivent être sous les effets d'au moins 1 menace pour chaque rang de cette extension.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.CIBLE_MAUDITE,
+      "La ou les cibles de l'aptitude doivent être sous les effets d'au moins 1 menace pour chaque rang de cette extension.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.ENVOUTEMENT, 3],
         [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.NECROMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 3],
-      ]),
-    },
-
-    {
-      Nom: ExtensionEffetName.UTILISATEUR_GALVANISE,
-      Description:
-        "Vous devez être sous les effets d'au moins %1x% atout pour chaque rang de cette extension.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.UTILISATEUR_GALVANISE,
+      "Vous devez être sous les effets d'au moins %M% atout pour chaque rang de cette extension.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.ENVOUTEMENT, 3],
         [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.NECROMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 3],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.DIFFICILE,
-      Description: "Ajouter %1x% dé de difficulté sur votre jet.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.DIFFICILE,
+      "Ajouter %M% dé de difficulté sur votre jet.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
         [AptitudeTypeName.EVOCATION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.INCENTATION_RAPIDE,
-      Description:
-        "L'aptitude peut être lancée pendant un déplacement, mais vous augmentez 2 fois la difficulté de l'aptitude. ",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.INCENTATION_RAPIDE,
+      "L'aptitude peut être lancée pendant un déplacement, mais vous augmentez 2 fois la difficulté de l'aptitude. ",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
         [AptitudeTypeName.EVOCATION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.ENERGIE_ACTIVATION,
-      Description:
-        "L'aptitude n'applique pas ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.ENERGIE_ACTIVATION,
+      "L'aptitude n'applique pas ses effets uniquement si la cible est victime déjà d'un effet. Cet effet est déterminé à la conception du sort.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.BENEDICTION, 2],
         [AptitudeTypeName.ENVOUTEMENT, 2],
         [AptitudeTypeName.CYTOMANCIE, 2],
         [AptitudeTypeName.EVOCATION, 2],
         [AptitudeTypeName.MALEFICE, 2],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.UTILISATEUR_MAUDIT,
-      Description:
-        "Vous devez être sous les effets d'au moins autant menace que le rang de cette extension. (%1x%)",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.UTILISATEUR_MAUDIT,
+      "Vous devez être sous les effets d'au moins autant menace que le rang de cette extension. (%M%)",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.CYTOMANCIE, 3],
         [AptitudeTypeName.ENVOUTEMENT, 3],
         [AptitudeTypeName.EVOCATION, 3],
         [AptitudeTypeName.NECROMANCIE, 2],
         [AptitudeTypeName.MALEFICE, 3],
-      ]),
-    },
-    // TODO Extension ingredient : gérer different types d'ingredients (puissance, nombre...)
-    {
-      Nom: ExtensionEffetName.INGREDIENT,
-      Description:
-        "Vous devez consommer un objet possédant une signature énergétique commune. Cet objet est déterminé lors de la conception de l'aptitude.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([
+      ])
+      // TODO Extension ingredient : gérer different types d'ingredients (puissance, nombre...)
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.INGREDIENT,
+      "Vous devez consommer un objet possédant une signature énergétique commune. Cet objet est déterminé lors de la conception de l'aptitude.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([
         [AptitudeTypeName.BENEDICTION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.ENVOUTEMENT, 1],
         [AptitudeTypeName.EVOCATION, 1],
         [AptitudeTypeName.NECROMANCIE, 1],
         [AptitudeTypeName.MALEFICE, 1],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.CONTRE_COUP,
-      Description: "Le lanceur subit %1x% blessure par menace net.",
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.CONTRE_COUP,
+      "Le lanceur subit %M% blessure par menace net.",
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.EVOCATION, 1],
         [AptitudeTypeName.CYTOMANCIE, 1],
         [AptitudeTypeName.BENEDICTION, 1],
@@ -752,35 +680,35 @@ export class ServiceAptitude {
         [AptitudeTypeName.NECROMANCIE, 1],
         [AptitudeTypeName.ENVOUTEMENT, 2],
         [AptitudeTypeName.TECHNIQUE, 1],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.MAITRISE_CORPS_A_CORPS,
-      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.CORPS_A_CORPS} doit être supérieur ou égal au rang de cette extension (%1x%).`,
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.MAITRISE_CORPS_A_CORPS,
+      `Le rang de maîtrise dans la compétence ${CompetenceName.CORPS_A_CORPS} doit être supérieur ou égal au rang de cette extension (%M%).`,
+      Multiplicateur.UN,
+      new Map([
         [AptitudeTypeName.TECHNIQUE, 1],
         [AptitudeTypeName.RIPOSTE, 1],
-      ]),
-    },
-    {
-      Nom: ExtensionEffetName.MAITRISE_PUGILAT,
-      Description: `Le rang de maîtrise dans la compétence ${CompetenceName.PUGILAT} doit être supérieur ou égal au rang de cette extension (%1x%).`,
-      IsCummulable: true,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 1]]),
-    },
-    {
-      Nom: ExtensionEffetName.FEINTE,
-      Description: "La technique n'inflige pas de dégat.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 2]]),
-    },
-    {
-      Nom: ExtensionEffetName.FIN_POSTURE,
-      Description: "La technique met fin à la posture de l'utilisateur.",
-      IsCummulable: false,
-      StabiliteParTypeAptitude: new Map([[AptitudeTypeName.TECHNIQUE, 2]]),
-    },
+      ])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.MAITRISE_PUGILAT,
+      `Le rang de maîtrise dans la compétence ${CompetenceName.PUGILAT} doit être supérieur ou égal au rang de cette extension (%M%).`,
+      Multiplicateur.UN,
+      new Map([[AptitudeTypeName.TECHNIQUE, 1]])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.FEINTE,
+      "La technique n'inflige pas de dégat.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([[AptitudeTypeName.TECHNIQUE, 2]])
+    ),
+    new ExtensionEffet(
+      ExtensionEffetName.FIN_POSTURE,
+      "La technique met fin à la posture de l'utilisateur.",
+      Multiplicateur.NON_CUMMULABLE,
+      new Map([[AptitudeTypeName.TECHNIQUE, 2]])
+    ),
   ];
 
   private static AptitudeList: Array<Aptitude> = [

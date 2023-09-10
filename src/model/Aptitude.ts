@@ -6,6 +6,8 @@ import {
   EffetName,
   VecteurName,
   ExtensionEffetName,
+  Multiplicateur,
+  Cible,
 } from "src/data/ServiceAptitude";
 
 export class Aptitude {
@@ -82,35 +84,23 @@ export class Aptitude {
    */
   //TODO : Revoir le model plutot que l'utilisation de regex
   get UsageDescription() {
-    const numericRegex = new RegExp("%(\\d)x%");
     const effectsDesc: string[] = [];
     const extensionsDesc: string[] = [];
     this.Effets.forEach((_, effet) => {
-      let computedDescription =
-        ServiceAptitude.findEffetByName(effet)?.ComputedDesc || "";
-      const numericValue = computedDescription.match(numericRegex);
-      if (numericValue != null) {
-        computedDescription = computedDescription.replace(
-          numericRegex,
-          numericValue[1]
-        );
-      }
+      const computedDescription =
+        ServiceAptitude.findEffetByName(effet)?.Description || "";
       effectsDesc.push(computedDescription);
     });
     this.Extensions.forEach((_, extention) => {
-      let computedDescription =
+      const computedDescription =
         ServiceAptitude.findExtensionByName(extention)?.Description || "";
-      const numericValue = computedDescription.match(numericRegex);
-      if (numericValue != null) {
-        computedDescription = computedDescription.replace(
-          numericRegex,
-          numericValue[1]
-        );
-      }
       extensionsDesc.push(computedDescription);
     });
-    return `${this.Vecteur.ComputedDesc} ${effectsDesc.join(
-      "La cible "
+
+    return `${this.Vecteur.Regle}. ${
+      this.Vecteur.Cible
+    } subit/reçoit ${effectsDesc.join(
+      ` ${this.Vecteur.Cible} subit/reçoit `
     )} ${extensionsDesc.join(" ")}`;
   }
 }
@@ -121,28 +111,78 @@ export type AptitudeType = {
   DescriptionDetails: string;
 };
 
+abstract class ConstituantAptitude {
+  /**
+   * Regles concises servant de base pour generer les description. La chaine doit contenir %M% pour inserer un multiplicateur si besoin.
+   */
+  Regle: string;
+  Multiplicateur: Multiplicateur;
+
+  constructor(regle: string, multiplicateur: Multiplicateur) {
+    this.Regle = regle;
+    this.Multiplicateur = multiplicateur;
+  }
+
+  get Description() {
+    if (this.Multiplicateur == Multiplicateur.NON_CUMMULABLE) {
+      return `${this.Regle}`;
+    }
+    return `${this.Regle.replace("%M%", this.Multiplicateur.toString())}`;
+  }
+
+  get IsCummulable() {
+    return this.Multiplicateur !== Multiplicateur.NON_CUMMULABLE;
+  }
+}
+
 //TODO : Passer sur une classe pour generer la description niveau vecteur. Difficultée adaptable
-export type Vecteur = {
+export class Vecteur extends ConstituantAptitude {
   Nom: VecteurName;
-  Description: string;
-  Difficulte: string;
-  ComputedDesc: string;
   TypesCompatibilities: AptitudeTypeName[];
-};
+  Cible: Cible;
+
+  constructor(
+    nom: VecteurName,
+    regle: string,
+    cible: Cible,
+    multiplicateur: Multiplicateur,
+    typesCompatibilities: AptitudeTypeName[]
+  ) {
+    super(regle, multiplicateur);
+    this.Nom = nom;
+    this.Cible = cible;
+    this.TypesCompatibilities = typesCompatibilities;
+  }
+}
 
 //TODO : Passer sur une classe et ajouter les getter : printEffectsWithRank
 //TODO : Passer sur une classe et creer la classe/type difficultée : printEffectsWithRank
-export type Effet = {
+export class Effet extends ConstituantAptitude {
   Nom: EffetName;
-  Description: string;
-  ComputedDesc: string;
-  IsCummulable: boolean;
   StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
-};
+  constructor(
+    nom: EffetName,
+    regle: string,
+    multiplicateur: Multiplicateur,
+    stabiliteParTypeAptitude: Map<AptitudeTypeName, number>
+  ) {
+    super(regle, multiplicateur);
+    this.Nom = nom;
+    this.StabiliteParTypeAptitude = stabiliteParTypeAptitude;
+  }
+}
 
-export type ExtensionEffet = {
+export class ExtensionEffet extends ConstituantAptitude {
   Nom: ExtensionEffetName;
-  Description: string;
-  IsCummulable: boolean;
   StabiliteParTypeAptitude: Map<AptitudeTypeName, number>;
-};
+  constructor(
+    nom: ExtensionEffetName,
+    regle: string,
+    multiplicateur: Multiplicateur,
+    stabiliteParTypeAptitude: Map<AptitudeTypeName, number>
+  ) {
+    super(regle, multiplicateur);
+    this.Nom = nom;
+    this.StabiliteParTypeAptitude = stabiliteParTypeAptitude;
+  }
+}
