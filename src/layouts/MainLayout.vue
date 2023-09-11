@@ -14,9 +14,10 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title class="text-uppercase" style="max-width: 600px"
+        <q-toolbar-title class="text-uppercase" shrink
           >Namtar rules</q-toolbar-title
         >
+        <p class="no-margin text-right">v{{ version }}</p>
         <q-space></q-space>
       </q-toolbar>
     </q-header>
@@ -137,13 +138,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import packageInfo from "../../package.json";
 
 export default defineComponent({
   name: "MainLayout",
   data() {
     return {
       leftDrawerOpen: false,
-      text: "",
+      version: packageInfo.version,
     };
   },
 
