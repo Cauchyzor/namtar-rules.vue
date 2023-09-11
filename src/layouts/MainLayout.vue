@@ -14,10 +14,10 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title class="text-uppercase" style="max-width: 400px"
+        <q-toolbar-title class="text-uppercase" shrink
           >Namtar rules</q-toolbar-title
         >
-        <p class="no-margin text-right">{{ version }}</p>
+        <p class="no-margin text-right">v{{ version }}</p>
         <q-space></q-space>
       </q-toolbar>
     </q-header>
