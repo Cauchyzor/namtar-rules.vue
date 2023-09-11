@@ -5,11 +5,13 @@
     <h5 class="text-center">Caracteristiques</h5>
     <div class="text-center">
       <p>
-        Un personnage possède 14 points répartis dans 5 caracteristiques, au
-        maximum 5 et minimum 2.
-      </p>
-      <p>
-        3 représente la norme, 2 un retard notable, 4 un talent remarquable.
+        Un personnage possède
+        <strong
+          >14 points répartis dans 5 caracteristiques, au maximum 5 et minimum
+          2</strong
+        >. Un humanoïde civilisé possède habituellement des
+        caractéristiquescaractérisée entre 4 et 2 (4 représente un talent
+        certain, 2 un retard notable).
       </p>
     </div>
 
