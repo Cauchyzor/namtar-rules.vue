@@ -80,15 +80,15 @@
           </q-item>
 
           <q-expansion-item label="Aptitudes" :content-inset-level="1">
-            <q-item clickable to="/apt-create" exact>
+            <q-item clickable to="/apt/create" exact>
               <q-item-section>
                 <q-item-label>Création d'aptitude</q-item-label>
               </q-item-section>
             </q-item>
 
-            <q-item clickable to="/apt-mantra" exact>
+            <q-item clickable to="/apt/list" exact>
               <q-item-section>
-                <q-item-label>Catalogue des mantras</q-item-label>
+                <q-item-label>Database des Aptitudes</q-item-label>
               </q-item-section>
             </q-item>
           </q-expansion-item>
