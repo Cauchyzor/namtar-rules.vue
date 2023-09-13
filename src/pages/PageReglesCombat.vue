@@ -21,7 +21,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Charger un adversaire</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >Se déplacer et attaquer avec la force de la course. Un test
                 d'athletisme opposé a la cible est necessaire pour rattraper une
                 cible qui décide fuir au même tour</q-item-label
@@ -35,7 +35,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Bousculer / Empoigner </q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >Vous tentez d'entraver un adversaire, ou de le mettre à terre.
                 Vous devez réussir un test en opposition avec votre adversaire.
                 La compétence utilisée dépendra de la manière dont l'action est
@@ -53,7 +53,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Se précipiter</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >Effectuer un déplacement jusqu'a deux niveau de porté en ligne
                 droite</q-item-label
               >
@@ -65,7 +65,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Se cacher</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >Quand vous choisissez l&#39;action se cacher, vous devez faire
                 un test d&#39;agilité (Discrétion) de DD égale à la sommes des
                 scores de vigilance des adversaires à proximité.</q-item-label
@@ -79,7 +79,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Fouille approfondie</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >Fouiller jusqu'a un niveau de porté ou dans son
                 sac</q-item-label
               >
@@ -92,7 +92,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Stabiliser</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >Effectuer les premiers soins a une creature à
                 terre</q-item-label
               >
@@ -105,7 +105,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Utiliser une compétence</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >La plupart des actions qui requirent une concentration et un
                 savoir faire prennent l'intégralité du tour pour être résolue,
                 parfois plus, a la discretion du MJ. Elle font également l'objet
@@ -120,7 +120,7 @@
           <q-item>
             <q-item-section>
               <q-item-label header>Autre chose ?</q-item-label>
-              <q-item-label caption class="text-grey"
+              <q-item-label caption
                 >La seule limite au jeu est votre imagination. Les précédentes
                 actions résument les principales possibilités qui s&#39;offrent
                 à votre héros lors d&#39;une scène de combat. Mais rien ne vous
@@ -144,7 +144,7 @@
                 <q-item-label header>
                   Se déplacer d'un niveau de porter/ Se relever</q-item-label
                 >
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Parcourir l'équivalent d'un niveau de porté en ligne droite.
                   Se relever quand on a été mis terre</q-item-label
                 >
@@ -156,7 +156,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Attaquer</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Effectuer un jet d'attaque avec l'arme en main.</q-item-label
                 >
               </q-item-section>
@@ -167,7 +167,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Recharger un equipement</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Utiliser une cellule <strong>à portée de main</strong> pour
                   recharger l'arme en main.</q-item-label
                 >
@@ -181,7 +181,7 @@
                 <q-item-label header
                   >Utiliser un objet à porté de main</q-item-label
                 >
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Utiliser un consomable à usage rapide, actionner un serrure
                   électronique...</q-item-label
                 >
@@ -193,7 +193,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Fouiller a son emplacement</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Jeter un coup d'oeil rapide autour de vous, ou récuérer un
                   objet dans une saccoche ou a la ceinture.</q-item-label
                 >
@@ -205,7 +205,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Utiliser une aptitude</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Le descriptif de l'aptitude indique si son lancement
                   nécessite d&#39;utiliser une action, ou doit être préparé
                   pendant plusieurs minutes ou heures. Leurs effets sont indiqué
@@ -222,7 +222,7 @@
                 <q-item-label header
                   >Se mettre a couvert / Se mettre en joue</q-item-label
                 >
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Sortir de sa couverture pour permettre une attaque
                   d'opportunité, ou au contraire se mettre à couvert pour eviter
                   de provoquer des attaques à distance. La qualitée de la
@@ -237,7 +237,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Se désengager</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Se déplacer sans provoquer d'attaques d'opportunités au corps
                   à corps par les ennemis engagés avec vous.
                 </q-item-label>
@@ -250,7 +250,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Esquiver</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Quand vous choisissez l&#39;action esquiver, votre unique
                   objectif est d&#39;éviter les attaques. Jusqu&#39;au début de
                   votre tour suivant, vous
@@ -269,15 +269,10 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Se tenir prêt</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Vous n'effectuez pas d'action à votre tour de jeux. Vous
                   bénificiez d'une réaction supplémentaire. Elle s'estompe de la
                   même manière que votre réaction par défaut.
-                  <strong
-                    >augmentez de 1 votre score de
-                    {{ ATTRIBUTS.REFLEXES }}</strong
-                  >. Vous perdez les bénéfices de cette action si vous êtes
-                  immobilisé, empoigné, neutralisé ou inconscient.
                 </q-item-label>
               </q-item-section>
               <q-item-section side top>
@@ -289,7 +284,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Attaque d'opportunité</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Attaquer un adversaire qui sort d'une couverture, se déplace,
                   ou est à découvert dans le cas d'une attaque a
                   distance.</q-item-label
@@ -302,7 +297,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label header>Changer d'action</q-item-label>
-                <q-item-label caption class="text-grey"
+                <q-item-label caption
                   >Dans les cas ou un béligerant effectue un mauvais jet
                   d'initiative, il peut se retrouver dans une situation où il
                   prefère s'interomptre : il n'effectue pas l'action qu'il avait
