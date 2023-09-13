@@ -42,7 +42,7 @@ export class ArmesService {
       Special: [
         "L'utilisateur subit 1 blessure par menaces net sur son jet d'attaque.",
       ],
-      Competence: CompetenceName.PUGILAT,
+      Competence: CompetenceName.CORPS_A_CORPS,
       Description: "Aucun",
       Encombrement: 0,
       Rarete: 0,
@@ -116,7 +116,7 @@ export class ArmesService {
       Nom: "Gants renforcés",
       Degats: "2 point de dommage par triomphe + 1 point de dommage par succès",
       Special: ["Aucun"],
-      Competence: CompetenceName.PUGILAT,
+      Competence: CompetenceName.CORPS_A_CORPS,
       Description:
         "Equipement des pugilites, ils permettent de ne pas s'abimer les mains, et d'infliger de sevères contusions.",
       Encombrement: 5,

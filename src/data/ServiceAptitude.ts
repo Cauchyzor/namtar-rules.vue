@@ -77,7 +77,6 @@ export enum ExtensionEffetName {
   INCENTATION_RAPIDE = "Incantation rapide",
   INGREDIENT = "Ingredient",
   MAITRISE_CORPS_A_CORPS = "Maitrise du corps à corps",
-  MAITRISE_PUGILAT = "Maitrise de la pugilat",
   UTILISATEUR_MAUDIT = "Utilisateur maudit",
   UTILISATEUR_GALVANISE = "Utilisateur galvanisé",
   ZONE = "Zone d'effet",
@@ -198,7 +197,7 @@ export class ServiceAptitude {
     ),
     new Vecteur(
       VecteurName.FRAPPE,
-      `Vous effectuez une attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages net plutôt que par les succès. Les dégats de l'arme utilisée sont calculés normalement.`,
+      `Vous effectuez une attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages net plutôt que par les succès. Les dégats de l'arme utilisée sont calculés normalement.`,
       Cible.UNIQUE,
       Multiplicateur.NON_CUMMULABLE,
       [
@@ -690,12 +689,6 @@ export class ServiceAptitude {
         [AptitudeTypeName.TECHNIQUE, 1],
         [AptitudeTypeName.RIPOSTE, 1],
       ])
-    ),
-    new ExtensionEffet(
-      ExtensionEffetName.MAITRISE_PUGILAT,
-      `Le rang de maîtrise dans la compétence ${CompetenceName.PUGILAT} doit être supérieur ou égal au rang de cette extension (%M%).`,
-      Multiplicateur.UN,
-      new Map([[AptitudeTypeName.TECHNIQUE, 1]])
     ),
     new ExtensionEffet(
       ExtensionEffetName.FEINTE,

@@ -11,8 +11,8 @@ export enum CompetenceName {
   ARME_A_DISTANCE = "Arme à distance",
   ATHLETISME = "Athlétisme",
   CHARME = "Charme",
-  CONNAISSANCE_CULTES = "Connaissance - Cultes",
-  CONNAISSANCE_HISTOIRE = "Connaissance - Histoire",
+  MYTHOLOGIE = "Mythologie",
+  HISTOIRE = "Histoire",
   COORDINATION = "Coordination",
   CORPS_A_CORPS = "Corps à corps",
   DISCRETION = "Discrétion",
@@ -24,7 +24,6 @@ export enum CompetenceName {
   NEGOCIATION = "Négociation",
   PERSPICACITE = "Prespicacité",
   PILOTAGE = "Pilotage",
-  PUGILAT = "Pugilat",
   SURVIE = "Survie",
   TROMPERIE = "Tromperie",
   VIGILANCE = "Vigilance",
@@ -59,23 +58,18 @@ export class CompetenceService {
       ShortDescription: "S'approcher sans attirer l'attention.",
     },
     {
-      Nom: CompetenceName.PUGILAT,
-      BaseCaracteristique: CaracteritiqueName.VIGUEUR,
-      ShortDescription: "Attaquer a main nue, lutter contre un adversaire.",
-    },
-    {
       Nom: CompetenceName.PILOTAGE,
       BaseCaracteristique: CaracteritiqueName.ADRESSE,
       ShortDescription: "Manoeuvrer un vehicule terrestre ou aerospacial.",
     },
     {
-      Nom: CompetenceName.CONNAISSANCE_HISTOIRE,
+      Nom: CompetenceName.HISTOIRE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
         "Réagir et argumenter sur un fait lié à l'Histoire de la galaxie.",
     },
     {
-      Nom: CompetenceName.CONNAISSANCE_CULTES,
+      Nom: CompetenceName.MYTHOLOGIE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
         "Réagir et argumenter sur un fait lié à un culte, une religions ou une croyance.",
