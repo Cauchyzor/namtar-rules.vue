@@ -2,20 +2,29 @@
   <q-page padding>
     <h4 class="text-center">Gain de niveau</h4>
 
-    <h5>Progressions Classique</h5>
-    <p>Lors de vos gains de niveaux, vous avec deux possibilitée :</p>
+    <p>Pour chaque niveau gagné :</p>
     <ul>
       <li>
-        Augmenter le rang de maitrise d'une compétence. L'expertise est
-        débloquée à partir du niveau 5
+        Vous augmentez le rang de maitrise d'une compétence. Vous ne pouvez
+        atteindre le rang 2 dans une compétence
+        <strong>qu'a partir du niveau 3</strong>. Le niveau 3 dans une
+        compétence ne peut être pris <strong>qu'a partir du niveau 6</strong>.
       </li>
-      <li>Ajouter un emplacement de capacité</li>
+      <li>Choisir une nouvelle aptitude parmis celle disponible</li>
+      <li>Mettre à jour votre nombre de point de vie</li>
+      <li>Mettre à jour votre seuil maximum de stress</li>
     </ul>
     <p>
       Le niveau 9 est le niveau maximum que peuvent atteindre les aventuriers.
       Certaines créatures ou adversaires peuvent aller au delà de cette limite.
     </p>
 
+    <h5>Progressions Classique</h5>
+    <p>
+      Après avoir acomplit un acte important dans son intégralité et que les
+      personnages ont la possibilité de prendre du repos, ils gagnent tous un
+      niveau.
+    </p>
     <h5>Progression Narative</h5>
 
     <p>
@@ -24,33 +33,17 @@
       choisi par les joueurs de manière indirecte.
     </p>
     <p>
-      Les points d'experiences ne sont gagnés que lorsque les joueurs font des
-      tests de compétences et des jets d'attaques. Par exemple, si Obi-wan fait
-      un test de Charisme (Charme) face à un adversaire, il incrémente un
-      compteur qui au bout d'un nombre déterminé, incrémente le rang dans la
-      compétence. C'est au MJ de déterminer à l'avance si la progression sera
-      rapide (1 ou 2 tests pour les compétences les plus rarement utilisées, 5
-      pour les compétences de combat) ou plus lente.
+      Par exemple, si Obi-wan fait un test de Charisme (Charme) face à un
+      adversaire, il incrémente un compteur qui au bout d'un nombre déterminé,
+      incrémente le rang dans la compétence. C'est au MJ de déterminer à
+      l'avance si la progression sera rapide (1 ou 2 tests pour les compétences
+      les plus rarement utilisées, 5 pour les compétences de combat) ou plus
+      lente.
     </p>
     <p>
-      Les capacités sont gagnées à chaque fois qu'une créature puissante est
-      mise à terre, ou lors d'événements particuliers. Par exemple, les
-      aventuriers trouvent une source de pouvoir au fond d'un ancien temple
-      abandonné, et décident de l'étudier. Si leurs tests réussissent, ils
-      gagnent tous une capacité parmi un choix réduit ayant un rapport avec la
-      situation et l'histoire.
+      Le passage au rang de maitrise d'une compétence augmente le niveau du
+      personnage de 1
     </p>
-    <p>Dans les deux cas:</p>
-    <ul>
-      <li>
-        le passage au rang de maitrise d'une compétence augmente le niveau du
-        personnage de 1
-      </li>
-      <li>
-        le gain d'un nouvel emplacement de capacité augmente le niveau du
-        personnage de 1
-      </li>
-    </ul>
   </q-page>
 </template>
 <script lang="ts">

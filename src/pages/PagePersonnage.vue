@@ -2,17 +2,14 @@
   <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
   <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
   <q-page padding>
-    <h4>Caracteristiques innées</h4>
-    <p>
-      Certains aspects du personnage comme son espèce son physique sont
-      déterminé à la création, et ne pourront plus être modifié par la suite.
-      Sauf dans des conditions exceptionnellement autorisées par le MJ.
-    </p>
     <h5 class="text-center">Caracteristiques</h5>
     <div class="text-center">
       <p>
         Un personnage possède 14 points répartis dans 5 caracteristiques, au
-        maximum 5 et minimum 1.
+        maximum 5 et minimum 2.
+      </p>
+      <p>
+        3 représente la norme, 2 un retard notable, 4 un talent remarquable.
       </p>
     </div>
 
@@ -30,10 +27,7 @@
       <p>
         Si le personnage n'est pas humain, son espèce est caractérisée par un
         ensemble d'ethnotraits. Certains imposent de commencer l'aventure avec
-        moins de points de caractéristique ou d'aptitude. Les ethnotraits ont
-        chacun un score de cohérence. Un personnage peut commencer une aventure
-        avec autant d'ethnotrait qu'il le souhaite, mais sa valeur de cohérence
-        au total doit être égale a 0.
+        moins de points de caractéristique ou d'aptitude.
       </p>
       <q-btn
         to="/ethnotrait"
@@ -43,21 +37,16 @@
       />
     </div>
 
-    <h4>Point d'experience : le savoir acquis</h4>
-    <p>
-      Un personnage commence l'aventure avec un ensemble de 8 points
-      d'expérience. À chaque gain de niveau, il en récupère 3 supplémentaire.
-      Ces points d'expérience permettent de progresser dans le rang des
-      compétences.
-    </p>
     <h5 class="text-center">Compétences</h5>
     <div class="text-center">
       <p>
-        Elles traduisent un savoir-faire dans une discipline générique. Plus
-        cette compétence possède un rang élevé, plus les chances de réussir sont
-        élevées. Augmenter son rang dans une compétence coûte autant de points
-        d'expérience que le niveau du rang voulu. (exemple : passer de rang 2 à
-        3 coute 3 points d'expériences)
+        Elles traduisent un savoir-faire dans une discipline
+        <strong>sur une echelle de 0 à 3</strong>. Plus cette compétence possède
+        un rang élevé, plus les chances de réussir sont élevées.
+        <strong
+          >Un personnage commence l'aventure avec 3 points qu'il peut répartir
+          dans trois compétences différentes.</strong
+        >
       </p>
     </div>
     <div class="row q-col-gutter-sm justify-center items-stretch">
@@ -76,14 +65,14 @@
     <h5 class="text-center">Aptitudes</h5>
     <div class="text-center">
       <p>
-        Les aptitudes sont des talents que possède l'individu. Cela peut aussi
-        bien faire référence à des techniques mise au point par l'individu qu'a
-        manifestation du fluide enseignées par d'autres. Chaque emplacement
-        d'aptitude coute 2 point d'experience.
+        Pour chaque point investi dans les compétences, le personnage bénificie
+        d'une <strong>aptitude</strong>. Elle represente aussi bien des don ou
+        des capacitées en liens avec leurs compétences que des savoirs faire
+        paranormaux liée à l'utilisation du fluide.
       </p>
     </div>
 
-    <div class="row justify-center">
+    <!-- <div class="row justify-center">
       <q-btn
         class="q-ma-sm"
         to="/apt/create"
@@ -91,7 +80,7 @@
         outline
         color="primary"
       />
-    </div>
+    </div> -->
 
     <div class="row justify-center q-col-gutter-md">
       <div
