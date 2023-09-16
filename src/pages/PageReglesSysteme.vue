@@ -110,8 +110,8 @@
           <p>Un pool de d6 avec autant de dé que votre valeur de :</p>
           <p><strong>Caractéristique + Compétence</strong></p>
           <p>
-            Le choix de la caractéristique et de la compétences sont décidé par
-            le MJ
+            C'est au MJ de déterminer quel est la caractéristique et la
+            compétence les plus appropriés pour le tests.
           </p>
         </q-card-section>
       </q-card>
