@@ -223,6 +223,11 @@
             v-model="aptName"
             label="Nom de l'aptitude"
           ></q-input>
+          <q-input
+            outlined
+            v-model="aptDesc"
+            label="Desciption libre des effets..."
+          ></q-input>
         </div>
         <q-stepper-navigation>
           <q-btn
@@ -248,7 +253,7 @@
             {{ createdAptitude?.Nom }}
           </div>
           <div class="text-caption q-mt-sm q-mb-xs">
-            {{ createdAptitude?.UsageDescription }}
+            {{ createdAptitude?.Description }}
           </div>
 
           <q-card-section horizontal class="bg-accent">
@@ -353,6 +358,7 @@ export default defineComponent({
     createdAptitude(): Aptitude {
       return new Aptitude(
         this.aptName,
+        this.aptDesc,
         this.SelectedAptTypeName,
         this.SelectedAptVecteur.Nom,
         this.SelectedAptEffets,

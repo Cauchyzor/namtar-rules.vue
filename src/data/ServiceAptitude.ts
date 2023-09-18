@@ -349,7 +349,7 @@ export class ServiceAptitude {
   private static EffectsList: Array<Effet> = [
     new Effet(
       EffetName.ATOUT,
-      "%M% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      "La cible gagne %M% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -360,7 +360,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.BOUCLIER,
-      "%M% point(s) au score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      "La cible gagne %M% point(s) au score de défense. L'effet s'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.BENEDICTION, -6],
@@ -371,7 +371,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.CHALEUR,
-      "%M% blessures par triomphe, par succès et par avantage net sur le score de jet.",
+      "La cible pert %M% PV par triomphe, par succès et par avantage net sur le score de jet.",
       Multiplicateur.DEUX,
       new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
@@ -383,7 +383,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.DEBILITANT,
-      "la perte de sa prochaine reaction. Si vous avez plus de succès net que la valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
+      "La cible pert sa prochaine reaction. Si vous avez plus de succès net que la valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.ENVOUTEMENT, -4],
@@ -395,7 +395,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.DRAIN_FLUIDE,
-      "une perte de %M% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
+      "La cible perd %M% point(s) de stress par succès et triomphe net sur le jet. Vous regagnez autant de point de stress.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.ENVOUTEMENT, -1],
@@ -407,7 +407,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.ENTRAVE,
-      "une entrave et ne peut plus se déplacer. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
+      "La cible est entravée et ne peut plus se déplacer. Si le total de succès net est supérieur à sa valeur de vigueur, elle est immobilisée.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -419,7 +419,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.FORCE,
-      "%M% blessure(s) par succes net et le double par triomphe net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
+      "La cible pert %M% PV par succes net et le double par triomphe net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -429,7 +429,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.TELEPATHE,
-      "peut/peuvent communiquer avec vous brièvement la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
+      "Vous pouvez communiquer brievement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.CYTOMANCIE, -2],
@@ -441,7 +441,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.OBSTRUCTION,
-      "%M% menace(s) pour chaque niveau de résultat (1 succès, 2, 3, 5, 8 ...).",
+      "La cible subit %M% menace(s) pour chaque niveau de résultat (1 succès, 2, 3, 5, 8 ...).",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -454,7 +454,7 @@ export class ServiceAptitude {
     //TODO Faire un effets qui génère des avantages
     new Effet(
       EffetName.ILLUSION,
-      "une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplementaire.",
+      "La cible subit une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplementaire.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -464,7 +464,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.SOIN_DE_STRESS,
-      "regagne %M% point(s) de stress par triomphe et succès net sur le jet.",
+      "La cible regagne %M% point(s) de stress par triomphe et succès net sur le jet.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -475,7 +475,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.SOIN,
-      "une dépense immediate de jusqu'à %M% point de résilience qu'elle possède pour effectuez un soin. Chaque triomphe soigne d'un point de stress.",
+      "La cible dépense immediate de jusqu'à %M% point de résilience qu'elle possède pour effectuez un soin. Chaque triomphe soigne d'un point de stress.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.BENEDICTION, -3],
@@ -486,7 +486,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.VAMPIRISME,
-      "%M% blessure(s) par triomphe et succès net sur le jet. Vous regagnez autant de PV.",
+      "La cible perd %M% PV par triomphe et succès net sur le jet. Vous regagnez autant de PV.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.ENVOUTEMENT, -10],
@@ -497,7 +497,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.LEVITATION,
-      "la capacité de se déplacer par lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes. Gabarit maximum : %M%.",
+      "Vous gagnez la capacité de vous déplacer par lévitation pendant un bref instant. Chaque succès permet de prolonger l'effet pendant quelques secondes. Gabarit maximum : %M%.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.EVOCATION, -6],
@@ -507,31 +507,31 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.MANTRA,
-      "Voir la description",
+      "Les effets des mantra sont intégralement déterminés par description libre.",
       Multiplicateur.NON_CUMMULABLE,
       new Map()
     ),
     new Effet(
       EffetName.PUISSANT,
-      "%M% blessure(s) supplémentaire(s) par succès sur le jet d'attaque réussit contre elle.",
+      "Vous infligez %M% dégat supplémentaire par succès sur le jet d'attaque réussit contre elle.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([[AptitudeTypeName.TECHNIQUE, -2]])
     ),
     new Effet(
       EffetName.RENVERSEMENT,
-      `un renversemet si la somme des succès est superieur son score de ${CaracteritiqueName.VIGUEUR}`,
+      `La cibles est mise a terre si la somme des succès est superieur son score de ${CaracteritiqueName.VIGUEUR}`,
       Multiplicateur.NON_CUMMULABLE,
       new Map([[AptitudeTypeName.TECHNIQUE, -1]])
     ),
     new Effet(
       EffetName.ATTAQUE_DOUBLE,
-      "la capacitée d'attaquer deux fois le même tour si elle choisi d'attaquer.",
+      "Vous pouvez immédiatement attaquer une seconde fois si vous avez attaqué a ce tour.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([[AptitudeTypeName.TECHNIQUE, -4]])
     ),
     new Effet(
       EffetName.BRISE_POSTURE,
-      "la perte de sa posture.",
+      "La cible perte sa posture.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.TECHNIQUE, -2],
@@ -713,29 +713,8 @@ export class ServiceAptitude {
 
   private static AptitudeList: Array<Aptitude> = [
     new Aptitude(
-      "Eclat de feu",
-      AptitudeTypeName.EVOCATION,
-      VecteurName.PROJECTILE,
-      new Map([[EffetName.CHALEUR, 1]]),
-      new Map()
-    ),
-    new Aptitude(
-      "Touché guerisseur",
-      AptitudeTypeName.BENEDICTION,
-      VecteurName.CARESSE,
-      new Map([[EffetName.SOIN, 1]]),
-      new Map()
-    ),
-    new Aptitude(
-      "Nova mortelle",
-      AptitudeTypeName.NECROMANCIE,
-      VecteurName.ONDE,
-      new Map([[EffetName.FORCE, 2]]),
-      new Map([[ExtensionEffetName.ZONE, 1]])
-    ),
-    new Aptitude(
       "Le Berserk",
-      // "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
+      "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
       AptitudeTypeName.MANTRA,
       VecteurName.MANTRA,
       new Map(),
@@ -743,7 +722,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "L'Échophage",
-      // `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
+      `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
       AptitudeTypeName.MANTRA,
       VecteurName.MANTRA,
       new Map(),
@@ -751,22 +730,15 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Le Distant",
-      // "Vous avez 1 point de réflexe supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
+      "Vous avez 1 point de réflexe supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
       AptitudeTypeName.MANTRA,
       VecteurName.MANTRA,
       new Map(),
       new Map()
     ),
     new Aptitude(
-      "Morsure de Namtar",
-      AptitudeTypeName.CYTOMANCIE,
-      VecteurName.FRAPPE,
-      new Map([[EffetName.DRAIN_FLUIDE, 1]]),
-      new Map([[ExtensionEffetName.DIFFICILE, 1]])
-    ),
-    new Aptitude(
       "Le Fluidophobique",
-      // "Vous gagnez un avantage chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
+      "Vous gagnez un avantage chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
       AptitudeTypeName.MANTRA,
       VecteurName.MANTRA,
       new Map(),
@@ -774,7 +746,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "L'Honorable Dueliste",
-      // "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux désavantages si le duel est rompu.",
+      "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux désavantages si le duel est rompu.",
       AptitudeTypeName.MANTRA,
       VecteurName.MANTRA,
       new Map(),

@@ -12,6 +12,7 @@ import {
 
 export class Aptitude {
   Nom: string;
+  Description: string;
   Type: AptitudeType;
   Vecteur: Vecteur;
   Effets: Map<EffetName, number>;
@@ -19,12 +20,14 @@ export class Aptitude {
 
   constructor(
     nom: string,
+    description: string,
     typeName: AptitudeTypeName,
     vecteurName: VecteurName,
     effets: Map<EffetName, number>,
     extentions: Map<ExtensionEffetName, number>
   ) {
     this.Nom = nom;
+    this.Description = description;
     this.Type = ServiceAptitude.findAptTypeByName(typeName);
     this.Vecteur = ServiceAptitude.findAptVecteurByName(vecteurName);
     this.Effets = effets;
@@ -77,31 +80,6 @@ export class Aptitude {
       case AptitudeTypeName.POSTURE:
         return "Aucun";
     }
-  }
-
-  /**
-   * Retourne une description complete de l'aptitude a partir du vecteurs des extension et des effets, ainsi que leurs rangs.
-   */
-  //TODO : Revoir le model plutot que l'utilisation de regex
-  get UsageDescription() {
-    const effectsDesc: string[] = [];
-    const extensionsDesc: string[] = [];
-    this.Effets.forEach((_, effet) => {
-      const computedDescription =
-        ServiceAptitude.findEffetByName(effet)?.Description || "";
-      effectsDesc.push(computedDescription);
-    });
-    this.Extensions.forEach((_, extention) => {
-      const computedDescription =
-        ServiceAptitude.findExtensionByName(extention)?.Description || "";
-      extensionsDesc.push(computedDescription);
-    });
-
-    return `${this.Vecteur.Regle} ${
-      this.Vecteur.Cible
-    } subit/reçoit ${effectsDesc.join(
-      ` ${this.Vecteur.Cible} subit/reçoit `
-    )} ${extensionsDesc.join(" ")}`;
   }
 }
 

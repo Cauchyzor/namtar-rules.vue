@@ -3,7 +3,7 @@
     <q-item-section>
       <q-item-label class="text-overline"> {{ Aptitude.Nom }}</q-item-label>
       <q-item-label caption class="ellipsis-3-lines text-grey">{{
-        Aptitude.UsageDescription
+        Aptitude.Description
       }}</q-item-label>
     </q-item-section>
 

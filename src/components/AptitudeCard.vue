@@ -3,7 +3,7 @@
     <q-card-section vertical>
       <div class="text-h5 q-mt-sm q-mb-xs">{{ Aptitude.Nom }}</div>
       <div class="text-caption q-mt-sm q-mb-xs">
-        {{ Aptitude.UsageDescription }}
+        {{ Aptitude.Description }}
       </div>
 
       <q-card-section horizontal class="bg-accent">
