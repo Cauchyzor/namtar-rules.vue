@@ -97,7 +97,7 @@ export class Aptitude {
       extensionsDesc.push(computedDescription);
     });
 
-    return `${this.Vecteur.Regle}. ${
+    return `${this.Vecteur.Regle} ${
       this.Vecteur.Cible
     } subit/reçoit ${effectsDesc.join(
       ` ${this.Vecteur.Cible} subit/reçoit `
