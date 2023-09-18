@@ -1,18 +1,27 @@
 <template>
-  <q-card flat class="bg-accent">
+  <q-card flat bordered class="bg-accent">
     <q-card-section vertical>
-      <div class="text-overline">
-        {{ Aptitude.Type.Nom }}
-      </div>
-      <div class="text-h5 q-mt-sm q-mb-xs">
-        {{ Aptitude.Nom }}
-      </div>
-      <div class="text-overline">
-        {{ Aptitude.Vecteur.Nom }}
-      </div>
-      <div class="ellipsis-3-lines text-caption text-grey">
+      <div class="text-h5 q-mt-sm q-mb-xs">{{ Aptitude.Nom }}</div>
+      <div class="text-caption q-mt-sm q-mb-xs">
         {{ Aptitude.Description }}
       </div>
+
+      <q-card-section horizontal class="bg-accent">
+        <q-card-section class="col-6" vertical>
+          <div class="text-caption text-grey">
+            Type : <strong>{{ Aptitude.Type.Nom }}</strong>
+          </div>
+          <div class="text-caption text-grey">
+            Vecteur : <strong>{{ Aptitude.Vecteur.Nom }}</strong>
+          </div>
+        </q-card-section>
+        <q-separator vertical inset></q-separator>
+        <q-card-section class="col-6" vertical>
+          <div class="text-caption text-grey">
+            Cout : <strong>{{ Aptitude.computeStabilityScore() }}</strong>
+          </div>
+        </q-card-section>
+      </q-card-section>
     </q-card-section>
   </q-card>
 </template>
@@ -20,7 +29,6 @@
 import { defineComponent, PropType } from "vue";
 
 import { Aptitude } from "src/model/Aptitude";
-import { AptitudeService } from "src/data/ServiceAptitude";
 
 export default defineComponent({
   name: "AptitudeCard",
@@ -31,15 +39,6 @@ export default defineComponent({
     return {
       openDetail: false,
     };
-  },
-  methods: {
-    computeAptitudeCost() {
-      return AptitudeService.computeStabilityScore(
-        this.Aptitude.Type.Nom,
-        this.Aptitude.Effets,
-        this.Aptitude.ExtensionsEffet
-      );
-    },
   },
 });
 </script>
