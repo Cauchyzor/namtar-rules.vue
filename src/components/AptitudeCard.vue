@@ -11,16 +11,8 @@
           <div class="text-caption text-grey">
             Type : <strong>{{ Aptitude.Type.Nom }}</strong>
           </div>
-          <div class="text-caption text-grey">
-            Vecteur : <strong>{{ Aptitude.Vecteur.Nom }}</strong>
-          </div>
         </q-card-section>
         <q-separator vertical inset></q-separator>
-        <q-card-section class="col-6" vertical>
-          <div class="text-caption text-grey">
-            Cout : <strong>{{ Aptitude.computeStabilityScore() }}</strong>
-          </div>
-        </q-card-section>
       </q-card-section>
     </q-card-section>
   </q-card>
