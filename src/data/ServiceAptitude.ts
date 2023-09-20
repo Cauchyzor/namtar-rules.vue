@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
   Aptitude,
-  AptitudeCreated,
+  AptitudeFixed,
   AptitudeType,
   Effet,
   ExtensionEffet,
@@ -706,45 +706,29 @@ export class ServiceAptitude {
   ];
 
   private static AptitudeList: Array<Aptitude> = [
-    new AptitudeCreated(
-      "Le Berserk",
-      "Vous devenez colérique et inconscient en situation de conflit. Avant de lancer un jet d'attaque, vous pouvez choisir de « sacrifier » vos dés de défense donnée par votre valeur de réflexes pour les additionner à vos dés sur votre jet d'attaques. Ses dés ne sont plus utilisables pour vous défendre jusqu'au prochain tour.",
-      AptitudeTypeName.MANTRA,
-      VecteurName.MANTRA,
-      new Map(),
-      new Map()
+    new AptitudeFixed(
+      "Frappes sournoises",
+      "Chaque fois que vous frappez un adversaire au corps-à-corps face à laquelle vous avez un avantage, vous infligez 1 point de dégâts supplémentaire par triomphe.",
+      AptitudeTypeName.POSTURE,
+      new Map([
+        [CompetenceName.DISCRETION, 1],
+        [CompetenceName.CORPS_A_CORPS, 1],
+      ])
     ),
-    new AptitudeCreated(
-      "L'Échophage",
-      `Lorsque vous appliquez l'effet ${EffetName.DRAIN_FLUIDE} ou subissez l'effet ${EffetName.SOIN_DE_STRESS}, vous pouvez dépenser immédiatement un point de résilience pour regagner des PV, ou dépenser 1 atout pour regagner un point de résilience. Vous êtes constamment affamé, et ne sembler être rassasié qu'après-avoir volé du fluide auprès d'une source extérieur. Vous vous comportez comme un drogué vis à vis de cette source d'énergie. Chaque jour passé sans consommer du fluide baisse votre santé max de 1 point jusqu'à un minimum de 1. Lorsque vous récurez de l'énergie via le fluide, vous pouvez dépenser un point de résilience, ou dépenser 3 atouts pour regagner un point de résilience.`,
-      AptitudeTypeName.MANTRA,
-      VecteurName.MANTRA,
-      new Map(),
-      new Map()
+    new AptitudeFixed(
+      "Bombe improvisée",
+      `Si vous avez a votre disposition de trois ingredients adéquats (un combustible, une mèche et un contenant), vous pouvez effectuer un test de ${CompetenceName.INGENIERIE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 pour creer une bombe artisanal que vous pouvez utiliser comme arme de jet. La puissance de la bombe est déterminée par le MJ en fonction du combustible et de la réussite de test.`,
+      AptitudeTypeName.EVOCATION,
+      new Map([
+        [CompetenceName.INGENIERIE, 1],
+        [CompetenceName.ARME_A_DISTANCE, 1],
+      ])
     ),
-    new AptitudeCreated(
-      "Le Distant",
-      "Vous avez 1 point de réflexe supplémentaire. Vous n'aimez pas le contact avec les autres, et vous montrez très irascible quand vous estimez des personnes trop proches de vous.",
-      AptitudeTypeName.MANTRA,
-      VecteurName.MANTRA,
-      new Map(),
-      new Map()
-    ),
-    new AptitudeCreated(
-      "Le Fluidophobique",
-      "Vous gagnez un avantage chaque fois que vous effectuez un jet d'attaque ou un jet d'opposition avec une créature utilisant le fluide. Vous ne pouvez pas utiliser d'aptitude autre que des mantras. Vous vous montrez toujours très antipathique envers les utilisateurs du fluide.",
-      AptitudeTypeName.MANTRA,
-      VecteurName.MANTRA,
-      new Map(),
-      new Map()
-    ),
-    new AptitudeCreated(
-      "L'Honorable Dueliste",
-      "Le personnage à un esprit de compétition très marqué. Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi s'il n'a déjà effectuer une attaque contre vous et seulement vous, et n'a subit aucune attaque autre que les vôtres. Vous subissez deux désavantages si le duel est rompu.",
-      AptitudeTypeName.MANTRA,
-      VecteurName.MANTRA,
-      new Map(),
-      new Map()
+    new AptitudeFixed(
+      "Posture du dueliste",
+      "Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi qui à déjà effectuer une attaque contre vous et seulement vous.Si l'adversaire en question subit une attaque d'une autre source que vous, le duel est rompu et vous subissez deux désavantages sur vos jet d'attaque pendant votre tour.",
+      AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
     ),
   ];
 
