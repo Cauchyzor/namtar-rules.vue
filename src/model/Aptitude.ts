@@ -79,6 +79,8 @@ export class Aptitude {
         return "Aucun";
       case AptitudeTypeName.POSTURE:
         return "Aucun";
+      default:
+        return "non définit";
     }
   }
 }
