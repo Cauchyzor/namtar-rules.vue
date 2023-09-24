@@ -311,8 +311,7 @@
       necessitent l&#39;accompagnement d&#39;un medecin. Certaines, plus graves,
       vous demanderont des interventions lourdes et généralement payantes. Vous
       pouvez faire appel a des professionnel pour accélérer les soins, quelque
-      soit le type de blessure. Pour plus d&#39;information, reporter vous à la
-      page <a href="./sante.html">Santé et Guérison</a>
+      soit le type de blessure.
     </p>
     <h5>Mener des recherches</h5>
     <p>
