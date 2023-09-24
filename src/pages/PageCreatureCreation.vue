@@ -156,7 +156,7 @@
       <q-dialog v-model="OpenDialApt">
         <q-card style="width: 600px">
           <q-card-section class="row items-center q-pb-none">
-            <div class="text-overline">Selectionnez une aptitude</div>
+            <div class="text-overline">Sélectionnez une aptitude</div>
             <q-space></q-space>
             <q-btn icon="close" flat round dense v-close-popup></q-btn>
           </q-card-section>

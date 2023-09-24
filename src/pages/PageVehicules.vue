@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
-    <!-- TODO Faire un stepper avec les différents types de vehicule / Montures -->
-    <!-- TODO Faire le lien avec une liste de vehicule monture de la catégorie en bas de chaque step  -->
+    <!-- TODO Faire un stepper avec les différents types de véhicule / Montures -->
+    <!-- TODO Faire le lien avec une liste de véhicule monture de la catégorie en bas de chaque step  -->
     <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
     <h4>Véhicules, Aéronefs et Navettes</h4>
     <p>
@@ -36,7 +36,7 @@
     </p>
     <h5>Aéronef</h5>
     <p>
-      À l&#39;instar des navettes pour le modele spatiale, les aéronefs
+      À l&#39;instar des navettes pour le modèle spatiale, les aéronefs
       regroupent tous les véhicules capables de voler dans l&#39;atmosphère
       d&#39;une planète. Ils sont relativement peu coûteux en comparaison. Mais
       la maturité technologique nécessaire pour en produire les rend souvent

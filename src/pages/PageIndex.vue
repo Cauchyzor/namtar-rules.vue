@@ -7,7 +7,7 @@
             <div class="text-h5 q-mt-sm q-mb-xs text-center">Règles</div>
             <div class="text-caption text-grey">
               L'ensemble des lois de cet univers qui permettent a vos
-              aventuriers de vivre leur périgrinations.
+              aventuriers de vivre leur pérégrinations.
             </div>
             <div class="q-mt-xl row justify-center items-stretch">
               <q-btn
