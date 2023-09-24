@@ -17,7 +17,7 @@
           <strong>action complexe</strong>.
         </p>
 
-        <q-list class="q-my-xl bg-accent" bordered padding>
+        <q-list class="q-my-xl" padding>
           <q-item>
             <q-item-section>
               <q-item-label header>Charger un adversaire</q-item-label>
@@ -137,8 +137,8 @@
           </q-item>
         </q-list>
         <q-separator padding inset></q-separator>
-        <div class="row q-my-xl q-gutter-md">
-          <q-list class="col bg-accent" bordered padding>
+        <div class="row q-my-xl">
+          <q-list class="col-md-6 col-sm-12" padding>
             <q-item>
               <q-item-section>
                 <q-item-label header>
@@ -280,7 +280,7 @@
               </q-item-section>
             </q-item>
           </q-list>
-          <q-list class="col bg-accent" bordered padding>
+          <q-list class="col-md-6 col-sm-12" padding>
             <q-item>
               <q-item-section>
                 <q-item-label header>Attaque d'opportunité</q-item-label>
