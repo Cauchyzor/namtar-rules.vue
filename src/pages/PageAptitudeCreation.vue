@@ -284,7 +284,7 @@ import { defineComponent, ref } from "vue";
 
 import { ServiceAptitude, AptitudeTypeName } from "src/data/ServiceAptitude";
 import {
-  Aptitude,
+  AptitudeCreated,
   AptitudeType,
   Effet,
   ExtensionEffet,
@@ -356,8 +356,8 @@ export default defineComponent({
         this.aptName !== ""
       );
     },
-    createdAptitude(): Aptitude {
-      return new Aptitude(
+    createdAptitude(): AptitudeCreated {
+      return new AptitudeCreated(
         this.aptName,
         this.aptDesc,
         this.SelectedAptTypeName,
