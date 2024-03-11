@@ -93,23 +93,14 @@
           </q-item>
         </q-expansion-item>
 
-        <q-expansion-item
-          label="Aptitudes"
-          icon="settings"
-          :content-inset-level="1"
-        >
-          <q-item clickable to="/apt/create" exact>
-            <q-item-section>
-              <q-item-label>Création d'aptitude</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item clickable to="/apt/list" exact>
-            <q-item-section>
-              <q-item-label>Database des Aptitudes</q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-expansion-item>
+        <q-item clickable to="/apt/list" exact>
+          <q-item-section avatar>
+            <q-icon name="settings" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Aptitudes</q-item-label>
+          </q-item-section>
+        </q-item>
 
         <q-expansion-item icon="explore" label="Lore" :content-inset-level="1">
           <q-item clickable to="/lore" exact>
