@@ -35,7 +35,7 @@
             <div class="q-mt-xl row justify-center items-stretch">
               <q-btn
                 class="text-center"
-                to="/pj"
+                to="/character"
                 label=""
                 size="xl"
                 outline

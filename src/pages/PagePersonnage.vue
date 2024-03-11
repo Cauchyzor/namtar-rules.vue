@@ -1,7 +1,7 @@
 <template>
-  <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
-  <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
   <q-page padding>
+    <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
+    <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
     <h5 class="text-center">Caracteristiques</h5>
     <div class="text-center">
       <p>
@@ -32,7 +32,7 @@
         moins de points de caractéristique ou d'aptitude.
       </p>
       <q-btn
-        to="/ethnotrait"
+        to="/character/ethnotrait"
         label="Voir les ethnotraits"
         outline
         color="primary"
@@ -73,16 +73,6 @@
         paranormaux liée à l'utilisation du fluide.
       </p>
     </div>
-
-    <!-- <div class="row justify-center">
-      <q-btn
-        class="q-ma-sm"
-        to="/apt/create"
-        label="Creer son aptitude"
-        outline
-        color="primary"
-      />
-    </div> -->
 
     <div class="row justify-center q-col-gutter-md">
       <div

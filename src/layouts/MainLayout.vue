@@ -73,35 +73,39 @@
           label="Personnage"
           :content-inset-level="1"
         >
-          <q-item clickable to="/pj" exact>
+          <q-item clickable to="/character/sheet" exact>
             <q-item-section>
               <q-item-label>Fiche personnage</q-item-label>
             </q-item-section>
           </q-item>
 
-          <q-expansion-item label="Aptitudes" :content-inset-level="1">
-            <q-item clickable to="/apt/create" exact>
-              <q-item-section>
-                <q-item-label>Création d'aptitude</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable to="/apt/list" exact>
-              <q-item-section>
-                <q-item-label>Database des Aptitudes</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-expansion-item>
-
-          <q-item clickable to="/ethnotrait" exact>
+          <q-item clickable to="/character/ethnotrait" exact>
             <q-item-section>
               <q-item-label>Ethnotrait</q-item-label>
             </q-item-section>
           </q-item>
 
-          <q-item clickable to="/niveau" exact>
+          <q-item clickable to="/character/niveau" exact>
             <q-item-section>
               <q-item-label>Gain de niveau</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
+
+        <q-expansion-item
+          label="Aptitudes"
+          icon="settings"
+          :content-inset-level="1"
+        >
+          <q-item clickable to="/apt/create" exact>
+            <q-item-section>
+              <q-item-label>Création d'aptitude</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/apt/list" exact>
+            <q-item-section>
+              <q-item-label>Database des Aptitudes</q-item-label>
             </q-item-section>
           </q-item>
         </q-expansion-item>
@@ -113,11 +117,6 @@
             </q-item-section>
           </q-item>
           <q-expansion-item label="Creatures" :content-inset-level="1">
-            <!-- <q-item clickable to="/creature/create" exact>
-              <q-item-section>
-                <q-item-label>Création</q-item-label>
-              </q-item-section>
-            </q-item> -->
             <q-item clickable to="/creature/genotrait" exact>
               <q-item-section>
                 <q-item-label>Génotraits</q-item-label>

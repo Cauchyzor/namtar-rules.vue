@@ -43,14 +43,26 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: "Personnage",
-        path: "/pj",
-        component: () => import("src/pages/PagePersonnage.vue"),
+        path: "/character",
+        children: [
+          {
+            name: "fiche",
+            path: "sheet",
+            component: () => import("src/pages/PagePersonnage.vue"),
+          },
+          {
+            name: "Niveau",
+            path: "niveau",
+            component: () => import("src/pages/PageNiveau.vue"),
+          },
+          {
+            name: "Ethnotrait",
+            path: "ethnotrait",
+            component: () => import("src/pages/PageEthnotraitDatabase.vue"),
+          },
+        ],
       },
-      {
-        name: "Niveau",
-        path: "/niveau",
-        component: () => import("src/pages/PageNiveau.vue"),
-      },
+
       {
         name: "Equipement",
         path: "/equipement",
@@ -86,18 +98,24 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: "Aptitude Creation",
-        path: "/apt/create",
-        component: () => import("src/pages/PageAptitudeCreation.vue"),
-      },
-      {
-        name: "Aptitude Catalogue",
-        path: "/apt/list",
-        component: () => import("src/pages/PageAptitudesDatabase.vue"),
-      },
-      {
-        name: "Ethnotrait",
-        path: "/ethnotrait",
-        component: () => import("src/pages/PageEthnotraitDatabase.vue"),
+        path: "/apt",
+        children: [
+          {
+            name: "default",
+            path: "",
+            component: () => import("src/pages/PageAptitudesDatabase.vue"),
+          },
+          {
+            name: "Aptitude Creation",
+            path: "create",
+            component: () => import("src/pages/PageAptitudeCreation.vue"),
+          },
+          {
+            name: "Aptitude Catalogue",
+            path: "list",
+            component: () => import("src/pages/PageAptitudesDatabase.vue"),
+          },
+        ],
       },
       {
         name: "Lore",
