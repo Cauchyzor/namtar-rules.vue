@@ -79,11 +79,12 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable to="/character/ethnotrait" exact>
+          <!-- TODO : Déclarer des éthnotraits/origine raciales
+            <q-item clickable to="/character/ethnotrait" exact>
             <q-item-section>
               <q-item-label>Ethnotrait</q-item-label>
             </q-item-section>
-          </q-item>
+          </q-item> -->
 
           <q-item clickable to="/character/niveau" exact>
             <q-item-section>
@@ -116,13 +117,15 @@
               <q-item-label>Introduction</q-item-label>
             </q-item-section>
           </q-item>
-          <q-expansion-item label="Creatures" :content-inset-level="1">
+
+          <!-- TODO : Feature : Creatures
+            <q-expansion-item label="Creatures" :content-inset-level="1">
             <q-item clickable to="/creature/genotrait" exact>
               <q-item-section>
                 <q-item-label>Génotraits</q-item-label>
               </q-item-section>
             </q-item>
-          </q-expansion-item>
+          </q-expansion-item> -->
         </q-expansion-item>
       </q-list>
     </q-drawer>
