@@ -43,11 +43,10 @@
     <div class="text-center">
       <p>
         Elles traduisent un savoir-faire dans une discipline
-        <strong>sur une echelle de 0 à 3</strong>. Plus cette compétence possède
+        <strong>sur une echelle de 0 à 2</strong>. Plus cette compétence possède
         un rang élevé, plus les chances de réussir sont élevées.
         <strong
-          >Un personnage commence l'aventure avec 3 points qu'il peut répartir
-          dans trois compétences différentes.</strong
+          >Un personnage commence l'aventure 3 compétences aux rang 1.</strong
         >
       </p>
     </div>
