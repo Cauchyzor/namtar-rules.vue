@@ -63,13 +63,13 @@ export class Creature {
    *
    * @returns point de Résilience max
    */
-  computePoolResilience(): number {
+  computePoolRecuperation(): number {
     return (
       (this.Caracteristiques.get(CaracteritiqueName.VIGUEUR) || 0) +
       Array.from(this.Genotraits.entries())
         .map(
           ([g, rank]) =>
-            (g.Modificateurs.get(AttributsName.RESILIENCE) || 0) * rank
+            (g.Modificateurs.get(AttributsName.RECUPERATION) || 0) * rank
         )
         .reduce((a, b) => a + b, 0) // accumulator
     );

@@ -17,7 +17,7 @@ export enum AttributsName {
   PV = "PV",
   REFLEXES = "REFLEXES",
   STRESS = "STRESS",
-  RESILIENCE = "RESILIENCE",
+  RECUPERATION = "RECUPERATION",
   INITIATIVE = "INITIATIVE",
 }
 
@@ -49,7 +49,7 @@ export class AttributService {
       Icon: mdiLightningBolt,
     },
     {
-      Nom: AttributsName.RESILIENCE,
+      Nom: AttributsName.RECUPERATION,
       Description: "Vous avez 1 point de Résiliance par point de Vigueur",
       Icon: mdiHeartCircleOutline,
     },

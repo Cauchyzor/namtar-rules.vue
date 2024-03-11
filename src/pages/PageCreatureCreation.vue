@@ -51,10 +51,10 @@
             <q-chip
               color="primary"
               text-color="white"
-              :icon="getAttributeIcon(AttributsName.RESILIENCE)"
+              :icon="getAttributeIcon(AttributsName.RECUPERATION)"
               outline
-              >{{ AttributsName.RESILIENCE }} :
-              {{ Creature.computePoolResilience() }}</q-chip
+              >{{ AttributsName.RECUPERATION }} :
+              {{ Creature.computePoolRecuperation() }}</q-chip
             >
             <q-chip
               color="primary"

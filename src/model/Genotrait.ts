@@ -30,7 +30,7 @@ export class GenotraitService {
       Nom: "Systeme Régénératif",
       Description:
         "La creature est capable de se soigner plus facilement. Sa résilience est augmentée",
-      Modificateurs: new Map([[AttributsName.RESILIENCE, +1]]),
+      Modificateurs: new Map([[AttributsName.RECUPERATION, +1]]),
     },
     {
       Nom: "Entitée Onirique",
