@@ -2,6 +2,7 @@
   <q-page padding>
     <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
     <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
+    <!-- TODO : Decrire les attribut comme des "dés" plutot que des points -->
     <h5 class="text-center">Caracteristiques</h5>
     <div class="text-center">
       <p>

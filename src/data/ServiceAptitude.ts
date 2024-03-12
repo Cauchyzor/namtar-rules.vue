@@ -7,6 +7,7 @@ import {
   ExtensionEffet,
   Vecteur,
 } from "src/model/Aptitude";
+import { AttributsName } from "src/model/Attribut";
 import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
@@ -707,10 +708,52 @@ export class ServiceAptitude {
 
   private static AptitudeList: Array<Aptitude> = [
     new AptitudeFixed(
-      "Ruée",
-      "Vous vous déplacez de deux niveau de porté.",
+      "Concentration",
+      `Vous sacrifier autant de dés de ${AttributsName.REFLEXES} afin de l'ajouter a vos jet d'attaques. Lorsque cette posture ce termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
       AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.ARME_A_DISTANCE, 1]])
+    ),
+    new AptitudeFixed(
+      "Ruée",
+      "Vous vous déplacez de deux niveau de porté au lieux d'un seul lors de ce tour.",
+      AptitudeTypeName.TECHNIQUE,
       new Map([[CompetenceName.ATHLETISME, 1]])
+    ),
+    new AptitudeFixed(
+      "Combatant agile",
+      `Vous gagnez 1 dé de ${AttributsName.REFLEXES} par points dans la compétence ${CompetenceName.COORDINATION}`,
+      AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.COORDINATION, 1]])
+    ),
+    new AptitudeFixed(
+      "Feinte",
+      `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES}`,
+      AptitudeTypeName.TECHNIQUE,
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
+    ),
+    new AptitudeFixed(
+      "Couverture improbable",
+      `Au prix de votre réaction et de votre mouvement, vous pouvez realisez un test de ${CompetenceName.DISCRETION} don le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires que ne vous ont pas dans leurs champs de vision. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
+      AptitudeTypeName.TECHNIQUE,
+      new Map([[CompetenceName.DISCRETION, 1]])
+    ),
+    new AptitudeFixed(
+      "\"Comme à l'entrainement'\"",
+      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
+      AptitudeTypeName.TECHNIQUE,
+      new Map([[CompetenceName.PILOTAGE, 1]])
+    ),
+    new AptitudeFixed(
+      "Rigueur scientifique",
+      `Lorsque vous utiliser une ${AptitudeTypeName.EVOCATION}, vous pouvez regagnez la moitié du coût en point de stress si vous echouez votre jet d'attaque.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.HISTOIRE, 1]])
+    ),
+    new AptitudeFixed(
+      "Posture diplomatique",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NEGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.NEGOCIATION, 1]])
     ),
     new AptitudeFixed(
       "Frappes sournoises",
