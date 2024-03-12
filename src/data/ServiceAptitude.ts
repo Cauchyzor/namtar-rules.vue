@@ -707,6 +707,12 @@ export class ServiceAptitude {
 
   private static AptitudeList: Array<Aptitude> = [
     new AptitudeFixed(
+      "Ruée",
+      "Vous vous déplacez de deux niveau de porté.",
+      AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.ATHLETISME, 1]])
+    ),
+    new AptitudeFixed(
       "Frappes sournoises",
       "Chaque fois que vous frappez un adversaire au corps-à-corps face à laquelle vous avez un avantage, vous infligez 1 point de dégâts supplémentaire par triomphe.",
       AptitudeTypeName.POSTURE,
