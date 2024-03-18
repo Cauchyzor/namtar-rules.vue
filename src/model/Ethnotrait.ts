@@ -20,7 +20,8 @@ export class EthnotraitService {
     },
     {
       Nom: "Maladroit",
-      Description: "Vous avez une menace sur tout vos test de coordination.",
+      Description:
+        "Vous avez un désavantage sur tout vos test de coordination.",
       CoherenceGénétiques: -1,
       Modificateurs: new Map([]),
     },

@@ -125,7 +125,7 @@ export class CompetenceService {
     {
       Nom: CompetenceName.INTIMIDATION,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
-      ShortDescription: "Obtenir un service ou un objet par la menace.",
+      ShortDescription: "Obtenir un service ou un objet par la désavantages.",
     },
     {
       Nom: CompetenceName.VIGILANCE,

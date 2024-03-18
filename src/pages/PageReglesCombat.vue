@@ -462,8 +462,8 @@
     <h4 class="text-center">Les états spéciaux</h4>
     <h5>À terre / Renversée</h5>
     <p>
-      La créature subit une menace lors de ses attaques au corps à corps. Les
-      assaillant engagés bénéficient d'un avantage sur tout leurs jets pour
+      La créature subit un désavantage lors de ses attaques au corps à corps.
+      Les assaillant engagés bénéficient d'un avantage sur tout leurs jets pour
       toucher contre elle. La créature peut éventuellement trouver une
       couverture contre les attaques à distances.
     </p>
@@ -508,8 +508,8 @@
     </p>
     <h5>Terrorisé</h5>
     <p>
-      Une créature terrorisée subit une menace chaque tours tant que la source
-      de sa frayeur se trouve dans son champ de vision. La créature est
+      Une créature terrorisée subit un désavantage chaque tours tant que la
+      source de sa frayeur se trouve dans son champ de vision. La créature est
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
     <h5>Surpris</h5>

@@ -35,7 +35,9 @@
                 Le résultat 6 génère : 1 Désastre et 1 échec
               </li>
               <li class="text-overline">Le résultat 5 ou 4 génère : 1 échec</li>
-              <li class="text-overline">Le résultat 3 génère : 1 menace</li>
+              <li class="text-overline">
+                Le résultat 3 génère : 1 désavantages
+              </li>
               <li class="text-overline">
                 Les autres résultats ne sont pas interprétés
               </li>
@@ -47,10 +49,11 @@
         <strong
           >Chaque échec annule un succès, un triomphe annule un désastre</strong
         >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
-        somme des échecs avec les succès. Les avantages et les menaces servent à
-        alimenter les compétences, ou d'effectuer des relances de dés en faveur
-        ou en défaveur des belligérants. Ce sont les joueurs qui décident de
-        comment dépenser leurs avantages, et au MJ de déclencher leurs menaces.
+        somme des échecs avec les succès. Les avantages et les désavantages
+        servent à alimenter les compétences, ou d'effectuer des relances de dés
+        en faveur ou en défaveur des belligérants. Ce sont les joueurs qui
+        décident de comment dépenser leurs avantages, et au MJ de déclencher
+        leurs désavantages.
       </p>
       <p>
         Les <strong>triomphes</strong> et les
@@ -65,23 +68,6 @@
         renvoyé sur un allié...
       </p>
     </div>
-    <h5>Atout et Menaces</h5>
-    <p>
-      Ils sont générés lors d'un test ou d'un jet. Ils symbolisent des
-      perturbations oniriques qui peuvent être exploitées pour effectuer des
-      aptitudes. Si un personnage possède un ou plusieurs avantages avant
-      d'effectuer un jet ou un test,
-      <strong
-        >il peut en dépenser autant qu'il le souhaite et relancer autant de dés
-        parmi son pool de dé positif</strong
-      >. Les <strong>menaces</strong> sont exploitées de la même manière par le
-      MJ pour <strong>les dés négatif</strong>
-      des joueurs.
-    </p>
-    <p>
-      Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      créatures subissent des avantages ou des menaces.
-    </p>
     <h5>Avantages et désavantages</h5>
     <p>
       Grâce à certaines aptitudes, ou sous les effets narratif d'un triomphe ou
@@ -93,7 +79,7 @@
     </p>
     <p>
       Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      créatures subissent des avantages ou des menaces.
+      créatures subissent des avantages ou des désavantages.
     </p>
 
     <h4 class="text-center">Test de compétence</h4>

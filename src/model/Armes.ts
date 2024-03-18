@@ -40,7 +40,7 @@ export class ArmesService {
       Nom: "Mains nues",
       Degats: "1 point de dommage par triomphe et par succès",
       Special: [
-        "L'utilisateur subit 1 blessure par menaces net sur son jet d'attaque.",
+        "L'utilisateur subit 1 blessure par désavantagess net sur son jet d'attaque.",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: "Aucun",
@@ -154,7 +154,7 @@ export class ArmesService {
       Nom: "Fusil anti-nuisible",
       Degats: "3 point de dommage par succès et par avantages net",
       Special: [
-        "Inflige 2 blessure à l'utilisateur par menace net sur un jet d'attaque à distance avec cette arme.",
+        "Inflige 2 blessure à l'utilisateur par désavantages net sur un jet d'attaque à distance avec cette arme.",
         "Requis 3 en vigueur.",
       ],
       Competence: CompetenceName.ARME_A_DISTANCE,

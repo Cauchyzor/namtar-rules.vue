@@ -48,8 +48,9 @@
         résilience est consommé dans le processus.
       </li>
       <li>
-        Attention, chaque échecs inflige 1 blessure et chaque menace net peut
-        soit rallonger le temps de l'opération, soit infliger 1 point de stress.
+        Attention, chaque échecs inflige 1 blessure et chaque désavantage net
+        peut soit rallonger le temps de l'opération, soit infliger 1 point de
+        stress.
       </li>
     </ul>
     <h4>Tomber à 0 point de vie</h4>

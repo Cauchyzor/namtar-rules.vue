@@ -20,9 +20,9 @@
       une bonne affaire en réduisant par exemple le prix auquel l'objet est
       vendu par rapport au prix de base. Si le test génère des avantages net,
       cela peut signifier qu'un objet d'habitude en quantité très réduite sera
-      trouvé en plusieurs exemplaires. Les menaces net peuvent à l'inverse venir
-      gonfler le prix de l'objet bar rapport au prix de base, ou indiquer que la
-      recherche de l'objet prends plus de temps que prévu.
+      trouvé en plusieurs exemplaires. Les désavantages net peuvent à l'inverse
+      venir gonfler le prix de l'objet bar rapport au prix de base, ou indiquer
+      que la recherche de l'objet prends plus de temps que prévu.
     </p>
 
     <q-tabs>
