@@ -52,7 +52,7 @@ export class ArmesService {
       Nom: "Matraque électrique",
       Degats:
         "2 point de dommages par triomphe net + 1 point de dommage par succès",
-      Special: ["Vous pouvez dépenser 2 atout pour étourdir l'enemi."],
+      Special: ["Vous pouvez dépenser 2 avantage pour étourdir l'enemi."],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: "Aucun",
       Encombrement: 1,
@@ -100,9 +100,9 @@ export class ArmesService {
     {
       Nom: "Marteau à impulsion",
       Degats:
-        "2 point de dommages par triomphe, par succès, et par atouts net.",
+        "2 point de dommages par triomphe, par succès, et par avantages net.",
       Special: [
-        "Vous pouvez dépenser 2 atouts pour renverser la cible et consommant la cellule.",
+        "Vous pouvez dépenser 2 avantages pour renverser la cible et consommant la cellule.",
         "Requis 3 en Vigueur",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
@@ -152,7 +152,7 @@ export class ArmesService {
     },
     {
       Nom: "Fusil anti-nuisible",
-      Degats: "3 point de dommage par succès et par atouts net",
+      Degats: "3 point de dommage par succès et par avantages net",
       Special: [
         "Inflige 2 blessure à l'utilisateur par menace net sur un jet d'attaque à distance avec cette arme.",
         "Requis 3 en vigueur.",

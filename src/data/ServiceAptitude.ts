@@ -131,14 +131,16 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.ENVOUTEMENT,
       Description:
-        "Le lanceur corrompt l'empreinte onirique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est détériorée dans le processus. l'aptitude consume les atouts de la cible pour générer des effets.",
-      DescriptionDetails: "Chaque atout supprimé génère 1 point de stabilité.",
+        "Le lanceur corrompt l'empreinte onirique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est détériorée dans le processus. l'aptitude consume les avantages de la cible pour générer des effets.",
+      DescriptionDetails:
+        "Chaque avantage supprimé génère 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Le lanceur utilise l'empreinte onirique de la cible consentante pour qu'elle devienne un catalyseur. Les atouts du groupe sont consommé pour générer des effets.",
-      DescriptionDetails: "Chaque atout consommé génère 2 points de stabilité.",
+        "Le lanceur utilise l'empreinte onirique de la cible consentante pour qu'elle devienne un catalyseur. Les avantages du groupe sont consommé pour générer des effets.",
+      DescriptionDetails:
+        "Chaque avantage consommé génère 2 points de stabilité.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
@@ -351,7 +353,7 @@ export class ServiceAptitude {
   private static EffectsList: Array<Effet> = [
     new Effet(
       EffetName.ATOUT,
-      "La cible gagne %M% atout(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
+      "La cible gagne %M% avantage(s). S'estompe à la fin de la rencontre ou au bout d'une dizaine de secondes",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.BENEDICTION, -2],
@@ -572,7 +574,7 @@ export class ServiceAptitude {
     ),
     new ExtensionEffet(
       ExtensionEffetName.CIBLE_GALVANISE,
-      "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'atout que le rang de cette extension (%M%). ",
+      "La ou les cibles de l'aptitude doivent être sous les effets d'au moins autant d'avantage que le rang de cette extension (%M%). ",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
@@ -596,7 +598,7 @@ export class ServiceAptitude {
     ),
     new ExtensionEffet(
       ExtensionEffetName.UTILISATEUR_GALVANISE,
-      "Vous devez être sous les effets d'au moins %M% atout pour chaque rang de cette extension.",
+      "Vous devez être sous les effets d'au moins %M% avantage pour chaque rang de cette extension.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.CYTOMANCIE, 2],
@@ -843,13 +845,13 @@ export class ServiceAptitude {
       case AptitudeTypeName.EVOCATION:
         return `${Math.abs(stability)} point de stress`;
       case AptitudeTypeName.BENEDICTION:
-        return `${Math.trunc(Math.abs(stability) / 2)} atouts`;
+        return `${Math.trunc(Math.abs(stability) / 2)} avantages`;
       case AptitudeTypeName.MALEFICE:
         return `${Math.trunc(Math.abs(stability) / 2)} menaces`;
       case AptitudeTypeName.NECROMANCIE:
         return `${Math.trunc(Math.abs(stability) / 2)} niveaux de puissance`;
       case AptitudeTypeName.ENVOUTEMENT:
-        return `${Math.abs(stability)} atouts`;
+        return `${Math.abs(stability)} avantages`;
       case AptitudeTypeName.CYTOMANCIE:
         return `${Math.trunc(Math.abs(stability))} PV sacrifié`;
       case AptitudeTypeName.TECHNIQUE:

@@ -14,7 +14,7 @@ export class EthnotraitService {
     {
       Nom: "Massif",
       Description:
-        "Votre valeur de vigueur minimal est de 3. Vous avez 5 PV supplémentaire et beneficiez d'un atout sur vos empoignades et vos bousculade.",
+        "Votre valeur de vigueur minimal est de 3. Vous avez 5 PV supplémentaire et beneficiez d'un avantage sur vos empoignades et vos bousculade.",
       CoherenceGénétiques: 2,
       Modificateurs: new Map([]),
     },

@@ -10,7 +10,7 @@
     </p>
     <strong>Jet de résilience :</strong> consommer un point de résilience et
     lancez un nombre de dés égal a votre vigueur. Chaque succès vous soigne d'un
-    point de vie, chaque atouts net vous soigne d'un point de stress.
+    point de vie, chaque avantages net vous soigne d'un point de stress.
     <p>
       L'utilisation de point de résilience ne peut se faire que dans certaines
       situations :

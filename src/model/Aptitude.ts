@@ -96,13 +96,13 @@ export class AptitudeCreated extends Aptitude {
       case AptitudeTypeName.EVOCATION:
         return `${Math.abs(stability)} point de stress`;
       case AptitudeTypeName.BENEDICTION:
-        return `${Math.trunc(Math.abs(stability) / 2)} atouts`;
+        return `${Math.trunc(Math.abs(stability) / 2)} avantages`;
       case AptitudeTypeName.MALEFICE:
         return `${Math.trunc(Math.abs(stability) / 2)} menaces`;
       case AptitudeTypeName.NECROMANCIE:
         return `${Math.trunc(Math.abs(stability) / 2)} niveaux de puissance`;
       case AptitudeTypeName.ENVOUTEMENT:
-        return `${Math.abs(stability)} atouts`;
+        return `${Math.abs(stability)} avantages`;
       case AptitudeTypeName.CYTOMANCIE:
         return `${Math.trunc(Math.abs(stability))} PV sacrifié`;
       case AptitudeTypeName.TECHNIQUE:

@@ -320,7 +320,7 @@
           Si aucun des deux camps ne cherche à être discret, ils se remarquent
           automatiquement. Test d'initiative sans difficulté de tout les
           belligérants, puis classement par nombre de succès net, puis nombre
-          d'atouts net si égalité
+          d'avantages net si égalité
         </p>
         <p>
           Sinon, test de discrétion de groupe des attaquants opposé test de
@@ -337,7 +337,7 @@
           valeur d'initiative. Le belligérant avec le plus de succès résoudra
           ses actions en premier dans la phase de résolution, puis le second
           avec le plus de succès... Etc. Si deux personnages ont le même nombre
-          de succès, on compare alors leurs atouts net. S'il subsiste une
+          de succès, on compare alors leurs avantages net. S'il subsiste une
           égalité, c'est au joueur de commencer, et au PNJ de jouer en suite
           selon l'ordre convenu.
         </p>
@@ -463,9 +463,9 @@
     <h5>À terre / Renversée</h5>
     <p>
       La créature subit une menace lors de ses attaques au corps à corps. Les
-      assaillant engagés bénéficient d'un atout sur tout leurs jets pour toucher
-      contre elle. La créature peut éventuellement trouver une couverture contre
-      les attaques à distances.
+      assaillant engagés bénéficient d'un avantage sur tout leurs jets pour
+      toucher contre elle. La créature peut éventuellement trouver une
+      couverture contre les attaques à distances.
     </p>
     <h5>Assourdi</h5>
     <p>

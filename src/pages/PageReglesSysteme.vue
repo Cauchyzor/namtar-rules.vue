@@ -19,7 +19,7 @@
               <li class="text-overline">
                 Le résultat 5 ou 4 génère : 1 succès
               </li>
-              <li class="text-overline">Le résultat 3 génère : 1 atout</li>
+              <li class="text-overline">Le résultat 3 génère : 1 avantage</li>
               <li class="text-overline">
                 Les autres résultats ne sont pas interprétés
               </li>
@@ -47,10 +47,10 @@
         <strong
           >Chaque échec annule un succès, un triomphe annule un désastre</strong
         >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
-        somme des échecs avec les succès. Les atouts et les menaces servent à
+        somme des échecs avec les succès. Les avantages et les menaces servent à
         alimenter les compétences, ou d'effectuer des relances de dés en faveur
         ou en défaveur des belligérants. Ce sont les joueurs qui décident de
-        comment dépenser leurs atouts, et au MJ de déclencher leurs menaces.
+        comment dépenser leurs avantages, et au MJ de déclencher leurs menaces.
       </p>
       <p>
         Les <strong>triomphes</strong> et les
@@ -69,7 +69,7 @@
     <p>
       Ils sont générés lors d'un test ou d'un jet. Ils symbolisent des
       perturbations oniriques qui peuvent être exploitées pour effectuer des
-      aptitudes. Si un personnage possède un ou plusieurs atouts avant
+      aptitudes. Si un personnage possède un ou plusieurs avantages avant
       d'effectuer un jet ou un test,
       <strong
         >il peut en dépenser autant qu'il le souhaite et relancer autant de dés
@@ -80,7 +80,7 @@
     </p>
     <p>
       Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      créatures subissent des atouts ou des menaces.
+      créatures subissent des avantages ou des menaces.
     </p>
     <h5>Avantages et désavantages</h5>
     <p>
@@ -93,7 +93,7 @@
     </p>
     <p>
       Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      créatures subissent des atouts ou des menaces.
+      créatures subissent des avantages ou des menaces.
     </p>
 
     <h4 class="text-center">Test de compétence</h4>
