@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Repos et guerison</h4>
+    <h4 class="text-center">Repos et guérison</h4>
     <h4>Soins</h4>
     <h5>Résilience</h5>
     <p>
@@ -34,7 +34,7 @@
     <p>
       Après chaque rencontre ou situation de stress, si un personnage a subi des
       blessures, il peut faire l'objet d'une intervention pour les premiers
-      soins. Il faut alors effectuer test de medecine (intelligence), posséder
+      soins. Il faut alors effectuer test de médecine (intelligence), posséder
       les outils appropriés, et opérer une quinzaine de minutes.
     </p>
     <p>

@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Systeme de Dés</h4>
+    <h4 class="text-center">Système de Dés</h4>
     <div class="text-justify">
       <h5>Dé positif versus Dé négatif</h5>
       <p>
@@ -47,9 +47,9 @@
         <strong
           >Chaque échec annule un succès, un triomphe annule un désastre</strong
         >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
-        somme des échecs avec les succès. Les atouts et les menaces servents à
+        somme des échecs avec les succès. Les atouts et les menaces servent à
         alimenter les compétences, ou d'effectuer des relances de dés en faveur
-        ou en défaveur des béligérents. Ce sont les joueurs qui décident de
+        ou en défaveur des belligérants. Ce sont les joueurs qui décident de
         comment dépenser leurs atouts, et au MJ de déclencher leurs menaces.
       </p>
       <p>
@@ -80,7 +80,7 @@
     </p>
     <p>
       Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      creatures subissent des atouts ou des menaces.
+      créatures subissent des atouts ou des menaces.
     </p>
     <h5>Avantages et désavantages</h5>
     <p>
@@ -93,10 +93,10 @@
     </p>
     <p>
       Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      creatures subissent des atouts ou des menaces.
+      créatures subissent des atouts ou des menaces.
     </p>
 
-    <h4 class="text-center">Test de competence</h4>
+    <h4 class="text-center">Test de compétence</h4>
     <p>
       Pour chaque test de compétence, le MJ décide da difficulté de la tâche à
       accomplir, qui est représentée par un
@@ -177,8 +177,7 @@
     <p>
       Les deux créatures qui s'opposent font un test de compétence correspondant
       à l'action qu'ils tentent de réaliser. Ils appliquent tous les bonus et
-      malus appropriés, puis comparent leurs résultats entre eux. La créature
-      qui a le plus d'atout peut en tirer profit.
+      malus appropriés, puis comparent leurs résultats entre eux.
     </p>
     <p>
       Si les résultats des tests sont identiques, la situation n'évolue pas.

@@ -33,10 +33,10 @@ export enum VecteurName {
 }
 
 export enum AptitudeTypeName {
-  EVOCATION = "Evocation",
-  MALEFICE = "Malefice",
-  NECROMANCIE = "Necromancie",
-  ENVOUTEMENT = "Envoutement",
+  EVOCATION = "Évocation",
+  MALEFICE = "Maléfice",
+  NECROMANCIE = "Nécromancie",
+  ENVOUTEMENT = "Envoûtement",
   BENEDICTION = "Bénédiction",
   MANTRA = "Mantra",
   CYTOMANCIE = "Cytomancie",
@@ -54,7 +54,7 @@ export enum EffetName {
   DRAIN_FLUIDE = "Drain de fluide",
   ENTRAVE = "Entrave",
   FORCE = "Force",
-  LEVITATION = "Levitation",
+  LEVITATION = "Lévitation",
   ILLUSION = "Illusion",
   MANTRA = "Mantra",
   OBSTRUCTION = "Obstruction",
@@ -77,8 +77,9 @@ export enum ExtensionEffetName {
   FEINTE = "Feinte",
   FIN_POSTURE = "Fin de Posture",
   INCENTATION_RAPIDE = "Incantation rapide",
-  INGREDIENT = "Ingredient",
-  MAITRISE_CORPS_A_CORPS = "Maitrise du corps à corps",
+  INGREDIENT = "Ingrédient",
+  MAITRISE_CORPS_A_CORPS = "Maîtrise du corps à corps",
+  MAITRISE_PUGILAT = "Maîtrise de la pugilat",
   UTILISATEUR_MAUDIT = "Utilisateur maudit",
   UTILISATEUR_GALVANISE = "Utilisateur galvanisé",
   ZONE = "Zone d'effet",
@@ -99,8 +100,8 @@ export enum Cible {
 }
 
 export class ServiceAptitude {
-  // TODO Exporter les capacitées dans des fichiers JSON + gérer la lecture et l'ecriture
-  // TODO aptitude : Triomphe sur les 5 sur des attaques a distances
+  // TODO Exporter les capacités dans des fichiers JSON + gérer la lecture et l'écriture
+  // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
   // TODO Posture : Augmente la Défense
   // TODO Riposte : Premier mouvement de la foudre : Vous vous déplacez a porté courte instantanément si le chemin et dégagé et porté un coups au corps a corps. Une fois par jours.
   // TODO Faire le tire en cloche (vecteur?)
@@ -109,28 +110,28 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.EVOCATION,
       Description:
-        "La conversion de l'energie sombre par le fluide est activée par l'utilisateur qui utilise son corps comme catalyseur. L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
+        "La conversion de l'énergie sombre par le fluide est activée par l'utilisateur qui utilise son corps comme catalyseur. L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
       DescriptionDetails:
         "Chaque point de stress investi produit 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.MALEFICE,
       Description:
-        "L'utilisateur se sert des menace de la cible pour corompre la signature de la cible qui devient le catalyseur d'une matérialisation néfaste de l'énergie sombre. La puissance du maléfice est nourrie par les menaces accumulées par la cible.",
+        "L'utilisateur se sert des menace de la cible pour corrompre la signature de la cible qui devient le catalyseur d'une matérialisation néfaste de l'énergie sombre. La puissance du maléfice est nourrie par les menaces accumulées par la cible.",
       DescriptionDetails:
         "Chaque menaces subit par la cible génère 2 points de stabilité. Les menaces ne sont pas consommées.",
     },
     {
       Nom: AptitudeTypeName.NECROMANCIE,
       Description:
-        "La force vitale résidelle d'un cadavre est utilisée comme catalyseur de l'énergie sombre. La qualitée de l'individu et le nombre d'individu renforce l'apptitude.",
+        "La force vitale résiduelle d'un cadavre est utilisée comme catalyseur de l'énergie sombre. La qualité de l'individu et le nombre d'individu renforce l'aptitude.",
       DescriptionDetails:
         "Chaque niveau du cadavre génère 2 points de stabilité. Plusieurs cadavres peuvent être utilisés en additionnant leurs niveaux.",
     },
     {
       Nom: AptitudeTypeName.ENVOUTEMENT,
       Description:
-        "Le lanceur corrompt l'empreinte onirique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est déteriorée dans le processus. L'apptitude consume les atouts de la cible pour générer des effets.",
+        "Le lanceur corrompt l'empreinte onirique de la cible pour qu'elle devienne un catalyseur d'énergie néfaste. La concordance de la cible est détériorée dans le processus. l'aptitude consume les atouts de la cible pour générer des effets.",
       DescriptionDetails: "Chaque atout supprimé génère 1 point de stabilité.",
     },
     {
@@ -142,7 +143,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
-        "Un mantra est une modification permanante de la signature onirique de la cible pour apprécier certain effets du fluide sur son comportement et ses capacités. Les effets sont passifs.",
+        "Un mantra est une modification permanente de la signature onirique de la cible pour apprécier certain effets du fluide sur son comportement et ses capacités. Les effets sont passifs.",
       DescriptionDetails:
         "Les mantras sont toujours stables et les effets constants depuis sa creation.",
     },
@@ -150,12 +151,12 @@ export class ServiceAptitude {
       Nom: AptitudeTypeName.CYTOMANCIE,
       Description:
         "L'énergie sombre est stockée dans des cellules sacrifiées par le lanceur. Le lanceur sacrifie des PV pour générer ses effets",
-      DescriptionDetails: "Chaque PV sacrifié genère 1 point de stabilité.",
+      DescriptionDetails: "Chaque PV sacrifié génère 1 point de stabilité.",
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE,
       Description:
-        "Un mouvement qui requiert une grande concentration. L'apptitude se déroule comme une action complexe.",
+        "Un mouvement qui requiert une grande concentration. l'aptitude se déroule comme une action complexe.",
       DescriptionDetails:
         "Action ou attaque qui se déroule comme une action complexe.",
     },
@@ -199,7 +200,7 @@ export class ServiceAptitude {
     ),
     new Vecteur(
       VecteurName.FRAPPE,
-      `Vous effectuez une attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages net plutôt que par les succès. Les dégats de l'arme utilisée sont calculés normalement.`,
+      `Vous effectuez une attaque engagée de ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR}) ou de ${CompetenceName.PUGILAT} (${CaracteritiqueName.VIGUEUR}). La qualité de la réussite de l'aptitude est déterminée par les avantages net plutôt que par les succès. Les dégâts de l'arme utilisée sont calculés normalement.`,
       Cible.UNIQUE,
       Multiplicateur.NON_CUMMULABLE,
       [
@@ -241,14 +242,14 @@ export class ServiceAptitude {
     ),
     new Vecteur(
       VecteurName.PROJECTILE,
-      `Vous effectuez une attaque à distance d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) et lancez un projectile immateriel sur la cible.`,
+      `Vous effectuez une attaque à distance d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) et lancez un projectile immatériel sur la cible.`,
       Cible.UNIQUE,
       Multiplicateur.NON_CUMMULABLE,
       [AptitudeTypeName.CYTOMANCIE, AptitudeTypeName.EVOCATION]
     ),
     new Vecteur(
       VecteurName.ONDE,
-      `Vous effectuez un Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 et projetez une déflagration immaterielle à portée courte, touchant toutes les créatures autours de vous. `,
+      `Vous effectuez un Test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD4 et projetez une déflagration immatérielle à portée courte, touchant toutes les créatures autours de vous. `,
       Cible.MULTIPLE,
       Multiplicateur.NON_CUMMULABLE,
       [
@@ -312,14 +313,14 @@ export class ServiceAptitude {
     ),
     new Vecteur(
       VecteurName.EXPLOITATION_CADRAVRE,
-      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 pour récuperer l'energie résiduelle d'un cadavre.`,
+      `Vous effectuez un test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD2 pour récupérer l'énergie résiduelle d'un cadavre.`,
       Cible.UTILISATEUR,
       Multiplicateur.NON_CUMMULABLE,
       [AptitudeTypeName.NECROMANCIE]
     ),
     new Vecteur(
       VecteurName.MANTRA,
-      "Les mantra dans des capacitées passives.",
+      "Les mantra dans des capacités passives.",
       Cible.UTILISATEUR,
       Multiplicateur.NON_CUMMULABLE,
       [AptitudeTypeName.MANTRA]
@@ -372,7 +373,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.CHALEUR,
-      "La cible pert %M% PV par triomphe, par succès et par avantage net sur le score de jet.",
+      "La cible perd %M% PV par triomphe, par succès et par avantage net sur le score de jet.",
       Multiplicateur.DEUX,
       new Map([
         [AptitudeTypeName.ENVOUTEMENT, -5],
@@ -384,7 +385,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.DEBILITANT,
-      "La cible pert sa prochaine reaction. Si vous avez plus de succès net que la valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
+      "La cible perd sa prochaine réaction. Si vous avez plus de succès net que la valeur d'intelligence, elle joue une de ses actions à la fin du tour.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.ENVOUTEMENT, -4],
@@ -420,7 +421,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.FORCE,
-      "La cible pert %M% PV par succes net et le double par triomphe net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
+      "La cible perd %M% PV par succès net et le double par triomphe net sur le jet. Les cibles dont la vigueur est inférieure au nombre de succès net sont renversées.",
       Multiplicateur.UN,
       new Map([
         [AptitudeTypeName.EVOCATION, -3],
@@ -430,7 +431,7 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.TELEPATHE,
-      "Vous pouvez communiquer brievement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
+      "Vous pouvez communiquer brièvement avec la cible par la pensée. Chaque succès permet soit de faire durer le lien quelques secondes de plus et permet de transmettre d'avantage d'informations.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.CYTOMANCIE, -2],
@@ -451,11 +452,11 @@ export class ServiceAptitude {
         [AptitudeTypeName.CYTOMANCIE, -2],
       ])
     ),
-    //TODO Faire un effets qui génère des désavanges
+    //TODO Faire un effets qui génère des désavantages
     //TODO Faire un effets qui génère des avantages
     new Effet(
       EffetName.ILLUSION,
-      "La cible subit une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplementaire.",
+      "La cible subit une hallucination sur l'un de ses sens qui lui indique ce que vous voulez (déterminé à la création de l'aptitude). Chaque succès supplémentaire permet de rendre l'illusion plus précise et efficace, et chaque triomphe affecte un sens supplémentaire.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([
         [AptitudeTypeName.EVOCATION, -2],
@@ -514,13 +515,13 @@ export class ServiceAptitude {
     ),
     new Effet(
       EffetName.PUISSANT,
-      "Vous infligez %M% dégat supplémentaire par succès sur le jet d'attaque réussit contre elle.",
+      "Vous infligez %M% dégât supplémentaire par succès sur le jet d'attaque réussit contre elle.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([[AptitudeTypeName.TECHNIQUE, -2]])
     ),
     new Effet(
       EffetName.RENVERSEMENT,
-      `La cibles est mise a terre si la somme des succès est superieur son score de ${CaracteritiqueName.VIGUEUR}`,
+      `La cibles est mise a terre si la somme des succès est supérieur son score de ${CaracteritiqueName.VIGUEUR}`,
       Multiplicateur.NON_CUMMULABLE,
       new Map([[AptitudeTypeName.TECHNIQUE, -1]])
     ),
@@ -654,7 +655,7 @@ export class ServiceAptitude {
         [AptitudeTypeName.NECROMANCIE, 2],
         [AptitudeTypeName.MALEFICE, 3],
       ])
-      // TODO Extension ingredient : gérer different types d'ingredients (puissance, nombre...)
+      // TODO Extension ingrédient : gérer différent types d'ingrédients (puissance, nombre...)
     ),
     new ExtensionEffet(
       ExtensionEffetName.INGREDIENT,
@@ -694,7 +695,7 @@ export class ServiceAptitude {
     ),
     new ExtensionEffet(
       ExtensionEffetName.FEINTE,
-      "La technique n'inflige pas de dégat.",
+      "La technique n'inflige pas de dégât.",
       Multiplicateur.NON_CUMMULABLE,
       new Map([[AptitudeTypeName.TECHNIQUE, 2]])
     ),

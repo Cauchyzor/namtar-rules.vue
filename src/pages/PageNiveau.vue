@@ -28,7 +28,7 @@
     <h5>Progression Narative</h5>
 
     <p>
-      Les niveaux sont gagnés après suffisement de tests sur les compétences des
+      Les niveaux sont gagnés après suffisent de tests sur les compétences des
       PJ. Les choix dans l'apprentissage des compétences est, par conséquent,
       choisi par les joueurs de manière indirecte.
     </p>

@@ -44,7 +44,7 @@
           nombre de points de "stabilité" qui lui sera utile pour choisir les
           effets de l'aptitude.
         </p>
-        <p class="text-center text-overline">Selectionez un type d'aptitude</p>
+        <p class="text-center text-overline">Sélectionnez un type d'aptitude</p>
         <div class="row q-col-gutter-sm justify-center">
           <div
             v-for="typeAptitude in availableAptitudeTypes"
@@ -74,12 +74,12 @@
         :done="SelectedAptVecteur != null"
       >
         <p>
-          Une fois canalysée, l'énergie peut être dirigée vers un point,
-          s'etendre homogènement depuis sa source, être projetée sur une
-          cible... Certaines méthodes sont plus complexes que d'autre.
+          Une fois canalisée, l'énergie peut être dirigée vers un point,
+          s'étendre depuis sa source, être projetée sur une cible... Certaines
+          méthodes sont plus complexes que d'autre.
         </p>
 
-        <p class="text-center text-overline">Selectionez un vecteur</p>
+        <p class="text-center text-overline">Sélectionnez un vecteur</p>
 
         <div class="row q-col-gutter-sm justify-center">
           <div
@@ -162,7 +162,7 @@
 
       <q-step
         :name="4"
-        title="Extention"
+        title="Extension"
         caption="Des conditions optionnelles de matérialisation"
         icon="add_comment"
         :disable="SelectedAptTypeName == null"
@@ -214,7 +214,7 @@
       >
         <div class="q-gutter-md">
           <p>
-            Decrivez précisement comment utiliser l'aptitude et ses effets. Vous
+            Décrivez précisément comment utiliser l'aptitude et ses effets. Vous
             devez restez cohérent avec les différentes caractéristiques choisies
             tout au long de sa création.
           </p>
@@ -226,14 +226,14 @@
           <q-input
             outlined
             v-model="aptDesc"
-            label="Desciption libre des effets..."
+            label="Description libre des effets..."
           ></q-input>
         </div>
         <q-stepper-navigation>
           <q-btn
             :disable="!isAptValid"
             color="primary"
-            label="Creer l'aptitude"
+            label="Créer l'aptitude"
             @click="showAtpCard = true"
           ></q-btn>
           <q-btn
@@ -268,7 +268,7 @@
             <q-separator vertical inset></q-separator>
             <q-card-section class="col-6" vertical>
               <div class="text-caption text-grey">
-                Cout :
+                Coût :
                 <strong>{{ createdAptitude?.computeStabilityScore() }}</strong>
               </div>
             </q-card-section>

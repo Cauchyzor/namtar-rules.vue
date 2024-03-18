@@ -4,7 +4,7 @@
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
     <q-stepper v-model="step" header-nav animated class="bg-secondary" flat>
-      <q-step :name="1" prefix="1" title="Decrire le tour de jeu">
+      <q-step :name="1" prefix="1" title="Décrire le tour de jeu">
         <p>
           Les tours de jeu représente des moments de quelques secondes pendant
           lesquelles chaque acteur de la rencontre essaye de tirer parti de la
@@ -23,7 +23,7 @@
               <q-item-label header>Charger un adversaire</q-item-label>
               <q-item-label caption
                 >Se déplacer et attaquer avec la force de la course. Un test
-                d'athletisme opposé a la cible est necessaire pour rattraper une
+                d'athlétisme opposé a la cible est nécessaire pour rattraper une
                 cible qui décide fuir au même tour</q-item-label
               >
             </q-item-section>
@@ -93,8 +93,7 @@
             <q-item-section>
               <q-item-label header>Stabiliser</q-item-label>
               <q-item-label caption
-                >Effectuer les premiers soins a une creature à
-                terre</q-item-label
+                >Donner les premiers soins à une créature à terre</q-item-label
               >
             </q-item-section>
             <q-item-section side top>
@@ -108,8 +107,8 @@
               <q-item-label caption
                 >La plupart des actions qui requirent une concentration et un
                 savoir faire prennent l'intégralité du tour pour être résolue,
-                parfois plus, a la discretion du MJ. Elle font également l'objet
-                d'un test de compétence.</q-item-label
+                parfois plus, à la discrétion du MJ. Elles font également
+                l'objet d'un test de compétence.</q-item-label
               >
             </q-item-section>
             <q-item-section side top>
@@ -166,7 +165,7 @@
             </q-item>
             <q-item>
               <q-item-section>
-                <q-item-label header>Recharger un equipement</q-item-label>
+                <q-item-label header>Recharger un équipement</q-item-label>
                 <q-item-label caption
                   >Utiliser une cellule <strong>à portée de main</strong> pour
                   recharger l'arme en main.</q-item-label
@@ -182,7 +181,7 @@
                   >Utiliser un objet à porté de main</q-item-label
                 >
                 <q-item-label caption
-                  >Utiliser un consomable à usage rapide, actionner un serrure
+                  >Utiliser un consommable à usage rapide, actionner un serrure
                   électronique...</q-item-label
                 >
               </q-item-section>
@@ -194,8 +193,8 @@
               <q-item-section>
                 <q-item-label header>Fouiller a son emplacement</q-item-label>
                 <q-item-label caption
-                  >Jeter un coup d'oeil rapide autour de vous, ou récuérer un
-                  objet dans une saccoche ou a la ceinture.</q-item-label
+                  >Jeter un coup d'oeil rapide autour de vous, ou récupérer un
+                  objet dans une sacoche ou a la ceinture.</q-item-label
                 >
               </q-item-section>
               <q-item-section side top>
@@ -224,8 +223,8 @@
                 >
                 <q-item-label caption
                   >Sortir de sa couverture pour permettre une attaque
-                  d'opportunité, ou au contraire se mettre à couvert pour eviter
-                  de provoquer des attaques à distance. La qualitée de la
+                  d'opportunité, ou au contraire se mettre à couvert pour éviter
+                  de provoquer des attaques à distance. La qualité de la
                   couverture
                 </q-item-label>
               </q-item-section>
@@ -271,7 +270,7 @@
                 <q-item-label header>Se tenir prêt</q-item-label>
                 <q-item-label caption
                   >Vous n'effectuez pas d'action à votre tour de jeux. Vous
-                  bénificiez d'une réaction supplémentaire. Elle s'estompe de la
+                  bénéficiez d'une réaction supplémentaire. Elle s'estompe de la
                   même manière que votre réaction par défaut.
                 </q-item-label>
               </q-item-section>
@@ -298,9 +297,9 @@
               <q-item-section>
                 <q-item-label header>Changer d'action</q-item-label>
                 <q-item-label caption
-                  >Dans les cas ou un béligerant effectue un mauvais jet
+                  >Dans les cas ou un belligérant effectue un mauvais jet
                   d'initiative, il peut se retrouver dans une situation où il
-                  prefère s'interomptre : il n'effectue pas l'action qu'il avait
+                  préfère s'interrompre : il n'effectue pas l'action qu'il avait
                   planifié, et
                   <strong
                     >décide d'effectuer une autre action. Pour illustrer ce
@@ -320,16 +319,16 @@
         <p>
           Si aucun des deux camps ne cherche à être discret, ils se remarquent
           automatiquement. Test d'initiative sans difficulté de tout les
-          béligerant, puis classement par nombre de succés net, puis nombre
+          belligérants, puis classement par nombre de succès net, puis nombre
           d'atouts net si égalité
         </p>
         <p>
-          Sinon, test de discretion de groupe des attaquants opposé test de
-          vigilance de chaque mêmbre de l'autre groupe. Les membres qui ne
-          reussisent pas ce test sont surpris
+          Sinon, test de discrétion de groupe des attaquants opposé test de
+          vigilance de chaque membres de l'autre groupe. Les membres qui ne
+          réussissent pas ce test sont surpris
         </p>
         <p>
-          Si un béligérent est surpris, il ne pouvez pas bouger ou accomplir
+          Si un belligérant est surpris, il ne pouvez pas bouger ou accomplir
           d&#39;action lors du premier tour de combat, et il ne peut pas non
           plus réagir jusqu&#39;à la fin de ce tour.
         </p>
@@ -349,7 +348,7 @@
         <p>
           Pour facilité la lecture d'une scène de combat, les distances
           relatives entre les personnages sont décrite avec des niveau de
-          portée. Ils sont necessaire pour calculer la difficulter d'un jet
+          portée. Ils sont nécessaires pour calculer la difficulté d'un jet
           d'attaque a distance (voir plus loin)
         </p>
         <ul>
@@ -357,19 +356,19 @@
           <li>Courte - de 1m à 9m</li>
           <li>Moyenne - de 10 à 20m</li>
           <li>Longue - de 20 à 50m</li>
-          <li>Extreme - de 50 à 100m</li>
+          <li>Extrême - de 50 à 100m</li>
         </ul>
         <p>
-          Les niveaux de porté au dela de 100m peuvent encore être fragmenter
+          Les niveaux de porté au delà de 100m peuvent encore être fragmenter
           selon la volonté du MJ
         </p>
-        <h5>Resoudre les déplacements</h5>
-        Chaque personnage qui decide d'effectuer un déplacement ce déplace d'un
+        <h5>Résoudre les déplacements</h5>
+        Chaque personnage qui décide d'effectuer un déplacement ce déplace d'un
         niveau de porté, soit l'equivalent d'une dizaine de mètres. Si un
         personnage choisi de se déplacer alors qu'il est engagé avec un
         adversaire, ou qu'il passe a un niveau de porté engagé avec un
-        adversaire sur son chemin, il rique une attaque d'opportunité.
-        <h5>Resoudre les Attaques</h5>
+        adversaire sur son chemin, il risque une attaque d'opportunité.
+        <h5>Résoudre les Attaques</h5>
         <p>
           Que vous portiez une attaque avec une arme de corps-à-corps, une arme
           à distance ou que vous fassiez un jet d&#39;attaque dans le cadre
@@ -400,8 +399,8 @@
         </ol>
         <h5>Les réactions</h5>
         <p>
-          Les réactions peuvent être déclanchées à tout momment par les
-          béligérant <strong>après avoir effectué leurs actions</strong>.La
+          Les réactions peuvent être déclenchées à tout moment par les
+          belligérant <strong>après avoir effectué leurs actions</strong>.La
           possibilité de jouer sa réaction est conservée jusqu'à ce qu'elle soit
           résolue, ou que le personnage effectue un nouveau tour de jeu
         </p>
@@ -432,13 +431,13 @@
     <p>Dé positif : compétence + caractéristique</p>
     <p>
       Dé négatif : distance (DD = 1 pour chaque niveau de porté + 1 qualité de
-      la couverture) + dés supplémentaire liée à l'equipement
+      la couverture) + dés supplémentaire liée à l'équipement
     </p>
     <p>
       <strong>Couverture </strong> : En fonction de la qualité de l&#39;abri, le
       MJ peut décider d'ajouter entre 1 et 3 dés négatifs sur le jet d'attaque
       de l'assaillant, voir de rendre impossible toute attaque à distance si la
-      couverture est totale et empèche au projectile d'atteindre sa cible.
+      couverture est totale et empêche au projectile d'atteindre sa cible.
     </p>
 
     <h4>Dégâts</h4>
@@ -460,7 +459,7 @@
       d&#39;attaque. La créature est inconsciente et est considérée comme
       stabilisée.
     </p>
-    <h4 class="text-center">Les états speciaux</h4>
+    <h4 class="text-center">Les états spéciaux</h4>
     <h5>À terre / Renversée</h5>
     <p>
       La créature subit une menace lors de ses attaques au corps à corps. Les
@@ -476,7 +475,7 @@
     <h5>Aveuglé</h5>
     <p>
       Une créature aveuglée ne voit plus rien et rate automatiquement tout test
-      qui requiert la vue. Son score de reflexe est divisé par deux.
+      qui requiert la vue. Son score de réflexe est divisé par deux.
     </p>
     <h5>Immobilisé</h5>
     <p>
@@ -514,7 +513,7 @@
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
     <h5>Surpris</h5>
-    <p>Une créature surprise ne peut entreprendre ni action ni reaction.</p>
+    <p>Une créature surprise ne peut entreprendre ni action ni réaction.</p>
   </q-page>
 </template>
 

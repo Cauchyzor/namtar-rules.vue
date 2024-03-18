@@ -8,13 +8,13 @@
     </p>
     <p>
       Lorsque certaines phase implique des actions plus longues, comme
-      l&#39;arrivée dans une ville et la recherche d&#39;un endroit ou echanger
-      des objets, il est plus pertinant d&#39;écouler les tour a l&#39;echelle
+      l&#39;arrivée dans une ville et la recherche d&#39;un endroit ou échanger
+      des objets, il est plus pertinent d&#39;écouler les tour a l&#39;échelle
       de l&#39;heure.
     </p>
     <p>
       Pour les longs voyages, il convient d&#39;utiliser une échelle en jours.
-      L&#39;echelle de temps sera brusquement rétablie à l&#39;echelle de la
+      L&#39;échelle de temps sera brusquement rétablie à l&#39;échelle de la
       minute si le groupe est attaqué ou fait face a un obstacle.
     </p>
     <p>
@@ -254,9 +254,9 @@
       comprend également le nécessaire en eau. Pour chaque journée passée sans
       manger ou boire à sa faim, le personnage subit 1 menace. Il suffit de
       manger normalement un jour pour remettre le compteur de journées de jeûne
-      à zéro. Si le personnage trouve de quoi grignotter ou boire un peu
-      d&#39;eau malgrer le manque, il ne sort pas de l&#39;état
-      d&#39;épuisement, mais évite de cummuler des menaces
+      à zéro. Si le personnage trouve de quoi grignoter ou boire un peu
+      d&#39;eau malgré le manque, il ne sort pas de l&#39;état d&#39;épuisement,
+      mais évite de cumuler des menaces
     </p>
     <h4>Entre les aventures</h4>
     <h5>Artisanat</h5>
@@ -296,7 +296,7 @@
     <p>
       Les personnages peuvent prendre le temps de négocier avec les marchants
       pour en tirer un meilleur prix de vente. Cependant, le temps passé à
-      négocier peut ralonger trés significativement le temps total passé à
+      négocier peut allonger très significativement le temps total passé à
       vendre les objets.
     </p>
     <h4>Moments de répit</h4>
@@ -308,7 +308,7 @@
     </p>
     <p>
       Certaines blessures critiques se soignent avec le temps. D&#39;autre
-      necessitent l&#39;accompagnement d&#39;un medecin. Certaines, plus graves,
+      nécessitent l&#39;accompagnement d&#39;un médecin. Certaines, plus graves,
       vous demanderont des interventions lourdes et généralement payantes. Vous
       pouvez faire appel a des professionnel pour accélérer les soins, quelque
       soit le type de blessure.
