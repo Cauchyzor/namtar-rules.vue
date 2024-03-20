@@ -50,7 +50,8 @@ export class AttributService {
     },
     {
       Nom: AttributsName.RECUPERATION,
-      Description: "Vous avez 1 point de Résiliance par point de Vigueur",
+      Description:
+        "Vous avez 2 dès de vie par point de Vigueur. Ils vous permettent de vous soigner.",
       Icon: mdiHeartCircleOutline,
     },
   ];

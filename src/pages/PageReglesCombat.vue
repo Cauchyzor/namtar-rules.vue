@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+    <!-- TODO : en un tour de jeu : 1 Action + 1 Mouvement + 1 Reaction-->
     <h4 class="text-center">Combats</h4>
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
