@@ -389,20 +389,19 @@
           </li>
           <li>
             <p>
-              Résoudre l&#39;attaque. Lancez les dés. Si vous touchez votre
-              cible, vous lancez les dés de dégâts, sauf si les règles de votre
-              attaque précisent autre chose. Certaines attaques ont en effet des
-              effets spécifiques qui viennent s&#39;ajouter aux dégâts ou les
-              remplacer.
+              Lancez les dés et calculer le reslutat net. Si il reste au moins
+              un succès net, l'attaque est réussie. En fonction de l'aptitude ou
+              de l'arme utilisée, certains effet supplémentaires peuvent
+              survenir avec les avantages/echecs/désavantages/desastres net.
             </p>
           </li>
         </ol>
         <h5>Les réactions</h5>
         <p>
           Les réactions peuvent être déclenchées à tout moment par les
-          belligérant <strong>après avoir effectué leurs actions</strong>.La
-          possibilité de jouer sa réaction est conservée jusqu'à ce qu'elle soit
-          résolue, ou que le personnage effectue un nouveau tour de jeu
+          belligérant <strong>entre leurs tour de jeu</strong>.La possibilité de
+          jouer sa réaction est conservée jusqu'à ce qu'elle soit résolue, ou
+          que le personnage effectue un nouveau tour de jeu
         </p>
       </q-step>
     </q-stepper>
