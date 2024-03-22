@@ -5,13 +5,14 @@ import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
 export enum AptitudeTypeName {
+  AMELIORATION = "Amélioration",
   EVOCATION = "Évocation",
   NECROMANCIE = "Nécromancie",
   BENEDICTION = "Bénédiction",
   MANTRA = "Mantra",
   CYTOMANCIE = "Cytomancie",
   POSTURE = "Posture",
-  TECHNIQUE = "Technique",
+  TECHNIQUE_CORPS_A_CORPS = "Technique au corps à corps",
   REACTION = "Réaction",
 }
 
@@ -23,50 +24,40 @@ export class ServiceAptitude {
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
-      Description:
-        "La conversion de l'énergie sombre par le fluide est activée par l'utilisateur qui utilise son corps comme catalyseur. L'utilisateur subit du stress pour stabiliser et matérialiser son aptitude.",
-      DescriptionDetails:
-        "Chaque point de stress investi produit 1 point de stabilité.",
+      Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible à portée moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique.`,
     },
     {
       Nom: AptitudeTypeName.NECROMANCIE,
       Description:
-        "La force vitale résiduelle d'un cadavre est utilisée comme catalyseur de l'énergie sombre. La qualité de l'individu et le nombre d'individu renforce l'aptitude.",
-      DescriptionDetails:
-        "Chaque niveau du cadavre génère 2 points de stabilité. Plusieurs cadavres peuvent être utilisés en additionnant leurs niveaux.",
+        "L'aptitude consomme un ou plusieurs cadavres frais (quelques heures maximum) à porté courte dont le niveau de puissance cumulé doit correspondre au rang de l'aptitude.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Le lanceur utilise l'empreinte onirique de la cible consentante pour qu'elle devienne un catalyseur. Les avantages du groupe sont consommé pour générer des effets.",
-      DescriptionDetails:
-        "Chaque avantage consommé génère 2 points de stabilité.",
+        "Toute les creature au choix a porté courte reçoivent des bonus pour le reste de la journée. Le lanceur ne peut donner qu'une seule benediction à la fois.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
-        "Un mantra est une modification permanente de la signature onirique de la cible pour apprécier certain effets du fluide sur son comportement et ses capacités. Les effets sont passifs.",
-      DescriptionDetails:
-        "Les mantras sont toujours stables et les effets constants depuis sa creation.",
+        "Un mantra vous octroie des bonus passifs de manière permanante.",
     },
     {
-      Nom: AptitudeTypeName.TECHNIQUE,
+      Nom: AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      Description: `Vous effectuez un jet d'attaque avec la compétence ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR} ou ${CaracteritiqueName.AGILITE}) et appliquez des effets supplémentaire selon l'aptitude.`,
+    },
+    {
+      Nom: AptitudeTypeName.AMELIORATION,
       Description:
-        "Un mouvement qui requiert une grande concentration. l'aptitude se déroule comme une action complexe.",
-      DescriptionDetails:
-        "Action ou attaque qui se déroule comme une action complexe.",
-    },
-    {
-      Nom: AptitudeTypeName.REACTION,
-      Description: "Une aptitude qui s'effectue lors d'une réaction",
-      DescriptionDetails: "Aptitude lors de votre réaction.",
+        "Vous octroit des bonus tant que cette amelioration est active sur la piece d'équipement.",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
       Description:
-        "Une posture travaillée et maîtrisée permet de mieux appréhender une situation. Elle s'active avec une réaction. Une seule posture active à la fois.",
-      DescriptionDetails:
-        "Les postures sont toujours stables et se déclenchent en consommant une réaction.",
+        "La posture vous octroie des bonus situationnel jusqu'a ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurement.",
+    },
+    {
+      Nom: AptitudeTypeName.REACTION,
+      Description: "Cette aptitude peut être déclanché lors d'une réaction.",
     },
   ];
 
@@ -79,8 +70,8 @@ export class ServiceAptitude {
     ),
     new AptitudeFixed(
       "Ruée",
-      "Vous vous déplacez de deux niveau de porté au lieux d'un seul lors de ce tour.",
-      AptitudeTypeName.TECHNIQUE,
+      "Vous vous déplacez de deux niveau de porté au lieux d'un seul lors de ce tour. Cette posture prend fin au début de votre prochain tour.",
+      AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.ATHLETISME, 1]])
     ),
     new AptitudeFixed(
@@ -98,14 +89,20 @@ export class ServiceAptitude {
     new AptitudeFixed(
       "Feinte",
       `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES}`,
-      AptitudeTypeName.TECHNIQUE,
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([[CompetenceName.CORPS_A_CORPS, 1]])
     ),
     new AptitudeFixed(
       "Couverture improbable",
-      `Au prix de votre réaction et de votre mouvement, vous pouvez realisez un test de ${CompetenceName.DISCRETION} don le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires que ne vous ont pas dans leurs champs de vision. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
-      AptitudeTypeName.TECHNIQUE,
+      `Vous vous déplacer d'un niveau de porté au maximum et pouvez realiser un test de ${CompetenceName.DISCRETION} dont le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires. Le test echoue si vous êtes toujours dans le champs de vision de l'une d'entre elle. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
+      AptitudeTypeName.REACTION,
       new Map([[CompetenceName.DISCRETION, 1]])
+    ),
+    new AptitudeFixed(
+      '"Comme à l\'entrainement"',
+      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
+      AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.PILOTAGE, 1]])
     ),
     new AptitudeFixed(
       "Rigueur scientifique",
@@ -126,19 +123,16 @@ export class ServiceAptitude {
       new Map([[CompetenceName.PERSPICACITE, 1]])
     ),
     new AptitudeFixed(
-      '"Comme à l’entraînement\'"',
-      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
-      AptitudeTypeName.TECHNIQUE,
-      new Map([[CompetenceName.PILOTAGE, 1]])
+      "Eclat",
+      "Vous subissez 3 point de stress. La cible subit 3 point de dégat par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour. Vous déclanchez automatiquement une attaque d'opportunité contre vous.",
+      AptitudeTypeName.EVOCATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
     new AptitudeFixed(
-      "Mage de guerre",
-      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caracteristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le resultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
-      AptitudeTypeName.MANTRA,
-      new Map([
-        [CompetenceName.CORPS_A_CORPS, 1],
-        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-      ])
+      "Equilibrage",
+      "L'arme qui reçois l'amélioration ajoute 1 dé d'avantage à tout les jet d'attaque fait avec celle-ci",
+      AptitudeTypeName.AMELIORATION,
+      new Map([[CompetenceName.INGENIERIE, 1]])
     ),
     new AptitudeFixed(
       "Frappes sournoises",
@@ -150,9 +144,18 @@ export class ServiceAptitude {
       ])
     ),
     new AptitudeFixed(
+      "Mage de guerre",
+      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caracteristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le resultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
+      AptitudeTypeName.MANTRA,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
+    ),
+    new AptitudeFixed(
       "Bombe improvisée",
       `Si vous avez a votre disposition de trois ingredients adéquats (un combustible, une mèche et un contenant), vous pouvez effectuer un test de ${CompetenceName.INGENIERIE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 pour creer une bombe artisanal que vous pouvez utiliser comme arme de jet. La puissance de la bombe est déterminée par le MJ en fonction du combustible et de la réussite de test.`,
-      AptitudeTypeName.EVOCATION,
+      AptitudeTypeName.AMELIORATION,
       new Map([
         [CompetenceName.INGENIERIE, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],

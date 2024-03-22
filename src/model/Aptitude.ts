@@ -39,5 +39,4 @@ export class AptitudeFixed extends Aptitude {
 export type AptitudeType = {
   Nom: AptitudeTypeName;
   Description: string;
-  DescriptionDetails: string;
 };
