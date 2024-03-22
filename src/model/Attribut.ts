@@ -51,7 +51,7 @@ export class AttributService {
     {
       Nom: AttributsName.RECUPERATION,
       Description:
-        "Vous avez 2 dès de vie par point de Vigueur. Ils vous permettent de vous soigner.",
+        "Vous avez 2 dès de vie (d4) par point de Vigueur et par niveau. Ils vous permettent de vous soigner.",
       Icon: mdiHeartCircleOutline,
     },
   ];
