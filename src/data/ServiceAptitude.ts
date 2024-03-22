@@ -20,8 +20,6 @@ export class ServiceAptitude {
   // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
   // TODO Posture : Augmente la Défense
   // TODO Riposte : Premier mouvement de la foudre : Vous vous déplacez a porté courte instantanément si le chemin et dégagé et porté un coups au corps a corps. Une fois par jours.
-  // TODO Faire le tire en cloche (vecteur?)
-
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
