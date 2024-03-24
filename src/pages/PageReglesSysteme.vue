@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+    <!-- TODO: Essayer un systeme de D8/D6 comme dans confin de l'empire, avec des D4 comme dé de fortune-->
     <h4 class="text-center">Système de Dés</h4>
     <div class="text-justify">
       <h5>Dé positif versus Dé négatif</h5>
