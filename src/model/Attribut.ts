@@ -26,7 +26,7 @@ export class AttributService {
     {
       Nom: AttributsName.PV,
       Description:
-        "Votre maximum de PV est egal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1. ",
+        "Votre maximum de PV est egal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1.",
       Icon: mdiHeart,
     },
 
