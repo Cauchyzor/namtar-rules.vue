@@ -26,7 +26,7 @@ export class AttributService {
     {
       Nom: AttributsName.PV,
       Description:
-        "Votre maximum de PV est egal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1. ",
+        "Votre maximum de PV est egal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1.",
       Icon: mdiHeart,
     },
 
@@ -50,7 +50,8 @@ export class AttributService {
     },
     {
       Nom: AttributsName.RECUPERATION,
-      Description: "Vous avez 1 point de Résiliance par point de Vigueur",
+      Description:
+        "Vous avez 2 dès de vie par point de Vigueur. Ils vous permettent de vous soigner.",
       Icon: mdiHeartCircleOutline,
     },
   ];

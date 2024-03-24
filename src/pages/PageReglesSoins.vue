@@ -2,28 +2,22 @@
   <q-page padding>
     <h4 class="text-center">Repos et guérison</h4>
     <h4>Soins</h4>
-    <h5>Résilience</h5>
+    <h5>Repos</h5>
     <p>
       La restitution des PV perdus n'est possible que d'une seule manière :
-      consommer des points de résilience. La résilience représente la capacité
-      du corps à combattre les infections et réparer les tissus.
+      consommer des dés de vies pendant une phase de repos, ou grâce à certaines
+      aptitudes.
     </p>
-    <strong>Jet de résilience :</strong> consommer un point de résilience et
-    lancez un nombre de dés égal a votre vigueur. Chaque succès vous soigne d'un
-    point de vie, chaque atouts net vous soigne d'un point de stress.
-    <p>
-      L'utilisation de point de résilience ne peut se faire que dans certaines
-      situations :
-    </p>
+    <strong>Jet de soins :</strong> Lancer autant de dès de vie que vous le
+    souhaitez ou que le maximum autorisé s'il sagit d'une aptitude. Récupérez le
+    nombre de PV indiqué par la somme des dés.
+    <p>Les Jets de soins ne peuvent se faire que dans certaines situations :</p>
     <ul>
+      <li>Le repos court (1h d'inactivité)</li>
       <li>
-        Le repos court (1h d'inactivité) : le personnage peut effectuer un jet
-        de résilience.
-      </li>
-      <li>
-        Le repos long (8h de sommeil dans un environnement sécurisé): le
-        personnage peut effectuer jusqu'à deux jets de résilience, et regagne la
-        moitié de son total de points de résilience.
+        Le repos long (8h de sommeil dans un environnement sécurisé): Le
+        personnage regagne également la moitié de son total de dés de vie a la
+        fin du repos long.
       </li>
       <li>
         Utiliser une aptitude : les effets sont décrits par l'aptitude en
@@ -44,12 +38,12 @@
     <ul>
       <li>
         Une intervention réussie permet au personnage d'effectuer deux jets de
-        résilience et de garder le meilleur des deux résultats. Un seul point de
-        résilience est consommé dans le processus.
+        soins et de garder le meilleur des deux résultats.
       </li>
       <li>
-        Attention, chaque échecs inflige 1 blessure et chaque menace net peut
-        soit rallonger le temps de l'opération, soit infliger 1 point de stress.
+        Attention, chaque échecs inflige 1 blessure et chaque désavantage net
+        peut soit rallonger le temps de l'opération, soit infliger 1 point de
+        stress.
       </li>
     </ul>
     <h4>Tomber à 0 point de vie</h4>

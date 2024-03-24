@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+    <!-- TODO : en un tour de jeu : 1 Action + 1 Mouvement + 1 Reaction-->
     <h4 class="text-center">Combats</h4>
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
@@ -320,7 +321,7 @@
           Si aucun des deux camps ne cherche à être discret, ils se remarquent
           automatiquement. Test d'initiative sans difficulté de tout les
           belligérants, puis classement par nombre de succès net, puis nombre
-          d'atouts net si égalité
+          d'avantages net si égalité
         </p>
         <p>
           Sinon, test de discrétion de groupe des attaquants opposé test de
@@ -337,7 +338,7 @@
           valeur d'initiative. Le belligérant avec le plus de succès résoudra
           ses actions en premier dans la phase de résolution, puis le second
           avec le plus de succès... Etc. Si deux personnages ont le même nombre
-          de succès, on compare alors leurs atouts net. S'il subsiste une
+          de succès, on compare alors leurs avantages net. S'il subsiste une
           égalité, c'est au joueur de commencer, et au PNJ de jouer en suite
           selon l'ordre convenu.
         </p>
@@ -389,20 +390,19 @@
           </li>
           <li>
             <p>
-              Résoudre l&#39;attaque. Lancez les dés. Si vous touchez votre
-              cible, vous lancez les dés de dégâts, sauf si les règles de votre
-              attaque précisent autre chose. Certaines attaques ont en effet des
-              effets spécifiques qui viennent s&#39;ajouter aux dégâts ou les
-              remplacer.
+              Lancez les dés et calculer le reslutat net. Si il reste au moins
+              un succès net, l'attaque est réussie. En fonction de l'aptitude ou
+              de l'arme utilisée, certains effet supplémentaires peuvent
+              survenir avec les avantages/echecs/désavantages/desastres net.
             </p>
           </li>
         </ol>
         <h5>Les réactions</h5>
         <p>
           Les réactions peuvent être déclenchées à tout moment par les
-          belligérant <strong>après avoir effectué leurs actions</strong>.La
-          possibilité de jouer sa réaction est conservée jusqu'à ce qu'elle soit
-          résolue, ou que le personnage effectue un nouveau tour de jeu
+          belligérant <strong>entre leurs tour de jeu</strong>.La possibilité de
+          jouer sa réaction est conservée jusqu'à ce qu'elle soit résolue, ou
+          que le personnage effectue un nouveau tour de jeu
         </p>
       </q-step>
     </q-stepper>
@@ -462,10 +462,10 @@
     <h4 class="text-center">Les états spéciaux</h4>
     <h5>À terre / Renversée</h5>
     <p>
-      La créature subit une menace lors de ses attaques au corps à corps. Les
-      assaillant engagés bénéficient d'un atout sur tout leurs jets pour toucher
-      contre elle. La créature peut éventuellement trouver une couverture contre
-      les attaques à distances.
+      La créature subit un désavantage lors de ses attaques au corps à corps.
+      Les assaillant engagés bénéficient d'un avantage sur tout leurs jets pour
+      toucher contre elle. La créature peut éventuellement trouver une
+      couverture contre les attaques à distances.
     </p>
     <h5>Assourdi</h5>
     <p>
@@ -508,8 +508,8 @@
     </p>
     <h5>Terrorisé</h5>
     <p>
-      Une créature terrorisée subit une menace chaque tours tant que la source
-      de sa frayeur se trouve dans son champ de vision. La créature est
+      Une créature terrorisée subit un désavantage chaque tours tant que la
+      source de sa frayeur se trouve dans son champ de vision. La créature est
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
     <h5>Surpris</h5>

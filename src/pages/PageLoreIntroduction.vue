@@ -49,8 +49,8 @@
       inimaginable, aspirant insatiablement la vie et l'énergie des créatures
       dans sa proximité. Dans l'horreur et la panique, les explorateurs de
       l'impossible, les conglomérats industriels, les alliances militaires ...
-      Tous réagirent dans l'urgence face à une menace d'ampleur galactique. Il
-      fut donc décidé, à la grande majorité, de se résoudre à l'acte le plus
+      Tous réagirent dans l'urgence face à un désavantage d'ampleur galactique.
+      Il fut donc décidé, à la grande majorité, de se résoudre à l'acte le plus
       fiable face à l'inconnu : l'atomiser avec ce qu'il se faisait de plus gros
       à l'époque. Le "PACIFICATOR-3003" fut développée dans un temps record.
       L'enfer s'abattit sur les systèmes qui autrefois faisaient les fortunes

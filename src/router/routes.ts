@@ -106,11 +106,6 @@ const routes: RouteRecordRaw[] = [
             component: () => import("src/pages/PageAptitudesDatabase.vue"),
           },
           {
-            name: "Aptitude Creation",
-            path: "create",
-            component: () => import("src/pages/PageAptitudeCreation.vue"),
-          },
-          {
             name: "Aptitude Catalogue",
             path: "list",
             component: () => import("src/pages/PageAptitudesDatabase.vue"),
