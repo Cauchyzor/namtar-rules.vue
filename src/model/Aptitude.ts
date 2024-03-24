@@ -4,9 +4,9 @@ import { ServiceAptitude, AptitudeTypeName } from "src/data/ServiceAptitude";
 import { CompetenceName } from "./Competence";
 
 /**
- * Un aptitude est un don, passif, technique, sort, etc.. qu'un personnage peut acquerir.
- * La classe abstraite permet de reegrouper les aptitudes définit par le MJ et celle part les
- * joueurs suivant le systeme de creation d'aptitude.
+ * Un aptitude est un don, passif, technique, sort, etc.. qu'un personnage peut acquérir.
+ * La classe abstraite permet de regrouper les aptitudes définit par le MJ et celle part les
+ * joueurs suivant le système de creation d'aptitude.
  */
 export abstract class Aptitude {
   Nom: string;
