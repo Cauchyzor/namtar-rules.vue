@@ -75,7 +75,7 @@ export class ServiceAptitude {
   private static AptitudeList: Array<Aptitude> = [
     new AptitudeFixed(
       "Concentration",
-      `Vous sacrifier autant de dés de ${AttributsName.REFLEXES} et votre mouvement afin de l'ajouter a vos jet d'attaques. Lorsque cette posture ce termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
+      `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} et votre mouvement afin d'ajouter autant de dés à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.ARME_A_DISTANCE, 1]])
     ),
@@ -84,6 +84,12 @@ export class ServiceAptitude {
       "Vous vous déplacez de deux niveau de porté au lieux d'un seul lors de ce tour.",
       AptitudeTypeName.TECHNIQUE,
       new Map([[CompetenceName.ATHLETISME, 1]])
+    ),
+    new AptitudeFixed(
+      "Présence envoûtante",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test de compétences.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.CHARME, 1]])
     ),
     new AptitudeFixed(
       "Combatant agile",
@@ -104,12 +110,6 @@ export class ServiceAptitude {
       new Map([[CompetenceName.DISCRETION, 1]])
     ),
     new AptitudeFixed(
-      "\"Comme à l'entrainement'\"",
-      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
-      AptitudeTypeName.TECHNIQUE,
-      new Map([[CompetenceName.PILOTAGE, 1]])
-    ),
-    new AptitudeFixed(
       "Rigueur scientifique",
       `Lorsque vous utiliser une ${AptitudeTypeName.EVOCATION}, vous pouvez regagnez la moitié du coût en point de stress si vous echouez votre jet d'attaque.`,
       AptitudeTypeName.MANTRA,
@@ -120,6 +120,27 @@ export class ServiceAptitude {
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NEGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.NEGOCIATION, 1]])
+    ),
+    new AptitudeFixed(
+      "Anticipation",
+      `Vous ajoutez à vos dés de ${AttributsName.REFLEXES} autant de d6 que votre score de `,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.PERSPICACITE, 1]])
+    ),
+    new AptitudeFixed(
+      '"Comme à l’entraînement\'"',
+      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
+      AptitudeTypeName.TECHNIQUE,
+      new Map([[CompetenceName.PILOTAGE, 1]])
+    ),
+    new AptitudeFixed(
+      "Mage de guerre",
+      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caracteristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le resultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
+      AptitudeTypeName.MANTRA,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
     ),
     new AptitudeFixed(
       "Frappes sournoises",
@@ -138,12 +159,6 @@ export class ServiceAptitude {
         [CompetenceName.INGENIERIE, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],
       ])
-    ),
-    new AptitudeFixed(
-      "Posture du dueliste",
-      "Pendant une phase de combat, vous avez un avantage sur vos jet d'attaque face à un ennemi qui à déjà effectuer une attaque contre vous et seulement vous.Si l'adversaire en question subit une attaque d'une autre source que vous, le duel est rompu et vous subissez deux désavantages sur vos jet d'attaque pendant votre tour.",
-      AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
     ),
   ];
 
