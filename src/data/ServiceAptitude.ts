@@ -6,21 +6,20 @@ import { CompetenceName } from "src/model/Competence";
 
 export enum AptitudeTypeName {
   AMELIORATION = "Amélioration",
-  EVOCATION = "Évocation",
-  NECROMANCIE = "Nécromancie",
   BENEDICTION = "Bénédiction",
-  MANTRA = "Mantra",
   CYTOMANCIE = "Cytomancie",
+  EVOCATION = "Évocation",
+  INJONCTION = "Injonction",
+  MANTRA = "Mantra",
+  NECROMANCIE = "Nécromancie",
   POSTURE = "Posture",
-  TECHNIQUE_CORPS_A_CORPS = "Technique au corps à corps",
   REACTION = "Réaction",
+  TECHNIQUE_CORPS_A_CORPS = "Technique au corps à corps",
 }
 
 export class ServiceAptitude {
   // TODO Exporter les capacités dans des fichiers JSON + gérer la lecture et l'écriture
   // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
-  // TODO Posture : Augmente la Défense
-  // TODO Riposte : Premier mouvement de la foudre : Vous vous déplacez a porté courte instantanément si le chemin et dégagé et porté un coups au corps a corps. Une fois par jours.
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
@@ -49,6 +48,11 @@ export class ServiceAptitude {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
         "Vous octroit des bonus tant que cette amelioration est active sur la piece d'équipement.",
+    },
+    {
+      Nom: AptitudeTypeName.INJONCTION,
+      Description:
+        "Vous appliquer vos effets sur une cible qui peut vous voir.",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
@@ -99,16 +103,46 @@ export class ServiceAptitude {
       new Map([[CompetenceName.DISCRETION, 1]])
     ),
     new AptitudeFixed(
-      '"Comme à l\'entrainement"',
-      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
-      AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.PILOTAGE, 1]])
+      "Eclat",
+      "Vous subissez 3 point de stress. La cible subit 3 point de dégat par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour. Vous déclanchez automatiquement une attaque d'opportunité contre vous.",
+      AptitudeTypeName.EVOCATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
+    ),
+    new AptitudeFixed(
+      "Equilibrage",
+      "L'arme qui reçois l'amélioration ajoute 1 dé d'avantage à tout les jet d'attaque fait avec celle-ci",
+      AptitudeTypeName.AMELIORATION,
+      new Map([[CompetenceName.INGENIERIE, 1]])
+    ),
+    new AptitudeFixed(
+      "Cri terrifiant",
+      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR})`,
+      AptitudeTypeName.INJONCTION,
+      new Map([[CompetenceName.INTIMIDATION, 1]])
     ),
     new AptitudeFixed(
       "Rigueur scientifique",
       `Lorsque vous utiliser une ${AptitudeTypeName.EVOCATION}, vous pouvez regagnez la moitié du coût en point de stress si vous echouez votre jet d'attaque.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.HISTOIRE, 1]])
+    ),
+    new AptitudeFixed(
+      "Coup bas",
+      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet contre un adversaire qui ce déplace a paorté courte.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.MAGOUILLE, 1]])
+    ),
+    new AptitudeFixed(
+      "",
+      "",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.MEDECINE, 1]])
+    ),
+    new AptitudeFixed(
+      "",
+      "",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.MYTHOLOGIE, 1]])
     ),
     new AptitudeFixed(
       "Posture diplomatique",
@@ -123,16 +157,28 @@ export class ServiceAptitude {
       new Map([[CompetenceName.PERSPICACITE, 1]])
     ),
     new AptitudeFixed(
-      "Eclat",
-      "Vous subissez 3 point de stress. La cible subit 3 point de dégat par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour. Vous déclanchez automatiquement une attaque d'opportunité contre vous.",
-      AptitudeTypeName.EVOCATION,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
+      '"Comme à l\'entrainement"',
+      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
+      AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.PILOTAGE, 1]])
     ),
     new AptitudeFixed(
-      "Equilibrage",
-      "L'arme qui reçois l'amélioration ajoute 1 dé d'avantage à tout les jet d'attaque fait avec celle-ci",
-      AptitudeTypeName.AMELIORATION,
-      new Map([[CompetenceName.INGENIERIE, 1]])
+      "",
+      "",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.SURVIE, 1]])
+    ),
+    new AptitudeFixed(
+      "",
+      "",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.TROMPERIE, 1]])
+    ),
+    new AptitudeFixed(
+      "",
+      "",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.VIGILANCE, 1]])
     ),
     new AptitudeFixed(
       "Frappes sournoises",
