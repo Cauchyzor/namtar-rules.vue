@@ -80,7 +80,7 @@ export class ServiceAptitude {
     ),
     new AptitudeFixed(
       "Présence envoûtante",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test de compétences.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.CHARME, 1]])
     ),
@@ -133,15 +133,15 @@ export class ServiceAptitude {
       new Map([[CompetenceName.MAGOUILLE, 1]])
     ),
     new AptitudeFixed(
-      "",
-      "",
+      "Medecine de terrain",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MEDECINE} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.MEDECINE, 1]])
     ),
     new AptitudeFixed(
-      "",
-      "",
-      AptitudeTypeName.MANTRA,
+      "Ordre de douleur",
+      "Vous pouvez choisir au moment d'effectuer un jet d'attaque à l'arme de subir 1 point de dégats par avantagés générés, mais d'en infliger un aux adversaires également.",
+      AptitudeTypeName.BENEDICTION,
       new Map([[CompetenceName.MYTHOLOGIE, 1]])
     ),
     new AptitudeFixed(
@@ -163,21 +163,21 @@ export class ServiceAptitude {
       new Map([[CompetenceName.PILOTAGE, 1]])
     ),
     new AptitudeFixed(
-      "",
-      "",
+      "Sagacitée",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.SURVIE, 1]])
     ),
     new AptitudeFixed(
-      "",
-      "",
+      "Menteur né",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.TROMPERIE} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.TROMPERIE, 1]])
     ),
     new AptitudeFixed(
-      "",
-      "",
-      AptitudeTypeName.MANTRA,
+      "Sauvegarde instinctive",
+      `Lorsque vous êtes la cible d'un jet d'attaque, vous pouvez relancer autant de dés ${AttributsName.REFLEXES} que votre rang de ${CompetenceName.VIGILANCE}`,
+      AptitudeTypeName.REACTION,
       new Map([[CompetenceName.VIGILANCE, 1]])
     ),
     new AptitudeFixed(
