@@ -4,16 +4,17 @@
 
     <p>Pour chaque niveau gagné :</p>
     <ul>
-      <li>
-        Vous augmentez le rang de maitrise d'une compétence. Vous ne pouvez
-        atteindre le rang 2 dans une compétence
-        <strong>qu'a partir du niveau 3</strong>. Le niveau 3 dans une
-        compétence ne peut être pris <strong>qu'a partir du niveau 6</strong>.
-      </li>
       <li>Choisir une nouvelle aptitude parmis celle disponible</li>
       <li>Mettre à jour votre nombre de point de vie</li>
       <li>Mettre à jour votre seuil maximum de stress</li>
     </ul>
+    <p>
+      Pour chaque palier de 2 niveau a partir du niveau 1 (niveaux 3, 5, 7, et
+      9)
+    </p>
+    <li>
+      Vous augmentez d'un niveau votre rang de maitrise dans une compétence.
+    </li>
     <p>
       Le niveau 9 est le niveau maximum que peuvent atteindre les aventuriers.
       Certaines créatures ou adversaires peuvent aller au delà de cette limite.
