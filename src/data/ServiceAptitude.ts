@@ -66,6 +66,7 @@ export class ServiceAptitude {
   ];
 
   private static AptitudeList: Array<Aptitude> = [
+    // RANK 1
     new AptitudeFixed(
       "Concentration",
       `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} et votre mouvement afin d'ajouter autant de dés à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
@@ -115,14 +116,14 @@ export class ServiceAptitude {
       new Map([[CompetenceName.INGENIERIE, 1]])
     ),
     new AptitudeFixed(
-      "Cri terrifiant",
-      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR})`,
+      '"Craignez-moi !"',
+      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}). Si la cible râte son test, elle est terrifiée`,
       AptitudeTypeName.INJONCTION,
       new Map([[CompetenceName.INTIMIDATION, 1]])
     ),
     new AptitudeFixed(
-      "Rigueur scientifique",
-      `Lorsque vous utiliser une ${AptitudeTypeName.EVOCATION}, vous pouvez regagnez la moitié du coût en point de stress si vous echouez votre jet d'attaque.`,
+      "Observateur éclairé",
+      `Vous bénéficiez d'autant de dés d'avantage que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.HISTOIRE, 1]])
     ),
@@ -145,14 +146,14 @@ export class ServiceAptitude {
       new Map([[CompetenceName.MYTHOLOGIE, 1]])
     ),
     new AptitudeFixed(
-      "Posture diplomatique",
+      "Attitude diplomatique",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NEGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.NEGOCIATION, 1]])
     ),
     new AptitudeFixed(
       "Anticipation",
-      `Vous ajoutez à vos dés de ${AttributsName.REFLEXES} autant de d6 que votre score de `,
+      `Vous ajoutez à vos dés de ${AttributsName.REFLEXES} autant de d6 que votre score de ${CompetenceName.PERSPICACITE}. Vous perdez 1 point de stress quand une attaque contre vous rate. Si vous n'avez plus de point de stress, vous ne pouvez plus profiter de ce mantra.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.PERSPICACITE, 1]])
     ),
@@ -180,6 +181,7 @@ export class ServiceAptitude {
       AptitudeTypeName.REACTION,
       new Map([[CompetenceName.VIGILANCE, 1]])
     ),
+    // RANK 2
     new AptitudeFixed(
       "Frappes sournoises",
       "Chaque fois que vous frappez un adversaire au corps-à-corps face à laquelle vous avez un avantage, vous infligez 1 point de dégâts supplémentaire par triomphe.",
