@@ -209,6 +209,7 @@ export class ServiceAptitude {
         [CompetenceName.ARME_A_DISTANCE, 1],
       ])
     ),
+    // TODO : Creation d'une prothèse d'ingé // amelioration ? entropie du fluide // Aptitude particulière ?
   ];
 
   static findAptitudesByNames(names: Array<string>) {
