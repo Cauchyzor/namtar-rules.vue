@@ -163,6 +163,19 @@ export class ServiceArme {
       Munition: "1 Munition hybride à haute densité",
       PorteMax: NiveauPorte.LONGUE,
     },
+    {
+      Nom: "Fusil d'assaut",
+      Degats: "15 Dommage + 1 par succès et par triomphe",
+      Special: [],
+      Competence: CompetenceName.ARME_A_DISTANCE,
+      Description:
+        "Arme des troupes régulière de l'empire. Comme toutes les armes à énergie, celui qui possède ce fusil et dispose d'assez de cellule haute densité n'a globalement pas grands chose à craindre de ses congénères humanoïdes.",
+      Encombrement: 4,
+      Rarete: 5,
+      Prix: 3000,
+      Munition: "10 Munitions haute densité",
+      PorteMax: NiveauPorte.MOYENNE,
+    },
   ];
 
   static getAllArmesList() {
