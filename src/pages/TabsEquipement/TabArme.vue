@@ -43,7 +43,7 @@ import { defineComponent } from "@vue/runtime-core";
 
 import ArmeCard from "src/components/ArmeCard.vue";
 
-import { ArmesService } from "src/model/Armes";
+import { ServiceArme } from "src/data/ServiceArme";
 
 export default defineComponent({
   components: {
@@ -51,7 +51,7 @@ export default defineComponent({
   },
   data() {
     return {
-      ArmeItemsList: ArmesService.getAllArmesList(),
+      ArmeItemsList: ServiceArme.getAllArmesList(),
     };
   },
 });
