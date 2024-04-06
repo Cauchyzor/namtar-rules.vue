@@ -65,6 +65,7 @@ export class ServiceAptitude {
 
   private static AptitudeList: Array<Aptitude> = [
     // RANK 1
+    // TODO : RANK2 : Blindage / Amélioration / Augmentation de la défense
     new AptitudeFixed(
       "Concentration",
       `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} et votre mouvement afin d'ajouter autant de dés à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
