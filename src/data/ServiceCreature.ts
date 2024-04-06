@@ -4,6 +4,7 @@ import { CompetenceName } from "src/model/Competence";
 import { Creature } from "src/model/Creature";
 import { ServiceAptitude } from "./ServiceAptitude";
 import { ServiceArme } from "./ServiceArme";
+import { ServiceArmure } from "./ServiceArmure";
 
 export class ServiceCreature {
   private static Types: Array<Creature> = [
@@ -31,6 +32,45 @@ export class ServiceCreature {
       ]),
       ServiceAptitude.findAptitudesByNames(["Équilibrage"]),
       ServiceArme.findArmesByNames(["Pacificateur"])
+    ),
+    new Creature(
+      "Garde Imperial",
+      4,
+      new Map([
+        [CaracteritiqueName.VIGUEUR, 4],
+        [CaracteritiqueName.AGILITE, 4],
+        [CaracteritiqueName.ADRESSE, 5],
+        [CaracteritiqueName.INTELLIGENCE, 2],
+        [CaracteritiqueName.CHARISME, 3],
+      ]),
+      new Map([
+        [AttributsName.INITIATIVE, "4"],
+        [AttributsName.PV, "16 + 3d4"],
+        [AttributsName.RECUPERATION, "8d4"],
+        [AttributsName.REFLEXES, "4d6"],
+        [AttributsName.STRESS, "5"],
+      ]),
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 2],
+        [CompetenceName.ARME_A_DISTANCE, 2],
+        [CompetenceName.ATHLETISME, 2],
+        [CompetenceName.VIGILANCE, 1],
+      ]),
+      ServiceAptitude.findAptitudesByNames([
+        "Concentration",
+        "Ruée",
+        "En joue",
+        "Immobilisation",
+        "Entraînement Physique",
+        "Entraînement tactique",
+        "Entraînement au tir",
+      ]),
+      ServiceArme.findArmesByNames(["Fusil d'assaut"]),
+      ServiceArmure.findArmuresByNames([
+        "Armure lourde scellée",
+        "Cartouchière",
+        "Ceinture multi-usage",
+      ])
     ),
   ];
 }
