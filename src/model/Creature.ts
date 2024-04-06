@@ -1,5 +1,6 @@
 import { Aptitude } from "./Aptitude";
 import { Arme } from "./Armes";
+import { ArmureItem } from "./Armures";
 import { AttributsName } from "./Attribut";
 import { CaracteritiqueName } from "./Caracteristique";
 import { CompetenceName } from "./Competence";
@@ -30,9 +31,10 @@ export class Creature {
    */
   Aptitudes: Array<Aptitude>;
   /**
-   * Listes des valeurs pour toutes les compétences accessible par la créatures
+   * Armes en mains lors de la rencontre
    */
   Armes: Array<Arme>;
+  Armures: Array<ArmureItem>;
 
   constructor(
     nom = "Creature inconnue",
@@ -53,7 +55,8 @@ export class Creature {
     ]),
     competences: Map<CompetenceName, number> = new Map([]),
     aptitudes: Array<Aptitude> = [],
-    armes: Array<Arme> = []
+    armes: Array<Arme> = [],
+    armures: Array<ArmureItem> = []
   ) {
     this.Nom = nom;
     this.NiveauEffectif = niveau;
@@ -62,5 +65,6 @@ export class Creature {
     this.Attributs = attributs;
     this.Aptitudes = aptitudes;
     this.Armes = armes;
+    this.Armures = armures;
   }
 }
