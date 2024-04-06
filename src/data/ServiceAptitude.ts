@@ -18,8 +18,6 @@ export enum AptitudeTypeName {
 }
 
 export class ServiceAptitude {
-  // TODO Exporter les capacités dans des fichiers JSON + gérer la lecture et l'écriture
-  // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
@@ -110,7 +108,7 @@ export class ServiceAptitude {
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
     new AptitudeFixed(
-      "Equilibrage",
+      "Équilibrage",
       "L'arme qui reçois l'amélioration ajoute 1 dé d'avantage à tout les jet d'attaque fait avec celle-ci",
       AptitudeTypeName.AMELIORATION,
       new Map([[CompetenceName.INGENIERIE, 1]])
