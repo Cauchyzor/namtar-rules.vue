@@ -117,27 +117,27 @@ const routes: RouteRecordRaw[] = [
         path: "/lore",
         component: () => import("src/pages/PageLoreIntroduction.vue"),
       },
-      {
-        name: "Creature",
-        path: "/creature",
-        children: [
-          {
-            name: "default",
-            path: "",
-            redirect: "/creature/create",
-          },
-          {
-            name: "Creature Creation",
-            path: "create",
-            component: () => import("src/pages/PageCreatureCreation.vue"),
-          },
-          {
-            name: "Génotraits",
-            path: "genotrait",
-            component: () => import("src/pages/PageGenotraitDatabase.vue"),
-          },
-        ],
-      },
+      // {
+      //   name: "Creature",
+      //   path: "/creature",
+      //   children: [
+      //     {
+      //       name: "default",
+      //       path: "",
+      //       redirect: "/creature/list",
+      //     },
+      //     {
+      //       name: "Creature Creation",
+      //       path: "create",
+      //       component: () => import("src/pages/PageCreatureCreation.vue"),
+      //     },
+      //     {
+      //       name: "Génotraits",
+      //       path: "genotrait",
+      //       component: () => import("src/pages/PageGenotraitDatabase.vue"),
+      //     },
+      //   ],
+      // },
     ],
   },
 ];
