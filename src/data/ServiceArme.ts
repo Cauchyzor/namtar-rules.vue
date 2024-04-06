@@ -2,7 +2,7 @@ import { Arme, ArmeDistanceItem, NiveauPorte } from "src/model/Armes";
 import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
-export class ArmesService {
+export class ServiceArme {
   private static ARMES: Array<Arme> = [
     {
       Nom: "Bâton de force",
