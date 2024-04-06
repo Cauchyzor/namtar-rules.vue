@@ -26,26 +26,27 @@ export class AttributService {
     {
       Nom: AttributsName.PV,
       Description:
-        "Votre maximum de PV est egal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1.",
+        "Votre maximum de PV est égal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1.",
       Icon: mdiHeart,
     },
 
     {
       Nom: AttributsName.REFLEXES,
-      Description: "Vous avez 1 point de Réflexes par point d'Agilité.",
+      Description:
+        "Vous ajoutez 1 dés de défense (d6) à vos jet de défense par point d'Agilité.",
       Icon: mdiShieldHalfFull,
     },
 
     {
       Nom: AttributsName.INITIATIVE,
       Description:
-        "Vous avez 1 point d'initiative par point d'Agilité et par niveau.",
+        "Vous avez 1 dé d'initiative (d6) par point d'Agilité et par niveau. Ils sont utilisés lors des jet d'initiative.",
       Icon: mdiArrowUp,
     },
 
     {
       Nom: AttributsName.STRESS,
-      Description: "Votre seuil de stress est égale à Intelligence + Charisme",
+      Description: "Votre seuil de stress est égale à Intelligence + Charisme.",
       Icon: mdiLightningBolt,
     },
     {
