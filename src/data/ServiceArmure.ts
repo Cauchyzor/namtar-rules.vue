@@ -105,4 +105,9 @@ export class ServiceArmure {
   static getAllArmureItems() {
     return this.ArmureItems;
   }
+  static findArmuresByNames(names: Array<string>) {
+    return this.getAllArmureItems().filter((armure) =>
+      names.includes(armure.Nom)
+    );
+  }
 }
