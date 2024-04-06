@@ -13,7 +13,7 @@ export enum NiveauPorte {
   COURTE = "Courte",
   MOYENNE = "Moyenne",
   LONGUE = "Longue",
-  EXTREME = "Extrème",
+  EXTREME = "Extrême",
 }
 
 export interface ArmeDistanceItem extends Arme {
@@ -26,12 +26,12 @@ export class ArmesService {
       Nom: "Bâton de force",
       Degats: "2 point de dommage par triomphe + 2 point de dommage par succès",
       Special: [
-        "Augmente votre défense liée à l'équipuement de 1 point",
+        "Ajoutez 1 dé de défense (d6) à votre total.",
         "Vous pouvez decider d'activer la cellule avant le jet d'attaque. Si l'attaque réussie : la cible subit l'effet Choc(1) et la cellule est consommée. Recharger la cellule demande une action",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "De conçeption simple, et de materiaux divers dépendant de l'origine de sa fabrication, le bâton de force et l'instrument de base pour tout voyageur galactique qui souhaite parcourir de grandes distances et avoir de quoi éloigner les créatures sauvages. Une celulle énergetique remplacable permet de générer de puissantes décharges étourdissantes",
+        "De conception simple, et de matériaux divers dépendant de l'origine de sa fabrication, le bâton de force et l'instrument de base pour tout voyageur galactique qui souhaite parcourir de grandes distances et avoir de quoi éloigner les créatures sauvages. Une cellule énergétique remplaçable permet de générer de puissantes décharges étourdissantes",
       Encombrement: 3,
       Rarete: 3,
       Prix: 100,
@@ -40,7 +40,7 @@ export class ArmesService {
       Nom: "Mains nues",
       Degats: "1 point de dommage par triomphe et par succès",
       Special: [
-        "L'utilisateur subit 1 blessure par désavantagess net sur son jet d'attaque.",
+        "Vous subissez 1 blessure par désavantages net sur son jet d'attaque.",
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: "Aucun",
@@ -52,7 +52,7 @@ export class ArmesService {
       Nom: "Matraque électrique",
       Degats:
         "2 point de dommages par triomphe net + 1 point de dommage par succès",
-      Special: ["Vous pouvez dépenser 2 avantage pour étourdir l'enemi."],
+      Special: ["Vous pouvez dépenser 2 avantages pour étourdir la cible."],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: "Aucun",
       Encombrement: 1,
@@ -60,13 +60,13 @@ export class ArmesService {
       Prix: 100,
     },
     {
-      Nom: "couteau moleculaire",
+      Nom: "couteau moléculaire",
       Degats:
         "4 point de dommages par triomphe net + 2 point de dommage par succès",
       Special: ["Aucune"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "Une lame trés tranchante, capable de découper tout ce qui serai moins solide que son metal.",
+        "Une lame très tranchante, capable de découper tout ce qui serai moins solide que son metal.",
       Encombrement: 1,
       Rarete: 2,
       Prix: 50,
@@ -86,13 +86,13 @@ export class ArmesService {
       Prix: 100,
     },
     {
-      Nom: "Sabre moleculaire",
+      Nom: "Sabre moléculaire",
       Degats:
         "3 point de dommages par triomphe net + 2 point de dommage par succès",
-      Special: ["Augmente votre defense liée à l'équipement de 1 point"],
+      Special: ["Ajoutez 1 dé de défense (d6) à votre total."],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "Précis et maniable, c'est l'arme de prédilection de la plupart des bretteurs partant en territoir hostile.",
+        "Précis et maniable, c'est l'arme de prédilection de la plupart des bretteurs partant en territoire hostile.",
       Encombrement: 1,
       Rarete: 2,
       Prix: 100,
@@ -107,7 +107,7 @@ export class ArmesService {
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "Arme de corps à corps redoutable, comprenant dans un sa conception une celulle à fusion remplaçable qui se décharge à l'impact",
+        "Arme de corps à corps redoutable, comprenant dans un sa conception une cellule à fusion remplaçable qui se décharge à l'impact",
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
@@ -118,7 +118,7 @@ export class ArmesService {
       Special: ["Aucun"],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:
-        "Equipement des pugilites, ils permettent de ne pas s'abimer les mains, et d'infliger de sevères contusions.",
+        "Équipement des pugilistes, ils permettent de ne pas s’abîmer les mains, et d'infliger de sévères contusions.",
       Encombrement: 5,
       Rarete: 5,
       Prix: 400,
@@ -143,12 +143,27 @@ export class ArmesService {
       Special: ["Aucun"],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
-        "Un bricolage simple permet de surcharger l'apport en energie de l'outil, et d'en faire une 'arme a distance non létale' trés utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Trés douloureux.",
+        "Un bricolage simple permet de surcharger l'apport en énergie de l'outil, et d'en faire une 'arme a distance non létale' très utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Très douloureux.",
       Encombrement: 3,
       Rarete: 2,
       Prix: 400,
-      Munition: "3 Munition faible densitée",
+      Munition: "3 Munition faible densité",
       PorteMax: NiveauPorte.COURTE,
+    },
+    {
+      Nom: "Pacificateur",
+      Degats: "2 point de dommage par succès et par triomphe",
+      Special: [
+        "La cible subit 1 point de stress par triomphe sur le jet d'attaque",
+      ],
+      Competence: CompetenceName.ARME_A_DISTANCE,
+      Description:
+        "Arme anti-émeute conçus dans un contexte ou l’intégrité physique des émeutiers n'est pas prise en compte dans le cahier des charges.",
+      Encombrement: 3,
+      Rarete: 3,
+      Prix: 600,
+      Munition: "6 Munition faible densité",
+      PorteMax: NiveauPorte.MOYENNE,
     },
     {
       Nom: "Fusil anti-nuisible",
@@ -159,7 +174,7 @@ export class ArmesService {
       ],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
-        "L'une des rare armes que l'on trouve parmis les populations civiles, pensée pour faire face aux horreures de l'espace depuis la pacifications. C'est un fusil d'une taille démesurée pour lutter contre des creatures démeusurées. Le recul pourrait briser un bras trop faible. Mais quel est l'ingénieur à l'origine de ce truc ?",
+        "L'une des rare armes que l'on trouve parmi les populations civiles, pensée pour faire face aux horreurs de l'espace depuis la pacifications. C'est un fusil d'une taille démesurée pour lutter contre des creatures démesurées. Le recul pourrait briser un bras trop faible. Mais quel est l'ingénieur à l'origine de ce truc ?",
       Encombrement: 5,
       Rarete: 5,
       Prix: 900,
@@ -170,5 +185,9 @@ export class ArmesService {
 
   static getAllArmesList() {
     return [...this.ARMES, ...this.ARME_DISTANCE];
+  }
+
+  static findArmesByNames(names: Array<string>) {
+    return this.getAllArmesList().filter((arme) => names.includes(arme.Nom));
   }
 }
