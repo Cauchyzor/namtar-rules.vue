@@ -6,6 +6,11 @@
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["Cytomancie"],
+  "cSpell.words": [
+    "AGILITE",
+    "Caracteristique",
+    "Caracteritique",
+    "Cytomancie"
+  ],
   "cSpell.language": "fr,en"
 }
