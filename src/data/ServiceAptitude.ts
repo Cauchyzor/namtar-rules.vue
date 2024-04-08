@@ -65,9 +65,6 @@ export class ServiceAptitude {
 
   private static AptitudeList: Array<Aptitude> = [
     // RANK 1
-    // TODO : RANK2 : Blindage / Amélioration / Augmentation de la défense
-    // TODO : RANK2 : En joue / Posture / Réaction supplémentaire pour tir
-    // TODO : RANK2 : Entrainements / Augmentation de carac
     new AptitudeFixed(
       "Concentration",
       `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} et votre mouvement afin d'ajouter autant de dés à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
@@ -183,6 +180,34 @@ export class ServiceAptitude {
       new Map([[CompetenceName.VIGILANCE, 1]])
     ),
     // RANK 2
+    // TODO : RANK2 : Blindage / Amélioration / Augmentation de la défense
+    new AptitudeFixed(
+      "Entraînement physique",
+      "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.ATHLÉTISME, 2]])
+    ),
+    new AptitudeFixed(
+      "Entraînement tactique",
+      "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.COORDINATION, 2]])
+    ),
+    new AptitudeFixed(
+      "Entraînement au tir",
+      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
+    ),
+    new AptitudeFixed(
+      "En joue",
+      "Vous avez une reaction supplémentaire par tour que vous pouvez utiliser uniquement pour effectuer une attaque d’opportunité avec une arme a distance que vous tenez en main.",
+      AptitudeTypeName.POSTURE,
+      new Map([
+        [CompetenceName.ARME_A_DISTANCE, 1],
+        [CompetenceName.VIGILANCE, 1],
+      ])
+    ),
     new AptitudeFixed(
       "Frappes sournoises",
       "Chaque fois que vous frappez un adversaire au corps-à-corps face à laquelle vous avez un avantage, vous infligez 1 point de dégâts supplémentaire par triomphe.",

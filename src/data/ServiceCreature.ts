@@ -61,7 +61,7 @@ export class ServiceCreature {
         "Ruée",
         "En joue",
         "Immobilisation",
-        "Entraînement Physique",
+        "Entraînement physique",
         "Entraînement tactique",
         "Entraînement au tir",
       ]),
