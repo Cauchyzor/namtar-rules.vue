@@ -11,22 +11,20 @@ export enum AptitudeTypeName {
   EVOCATION = "Évocation",
   INJONCTION = "Injonction",
   MANTRA = "Mantra",
-  NECROMANCIE = "Nécromancie",
+  NÉCROMANCIE = "Nécromancie",
   POSTURE = "Posture",
   REACTION = "Réaction",
   TECHNIQUE_CORPS_A_CORPS = "Technique au corps à corps",
 }
 
 export class ServiceAptitude {
-  // TODO Exporter les capacités dans des fichiers JSON + gérer la lecture et l'écriture
-  // TODO Aptitude : Triomphe sur les 5 sur des attaques a distances
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
       Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible à portée moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique.`,
     },
     {
-      Nom: AptitudeTypeName.NECROMANCIE,
+      Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
         "L'aptitude consomme un ou plusieurs cadavres frais (quelques heures maximum) à porté courte dont le niveau de puissance cumulé doit correspondre au rang de l'aptitude.",
     },
@@ -38,7 +36,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
-        "Un mantra vous octroie des bonus passifs de manière permanante.",
+        "Un mantra vous octroie des bonus passifs de manière permanente.",
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
@@ -47,7 +45,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
-        "Vous octroit des bonus tant que cette amelioration est active sur la piece d'équipement.",
+        "Vous octroi des bonus tant que cette amelioration est active sur la piece d'équipement.",
     },
     {
       Nom: AptitudeTypeName.INJONCTION,
@@ -57,11 +55,11 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.POSTURE,
       Description:
-        "La posture vous octroie des bonus situationnel jusqu'a ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurement.",
+        "La posture vous octroie des bonus situationnel jusqu'a ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurément.",
     },
     {
       Nom: AptitudeTypeName.REACTION,
-      Description: "Cette aptitude peut être déclanché lors d'une réaction.",
+      Description: "Cette aptitude peut être déclenché lors d'une réaction.",
     },
   ];
 
@@ -77,7 +75,7 @@ export class ServiceAptitude {
       "Ruée",
       "Vous vous déplacez de deux niveau de porté au lieux d'un seul lors de ce tour. Cette posture prend fin au début de votre prochain tour.",
       AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.ATHLETISME, 1]])
+      new Map([[CompetenceName.ATHLÉTISME, 1]])
     ),
     new AptitudeFixed(
       "Présence envoûtante",
@@ -99,25 +97,25 @@ export class ServiceAptitude {
     ),
     new AptitudeFixed(
       "Couverture improbable",
-      `Vous vous déplacer d'un niveau de porté au maximum et pouvez realiser un test de ${CompetenceName.DISCRETION} dont le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires. Le test echoue si vous êtes toujours dans le champs de vision de l'une d'entre elle. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
+      `Vous vous déplacer d'un niveau de porté au maximum et pouvez réaliser un test de ${CompetenceName.DISCRETION} dont le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires. Le test échoue si vous êtes toujours dans le champs de vision de l'une d'entre elle. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
       AptitudeTypeName.REACTION,
       new Map([[CompetenceName.DISCRETION, 1]])
     ),
     new AptitudeFixed(
       "Eclat",
-      "Vous subissez 3 point de stress. La cible subit 3 point de dégat par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour. Vous déclanchez automatiquement une attaque d'opportunité contre vous.",
+      "Vous subissez 3 point de stress. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour. Vous déclenchez automatiquement une attaque d'opportunité contre vous.",
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
     new AptitudeFixed(
-      "Equilibrage",
+      "Équilibrage",
       "L'arme qui reçois l'amélioration ajoute 1 dé d'avantage à tout les jet d'attaque fait avec celle-ci",
       AptitudeTypeName.AMELIORATION,
-      new Map([[CompetenceName.INGENIERIE, 1]])
+      new Map([[CompetenceName.INGÉNIERIE, 1]])
     ),
     new AptitudeFixed(
       '"Craignez-moi !"',
-      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}). Si la cible râte son test, elle est terrifiée`,
+      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}). Si la cible rate son test, elle est terrifiée`,
       AptitudeTypeName.INJONCTION,
       new Map([[CompetenceName.INTIMIDATION, 1]])
     ),
@@ -129,42 +127,42 @@ export class ServiceAptitude {
     ),
     new AptitudeFixed(
       "Coup bas",
-      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet contre un adversaire qui ce déplace a paorté courte.",
+      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet contre un adversaire qui ce déplace a porté courte.",
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.MAGOUILLE, 1]])
     ),
     new AptitudeFixed(
-      "Medecine de terrain",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MEDECINE} lors de vos test avec cette compétence.`,
+      "Médecine de terrain",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MÉDECINE} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.MEDECINE, 1]])
+      new Map([[CompetenceName.MÉDECINE, 1]])
     ),
     new AptitudeFixed(
       "Ordre de douleur",
-      "Vous pouvez choisir au moment d'effectuer un jet d'attaque à l'arme de subir 1 point de dégats par avantagés générés, mais d'en infliger un aux adversaires également.",
+      "Vous pouvez choisir au moment d'effectuer un jet d'attaque à l'arme de subir 1 point de dégâts par avantagés générés, mais d'en infliger un aux adversaires également.",
       AptitudeTypeName.BENEDICTION,
       new Map([[CompetenceName.MYTHOLOGIE, 1]])
     ),
     new AptitudeFixed(
       "Attitude diplomatique",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NEGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NÉGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.NEGOCIATION, 1]])
+      new Map([[CompetenceName.NÉGOCIATION, 1]])
     ),
     new AptitudeFixed(
       "Anticipation",
-      `Vous ajoutez à vos dés de ${AttributsName.REFLEXES} autant de d6 que votre score de ${CompetenceName.PERSPICACITE}. Vous perdez 1 point de stress quand une attaque contre vous rate. Si vous n'avez plus de point de stress, vous ne pouvez plus profiter de ce mantra.`,
+      `Vous ajoutez à vos dés de ${AttributsName.REFLEXES} autant de d6 que votre score de ${CompetenceName.PERSPICACITÉ}. Vous perdez 1 point de stress quand une attaque contre vous rate. Si vous n'avez plus de point de stress, vous ne pouvez plus profiter de ce mantra.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.PERSPICACITE, 1]])
+      new Map([[CompetenceName.PERSPICACITÉ, 1]])
     ),
     new AptitudeFixed(
-      '"Comme à l\'entrainement"',
+      '"Comme à l’entraînement"',
       `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.PILOTAGE, 1]])
     ),
     new AptitudeFixed(
-      "Sagacitée",
+      "Sagacité",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.SURVIE, 1]])
@@ -182,6 +180,34 @@ export class ServiceAptitude {
       new Map([[CompetenceName.VIGILANCE, 1]])
     ),
     // RANK 2
+    // TODO : RANK2 : Blindage / Amélioration / Augmentation de la défense
+    new AptitudeFixed(
+      "Entraînement physique",
+      "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.ATHLÉTISME, 2]])
+    ),
+    new AptitudeFixed(
+      "Entraînement tactique",
+      "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.COORDINATION, 2]])
+    ),
+    new AptitudeFixed(
+      "Entraînement au tir",
+      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
+    ),
+    new AptitudeFixed(
+      "En joue",
+      "Vous avez une reaction supplémentaire par tour que vous pouvez utiliser uniquement pour effectuer une attaque d’opportunité avec une arme a distance que vous tenez en main.",
+      AptitudeTypeName.POSTURE,
+      new Map([
+        [CompetenceName.ARME_A_DISTANCE, 1],
+        [CompetenceName.VIGILANCE, 1],
+      ])
+    ),
     new AptitudeFixed(
       "Frappes sournoises",
       "Chaque fois que vous frappez un adversaire au corps-à-corps face à laquelle vous avez un avantage, vous infligez 1 point de dégâts supplémentaire par triomphe.",
@@ -193,7 +219,7 @@ export class ServiceAptitude {
     ),
     new AptitudeFixed(
       "Mage de guerre",
-      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caracteristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le resultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
+      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caractéristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -202,10 +228,10 @@ export class ServiceAptitude {
     ),
     new AptitudeFixed(
       "Bombe improvisée",
-      `Si vous avez a votre disposition de trois ingredients adéquats (un combustible, une mèche et un contenant), vous pouvez effectuer un test de ${CompetenceName.INGENIERIE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 pour creer une bombe artisanal que vous pouvez utiliser comme arme de jet. La puissance de la bombe est déterminée par le MJ en fonction du combustible et de la réussite de test.`,
+      `Si vous avez a votre disposition de trois ingredients adéquats (un combustible, une mèche et un contenant), vous pouvez effectuer un test de ${CompetenceName.INGÉNIERIE} (${CaracteritiqueName.INTELLIGENCE}) de DD3 pour créer une bombe artisanal que vous pouvez utiliser comme arme de jet. La puissance de la bombe est déterminée par le MJ en fonction du combustible et de la réussite de test.`,
       AptitudeTypeName.AMELIORATION,
       new Map([
-        [CompetenceName.INGENIERIE, 1],
+        [CompetenceName.INGÉNIERIE, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],
       ])
     ),
