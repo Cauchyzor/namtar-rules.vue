@@ -9,7 +9,7 @@ export type Competence = {
 
 export enum CompetenceName {
   ARME_A_DISTANCE = "Arme à distance",
-  ATHLETISME = "Athlétisme",
+  ATHLÉTISME = "Athlétisme",
   CHARME = "Charme",
   MYTHOLOGIE = "Mythologie",
   HISTOIRE = "Histoire",
@@ -17,12 +17,12 @@ export enum CompetenceName {
   CORPS_A_CORPS = "Corps à corps",
   DISCRETION = "Discrétion",
   ENTROPIE_DU_FLUIDE = "Entropie du fluide",
-  INGENIERIE = "Ingénierie",
+  INGÉNIERIE = "Ingénierie",
   INTIMIDATION = "Intimidation",
   MAGOUILLE = "Magouille",
-  MEDECINE = "Médecine",
-  NEGOCIATION = "Négociation",
-  PERSPICACITE = "Prespicacité",
+  MÉDECINE = "Médecine",
+  NÉGOCIATION = "Négociation",
+  PERSPICACITÉ = "Perspicacité",
   PILOTAGE = "Pilotage",
   SURVIE = "Survie",
   TROMPERIE = "Tromperie",
@@ -37,7 +37,7 @@ export class CompetenceService {
       ShortDescription: "Utiliser une arme à distance avec efficacité.",
     },
     {
-      Nom: CompetenceName.ATHLETISME,
+      Nom: CompetenceName.ATHLÉTISME,
       BaseCaracteristique: CaracteritiqueName.VIGUEUR,
       ShortDescription: "Sauter, grimper, soulever de lourdes charges.",
     },
@@ -45,7 +45,7 @@ export class CompetenceService {
       Nom: CompetenceName.COORDINATION,
       BaseCaracteristique: CaracteritiqueName.AGILITE,
       ShortDescription:
-        "Garder un equilibre, effectuer des accrobatie, habilité manuelle.",
+        "Garder l'équilibre, effectuer des acrobaties, habilité manuelle.",
     },
     {
       Nom: CompetenceName.CORPS_A_CORPS,
@@ -60,7 +60,7 @@ export class CompetenceService {
     {
       Nom: CompetenceName.PILOTAGE,
       BaseCaracteristique: CaracteritiqueName.ADRESSE,
-      ShortDescription: "Manoeuvrer un vehicule terrestre ou aerospacial.",
+      ShortDescription: "Manoeuver un véhicule terrestre ou aérospatial.",
     },
     {
       Nom: CompetenceName.HISTOIRE,
@@ -75,28 +75,28 @@ export class CompetenceService {
         "Réagir et argumenter sur un fait lié à un culte, une religions ou une croyance.",
     },
     {
-      Nom: CompetenceName.MEDECINE,
+      Nom: CompetenceName.MÉDECINE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        "Appliquer des premier soins ou manipuler des outils de medecine.",
+        "Appliquer des premier soins ou manipuler des outils de médecine.",
     },
     {
       Nom: CompetenceName.SURVIE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        "Trouver un chemin sûr, reconnaitre des substances nutritives ou danguereuses.",
+        "Trouver un chemin sûr, reconnaître des substances nutritives ou dangereuses.",
     },
     {
-      Nom: CompetenceName.INGENIERIE,
+      Nom: CompetenceName.INGÉNIERIE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        "Réparer un objet mecanique ou interagir avec un terminal informatique.",
+        "Réparer un objet mécanique ou interagir avec un terminal informatique.",
     },
     {
       Nom: CompetenceName.ENTROPIE_DU_FLUIDE,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
-        "Invoquer des materialisation du Fluide, resentir des sources d'energie du Fluide.",
+        "Invoquer des matérialisation du Fluide, ressentir des sources d’énergie du Fluide.",
     },
     {
       Nom: CompetenceName.CHARME,
@@ -105,7 +105,7 @@ export class CompetenceService {
         "Obtenir une faveur de la cible sans avoir recours à la négociation.",
     },
     {
-      Nom: CompetenceName.NEGOCIATION,
+      Nom: CompetenceName.NÉGOCIATION,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription:
         "Marchander, argumenter sur une decision de manière plus ou moins rationnelle.",
@@ -117,10 +117,10 @@ export class CompetenceService {
         "Déguiser un scène ou une personne, mentir à un individu.",
     },
     {
-      Nom: CompetenceName.PERSPICACITE,
+      Nom: CompetenceName.PERSPICACITÉ,
       BaseCaracteristique: CaracteritiqueName.CHARISME,
       ShortDescription:
-        "Capcité passive à detecter le mensonge ou mettre en evidence ce qui ne l'est pas.",
+        "Capacité passive à detecter le mensonge ou mettre en evidence ce qui ne l'est pas.",
     },
     {
       Nom: CompetenceName.INTIMIDATION,
@@ -143,7 +143,7 @@ export class CompetenceService {
     return this.CompetencesList.filter((c) => c.BaseCaracteristique === name);
   }
   /**
-   * Returne all Competences with info
+   * Return all Competences with info
    * @returns
    */
   static getAllCompetences() {

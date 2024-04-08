@@ -26,7 +26,7 @@ export class ServiceCreature {
         [AttributsName.STRESS, "3"],
       ]),
       new Map([
-        [CompetenceName.INGENIERIE, 1],
+        [CompetenceName.INGÉNIERIE, 1],
         [CompetenceName.ARME_A_DISTANCE, 2],
         [CompetenceName.VIGILANCE, 2],
       ]),
@@ -38,7 +38,7 @@ export class ServiceCreature {
       4,
       new Map([
         [CaracteritiqueName.VIGUEUR, 4],
-        [CaracteritiqueName.AGILITE, 4],
+        [CaracteritiqueName.AGILITE, 3],
         [CaracteritiqueName.ADRESSE, 5],
         [CaracteritiqueName.INTELLIGENCE, 2],
         [CaracteritiqueName.CHARISME, 3],
@@ -53,7 +53,7 @@ export class ServiceCreature {
       new Map([
         [CompetenceName.CORPS_A_CORPS, 2],
         [CompetenceName.ARME_A_DISTANCE, 2],
-        [CompetenceName.ATHLETISME, 2],
+        [CompetenceName.ATHLÉTISME, 2],
         [CompetenceName.VIGILANCE, 1],
       ]),
       ServiceAptitude.findAptitudesByNames([
