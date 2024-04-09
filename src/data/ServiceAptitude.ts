@@ -218,6 +218,33 @@ export class ServiceAptitude {
       ])
     ),
     new AptitudeFixed(
+      "Morsure de Namtar",
+      "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez a la cible 1 point de stress par Triomphes et par avantages.",
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
+    ),
+    new AptitudeFixed(
+      "Griffe dimensionnelle",
+      `Vous réalisez un jet d'attaque en utilisant autant de dés (d6) que vos points de stress restant. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 point de stress.`,
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
+    ),
+    new AptitudeFixed(
+      "Echophagie",
+      "Vous relancer 1 dé de vie et soignez vous du montant indiqué à chaque fois que vous regagner des points de stress.",
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
+    ),
+    new AptitudeFixed(
       "Mage de guerre",
       `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caractéristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
       AptitudeTypeName.MANTRA,
