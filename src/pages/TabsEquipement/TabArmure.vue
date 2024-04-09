@@ -21,7 +21,7 @@ import { defineComponent } from "@vue/runtime-core";
 
 import ArmureCard from "src/components/ArmureCard.vue";
 
-import { ArmureService } from "src/model/Armures";
+import { ServiceArmure } from "src/data/ServiceArmure";
 
 export default defineComponent({
   components: {
@@ -29,7 +29,7 @@ export default defineComponent({
   },
   data() {
     return {
-      ArmureItemsList: ArmureService.getAllArmureItems(),
+      ArmureItemsList: ServiceArmure.getAllArmureItems(),
     };
   },
 });

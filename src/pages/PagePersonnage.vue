@@ -1,18 +1,18 @@
 <template>
   <q-page padding>
     <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
-    <!-- TODO : Personnage stockées en JSON  : récuperation des personnage json -->
-    <!-- TODO : Decrire les attribut comme des "dés" plutot que des points -->
-    <h5 class="text-center">Caracteristiques</h5>
+    <!-- TODO : Personnage stockées en JSON  : récupération des personnage json -->
+    <!-- TODO : Décrire les attribut comme des "dés" plutôt que des points -->
+    <h5 class="text-center">Caractéristiques</h5>
     <div class="text-center">
       <p>
         Un personnage possède
         <strong
-          >14 points répartis dans 5 caracteristiques, au maximum 5 et minimum
+          >14 points répartis dans 5 caractéristiques, au maximum 5 et minimum
           2</strong
-        >. Un humanoïde civilisé possède habituellement des
-        caractéristiquescaractérisée entre 4 et 2 (4 représente un talent
-        certain, 2 un retard notable).
+        >. Un humanoïde civilisé possède habituellement des valeurs de
+        caractéristiques entre 4 et 2 (4 représente un talent certain, 2 un
+        retard notable).
       </p>
     </div>
 
@@ -44,8 +44,8 @@
     <div class="text-center">
       <p>
         Elles traduisent un savoir-faire dans une discipline
-        <strong>sur une echelle de 0 à 2</strong>. Plus cette compétence possède
-        un rang élevé, plus les chances de réussir sont élevées.
+        <strong>par un rang de niveaux de 0 à 2</strong>. Plus cette compétence
+        possède un rang élevé, plus les chances de réussir sont élevées.
         <strong
           >Un personnage commence l'aventure 3 compétences aux rang 1.</strong
         >
@@ -67,9 +67,9 @@
     <h5 class="text-center">Aptitudes</h5>
     <div class="text-center">
       <p>
-        Pour chaque point investi dans les compétences, le personnage bénificie
-        d'une <strong>aptitude</strong>. Elle represente aussi bien des don ou
-        des capacitées en liens avec leurs compétences que des savoirs faire
+        Pour chaque point investi dans les compétences, le personnage bénéficie
+        d'une <strong>aptitude</strong>. Elle représente aussi bien des don ou
+        des capacités en liens avec leurs compétences que des savoirs faire
         paranormaux liée à l'utilisation du fluide.
       </p>
     </div>
