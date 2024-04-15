@@ -30,13 +30,13 @@ export class GenotraitService {
       Nom: "Systeme Régénératif",
       Description:
         "La creature est capable de se soigner plus facilement. Sa résilience est augmentée",
-      Modificateurs: new Map([[AttributsName.RECUPERATION, +1]]),
+      Modificateurs: new Map([[AttributsName.RÉCUPÉRATION, +1]]),
     },
     {
       Nom: "Entitée Onirique",
       Description:
-        "La créature est née grace au fluide et possède un lien fort entre sa boilogie et le fluide. Elle n'a pas besoin de boire ou de manger, entre en états d'hibernation si elle est isolée du fluide. Son seuil de stress est augmenté. Chaque point de stress perdu en dessous de 0 inflige automatiquement 1 bléssure. Elle peut utiliser sa caractristique de Charisme au lieu de l'intelligence pour executer ses aptitudes",
-      Modificateurs: new Map([[AttributsName.STRESS, +5]]),
+        "La créature est née grace au fluide et possède un lien fort entre sa biologie et le fluide. Elle n'a pas besoin de boire ou de manger, entre en états d'hibernation si elle est isolée du fluide. Son seuil de stress est augmenté. Chaque point de stress perdu en dessous de 0 inflige automatiquement 1 blessure. Elle peut utiliser sa caractéristique de Charisme au lieu de l'intelligence pour executer ses aptitudes",
+      Modificateurs: new Map([[AttributsName.ÉSOTÉRISME, +5]]),
     },
     {
       Nom: "Entitée divisée",

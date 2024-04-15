@@ -14,11 +14,11 @@ export type Attribut = {
 };
 
 export enum AttributsName {
-  PV = "PV",
-  REFLEXES = "RÉFLEXES",
-  STRESS = "STRESS",
-  RECUPERATION = "RECUPERATION",
-  INITIATIVE = "INITIATIVE",
+  PV = "Point de vie",
+  REFLEXES = "Réflexes",
+  ÉSOTÉRISME = "Ésotérisme",
+  RÉCUPÉRATION = "Récupération",
+  INITIATIVE = "Initiative",
 }
 
 export class AttributService {
@@ -45,12 +45,13 @@ export class AttributService {
     },
 
     {
-      Nom: AttributsName.STRESS,
-      Description: "Votre seuil de stress est égale à Intelligence + Charisme.",
+      Nom: AttributsName.ÉSOTÉRISME,
+      Description:
+        "Vous avez autant de dé d'ésotérisme (d6) que la somme de votre Intelligence et votre Charisme",
       Icon: mdiLightningBolt,
     },
     {
-      Nom: AttributsName.RECUPERATION,
+      Nom: AttributsName.RÉCUPÉRATION,
       Description:
         "Vous avez 2 dès de vie (d4) par point de Vigueur et par niveau. Ils vous permettent de vous soigner.",
       Icon: mdiHeartCircleOutline,

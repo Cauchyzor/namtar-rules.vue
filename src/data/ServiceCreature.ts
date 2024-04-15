@@ -21,9 +21,9 @@ export class ServiceCreature {
       new Map([
         [AttributsName.INITIATIVE, "3"],
         [AttributsName.PV, "7 + 2d4"],
-        [AttributsName.RECUPERATION, "3d4"],
+        [AttributsName.RÉCUPÉRATION, "3d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.STRESS, "3"],
+        [AttributsName.ÉSOTÉRISME, "3"],
       ]),
       new Map([
         [CompetenceName.INGÉNIERIE, 1],
@@ -46,9 +46,9 @@ export class ServiceCreature {
       new Map([
         [AttributsName.INITIATIVE, "3"],
         [AttributsName.PV, "12 + 2d4"],
-        [AttributsName.RECUPERATION, "3d4"],
+        [AttributsName.RÉCUPÉRATION, "3d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.STRESS, "2"],
+        [AttributsName.ÉSOTÉRISME, "2"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -76,9 +76,9 @@ export class ServiceCreature {
       new Map([
         [AttributsName.INITIATIVE, "4"],
         [AttributsName.PV, "16 + 7d4"],
-        [AttributsName.RECUPERATION, "8d4"],
+        [AttributsName.RÉCUPÉRATION, "8d4"],
         [AttributsName.REFLEXES, "4d6"],
-        [AttributsName.STRESS, "5"],
+        [AttributsName.ÉSOTÉRISME, "5"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -112,9 +112,9 @@ export class ServiceCreature {
       new Map([
         [AttributsName.INITIATIVE, "3"],
         [AttributsName.PV, "28 + 12d4"],
-        [AttributsName.RECUPERATION, "13d4"],
+        [AttributsName.RÉCUPÉRATION, "13d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.STRESS, "7"],
+        [AttributsName.ÉSOTÉRISME, "7"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],

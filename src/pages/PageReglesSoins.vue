@@ -9,8 +9,8 @@
       aptitudes.
     </p>
     <strong>Jet de soins :</strong> Lancer autant de dès de vie que vous le
-    souhaitez ou que le maximum autorisé s'il sagit d'une aptitude. Récupérez le
-    nombre de PV indiqué par la somme des dés.
+    souhaitez ou que le maximum autorisé s'il s’agit d'une aptitude. Récupérez
+    le nombre de PV indiqué par la somme des dés.
     <p>Les Jets de soins ne peuvent se faire que dans certaines situations :</p>
     <ul>
       <li>Le repos court (1h d'inactivité)</li>
@@ -42,8 +42,7 @@
       </li>
       <li>
         Attention, chaque échecs inflige 1 blessure et chaque désavantage net
-        peut soit rallonger le temps de l'opération, soit infliger 1 point de
-        stress.
+        peut rallonger le temps de l'opération.
       </li>
     </ul>
     <h4>Tomber à 0 point de vie</h4>
