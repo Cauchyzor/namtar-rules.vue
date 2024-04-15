@@ -91,7 +91,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Feinte",
-      `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES}`,
+      `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES}. Cette technique ne peut pas infliger de dégâts.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([[CompetenceName.CORPS_A_CORPS, 1]])
     ),
@@ -109,7 +109,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Équilibrage",
-      "L'arme qui reçois l'amélioration ajoute 1 dé d'avantage à tout les jet d'attaque fait avec celle-ci",
+      "L'arme qui reçois l'amélioration ajoute 1 dé de supériorité à tout les jet d'attaque fait avec celle-ci",
       AptitudeTypeName.AMELIORATION,
       new Map([[CompetenceName.INGÉNIERIE, 1]])
     ),
@@ -121,7 +121,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Observateur éclairé",
-      `Vous bénéficiez d'autant de dés d'avantage que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
+      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.HISTOIRE, 1]])
     ),
@@ -210,7 +210,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Frappes sournoises",
-      "Chaque fois que vous frappez un adversaire au corps-à-corps face à laquelle vous avez un avantage, vous infligez 1 point de dégâts supplémentaire par triomphe.",
+      "Chaque fois que vous frappez un adversaire au corps-à-corps face et que vous avez au moins 1 dé de supériorité, vous infligez 1 point de dégâts supplémentaire par triomphe.",
       AptitudeTypeName.POSTURE,
       new Map([
         [CompetenceName.DISCRETION, 1],
@@ -273,7 +273,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Vol de vitesse",
-      `La cible perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à porté moyenne bénéficie d'autant de dés d'avantages (d4) supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
+      `La cible perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à porté moyenne bénéficie d'autant de dés de supériorités supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
       AptitudeTypeName.EVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],

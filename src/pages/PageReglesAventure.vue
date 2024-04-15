@@ -81,7 +81,7 @@
           <td>120 mètres</td>
           <td>6 kilomètres</td>
           <td>45 kilomètres</td>
-          <td>désavantage sur les tests de vigilance</td>
+          <td>handicap sur les tests de vigilance</td>
         </tr>
         <tr>
           <td><strong>Normal</strong></td>
@@ -218,8 +218,8 @@
       généralement entre une zone de lumière vive, comme une torche, et les
       ténèbres alentours. La lumière de l&#39;aube et du crépuscule est aussi
       considéré comme une lumière faible, de même que la lumière dégagée par une
-      pleine lune particulièrement brillante. Les créatures subissent un
-      désavantages sur les tests liés à la vision.
+      pleine lune particulièrement brillante. Les créatures subissent un dé
+      d'handicap sur les tests liés à la vision.
     </p>
     <p>
       Les <strong>ténèbres sont une zone de visibilité nulle</strong>. Les
@@ -252,11 +252,11 @@
     <p>
       Un personnage a besoin de 1 ration de nourriture par jour. La ration
       comprend également le nécessaire en eau. Pour chaque journée passée sans
-      manger ou boire à sa faim, le personnage subit 1 désavantage. Il suffit de
-      manger normalement un jour pour remettre le compteur de journées de jeûne
-      à zéro. Si le personnage trouve de quoi grignoter ou boire un peu
+      manger ou boire à sa faim, le personnage subit dé de handicap. Il suffit
+      de manger normalement un jour pour remettre le compteur de journées de
+      jeûne à zéro. Si le personnage trouve de quoi grignoter ou boire un peu
       d&#39;eau malgré le manque, il ne sort pas de l&#39;état d&#39;épuisement,
-      mais évite de cumuler des désavantages
+      mais évite de cumuler des handicaps.
     </p>
     <h4>Entre les aventures</h4>
     <h5>Artisanat</h5>
@@ -337,7 +337,7 @@
       Face aux proportions difficilement gigantesques que représente la galaxie
       en elle-même, communiquer d&#39;un bras à l&#39;autre représente un
       challenge technique rendu possible par les mêmes découvertes que celles
-      qui on permit le voyage hyperspatiale. Grâce à une grande antenne très
+      qui on permit le voyage hyperspatial. Grâce à une grande antenne très
       sophistiquée, appelée &quot;<strong>beacom</strong>&quot; située loin des
       zones d&#39;activités dans un système solaire, et alimentée généralement
       par l&#39;<strong

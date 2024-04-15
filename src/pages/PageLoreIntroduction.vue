@@ -49,8 +49,8 @@
       inimaginable, aspirant insatiablement la vie et l'énergie des créatures
       dans sa proximité. Dans l'horreur et la panique, les explorateurs de
       l'impossible, les conglomérats industriels, les alliances militaires ...
-      Tous réagirent dans l'urgence face à un désavantage d'ampleur galactique.
-      Il fut donc décidé, à la grande majorité, de se résoudre à l'acte le plus
+      Tous réagirent dans l'urgence face à une menace d'ampleur galactique. Il
+      fut donc décidé, à la grande majorité, de se résoudre à l'acte le plus
       fiable face à l'inconnu : l'atomiser avec ce qu'il se faisait de plus gros
       à l'époque. Le "PACIFICATOR-3003" fut développée dans un temps record.
       L'enfer s'abattit sur les systèmes qui autrefois faisaient les fortunes
@@ -58,7 +58,7 @@
       planètes les plus proches du point d'impact furent balayées. La détonation
       fit changer d'orbite plusieurs étoiles sur des années-lumières de
       diamètre, et les failles d'etherum, celles qui permirent aux explorateurs
-      l'accès au coeur, s'effondrèrent, isolant alors les forces en présence du
+      l'accès au cœur, s'effondrèrent, isolant alors les forces en présence du
       reste de la galaxie. Le contact fut perdu.
     </p>
     <p>
@@ -67,7 +67,7 @@
       personnes avec d'étranges pouvoirs firent leurs apparitions aux quatre
       coins de la galaxie, prétendant qu'il pouvait manipuler cette énergie
       malléable pour accomplir de grandes choses. Les possesseurs d'artefacts et
-      d'objets originaires du coeur remarquèrent alors qu'une force nouvelle
+      d'objets originaires du cœur remarquèrent alors qu'une force nouvelle
       habitait également leurs inoffensifs ustensiles décoratifs. Des pouvoirs
       au delà de la raison, des capacités hors normes. Une nouvelle chasse à
       l'artefact était donnée.

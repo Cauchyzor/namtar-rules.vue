@@ -194,7 +194,7 @@
               <q-item-section>
                 <q-item-label header>Fouiller a son emplacement</q-item-label>
                 <q-item-label caption
-                  >Jeter un coup d'oeil rapide autour de vous, ou récupérer un
+                  >Jeter un coup d'œil rapide autour de vous, ou récupérer un
                   objet dans une sacoche ou a la ceinture.</q-item-label
                 >
               </q-item-section>
@@ -390,10 +390,10 @@
           </li>
           <li>
             <p>
-              Lancez les dés et calculer le reslutat net. Si il reste au moins
+              Lancez les dés et calculer le résultat net. Si il reste au moins
               un succès net, l'attaque est réussie. En fonction de l'aptitude ou
               de l'arme utilisée, certains effet supplémentaires peuvent
-              survenir avec les avantages/echecs/désavantages/desastres net.
+              survenir avec les avantages/échecs/désavantages/désastres net.
             </p>
           </li>
         </ol>
@@ -462,9 +462,9 @@
     <h4 class="text-center">Les états spéciaux</h4>
     <h5>À terre / Renversée</h5>
     <p>
-      La créature subit un désavantage lors de ses attaques au corps à corps.
-      Les assaillant engagés bénéficient d'un avantage sur tout leurs jets pour
-      toucher contre elle. La créature peut éventuellement trouver une
+      La créature subit un dé de handicap lors de ses attaques au corps à corps.
+      Les assaillant engagés bénéficient d'un dé de supériorité sur tout leurs
+      jets pour toucher contre elle. La créature peut éventuellement trouver une
       couverture contre les attaques à distances.
     </p>
     <h5>Assourdi</h5>
@@ -508,7 +508,7 @@
     </p>
     <h5>Terrorisé</h5>
     <p>
-      Une créature terrorisée subit un désavantage chaque tours tant que la
+      Une créature terrorisée subit un dé de handicap chaque tours tant que la
       source de sa frayeur se trouve dans son champ de vision. La créature est
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>

@@ -1,6 +1,5 @@
 <template>
   <q-page padding>
-    <!-- TODO: Essayer un système de D8/D6 comme dans les confins de l'empire, avec des D4 comme dé de fortune-->
     <h4 class="text-center">Système de Dés</h4>
     <div class="text-justify">
       <h5>Dé positif versus Dé négatif</h5>
@@ -51,10 +50,13 @@
           >Chaque échec annule un succès, un triomphe annule un désastre</strong
         >. Le score final, qu&#39;on appelle résultat net, est déterminé par la
         somme des échecs avec les succès. Les avantages et les désavantages
-        servent à alimenter les compétences, ou d'effectuer des relances de dés
-        en faveur ou en défaveur des belligérants. Ce sont les joueurs qui
-        décident de comment dépenser leurs avantages, et au MJ de déclencher
-        leurs désavantages.
+        servent à alimenter les compétences, ou de qualifier les situations pour
+        distribuer des dés de handicap ou de supériorité aux acteurs de la
+        scène. Par exemple : Si une attaque réussie contre une créature, mais
+        génère deux désavantages, le MJ peut décider que l'attaquant est
+        déséquilibré par l'attaque, et qu'il subit donc deux dé de handicap sur
+        son jet de défense, ou encore que ses prochains assaillants gagnent deux
+        dés de supériorité tant qu'il ne c'est pas déplacé.
       </p>
       <p>
         Les <strong>triomphes</strong> et les
@@ -69,7 +71,7 @@
         renvoyé sur un allié...
       </p>
     </div>
-    <h5>Avantages et désavantages</h5>
+    <h5>Supériorité et Handicap</h5>
     <p>
       Grâce à certaines aptitudes, ou sous les effets narratif d'un triomphe ou
       d'un désastre, les joueurs pourront
@@ -77,10 +79,6 @@
       représentent des avantages situationnels qui aident à la réussite de
       l'action. Le même mécanisme existe avec les désavantages, représenté par 1
       ou plusieurs d4 ajoutés au pool de dés négatifs.
-    </p>
-    <p>
-      Si ils en font la demande, le MJ doit indiquer aux joueurs si ses
-      créatures subissent des avantages ou des désavantages.
     </p>
 
     <h4 class="text-center">Test de compétence</h4>
