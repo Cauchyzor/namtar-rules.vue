@@ -136,7 +136,7 @@ export class ServiceArme {
       Nom: "Pacificateur",
       Degats: "2 point de dommage par succès et par triomphe",
       Special: [
-        "La cible subit 1 point de stress par triomphe sur le jet d'attaque",
+        "La cible perd 1 dé de réflexes par triomphe sur le jet d'attaque jusqu'au prochain repos court.",
       ],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:

@@ -103,7 +103,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Eclat",
-      "Vous subissez 3 point de stress. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour. Vous déclenchez automatiquement une attaque d'opportunité contre vous.",
+      "Vous consommé autant de dé d’ésotérisme que souhaitez et les opposez aux dé d’ésotérisme restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour.",
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
@@ -151,13 +151,13 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Anticipation",
-      `Vous ajoutez à vos dés de ${AttributsName.REFLEXES} autant de d6 que votre score de ${CompetenceName.PERSPICACITÉ}. Vous perdez 1 point de stress quand une attaque contre vous rate. Si vous n'avez plus de point de stress, vous ne pouvez plus profiter de ce mantra.`,
+      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.PERSPICACITÉ, 1]])
     ),
     new Aptitude(
       '"Comme à l’entraînement"',
-      `Vous subissez 1 point de stress et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
+      `Vous consommez 1 dé s'ésotérisme et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.PILOTAGE, 1]])
     ),
@@ -219,7 +219,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Nova morbide",
-      `Le cadavre ciblé 'explose' et blesse toutes les créatures à porté courte. Lancez autant de d6 que le maximum de point de stress du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}.Vous infligez 3 point de dégâts par succès.`,
+      `Le cadavre ciblé 'explose' et blesse toutes les créatures à porté courte. Lancez autant de d6 que le maximum dé d’ésotérisme du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}.Vous infligez 3 point de dégâts par succès.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -228,7 +228,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Morsure de Namtar",
-      "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez a la cible 1 point de stress par Triomphes et par avantages.",
+      "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé d'ésotérisme par Triomphes et par avantages.",
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -237,7 +237,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Griffe dimensionnelle",
-      `Vous réalisez un jet d'attaque en utilisant autant de dés (d6) que vos points de stress restant. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 point de stress.`,
+      `Vous réalisez un jet d'attaque en opposant vos dés d'ésotérisme restant a la défense de la cible. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 dé d'ésotérisme.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -246,16 +246,16 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Echophagie",
-      "Vous relancer 1 dé de vie et soignez vous du montant indiqué à chaque fois que vous regagner des points de stress.",
-      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      "Vous relancer 1 dé de vie et soignez vous du montant indiqué à chaque fois que vous regagner des dé d'ésotérisme.",
+      AptitudeTypeName.MANTRA,
       new Map([
-        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.SURVIE, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
       ])
     ),
     new Aptitude(
       "Mage de guerre",
-      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un Jet d'attaque avec les caractéristiques de l'arme, et dépensez autant de point de stress requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
+      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme, et dépensez aussi autant de dé d'ésotérisme requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],

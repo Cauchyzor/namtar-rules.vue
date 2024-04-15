@@ -23,7 +23,7 @@ export class CaracteristiqueService {
         "Traduit la force, la musculature, la vitalité et la robustesse physique",
       Attributs: AttributService.findAttributsByNames([
         AttributsName.PV,
-        AttributsName.RECUPERATION,
+        AttributsName.RÉCUPÉRATION,
       ]),
     },
     {
@@ -44,13 +44,17 @@ export class CaracteristiqueService {
       Nom: CaracteritiqueName.INTELLIGENCE,
       Description:
         "Mesure la capacité de raisonnement, la mémoire et la sagesse d'un personnage.",
-      Attributs: AttributService.findAttributsByNames([AttributsName.STRESS]),
+      Attributs: AttributService.findAttributsByNames([
+        AttributsName.ÉSOTÉRISME,
+      ]),
     },
     {
       Nom: CaracteritiqueName.CHARISME,
       Description:
         "Représente la force de caractère, l'assurance et la subtilité du personnage dans sa communication.",
-      Attributs: AttributService.findAttributsByNames([AttributsName.STRESS]),
+      Attributs: AttributService.findAttributsByNames([
+        AttributsName.ÉSOTÉRISME,
+      ]),
     },
   ];
 
