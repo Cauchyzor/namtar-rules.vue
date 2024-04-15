@@ -18,17 +18,17 @@ export class Aptitude {
   Nom: string;
   Description: string;
   Type: AptitudeType;
-  MaitrisesRequise: Map<CompetenceName, number>;
+  MaîtrisesRequise: Map<CompetenceName, number>;
 
   constructor(
     nom: string,
     description: string,
     typeName: AptitudeTypeName,
-    maitrise: Map<CompetenceName, number>
+    maîtrises: Map<CompetenceName, number>
   ) {
     this.Nom = nom;
     this.Description = description;
     this.Type = ServiceAptitude.findAptTypeByName(typeName);
-    this.MaitrisesRequise = maitrise;
+    this.MaîtrisesRequise = maîtrises;
   }
 }
