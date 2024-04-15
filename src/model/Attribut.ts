@@ -26,34 +26,34 @@ export class AttributService {
     {
       Nom: AttributsName.PV,
       Description:
-        "Votre maximum de PV est égal à 3 fois la Vigueur + 4 + 1d4 par niveau supplémentaire après le niveau 1.",
+        "Votre maximum de PV est égal à 3 fois la Vigueur + 4. Vous ajoutez 1d4 PV à votre maximum par niveau supplémentaire après le niveau 1.",
       Icon: mdiHeart,
     },
 
     {
       Nom: AttributsName.REFLEXES,
       Description:
-        "Vous ajoutez 1 dés de défense (d6) à vos jet de défense par point d'Agilité.",
+        "Vous recevez 1 dé de réflexe (d6) votre par point d'Agilité. Avec votre équipement, ils constituent votre principale défense.",
       Icon: mdiShieldHalfFull,
     },
 
     {
       Nom: AttributsName.INITIATIVE,
       Description:
-        "Vous avez 1 dé d'initiative (d6) par point d'Agilité et par niveau. Ils sont utilisés lors des jet d'initiative.",
+        "Vous avez 1 dé d'initiative (d6) par point d'Agilité et par niveau. Ils déterminent votre réactivité lors des situations de stress.",
       Icon: mdiArrowUp,
     },
 
     {
       Nom: AttributsName.ÉSOTÉRISME,
       Description:
-        "Vous avez autant de dé d'ésotérisme (d6) que la somme de votre Intelligence et votre Charisme",
+        "Vous avez autant de dé d'ésotérisme (d6) que la somme de votre Intelligence et votre Charisme. Ils qualifient votre lien avec le fluide et la puissance que vous pouvez en tirer.",
       Icon: mdiLightningBolt,
     },
     {
       Nom: AttributsName.RÉCUPÉRATION,
       Description:
-        "Vous avez 2 dès de vie (d4) par point de Vigueur et par niveau. Ils vous permettent de vous soigner.",
+        "Vous avez 1 dé de vie (d4) par point de Vigueur et par niveau. Ils vous permettent de vous soigner.",
       Icon: mdiHeartCircleOutline,
     },
   ];
