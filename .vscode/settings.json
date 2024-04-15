@@ -8,10 +8,12 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
     "AGILITE",
+    "beacom",
     "Caracteristique",
     "Caracteritique",
     "Cytomancie",
-    "Echophagie"
+    "Echophagie",
+    "ethnotraits"
   ],
   "cSpell.language": "fr,en"
 }
