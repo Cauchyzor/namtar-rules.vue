@@ -21,7 +21,7 @@ import { defineComponent } from "@vue/runtime-core";
 
 import EquipementCard from "src/components/EquipementCard.vue";
 
-import { EquipementService } from "src/model/Equipement";
+import { ServiceEquipement } from "src/data/ServiceEquipement.ts";
 
 export default defineComponent({
   components: {
@@ -29,7 +29,7 @@ export default defineComponent({
   },
   data() {
     return {
-      EquipementItemsList: EquipementService.getAllEquipementItems(),
+      EquipementItemsList: ServiceEquipement.getAllEquipementItems(),
     };
   },
 });

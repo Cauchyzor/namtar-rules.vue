@@ -7,12 +7,23 @@
       </div>
 
       <q-card-section horizontal class="bg-accent">
-        <q-card-section class="col-6" vertical>
-          <div class="text-caption text-grey">
-            Type : <strong>{{ Aptitude.Type.Nom }}</strong>
+        <q-card-section>
+          <div
+            class="text-caption text-grey"
+            v-for="ranks in Aptitude.MaîtrisesRequise.entries()"
+            :key="ranks[0]"
+          >
+            <li>
+              <strong>{{ ranks[0] }} ({{ ranks[1] }})</strong>
+            </li>
           </div>
         </q-card-section>
-        <q-separator vertical inset></q-separator>
+      </q-card-section>
+      <q-card-section>
+        <div class="text-caption text-grey">
+          <strong>{{ Aptitude.Type.Nom }}</strong>
+          {{ Aptitude.Type.Description }}
+        </div>
       </q-card-section>
     </q-card-section>
   </q-card>
