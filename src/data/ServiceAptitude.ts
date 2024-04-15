@@ -21,12 +21,12 @@ export class ServiceAptitude {
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
-      Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible à portée moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique.`,
+      Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible à portée moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
       Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
-        "L'aptitude consomme un ou plusieurs cadavres frais (quelques heures maximum) à porté courte dont le niveau de puissance cumulé doit correspondre au rang de l'aptitude.",
+        "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum) à porté moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
@@ -218,6 +218,15 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Nova morbide",
+      `Le cadavre ciblé 'explose' et blesse toutes les créatures à porté courte. Lancez autant de d6 que le maximum de point de stress du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}.Vous infligez 3 point de dégâts par succès.`,
+      AptitudeTypeName.NÉCROMANCIE,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.MÉDECINE, 1],
+      ])
+    ),
+    new Aptitude(
       "Morsure de Namtar",
       "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez a la cible 1 point de stress par Triomphes et par avantages.",
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
@@ -260,6 +269,15 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.INGÉNIERIE, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Vol de vitesse",
+      `La cible perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à porté moyenne bénéficie d'autant de dés d'avantages (d4) supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
+      AptitudeTypeName.EVOCATION,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.TROMPERIE, 1],
       ])
     ),
     // TODO : Creation d'une prothèse d'ingé // amelioration ? entropie du fluide // Aptitude particulière ?
