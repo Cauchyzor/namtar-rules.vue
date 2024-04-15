@@ -121,7 +121,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="q-ma-xl">
       <router-view v-slot="{ Component }">
         <transition mode="out-in" :duration="{ enter: 100, leave: 50 }">
           <component :is="Component" />
