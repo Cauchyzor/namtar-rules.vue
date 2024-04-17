@@ -71,7 +71,7 @@
           </q-item>
 
           <!-- TODO : Déclarer des éthnotraits/origine raciales
-            <q-item clickable to="/character/ethnotrait" exact>
+            <q-item clickable to="/character/ethnotraits" exact>
             <q-item-section>
               <q-item-label>Ethnotrait</q-item-label>
             </q-item-section>

@@ -33,7 +33,7 @@
         moins de points de caractéristique ou d'aptitude.
       </p>
       <q-btn
-        to="/character/ethnotrait"
+        to="/character/ethnotraits"
         label="Voir les ethnotraits"
         outline
         color="primary"

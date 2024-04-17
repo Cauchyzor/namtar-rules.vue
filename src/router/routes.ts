@@ -57,7 +57,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             name: "Ethnotrait",
-            path: "ethnotrait",
+            path: "ethnotraits",
             component: () => import("src/pages/PageEthnotraitDatabase.vue"),
           },
         ],
