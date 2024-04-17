@@ -59,15 +59,6 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable to="/vehicule" exact>
-          <q-item-section avatar>
-            <q-icon name="rocket_launch" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Véhicules</q-item-label>
-          </q-item-section>
-        </q-item>
-
         <q-expansion-item
           icon="settings"
           label="Personnage"
@@ -108,8 +99,14 @@
               <q-item-label>Introduction</q-item-label>
             </q-item-section>
           </q-item>
+          <q-item clickable to="/lore/vehicule" exact>
+            <q-item-section>
+              <q-item-label>Véhicules</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
 
-          <!-- TODO : Feature : Creatures
+        <!-- TODO : Feature : Creatures
             <q-expansion-item label="Creatures" :content-inset-level="1">
             <q-item clickable to="/creature/genotrait" exact>
               <q-item-section>
@@ -117,7 +114,6 @@
               </q-item-section>
             </q-item>
           </q-expansion-item> -->
-        </q-expansion-item>
       </q-list>
     </q-drawer>
 

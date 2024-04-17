@@ -115,7 +115,18 @@ const routes: RouteRecordRaw[] = [
       {
         name: "Lore",
         path: "/lore",
-        component: () => import("src/pages/PageLoreIntroduction.vue"),
+        children: [
+          {
+            name: "default",
+            path: "",
+            component: () => import("src/pages/PageLoreIntroduction.vue"),
+          },
+          {
+            name: "Véhicules",
+            path: "vehicule",
+            component: () => import("src/pages/PageVehicules.vue"),
+          },
+        ],
       },
       // {
       //   name: "Creature",
