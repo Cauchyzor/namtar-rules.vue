@@ -25,7 +25,7 @@
       />
     </div>
 
-    <h5 class="text-center">Ethnotraits</h5>
+    <!-- <h5 class="text-center">Ethnotraits</h5>
     <div class="text-center">
       <p>
         Si le personnage n'est pas humain, son espèce est caractérisée par un
@@ -38,7 +38,7 @@
         outline
         color="primary"
       />
-    </div>
+    </div> -->
 
     <h5 class="text-center">Compétences</h5>
     <div class="text-center">
