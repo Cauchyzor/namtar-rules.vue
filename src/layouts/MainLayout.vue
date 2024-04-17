@@ -27,7 +27,7 @@
         <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
           <q-item clickable to="/regles/dice-system" exact>
             <q-item-section>
-              <q-item-label>Règles : Systeme de Dé</q-item-label>
+              <q-item-label>Règles : Système de Dé</q-item-label>
             </q-item-section>
           </q-item>
 
@@ -55,7 +55,7 @@
             <q-icon name="backpack" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Equipement</q-item-label>
+            <q-item-label>Équipement</q-item-label>
           </q-item-section>
         </q-item>
 
