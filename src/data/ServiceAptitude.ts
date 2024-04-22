@@ -181,6 +181,8 @@ export class ServiceAptitude {
     ),
     // RANK 2
     // TODO : RANK2 : Blindage / Amélioration / Augmentation de la défense
+    // TODO : RANK2 : Pacte de la lame ?
+    // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
     new Aptitude(
       "Entraînement physique",
       "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente.",
