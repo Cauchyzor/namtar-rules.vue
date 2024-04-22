@@ -79,7 +79,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Présence envoûtante",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test avec cette compétence.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test avec cette compétence. Vous aimez beaucoup être le centre d’intérêt des conversations.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.CHARME, 1]])
     ),
@@ -121,7 +121,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Observateur éclairé",
-      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
+      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation. Vous ne pouvez pas vous empêcher d’étaler votre connaissance.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.HISTOIRE, 1]])
     ),
@@ -133,7 +133,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Médecine de terrain",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MÉDECINE} lors de vos test avec cette compétence.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MÉDECINE} lors de vos tests avec cette compétence. Vous êtes relativement cynique fasse à la souffrance des autres.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.MÉDECINE, 1]])
     ),
@@ -145,13 +145,13 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Attitude diplomatique",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NÉGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NÉGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service. Vous ne pouvez pas vous empêcher de toujours vouloir tout négocier.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.NÉGOCIATION, 1]])
     ),
     new Aptitude(
       "Anticipation",
-      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}.`,
+      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}. Vous avez constamment l'impression que quelqu'un ou que quelque chose vous veux du mal.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.PERSPICACITÉ, 1]])
     ),
@@ -162,14 +162,14 @@ export class ServiceAptitude {
       new Map([[CompetenceName.PILOTAGE, 1]])
     ),
     new Aptitude(
-      "Sagacité",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos test avec cette compétence.`,
+      "Instincts de survie",
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos tests avec cette compétence. Vous avez du mal quand les autres ne prennent pas vos conseil au sérieux.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.SURVIE, 1]])
     ),
     new Aptitude(
       "Menteur né",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.TROMPERIE} lors de vos test avec cette compétence.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.TROMPERIE} lors de vos test avec cette compétence. C'est tellement facile que vous êtes souvent tenté de mentir même quand ce n'est pas nécessaire.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.TROMPERIE, 1]])
     ),
@@ -185,19 +185,19 @@ export class ServiceAptitude {
     // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
     new Aptitude(
       "Entraînement physique",
-      "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente.",
+      "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.ATHLÉTISME, 2]])
     ),
     new Aptitude(
       "Entraînement tactique",
-      "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente.",
+      "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.COORDINATION, 2]])
     ),
     new Aptitude(
       "Entraînement au tir",
-      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente.",
+      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
     ),
@@ -248,7 +248,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Echophagie",
-      "Vous relancer 1 dé de vie et soignez vous du montant indiqué à chaque fois que vous regagner des dé d'ésotérisme.",
+      "Vous relancer 1 dé de vie et soignez vous du montant indiqué à chaque fois que vous regagner des dé d'ésotérisme. Vous montrez clairement des signes d'addiction, qui semblent se calmer lorsque le fluide ce manifeste près de vous.",
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.SURVIE, 1],
@@ -257,7 +257,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Mage de guerre",
-      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme, et dépensez aussi autant de dé d'ésotérisme requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
+      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme, et dépensez aussi autant de dé d'ésotérisme requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès). Vous avec un petit complexe de supériorité.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
