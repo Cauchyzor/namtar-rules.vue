@@ -1,7 +1,10 @@
 <template>
   <q-card flat bordered class="bg-accent">
     <q-card-section vertical>
-      <div class="text-h5 q-mt-sm q-mb-xs">{{ Aptitude.Nom }}</div>
+      <div class="text-caption text-grey text-bold text-italic">
+        {{ Aptitude.Type.Nom }}
+      </div>
+      <div class="text-h5 q-mb-xs">{{ Aptitude.Nom }}</div>
       <div class="text-caption q-mt-sm q-mb-xs">
         {{ Aptitude.Description }}
       </div>
@@ -20,7 +23,7 @@
         </q-card-section>
       </q-card-section>
       <q-card-section>
-        <div class="text-caption text-grey">
+        <div class="text-caption text-grey text-italic">
           <strong>{{ Aptitude.Type.Nom }}</strong>
           {{ Aptitude.Type.Description }}
         </div>
