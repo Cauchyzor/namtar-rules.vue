@@ -127,8 +127,8 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Coup bas",
-      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet contre un adversaire qui ce déplace a porté courte.",
-      AptitudeTypeName.MANTRA,
+      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet à porté de main contre un adversaire qui ce déplace a porté courte.",
+      AptitudeTypeName.REACTION,
       new Map([[CompetenceName.MAGOUILLE, 1]])
     ),
     new Aptitude(
