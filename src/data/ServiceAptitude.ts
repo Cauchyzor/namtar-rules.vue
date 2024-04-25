@@ -50,7 +50,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.INJONCTION,
       Description:
-        "Vous appliquer vos effets sur une cible qui peut vous voir.",
+        "Vous appliquer vos effets sur une cible qui peut vous voir et vous entendre.",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
@@ -280,6 +280,16 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.TROMPERIE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Vœu de puissance",
+      `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé d'${AttributsName.ÉSOTÉRISME} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
+      AptitudeTypeName.MANTRA,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.NÉGOCIATION, 1],
       ])
     ),
     // TODO : Creation d'une prothèse d'ingé // amelioration ? entropie du fluide // Aptitude particulière ?
