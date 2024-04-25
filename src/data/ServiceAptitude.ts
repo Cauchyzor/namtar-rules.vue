@@ -11,6 +11,7 @@ export enum AptitudeTypeName {
   EVOCATION = "Évocation",
   INJONCTION = "Injonction",
   MANTRA = "Mantra",
+  ENTRAÎNEMENT = "Entraînement",
   NÉCROMANCIE = "Nécromancie",
   POSTURE = "Posture",
   REACTION = "Réaction",
@@ -36,7 +37,12 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
-        "Un mantra vous octroie des bonus passifs de manière permanente.",
+        "Un mantra vous octroie des bonus passifs de manière permanente. Il représente une alteration permanente du personnage provoquée par ses interactions passées avec le fluide.",
+    },
+    {
+      Nom: AptitudeTypeName.ENTRAÎNEMENT,
+      Description:
+        "Un Entraînement vous octroie des bonus passifs de manière permanente. Il représente une longue experience théorique et pratique pour perfectionner ses aptitudes.",
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
@@ -121,8 +127,8 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Observateur éclairé",
-      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation. Vous ne pouvez pas vous empêcher d’étaler votre connaissance.`,
-      AptitudeTypeName.MANTRA,
+      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.HISTOIRE, 1]])
     ),
     new Aptitude(
@@ -133,8 +139,8 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Médecine de terrain",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MÉDECINE} lors de vos tests avec cette compétence. Vous êtes relativement cynique fasse à la souffrance des autres.`,
-      AptitudeTypeName.MANTRA,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MÉDECINE} lors de vos tests avec cette compétence.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.MÉDECINE, 1]])
     ),
     new Aptitude(
@@ -145,32 +151,32 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Attitude diplomatique",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NÉGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service. Vous ne pouvez pas vous empêcher de toujours vouloir tout négocier.`,
-      AptitudeTypeName.MANTRA,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NÉGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.NÉGOCIATION, 1]])
     ),
     new Aptitude(
-      "Anticipation",
-      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}. Vous avez constamment l'impression que quelqu'un ou que quelque chose vous veux du mal.`,
-      AptitudeTypeName.MANTRA,
+      "",
+      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.PERSPICACITÉ} lors vous subissez des tests en opposition de ${CompetenceName.CHARME}, ${CompetenceName.NÉGOCIATION} ou de ${CompetenceName.TROMPERIE}`,
+      AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.PERSPICACITÉ, 1]])
     ),
     new Aptitude(
       '"Comme à l’entraînement"',
-      `Vous consommez 1 dé s'ésotérisme et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}`,
+      `Vous consommez 1 dé s'ésotérisme et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}.`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.PILOTAGE, 1]])
     ),
     new Aptitude(
       "Instincts de survie",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos tests avec cette compétence. Vous avez du mal quand les autres ne prennent pas vos conseil au sérieux.`,
-      AptitudeTypeName.MANTRA,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos tests avec cette compétence.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.SURVIE, 1]])
     ),
     new Aptitude(
       "Menteur né",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.TROMPERIE} lors de vos test avec cette compétence. C'est tellement facile que vous êtes souvent tenté de mentir même quand ce n'est pas nécessaire.`,
-      AptitudeTypeName.MANTRA,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.TROMPERIE} lors de vos test avec cette compétence.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.TROMPERIE, 1]])
     ),
     new Aptitude(
@@ -186,19 +192,19 @@ export class ServiceAptitude {
     new Aptitude(
       "Entraînement physique",
       "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
-      AptitudeTypeName.MANTRA,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.ATHLÉTISME, 2]])
     ),
     new Aptitude(
       "Entraînement tactique",
       "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
-      AptitudeTypeName.MANTRA,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.COORDINATION, 2]])
     ),
     new Aptitude(
       "Entraînement au tir",
       "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
-      AptitudeTypeName.MANTRA,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
     ),
     new Aptitude(
@@ -283,6 +289,16 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Anticipation surnaturelle",
+      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}. Vous avez constamment l'impression que quelqu'un ou que quelque chose vous veux du mal.`,
+      AptitudeTypeName.MANTRA,
+      new Map([
+        [CompetenceName.PERSPICACITÉ, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
+    ),
+    // RANK 3
+    new Aptitude(
       "Vœu de puissance",
       `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé d'${AttributsName.ÉSOTÉRISME} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
       AptitudeTypeName.MANTRA,
@@ -293,6 +309,8 @@ export class ServiceAptitude {
       ])
     ),
     // TODO : Creation d'une prothèse d'ingé // amelioration ? entropie du fluide // Aptitude particulière ?
+    // TODO : Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
+    // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
   ];
 
   static findAptitudesByNames(names: Array<string>) {
