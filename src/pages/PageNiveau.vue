@@ -4,7 +4,7 @@
 
     <p>Pour chaque niveau gagné :</p>
     <ul>
-      <li>Choisir une nouvelle aptitude parmi celle disponible</li>
+      <li>Choisir une nouvelle aptitude parmi celles disponibles</li>
       <li>Mettre à jour votre nombre de point de vie</li>
       <li>Mettre à jour votre nombre de dé d'ésotérisme</li>
     </ul>
@@ -29,17 +29,18 @@
     <h5>Progression Narrative</h5>
 
     <p>
-      Les niveaux sont gagnés après suffisent de tests sur les compétences des
-      PJ. Les choix dans l'apprentissage des compétences est, par conséquent,
-      choisi par les joueurs de manière indirecte.
+      Les niveaux sont gagnés après suffisamment de tests sur les compétences
+      des PJ. Les choix dans l'apprentissage des compétences est, par
+      conséquent, choisi par les joueurs de manière indirecte.
     </p>
     <p>
-      Par exemple, si Obi-wan fait un test de Charisme (Charme) face à un
+      Par exemple, si Obi-wan fait un test de Charme (Charisme) face à un
       adversaire, il incrémente un compteur qui au bout d'un nombre déterminé,
       incrémente le rang dans la compétence. C'est au MJ de déterminer à
       l'avance si la progression sera rapide (1 ou 2 tests pour les compétences
       les plus rarement utilisées, 5 pour les compétences de combat) ou plus
-      lente.
+      lente. L'utilisation d'aptitude en situation de stress peuvent entrer
+      également en compte dans ce calcul.
     </p>
     <p>
       Le passage au rang de maîtrise d'une compétence augmente le niveau du
