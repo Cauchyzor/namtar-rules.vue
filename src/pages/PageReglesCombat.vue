@@ -13,307 +13,9 @@
         </p>
         <p>
           Chaque personnages et créatures impliqués dans la rencontre ont tous
-          par défaut <strong>une action</strong> et
-          <strong>une réaction</strong>, ou une seule
-          <strong>action complexe</strong>.
+          par défaut <strong>une action</strong>,
+          <strong>une manœuvre</strong> et <strong>une réaction</strong>.
         </p>
-
-        <q-list class="q-my-xl" padding>
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Charger un adversaire</q-item-label>
-              <q-item-label caption
-                >Se déplacer et attaquer avec la force de la course. Un test
-                d'athlétisme opposé a la cible est nécessaire pour rattraper une
-                cible qui décide fuir au même tour</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Bousculer / Empoigner </q-item-label>
-              <q-item-label caption
-                >Vous tentez d'entraver un adversaire, ou de le mettre à terre.
-                Vous devez réussir un test en opposition avec votre adversaire.
-                La compétence utilisée dépendra de la manière dont l'action est
-                réalisée et comment l'adversaire réagit. Lors d'une tentative
-                d'entrave, si vous obtenez plus de succès que le score de la
-                cible, elle est immobilisée, sinon elle est
-                entravée.</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Se précipiter</q-item-label>
-              <q-item-label caption
-                >Effectuer un déplacement jusqu'a deux niveau de porté en ligne
-                droite</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Se cacher</q-item-label>
-              <q-item-label caption
-                >Quand vous choisissez l&#39;action se cacher, vous devez faire
-                un test d&#39;agilité (Discrétion) de DD égale à la sommes des
-                scores de vigilance des adversaires à proximité.</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Fouille approfondie</q-item-label>
-              <q-item-label caption
-                >Fouiller jusqu'a un niveau de porté ou dans son
-                sac</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Stabiliser</q-item-label>
-              <q-item-label caption
-                >Donner les premiers soins à une créature à terre</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Utiliser une compétence</q-item-label>
-              <q-item-label caption
-                >La plupart des actions qui requirent une concentration et un
-                savoir faire prennent l'intégralité du tour pour être résolue,
-                parfois plus, à la discrétion du MJ. Elles font également
-                l'objet d'un test de compétence.</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label header>Autre chose ?</q-item-label>
-              <q-item-label caption
-                >La seule limite au jeu est votre imagination. Les précédentes
-                actions résument les principales possibilités qui s&#39;offrent
-                à votre héros lors d&#39;une scène de combat. Mais rien ne vous
-                empêche de faire autre chose : tenter de faire rire votre
-                adversaire, tenter de casser une fiole à sa ceinture, tout est
-                possible. C&#39;est alors au MJ de déterminer les chances de
-                réussite de votre action et de vous demander, s&#39;il le
-                souhaite, un lancer de dés.</q-item-label
-              >
-            </q-item-section>
-            <q-item-section side top>
-              <q-item-label overline>Action complexe</q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-list>
-        <q-separator padding inset></q-separator>
-        <div class="row q-my-xl">
-          <q-list class="col-md-6 col-sm-12" padding>
-            <q-item>
-              <q-item-section>
-                <q-item-label header>
-                  Se déplacer d'un niveau de porter/ Se relever</q-item-label
-                >
-                <q-item-label caption
-                  >Parcourir l'équivalent d'un niveau de porté en ligne droite.
-                  Se relever quand on a été mis terre</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Attaquer</q-item-label>
-                <q-item-label caption
-                  >Effectuer un jet d'attaque avec l'arme en main.</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Recharger un équipement</q-item-label>
-                <q-item-label caption
-                  >Utiliser une cellule <strong>à portée de main</strong> pour
-                  recharger l'arme en main.</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item
-              ><q-item-section>
-                <q-item-label header
-                  >Utiliser un objet à porté de main</q-item-label
-                >
-                <q-item-label caption
-                  >Utiliser un consommable à usage rapide, actionner un serrure
-                  électronique...</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Fouiller a son emplacement</q-item-label>
-                <q-item-label caption
-                  >Jeter un coup d'œil rapide autour de vous, ou récupérer un
-                  objet dans une sacoche ou a la ceinture.</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section></q-item
-            >
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Utiliser une aptitude</q-item-label>
-                <q-item-label caption
-                  >Le descriptif de l'aptitude indique si son lancement
-                  nécessite d&#39;utiliser une action, ou doit être préparé
-                  pendant plusieurs minutes ou heures. Leurs effets sont indiqué
-                  dans la description de l'aptitude.</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section>
-                <q-item-label header
-                  >Se mettre a couvert / Se mettre en joue</q-item-label
-                >
-                <q-item-label caption
-                  >Sortir de sa couverture pour permettre une attaque
-                  d'opportunité, ou au contraire se mettre à couvert pour éviter
-                  de provoquer des attaques à distance. La qualité de la
-                  couverture
-                </q-item-label>
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Se désengager</q-item-label>
-                <q-item-label caption
-                  >Se déplacer sans provoquer d'attaques d'opportunités au corps
-                  à corps par les ennemis engagés avec vous.
-                </q-item-label>
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Esquiver</q-item-label>
-                <q-item-label caption
-                  >Quand vous choisissez l&#39;action esquiver, votre unique
-                  objectif est d&#39;éviter les attaques. Jusqu&#39;au début de
-                  votre tour suivant, vous
-                  <strong
-                    >augmentez de 1 votre score de
-                    {{ ATTRIBUTS.REFLEXES }}</strong
-                  >. Vous perdez les bénéfices de cette action si vous êtes
-                  immobilisé, empoigné, neutralisé ou inconscient.
-                </q-item-label>
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Se tenir prêt</q-item-label>
-                <q-item-label caption
-                  >Vous n'effectuez pas d'action à votre tour de jeux. Vous
-                  bénéficiez d'une réaction supplémentaire. Elle s'estompe de la
-                  même manière que votre réaction par défaut.
-                </q-item-label>
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Action</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-          <q-list class="col-md-6 col-sm-12" padding>
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Attaque d'opportunité</q-item-label>
-                <q-item-label caption
-                  >Attaquer un adversaire qui sort d'une couverture, se déplace,
-                  ou est à découvert dans le cas d'une attaque a
-                  distance.</q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Réaction</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item>
-              <q-item-section>
-                <q-item-label header>Changer d'action</q-item-label>
-                <q-item-label caption
-                  >Dans les cas ou un belligérant effectue un mauvais jet
-                  d'initiative, il peut se retrouver dans une situation où il
-                  préfère s'interrompre : il n'effectue pas l'action qu'il avait
-                  planifié, et
-                  <strong
-                    >décide d'effectuer une autre action. Pour illustrer ce
-                    changement, il utilise sa réaction</strong
-                  ></q-item-label
-                >
-              </q-item-section>
-              <q-item-section side top>
-                <q-item-label overline>Réaction</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </div>
       </q-step>
 
       <q-step :name="2" prefix="2" title="Lancer l'initiative">
@@ -406,6 +108,317 @@
         </p>
       </q-step>
     </q-stepper>
+
+    <h4>Action, manœuvre et réactions</h4>
+
+    <q-list class="q-my-xl" padding>
+      <q-item>
+        <q-item-section>
+          <q-item-label header>Charger un adversaire</q-item-label>
+          <q-item-label caption
+            >Se déplacer et attaquer avec la force de la course. Un test
+            d'athlétisme opposé a la cible est nécessaire pour rattraper une
+            cible qui décide fuir au même tour</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label overline>Action + manœuvre</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item>
+        <q-item-section>
+          <q-item-label header>Bousculer / Empoigner </q-item-label>
+          <q-item-label caption
+            >Vous tentez d'entraver un adversaire, ou de le mettre à terre. Vous
+            devez réussir un test en opposition avec votre adversaire. La
+            compétence utilisée dépendra de la manière dont l'action est
+            réalisée et comment l'adversaire réagit. Lors d'une tentative
+            d'entrave, si vous obtenez plus de succès que le score de la cible,
+            elle est immobilisée, sinon elle est entravée.</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label overline>Action + manœuvre</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item>
+        <q-item-section>
+          <q-item-label header>Se précipiter</q-item-label>
+          <q-item-label caption
+            >Effectuer un déplacement jusqu'a deux niveau de porté en ligne
+            droite</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label overline>Action + manœuvre</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section>
+          <q-item-label header>Se cacher</q-item-label>
+          <q-item-label caption
+            >Quand vous choisissez l&#39;action se cacher, vous devez faire un
+            test d&#39;agilité (Discrétion) de DD égale à la sommes des scores
+            de vigilance des adversaires à proximité.</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label overline>Action + manœuvre</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item>
+        <q-item-section>
+          <q-item-label header>Fouille approfondie</q-item-label>
+          <q-item-label caption
+            >Fouiller jusqu'a un niveau de porté ou dans son sac</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label overline>Action + manœuvre</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item>
+        <q-item-section>
+          <q-item-label header>Autre chose ?</q-item-label>
+          <q-item-label caption
+            >La seule limite au jeu est votre imagination. Les précédentes
+            actions résument les principales possibilités qui s&#39;offrent à
+            votre héros lors d&#39;une scène de combat. Mais rien ne vous
+            empêche de faire autre chose : tenter de faire rire votre
+            adversaire, tenter de casser une fiole à sa ceinture, tout est
+            possible. C&#39;est alors au MJ de déterminer les chances de
+            réussite de votre action et de vous demander, s&#39;il le souhaite,
+            un lancer de dés.</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label overline>Action + manœuvre</q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
+    <q-separator padding inset></q-separator>
+    <div class="row q-my-xl">
+      <q-list class="col-md-6 col-sm-12" padding>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Attaquer</q-item-label>
+            <q-item-label caption
+              >Effectuer un jet d'attaque avec l'arme en main.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Utiliser une aptitude</q-item-label>
+            <q-item-label caption
+              >Le descriptif de l'aptitude indique si son lancement nécessite
+              d&#39;utiliser une action, ou doit être préparé pendant plusieurs
+              minutes ou heures. Leurs effets sont indiqué dans la description
+              de l'aptitude.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Recharger un équipement</q-item-label>
+            <q-item-label caption
+              >Utiliser une cellule <strong>à portée de main</strong> pour
+              recharger l'arme en main.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item
+          ><q-item-section>
+            <q-item-label header
+              >Utiliser un objet à porté de main</q-item-label
+            >
+            <q-item-label caption
+              >Utiliser un consommable à usage rapide, actionner un serrure
+              électronique...</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Fouiller a son emplacement</q-item-label>
+            <q-item-label caption
+              >Jeter un coup d'œil rapide autour de vous, ou récupérer un objet
+              dans une sacoche ou a la ceinture.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section></q-item
+        >
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Stabiliser</q-item-label>
+            <q-item-label caption
+              >Donner les premiers soins à une créature à terre a
+              portée</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Utiliser une compétence</q-item-label>
+            <q-item-label caption
+              >La plupart des actions qui requirent une concentration et un
+              savoir faire prennent l'intégralité du tour pour être résolue,
+              parfois plus, à la discrétion du MJ. Elles font également l'objet
+              d'un test de compétence.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Esquiver</q-item-label>
+            <q-item-label caption
+              >Quand vous choisissez l&#39;action esquiver, votre unique
+              objectif est d&#39;éviter les attaques. Jusqu&#39;au début de
+              votre tour suivant, vous
+              <strong
+                >augmentez de 1 votre score de {{ ATTRIBUTS.REFLEXES }}</strong
+              >. Vous perdez les bénéfices de cette action si vous êtes
+              immobilisé, empoigné, neutralisé ou inconscient.
+            </q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Manœuvre supplémentaire</q-item-label>
+            <q-item-label caption
+              >Vous pouvez utiliser votre action pour executer immédiatement une
+              manœuvre supplémentaire pendant ce tour</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Se tenir prêt</q-item-label>
+            <q-item-label caption
+              >Vous n'effectuez pas d'action à votre tour de jeux. Vous
+              bénéficiez d'une réaction supplémentaire. Elle s'estompe au début
+              de votre prochain tour.
+            </q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+
+      <q-list class="col-md-6 col-sm-12" padding>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>
+              Mouvement : Se déplacer d'un niveau de porter/ Se
+              relever</q-item-label
+            >
+            <q-item-label caption
+              >Parcourir l'équivalent d'un niveau de porté en ligne droite. Se
+              relever quand on a été mis terre</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header
+              >Se mettre a couvert / Se mettre en joue</q-item-label
+            >
+            <q-item-label caption
+              >Sortir de sa couverture pour permettre une attaque d'opportunité
+              avec une arme a distance en mains, ou au contraire se mettre à
+              couvert pour éviter de provoquer des attaques à distance. Cette
+              manœuvre peut être effectuée a la fin d'un mouvement
+            </q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Se désengager</q-item-label>
+            <q-item-label caption
+              >Se déplacer sans provoquer d'attaques d'opportunités au corps à
+              corps par les ennemis engagés avec vous.
+            </q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-separator margin padding inset></q-separator>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Attaque d'opportunité</q-item-label>
+            <q-item-label caption
+              >Attaquer un adversaire qui sort d'une couverture, se déplace, ou
+              est à découvert dans le cas d'une attaque a
+              distance.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Réaction</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Changer d'action</q-item-label>
+            <q-item-label caption
+              >Dans les cas ou un belligérant effectue un mauvais jet
+              d'initiative, il peut se retrouver dans une situation où il
+              préfère s'interrompre : il n'effectue pas l'action qu'il avait
+              planifié, et
+              <strong
+                >décide d'effectuer une autre action. Pour illustrer ce
+                changement, il utilise sa réaction</strong
+              ></q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Réaction</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </div>
 
     <h4>Les jets d'attaques</h4>
 
