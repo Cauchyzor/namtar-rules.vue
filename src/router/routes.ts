@@ -67,29 +67,6 @@ const routes: RouteRecordRaw[] = [
         name: "Equipement",
         path: "/equipement",
         component: () => import("src/pages/PageEquipement.vue"),
-        children: [
-          {
-            name: "default",
-            path: "",
-            redirect: "/equipement/quotidien",
-          },
-          {
-            name: "Quotidien",
-            path: "quotidien",
-            component: () =>
-              import("src/pages/TabsEquipement/TabEquipement.vue"),
-          },
-          {
-            name: "Armes",
-            path: "armes",
-            component: () => import("src/pages/TabsEquipement/TabArme.vue"),
-          },
-          {
-            name: "Armures",
-            path: "armures",
-            component: () => import("src/pages/TabsEquipement/TabArmure.vue"),
-          },
-        ],
       },
       {
         name: "Vehicule",
