@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh Lpr lFf">
+  <q-layout view="hHh LpR fFf">
     <!-- TODO : Fix drawer en mode PC, laisser comme ça pour tablette en smartphone-->
     <!-- TODO : Faire le suivi des sections en right drawer-->
     <!-- TODO : Recherche de sections-->
@@ -22,7 +22,12 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above class="bg-secondary">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      class="bg-secondary"
+      side="left"
+    >
       <q-list>
         <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
           <q-item clickable to="/regles/dice-system" exact>
@@ -117,6 +122,50 @@
       </q-list>
     </q-drawer>
 
+    <q-drawer
+      v-model="rightDrawerOpen"
+      show-if-above
+      class="bg-background"
+      side="right"
+    >
+      <q-list>
+        <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
+          <q-item clickable to="/regles/dice-system" exact>
+            <q-item-section>
+              <q-item-label>Règles : Système de Dé</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/regles/combat" exact>
+            <q-item-section>
+              <q-item-label>Règles : Combats</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/regles/soin" exact>
+            <q-item-section>
+              <q-item-label>Règles : Soins</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable to="/regles/aventure" exact>
+            <q-item-section>
+              <q-item-label>Règles : Aventure</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-expansion-item>
+
+        <q-item clickable to="/equipement" exact>
+          <q-item-section avatar>
+            <q-icon name="backpack" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Équipement</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-drawer>
+
     <q-page-container class="q-ma-xl">
       <router-view v-slot="{ Component }">
         <transition mode="out-in" :duration="{ enter: 100, leave: 50 }">
@@ -136,6 +185,7 @@ export default defineComponent({
   data() {
     return {
       leftDrawerOpen: false,
+      rightDrawerOpen: true,
       version: packageInfo.version,
     };
   },
