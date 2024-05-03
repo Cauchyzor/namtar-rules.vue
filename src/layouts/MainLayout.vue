@@ -129,38 +129,9 @@
       side="right"
     >
       <q-list>
-        <q-expansion-item icon="school" label="Règles" :content-inset-level="1">
-          <q-item clickable to="/regles/dice-system" exact>
-            <q-item-section>
-              <q-item-label>Règles : Système de Dé</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item clickable to="/regles/combat" exact>
-            <q-item-section>
-              <q-item-label>Règles : Combats</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item clickable to="/regles/soin" exact>
-            <q-item-section>
-              <q-item-label>Règles : Soins</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-item clickable to="/regles/aventure" exact>
-            <q-item-section>
-              <q-item-label>Règles : Aventure</q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-expansion-item>
-
-        <q-item clickable to="/equipement" exact>
-          <q-item-section avatar>
-            <q-icon name="backpack" />
-          </q-item-section>
+        <q-item clickable to="#action" exact>
           <q-item-section>
-            <q-item-label>Équipement</q-item-label>
+            <q-item-label>action</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>

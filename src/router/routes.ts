@@ -11,6 +11,7 @@ import PageReglesCombat from "src/pages/PageReglesCombat.vue";
 import PageReglesSoins from "src/pages/PageReglesSoins.vue";
 import PageReglesSysteme from "src/pages/PageReglesSysteme.vue";
 import PageVehicules from "src/pages/PageVehicules.vue";
+
 import { RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [

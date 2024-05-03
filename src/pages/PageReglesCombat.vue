@@ -1,6 +1,5 @@
 <template>
   <q-page padding>
-    <!-- TODO : en un tour de jeu : 1 Action + 1 Mouvement + 1 Reaction-->
     <h4 class="text-center">Combats</h4>
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
@@ -109,7 +108,7 @@
       </q-step>
     </q-stepper>
 
-    <h4>Action, manœuvre et réactions</h4>
+    <h4 id="action">Action, manœuvre et réactions</h4>
 
     <q-list class="q-my-xl" padding>
       <q-item>
@@ -420,7 +419,7 @@
       </q-list>
     </div>
 
-    <h4>Les jets d'attaques</h4>
+    <h4 id="jet">Les jets d'attaques</h4>
 
     <h5>Attaques au corps-à-corps</h5>
     <p>Dé positif : compétence + caractéristique</p>
@@ -453,7 +452,7 @@
       couverture est totale et empêche au projectile d'atteindre sa cible.
     </p>
 
-    <h4>Dégâts</h4>
+    <h4 id="degat">Dégâts</h4>
     <p>
       Pour chaque arme ou capacité offensive, les dégâts infligés sont décrits
       dans la description de l'arme ou de l'aptitude.
@@ -472,7 +471,7 @@
       d&#39;attaque. La créature est inconsciente et est considérée comme
       stabilisée.
     </p>
-    <h4 class="text-center">Les états spéciaux</h4>
+    <h4 id="etat">Les états spéciaux</h4>
     <h5>À terre / Renversée</h5>
     <p>
       La créature subit un dé de handicap lors de ses attaques au corps à corps.
