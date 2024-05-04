@@ -28,6 +28,7 @@ export default route(function (/* { store, ssrContext } */) {
       if (to.hash) {
         return {
           el: to.hash,
+          top: 80,
           behavior: "smooth",
         };
       }
