@@ -122,21 +122,6 @@
       </q-list>
     </q-drawer>
 
-    <q-drawer
-      v-model="rightDrawerOpen"
-      show-if-above
-      class="bg-background"
-      side="right"
-    >
-      <q-list>
-        <q-item clickable to="#action" exact>
-          <q-item-section>
-            <q-item-label>action</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
-
     <q-page-container class="q-ma-xl">
       <router-view v-slot="{ Component }">
         <transition mode="out-in" :duration="{ enter: 100, leave: 50 }">
@@ -156,11 +141,9 @@ export default defineComponent({
   data() {
     return {
       leftDrawerOpen: false,
-      rightDrawerOpen: true,
       version: packageInfo.version,
     };
   },
-
   methods: {
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen;
