@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Database : Aptitudes</h4>
+    <h2 class="text-center">Database : Aptitudes</h2>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="Aptitude in AptitudesList"

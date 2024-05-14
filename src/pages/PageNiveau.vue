@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Gain de niveau</h4>
+    <h2 class="text-center">Gain de niveau</h2>
 
     <p>Pour chaque niveau gagné :</p>
     <ul>

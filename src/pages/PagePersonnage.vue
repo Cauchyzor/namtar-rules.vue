@@ -1,9 +1,10 @@
 <template>
   <q-page padding>
+    <h2 class="text-center">Création de personnage</h2>
     <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
     <!-- TODO : Personnage stockées en JSON  : récupération des personnage json -->
     <!-- TODO : Décrire les attribut comme des "dés" plutôt que des points -->
-    <h5 class="text-center">Étape 1 : Établir le concept du personnage</h5>
+    <h4>Étape 1 : Établir le concept du personnage</h4>
     <p>
       La galaxie est remplie de profils atypique près a l'aventure. Commencer
       par vous demander comment vous définiriez votre personnage dans les grande
@@ -18,16 +19,14 @@
       concepts qui pourront vous inspirer. Il s'agit ici d'identifier une base
       vous guidera vers votre personnage final !
     </p>
-    <h5 class="text-center">Étape 2 : Determiner ses Caractéristiques</h5>
-    <div class="text-center">
+    <h4>Étape 2 : Determiner ses Caractéristiques</h4>
+    <div>
       <p>
-        Un personnage possède
-        <strong
-          >14 points répartis dans 5 caractéristiques, au maximum 5 et minimum
-          2</strong
-        >. Un humanoïde civilisé possède habituellement des valeurs de
-        caractéristiques entre 4 et 2 (4 représente un talent certain, 2 un
-        retard notable).
+        Répartissez un total de
+        <strong>14 points</strong> dans les 5 <strong>caractéristiques</strong>,
+        au maximum 5 et minimum 2 dans une seule d'entre elle. Un humanoïde
+        civilisé possède habituellement des valeurs de caractéristiques entre 4
+        et 2 (4 représente un talent certain, 2 un retard notable).
       </p>
     </div>
 
@@ -40,8 +39,8 @@
       />
     </div>
 
-    <!-- <h5 class="text-center">Ethnotraits</h5>
-    <div class="text-center">
+    <!-- <h4 >Ethnotraits</h4>
+    <div >
       <p>
         Si le personnage n'est pas humain, son espèce est caractérisée par un
         ensemble d'ethnotraits. Certains imposent de commencer l'aventure avec
@@ -55,8 +54,8 @@
       />
     </div> -->
 
-    <h5 class="text-center">Etape 4 : Identifier ses compétences</h5>
-    <div class="text-center">
+    <h4>Etape 4 : Identifier ses compétences</h4>
+    <div>
       <p>
         Elles traduisent un savoir-faire dans une discipline
         <strong>par un rang de niveaux de 0 à 2</strong>. Plus cette compétence
@@ -78,14 +77,24 @@
       </div>
     </div>
 
-    <h5 class="text-center">Etape 5 : Choisir ses aptitudes de départ</h5>
-    <div class="text-center">
+    <h4>Etape 5 : Choisir ses aptitudes de départ</h4>
+    <div>
       <p>
         Pour chaque point investi dans les compétences, le personnage bénéficie
         d'une <strong>aptitude</strong>. Elle représente aussi bien des don ou
         des capacités en liens avec leurs compétences que des savoirs faire
         paranormaux liée à l'utilisation du fluide.
       </p>
+      <div class="text-center m-5">
+        <q-btn
+          to="/apt/list"
+          label="Voir les aptitudes"
+          outline
+          color="primary"
+        />
+      </div>
+
+      <p class="text-center">Voici quelques exemples ci dessous :</p>
     </div>
 
     <div class="row justify-center q-col-gutter-md">
@@ -98,7 +107,7 @@
       </div>
     </div>
 
-    <h5 class="text-center">Etape 6 : Équiper son personnage</h5>
+    <h4>Etape 6 : Équiper son personnage</h4>
     <p>
       La liste de l’équipement courant que l'on trouve aux 4 coins de la galaxie
       est disponible dans la section dédiée. En accord avec votre MJ, vous
@@ -132,7 +141,7 @@ export default defineComponent({
     return {
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
-      AptitudeList: ServiceAptitude.findAllAptitudes().filter((_, i) => i < 3),
+      AptitudeList: ServiceAptitude.findAllAptitudes().filter((_, i) => i < 5),
     };
   },
 });

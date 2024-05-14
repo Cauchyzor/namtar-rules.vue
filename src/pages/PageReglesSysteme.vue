@@ -1,7 +1,12 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Système de Dés</h4>
+    <h2 class="text-center">Système de Dés</h2>
     <div class="text-justify">
+      <h4>
+        Constituer des
+        <label class="text-italic">pools</label>
+        de dés
+      </h4>
       <h5>Dé positif versus Dé négatif</h5>
       <p>
         Les tests sont résolus en opposant les résultats d'un pool de dé
@@ -81,7 +86,7 @@
       ou plusieurs d4 ajoutés au pool de dés négatifs.
     </p>
 
-    <h4 class="text-center">Test de compétence</h4>
+    <h4>Test de compétence</h4>
     <p>
       Pour chaque test de compétence, le MJ décide da difficulté de la tâche à
       accomplir, qui est représentée par un
@@ -91,7 +96,7 @@
 
     <div class="row justify-around">
       <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
-        <q-card-section vertical class="text-center">
+        <q-card-section vertical>
           <p>Un pool de d6 avec autant de dé que votre valeur de :</p>
           <p><strong>Caractéristique + Compétence</strong></p>
           <p>
@@ -158,7 +163,7 @@
       valeur de la caractéristique et celle de votre rang de maîtrise de la
       compétence. Interprétez alors le résultat.
     </p>
-    <h4 class="text-center">Opposition</h4>
+    <h4>Opposition</h4>
     <p>
       Les deux créatures qui s'opposent font un test de compétence correspondant
       à l'action qu'ils tentent de réaliser. Ils appliquent tous les bonus et
@@ -167,7 +172,7 @@
     <p>
       Si les résultats des tests sont identiques, la situation n'évolue pas.
     </p>
-    <h4 class="text-center">Tests de groupe</h4>
+    <h4>Tests de groupe</h4>
     <p>
       Pour faire un test de compétence de groupe, tous les membres du groupe
       concerné doivent faire un test de compétence. Pour savoir si le test est

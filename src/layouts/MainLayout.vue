@@ -44,7 +44,7 @@
 
           <q-item clickable to="/regles/soin" exact>
             <q-item-section>
-              <q-item-label>Règles : Soins</q-item-label>
+              <q-item-label>Règles : Guérison et repos</q-item-label>
             </q-item-section>
           </q-item>
 
@@ -71,7 +71,7 @@
         >
           <q-item clickable to="/character/sheet" exact>
             <q-item-section>
-              <q-item-label>Fiche personnage</q-item-label>
+              <q-item-label>Création de personnage</q-item-label>
             </q-item-section>
           </q-item>
 
