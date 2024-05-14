@@ -115,6 +115,15 @@
       première aventure. Elle peut-être achetée récemment, obtenu part des
       tiers, par des dons ou encore en contractant des obligations.
     </p>
+
+    <div class="text-center m-5">
+      <q-btn
+        to="/equipement"
+        label="Voir l’équipement"
+        outline
+        color="primary"
+      />
+    </div>
   </q-page>
 </template>
 <script lang="ts">
