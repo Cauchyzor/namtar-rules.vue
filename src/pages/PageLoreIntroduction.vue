@@ -1,4 +1,9 @@
 <template>
+  <!--TODO : Introduire le concept d'alchimie avec le fuild -->
+  <!--TODO : Introduire le concept d'empreinte du fluide -->
+  <!--TODO : Introduire le concept de communication instantanée avec le fluide -->
+  <!--TODO : Introduire le concept d'"effacement des distance" avec le fluide -->
+  <!--TODO : Trouver un autre wording pour ethernum -->
   <q-page padding class="row items-center justify-evenly">
     <h2>Introduction</h2>
     <p class="text-center">

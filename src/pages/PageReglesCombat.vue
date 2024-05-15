@@ -1,5 +1,8 @@
 <template>
   <q-page padding>
+    <!-- TODO : Préparer des règles sur le combats à deux armes-->
+    <!-- TODO : Migrer vers un système de point d'action (3 point par tour + 1 réaction / Attaque 2 point / déplacement : 2 point / ... )-->
+    <!-- TODO : Revoir le système de portée)-->
     <h2 class="text-center">Combats</h2>
     <p>Les combats ce déroulent selon la boucle suivante :</p>
 
