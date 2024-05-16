@@ -49,7 +49,7 @@
       </q-step>
 
       <q-step :name="3" prefix="3" title="Résoudre">
-        <h5>Les niveaux de porté</h5>
+        <h4>Les niveaux de porté</h4>
         <p>
           Pour facilité la lecture d'une scène de combat, les distances
           relatives entre les personnages sont décrite avec des niveau de
@@ -67,13 +67,13 @@
           Les niveaux de porté au delà de 100m peuvent encore être fragmenter
           selon la volonté du MJ
         </p>
-        <h5>Résoudre les déplacements</h5>
+        <h4>Résoudre les déplacements</h4>
         Chaque personnage qui décide d'effectuer un déplacement ce déplace d'un
         niveau de porté, soit l'equivalent d'une dizaine de mètres. Si un
         personnage choisi de se déplacer alors qu'il est engagé avec un
         adversaire, ou qu'il passe a un niveau de porté engagé avec un
         adversaire sur son chemin, il risque une attaque d'opportunité.
-        <h5>Résoudre les Attaques</h5>
+        <h4>Résoudre les Attaques</h4>
         <p>
           Que vous portiez une attaque avec une arme de corps-à-corps, une arme
           à distance ou que vous fassiez un jet d&#39;attaque dans le cadre
@@ -101,7 +101,7 @@
             </p>
           </li>
         </ol>
-        <h5>Les réactions</h5>
+        <h4>Les réactions</h4>
         <p>
           Les réactions peuvent être déclenchées à tout moment par les
           belligérant <strong>entre leurs tour de jeu</strong>.La possibilité de
@@ -111,7 +111,7 @@
       </q-step>
     </q-stepper>
 
-    <h4 id="action">Action, manœuvre et réactions</h4>
+    <h3 id="action">Action, manœuvre et réactions</h3>
 
     <q-list class="q-my-xl" padding>
       <q-item>
@@ -422,9 +422,9 @@
       </q-list>
     </div>
 
-    <h4 id="jet">Les jets d'attaques</h4>
+    <h3 id="jet">Les jets d'attaques</h3>
 
-    <h5>Attaques au corps-à-corps</h5>
+    <h4>Attaques au corps-à-corps</h4>
     <p>Dé positif : compétence + caractéristique</p>
     <p>Dé négatif : DD = Score de {{ ATTRIBUTS.REFLEXES }} + équipement</p>
 
@@ -441,7 +441,7 @@
       considérée comme une arme).
     </p>
 
-    <h5>Attaques à distance</h5>
+    <h4>Attaques à distance</h4>
 
     <p>Dé positif : compétence + caractéristique</p>
     <p>
@@ -455,7 +455,7 @@
       couverture est totale et empêche au projectile d'atteindre sa cible.
     </p>
 
-    <h4 id="degat">Dégâts</h4>
+    <h3 id="degat">Dégâts</h3>
     <p>
       Pour chaque arme ou capacité offensive, les dégâts infligés sont décrits
       dans la description de l'arme ou de l'aptitude.
@@ -465,7 +465,7 @@
       au même moment, les dégâts sont lancés une seule fois pour toutes les
       créatures.
     </p>
-    <h5>Assommer une créature</h5>
+    <h4>Assommer une créature</h4>
     <p>
       Parfois, un attaquant souhaite neutraliser un ennemi plutôt que le tuer.
       Quand il réussit à faire tomber cette créature à 0 point de vie suite à
@@ -474,35 +474,35 @@
       d&#39;attaque. La créature est inconsciente et est considérée comme
       stabilisée.
     </p>
-    <h4 id="etat">Les états spéciaux</h4>
-    <h5>À terre / Renversée</h5>
+    <h3 id="etat">Les états spéciaux</h3>
+    <h4>À terre / Renversée</h4>
     <p>
       La créature subit un dé de handicap lors de ses attaques au corps à corps.
       Les assaillant engagés bénéficient d'un dé de supériorité sur tout leurs
       jets pour toucher contre elle. La créature peut éventuellement trouver une
       couverture contre les attaques à distances.
     </p>
-    <h5>Assourdi</h5>
+    <h4>Assourdi</h4>
     <p>
       Une créature assourdie n&#39;entend plus rien et rate automatiquement tous
       les tests faisant intervenir des capacités auditives.
     </p>
-    <h5>Aveuglé</h5>
+    <h4>Aveuglé</h4>
     <p>
       Une créature aveuglée ne voit plus rien et rate automatiquement tout test
       qui requiert la vue. Son score de réflexe est divisé par deux.
     </p>
-    <h5>Immobilisé</h5>
+    <h4>Immobilisé</h4>
     <p>
       La vitesse d&#39;une créature immobilisée devient 0. La défense réduite à
       1.
     </p>
-    <h5>Entravé</h5>
+    <h4>Entravé</h4>
     <p>
       La vitesse de la créature entravée tombe à 0. Sa défense est réduite de 1
       point.
     </p>
-    <h5>Empoigné</h5>
+    <h4>Empoigné</h4>
     <p>
       Une créature empoignée est immobilisée, mais elle peut utiliser une action
       pour tenter de s&#39;échapper. Elle doit pour cela réussir un test de
@@ -511,23 +511,23 @@
       l'empoigne. Le choix de la compétence à utiliser dépend de comment
       l'empoignade a été réalisée.
     </p>
-    <h5>Neutralisé</h5>
+    <h4>Neutralisé</h4>
     <p>
       Une créature neutralisée est incapable d&#39;effectuer une action ou une
       réaction, et sa vitesse est réduite a 0. Sa défense est réduite à 1.
     </p>
-    <h5>Inconscient</h5>
+    <h4>Inconscient</h4>
     <p>
       Une créature inconsciente est neutralisée, lâche tout ce qu&#39;elle
       tenait et tombe au sol. Sa défense est réduite a 0.
     </p>
-    <h5>Terrorisé</h5>
+    <h4>Terrorisé</h4>
     <p>
       Une créature terrorisée subit un dé de handicap chaque tours tant que la
       source de sa frayeur se trouve dans son champ de vision. La créature est
       incapable de se rapprocher de la source de sa frayeur de son plein gré.
     </p>
-    <h5>Surpris</h5>
+    <h4>Surpris</h4>
     <p>Une créature surprise ne peut entreprendre ni action ni réaction.</p>
   </q-page>
 </template>
