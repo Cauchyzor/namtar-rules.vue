@@ -12,9 +12,22 @@
         inline
       ></q-option-group>
     </div>
+    <div class="q-pa-md">
+      <div class="row">
+        <q-label>Niveau de Maîtrise requis : </q-label>
+        <q-range
+          v-model="FilterByMaîtriseLevel"
+          :min="1"
+          :max="7"
+          :step="1"
+          snap
+          label
+        ></q-range>
+      </div>
+    </div>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
-        v-for="Aptitude in filteredApitudesList"
+        v-for="Aptitude in filteredAptitudesList"
         :key="Aptitude.Nom"
         class="col-12 col-sm-4"
       >
@@ -42,15 +55,24 @@ export default defineComponent({
       }),
       AptitudesList: ServiceAptitude.findAllAptitudes(),
       FilterByType: new Array<AptitudeTypeName>(),
+      FilterByMaîtriseLevel: { min: 1, max: 9 },
     };
   },
   computed: {
-    filteredApitudesList() {
+    filteredAptitudesList() {
       return this.FilterByType.length > 0
         ? this.AptitudesList.filter((apt) =>
             this.FilterByType.includes(apt.Type.Nom)
+          ).filter(
+            (apt) =>
+              apt.NiveauDeMaîtrise <= this.FilterByMaîtriseLevel.max &&
+              apt.NiveauDeMaîtrise >= this.FilterByMaîtriseLevel.min
           )
-        : this.AptitudesList;
+        : this.AptitudesList.filter(
+            (apt) =>
+              apt.NiveauDeMaîtrise <= this.FilterByMaîtriseLevel.max &&
+              apt.NiveauDeMaîtrise >= this.FilterByMaîtriseLevel.min
+          );
     },
   },
 });

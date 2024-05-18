@@ -31,4 +31,10 @@ export class Aptitude {
     this.Type = ServiceAptitude.findAptTypeByName(typeName);
     this.MaîtrisesRequise = maîtrises;
   }
+
+  get NiveauDeMaîtrise(): number {
+    return Array.from(this.MaîtrisesRequise.values()).reduce(
+      (acc, curr) => acc + curr
+    );
+  }
 }
