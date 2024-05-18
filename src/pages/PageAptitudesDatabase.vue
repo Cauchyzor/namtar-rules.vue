@@ -5,7 +5,7 @@
       <div
         v-for="Aptitude in AptitudesList"
         :key="Aptitude.Nom"
-        class="col-12 col-sm-4 col-md-3 col-lg-2"
+        class="col-12 col-sm-4"
       >
         <AptitudeCard style="height: 100%" :Aptitude="Aptitude"></AptitudeCard>
       </div>
