@@ -56,12 +56,12 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.INJONCTION,
       Description:
-        "Vous appliquer vos effets sur une cible qui peut vous voir et vous entendre.",
+        "Vous appliquer vos effets sur une cible qui vous voit et vous entend.",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
       Description:
-        "La posture vous octroie des bonus situationnel jusqu'a ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurément.",
+        "La posture vous octroie des bonus situationnel jusqu'à ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurément.",
     },
     {
       Nom: AptitudeTypeName.REACTION,
