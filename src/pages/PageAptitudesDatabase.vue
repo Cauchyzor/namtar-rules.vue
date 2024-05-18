@@ -1,14 +1,14 @@
 <template>
   <q-page padding>
     <h2 class="text-center">Database : Aptitudes</h2>
-    <div class="q-pa-md">
+    <div class="q-pa-md bg-secondary">
+      <q-label>Types d'aptitudes : </q-label>
       <q-option-group
         name="Types d'Aptitude"
         v-model="FilterByType"
         :options="AptTypes"
         type="checkbox"
         color="primary"
-        class="bg-secondary"
         inline
       ></q-option-group>
     </div>
@@ -53,7 +53,9 @@ export default defineComponent({
       AptTypes: Object.values(AptitudeTypeName).map((t) => {
         return { label: t, value: t };
       }),
-      AptitudesList: ServiceAptitude.findAllAptitudes(),
+      AptitudesList: ServiceAptitude.findAllAptitudes().sort(
+        (a, b) => a.NiveauDeMaîtrise - b.NiveauDeMaîtrise
+      ),
       FilterByType: new Array<AptitudeTypeName>(),
       FilterByMaîtriseLevel: { min: 1, max: 9 },
     };
