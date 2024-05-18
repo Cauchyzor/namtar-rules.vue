@@ -1,8 +1,8 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Repos et guérison</h4>
-    <h4>Soins</h4>
-    <h5>Repos</h5>
+    <h2 class="text-center">Guérison et repos</h2>
+    <h3>Guérison</h3>
+    <h4>Repos</h4>
     <p>
       La restitution des PV perdus n'est possible que d'une seule manière :
       consommer des dés de vies pendant une phase de repos, ou grâce à certaines
@@ -24,7 +24,7 @@
         question.
       </li>
     </ul>
-    <h5>Médecine</h5>
+    <h4>Médecine</h4>
     <p>
       Après chaque rencontre ou situation de stress, si un personnage a subi des
       blessures, il peut faire l'objet d'une intervention pour les premiers
@@ -45,8 +45,8 @@
         peut rallonger le temps de l'opération.
       </li>
     </ul>
-    <h4>Tomber à 0 point de vie</h4>
-    <h5>Perdre conscience</h5>
+    <h3>Tomber à 0 point de vie</h3>
+    <h4>Perdre conscience</h4>
     <p>
       Si les dégâts que vous subissez vous font tomber à 0, vous êtes
       inconscient. Vous ne pouvez reprendre conscience que si vous regagnez des
@@ -72,7 +72,7 @@
       le reliquat des dégâts infligés par l&#39;attaque est supérieur ou égal au
       maximum de points de vie de la cible: elle meurt sur le coup.
     </p>
-    <h4>Stabiliser une créature</h4>
+    <h3>Stabiliser une créature</h3>
     <p>
       Le meilleur moyen de sauver une créature qui se trouve à 0 point de vie
       est de la soigner. S&#39;il n&#39;est pas possible de la soigner, elle

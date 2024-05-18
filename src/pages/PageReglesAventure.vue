@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Aventure</h4>
-    <h4>Écoulement du temps</h4>
+    <h2 class="text-center">Aventure</h2>
+    <h3>Écoulement du temps</h3>
     <p>
       Le MJ peut utiliser une échelle de temps différente en fonction des
       situations.
@@ -25,7 +25,7 @@
         >le round étant une unité de temps qui dure environ 6 secondes</strong
       >.
     </p>
-    <h4>Déplacement</h4>
+    <h3>Déplacement</h3>
     <p>
       Il est parfois vital de connaître exactement le temps nécessaire pour
       aller d&#39;un point à un autre, que ce soit en jours, en heures ou en
@@ -33,7 +33,7 @@
       deux facteurs : la vitesse et le rythme de déplacement des créatures, et
       le type terrain parcouru.
     </p>
-    <h5>Vitesse</h5>
+    <h4>Vitesse</h4>
     <p>
       Chaque personnage ou monstre est caractérisé par une vitesse qui
       correspond à la
@@ -47,7 +47,7 @@
       parcourir un personnage ou un monstre en une minute, une heure ou une
       journée.
     </p>
-    <h5>Rythme de déplacement</h5>
+    <h4>Rythme de déplacement</h4>
     <p>
       Un groupe de personnages a le choix entre plusieurs rythmes de déplacement
       quand il voyage : normal, rapide ou lent. Une marche rapide implique que
@@ -106,7 +106,7 @@
         </tr>
       </tbody>
     </table>
-    <h5>Terrain difficile</h5>
+    <h4>Terrain difficile</h4>
     <p>
       La distance parcourue donnée dans le tableau des rythmes de déplacement a
       été calculée en partant du principe que les personnages se déplaçaient sur
@@ -125,14 +125,14 @@
       pouvez parcourir que la moitié de la distance normale en une minute, une
       heure ou un jour.
     </p>
-    <h5>Types de mouvement spéciaux</h5>
+    <h4>Types de mouvement spéciaux</h4>
     <p>
       Dans des souterrains où le danger rôde à chaque pas, en pleine montagne ou
       en territoire ennemi, la plupart du temps, les aventuriers ne se
       contentent pas de marcher tranquillement. Ils doivent escalader, ramper,
       nager ou sauter pour atteindre leur destination.
     </p>
-    <h4>Escalader, nager et ramper</h4>
+    <h3>Escalader, nager et ramper</h3>
     <p>
       Quand vous escaladez ou que vous nagez, chaque mètre parcouru vous coûte 1
       mètre supplémentaire (et 2 mètres s&#39;il s&#39;agit d&#39;un terrain
@@ -142,7 +142,7 @@
       si vous devez vous déplacer dans des eaux agitées, vous aurez peut-être à
       effectuer un test de vigueur (Athlétisme).
     </p>
-    <h4>Sauter</h4>
+    <h3>Sauter</h3>
     <p>
       Votre Vigueur détermine la longueur que vous pouvez parcourir en sautant.
     </p>
@@ -172,14 +172,14 @@
         d&#39;autant votre déplacement.
       </li>
     </ul>
-    <h4>L&#39;environnement</h4>
+    <h3>L&#39;environnement</h3>
     <p>
       Par définition, l&#39;aventure rime avec l&#39;exploration d&#39;endroits
       dangereux et mystérieux. Les règles présentées dans cette section traitent
       des principales manières dont les aventuriers interagissent avec leur
       environnement dans ce genre de situations très particulières.
     </p>
-    <h5>Chute</h5>
+    <h4>Chute</h4>
     <p>
       Pour un aventurier, la chute constitue un des risques les plus courants.
       Suite à une chute, une créature subit
@@ -189,7 +189,7 @@
       >. À moins qu&#39;elle n&#39;ait réussi à éviter de subir les dégâts
       occasionnés par la chute, la créature termine à terre.
     </p>
-    <h5>Asphyxie</h5>
+    <h4>Asphyxie</h4>
     <p>
       Une créature peut retenir sa respiration pendant un nombre de minutes égal
       à 1 + 1 minute supplémentaire par rang d&#39;athlétisme.
@@ -200,7 +200,7 @@
       Elle ne peut pas regagner de point de vie ou être stabilisée tant
       qu&#39;elle ne peut pas respirer.
     </p>
-    <h5>Vision et lumière</h5>
+    <h4>Vision et lumière</h4>
     <p>
       La présence ou l&#39;absence de lumière dans un environnement a été
       classée en <strong>trois catégories d&#39;illumination</strong> : la
@@ -232,7 +232,7 @@
       de l&#39;état aveuglé quand il tente de voir quelque chose dans une telle
       zone.
     </p>
-    <h5>Vision aveugle</h5>
+    <h4>Vision aveugle</h4>
     <p>
       Une créature dotée du trait vision aveugle est
       <strong
@@ -242,7 +242,7 @@
       dotées d&#39;écholocation ou de sens particulièrement aiguisés, comme les
       chauves-souris et les vrais dragons, possèdent cette capacité.
     </p>
-    <h5>Eau et nourriture</h5>
+    <h4>Eau et nourriture</h4>
     <p>
       Les personnages privés d&#39;eau ou de nourriture subissent les effets de
       l&#39;épuisement. Une créature ne peut sortir de l&#39;état
@@ -258,10 +258,10 @@
       d&#39;eau malgré le manque, il ne sort pas de l&#39;état d&#39;épuisement,
       mais évite de cumuler des handicaps.
     </p>
-    <h4>Entre les aventures</h4>
-    <h5>Artisanat</h5>
+    <h3>Entre les aventures</h3>
+    <h4>Artisanat</h4>
     <p>TODO : Section en chantier.</p>
-    <h5>Vendre son butin</h5>
+    <h4>Vendre son butin</h4>
     <ul>
       <li>
         <p>
@@ -299,8 +299,8 @@
       négocier peut allonger très significativement le temps total passé à
       vendre les objets.
     </p>
-    <h4>Moments de répit</h4>
-    <h5>Récupérer</h5>
+    <h3>Moments de répit</h3>
+    <h4>Récupérer</h4>
     <p>
       Un personnage peut mettre à profit une période de répit entre deux
       aventures pour se remettre d&#39;une blessure handicapante, d&#39;une
@@ -313,7 +313,7 @@
       pouvez faire appel a des professionnel pour accélérer les soins, quelque
       soit le type de blessure.
     </p>
-    <h5>Mener des recherches</h5>
+    <h4>Mener des recherches</h4>
     <p>
       Quand vous entamez vos recherches, le MJ détermine si vous pouvez trouver
       l&#39;information qui vous intéresse, combien de temps cela vous prendra
@@ -331,8 +331,8 @@
       les dépenses de cette entreprise. Cette somme s&#39;ajoute au coût normal
       de votre train de vie.
     </p>
-    <h5>Communication</h5>
-    <h4>A l&#39;échelle galactique</h4>
+    <h4>Communication</h4>
+    <h3>A l&#39;échelle galactique</h3>
     <p>
       Face aux proportions difficilement gigantesques que représente la galaxie
       en elle-même, communiquer d&#39;un bras à l&#39;autre représente un
@@ -362,7 +362,7 @@
       >, et souvent source de querelles intestines sur les systèmes les moins
       stables politiquement.
     </p>
-    <h4>Dans un système</h4>
+    <h3>Dans un système stellaire</h3>
     <p>
       Il y a généralement sur chaque planète habitée et dite
       &quot;civilisés&quot;

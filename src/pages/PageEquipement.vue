@@ -1,17 +1,17 @@
 <template>
   <q-page padding>
-    <h4 class="text-center">Équipement et Marché</h4>
+    <h2 class="text-center">Équipement et Marché</h2>
     <!-- TODO Ne pas re afficher la page avec le changement d'onglet -->
     <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
-    <h4>Concepts</h4>
-    <h5>Encombrement</h5>
+    <h3>Concepts</h3>
+    <h4>Encombrement</h4>
     <p>
       Chaque objet transporté par les personnages représente une place dans son
       inventaire par le biais de l&#39;encombrement. Les petits objets ont une
       valeurs de 0 ( ce qui ne signifie pas pour autant que l&#39;ont peut en
       prendre autant que voulut, c&#39;est au MJ de doser ).
     </p>
-    <h5>Rareté et prix de base</h5>
+    <h4>Rareté et prix de base</h4>
     <p>
       Chaque objet possède une valeur de rareté qui augmente avec la difficulté
       de trouver un tel objet pour un personnage. Lorsqu'un personnage souhaite
@@ -24,7 +24,7 @@
       venir gonfler le prix de l'objet bar rapport au prix de base, ou indiquer
       que la recherche de l'objet prends plus de temps que prévu.
     </p>
-    <h4>Armes</h4>
+    <h3>Armes</h3>
     <p>
       La technologie n&#39;a souvent pas suivi une progression
       &quot;naturelle&quot;. C&#39;est dû au fait que de nombreuses
@@ -60,7 +60,7 @@
         <ArmeCard style="height: 100%" :key="arme.Nom" :Arme="arme"></ArmeCard>
       </div>
     </div>
-    <h4>Équipement quotidien</h4>
+    <h3>Équipement quotidien</h3>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="equipementItem in EquipementItemsList"
@@ -74,7 +74,7 @@
         ></EquipementCard>
       </div>
     </div>
-    <h4>Armures</h4>
+    <h3>Armures</h3>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
         v-for="armure in ArmureItemsList"

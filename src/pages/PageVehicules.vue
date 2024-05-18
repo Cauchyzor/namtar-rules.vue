@@ -3,7 +3,7 @@
     <!-- TODO Faire un stepper avec les différents types de véhicule / Montures -->
     <!-- TODO Faire le lien avec une liste de véhicule monture de la catégorie en bas de chaque step  -->
     <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
-    <h4>Véhicules, Aéronefs et Navettes</h4>
+    <h2>Véhicules, Aéronefs et Navettes</h2>
     <p>
       On distingue généralement deux types de véhicules. Ceux qui peuvent
       voyager à travers les relais galactiques et les autres. Les premiers sont
@@ -18,7 +18,7 @@
       fleurissante, mais rarement sans s&#39;endetter ou être soumis à certaines
       obligations.
     </p>
-    <h5>Navettes</h5>
+    <h4>Navettes</h4>
     <p>
       Les vaisseaux de l&#39;autre catégorie sont nettement plus abordables et
       communs. Les navettes sont capables de naviguer dans le vide spatial et
@@ -34,7 +34,7 @@
       très difficiles à manœuvrer efficacement car souvent non conçu pour
       exceller dans ces milieux.
     </p>
-    <h5>Aéronef</h5>
+    <h4>Aéronef</h4>
     <p>
       À l&#39;instar des navettes pour le modèle spatiale, les aéronefs
       regroupent tous les véhicules capables de voler dans l&#39;atmosphère
@@ -47,7 +47,7 @@
       l&#39;entretenir requière beaucoup plus de fonds. En posséder un ne
       signifie pas qu&#39;on puisse l&#39;utiliser avec facilité.
     </p>
-    <h5>Véhicules terrestre et montures.</h5>
+    <h4>Véhicules terrestre et montures.</h4>
     <p>
       Les véhicules motorisés sont monnaie courante dans la plupart des mondes,
       et peuvent être achetés à des prix raisonnables. Comme toujours, le prix
