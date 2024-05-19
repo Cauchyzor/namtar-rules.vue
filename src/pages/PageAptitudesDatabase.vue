@@ -1,19 +1,19 @@
 <template>
   <q-page padding>
     <h2 class="text-center">Database : Aptitudes</h2>
-    <div class="q-pa-md bg-secondary">
-      <label>Types d'aptitudes : </label>
-      <q-option-group
-        name="Types d'Aptitude"
-        v-model="FilterByType"
-        :options="AptTypesList"
-        type="checkbox"
-        color="primary"
-        inline
-      ></q-option-group>
-    </div>
-    <div class="q-pa-md">
-      <div class="row">
+    <div class="q-my-md q-pa-md bg-secondary">
+      <div class="row q-ma-md">
+        <label>Types d'aptitudes : </label>
+        <q-option-group
+          name="Types d'Aptitude"
+          v-model="FilterByType"
+          :options="AptTypesList"
+          type="checkbox"
+          color="primary"
+          inline
+        ></q-option-group>
+      </div>
+      <div class="row q-ma-md">
         <label>Niveau de Maîtrise requis : </label>
         <q-range
           v-model="FilterByLevel"
@@ -24,18 +24,18 @@
           label
         ></q-range>
       </div>
-    </div>
-    <div class="q-pa-md row">
-      <q-select
-        outlined
-        v-model="FilterByMaîtrises"
-        toggle-color="primary"
-        :options="CompétencesNameList"
-        label="Compétences maîtrisées :"
-        multiple
-        use-chips
-        class="col bg-secondary"
-      ></q-select>
+      <div class="row q-ma-md">
+        <q-select
+          outlined
+          v-model="FilterByMaîtrises"
+          toggle-color="primary"
+          :options="CompétencesNameList"
+          label="Compétences maîtrisées :"
+          multiple
+          use-chips
+          class="col bg-secondary"
+        ></q-select>
+      </div>
     </div>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
