@@ -7,7 +7,6 @@ import { CompetenceName } from "src/model/Competence";
 export enum AptitudeTypeName {
   AMELIORATION = "Amélioration",
   BENEDICTION = "Bénédiction",
-  CYTOMANCIE = "Cytomancie",
   EVOCATION = "Évocation",
   INJONCTION = "Injonction",
   MANTRA = "Mantra",
@@ -32,7 +31,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Toute les creature au choix a porté courte reçoivent des bonus pour le reste de la journée. Le lanceur ne peut donner qu'une seule benediction à la fois.",
+        "Toute les creature au choix a porté courte reçoivent des bonus pour le reste de la journée. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
@@ -51,12 +50,12 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
-        "Vous octroi des bonus tant que cette amelioration est active sur la piece d'équipement.",
+        "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer. Une telle aptitude ne peut être affectée qu'à une seule pièce d'équipement à la fois.",
     },
     {
       Nom: AptitudeTypeName.INJONCTION,
       Description:
-        "Vous appliquer vos effets sur une cible qui vous voit et vous entend.",
+        "Vous appliquez vos effets sur une cible qui vous voit et vous entend.",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
