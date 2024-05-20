@@ -100,100 +100,140 @@
       personnage effectue un nouveau tour de jeu
     </p>
 
-    <h3 id="action">Action, manœuvre et réactions</h3>
+    <h3 id="action">Actions et réactions</h3>
+    <div class="row justify-between">
+      <div class="col-md-4 col-sm-12 q-my-md">
+        <div class="row">
+          <p>
+            Pendant un combat ou une situation de stress, les personnages ont
+            par défaut <strong>3 points d'action</strong>. Un point représente
+            un laps de temps très court (environ 1 seconde) pendant lequel un
+            personnage peut agir. Certaines de ses actions peuvent consommer un
+            ou plusieurs points d'action en fonction de leur longueur ou de leur
+            complexité. Il est possible d'effectuer plusieurs actions simples
+            durant le même laps de temps (comme par exemple se déplacer et
+            lâcher un objet en mains) sans que cela ne nécessite de dépenser
+            plusieurs points d'action (à l’appréciation du MJ).
+          </p>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <q-icon name="circle" color="primary" size="xl"></q-icon>
+            <q-icon name="circle" color="primary" size="xl"></q-icon>
+            <q-icon name="circle" color="primary" size="xl"></q-icon>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 q-my-md">
+        <div class="row">
+          <p>
+            Les réactions sont les moments où un personnage agit en réponse à
+            l'action d'un autre personnage. Les réactions d'un personnage ne
+            sont par définition pas jouées pendant le tour de jeu de ce
+            personnage. En fonction de l'action souhaitée, la réaction se résous
+            juste avant le tour d'un autre personnage, ou immédiatement à la fin
+            de celui-ci. Par défaut, un personnage est capable d'effectuer
+            <strong>une reaction</strong> par tour.
+          </p>
+        </div>
+        <div class="row">
+          <q-icon name="square" color="primary" size="xl" class="col"></q-icon>
+        </div>
+      </div>
+    </div>
 
-    <q-list class="q-my-xl" padding>
-      <q-item>
-        <q-item-section>
-          <q-item-label header>Charger un adversaire</q-item-label>
-          <q-item-label caption
-            >Se déplacer et attaquer avec la force de la course. Un test
-            d'athlétisme opposé a la cible est nécessaire pour rattraper une
-            cible qui décide fuir au même tour</q-item-label
-          >
-        </q-item-section>
-        <q-item-section side top>
-          <q-item-label overline>Action + manœuvre</q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-item>
-        <q-item-section>
-          <q-item-label header>Bousculer / Empoigner </q-item-label>
-          <q-item-label caption
-            >Vous tentez d'entraver un adversaire, ou de le mettre à terre. Vous
-            devez réussir un test en opposition avec votre adversaire. La
-            compétence utilisée dépendra de la manière dont l'action est
-            réalisée et comment l'adversaire réagit. Lors d'une tentative
-            d'entrave, si vous obtenez plus de succès que le score de la cible,
-            elle est immobilisée, sinon elle est entravée.</q-item-label
-          >
-        </q-item-section>
-        <q-item-section side top>
-          <q-item-label overline>Action + manœuvre</q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-item>
-        <q-item-section>
-          <q-item-label header>Se précipiter</q-item-label>
-          <q-item-label caption
-            >Effectuer un déplacement jusqu'a deux niveau de porté en ligne
-            droite</q-item-label
-          >
-        </q-item-section>
-        <q-item-section side top>
-          <q-item-label overline>Action + manœuvre</q-item-label>
-        </q-item-section>
-      </q-item>
-      <q-item>
-        <q-item-section>
-          <q-item-label header>Se cacher</q-item-label>
-          <q-item-label caption
-            >Quand vous choisissez l&#39;action se cacher, vous devez faire un
-            test d&#39;agilité (Discrétion) de DD égale à la sommes des scores
-            de vigilance des adversaires à proximité.</q-item-label
-          >
-        </q-item-section>
-        <q-item-section side top>
-          <q-item-label overline>Action + manœuvre</q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-item>
-        <q-item-section>
-          <q-item-label header>Fouille approfondie</q-item-label>
-          <q-item-label caption
-            >Fouiller jusqu'a un niveau de porté ou dans son sac</q-item-label
-          >
-        </q-item-section>
-        <q-item-section side top>
-          <q-item-label overline>Action + manœuvre</q-item-label>
-        </q-item-section>
-      </q-item>
-
-      <q-item>
-        <q-item-section>
-          <q-item-label header>Autre chose ?</q-item-label>
-          <q-item-label caption
-            >La seule limite au jeu est votre imagination. Les précédentes
-            actions résument les principales possibilités qui s&#39;offrent à
-            votre héros lors d&#39;une scène de combat. Mais rien ne vous
-            empêche de faire autre chose : tenter de faire rire votre
-            adversaire, tenter de casser une fiole à sa ceinture, tout est
-            possible. C&#39;est alors au MJ de déterminer les chances de
-            réussite de votre action et de vous demander, s&#39;il le souhaite,
-            un lancer de dés.</q-item-label
-          >
-        </q-item-section>
-        <q-item-section side top>
-          <q-item-label overline>Action + manœuvre</q-item-label>
-        </q-item-section>
-      </q-item>
-    </q-list>
-    <q-separator padding inset></q-separator>
     <div class="row q-my-xl">
-      <q-list class="col-md-6 col-sm-12" padding>
+      <q-list class="col-md-4 col-sm-12" padding>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Charger un adversaire</q-item-label>
+            <q-item-label caption
+              >Se déplacer et attaquer avec la force de la course. Un test
+              d'athlétisme opposé a la cible est nécessaire pour rattraper une
+              cible qui décide fuir au même tour</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action + manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Bousculer / Empoigner </q-item-label>
+            <q-item-label caption
+              >Vous tentez d'entraver un adversaire, ou de le mettre à terre.
+              Vous devez réussir un test en opposition avec votre adversaire. La
+              compétence utilisée dépendra de la manière dont l'action est
+              réalisée et comment l'adversaire réagit. Lors d'une tentative
+              d'entrave, si vous obtenez plus de succès que le score de la
+              cible, elle est immobilisée, sinon elle est
+              entravée.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action + manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Se précipiter</q-item-label>
+            <q-item-label caption
+              >Effectuer un déplacement jusqu'a deux niveau de porté en ligne
+              droite</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action + manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Se cacher</q-item-label>
+            <q-item-label caption
+              >Quand vous choisissez l&#39;action se cacher, vous devez faire un
+              test d&#39;agilité (Discrétion) de DD égale à la sommes des scores
+              de vigilance des adversaires à proximité.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action + manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Fouille approfondie</q-item-label>
+            <q-item-label caption
+              >Fouiller jusqu'a un niveau de porté ou dans son sac</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action + manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Autre chose ?</q-item-label>
+            <q-item-label caption
+              >La seule limite au jeu est votre imagination. Les précédentes
+              actions résument les principales possibilités qui s&#39;offrent à
+              votre héros lors d&#39;une scène de combat. Mais rien ne vous
+              empêche de faire autre chose : tenter de faire rire votre
+              adversaire, tenter de casser une fiole à sa ceinture, tout est
+              possible. C&#39;est alors au MJ de déterminer les chances de
+              réussite de votre action et de vous demander, s&#39;il le
+              souhaite, un lancer de dés.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label overline>Action + manœuvre</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+      <q-list class="col-md-4 col-sm-12" padding>
         <q-item>
           <q-item-section>
             <q-item-label header>Attaquer</q-item-label>
@@ -332,7 +372,7 @@
         </q-item>
       </q-list>
 
-      <q-list class="col-md-6 col-sm-12" padding>
+      <q-list class="col-md-4 col-sm-12" padding>
         <q-item>
           <q-item-section>
             <q-item-label header>
