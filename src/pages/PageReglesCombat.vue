@@ -4,112 +4,101 @@
     <!-- TODO : Migrer vers un système de point d'action (3 point par tour + 1 réaction / Attaque 2 point / déplacement : 2 point / ... )-->
     <!-- TODO : Revoir le système de portée)-->
     <h2 class="text-center">Combats</h2>
-    <p>Les combats ce déroulent selon la boucle suivante :</p>
+    <h3>Déroulement d'un combat</h3>
+    <p>
+      Les tours de jeu représente des moments de quelques secondes pendant
+      lesquelles chaque acteur de la rencontre essaye de tirer parti de la
+      situation.
+    </p>
+    <h4>Surprise</h4>
+    <p>
+      Si aucun des deux camps ne cherche à être discret, ils se remarquent
+      automatiquement. Sinon, test de discrétion de groupe des attaquants opposé
+      test de vigilance de chaque membres de l'autre groupe. Les membres qui ne
+      réussissent pas ce test sont surpris.
+    </p>
+    <p>
+      Si un belligérant est surpris, il ne pouvez pas bouger ou accomplir
+      d&#39;action lors du premier tour de combat, et il ne peut pas non plus
+      réagir jusqu&#39;à la fin de ce tour.
+    </p>
 
-    <q-stepper v-model="step" header-nav animated class="bg-secondary" flat>
-      <q-step :name="1" prefix="1" title="Décrire le tour de jeu">
-        <p>
-          Les tours de jeu représente des moments de quelques secondes pendant
-          lesquelles chaque acteur de la rencontre essaye de tirer parti de la
-          situation.
-        </p>
-        <p>
-          Chaque personnages et créatures impliqués dans la rencontre ont tous
-          par défaut <strong>une action</strong>,
-          <strong>une manœuvre</strong> et <strong>une réaction</strong>.
-        </p>
-      </q-step>
+    <h4>Initiative</h4>
+    <p>
+      <strong>Jet d'initiative :</strong> Lancez autant de dés que votre valeur
+      d'initiative. Le belligérant avec le plus de succès résoudra ses actions
+      en premier dans la phase de résolution, puis le second avec le plus de
+      succès... Etc. Si deux personnages ont le même nombre de succès, on
+      compare alors leurs avantages net. S'il subsiste une égalité, c'est au
+      joueur de commencer, et au PNJ de jouer en suite selon l'ordre convenu.
+    </p>
+    <p>
+      Chaque personnages et créatures impliqués dans la rencontre ont tous par
+      défaut <strong>une action</strong>, <strong>une manœuvre</strong> et
+      <strong>une réaction</strong>.
+    </p>
 
-      <q-step :name="2" prefix="2" title="Lancer l'initiative">
+    <h4>Les niveaux de porté</h4>
+    <p>
+      Pour facilité la lecture d'une scène de combat, les distances relatives
+      entre les personnages sont décrite avec des niveau de portée. Ils sont
+      nécessaires pour calculer la difficulté d'un jet d'attaque a distance
+      (voir plus loin)
+    </p>
+    <ul>
+      <li>Engagé - de 0 à 1m environ</li>
+      <li>Courte - de 1m à 9m</li>
+      <li>Moyenne - de 10 à 20m</li>
+      <li>Longue - de 20 à 50m</li>
+      <li>Extrême - de 50 à 100m</li>
+    </ul>
+    <p>
+      Les niveaux de porté au delà de 100m peuvent encore être fragmenter selon
+      la volonté du MJ
+    </p>
+    <h4>Les déplacements</h4>
+    <p>
+      Chaque personnage qui décide d'effectuer un déplacement ce déplace d'un
+      niveau de porté, soit l'equivalent d'une dizaine de mètres. Si un
+      personnage choisi de se déplacer alors qu'il est engagé avec un
+      adversaire, ou qu'il passe a un niveau de porté engagé avec un adversaire
+      sur son chemin, il risque une attaque d'opportunité.
+    </p>
+    <h4>Résoudre les Attaques</h4>
+    <p>
+      Que vous portiez une attaque avec une arme de corps-à-corps, une arme à
+      distance ou que vous fassiez un jet d&#39;attaque dans le cadre d&#39;une
+      aptitude, cette attaque se décompose ainsi :
+    </p>
+    <ol>
+      <li>
         <p>
-          Si aucun des deux camps ne cherche à être discret, ils se remarquent
-          automatiquement. Test d'initiative sans difficulté de tout les
-          belligérants, puis classement par nombre de succès net, puis nombre
-          d'avantages net si égalité
+          Choisir une cible. Choisissez une cible qui se trouve à distance
+          d&#39;attaque : une créature, un objet ou un lieu.
         </p>
+      </li>
+      <li>
         <p>
-          Sinon, test de discrétion de groupe des attaquants opposé test de
-          vigilance de chaque membres de l'autre groupe. Les membres qui ne
-          réussissent pas ce test sont surpris
+          Déterminer les dés a lancer en fonction du jet d'attaque (distance ou
+          contact ou autre).
         </p>
+      </li>
+      <li>
         <p>
-          Si un belligérant est surpris, il ne pouvez pas bouger ou accomplir
-          d&#39;action lors du premier tour de combat, et il ne peut pas non
-          plus réagir jusqu&#39;à la fin de ce tour.
+          Lancez les dés et calculer le résultat net. Si il reste au moins un
+          succès net, l'attaque est réussie. En fonction de l'aptitude ou de
+          l'arme utilisée, certains effet supplémentaires peuvent survenir avec
+          les avantages/échecs/désavantages/désastres net.
         </p>
-        <p>
-          <strong>Jet d'initiative :</strong> Lancez autant de dés que votre
-          valeur d'initiative. Le belligérant avec le plus de succès résoudra
-          ses actions en premier dans la phase de résolution, puis le second
-          avec le plus de succès... Etc. Si deux personnages ont le même nombre
-          de succès, on compare alors leurs avantages net. S'il subsiste une
-          égalité, c'est au joueur de commencer, et au PNJ de jouer en suite
-          selon l'ordre convenu.
-        </p>
-      </q-step>
-
-      <q-step :name="3" prefix="3" title="Résoudre">
-        <h4>Les niveaux de porté</h4>
-        <p>
-          Pour facilité la lecture d'une scène de combat, les distances
-          relatives entre les personnages sont décrite avec des niveau de
-          portée. Ils sont nécessaires pour calculer la difficulté d'un jet
-          d'attaque a distance (voir plus loin)
-        </p>
-        <ul>
-          <li>Engagé - de 0 à 1m environ</li>
-          <li>Courte - de 1m à 9m</li>
-          <li>Moyenne - de 10 à 20m</li>
-          <li>Longue - de 20 à 50m</li>
-          <li>Extrême - de 50 à 100m</li>
-        </ul>
-        <p>
-          Les niveaux de porté au delà de 100m peuvent encore être fragmenter
-          selon la volonté du MJ
-        </p>
-        <h4>Résoudre les déplacements</h4>
-        Chaque personnage qui décide d'effectuer un déplacement ce déplace d'un
-        niveau de porté, soit l'equivalent d'une dizaine de mètres. Si un
-        personnage choisi de se déplacer alors qu'il est engagé avec un
-        adversaire, ou qu'il passe a un niveau de porté engagé avec un
-        adversaire sur son chemin, il risque une attaque d'opportunité.
-        <h4>Résoudre les Attaques</h4>
-        <p>
-          Que vous portiez une attaque avec une arme de corps-à-corps, une arme
-          à distance ou que vous fassiez un jet d&#39;attaque dans le cadre
-          d&#39;une aptitude, cette attaque se décompose ainsi :
-        </p>
-        <ol>
-          <li>
-            <p>
-              Choisir une cible. Choisissez une cible qui se trouve à distance
-              d&#39;attaque : une créature, un objet ou un lieu.
-            </p>
-          </li>
-          <li>
-            <p>
-              Déterminer les dés a lancer en fonction du jet d'attaque (distance
-              ou contact ou autre).
-            </p>
-          </li>
-          <li>
-            <p>
-              Lancez les dés et calculer le résultat net. Si il reste au moins
-              un succès net, l'attaque est réussie. En fonction de l'aptitude ou
-              de l'arme utilisée, certains effet supplémentaires peuvent
-              survenir avec les avantages/échecs/désavantages/désastres net.
-            </p>
-          </li>
-        </ol>
-        <h4>Les réactions</h4>
-        <p>
-          Les réactions peuvent être déclenchées à tout moment par les
-          belligérant <strong>entre leurs tour de jeu</strong>.La possibilité de
-          jouer sa réaction est conservée jusqu'à ce qu'elle soit résolue, ou
-          que le personnage effectue un nouveau tour de jeu
-        </p>
-      </q-step>
-    </q-stepper>
+      </li>
+    </ol>
+    <h4>Les réactions</h4>
+    <p>
+      Les réactions peuvent être déclenchées à tout moment par les belligérant
+      <strong>entre leurs tour de jeu</strong>.La possibilité de jouer sa
+      réaction est conservée jusqu'à ce qu'elle soit résolue, ou que le
+      personnage effectue un nouveau tour de jeu
+    </p>
 
     <h3 id="action">Action, manœuvre et réactions</h3>
 
@@ -534,12 +523,11 @@
 
 <script lang="ts">
 import { AttributsName } from "src/model/Attribut";
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   data() {
     return {
-      step: ref(1),
       ATTRIBUTS: AttributsName,
     };
   },
