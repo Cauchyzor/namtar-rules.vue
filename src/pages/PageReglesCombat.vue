@@ -143,7 +143,7 @@
     </div>
 
     <div class="row q-my-xl">
-      <q-list class="col-md-4 col-sm-12" padding>
+      <q-list class="col-md-4 col-sm-12" padding bordered>
         <q-item>
           <q-item-section>
             <q-item-label header>Charger un adversaire</q-item-label>
@@ -154,7 +154,11 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action + manœuvre</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -172,7 +176,13 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action + manœuvre</q-item-label>
+            <q-item-label overline>
+              <div>
+                <q-icon name="circle" size="xs"></q-icon>
+                <q-icon name="circle" size="xs"></q-icon>
+                <q-icon name="circle" size="xs"></q-icon>
+              </div>
+            </q-item-label>
           </q-item-section>
         </q-item>
 
@@ -185,7 +195,11 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action + manœuvre</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
         <q-item>
@@ -198,7 +212,11 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action + manœuvre</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -210,7 +228,11 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action + manœuvre</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -229,11 +251,14 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action + manœuvre</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="add" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
       </q-list>
-      <q-list class="col-md-4 col-sm-12" padding>
+      <q-list class="col-md-4 col-sm-12" padding bordered>
         <q-item>
           <q-item-section>
             <q-item-label header>Attaquer</q-item-label>
@@ -242,7 +267,10 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -257,7 +285,10 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -270,7 +301,10 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
         <q-item
@@ -284,7 +318,10 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
         <q-item>
@@ -296,9 +333,11 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
-          </q-item-section></q-item
-        >
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div> </q-item-section
+        ></q-item>
         <q-item>
           <q-item-section>
             <q-item-label header>Stabiliser</q-item-label>
@@ -308,7 +347,10 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -323,7 +365,10 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
@@ -341,22 +386,13 @@
             </q-item-label>
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
 
-        <q-item>
-          <q-item-section>
-            <q-item-label header>Manœuvre supplémentaire</q-item-label>
-            <q-item-label caption
-              >Vous pouvez utiliser votre action pour executer immédiatement une
-              manœuvre supplémentaire pendant ce tour</q-item-label
-            >
-          </q-item-section>
-          <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
-          </q-item-section>
-        </q-item>
         <q-item>
           <q-item-section>
             <q-item-label header>Se tenir prêt</q-item-label>
@@ -367,25 +403,25 @@
             </q-item-label>
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Action</q-item-label>
+            <div>
+              <q-icon name="circle" size="xs"></q-icon>
+              <q-icon name="circle" size="xs"></q-icon>
+            </div>
           </q-item-section>
         </q-item>
       </q-list>
 
-      <q-list class="col-md-4 col-sm-12" padding>
+      <q-list class="col-md-4 col-sm-12" padding bordered>
         <q-item>
           <q-item-section>
-            <q-item-label header>
-              Mouvement : Se déplacer d'un niveau de porter/ Se
-              relever</q-item-label
-            >
+            <q-item-label header> Se déplacer</q-item-label>
             <q-item-label caption
               >Parcourir l'équivalent d'un niveau de porté en ligne droite. Se
               relever quand on a été mis terre</q-item-label
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Manœuvre</q-item-label>
+            <q-icon name="circle" size="xs"></q-icon>
           </q-item-section>
         </q-item>
         <q-item>
@@ -401,7 +437,7 @@
             </q-item-label>
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Manœuvre</q-item-label>
+            <q-icon name="circle" size="xs"></q-icon>
           </q-item-section>
         </q-item>
         <q-item>
@@ -413,21 +449,33 @@
             </q-item-label>
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Manœuvre</q-item-label>
+            <q-icon name="circle" size="xs"></q-icon>
           </q-item-section>
         </q-item>
         <q-separator margin padding inset></q-separator>
         <q-item>
           <q-item-section>
-            <q-item-label header>Attaque d'opportunité</q-item-label>
+            <q-item-label header>Frappe d'opportunité</q-item-label>
             <q-item-label caption
-              >Attaquer un adversaire qui sort d'une couverture, se déplace, ou
-              est à découvert dans le cas d'une attaque a
-              distance.</q-item-label
+              >Attaquer un adversaire, engagé au corps à corps avec vous, qui
+              tente de s'enfui sans ce désengager.</q-item-label
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Réaction</q-item-label>
+            <q-icon name="square" size="xs"></q-icon>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label header>Tir d'opportunité</q-item-label>
+            <q-item-label caption
+              >Attaquer un adversaire qui se déplace ou qui sort de sa
+              couverture avec votre arme à distance alors que vous êtes en joue
+              et à portée.</q-item-label
+            >
+          </q-item-section>
+          <q-item-section side top>
+            <q-icon name="square" size="xs"></q-icon>
           </q-item-section>
         </q-item>
         <q-item>
@@ -445,7 +493,7 @@
             >
           </q-item-section>
           <q-item-section side top>
-            <q-item-label overline>Réaction</q-item-label>
+            <q-icon name="square" size="xs"></q-icon>
           </q-item-section>
         </q-item>
       </q-list>
