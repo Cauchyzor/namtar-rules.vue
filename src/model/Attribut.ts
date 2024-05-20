@@ -16,7 +16,7 @@ export type Attribut = {
 export enum AttributsName {
   PV = "Point de vie",
   REFLEXES = "Réflexes",
-  ÉSOTÉRISME = "Ésotérisme",
+  ÉSOTÉRISME = "Ésotérisme", //TODO : Remplacer par Sprithium ?
   RÉCUPÉRATION = "Récupération",
   INITIATIVE = "Initiative",
 }

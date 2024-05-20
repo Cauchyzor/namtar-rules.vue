@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+    <!-- TODO : Migrer vers un système de point d'action (+ 1 point au niveau 5)-->
     <h2 class="text-center">Gain de niveau</h2>
 
     <h3>Progression par milestone</h3>
