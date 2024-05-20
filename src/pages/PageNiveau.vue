@@ -13,17 +13,21 @@
     <h3>Ajouter 1 niveau à son personnage</h3>
     <p>Pour chaque niveau gagné :</p>
     <ul>
-      <li>Choisir une nouvelle aptitude parmi celles disponibles</li>
-      <li>Mettre à jour votre nombre de point de vie</li>
-      <li>Mettre à jour votre nombre de dé d'ésotérisme</li>
+      <li>Choisissez une nouvelle aptitude parmi celles disponibles</li>
+      <li>Mettez à jour votre nombre de point de vie</li>
+      <li>Mettez à jour votre nombre de dé d'ésotérisme</li>
     </ul>
     <p>
       Pour chaque palier de 2 niveau a partir du niveau 1 (niveaux 3, 5, 7, et
       9)
     </p>
-    <li>
-      Vous augmentez d'un niveau votre rang de maîtrise dans une compétence.
-    </li>
+    <ul>
+      <li>Augmentez d'un niveau votre rang de maîtrise dans une compétence.</li>
+    </ul>
+    <p>Au niveau 5 :</p>
+    <ul>
+      <li>Ajoutez un point d'action supplémentaire par tour</li>
+    </ul>
     <p>
       Le niveau 9 est le niveau maximum que peuvent atteindre les aventuriers.
       Certaines créatures ou adversaires peuvent aller au delà de cette limite.
