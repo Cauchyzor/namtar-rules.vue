@@ -101,10 +101,17 @@
     </p>
 
     <h3 id="action">Actions et réactions</h3>
-    <div class="row justify-between">
-      <div class="col-md-4 col-sm-12 q-my-md">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 q-px-md">
+        <div class="row q-my-md">
+          <div class="col text-center">
+            <q-icon name="circle" color="primary" size="xl"></q-icon>
+            <q-icon name="circle" color="primary" size="xl"></q-icon>
+            <q-icon name="circle" color="primary" size="xl"></q-icon>
+          </div>
+        </div>
         <div class="row">
-          <p>
+          <p class="col text-justify">
             Pendant un combat ou une situation de stress, les personnages ont
             par défaut <strong>3 points d'action</strong>. Un point représente
             un laps de temps très court (environ 1 seconde) pendant lequel un
@@ -116,17 +123,13 @@
             plusieurs points d'action (à l’appréciation du MJ).
           </p>
         </div>
-        <div class="row">
-          <div class="col text-center">
-            <q-icon name="circle" color="primary" size="xl"></q-icon>
-            <q-icon name="circle" color="primary" size="xl"></q-icon>
-            <q-icon name="circle" color="primary" size="xl"></q-icon>
-          </div>
-        </div>
       </div>
-      <div class="col-md-4 col-sm-12 q-my-md">
+      <div class="col-md-6 col-sm-12 q-px-md">
+        <div class="row q-my-md">
+          <q-icon name="square" color="primary" size="xl" class="col"></q-icon>
+        </div>
         <div class="row">
-          <p>
+          <p class="col text-justify">
             Les réactions sont les moments où un personnage agit en réponse à
             l'action d'un autre personnage. Les réactions d'un personnage ne
             sont par définition pas jouées pendant le tour de jeu de ce
@@ -135,9 +138,6 @@
             de celui-ci. Par défaut, un personnage est capable d'effectuer
             <strong>une reaction</strong> par tour.
           </p>
-        </div>
-        <div class="row">
-          <q-icon name="square" color="primary" size="xl" class="col"></q-icon>
         </div>
       </div>
     </div>
