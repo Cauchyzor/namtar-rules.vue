@@ -39,6 +39,99 @@
       />
     </div>
 
+    <div class="row">
+      <q-list class="col-md-4 col-sm-12">
+        <q-item>
+          <q-item-section avatar>
+            <q-icon
+              color="primary"
+              :name="AttributesMap.get(AttributsName.PV)?.Icon"
+            ></q-icon>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{
+              AttributesMap.get(AttributsName.PV)?.Nom
+            }}</q-item-label>
+            <q-item-label caption>{{
+              AttributesMap.get(AttributsName.PV)?.Description
+            }}</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section avatar>
+            <q-icon
+              color="primary"
+              :name="AttributesMap.get(AttributsName.DV)?.Icon"
+            ></q-icon>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{
+              AttributesMap.get(AttributsName.DV)?.Nom
+            }}</q-item-label>
+            <q-item-label caption>{{
+              AttributesMap.get(AttributsName.DV)?.Description
+            }}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+
+      <q-list class="col-md-4 col-sm-12">
+        <q-item>
+          <q-item-section avatar>
+            <q-icon
+              color="primary"
+              :name="AttributesMap.get(AttributsName.INITIATIVE)?.Icon"
+            ></q-icon>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{
+              AttributesMap.get(AttributsName.INITIATIVE)?.Nom
+            }}</q-item-label>
+            <q-item-label caption>{{
+              AttributesMap.get(AttributsName.INITIATIVE)?.Description
+            }}</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section avatar>
+            <q-icon
+              color="primary"
+              :name="AttributesMap.get(AttributsName.REFLEXES)?.Icon"
+            ></q-icon>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{
+              AttributesMap.get(AttributsName.REFLEXES)?.Nom
+            }}</q-item-label>
+            <q-item-label caption>{{
+              AttributesMap.get(AttributsName.REFLEXES)?.Description
+            }}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+
+      <q-list class="col-md-4 col-sm-12">
+        <q-item>
+          <q-item-section avatar>
+            <q-icon
+              color="primary"
+              :name="AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Icon"
+            ></q-icon>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{
+              AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Nom
+            }}</q-item-label>
+            <q-item-label caption>{{
+              AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Description
+            }}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </div>
+
     <!-- <h4 >Ethnotraits</h4>
     <div >
       <p>
@@ -138,6 +231,7 @@ import { CaracteristiqueService } from "src/model/Caracteristique";
 
 import { CompetenceService } from "src/model/Competence";
 import { ServiceAptitude } from "src/data/ServiceAptitude";
+import { AttributService, AttributsName } from "src/model/Attribut";
 
 export default defineComponent({
   name: "PersonnagePage",
@@ -148,6 +242,8 @@ export default defineComponent({
   },
   data() {
     return {
+      AttributsName,
+      AttributesMap: AttributService.getAttributesMap(),
       CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
       AptitudeList: ServiceAptitude.findAllAptitudes().filter((_, i) => i < 5),

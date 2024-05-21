@@ -23,7 +23,7 @@ export class CaracteristiqueService {
         "Traduit la force, la musculature, la vitalité et la robustesse physique",
       Attributs: AttributService.findAttributsByNames([
         AttributsName.PV,
-        AttributsName.RÉCUPÉRATION,
+        AttributsName.DV,
       ]),
     },
     {

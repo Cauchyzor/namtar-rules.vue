@@ -17,7 +17,7 @@ export enum AttributsName {
   PV = "Point de vie",
   REFLEXES = "Réflexes",
   ÉSOTÉRISME = "Ésotérisme", //TODO : Remplacer par Sprithium ?
-  RÉCUPÉRATION = "Récupération",
+  DV = "Dès de vie",
   INITIATIVE = "Initiative",
 }
 
@@ -26,37 +26,43 @@ export class AttributService {
     {
       Nom: AttributsName.PV,
       Description:
-        "Votre maximum de PV est égal à 3 fois la Vigueur + 4. Vous ajoutez 1d4 PV à votre maximum par niveau supplémentaire après le niveau 1.",
+        "Il représente votre résistance fasse aux agression avant d'être hors combat. Vous avez au total 4 + 3 point de vie supplémentaire par point de Vigueur. Vous gagnez aussi 1d4 PV par niveau supplémentaire après le niveau 1.",
       Icon: mdiHeart,
     },
 
     {
       Nom: AttributsName.REFLEXES,
       Description:
-        "Vous recevez 1 dé de réflexe (d6) votre par point d'Agilité. Avec votre équipement, ils constituent votre principale défense.",
+        "Avec votre équipement, ils constituent votre principale défense. Vous ajoutez 1d6 à votre pool de dés de réflexes par point en Agilité. ",
       Icon: mdiShieldHalfFull,
     },
 
     {
       Nom: AttributsName.INITIATIVE,
       Description:
-        "Vous avez 1 dé d'initiative (d6) par point d'Agilité et par niveau. Ils déterminent votre réactivité lors des situations de stress.",
+        "Determine votre réactivité lors des situations de stress. Vous ajoutez 1d6 votre pool de dés d'initiative par point en Agilité et par niveau.",
       Icon: mdiArrowUp,
     },
 
     {
       Nom: AttributsName.ÉSOTÉRISME,
       Description:
-        "Vous avez autant de dé d'ésotérisme (d6) que la somme de votre Intelligence et votre Charisme. Ils qualifient votre lien avec le fluide et la puissance que vous pouvez en tirer.",
+        "Qualifie votre lien avec le fluide et la puissance que vous pouvez en tirer. Vous gagnez 1d6 à votre pool de dés d’ésotérisme par point en Intelligence et en Charisme.",
       Icon: mdiLightningBolt,
     },
     {
-      Nom: AttributsName.RÉCUPÉRATION,
+      Nom: AttributsName.DV,
       Description:
-        "Vous avez 1 dé de vie (d4) par point de Vigueur et par niveau. Ils vous permettent de vous soigner.",
+        "Ils représente votre capacité de récupération et permettent de vous soigner. Vous gagnez 1d4 à votre pool de dés de vie par point de Vigueur et par niveau.",
       Icon: mdiHeartCircleOutline,
     },
   ];
+
+  static getAttributesMap() {
+    const atrMap = new Map<AttributsName, Attribut>();
+    this.AttributsList.forEach((atr) => atrMap.set(atr.Nom, atr));
+    return atrMap;
+  }
 
   static findAttributsByNames(names: Array<AttributsName>) {
     return this.AttributsList.filter((a) => names.includes(a.Nom));

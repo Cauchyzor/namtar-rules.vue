@@ -49,7 +49,7 @@ export class Creature {
     attributs = new Map([
       [AttributsName.INITIATIVE, "0"],
       [AttributsName.PV, "1+1d4"],
-      [AttributsName.RÉCUPÉRATION, "0"],
+      [AttributsName.DV, "0"],
       [AttributsName.REFLEXES, "0"],
       [AttributsName.ÉSOTÉRISME, "0"],
     ]),
