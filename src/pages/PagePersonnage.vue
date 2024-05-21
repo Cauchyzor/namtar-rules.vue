@@ -19,7 +19,7 @@
       concepts qui pourront vous inspirer. Il s'agit ici d'identifier une base
       vous guidera vers votre personnage final !
     </p>
-    <h4>Étape 2 : Determiner ses Caractéristiques</h4>
+    <h4>Étape 2 : Determiner ses caractéristiques et calculer ses attributs</h4>
     <div>
       <p>
         Répartissez un total de
@@ -54,7 +54,7 @@
       />
     </div> -->
 
-    <h4>Etape 4 : Identifier ses compétences</h4>
+    <h4>Etape 3 : Identifier ses compétences</h4>
     <div>
       <p>
         Elles traduisent un savoir-faire dans une discipline
@@ -77,7 +77,7 @@
       </div>
     </div>
 
-    <h4>Etape 5 : Choisir ses aptitudes de départ</h4>
+    <h4>Etape 4 : Choisir ses aptitudes de départ</h4>
     <div>
       <p>
         Pour chaque point investi dans les compétences, le personnage bénéficie
@@ -107,7 +107,7 @@
       </div>
     </div>
 
-    <h4>Etape 6 : Équiper son personnage</h4>
+    <h4>Etape 5 : Équiper son personnage</h4>
     <p>
       La liste de l’équipement courant que l'on trouve aux 4 coins de la galaxie
       est disponible dans la section dédiée. En accord avec votre MJ, vous
