@@ -1,7 +1,7 @@
 <template>
   <q-item>
     <q-item-section top>
-      <q-item-label header>{{ Competence.Nom }}</q-item-label>
+      <q-item-label>{{ Competence.Nom }}</q-item-label>
       <q-item-label caption>
         {{ Competence.ShortDescription }}
       </q-item-label>
