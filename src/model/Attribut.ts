@@ -4,7 +4,7 @@ import {
   mdiHeart,
   mdiLightningBolt,
   mdiHeartCircleOutline,
-  mdiArrowUp,
+  mdiPriorityHigh,
   mdiArrowRightBold,
 } from "@mdi/js";
 
@@ -43,7 +43,7 @@ export class AttributService {
       Nom: AttributsName.INITIATIVE,
       Description:
         "Determine votre réactivité lors des situations de stress. Vous ajoutez 1d6 votre pool de dés d'initiative par point en Agilité et par niveau.",
-      Icon: mdiArrowUp,
+      Icon: mdiPriorityHigh,
     },
 
     {
