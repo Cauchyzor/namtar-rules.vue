@@ -5,6 +5,7 @@ import {
   mdiLightningBolt,
   mdiHeartCircleOutline,
   mdiArrowUp,
+  mdiArrowRightBold,
 } from "@mdi/js";
 
 export type Attribut = {
@@ -19,6 +20,7 @@ export enum AttributsName {
   ÉSOTÉRISME = "Ésotérisme", //TODO : Remplacer par Sprithium ?
   DV = "Dès de vie",
   INITIATIVE = "Initiative",
+  DÉPLACEMENT = "Déplacement",
 }
 
 export class AttributService {
@@ -55,6 +57,12 @@ export class AttributService {
       Description:
         "Ils représente votre capacité de récupération et permettent de vous soigner. Vous gagnez 1d4 à votre pool de dés de vie par point de Vigueur et par niveau.",
       Icon: mdiHeartCircleOutline,
+    },
+    {
+      Nom: AttributsName.DÉPLACEMENT,
+      Description:
+        "C'est la distance que vous pouvez parcourir lorsque vous choisissez l'action de se déplacer en situation de stress. Elle augmente avec des aptitudes. Par défaut, vous pouvez vous déplacer de 3 m par action.",
+      Icon: mdiArrowRightBold,
     },
   ];
 

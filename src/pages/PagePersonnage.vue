@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <h2 class="text-center">Création de personnage</h2>
-    <!-- TODO : Ajouter la vitesse de déplacement / type de déplacement / Vision -->
+    <!-- TODO : Ajouter la Vision -->
     <h4>Étape 1 : Établir le concept du personnage</h4>
     <p>
       La galaxie est remplie de profils atypique près a l'aventure. Commencer
@@ -127,6 +127,25 @@
             }}</q-item-label>
           </q-item-section>
         </q-item>
+
+        <q-list class="col-md-4 col-sm-12">
+          <q-item>
+            <q-item-section avatar>
+              <q-icon
+                color="primary"
+                :name="AttributesMap.get(AttributsName.DÉPLACEMENT)?.Icon"
+              ></q-icon>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{
+                AttributesMap.get(AttributsName.DÉPLACEMENT)?.Nom
+              }}</q-item-label>
+              <q-item-label caption>{{
+                AttributesMap.get(AttributsName.DÉPLACEMENT)?.Description
+              }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
       </q-list>
     </div>
 
