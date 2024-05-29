@@ -312,6 +312,7 @@ export class ServiceAptitude {
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
     // TODO : Aptitude pour attirer les personnage en un point (singularité) ?
+    // TODO : Aptitude vol de pensée // interroger une personne inconsciente?
   ];
 
   static findAptitudesByNames(names: Array<string>) {
