@@ -1,8 +1,7 @@
 <template>
   <q-page padding>
     <!-- TODO : Préparer des règles sur le combats à deux armes-->
-    <!-- TODO : Migrer vers un système de point d'action (3 point par tour + 1 réaction / Attaque 2 point / déplacement : 2 point / ... )-->
-    <!-- TODO : Revoir le système de portée)-->
+    <!-- TODO : Revoir le système de portée-->
     <h2 class="text-center">Combats</h2>
     <h3>Déroulement d'un combat</h3>
     <p>
@@ -552,60 +551,108 @@
       stabilisée.
     </p>
     <h3 id="etat">Les états spéciaux</h3>
-    <h4>À terre / Renversée</h4>
-    <p>
-      La créature subit un dé de handicap lors de ses attaques au corps à corps.
-      Les assaillant engagés bénéficient d'un dé de supériorité sur tout leurs
-      jets pour toucher contre elle. La créature peut éventuellement trouver une
-      couverture contre les attaques à distances.
-    </p>
-    <h4>Assourdi</h4>
-    <p>
-      Une créature assourdie n&#39;entend plus rien et rate automatiquement tous
-      les tests faisant intervenir des capacités auditives.
-    </p>
-    <h4>Aveuglé</h4>
-    <p>
-      Une créature aveuglée ne voit plus rien et rate automatiquement tout test
-      qui requiert la vue. Son score de réflexe est divisé par deux.
-    </p>
-    <h4>Immobilisé</h4>
-    <p>
-      La vitesse d&#39;une créature immobilisée devient 0. La défense réduite à
-      1.
-    </p>
-    <h4>Entravé</h4>
-    <p>
-      La vitesse de la créature entravée tombe à 0. Sa défense est réduite de 1
-      point.
-    </p>
-    <h4>Empoigné</h4>
-    <p>
-      Une créature empoignée est immobilisée, mais elle peut utiliser une action
-      pour tenter de s&#39;échapper. Elle doit pour cela réussir un test de
-      vigueur (Athlétisme) ou d&#39;Agilité (Coordinations) en opposition à un
-      test de vigueur (Athlétisme) ou d&#39;agilité (Coordination) de celui qui
-      l'empoigne. Le choix de la compétence à utiliser dépend de comment
-      l'empoignade a été réalisée.
-    </p>
-    <h4>Neutralisé</h4>
-    <p>
-      Une créature neutralisée est incapable d&#39;effectuer une action ou une
-      réaction, et sa vitesse est réduite a 0. Sa défense est réduite à 1.
-    </p>
-    <h4>Inconscient</h4>
-    <p>
-      Une créature inconsciente est neutralisée, lâche tout ce qu&#39;elle
-      tenait et tombe au sol. Sa défense est réduite a 0.
-    </p>
-    <h4>Terrorisé</h4>
-    <p>
-      Une créature terrorisée subit un dé de handicap chaque tours tant que la
-      source de sa frayeur se trouve dans son champ de vision. La créature est
-      incapable de se rapprocher de la source de sa frayeur de son plein gré.
-    </p>
-    <h4>Surpris</h4>
-    <p>Une créature surprise ne peut entreprendre ni action ni réaction.</p>
+
+    <div class="row q-col-gutter-sm justify-center items-stretch">
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>À terre</q-item-label>
+          <q-item-label
+            >La créature subit 2 dés de handicaps lors de ses attaques au corps
+            à corps et ses jets de défense. La creature bénéficie en revanche
+            d'un abris partiel contre les attaques à distance.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Assourdi</q-item-label>
+          <q-item-label
+            >Une créature assourdie n&#39;entend plus rien et rate
+            automatiquement tous les tests faisant intervenir des capacités
+            auditives.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Aveuglé</q-item-label>
+          <q-item-label
+            >Une créature aveuglée ne voit plus rien et rate automatiquement
+            tout test qui requiert la vue. Elle subit 3 dés de handicap sur ses
+            jet d'attaques et de défense.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Entravée</q-item-label>
+          <q-item-label
+            >La vitesse de déplacement de la creature est réduite a 0. Elle
+            subit 1 dé de handicap sur ses jets de défense.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Empoigné</q-item-label>
+          <q-item-label
+            >Une créature empoignée est entravée, mais elle peut utiliser une
+            action pour tenter de s&#39;échapper. Elle doit pour cela réussir un
+            test de vigueur (Athlétisme) ou d&#39;Agilité (Coordinations) en
+            opposition à un test de vigueur (Athlétisme) ou d&#39;agilité
+            (Coordination) de celui qui l'empoigne. Le choix de la compétence à
+            utiliser dépend de comment l'empoignade a été réalisée.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Neutralisé</q-item-label>
+          <q-item-label
+            >Une créature neutralisée est incapable d&#39;effectuer d'action ou
+            une réaction, et sa vitesse est réduite a 0. Sa valeur de réflexes
+            est réduite à 0.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Inconscient</q-item-label>
+          <q-item-label
+            >Une créature neutralisée est incapable d&#39;effectuer d'action ou
+            une réaction, et sa vitesse est réduite a 0. Sa valeur de réflexes
+            est réduite à 0.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Terrorisé</q-item-label>
+          <q-item-label
+            >Une créature terrorisée subit un dé de handicap sur tout ses tests
+            et jet d'attaques tant que la source de sa frayeur se trouve dans
+            son champ de vision. La créature est incapable de se rapprocher de
+            la source de sa frayeur de son plein gré.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
+          <q-item-label header>Surpris</q-item-label>
+          <q-item-label
+            >Une créature surprise ne peut entreprendre ni action ni réaction
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </div>
   </q-page>
 </template>
 
