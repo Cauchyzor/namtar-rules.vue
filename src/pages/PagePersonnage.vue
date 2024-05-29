@@ -1,9 +1,7 @@
 <template>
   <q-page padding>
     <h2 class="text-center">Création de personnage</h2>
-    <!-- TODO : Personnage stockées en JSON + Stepper et sauvegarde -->
-    <!-- TODO : Personnage stockées en JSON  : récupération des personnage json -->
-    <!-- TODO : Revoir le style d'affichage des attribut pour faciliter la lecture -->
+    <!-- TODO : Ajouter la vitesse de déplacement / type de déplacement / Vision -->
     <h4>Étape 1 : Établir le concept du personnage</h4>
     <p>
       La galaxie est remplie de profils atypique près a l'aventure. Commencer

@@ -5,6 +5,7 @@ import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
 export enum AptitudeTypeName {
+  // TODO : Mutation (liée aux concept de 'ethnotrait') - Aptitude liée a un trait
   AMELIORATION = "Amélioration",
   BENEDICTION = "Bénédiction",
   EVOCATION = "Évocation",
@@ -307,8 +308,8 @@ export class ServiceAptitude {
         [CompetenceName.NÉGOCIATION, 1],
       ])
     ),
-    // TODO : Creation d'une prothèse d'ingé // amelioration ? entropie du fluide // Aptitude particulière ?
-    // TODO : Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
+    // TODO : Creation d'une prothèse d'ingé (ethnotrait ? // entropie du fluide // Aptitude particulière ?)
+    // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
     // TODO : Aptitude pour attirer les personnage en un point (singularité) ?
   ];

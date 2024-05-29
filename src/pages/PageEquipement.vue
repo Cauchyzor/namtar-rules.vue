@@ -1,7 +1,6 @@
 <template>
   <q-page padding>
     <h2 class="text-center">Équipement et Marché</h2>
-    <!-- TODO Ne pas re afficher la page avec le changement d'onglet -->
     <!-- TODO Mettre les informations de lore dans des modales a la demandes -->
     <h3>Concepts</h3>
     <h4>Encombrement</h4>

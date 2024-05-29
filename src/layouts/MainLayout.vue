@@ -75,7 +75,7 @@
             </q-item-section>
           </q-item>
 
-          <!-- TODO : Déclarer des éthnotraits/origine raciales
+          <!-- TODO : Déclarer des éthnotraits/origines génétiques
             <q-item clickable to="/character/ethnotraits" exact>
             <q-item-section>
               <q-item-label>Ethnotrait</q-item-label>
@@ -119,6 +119,7 @@
               </q-item-section>
             </q-item>
           </q-expansion-item> -->
+        <!-- TODO : Artefact et réplicats : Objet 'magiques' avec des propriété particulière. les réplicats sont rare mais existent en plusieurs exemplaire, les artefact sont unique et sont terriblement puissant-->
       </q-list>
     </q-drawer>
 
