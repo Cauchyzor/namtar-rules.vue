@@ -73,9 +73,15 @@ export class ServiceAptitude {
     // RANK 1
     new Aptitude(
       "Concentration",
-      `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} et votre mouvement afin d'ajouter autant de dés à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
+      `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} ainsi que votre mouvement afin d'ajouter autant de dés de supériorités (d4) à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.ARME_A_DISTANCE, 1]])
+    ),
+    new Aptitude(
+      "Attraction",
+      "La cible est projetée dans votre direction sur une distance de 1m par succès net, et se retrouve à terre. Elle subit également 1 point de dégâts par avantages net.",
+      AptitudeTypeName.EVOCATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
     new Aptitude(
       "Ruée",
@@ -108,12 +114,6 @@ export class ServiceAptitude {
       new Map([[CompetenceName.DISCRETION, 1]])
     ),
     new Aptitude(
-      "Eclat",
-      "Vous consommé autant de dé d’ésotérisme que souhaitez et les opposez aux dé d’ésotérisme restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction jusqu'a son prochain tour.",
-      AptitudeTypeName.EVOCATION,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
-    ),
-    new Aptitude(
       "Équilibrage",
       "L'arme qui reçois l'amélioration ajoute 1 dé de supériorité à tout les jet d'attaque fait avec celle-ci",
       AptitudeTypeName.AMELIORATION,
@@ -121,7 +121,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       '"Craignez-moi !"',
-      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}). Si la cible rate son test, elle est terrifiée`,
+      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}). Si la cible rate son test, elle est Terrorisée`,
       AptitudeTypeName.INJONCTION,
       new Map([[CompetenceName.INTIMIDATION, 1]])
     ),
@@ -202,10 +202,25 @@ export class ServiceAptitude {
       new Map([[CompetenceName.COORDINATION, 2]])
     ),
     new Aptitude(
-      "Entraînement au tir",
-      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
+      "Entraînement spécial au tir",
+      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente.",
       AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
+    ),
+    new Aptitude(
+      "Rupture mentale",
+      `Vous consommez autant de dé d’${AttributsName.ÉSOTÉRISME} que souhaitez et les opposez aux dés d’${AttributsName.ÉSOTÉRISME} restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction par défaut jusqu'à son prochain tour.`,
+      AptitudeTypeName.INJONCTION,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.CHARME, 1],
+      ])
+    ),
+    new Aptitude(
+      "Signature de rebond de puissance",
+      `Vous pouvez octroyer une amélioration supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une arme ne peux pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.INGÉNIERIE, 2]])
     ),
     new Aptitude(
       "En joue",
@@ -254,11 +269,11 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Echophagie",
-      "Vous relancer 1 dé de vie et soignez vous du montant indiqué à chaque fois que vous regagner des dé d'ésotérisme. Vous montrez clairement des signes d'addiction, qui semblent se calmer lorsque le fluide ce manifeste près de vous.",
+      `A chaque fois que vous regagnez des dés d'${AttributsName.ÉSOTÉRISME}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.SURVIE, 1],
-        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.MYTHOLOGIE, 1],
       ])
     ),
     new Aptitude(
