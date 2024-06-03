@@ -44,7 +44,7 @@
     </div>
     <div class="row q-col-gutter-sm justify-center items-stretch">
       <div
-        v-for="Aptitude in filteredAptitudesList"
+        v-for="Aptitude in filteredAptitudesList()"
         :key="Aptitude.Nom"
         class="col-12 col-sm-4"
       >
@@ -82,36 +82,34 @@ export default defineComponent({
       ShowExclusiveOnly: ref(false),
     };
   },
-  computed: {
-    filteredAptitudesList() {
-      return this.FilterByType.length > 0
-        ? this.filteredAptitudeListByMaîtrises
-            .filter((apt) => this.FilterByType.includes(apt.Type.Nom))
-            .filter(
-              (apt) =>
-                apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
-                apt.NiveauDeMaîtrise >= this.FilterByLevel.min
-            )
-            .filter((apt) => this.filterExclusifOnly(apt))
-        : this.filteredAptitudeListByMaîtrises
-            .filter(
-              (apt) =>
-                apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
-                apt.NiveauDeMaîtrise >= this.FilterByLevel.min
-            )
-            .filter((apt) => this.filterExclusifOnly(apt));
-    },
-    filteredAptitudeListByMaîtrises() {
-      return this.FilterByMaîtrises.length > 0
-        ? this.AptitudesList.filter(
-            (apt) =>
-              this.FilterByMaîtrises.find((m) => apt.MaîtrisesRequise.has(m)) !=
-              undefined
-          )
-        : this.AptitudesList;
-    },
-  },
   methods: {
+    filteredAptitudesList() {
+      return this.AptitudesList.filter((apt) => this.filterByType(apt))
+        .filter((apt) => this.filterBySelectedMaîtrises(apt))
+        .filter((apt) => this.filterByMaîtrisesRank(apt))
+        .filter((apt) => this.filterExclusifOnly(apt));
+    },
+    filterByType(apt: Aptitude) {
+      if (this.FilterByType.length === 0) {
+        return true;
+      }
+      return this.FilterByType.includes(apt.Type.Nom);
+    },
+    filterBySelectedMaîtrises(apt: Aptitude) {
+      if (this.FilterByMaîtrises.length === 0) {
+        return true;
+      }
+      return (
+        this.FilterByMaîtrises.find((m) => apt.MaîtrisesRequise.has(m)) !=
+        undefined
+      );
+    },
+    filterByMaîtrisesRank(apt: Aptitude) {
+      return (
+        apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
+        apt.NiveauDeMaîtrise >= this.FilterByLevel.min
+      );
+    },
     filterExclusifOnly(apt: Aptitude) {
       if (!this.ShowExclusiveOnly) {
         return true;
