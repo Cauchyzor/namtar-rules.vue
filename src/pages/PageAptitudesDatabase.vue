@@ -33,8 +33,13 @@
           label="Compétences maîtrisées :"
           multiple
           use-chips
-          class="col bg-secondary"
+          class="col-10 bg-secondary"
         ></q-select>
+        <q-toggle
+          class="col-2"
+          v-model="ShowExclusiveOnly"
+          label="Exclusif"
+        ></q-toggle>
       </div>
     </div>
     <div class="row q-col-gutter-sm justify-center items-stretch">
@@ -55,6 +60,7 @@ import AptitudeCard from "src/components/AptitudeCard.vue";
 
 import { ServiceAptitude, AptitudeTypeName } from "src/data/ServiceAptitude";
 import { CompetenceName } from "src/model/Competence";
+import { Aptitude } from "src/model/Aptitude";
 
 export default defineComponent({
   name: "PersonnagePage",
@@ -73,6 +79,7 @@ export default defineComponent({
       FilterByType: new Array<AptitudeTypeName>(),
       FilterByLevel: { min: 1, max: 7 },
       FilterByMaîtrises: ref(new Array<CompetenceName>()),
+      ShowExclusiveOnly: ref(false),
     };
   },
   computed: {
@@ -85,11 +92,14 @@ export default defineComponent({
                 apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
                 apt.NiveauDeMaîtrise >= this.FilterByLevel.min
             )
-        : this.filteredAptitudeListByMaîtrises.filter(
-            (apt) =>
-              apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
-              apt.NiveauDeMaîtrise >= this.FilterByLevel.min
-          );
+            .filter((apt) => this.filterExclusifOnly(apt))
+        : this.filteredAptitudeListByMaîtrises
+            .filter(
+              (apt) =>
+                apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
+                apt.NiveauDeMaîtrise >= this.FilterByLevel.min
+            )
+            .filter((apt) => this.filterExclusifOnly(apt));
     },
     filteredAptitudeListByMaîtrises() {
       return this.FilterByMaîtrises.length > 0
@@ -99,6 +109,17 @@ export default defineComponent({
               undefined
           )
         : this.AptitudesList;
+    },
+  },
+  methods: {
+    filterExclusifOnly(apt: Aptitude) {
+      if (!this.ShowExclusiveOnly) {
+        return true;
+      }
+      return Array.from(apt.MaîtrisesRequise.keys()).reduce(
+        (acc, curr) => acc && this.FilterByMaîtrises.includes(curr),
+        true
+      );
     },
   },
 });
