@@ -9,6 +9,7 @@ export enum AptitudeTypeName {
   AMELIORATION = "Amélioration",
   BENEDICTION = "Bénédiction",
   EVOCATION = "Évocation",
+  INVOCATION = "Invocation",
   INJONCTION = "Injonction",
   MANTRA = "Mantra",
   ENTRAÎNEMENT = "Entraînement",
@@ -25,6 +26,10 @@ export class ServiceAptitude {
       Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible à portée moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
+      Nom: AptitudeTypeName.INVOCATION,
+      Description: `Vous appliquez les effets de l'aptitude sur la zone ciblée en effectuant en test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}). Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+    },
+    {
       Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
         "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum) à porté moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
@@ -32,7 +37,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Toute les creature au choix a porté courte reçoivent des bonus pour le reste de la journée. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
+        "Toute les creature au choix à porté courte lors de l'appel de la benediction reçoivent des bonus jusqu'au prochain repos long. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
@@ -46,12 +51,13 @@ export class ServiceAptitude {
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
-      Description: `Vous effectuez un jet d'attaque avec la compétence ${CompetenceName.CORPS_A_CORPS} (${CaracteritiqueName.VIGUEUR} ou ${CaracteritiqueName.AGILITE}) et appliquez des effets supplémentaire selon l'aptitude.`,
+      Description:
+        "Vous effectuez un jet d'attaque avec la compétence et la caractéristique requise par votre arme et appliquez des effets supplémentaire selon l'aptitude.",
     },
     {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
-        "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer. Une telle aptitude ne peut être affectée qu'à une seule pièce d'équipement à la fois.",
+        "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer avec une action libre. Une telle aptitude ne peut être affectée qu'à une seule pièce d'équipement à la fois.",
     },
     {
       Nom: AptitudeTypeName.INJONCTION,
@@ -85,19 +91,19 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Ruée",
-      "Vous vous déplacez de deux niveau de porté au lieux d'un seul lors de ce tour. Cette posture prend fin au début de votre prochain tour.",
+      "Vous augmentez de 2m votre vitesse de déplacement. Cette posture prend fin si vous effectuez une attaque ou une aptitude.",
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.ATHLÉTISME, 1]])
     ),
     new Aptitude(
       "Présence envoûtante",
-      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test avec cette compétence. Vous aimez beaucoup être le centre d’intérêt des conversations.`,
+      `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.CHARME, 1]])
     ),
     new Aptitude(
-      "Combatant agile",
-      `Vous gagnez 1 dé de ${AttributsName.REFLEXES} par points dans la compétence ${CompetenceName.COORDINATION}`,
+      "Pose prudente",
+      `Vous augmentez votre valeur de ${AttributsName.REFLEXES} de 1 par rang de ${CompetenceName.COORDINATION}`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.COORDINATION, 1]])
     ),
@@ -145,7 +151,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Ordre de douleur",
-      "Vous pouvez choisir au moment d'effectuer un jet d'attaque à l'arme de subir 1 point de dégâts par avantagés générés, mais d'en infliger un aux adversaires également.",
+      "Avant d'effectuer une attaque, vous pouvez choisir de subir 1 point de dégâts par avantages générés lors du jet l'attaque, et d'infliger un point de dégât aux adversaires également.",
       AptitudeTypeName.BENEDICTION,
       new Map([[CompetenceName.MYTHOLOGIE, 1]])
     ),
@@ -156,7 +162,7 @@ export class ServiceAptitude {
       new Map([[CompetenceName.NÉGOCIATION, 1]])
     ),
     new Aptitude(
-      "",
+      "Armure de l'impassible",
       `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.PERSPICACITÉ} lors vous subissez des tests en opposition de ${CompetenceName.CHARME}, ${CompetenceName.NÉGOCIATION} ou de ${CompetenceName.TROMPERIE}`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.PERSPICACITÉ, 1]])
@@ -232,6 +238,15 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Égide",
+      `Vous gagnez 1 dé de supériorité par rang de ${CompetenceName.VIGILANCE} contre les attaques au corps à corps contre vous. Pour chaque attaque menaces générées sur le jet d'attaque contre vous, celui qui maintient la bénédiction consomme 1 dé d'${AttributsName.ÉSOTÉRISME}. La bénédiction prends fin si le prodigue n'a plus de dés d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.BENEDICTION,
+      new Map([
+        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.VIGILANCE, 1],
+      ])
+    ),
+    new Aptitude(
       "Frappes sournoises",
       "Chaque fois que vous frappez un adversaire au corps-à-corps face et que vous avez au moins 1 dé de supériorité, vous infligez 1 point de dégâts supplémentaire par triomphe.",
       AptitudeTypeName.POSTURE,
@@ -278,7 +293,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Mage de guerre",
-      `Pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme, et dépensez aussi autant de dé d'ésotérisme requis par l'${AptitudeTypeName.EVOCATION}. L'${AptitudeTypeName.EVOCATION} n'applique ses que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès). Vous avec un petit complexe de supériorité.`,
+      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme et en dépensant 1 point d'action supplémentaire. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -323,10 +338,27 @@ export class ServiceAptitude {
         [CompetenceName.NÉGOCIATION, 1],
       ])
     ),
+    new Aptitude(
+      "Singularité",
+      `Vous créez un nano trou noir sur l'emplacement de votre choix à moins de 18m de vous. Toutes les creatures à moins de 9m et dont le score de ${CaracteritiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe.`,
+      AptitudeTypeName.INVOCATION,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
+        [CompetenceName.MYTHOLOGIE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Revers cinétique",
+      `Vous ajouter autant de dé d'${AttributsName.ÉSOTÉRISME} au jets de défense de la cible de votre choix dans un rayon de 9m. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.REACTION,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.VIGILANCE, 2],
+      ])
+    ),
     // TODO : Creation d'une prothèse d'ingé (ethnotrait ? // entropie du fluide // Aptitude particulière ?)
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
-    // TODO : Aptitude pour attirer les personnage en un point (singularité) ?
     // TODO : Aptitude vol de pensée // interroger une personne inconsciente?
   ];
 
