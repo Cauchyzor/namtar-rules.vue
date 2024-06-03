@@ -335,13 +335,13 @@ export class ServiceAptitude {
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.HISTOIRE, 1],
         [CompetenceName.NÉGOCIATION, 1],
       ])
     ),
     new Aptitude(
       "Singularité",
-      `Vous créez un nano trou noir sur l'emplacement de votre choix à moins de 18m de vous. Toutes les creatures à moins de 9m et dont le score de ${CaracteritiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe.`,
+      `Vous créez un nano trou noir sur l'emplacement de votre choix à moins de 18m de vous. Toutes les creatures à moins de 9m et dont le score de ${CaracteritiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés d'${AttributsName.ÉSOTÉRISME} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
@@ -388,6 +388,10 @@ export class ServiceAptitude {
     // TODO : Creation d'une prothèse d'ingé (ethnotraits ? // entropie du fluide // Aptitude particulière ?)
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
+    // TODO : Aptitude spéciales contres les invocation
+    // TODO : Histoire + Entropie = Invocation d'entitée +/- consciente
+    // TODO : Mythologie + Entropie = Invocation de conceptes
+    // TODO : Medecine + Entropie = Necromancié
     // TODO : Aptitude vol de pensée // interroger une personne inconsciente?
     // TODO : Aptitude : Mémoire liquides : Changement d'aptitude en plain combat : a implémenter quand l'apprentissage des compétences sera mûri.
     // TODO : Concept pour classer les aptitudes : Si pas d'expertise = Aptitude mineurs (un aventurier de lvl1 peut les maitrisé) : Si 1 expertise = aptitudes majeur , si 2 expertise aptitude elite, si 3 expertise = aptitude légendaire
@@ -402,6 +406,8 @@ export class ServiceAptitude {
         [CompetenceName.ATHLÉTISME, 2],
       ])
     ),
+    // TODO : Aptitudes : Voies Ancestrale (Histoire + compétences martiales)
+    // TODO : Aptitudes : Voies Primitives (Survie + compétences martiales)
   ];
 
   static findAptitudesByNames(names: Array<string>) {
