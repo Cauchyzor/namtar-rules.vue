@@ -32,7 +32,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
-        "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum) à porté moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
+        "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum), ou des personnes neutralisée à porté moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
@@ -115,7 +115,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Couverture improbable",
-      `Vous vous déplacer d'un niveau de porté au maximum et pouvez réaliser un test de ${CompetenceName.DISCRETION} dont le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires. Le test échoue si vous êtes toujours dans le champs de vision de l'une d'entre elle. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
+      `Vous pouvez réaliser immédiatement mouvement gratuit et puis effectuez un test de ${CompetenceName.DISCRETION} dont le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires. Le test échoue si vous êtes toujours dans le champs de vision de l'une d'entre elle. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
       AptitudeTypeName.REACTION,
       new Map([[CompetenceName.DISCRETION, 1]])
     ),
@@ -257,20 +257,11 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Nova morbide",
-      `Le cadavre ciblé 'explose' et blesse toutes les créatures à porté courte. Lancez autant de d6 que le maximum dé d’ésotérisme du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}.Vous infligez 3 point de dégâts par succès.`,
+      `Doit cibler un cadavre. Ce dernier libère une énergie mortelle et blesse toutes les créatures sur 3m autour de lui. Lancez autant de d6 que le maximum dé d’ésotérisme du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}. Vous infligez 3 point de dégâts par succès.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.MÉDECINE, 1],
-      ])
-    ),
-    new Aptitude(
-      "Morsure de Namtar",
-      "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé d'ésotérisme par Triomphes et par avantages.",
-      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
-      new Map([
-        [CompetenceName.CORPS_A_CORPS, 1],
-        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
       ])
     ),
     new Aptitude(
@@ -320,7 +311,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Anticipation surnaturelle",
-      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}. Vous avez constamment l'impression que quelqu'un ou que quelque chose vous veux du mal.`,
+      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.PERSPICACITÉ, 1],
@@ -328,6 +319,16 @@ export class ServiceAptitude {
       ])
     ),
     // RANK 3
+    new Aptitude(
+      "Morsure de Namtar",
+      "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé d'ésotérisme par Triomphes et par avantages.",
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.SURVIE, 1],
+      ])
+    ),
     new Aptitude(
       "Vœu de puissance",
       `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé d'${AttributsName.ÉSOTÉRISME} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
@@ -356,10 +357,51 @@ export class ServiceAptitude {
         [CompetenceName.VIGILANCE, 2],
       ])
     ),
-    // TODO : Creation d'une prothèse d'ingé (ethnotrait ? // entropie du fluide // Aptitude particulière ?)
+    new Aptitude(
+      "Vampire d'âme",
+      `Vous absorber l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
+      AptitudeTypeName.NÉCROMANCIE,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.MÉDECINE, 1],
+        [CompetenceName.MYTHOLOGIE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Attrition",
+      "A chacune de vos attaques au corps à corps, vous pouvez choisir de remplacer jusqu'à 2 succès par autant avantages.",
+      AptitudeTypeName.POSTURE,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 2],
+        [CompetenceName.PERSPICACITÉ, 1],
+      ])
+    ),
+    // new Aptitude(
+    //   "Mémoires liquides",
+    //   `Vous pouvez remplacer une aptitude que vous avez préparé contre une autre aptitude que vous connaissez.`,
+    //   AptitudeTypeName.INVOCATION,
+    //   new Map([
+    //     [CompetenceName.HISTOIRE, 2],
+    //     [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+    //   ])
+    // ),
+    // TODO : Creation d'une prothèse d'ingé (ethnotraits ? // entropie du fluide // Aptitude particulière ?)
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
     // TODO : Aptitude vol de pensée // interroger une personne inconsciente?
+    // TODO : Aptitude : Mémoire liquides : Changement d'aptitude en plain combat : a implémenter quand l'apprentissage des compétences sera mûri.
+    // TODO : Concept pour classer les aptitudes : Si pas d'expertise = Aptitude mineurs (un aventurier de lvl1 peut les maitrisé) : Si 1 expertise = aptitudes majeur , si 2 expertise aptitude elite, si 3 expertise = aptitude légendaire
+    // TODO : Aptitude : Réduction du temps d'action des aptitudes mineurs ?
+    // RANK 4
+    new Aptitude(
+      "Assaut brutal",
+      `Si le nombre d'avantages net est supérieur la valeur de ${CaracteritiqueName.VIGUEUR} et de ${AttributsName.REFLEXES} de la cible, elle est a terre, même si l'attaque échoue.`,
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 2],
+        [CompetenceName.ATHLÉTISME, 2],
+      ])
+    ),
   ];
 
   static findAptitudesByNames(names: Array<string>) {

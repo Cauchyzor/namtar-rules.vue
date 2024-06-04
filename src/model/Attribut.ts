@@ -21,6 +21,8 @@ export enum AttributsName {
   DV = "Dès de vie",
   INITIATIVE = "Initiative",
   DÉPLACEMENT = "Déplacement",
+  //TODO : Ajouter la vision
+  //TODO : Notion de Puissance ?: Le spiritum serait uniquement sur l’intelligence, et la puissance sur le charisme -> Spiritum ajoutes des dés d'ésotérisme, la puissance guide la létalité des sorts (ou l'inverse)
 }
 
 export class AttributService {
