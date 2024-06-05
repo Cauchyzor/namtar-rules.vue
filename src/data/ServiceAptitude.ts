@@ -85,7 +85,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Attraction",
-      "La cible est projetée dans votre direction sur une distance de 1m par succès net, et se retrouve à terre. Elle subit également 1 point de dégâts par avantages net.",
+      "La cible est projetée à terre dans votre direction sur une distance de 1m par succès net au maximum. Elle subit également 1 point de dégâts par avantages net.",
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
@@ -196,6 +196,15 @@ export class ServiceAptitude {
     // TODO : RANK2 : Pacte de la lame ?
     // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
     new Aptitude(
+      "Mémoires liquides",
+      `Vous avez la possibilité de ceder des connaissances ésotériques dans une manifestation du fluide afin de garder l'esprit clair. A chaque gains de niveau, vous choisissez une aptitude que vous ne connaissez pas et vous la renseignée dans vos mémoires liquides. A n'importe quel moment, vous pouvez dépensez 3 point d'action pour échanger une aptitude connue contre une autre sauvegardée dans vos mémoires liquides. Vous ne pouvez renseigner que des aptitudes des types : ${AptitudeTypeName.EVOCATION},  ${AptitudeTypeName.INVOCATION} et ${AptitudeTypeName.NÉCROMANCIE}`,
+      AptitudeTypeName.MANTRA,
+      new Map([
+        [CompetenceName.HISTOIRE, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
+    ),
+    new Aptitude(
       "Entraînement physique",
       "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
       AptitudeTypeName.ENTRAÎNEMENT,
@@ -284,7 +293,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Mage de guerre",
-      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} sur une cible unique par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme et en dépensant 1 point d'action supplémentaire. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
+      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque avec les caractéristiques de l'arme et en dépensant 1 point d'action supplémentaire. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès).`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -376,15 +385,6 @@ export class ServiceAptitude {
         [CompetenceName.PERSPICACITÉ, 1],
       ])
     ),
-    // new Aptitude(
-    //   "Mémoires liquides",
-    //   `Vous pouvez remplacer une aptitude que vous avez préparé contre une autre aptitude que vous connaissez.`,
-    //   AptitudeTypeName.INVOCATION,
-    //   new Map([
-    //     [CompetenceName.HISTOIRE, 2],
-    //     [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-    //   ])
-    // ),
     // TODO : Creation d'une prothèse d'ingé (ethnotraits ? // entropie du fluide // Aptitude particulière ?)
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?

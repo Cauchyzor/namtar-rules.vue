@@ -14,6 +14,13 @@ export type AptitudeType = {
   Description: string;
 };
 
+enum AptRank {
+  MINEURE = "Mineure",
+  MAJEURE = "Majeure",
+  SUPÉRIEURE = "Supérieure",
+  ELITE = "Elite",
+}
+
 export class Aptitude {
   Nom: string;
   Description: string;
@@ -36,5 +43,22 @@ export class Aptitude {
     return Array.from(this.MaîtrisesRequise.values()).reduce(
       (acc, curr) => acc + curr
     );
+  }
+
+  get Rang(): AptRank {
+    const rank = Array.from(this.MaîtrisesRequise.values())
+      .filter((maitrise) => maitrise > 1)
+      .reduce((acc, curr) => acc + curr / 2, 0);
+
+    switch (rank) {
+      case 1:
+        return AptRank.MAJEURE;
+      case 2:
+        return AptRank.SUPÉRIEURE;
+      case 3:
+        return AptRank.ELITE;
+      default:
+        return AptRank.MINEURE;
+    }
   }
 }

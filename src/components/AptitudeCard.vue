@@ -2,7 +2,7 @@
   <q-card flat bordered class="bg-accent">
     <q-card-section vertical>
       <div class="text-caption text-grey text-bold text-italic">
-        {{ Aptitude.Type.Nom }}
+        {{ Aptitude.Type.Nom }} {{ Aptitude.Rang }}
       </div>
       <div class="text-h5 q-mb-xs">{{ Aptitude.Nom }}</div>
       <div class="text-caption q-mt-sm q-mb-xs">
