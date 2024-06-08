@@ -23,7 +23,7 @@ export class ServiceAptitude {
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.EVOCATION,
-      Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible à portée moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+      Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) contre une cible. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
       Nom: AptitudeTypeName.INVOCATION,
@@ -32,12 +32,12 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
-        "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum), ou des personnes neutralisée à porté moyenne. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
+        "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum), ou des personnes neutralisée. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
-        "Toute les creature au choix à porté courte lors de l'appel de la benediction reçoivent des bonus jusqu'au prochain repos long. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
+        "Toute les créatures au choix à 9m ou moins de vous lors de l'appel de la benediction reçoivent des bonus jusqu'au prochain repos long. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
@@ -109,7 +109,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Feinte",
-      `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES}. Cette technique ne peut pas infliger de dégâts.`,
+      `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES} jusqu'à son prochain tour. Cette technique ne peut pas infliger de dégâts.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([[CompetenceName.CORPS_A_CORPS, 1]])
     ),
@@ -127,7 +127,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       '"Craignez-moi !"',
-      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}). Si la cible rate son test, elle est Terrorisée`,
+      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteritiqueName.CHARISME}) ou (${CaracteritiqueName.VIGUEUR}) qui peut vous entendre et vous voir. Si la cible rate son test, elle est Terrorisée`,
       AptitudeTypeName.INJONCTION,
       new Map([[CompetenceName.INTIMIDATION, 1]])
     ),
@@ -139,7 +139,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Coup bas",
-      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet à porté de main contre un adversaire qui ce déplace a porté courte.",
+      "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet à porté de main contre un adversaire qui ce déplace à 9m ou moins de vous.",
       AptitudeTypeName.REACTION,
       new Map([[CompetenceName.MAGOUILLE, 1]])
     ),
@@ -302,7 +302,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Vol de vitesse",
-      `La cible perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à porté moyenne bénéficie d'autant de dés de supériorités supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
+      `La cible à moins de 18m de vous perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à 18m ou moins de vous bénéficie d'autant de dés de supériorités supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
       AptitudeTypeName.EVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -341,7 +341,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Singularité",
-      `Vous créez un nano trou noir sur l'emplacement de votre choix à moins de 18m de vous. Toutes les creatures à moins de 9m et dont le score de ${CaracteritiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés d'${AttributsName.ÉSOTÉRISME} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
+      `Vous créez un nano trou noir sur l'emplacement de votre choix à 18m ou moins de vous. Toutes les creatures à 9m ou moins de la singularité et dont le score de ${CaracteritiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés d'${AttributsName.ÉSOTÉRISME} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
@@ -350,7 +350,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Revers cinétique",
-      `Vous ajouter autant de dé d'${AttributsName.ÉSOTÉRISME} au jets de défense de la cible de votre choix dans un rayon de 9m. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous dépensez autant de dé d'${AttributsName.ÉSOTÉRISME} au jets de défense de la cible de votre choix à 9m ou moins de vous. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -359,7 +359,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Vampire d'âme",
-      `Vous absorber l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
+      `Vous absorbez l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],

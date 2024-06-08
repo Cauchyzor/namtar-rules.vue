@@ -1,4 +1,4 @@
-import { Arme, ArmeDistanceItem, NiveauPorte } from "src/model/Armes";
+import { Arme, ArmeDistanceItem } from "src/model/Armes";
 import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
@@ -130,7 +130,7 @@ export class ServiceArme {
       Rarete: 2,
       Prix: 400,
       Munition: "3 Munition faible densité",
-      PorteMax: NiveauPorte.COURTE,
+      PorteMax: "15m",
     },
     {
       Nom: "Pacificateur",
@@ -145,7 +145,7 @@ export class ServiceArme {
       Rarete: 3,
       Prix: 600,
       Munition: "6 Munition faible densité",
-      PorteMax: NiveauPorte.MOYENNE,
+      PorteMax: "30m",
     },
     {
       Nom: "Fusil anti-nuisible",
@@ -161,7 +161,7 @@ export class ServiceArme {
       Rarete: 5,
       Prix: 900,
       Munition: "1 Munition hybride à haute densité",
-      PorteMax: NiveauPorte.LONGUE,
+      PorteMax: "50m",
     },
     {
       Nom: "Fusil d'assaut",
@@ -174,7 +174,7 @@ export class ServiceArme {
       Rarete: 5,
       Prix: 3000,
       Munition: "10 Munitions haute densité",
-      PorteMax: NiveauPorte.MOYENNE,
+      PorteMax: "30m",
     },
   ];
 

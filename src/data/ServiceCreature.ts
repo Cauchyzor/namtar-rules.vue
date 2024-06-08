@@ -48,7 +48,7 @@ export class ServiceCreature {
         [AttributsName.PV, "12 + 2d4"],
         [AttributsName.DV, "3d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.ÉSOTÉRISME, "2"],
+        [AttributsName.ÉSOTÉRISME, "2d6"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -71,14 +71,14 @@ export class ServiceCreature {
         [CaracteritiqueName.AGILITE, 3],
         [CaracteritiqueName.ADRESSE, 4],
         [CaracteritiqueName.INTELLIGENCE, 2],
-        [CaracteritiqueName.CHARISME, 3],
+        [CaracteritiqueName.CHARISME, 2],
       ]),
       new Map([
         [AttributsName.INITIATIVE, "4"],
         [AttributsName.PV, "16 + 7d4"],
         [AttributsName.DV, "8d4"],
         [AttributsName.REFLEXES, "4d6"],
-        [AttributsName.ÉSOTÉRISME, "5"],
+        [AttributsName.ÉSOTÉRISME, "4d6"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -114,7 +114,7 @@ export class ServiceCreature {
         [AttributsName.PV, "28 + 12d4"],
         [AttributsName.DV, "13d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.ÉSOTÉRISME, "7"],
+        [AttributsName.ÉSOTÉRISME, "7d6"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],

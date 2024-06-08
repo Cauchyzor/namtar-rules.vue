@@ -1,7 +1,6 @@
 <template>
   <q-page padding>
     <!-- TODO : Préparer des règles sur le combats à deux armes-->
-    <!-- TODO : Revoir le système de portée-->
     <h2 class="text-center">Combats</h2>
     <h3>Déroulement d'un combat</h3>
     <p>
@@ -37,31 +36,12 @@
       <strong>une réaction</strong>.
     </p>
 
-    <h4>Les niveaux de porté</h4>
-    <p>
-      Pour facilité la lecture d'une scène de combat, les distances relatives
-      entre les personnages sont décrite avec des niveau de portée. Ils sont
-      nécessaires pour calculer la difficulté d'un jet d'attaque a distance
-      (voir plus loin)
-    </p>
-    <ul>
-      <li>Engagé - de 0 à 1m environ</li>
-      <li>Courte - de 1m à 9m</li>
-      <li>Moyenne - de 10 à 20m</li>
-      <li>Longue - de 20 à 50m</li>
-      <li>Extrême - de 50 à 100m</li>
-    </ul>
-    <p>
-      Les niveaux de porté au delà de 100m peuvent encore être fragmenter selon
-      la volonté du MJ
-    </p>
     <h4>Les déplacements</h4>
     <p>
-      Chaque personnage qui décide d'effectuer un déplacement ce déplace d'un
-      niveau de porté, soit l'equivalent d'une dizaine de mètres. Si un
-      personnage choisi de se déplacer alors qu'il est engagé avec un
-      adversaire, ou qu'il passe a un niveau de porté engagé avec un adversaire
-      sur son chemin, il risque une attaque d'opportunité.
+      Chaque personnage qui décide d'effectuer un déplacement se déplace à sa
+      vitesse au prix d'une action. Si un personnage choisi de se déplacer alors
+      qu'il sort de la zone de contrôle d'un adversaire, il déclenche une
+      attaque d'opportunité de la part de l'adversaire.
     </p>
     <h4>Résoudre les Attaques</h4>
     <p>
@@ -187,22 +167,6 @@
 
         <q-item>
           <q-item-section>
-            <q-item-label header>Se précipiter</q-item-label>
-            <q-item-label caption
-              >Effectuer un déplacement jusqu'a deux niveau de porté en ligne
-              droite</q-item-label
-            >
-          </q-item-section>
-          <q-item-section side top>
-            <div>
-              <q-icon name="circle" size="xs"></q-icon>
-              <q-icon name="circle" size="xs"></q-icon>
-              <q-icon name="circle" size="xs"></q-icon>
-            </div>
-          </q-item-section>
-        </q-item>
-        <q-item>
-          <q-item-section>
             <q-item-label header>Se cacher</q-item-label>
             <q-item-label caption
               >Quand vous choisissez l&#39;action se cacher, vous devez faire un
@@ -223,7 +187,8 @@
           <q-item-section>
             <q-item-label header>Fouille approfondie</q-item-label>
             <q-item-label caption
-              >Fouiller jusqu'a un niveau de porté ou dans son sac</q-item-label
+              >Fouiller jusqu'à l'équivalent d'un déplacement ou dans son
+              sac</q-item-label
             >
           </q-item-section>
           <q-item-section side top>
@@ -413,9 +378,9 @@
       <q-list class="col-md-4 col-sm-12" padding bordered>
         <q-item>
           <q-item-section>
-            <q-item-label header> Se déplacer</q-item-label>
+            <q-item-label header> Se déplacer / Se relever</q-item-label>
             <q-item-label caption
-              >Parcourir l'équivalent d'un niveau de porté en ligne droite. Se
+              >Parcourir une distance égale a votre vitesse de mouvement. Se
               relever quand on a été mis terre</q-item-label
             >
           </q-item-section>
@@ -521,8 +486,8 @@
 
     <p>Dé positif : compétence + caractéristique</p>
     <p>
-      Dé négatif : distance (DD = 1 pour chaque niveau de porté + 1 qualité de
-      la couverture) + dés supplémentaire liée à l'équipement
+      Dé négatif : DD (2 + couverture liée a l'environnement + valeur de défense
+      de l’équipement)
     </p>
     <p>
       <strong>Couverture </strong> : En fonction de la qualité de l&#39;abri, le

@@ -7,15 +7,7 @@ export interface Arme extends Equipement {
   Competence: CompetenceName;
 }
 
-export enum NiveauPorte {
-  ENGAGE = "Engagé",
-  COURTE = "Courte",
-  MOYENNE = "Moyenne",
-  LONGUE = "Longue",
-  EXTREME = "Extrême",
-}
-
 export interface ArmeDistanceItem extends Arme {
   Munition: string;
-  PorteMax: NiveauPorte;
+  PorteMax: string;
 }

@@ -8,22 +8,27 @@
       consommer des dés de vies pendant une phase de repos, ou grâce à certaines
       aptitudes.
     </p>
-    <strong>Jet de soins :</strong> Lancer autant de dès de vie que vous le
-    souhaitez ou que le maximum autorisé s'il s’agit d'une aptitude. Récupérez
-    le nombre de PV indiqué par la somme des dés.
+    <strong>Lancer des dès de vie (DV) :</strong> Lancer autant de d6 que vous
+    le souhaitez ou que le maximum autorisé s'il s’agit d'une aptitude.
+    Récupérez le nombre de PV indiqué par la somme des dés.
     <p>Les Jets de soins ne peuvent se faire que dans certaines situations :</p>
     <ul>
       <li>Le repos court (1h d'inactivité)</li>
       <li>
         Le repos long (8h de sommeil dans un environnement sécurisé): Le
-        personnage regagne également la moitié de son total de dés de vie a la
-        fin du repos long.
+        personnage regagne également son total de dés de vie a la fin du repos
+        long. Il peut immédiatement lancer des DV pour ce soigner comme pour un
+        repos court.
       </li>
       <li>
         Utiliser une aptitude : les effets sont décrits par l'aptitude en
         question.
       </li>
     </ul>
+    <p>
+      Les <strong>dés d'ésotérisme</strong> se récupèrent totalement lors des
+      repos long.
+    </p>
     <h4>Médecine</h4>
     <p>
       Après chaque rencontre ou situation de stress, si un personnage a subi des
