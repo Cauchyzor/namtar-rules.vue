@@ -467,7 +467,7 @@
 
     <h4>Attaques au corps-à-corps</h4>
     <p>Dé positif : compétence + caractéristique</p>
-    <p>Dé négatif : DD = Score de {{ ATTRIBUTS.REFLEXES }} + équipement</p>
+    <p>Dé négatif : {{ ATTRIBUTS.REFLEXES }} + équipement</p>
 
     <p>
       La majorité des créatures possède une allonge de 1,50 mètre. Elles peuvent
@@ -485,15 +485,17 @@
     <h4>Attaques à distance</h4>
 
     <p>Dé positif : compétence + caractéristique</p>
-    <p>
-      Dé négatif : DD (2 + couverture liée a l'environnement + valeur de défense
-      de l’équipement)
-    </p>
+    <p>Dé négatif : DD = 2 + couverture + équipement</p>
     <p>
       <strong>Couverture </strong> : En fonction de la qualité de l&#39;abri, le
-      MJ peut décider d'ajouter entre 1 et 3 dés négatifs sur le jet d'attaque
+      MJ peut décider d'ajouter entre 1 et 3 niveau au DD sur le jet d'attaque
       de l'assaillant, voir de rendre impossible toute attaque à distance si la
       couverture est totale et empêche au projectile d'atteindre sa cible.
+    </p>
+    <p>
+      Les armes à distance ont dans leurs caractéristiques une valeur de portée
+      efficace. Au delà de cette portée, doubler le DD. Une attaque sur une
+      cible au delà de deux fois la portée efficace rate automatiquement.
     </p>
 
     <h3 id="degat">Dégâts</h3>
@@ -511,8 +513,8 @@
       Parfois, un attaquant souhaite neutraliser un ennemi plutôt que le tuer.
       Quand il réussit à faire tomber cette créature à 0 point de vie suite à
       une attaque de corps-à-corps, il a la possibilité de l&#39;assommer.
-      L&#39;attaquant peut faire ce choix avant d&#39;effectuer son jet
-      d&#39;attaque. La créature est inconsciente et est considérée comme
+      L&#39;attaquant doit faire ce choix avant d&#39;effectuer son jet
+      d&#39;attaque. La créature est inconsciente et n'a pas besoin d'être
       stabilisée.
     </p>
     <h3 id="etat">Les états spéciaux</h3>
@@ -590,9 +592,9 @@
         <q-item-section>
           <q-item-label header>Inconscient</q-item-label>
           <q-item-label
-            >Une créature neutralisée est incapable d&#39;effectuer d'action ou
-            une réaction, et sa vitesse est réduite a 0. Sa valeur de réflexes
-            est réduite à 0.
+            >La creature perd connaissance. Elle est incapable d&#39;effectuer
+            d'action ou une réaction, et sa vitesse est réduite a 0. Sa valeur
+            de réflexes est réduite à 0.
           </q-item-label>
         </q-item-section>
       </q-item>
