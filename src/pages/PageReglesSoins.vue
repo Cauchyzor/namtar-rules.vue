@@ -60,16 +60,16 @@
     <h5>Sombrer vers la mort</h5>
     <p>
       À chaque tour passé à 0 PV ou en dessous, si le personnage a subit une
-      létale (par défaut), il doit réaliser un jet de sauvegarde la mort : il
-      lance un d6. Si le résultat est inférieur à 3, il sombre vers la mort.
-      S'il cumule <strong>3 échecs</strong>, il décède. Si à l'inverse, il
+      attaque létale (par défaut), il doit réaliser un jet de sauvegarde la mort
+      : il lance un d6. Si le résultat est inférieur à 3, il sombre vers la
+      mort. S'il cumule <strong>3 échecs</strong>, il décède. Si à l'inverse, il
       réussit avec un résultat supérieur à 3, il se stabilise peu à peu, et est
-      complètement <strong>stabilisé à 3 réussites</strong>. Mais il n'est
-      toujours pas conscient.
+      complètement <strong>stabilisé à 3 réussites</strong>. Mais il est
+      toujours dans l'état inconscient.
     </p>
     <p>
-      Si la cible perd autant de PV en dessous de 0 qu'elle a de PV maximum,
-      elle meurt
+      Si la cible continue de perdre des PV en dessous de 0, et qu'elle en perd
+      autant que son maximum, elle décède.
     </p>
     <h5>Mort instantanée</h5>
     <p>
@@ -79,9 +79,9 @@
     </p>
     <h3>Stabiliser une créature</h3>
     <p>
-      Le meilleur moyen de sauver une créature qui se trouve à 0 point de vie
-      est de la soigner. S&#39;il n&#39;est pas possible de la soigner, elle
-      peut être stabilisée afin de lui éviter de mourir des suites d&#39;un
+      Le meilleur moyen de sauver une créature qui tombe en dessous de 0 point
+      de vie est de la soigner. S&#39;il n&#39;est pas possible de la soigner,
+      elle peut être stabilisée afin de lui éviter de mourir des suites d&#39;un
       échec à son jet de sauvegarde contre la mort.
     </p>
     <p>
