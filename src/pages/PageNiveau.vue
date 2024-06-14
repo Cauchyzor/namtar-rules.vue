@@ -17,19 +17,19 @@
       <li>Mettez à jour votre nombre de dé d'ésotérisme</li>
     </ul>
     <p>
-      Pour chaque palier de 2 niveau a partir du niveau 1 (niveaux 3, 5, 7, et
-      9)
+      Pour chaque palier de 2 niveau a partir du niveau 1 (niveaux 3, 5 ...)
     </p>
     <ul>
       <li>Augmentez d'un niveau votre rang de maîtrise dans une compétence.</li>
     </ul>
     <p>Au niveau 5 :</p>
     <ul>
-      <li>Ajoutez un point d'action supplémentaire par tour</li>
+      <li>Augmentez de 1 le nombre de point d'action par tour</li>
     </ul>
     <p>
-      Le niveau 9 est le niveau maximum que peuvent atteindre les aventuriers.
-      Certaines créatures ou adversaires peuvent aller au delà de cette limite.
+      Actuellement, le niveau 5 est le niveau maximum que peuvent atteindre les
+      aventuriers. Certaines créatures ou adversaires peuvent aller au delà de
+      cette limite.
     </p>
   </q-page>
 </template>
