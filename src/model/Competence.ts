@@ -11,7 +11,7 @@ export enum CompetenceName {
   ARME_A_DISTANCE = "Arme à distance",
   ATHLÉTISME = "Athlétisme",
   CHARME = "Charme",
-  MYTHOLOGIE = "Mythologie",
+  OCCULTISME = "Occultisme",
   HISTOIRE = "Histoire",
   COORDINATION = "Coordination",
   CORPS_A_CORPS = "Corps à corps",
@@ -69,7 +69,7 @@ export class CompetenceService {
         "Réagir et argumenter sur un fait lié à l'Histoire de la galaxie.",
     },
     {
-      Nom: CompetenceName.MYTHOLOGIE,
+      Nom: CompetenceName.OCCULTISME,
       BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
       ShortDescription:
         "Réagir et argumenter sur un fait lié à un culte, une religions ou une croyance.",

@@ -153,7 +153,7 @@ export class ServiceAptitude {
       "Ordre de douleur",
       "Avant d'effectuer une attaque, vous pouvez choisir de subir 1 point de dégâts par avantages générés lors du jet l'attaque, et d'infliger un point de dégât aux adversaires également.",
       AptitudeTypeName.BENEDICTION,
-      new Map([[CompetenceName.MYTHOLOGIE, 1]])
+      new Map([[CompetenceName.OCCULTISME, 1]])
     ),
     new Aptitude(
       "Attitude diplomatique",
@@ -261,7 +261,7 @@ export class ServiceAptitude {
       `Vous gagnez 1 dé de supériorité par rang de ${CompetenceName.VIGILANCE} contre les attaques au corps à corps contre vous. Pour chaque attaque menaces générées sur le jet d'attaque contre vous, celui qui maintient la bénédiction consomme 1 dé d'${AttributsName.ÉSOTÉRISME}. La bénédiction prends fin si le prodigue n'a plus de dés d'${AttributsName.ÉSOTÉRISME}.`,
       AptitudeTypeName.BENEDICTION,
       new Map([
-        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.OCCULTISME, 1],
         [CompetenceName.VIGILANCE, 1],
       ])
     ),
@@ -298,7 +298,7 @@ export class ServiceAptitude {
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.SURVIE, 1],
-        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.OCCULTISME, 1],
       ])
     ),
     new Aptitude(
@@ -354,7 +354,7 @@ export class ServiceAptitude {
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.OCCULTISME, 1],
         [CompetenceName.NÉGOCIATION, 1],
       ])
     ),
@@ -365,7 +365,7 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.MÉDECINE, 1],
-        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.OCCULTISME, 1],
       ])
     ),
     // RANK MAJEUR
@@ -381,7 +381,7 @@ export class ServiceAptitude {
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
-        [CompetenceName.MYTHOLOGIE, 1],
+        [CompetenceName.OCCULTISME, 1],
       ])
     ),
     new Aptitude(
@@ -407,7 +407,7 @@ export class ServiceAptitude {
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
     // TODO : Aptitude spéciales contres les invocation
     // TODO : Histoire + Entropie = Invocation d'entitée +/- consciente
-    // TODO : Mythologie + Entropie = Invocation de conceptes
+    // TODO : Occultisme + Entropie = Invocation de conceptes
     // TODO : Medecine + Entropie = Necromancié
     // TODO : Aptitude vol de pensée // interroger une personne inconsciente?
     // TODO : Aptitude : Mémoire liquides : Changement d'aptitude en plain combat : a implémenter quand l'apprentissage des compétences sera mûri.
