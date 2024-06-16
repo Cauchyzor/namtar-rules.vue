@@ -3,27 +3,30 @@
     <h2 class="text-center">Database : Aptitudes</h2>
     <div class="q-my-md q-pa-md bg-secondary">
       <div class="row q-ma-md">
-        <label>Types d'aptitudes : </label>
-        <q-option-group
-          name="Types d'Aptitude"
-          v-model="FilterByType"
-          :options="EnumAptTypes"
-          type="checkbox"
-          color="primary"
-          inline
-        ></q-option-group>
+        <div class="col-8">
+          <label>Types d'aptitudes : </label>
+          <q-option-group
+            name="Types d'Aptitude"
+            v-model="FilterByType"
+            :options="EnumAptTypes"
+            type="checkbox"
+            color="primary"
+            inline
+          ></q-option-group>
+        </div>
+        <div class="col-4">
+          <label>Rang requis : </label>
+          <q-option-group
+            name="Rang"
+            v-model="FilterByRang"
+            :options="EnumAptRanks"
+            type="checkbox"
+            color="primary"
+            inline
+          ></q-option-group>
+        </div>
       </div>
-      <div class="row q-ma-md">
-        <label>Rang requis : </label>
-        <q-option-group
-          name="Rang"
-          v-model="FilterByRang"
-          :options="EnumAptRanks"
-          type="checkbox"
-          color="primary"
-          inline
-        ></q-option-group>
-      </div>
+
       <div class="row q-ma-md">
         <q-select
           outlined

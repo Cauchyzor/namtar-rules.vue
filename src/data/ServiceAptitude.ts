@@ -76,7 +76,7 @@ export class ServiceAptitude {
   ];
 
   private static AptitudeList: Array<Aptitude> = [
-    // RANK 1
+    // MINEURE
     new Aptitude(
       "Concentration",
       `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} ainsi que votre mouvement afin d'ajouter autant de dés de supériorités (d4) à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
@@ -191,10 +191,6 @@ export class ServiceAptitude {
       AptitudeTypeName.REACTION,
       new Map([[CompetenceName.VIGILANCE, 1]])
     ),
-    // RANK 2
-    // TODO : RANK2 : Blindage / Amélioration / Augmentation de la défense
-    // TODO : RANK2 : Pacte de la lame ?
-    // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
     new Aptitude(
       "Mémoires liquides",
       `Vous avez la possibilité de ceder des connaissances ésotériques dans une manifestation du fluide afin de garder l'esprit clair. A chaque gains de niveau, vous choisissez une aptitude que vous ne connaissez pas et vous la renseignée dans vos mémoires liquides. A n'importe quel moment, vous pouvez dépensez 3 point d'action pour échanger une aptitude connue contre une autre sauvegardée dans vos mémoires liquides. Vous ne pouvez renseigner que des aptitudes des types : ${AptitudeTypeName.EVOCATION},  ${AptitudeTypeName.INVOCATION} et ${AptitudeTypeName.NÉCROMANCIE}`,
@@ -232,11 +228,25 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
-      "Signature de rebond de puissance",
-      `Vous pouvez octroyer une amélioration supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une arme ne peux pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
-      AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.INGÉNIERIE, 2]])
+      "Balise victorieuse",
+      `Vous invoquez sur votre position une représentation de vos convictions que seul vous pouvez voir, et qui galvanise toutes les créatures autours. Cette balise possède autant de charges que votre valeur d'${AttributsName.ÉSOTÉRISME}. Les membres à moins de 9m de la balise peuvent à chacun de leur tour relancer un dé lors de leur jet d'attaque, et consommer alors une charge de la balise. Lorsqu'elle atteint 0 charge, elle se désintègre.`,
+      AptitudeTypeName.INVOCATION,
+      new Map([
+        [CompetenceName.HISTOIRE, 1],
+        [CompetenceName.CHARME, 1],
+      ])
     ),
+    new Aptitude(
+      "Blindage",
+      `Cette amélioration ne peut être affectée qu'aux armures ou protection métallique. L'utilisateur de l'armure augmente sa défense d'autant de dé que votre rang d'${CompetenceName.INGÉNIERIE}.`,
+      AptitudeTypeName.AMELIORATION,
+      new Map([
+        [CompetenceName.INGÉNIERIE, 1],
+        [CompetenceName.SURVIE, 1],
+      ])
+    ),
+    // TODO : RANK2 : Pacte de la lame ?
+    // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
     new Aptitude(
       "En joue",
       "Vous avez une reaction supplémentaire par tour que vous pouvez utiliser uniquement pour effectuer une attaque d’opportunité avec une arme a distance que vous tenez en main.",
@@ -344,9 +354,26 @@ export class ServiceAptitude {
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-        [CompetenceName.HISTOIRE, 1],
+        [CompetenceName.MYTHOLOGIE, 1],
         [CompetenceName.NÉGOCIATION, 1],
       ])
+    ),
+    new Aptitude(
+      "Vampire d'âme",
+      `Vous absorbez l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
+      AptitudeTypeName.NÉCROMANCIE,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.MÉDECINE, 1],
+        [CompetenceName.MYTHOLOGIE, 1],
+      ])
+    ),
+    // RANK MAJEUR
+    new Aptitude(
+      "Signature de rebond de puissance",
+      `Vous pouvez octroyer une amélioration supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une arme ne peux pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.INGÉNIERIE, 2]])
     ),
     new Aptitude(
       "Singularité",
@@ -364,16 +391,6 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.VIGILANCE, 2],
-      ])
-    ),
-    new Aptitude(
-      "Vampire d'âme",
-      `Vous absorbez l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
-      AptitudeTypeName.NÉCROMANCIE,
-      new Map([
-        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-        [CompetenceName.MÉDECINE, 1],
-        [CompetenceName.MYTHOLOGIE, 1],
       ])
     ),
     new Aptitude(
