@@ -1,6 +1,7 @@
 import MainLayout from "src/layouts/MainLayout.vue";
 import PageAptitudesDatabase from "src/pages/PageAptitudesDatabase.vue";
 import PageEquipement from "src/pages/PageEquipement.vue";
+import PageBuild from "src/pages/PageBuild.vue";
 import PageEthnotraitDatabase from "src/pages/PageEthnotraitDatabase.vue";
 import PageIndex from "src/pages/PageIndex.vue";
 import PageLoreIntroduction from "src/pages/PageLoreIntroduction.vue";
@@ -73,6 +74,11 @@ const routes: RouteRecordRaw[] = [
             name: "Ethnotrait",
             path: "ethnotraits",
             component: PageEthnotraitDatabase,
+          },
+          {
+            name: "Archetypes",
+            path: "archetype",
+            component: PageBuild,
           },
         ],
       },
