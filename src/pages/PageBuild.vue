@@ -131,49 +131,191 @@
                 </q-item-section>
               </q-item>
             </q-list>
-            <div class="row q-pa-sm">
-              <q-card flat class="col bg-accent q-ma-xs">
-                <q-card-section vertical>
-                  <p class="text-center text-uppercase text-grey">
-                    Balise victorieuse
-                  </p>
-                  <p class="text-caption">
-                    Vous invoquez sur votre position une représentation de vos
-                    convictions que seul vous pouvez voir, et qui galvanise
-                    toutes les créatures autours. Cette balise possède autant de
-                    charges que votre valeur d'Ésotérisme. Les membres à moins
-                    de 9m de la balise peuvent à chacun de leur tour relancer un
-                    dé lors de leur jet d'attaque, et consommer alors une charge
-                    de la balise. Lorsqu'elle atteint 0 charge, elle se
-                    désintègre.
-                  </p>
-                </q-card-section>
-              </q-card>
-              <q-card flat class="col bg-accent q-ma-xs">
-                <q-card-section vertical>
-                  <p class="text-center text-uppercase text-grey">
-                    Équilibrage
-                  </p>
-                  <p class="text-caption">
-                    L'arme qui reçois l'amélioration ajoute 1 dé de supériorité
-                    à tout les jet d'attaque fait avec celle-ci
-                  </p>
-                </q-card-section>
-              </q-card>
-              <q-card flat class="col bg-accent q-ma-xs">
-                <q-card-section vertical>
-                  <p class="text-center text-uppercase text-grey">
-                    Ordre de douleur
-                  </p>
-                  <p class="text-caption">
-                    Avant d'effectuer une attaque, vous pouvez choisir de subir
-                    1 point de dégâts par avantages générés lors du jet
-                    l'attaque, et d'infliger un point de dégât aux adversaires
-                    également.
-                  </p>
-                </q-card-section>
-              </q-card>
-            </div>
+          </div>
+          <div class="row q-pa-sm">
+            <q-item class="col">
+              <q-item-section>
+                <q-item-label>Histoire</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-item-label>Rang 1</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section>
+                <q-item-label>Occultisme</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-item-label>Rang 1</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section>
+                <q-item-label>Ingénierie</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-item-label>Rang 1</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row q-pa-sm">
+            <q-card flat class="col-12 bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">
+                  Balise victorieuse
+                </p>
+                <p class="text-caption">
+                  Vous invoquez sur votre position une représentation de vos
+                  convictions que seul vous pouvez voir, et qui galvanise toutes
+                  les créatures autours. Cette balise possède autant de charges
+                  que votre valeur d'Ésotérisme. Les membres à moins de 9m de la
+                  balise peuvent à chacun de leur tour relancer un dé lors de
+                  leur jet d'attaque, et consommer alors une charge de la
+                  balise. Lorsqu'elle atteint 0 charge, elle se désintègre.
+                </p>
+              </q-card-section>
+            </q-card>
+            <q-card flat class="col-12 bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">Équilibrage</p>
+                <p class="text-caption">
+                  L'arme qui reçois l'amélioration ajoute 1 dé de supériorité à
+                  tout les jet d'attaque fait avec celle-ci
+                </p>
+              </q-card-section>
+            </q-card>
+            <q-card flat class="col-12 bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">
+                  Ordre de douleur
+                </p>
+                <p class="text-caption">
+                  Avant d'effectuer une attaque, vous pouvez choisir de subir 1
+                  point de dégâts par avantages générés lors du jet l'attaque,
+                  et d'infliger un point de dégât aux adversaires également.
+                </p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+        <q-separator horizontal></q-separator>
+        <div class="bg-secondary">
+          <div class="q-pa-sm text-center text-bold">Niveau 2</div>
+          <div class="row q-pa-sm">
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.PV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d4</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.DV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.INITIATIVE)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row q-pa-sm">
+            <q-card flat class="col bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">
+                  Balise victorieuse
+                </p>
+                <p class="text-caption">
+                  Vous invoquez sur votre position une représentation de vos
+                  convictions que seul vous pouvez voir, et qui galvanise toutes
+                  les créatures autours. Cette balise possède autant de charges
+                  que votre valeur d'Ésotérisme. Les membres à moins de 9m de la
+                  balise peuvent à chacun de leur tour relancer un dé lors de
+                  leur jet d'attaque, et consommer alors une charge de la
+                  balise. Lorsqu'elle atteint 0 charge, elle se désintègre.
+                </p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+        <q-separator horizontal></q-separator>
+        <div class="bg-secondary">
+          <div class="q-pa-sm text-center text-bold">Niveau 3</div>
+          <div class="row q-pa-sm">
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.PV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d4</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.DV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.INITIATIVE)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row q-pa-sm">
+            <q-item class="col">
+              <q-item-section>
+                <q-item-label>Ingénierie</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-item-label>Rang 2</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row q-pa-sm">
+            <q-card flat class="col bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">
+                  Signature de rebond de puissance
+                </p>
+                <p class="text-caption">
+                  Vous pouvez octroyer une amélioration supplémentaire par rang
+                  en Ingénierie. Une pièce d'équipement peut pas bénéficier de
+                  la même Amélioration deux fois.
+                </p>
+              </q-card-section>
+            </q-card>
           </div>
         </div>
       </div>
