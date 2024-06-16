@@ -7,29 +7,29 @@
         <q-option-group
           name="Types d'Aptitude"
           v-model="FilterByType"
-          :options="AptTypesList"
+          :options="EnumAptTypes"
           type="checkbox"
           color="primary"
           inline
         ></q-option-group>
       </div>
       <div class="row q-ma-md">
-        <label>Niveau de Maîtrise requis : </label>
-        <q-range
-          v-model="FilterByLevel"
-          :min="1"
-          :max="7"
-          :step="1"
-          snap
-          label
-        ></q-range>
+        <label>Rang requis : </label>
+        <q-option-group
+          name="Rang"
+          v-model="FilterByRang"
+          :options="EnumAptRanks"
+          type="checkbox"
+          color="primary"
+          inline
+        ></q-option-group>
       </div>
       <div class="row q-ma-md">
         <q-select
           outlined
           v-model="FilterByMaîtrises"
           toggle-color="primary"
-          :options="CompétencesNameList"
+          :options="EnumCompétencesName"
           label="Compétences maîtrisées :"
           multiple
           use-chips
@@ -60,7 +60,7 @@ import AptitudeCard from "src/components/AptitudeCard.vue";
 
 import { ServiceAptitude, AptitudeTypeName } from "src/data/ServiceAptitude";
 import { CompetenceName } from "src/model/Competence";
-import { Aptitude } from "src/model/Aptitude";
+import { Aptitude, AptitudeRang } from "src/model/Aptitude";
 
 export default defineComponent({
   name: "PersonnagePage",
@@ -69,15 +69,18 @@ export default defineComponent({
   },
   data() {
     return {
-      CompétencesNameList: Object.values(CompetenceName),
-      AptTypesList: Object.values(AptitudeTypeName).map((t) => {
+      EnumCompétencesName: Object.values(CompetenceName),
+      EnumAptRanks: Object.values(AptitudeRang).map((t) => {
+        return { label: t, value: t };
+      }),
+      EnumAptTypes: Object.values(AptitudeTypeName).map((t) => {
         return { label: t, value: t };
       }),
       AptitudesList: ServiceAptitude.findAllAptitudes().sort(
         (a, b) => a.NiveauDeMaîtrise - b.NiveauDeMaîtrise
       ),
-      FilterByType: new Array<AptitudeTypeName>(),
-      FilterByLevel: { min: 1, max: 7 },
+      FilterByType: ref(new Array<AptitudeTypeName>()),
+      FilterByRang: ref(new Array<AptitudeRang>()),
       FilterByMaîtrises: ref(new Array<CompetenceName>()),
       ShowExclusiveOnly: ref(false),
     };
@@ -86,7 +89,7 @@ export default defineComponent({
     filteredAptitudesList() {
       return this.AptitudesList.filter((apt) => this.filterByType(apt))
         .filter((apt) => this.filterBySelectedMaîtrises(apt))
-        .filter((apt) => this.filterByMaîtrisesRank(apt))
+        .filter((apt) => this.filterByRang(apt))
         .filter((apt) => this.filterExclusifOnly(apt));
     },
     filterByType(apt: Aptitude) {
@@ -104,11 +107,11 @@ export default defineComponent({
         undefined
       );
     },
-    filterByMaîtrisesRank(apt: Aptitude) {
-      return (
-        apt.NiveauDeMaîtrise <= this.FilterByLevel.max &&
-        apt.NiveauDeMaîtrise >= this.FilterByLevel.min
-      );
+    filterByRang(apt: Aptitude) {
+      if (this.FilterByRang.length === 0) {
+        return true;
+      }
+      return this.FilterByRang.includes(apt.Rang);
     },
     filterExclusifOnly(apt: Aptitude) {
       if (!this.ShowExclusiveOnly) {

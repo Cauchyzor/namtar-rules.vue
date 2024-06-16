@@ -14,11 +14,10 @@ export type AptitudeType = {
   Description: string;
 };
 
-enum AptRank {
+export enum AptitudeRang {
   MINEURE = "Mineure",
   MAJEURE = "Majeure",
   SUPÉRIEURE = "Supérieure",
-  ELITE = "Elite",
 }
 
 export class Aptitude {
@@ -45,20 +44,18 @@ export class Aptitude {
     );
   }
 
-  get Rang(): AptRank {
+  get Rang(): AptitudeRang {
     const rank = Array.from(this.MaîtrisesRequise.values())
       .filter((maitrise) => maitrise > 1)
       .reduce((acc, curr) => acc + curr / 2, 0);
 
     switch (rank) {
       case 1:
-        return AptRank.MAJEURE;
+        return AptitudeRang.MAJEURE;
       case 2:
-        return AptRank.SUPÉRIEURE;
-      case 3:
-        return AptRank.ELITE;
+        return AptitudeRang.SUPÉRIEURE;
       default:
-        return AptRank.MINEURE;
+        return AptitudeRang.MINEURE;
     }
   }
 }
