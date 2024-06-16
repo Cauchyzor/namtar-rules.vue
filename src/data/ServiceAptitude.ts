@@ -57,7 +57,7 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
-        "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer avec une action libre. Une telle aptitude ne peut être affectée qu'à une seule pièce d'équipement à la fois.",
+        "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer avec une action libre. Le lanceur de cette aptitude ne peut l'affecter qu'à une seule pièce d'équipement à la fois, ou alors l'amélioration s'estompe immédiatement de l'ancienne pièce d'équipement.",
     },
     {
       Nom: AptitudeTypeName.INJONCTION,
@@ -371,7 +371,7 @@ export class ServiceAptitude {
     // RANK MAJEUR
     new Aptitude(
       "Signature de rebond de puissance",
-      `Vous pouvez octroyer une amélioration supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une arme ne peux pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
+      `Vous pouvez octroyer chacune de vos amélioration à une cible supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une pièce d'équipement ne peut pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.INGÉNIERIE, 2]])
     ),
