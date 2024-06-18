@@ -13,8 +13,8 @@
         "positifs" versus un pool de dé "négatifs". Les pools sont constituées
         de d6
       </p>
-      <div class="row justify-around">
-        <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
+      <div class="row justify-around q-gutter-md">
+        <q-card flat class="col bg-accent q-my-lg">
           <q-card-section vertical>
             <p class="text-h6">Pour les dés positifs</p>
             <ul>
@@ -31,7 +31,6 @@
             </ul>
           </q-card-section>
         </q-card>
-        <!-- <q-separator vertical inset class="q-mx-lg"></q-separator> -->
         <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
           <q-card-section vertical>
             <p class="text-h6">Pour les dés négatifs</p>
@@ -81,9 +80,8 @@
       Grâce à certaines aptitudes, ou sous les effets narratif d'un triomphe ou
       d'un désastre, les joueurs pourront
       <strong>ajouter à leur pool de dé positif 1 ou plusieurs d4</strong>. Ils
-      représentent des avantages situationnels qui aident à la réussite de
-      l'action. Le même mécanisme existe avec les désavantages, représenté par 1
-      ou plusieurs d4 ajoutés au pool de dés négatifs.
+      représentent une aide ou une contrainte extérieur à celui qui effectue
+      l'action et qui peut influencer ses chances de réussir.
     </p>
 
     <h4>Test de compétence</h4>
@@ -94,8 +92,8 @@
       plus son DD est élevé.
     </p>
 
-    <div class="row justify-around">
-      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
+    <div class="row justify-around q-gutter-md">
+      <q-card flat class="col bg-accent q-my-lg">
         <q-card-section vertical>
           <p>Un pool de d6 avec autant de dé que votre valeur de :</p>
           <p><strong>Caractéristique + Compétence</strong></p>
@@ -106,7 +104,7 @@
         </q-card-section>
       </q-card>
       <!-- <q-separator vertical inset></q-separator> -->
-      <q-card flat class="col-md-6 col-sm-12 bg-accent q-my-lg">
+      <q-card flat class="col-md-8 col-sm-12 bg-accent q-my-lg">
         <q-card-section vertical>
           <p>
             Le pool de d6 est constitué selon le
@@ -116,39 +114,38 @@
             Allant de 0 a +l&#39;infini. Chaque cran est plus difficile a passé
             que le précédant.
           </p>
-          <ul>
-            <li class="text-overline">
-              <strong>Routinier - DD0 - 0 dés</strong> : Aucune difficulté. Si
-              c'est raté, ce n'est vraiment, vraiment pas de chance...
-            </li>
-            <li class="text-overline">
-              <strong>Facile - DD1 - 1 dés</strong> : Une personne sans vraiment
-              de talents et mal équipé pourrait se planter plus de la moitié du
-              temps.
-            </li>
-            <li class="text-overline">
-              <strong>Normal - DD2 - 2 dés </strong> : Quelqu'un d'affûté pour
-              le job, et avec un peu d'entraînement pourrai avoir quand même
-              quelques difficultés.
-            </li>
-            <li class="text-overline">
-              <strong>Complexe - DD3 - 3 dés</strong> : Quelqu'un de compétent
-              ne voudra pas s'y risquer sans un bon matériel adéquat...
-            </li>
-            <li class="text-overline">
-              <strong>Difficile - DD4 - 5 dés</strong> : Les meilleurs
-              considèrent ça entre eux comme une "prise de risque."
-            </li>
-            <li class="text-overline">
-              <strong>Très Difficile - DD5 - 8 dés</strong> : Il faut être un
-              expert talentueux et bien équipe pour pouvoir dire "qu'on peut y
-              arriver."
-            </li>
-            <li class="text-overline">
-              <strong>Exceptionnel - DD6 - 13 dés</strong> : Il faut être un
-              expert talentueux et bien équipe pour espérer peut-être réussir.
-            </li>
-          </ul>
+          <div class="row q-gutter-sm">
+            <div class="col bg-secondary q-pa-sm">
+              <p class="text-uppercase text-grey">Facile</p>
+              <p class="text-bold text-grey">DD1</p>
+              <p class="text-bold">1 dés</p>
+            </div>
+            <div class="col bg-secondary q-pa-sm">
+              <p class="text-uppercase text-grey">Normal</p>
+              <p class="text-bold text-grey">DD2</p>
+              <p class="text-bold">2 dés</p>
+            </div>
+            <div class="col bg-secondary q-pa-sm">
+              <p class="text-uppercase text-grey">Complexe</p>
+              <p class="text-bold text-grey">DD3</p>
+              <p class="text-bold">3 dés</p>
+            </div>
+            <div class="col bg-secondary q-pa-sm">
+              <p class="text-uppercase text-grey">Difficile</p>
+              <p class="text-bold text-grey">DD4</p>
+              <p class="text-bold">5 dés</p>
+            </div>
+            <div class="col bg-secondary q-pa-sm">
+              <p class="text-uppercase text-grey">Très Difficile</p>
+              <p class="text-bold text-grey">DD5</p>
+              <p class="text-bold">8 dés</p>
+            </div>
+            <div class="col bg-secondary q-pa-sm">
+              <p class="text-uppercase text-grey">Exceptionnel</p>
+              <p class="text-bold text-grey">DD6</p>
+              <p class="text-bold">dés</p>
+            </div>
+          </div>
           <p class="text-overline">
             Pour des niveaux de difficulté supérieure : le DD est égal au DD du
             niveau précédant additionné à celui du niveau avant le niveau
