@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-4 q-pa-md">
         <div class="q-pa-sm text-center text-bold text-header">Description</div>
-        <p class="text-grey text-justify">
+        <p class="q-ma-md text-grey text-justify">
           En mêlant la technologie et les croyances dans des mouvements
           ésotériques occultes, il est possible d'attribuer aux outils
           conventionnels une puissance démesurée. Les aventuriers suivant la
@@ -133,7 +133,7 @@
             </q-list>
           </div>
           <div class="row q-pa-sm">
-            <q-item class="col">
+            <q-item class="col-4 bg-accent">
               <q-item-section>
                 <q-item-label>Histoire</q-item-label>
               </q-item-section>
@@ -141,7 +141,7 @@
                 <q-item-label>Rang 1</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item class="col">
+            <q-item class="col-4 bg-accent">
               <q-item-section>
                 <q-item-label>Occultisme</q-item-label>
               </q-item-section>
@@ -149,7 +149,7 @@
                 <q-item-label>Rang 1</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item class="col">
+            <q-item class="col-4 bg-accent">
               <q-item-section>
                 <q-item-label>Ingénierie</q-item-label>
               </q-item-section>
@@ -293,10 +293,126 @@
               </q-item-section>
             </q-item>
           </div>
-          <div class="row q-pa-sm">
-            <q-item class="col">
+          <div class="row justify-center q-pa-sm">
+            <q-item class="col-4 bg-accent">
               <q-item-section>
                 <q-item-label>Ingénierie</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-item-label>Rang 2</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row q-pa-sm">
+            <q-card flat class="col bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">
+                  Signature de rebond de puissance
+                </p>
+                <p class="text-caption">
+                  Vous pouvez octroyer une amélioration supplémentaire par rang
+                  en Ingénierie. Une pièce d'équipement peut pas bénéficier de
+                  la même Amélioration deux fois.
+                </p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+        <q-separator horizontal></q-separator>
+        <div class="bg-secondary">
+          <div class="q-pa-sm text-center text-bold">Niveau 4</div>
+          <div class="row q-pa-sm">
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.PV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d4</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.DV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.INITIATIVE)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row q-pa-sm">
+            <q-card flat class="col bg-accent q-ma-xs">
+              <q-card-section vertical>
+                <p class="text-center text-uppercase text-grey">
+                  Signature de rebond de puissance
+                </p>
+                <p class="text-caption">
+                  Vous pouvez octroyer une amélioration supplémentaire par rang
+                  en Ingénierie. Une pièce d'équipement peut pas bénéficier de
+                  la même Amélioration deux fois.
+                </p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+        <q-separator horizontal></q-separator>
+        <div class="bg-secondary">
+          <div class="q-pa-sm text-center text-bold">Niveau 5</div>
+          <div class="row q-pa-sm">
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.PV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d4</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.DV)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item class="col">
+              <q-item-section avatar>
+                <q-icon
+                  color="primary"
+                  :name="AttributesMap.get(AttributsName.INITIATIVE)?.Icon"
+                ></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>+1d6</q-item-label>
+              </q-item-section>
+            </q-item>
+          </div>
+          <div class="row justify-center q-pa-sm">
+            <q-item class="bg-accent col-4">
+              <q-item-section>
+                <q-item-label>Occultisme</q-item-label>
               </q-item-section>
               <q-item-section side>
                 <q-item-label>Rang 2</q-item-label>
