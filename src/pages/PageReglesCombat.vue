@@ -408,8 +408,8 @@
           <q-item-section>
             <q-item-label header>Se désengager</q-item-label>
             <q-item-label caption
-              >Se déplacer sans provoquer d'attaques d'opportunités au corps à
-              corps par les ennemis engagés avec vous.
+              >Se déplacer de 1m sans provoquer d'attaques d'opportunités au
+              corps à corps par les ennemis engagés avec vous.
             </q-item-label>
           </q-item-section>
           <q-item-section side top>
