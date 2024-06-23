@@ -201,24 +201,6 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
-      "Entraînement physique",
-      "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
-      AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.ATHLÉTISME, 2]])
-    ),
-    new Aptitude(
-      "Entraînement tactique",
-      "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
-      AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.COORDINATION, 2]])
-    ),
-    new Aptitude(
-      "Entraînement spécial au tir",
-      "Vous Augmentez votre valeur d'Adresse de 1 de manière permanente.",
-      AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
-    ),
-    new Aptitude(
       "Rupture mentale",
       `Vous consommez autant de dé d’${AttributsName.ÉSOTÉRISME} que souhaitez et les opposez aux dés d’${AttributsName.ÉSOTÉRISME} restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction par défaut jusqu'à son prochain tour.`,
       AptitudeTypeName.INJONCTION,
@@ -329,6 +311,15 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Rejet primitif",
+      `Vous détruisez immédiatement toutes les créations de type ${AptitudeTypeName.INVOCATION} à 18m autour de vous. Pour chaque ${AptitudeTypeName.INVOCATION} détruite, vous subissez 1d4 dégât.`,
+      AptitudeTypeName.INJONCTION,
+      new Map([
+        [CompetenceName.INTIMIDATION, 1],
+        [CompetenceName.SURVIE, 1],
+      ])
+    ),
+    new Aptitude(
       "Anticipation surnaturelle",
       `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}.`,
       AptitudeTypeName.MANTRA,
@@ -337,7 +328,6 @@ export class ServiceAptitude {
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
       ])
     ),
-    // RANK 3
     new Aptitude(
       "Morsure de Namtar",
       "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé d'ésotérisme par Triomphes et par avantages.",
@@ -368,7 +358,52 @@ export class ServiceAptitude {
         [CompetenceName.OCCULTISME, 1],
       ])
     ),
-    // RANK MAJEUR
+    // RANK
+    new Aptitude(
+      "Attrition",
+      "A chacune de vos attaques au corps à corps, vous pouvez choisir de remplacer jusqu'à 2 succès par autant avantages.",
+      AptitudeTypeName.POSTURE,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 2],
+        [CompetenceName.PERSPICACITÉ, 1],
+      ])
+    ),
+    new Aptitude(
+      "Communication maîtrisée",
+      `Vous augmentez votre valeur de ${CaracteritiqueName.CHARISME} de 1 point.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.CHARME, 2]])
+    ),
+    new Aptitude(
+      "Enchaînement",
+      `Lorsque vous choisissez d'attaquer une creature au corps à corps ou d'effectuer une ${AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS}, la prochaine attaque au corps à corps coûte 1 point d'action en moins (minimum 1).`,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.CORPS_A_CORPS, 2]])
+    ),
+    new Aptitude(
+      "Entraînement physique",
+      "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.ATHLÉTISME, 2]])
+    ),
+    new Aptitude(
+      "Entraînement tactique",
+      "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.COORDINATION, 2]])
+    ),
+    new Aptitude(
+      "Entraînement spécial au tir",
+      `Vous Augmentez votre valeur d'${CaracteritiqueName.ADRESSE} de 1 de manière permanente.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
+    ),
+    new Aptitude(
+      "Présence déstabilisante",
+      "Lors d'un test en opposition ou d'un jet d'attaque contre elle, votre cible est terrifiée jusqu'à son prochain tour si le résultat des dés génère au moins 2 avantages.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.INTIMIDATION, 2]])
+    ),
     new Aptitude(
       "Signature de rebond de puissance",
       `Vous pouvez octroyer chacune de vos amélioration à une cible supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une pièce d'équipement ne peut pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
@@ -385,6 +420,12 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Savoir sublimé",
+      `Vous Augmentez votre valeur d'${CaracteritiqueName.INTELLIGENCE} de 1 de manière permanente.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]])
+    ),
+    new Aptitude(
       "Revers cinétique",
       `Vous dépensez autant de dé d'${AttributsName.ÉSOTÉRISME} au jets de défense de la cible de votre choix à 9m ou moins de vous. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
       AptitudeTypeName.REACTION,
@@ -394,16 +435,15 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
-      "Attrition",
-      "A chacune de vos attaques au corps à corps, vous pouvez choisir de remplacer jusqu'à 2 succès par autant avantages.",
-      AptitudeTypeName.POSTURE,
-      new Map([
-        [CompetenceName.CORPS_A_CORPS, 2],
-        [CompetenceName.PERSPICACITÉ, 1],
-      ])
+      "Volonté de fer",
+      `Vous pouvez octroyer autant de bénédiction que votre valeur de ${CaracteritiqueName.CHARISME} en même temps.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.OCCULTISME, 2]])
     ),
     // TODO : Creation d'une prothèse d'ingé (ethnotraits ? // entropie du fluide // Aptitude particulière ?)
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
+    // TODO : Aptitude : régénaration de dé d'ésoterisme
+    // TODO : Aptitude : Ajout de point d'action ou de réaction
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
     // TODO : Aptitude spéciales contres les invocation
     // TODO : Histoire + Entropie = Invocation d'entitée +/- consciente
