@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Aptitude, AptitudeType } from "src/model/Aptitude";
+import { Aptitude, AptitudeRang, AptitudeType } from "src/model/Aptitude";
 import { AttributsName } from "src/model/Attribut";
 import { CaracteritiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
 export enum AptitudeTypeName {
-  // TODO : Mutation (liée aux concept de 'ethnotrait') - Aptitude liée a un trait
+  // TODO : Mutation (liée aux concept de 'ethnotraits') - Aptitude liée a un trait
   AMELIORATION = "Amélioration",
   BENEDICTION = "Bénédiction",
   EVOCATION = "Évocation",
@@ -27,7 +27,7 @@ export class ServiceAptitude {
     },
     {
       Nom: AptitudeTypeName.INVOCATION,
-      Description: `Vous appliquez les effets de l'aptitude sur la zone ciblée en effectuant en test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}). Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+      Description: `Vous appliquez les effets de l'aptitude sur la zone ciblée en effectuant en test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteritiqueName.INTELLIGENCE}) de DD3. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
       Nom: AptitudeTypeName.NÉCROMANCIE,
@@ -76,7 +76,7 @@ export class ServiceAptitude {
   ];
 
   private static AptitudeList: Array<Aptitude> = [
-    // MINEURE
+    // APTITUDES MINEURE
     new Aptitude(
       "Concentration",
       `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} ainsi que votre mouvement afin d'ajouter autant de dés de supériorités (d4) à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
@@ -142,6 +142,24 @@ export class ServiceAptitude {
       "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet à porté de main contre un adversaire qui ce déplace à 9m ou moins de vous.",
       AptitudeTypeName.REACTION,
       new Map([[CompetenceName.MAGOUILLE, 1]])
+    ),
+    new Aptitude(
+      "Illusion Cauchemardesque",
+      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé d'${AttributsName.ÉSOTÉRISME} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteritiqueName.CHARISME} inférieur au résultat net sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé d'${AttributsName.ÉSOTÉRISME} par menaces net.`,
+      AptitudeTypeName.INVOCATION,
+      new Map([
+        [CompetenceName.TROMPERIE, 1],
+        [CompetenceName.INTIMIDATION, 1],
+      ])
+    ),
+    new Aptitude(
+      "Animation morbide",
+      `Une créature que vous pouvez contrôler à son tour emerge du cadavre organique le plus proche. Cette creature possède 2 point dans toutes ses caractéristique, est considéré de niveau 1, ce déplace de 1m par action, et attaque à mains nue. Elle attaque aussitôt après être invoquée et lance ensuite son initiative comme n'importe quelle creature. Vous devez consommer autant de dés d'${AttributsName.ÉSOTÉRISME} que le niveau du cadavre ciblé. Les creatures peuvent vivre autant de tour que votre valeur d'${CaracteritiqueName.INTELLIGENCE}, et vous pouvez en contrôler autant que la somme de vos rang en ${CompetenceName.MÉDECINE} et ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
+      AptitudeTypeName.NÉCROMANCIE,
+      new Map([
+        [CompetenceName.MÉDECINE, 1],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+      ])
     ),
     new Aptitude(
       "Médecine de terrain",
@@ -227,8 +245,6 @@ export class ServiceAptitude {
         [CompetenceName.SURVIE, 1],
       ])
     ),
-    // TODO : RANK2 : Pacte de la lame ?
-    // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
     new Aptitude(
       "En joue",
       "Vous avez une reaction supplémentaire par tour que vous pouvez utiliser uniquement pour effectuer une attaque d’opportunité avec une arme a distance que vous tenez en main.",
@@ -329,6 +345,60 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Fracture temporelle",
+      `Vous effectuez un test d'${CompetenceName.OCCULTISME} (${CaracteritiqueName.INTELLIGENCE}) opposé à la cible. Si elle échoue, elle pert 1 point d'action et 1 point d'action supplémentaire par triomphe (maximum 2).`,
+      AptitudeTypeName.EVOCATION,
+      new Map([
+        [CompetenceName.OCCULTISME, 1],
+        [CompetenceName.HISTOIRE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Foulée de l'ombre",
+      `Vous vous déplacez instantanément sans déclencher d'attaque d'opportunité jusqu'à la créature ciblée sur une distance de 9m pour chaque rang en ${CompetenceName.ATHLÉTISME}. Votre prochaine attaque au corps à corps ou ${AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS} coûte 1 point d'action en moins (minimum 1). Vous consommez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.INVOCATION,
+      new Map([
+        [CompetenceName.ATHLÉTISME, 1],
+        [CompetenceName.DISCRETION, 1],
+      ])
+    ),
+    new Aptitude(
+      "Sanctuaire",
+      `Les cibles de la bénédiction ne peuvent pas être la cible d'agressions. La bénédiction est retirée immédiatement si la cible de la bénédiction effectue une attaque ou une aptitude qui blesse une creature. A chaque début de tour du lanceur, il consomme et lance 1 dé d'${AttributsName.ÉSOTÉRISME}. Si la valeur du dé est supérieur à la somme de sa valeur de ${CompetenceName.NÉGOCIATION} et de ${CompetenceName.CHARME}, la bénédiction prend fin immédiatement.`,
+      AptitudeTypeName.BENEDICTION,
+      new Map([
+        [CompetenceName.CHARME, 1],
+        [CompetenceName.NÉGOCIATION, 1],
+      ])
+    ),
+    new Aptitude(
+      "Technique du pugiliste",
+      "Attaquer au corps à corps lorsque vous êtes à mains nues ne coûte qu'1 point d'action.",
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([
+        [CompetenceName.ATHLÉTISME, 1],
+        [CompetenceName.CORPS_A_CORPS, 1],
+      ])
+    ),
+    new Aptitude(
+      "Tir à bout portant",
+      "Vous effectuez une attaque à l'arme à distance sur une cible située a moins de 3m de vous sans déclencher d'attaque d’opportunité. Si elle réussie, vous gagez 1 action que vous pouvez utiliser immédiatement pour vous déplacer, vous mettre à couvert ou vous désengagez.",
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([
+        [CompetenceName.NÉGOCIATION, 1],
+        [CompetenceName.MAGOUILLE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Expertise",
+      "Vous augmentez jusqu'au rang 1 deux compétences au choix.",
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([
+        [CompetenceName.NÉGOCIATION, 1],
+        [CompetenceName.MAGOUILLE, 1],
+      ])
+    ),
+    new Aptitude(
       "Morsure de Namtar",
       "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé d'ésotérisme par Triomphes et par avantages.",
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
@@ -358,7 +428,7 @@ export class ServiceAptitude {
         [CompetenceName.OCCULTISME, 1],
       ])
     ),
-    // RANK
+    // RANK MAJEUR
     new Aptitude(
       "Attrition",
       "A chacune de vos attaques au corps à corps, vous pouvez choisir de remplacer jusqu'à 2 succès par autant avantages.",
@@ -440,6 +510,36 @@ export class ServiceAptitude {
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.OCCULTISME, 2]])
     ),
+    new Aptitude(
+      "Fuite de pouvoir",
+      `Vous dépensez 1 dé d'${AttributsName.ÉSOTÉRISME}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.EVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.REACTION,
+      new Map([
+        [CompetenceName.OCCULTISME, 1],
+        [CompetenceName.VIGILANCE, 1],
+      ])
+    ),
+    // RANK SUPERIEUR
+    new Aptitude(
+      "Assaut brutal",
+      `Si le nombre d'avantages net est supérieur la valeur de ${CaracteritiqueName.VIGUEUR} et de ${AttributsName.REFLEXES} de la cible, elle est a terre, même si l'attaque échoue.`,
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 2],
+        [CompetenceName.ATHLÉTISME, 2],
+      ])
+    ),
+    new Aptitude(
+      "Maîtrise somatiques",
+      `Toutes les aptitudes de type ${AptitudeTypeName.EVOCATION} et de rang ${AptitudeRang.MINEURE} coûtent 1 point d'action en moins (minimum 1).`,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
+        [CompetenceName.COORDINATION, 2],
+      ])
+    ),
+    // TODO : Aptitudes : Voies Ancestrale (Histoire + compétences martiales)
+    // TODO : Aptitudes : Voies Primitives (Survie + compétences martiales)
     // TODO : Creation d'une prothèse d'ingé (ethnotraits ? // entropie du fluide // Aptitude particulière ?)
     // TODO : Rupture spirituelle - Aptitude qui fait des dégât en fonction du pouvoir / nombre de mantra de la cible ?
     // TODO : Aptitude : régénaration de dé d'ésoterisme
@@ -453,18 +553,8 @@ export class ServiceAptitude {
     // TODO : Aptitude : Mémoire liquides : Changement d'aptitude en plain combat : a implémenter quand l'apprentissage des compétences sera mûri.
     // TODO : Concept pour classer les aptitudes : Si pas d'expertise = Aptitude mineurs (un aventurier de lvl1 peut les maitrisé) : Si 1 expertise = aptitudes majeur , si 2 expertise aptitude elite, si 3 expertise = aptitude légendaire
     // TODO : Aptitude : Réduction du temps d'action des aptitudes mineurs ?
-    // RANK 4
-    new Aptitude(
-      "Assaut brutal",
-      `Si le nombre d'avantages net est supérieur la valeur de ${CaracteritiqueName.VIGUEUR} et de ${AttributsName.REFLEXES} de la cible, elle est a terre, même si l'attaque échoue.`,
-      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
-      new Map([
-        [CompetenceName.CORPS_A_CORPS, 2],
-        [CompetenceName.ATHLÉTISME, 2],
-      ])
-    ),
-    // TODO : Aptitudes : Voies Ancestrale (Histoire + compétences martiales)
-    // TODO : Aptitudes : Voies Primitives (Survie + compétences martiales)
+    // TODO : RANK2 : Pacte de la lame ?
+    // TODO : RANK2 : Pacte de la guerre (arme a distance) ?
   ];
 
   static findAptitudesByNames(names: Array<string>) {
