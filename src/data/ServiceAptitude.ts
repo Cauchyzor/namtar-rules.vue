@@ -79,7 +79,7 @@ export class ServiceAptitude {
     // APTITUDES MINEURE
     new Aptitude(
       "Concentration",
-      `Vous sacrifiez autant de dés de ${AttributsName.REFLEXES} ainsi que votre mouvement afin d'ajouter autant de dés de supériorités (d4) à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
+      `Vous sacrifiez vos dés de ${AttributsName.REFLEXES} ainsi que votre mouvement afin d'ajouter autant de dés de supériorités (d4) que votre rang d'${CompetenceName.ARME_A_DISTANCE} à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.ARME_A_DISTANCE, 1]])
     ),
