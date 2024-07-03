@@ -1,5 +1,5 @@
 import { AttributsName } from "src/model/Attribut";
-import { CaracteritiqueName } from "src/model/Caracteristique";
+import { CaracteristiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 import { Creature } from "src/model/Creature";
 import { ServiceAptitude } from "./ServiceAptitude";
@@ -12,11 +12,11 @@ export class ServiceCreature {
       "Drone de pacification létale ESS1",
       1,
       new Map([
-        [CaracteritiqueName.VIGUEUR, 1],
-        [CaracteritiqueName.AGILITE, 3],
-        [CaracteritiqueName.ADRESSE, 4],
-        [CaracteritiqueName.INTELLIGENCE, 2],
-        [CaracteritiqueName.CHARISME, 1],
+        [CaracteristiqueName.VIGUEUR, 1],
+        [CaracteristiqueName.AGILITE, 3],
+        [CaracteristiqueName.ADRESSE, 4],
+        [CaracteristiqueName.INTELLIGENCE, 2],
+        [CaracteristiqueName.CHARISME, 1],
       ]),
       new Map([
         [AttributsName.INITIATIVE, "3"],
@@ -37,11 +37,11 @@ export class ServiceCreature {
       "Goule de Namtar",
       1,
       new Map([
-        [CaracteritiqueName.VIGUEUR, 3],
-        [CaracteritiqueName.AGILITE, 3],
-        [CaracteritiqueName.ADRESSE, 2],
-        [CaracteritiqueName.INTELLIGENCE, 1],
-        [CaracteritiqueName.CHARISME, 1],
+        [CaracteristiqueName.VIGUEUR, 3],
+        [CaracteristiqueName.AGILITE, 3],
+        [CaracteristiqueName.ADRESSE, 2],
+        [CaracteristiqueName.INTELLIGENCE, 1],
+        [CaracteristiqueName.CHARISME, 1],
       ]),
       new Map([
         [AttributsName.INITIATIVE, "3"],
@@ -67,11 +67,11 @@ export class ServiceCreature {
       "Garde Imperial",
       4,
       new Map([
-        [CaracteritiqueName.VIGUEUR, 4],
-        [CaracteritiqueName.AGILITE, 3],
-        [CaracteritiqueName.ADRESSE, 4],
-        [CaracteritiqueName.INTELLIGENCE, 2],
-        [CaracteritiqueName.CHARISME, 2],
+        [CaracteristiqueName.VIGUEUR, 4],
+        [CaracteristiqueName.AGILITE, 3],
+        [CaracteristiqueName.ADRESSE, 4],
+        [CaracteristiqueName.INTELLIGENCE, 2],
+        [CaracteristiqueName.CHARISME, 2],
       ]),
       new Map([
         [AttributsName.INITIATIVE, "4"],
@@ -103,11 +103,11 @@ export class ServiceCreature {
       "La Sentinelle Vorace",
       5,
       new Map([
-        [CaracteritiqueName.VIGUEUR, 8],
-        [CaracteritiqueName.AGILITE, 3],
-        [CaracteritiqueName.ADRESSE, 4],
-        [CaracteritiqueName.INTELLIGENCE, 2],
-        [CaracteritiqueName.CHARISME, 5],
+        [CaracteristiqueName.VIGUEUR, 8],
+        [CaracteristiqueName.AGILITE, 3],
+        [CaracteristiqueName.ADRESSE, 4],
+        [CaracteristiqueName.INTELLIGENCE, 2],
+        [CaracteristiqueName.CHARISME, 5],
       ]),
       new Map([
         [AttributsName.INITIATIVE, "3"],

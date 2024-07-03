@@ -1,5 +1,5 @@
 import { Arme, ArmeDistanceItem } from "src/model/Armes";
-import { CaracteritiqueName } from "src/model/Caracteristique";
+import { CaracteristiqueName } from "src/model/Caracteristique";
 import { CompetenceName } from "src/model/Competence";
 
 export class ServiceArme {
@@ -58,7 +58,7 @@ export class ServiceArme {
       Degats:
         "5 point de dommages par triomphe net + 1 point de dommage par succès",
       Special: [
-        `Vous pouvez utilisez votre caractéristique ${CaracteritiqueName.AGILITE} au lieu de la force pour effectuer votre jet d'attaque au ${CompetenceName.CORPS_A_CORPS}`,
+        `Vous pouvez utilisez votre caractéristique ${CaracteristiqueName.AGILITE} au lieu de la force pour effectuer votre jet d'attaque au ${CompetenceName.CORPS_A_CORPS}`,
       ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description:

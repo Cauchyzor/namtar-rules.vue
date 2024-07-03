@@ -2,12 +2,12 @@
 import { Attribut, AttributService, AttributsName } from "./Attribut";
 
 export type Caracteristique = {
-  Nom: CaracteritiqueName;
+  Nom: CaracteristiqueName;
   Description: string;
   Attributs: Array<Attribut>;
 };
 
-export enum CaracteritiqueName {
+export enum CaracteristiqueName {
   VIGUEUR = "Vigueur",
   AGILITE = "Agilité",
   ADRESSE = "Adresse",
@@ -18,7 +18,7 @@ export enum CaracteritiqueName {
 export class CaracteristiqueService {
   private static CaracteristiquesList: Array<Caracteristique> = [
     {
-      Nom: CaracteritiqueName.VIGUEUR,
+      Nom: CaracteristiqueName.VIGUEUR,
       Description:
         "Traduit la force, la musculature, la vitalité et la robustesse physique",
       Attributs: AttributService.findAttributsByNames([
@@ -27,7 +27,7 @@ export class CaracteristiqueService {
       ]),
     },
     {
-      Nom: CaracteritiqueName.AGILITE,
+      Nom: CaracteristiqueName.AGILITE,
       Description: "Determine la souplesse et la vivacité des mouvements.",
       Attributs: AttributService.findAttributsByNames([
         AttributsName.REFLEXES,
@@ -35,13 +35,13 @@ export class CaracteristiqueService {
       ]),
     },
     {
-      Nom: CaracteritiqueName.ADRESSE,
+      Nom: CaracteristiqueName.ADRESSE,
       Description:
         "Représente la précision et le contrôle des mouvements subtiles.",
       Attributs: AttributService.findAttributsByNames([]),
     },
     {
-      Nom: CaracteritiqueName.INTELLIGENCE,
+      Nom: CaracteristiqueName.INTELLIGENCE,
       Description:
         "Mesure la capacité de raisonnement, la mémoire et la sagesse d'un personnage.",
       Attributs: AttributService.findAttributsByNames([
@@ -49,7 +49,7 @@ export class CaracteristiqueService {
       ]),
     },
     {
-      Nom: CaracteritiqueName.CHARISME,
+      Nom: CaracteristiqueName.CHARISME,
       Description:
         "Représente la force de caractère, l'assurance et la subtilité du personnage dans sa communication.",
       Attributs: AttributService.findAttributsByNames([
@@ -62,7 +62,7 @@ export class CaracteristiqueService {
     return this.CaracteristiquesList;
   }
 
-  static getCaracteristique(name: CaracteritiqueName) {
+  static getCaracteristique(name: CaracteristiqueName) {
     return this.CaracteristiquesList.find((c) => c.Nom === name);
   }
 }

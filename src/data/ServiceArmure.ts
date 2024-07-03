@@ -1,5 +1,5 @@
 import { ArmureItem } from "src/model/Armures";
-import { CaracteritiqueName } from "src/model/Caracteristique";
+import { CaracteristiqueName } from "src/model/Caracteristique";
 
 export class ServiceArmure {
   private static ArmureItems: Array<ArmureItem> = [
@@ -72,7 +72,7 @@ export class ServiceArmure {
       Prix: 800,
       Defense: 2,
       Special: [
-        `Le score d'${CaracteritiqueName.AGILITE} est limité à 4 pour tous les tests`,
+        `Le score d'${CaracteristiqueName.AGILITE} est limité à 4 pour tous les tests`,
       ],
     },
     {
@@ -84,7 +84,7 @@ export class ServiceArmure {
       Prix: 4000,
       Defense: 3,
       Special: [
-        `Le score d'${CaracteritiqueName.AGILITE} est limité à 4 pour tous les tests`,
+        `Le score d'${CaracteristiqueName.AGILITE} est limité à 4 pour tous les tests`,
       ],
     },
     {
@@ -96,7 +96,7 @@ export class ServiceArmure {
       Prix: 15000,
       Defense: 4,
       Special: [
-        `Le score d'${CaracteritiqueName.AGILITE} est limité à 3 pour tous les tests`,
+        `Le score d'${CaracteristiqueName.AGILITE} est limité à 3 pour tous les tests`,
         "Résistant aux armes énergétiques",
       ],
     },

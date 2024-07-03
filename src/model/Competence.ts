@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { CaracteritiqueName } from "./Caracteristique";
+import { CaracteristiqueName } from "./Caracteristique";
 
 export type Competence = {
   Nom: CompetenceName;
-  BaseCaracteristique: CaracteritiqueName;
+  BaseCaracteristique: CaracteristiqueName;
   ShortDescription: string;
 };
 
@@ -33,103 +33,103 @@ export class CompetenceService {
   private static CompetencesList: Array<Competence> = [
     {
       Nom: CompetenceName.ARME_A_DISTANCE,
-      BaseCaracteristique: CaracteritiqueName.ADRESSE,
+      BaseCaracteristique: CaracteristiqueName.ADRESSE,
       ShortDescription: "Utiliser une arme à distance avec efficacité.",
     },
     {
       Nom: CompetenceName.ATHLÉTISME,
-      BaseCaracteristique: CaracteritiqueName.VIGUEUR,
+      BaseCaracteristique: CaracteristiqueName.VIGUEUR,
       ShortDescription: "Sauter, grimper, soulever de lourdes charges.",
     },
     {
       Nom: CompetenceName.COORDINATION,
-      BaseCaracteristique: CaracteritiqueName.AGILITE,
+      BaseCaracteristique: CaracteristiqueName.AGILITE,
       ShortDescription:
         "Garder l'équilibre, effectuer des acrobaties, habilité manuelle.",
     },
     {
       Nom: CompetenceName.CORPS_A_CORPS,
-      BaseCaracteristique: CaracteritiqueName.VIGUEUR,
+      BaseCaracteristique: CaracteristiqueName.VIGUEUR,
       ShortDescription: "Porter une attaque avec une arme au corps à corps.",
     },
     {
       Nom: CompetenceName.DISCRETION,
-      BaseCaracteristique: CaracteritiqueName.AGILITE,
+      BaseCaracteristique: CaracteristiqueName.AGILITE,
       ShortDescription: "S'approcher sans attirer l'attention.",
     },
     {
       Nom: CompetenceName.PILOTAGE,
-      BaseCaracteristique: CaracteritiqueName.ADRESSE,
+      BaseCaracteristique: CaracteristiqueName.ADRESSE,
       ShortDescription: "Manoeuver un véhicule terrestre ou aérospatial.",
     },
     {
       Nom: CompetenceName.HISTOIRE,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Réagir et argumenter sur un fait lié à l'Histoire de la galaxie.",
     },
     {
       Nom: CompetenceName.OCCULTISME,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Réagir et argumenter sur un fait lié à un culte, une religions ou une croyance.",
     },
     {
       Nom: CompetenceName.MÉDECINE,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Appliquer des premier soins ou manipuler des outils de médecine.",
     },
     {
       Nom: CompetenceName.SURVIE,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Trouver un chemin sûr, reconnaître des substances nutritives ou dangereuses.",
     },
     {
       Nom: CompetenceName.INGÉNIERIE,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Réparer un objet mécanique ou interagir avec un terminal informatique.",
     },
     {
       Nom: CompetenceName.ENTROPIE_DU_FLUIDE,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Invoquer des matérialisation du Fluide, ressentir des sources d’énergie du Fluide.",
     },
     {
       Nom: CompetenceName.CHARME,
-      BaseCaracteristique: CaracteritiqueName.CHARISME,
+      BaseCaracteristique: CaracteristiqueName.CHARISME,
       ShortDescription:
         "Obtenir une faveur de la cible sans avoir recours à la négociation.",
     },
     {
       Nom: CompetenceName.NÉGOCIATION,
-      BaseCaracteristique: CaracteritiqueName.CHARISME,
+      BaseCaracteristique: CaracteristiqueName.CHARISME,
       ShortDescription:
         "Marchander, argumenter sur une decision de manière plus ou moins rationnelle.",
     },
     {
       Nom: CompetenceName.TROMPERIE,
-      BaseCaracteristique: CaracteritiqueName.CHARISME,
+      BaseCaracteristique: CaracteristiqueName.CHARISME,
       ShortDescription:
         "Déguiser un scène ou une personne, mentir à un individu.",
     },
     {
       Nom: CompetenceName.PERSPICACITÉ,
-      BaseCaracteristique: CaracteritiqueName.CHARISME,
+      BaseCaracteristique: CaracteristiqueName.CHARISME,
       ShortDescription:
         "Capacité passive à detecter le mensonge ou mettre en evidence ce qui ne l'est pas.",
     },
     {
       Nom: CompetenceName.INTIMIDATION,
-      BaseCaracteristique: CaracteritiqueName.CHARISME,
+      BaseCaracteristique: CaracteristiqueName.CHARISME,
       ShortDescription: "Obtenir un service ou un objet par la menace.",
     },
     {
       Nom: CompetenceName.VIGILANCE,
-      BaseCaracteristique: CaracteritiqueName.INTELLIGENCE,
+      BaseCaracteristique: CaracteristiqueName.INTELLIGENCE,
       ShortDescription:
         "Detecter le danger, remarquer des détails significatif.",
     },
@@ -139,7 +139,7 @@ export class CompetenceService {
    * @param name List all competences with this Caracteristique by default
    * @returns
    */
-  static getCompetencesByCaracteristique(name: CaracteritiqueName) {
+  static getCompetencesByCaracteristique(name: CaracteristiqueName) {
     return this.CompetencesList.filter((c) => c.BaseCaracteristique === name);
   }
   /**
