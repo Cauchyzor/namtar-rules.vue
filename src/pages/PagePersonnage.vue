@@ -31,9 +31,9 @@
     <div class="q-pa-md q-gutter-md row">
       <CaracteristiqueCard
         class="col-md col-sm-12 col-xs-12"
-        v-for="carac in CaracteritiquesList"
-        :key="carac.Nom"
-        :Caracteristique="carac"
+        v-for="c in CaractéristiquesList"
+        :key="c.Nom"
+        :Caracteristique="c"
       />
     </div>
 
@@ -259,7 +259,7 @@ export default defineComponent({
     return {
       AttributsName,
       AttributesMap: AttributService.getAttributesMap(),
-      CaracteritiquesList: CaracteristiqueService.getAllCaracteristiques(),
+      CaractéristiquesList: CaracteristiqueService.getAllCaractéristiques(),
       CompetencesList: CompetenceService.getAllCompetences(),
       AptitudeList: ServiceAptitude.findAllAptitudes().filter((_, i) => i < 5),
     };

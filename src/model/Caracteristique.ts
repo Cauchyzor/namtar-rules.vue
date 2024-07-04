@@ -16,7 +16,7 @@ export enum CaracteristiqueName {
 }
 
 export class CaracteristiqueService {
-  private static CaracteristiquesList: Array<Caracteristique> = [
+  private static CaractéristiquesList: Array<Caracteristique> = [
     {
       Nom: CaracteristiqueName.VIGUEUR,
       Description:
@@ -58,11 +58,11 @@ export class CaracteristiqueService {
     },
   ];
 
-  static getAllCaracteristiques() {
-    return this.CaracteristiquesList;
+  static getAllCaractéristiques() {
+    return this.CaractéristiquesList;
   }
 
   static getCaracteristique(name: CaracteristiqueName) {
-    return this.CaracteristiquesList.find((c) => c.Nom === name);
+    return this.CaractéristiquesList.find((c) => c.Nom === name);
   }
 }
