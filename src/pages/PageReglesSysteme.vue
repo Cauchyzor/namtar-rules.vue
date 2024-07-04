@@ -143,7 +143,7 @@
             <div class="col bg-secondary q-pa-sm">
               <p class="text-uppercase text-grey">Exceptionnel</p>
               <p class="text-bold text-grey">DD6</p>
-              <p class="text-bold">dés</p>
+              <p class="text-bold">13 dés</p>
             </div>
           </div>
           <p class="text-overline">
