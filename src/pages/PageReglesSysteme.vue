@@ -63,6 +63,15 @@
         dés de supériorité tant qu'il ne c'est pas déplacé.
       </p>
       <p>
+        Les <strong>avantages</strong> et les
+        <strong>désavantages</strong> permettent de qualifier la réussite ou
+        l’échec d'un jet ou d'un test. Ils permettent aux MJ et aux joueurs de
+        créer des effets bénéfiques ou délétères par le biais de la narration.
+        Par exemple, un jet d'attaque qui échoue mais génère deux avantages peut
+        déstabiliser la cible et la faire trébucher. Plus il y a d'avantages ou
+        de désavantages dégénéré, et plus les effets sont forts.
+      </p>
+      <p>
         Les <strong>triomphes</strong> et les
         <strong>désastres</strong> caractérisent une action charnière et
         particulièrement épique. Le MJ choisi alors les effets narratifs qui
@@ -75,6 +84,126 @@
         renvoyé sur un allié...
       </p>
     </div>
+    <h6>Exemples</h6>
+    <div class="row justify-left q-gutter-md">
+      <q-item class="col">
+        <q-item-section top>
+          <q-item-label>1 avantage - Bonne entente</q-item-label>
+          <q-item-label caption>
+            Lors d'une négociation, vous pouvez recevoir un cadeau en plus de
+            votre transaction.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>1 avantage - déstabilisation</q-item-label>
+          <q-item-label caption>
+            L'adversaire subit 1 dé de handicap sur son prochain jet de défense
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>1 avantage - adrenaline</q-item-label>
+          <q-item-label caption>
+            Vous gagnez 1 dé de supériorité sur votre prochain test ou prochain
+            jet d'attaque
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>2 avantage - moral</q-item-label>
+          <q-item-label caption>
+            Vous gagnez 1 dé de supériorité sur tout vos prochains jet pendant
+            le tour.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>2 avantage - bonne fortune</q-item-label>
+          <q-item-label caption>
+            Vous réussissez a récupérer un objet supplémentaire sur un larcin .
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>3 avantage - chance</q-item-label>
+          <q-item-label caption>
+            Vous provoquez un effet similaire a un triomphe ou un désastre sur
+            votre adversaire.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </div>
+    <div class="row justify-left q-gutter-md">
+      <q-item class="col">
+        <q-item-section top>
+          <q-item-label>1 désavantage - gène</q-item-label>
+          <q-item-label caption>
+            Vous infligez un dé de handicap sur le jet de discrétion d'un
+            coéquipier
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>1 désavantage - déstabilisation</q-item-label>
+          <q-item-label caption>
+            Vous subissez un dé de handicap sur votre prochain jet de défense
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>2 désavantage - épuisement</q-item-label>
+          <q-item-label caption> Vous perdez 1 dé d'ésotérisme. </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>3 désavantage - malchance</q-item-label>
+          <q-item-label caption>
+            Vous provoquez un effet similaire a un désastre ou un désastre pour
+            votre adversaire.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </div>
+    <div class="row justify-left q-gutter-md">
+      <q-item class="col">
+        <q-item-section top>
+          <q-item-label>1 triomphe - gain de pouvoir</q-item-label>
+          <q-item-label caption> Vous regagnez 1 dé d'ésotérisme </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>2 triomphe - adrenaline</q-item-label>
+          <q-item-label caption>
+            Vous gagnez immédiatement 1 point d'action
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>1 désastre - panique</q-item-label>
+          <q-item-label caption> Vous perdez votre reaction. </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
+        <q-item-section top>
+          <q-item-label>2 désavantage - maladresse</q-item-label>
+          <q-item-label caption>
+            Votre aptitude touche en partie un allié à proximité de la cible.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </div>
+
     <h5>Supériorité et Handicap</h5>
     <p>
       Grâce à certaines aptitudes, ou sous les effets narratif d'un triomphe ou
