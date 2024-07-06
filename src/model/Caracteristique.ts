@@ -45,7 +45,7 @@ export class CaracteristiqueService {
       Description:
         "Mesure la capacité de raisonnement, la mémoire et la sagesse d'un personnage.",
       Attributs: AttributService.findAttributsByNames([
-        AttributsName.ÉSOTÉRISME,
+        AttributsName.SPIRITHIUM,
       ]),
     },
     {
@@ -53,7 +53,7 @@ export class CaracteristiqueService {
       Description:
         "Représente la force de caractère, l'assurance et la subtilité du personnage dans sa communication.",
       Attributs: AttributService.findAttributsByNames([
-        AttributsName.ÉSOTÉRISME,
+        AttributsName.SPIRITHIUM,
       ]),
     },
   ];

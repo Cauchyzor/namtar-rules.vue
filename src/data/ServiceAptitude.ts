@@ -148,7 +148,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Drain spirituel",
-      `La cible perd 1 dés d'${AttributsName.ÉSOTÉRISME} par succès net et vous en gagnez 1 par avantage net.`,
+      `La cible perd 1 dés d'${AttributsName.SPIRITHIUM} par succès net et vous en gagnez 1 par avantage net.`,
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
@@ -196,7 +196,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Illusion Cauchemardesque",
-      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé d'${AttributsName.ÉSOTÉRISME} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteristiqueName.CHARISME} inférieur au résultat sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé d'${AttributsName.ÉSOTÉRISME} par menaces net.`,
+      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé d'${AttributsName.SPIRITHIUM} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteristiqueName.CHARISME} inférieur au résultat sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé d'${AttributsName.SPIRITHIUM} par menaces net.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.TROMPERIE, 1],
@@ -205,7 +205,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Animation morbide",
-      `Une créature que vous pouvez contrôler à son tour emerge du cadavre organique le plus proche. Cette creature possède 2 point dans toutes ses caractéristique, est considéré de niveau 1, ce déplace de 1m par action, et attaque à mains nue. Elle attaque aussitôt après être invoquée et lance ensuite son initiative comme n'importe quelle creature. Vous devez consommer autant de dés d'${AttributsName.ÉSOTÉRISME} que le niveau du cadavre ciblé. Les creatures peuvent vivre autant de tour que votre valeur d'${CaracteristiqueName.INTELLIGENCE}, et vous pouvez en contrôler autant que la somme de vos rang en ${CompetenceName.MÉDECINE} et ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
+      `Une créature que vous pouvez contrôler à son tour emerge du cadavre organique le plus proche. Cette creature possède 2 point dans toutes ses caractéristique, est considéré de niveau 1, ce déplace de 1m par action, et attaque à mains nue. Elle attaque aussitôt après être invoquée et lance ensuite son initiative comme n'importe quelle creature. Vous devez consommer autant de dés d'${AttributsName.SPIRITHIUM} que le niveau du cadavre ciblé. Les creatures peuvent vivre autant de tour que votre valeur d'${CaracteristiqueName.INTELLIGENCE}, et vous pouvez en contrôler autant que la somme de vos rang en ${CompetenceName.MÉDECINE} et ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.MÉDECINE, 1],
@@ -238,7 +238,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       '"Comme à l’entraînement"',
-      `Vous consommez 1 dé s'ésotérisme et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}.`,
+      `Vous consommez 1 dé de ${AttributsName.SPIRITHIUM} et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}.`,
       AptitudeTypeName.POSTURE,
       new Map([[CompetenceName.PILOTAGE, 1]])
     ),
@@ -271,7 +271,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Rupture mentale",
-      `Vous consommez autant de dé d’${AttributsName.ÉSOTÉRISME} que souhaitez et les opposez aux dés d’${AttributsName.ÉSOTÉRISME} restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction par défaut jusqu'à son prochain tour.`,
+      `Vous consommez autant de dé d’${AttributsName.SPIRITHIUM} que souhaitez et les opposez aux dés d’${AttributsName.SPIRITHIUM} restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction par défaut jusqu'à son prochain tour.`,
       AptitudeTypeName.INJONCTION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -280,7 +280,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Balise victorieuse",
-      `Vous invoquez sur votre position une représentation de vos convictions que seul vous pouvez voir, et qui galvanise toutes les créatures autours. Cette balise possède autant de charges que votre valeur d'${AttributsName.ÉSOTÉRISME}. Les membres à moins de 9m de la balise peuvent à chacun de leur tour relancer un dé lors de leur jet d'attaque, et consommer alors une charge de la balise. Lorsqu'elle atteint 0 charge, elle se désintègre.`,
+      `Vous invoquez sur votre position une représentation de vos convictions que seul vous pouvez voir, et qui galvanise toutes les créatures autours. Cette balise possède autant de charges que votre valeur d'${AttributsName.SPIRITHIUM}. Les membres à moins de 9m de la balise peuvent à chacun de leur tour relancer un dé lors de leur jet d'attaque, et consommer alors une charge de la balise. Lorsqu'elle atteint 0 charge, elle se désintègre.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.HISTOIRE, 1],
@@ -307,7 +307,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Égide",
-      `Vous gagnez 1 dé de supériorité par rang de ${CompetenceName.VIGILANCE} contre les attaques au corps à corps contre vous. Pour chaque attaque menaces générées sur le jet d'attaque contre vous, celui qui maintient la bénédiction consomme 1 dé d'${AttributsName.ÉSOTÉRISME}. La bénédiction prends fin si le prodigue n'a plus de dés d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous gagnez 1 dé de supériorité par rang de ${CompetenceName.VIGILANCE} contre les attaques au corps à corps contre vous. Pour chaque attaque menaces générées sur le jet d'attaque contre vous, celui qui maintient la bénédiction consomme 1 dé d'${AttributsName.SPIRITHIUM}. La bénédiction prends fin si le prodigue n'a plus de dés d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.BENEDICTION,
       new Map([
         [CompetenceName.OCCULTISME, 1],
@@ -331,7 +331,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Nova morbide",
-      `Doit cibler un cadavre. Ce dernier libère une énergie mortelle et blesse toutes les créatures sur 3m autour de lui. Lancez autant de d6 que le maximum dé d’ésotérisme du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}. Vous infligez 3 point de dégâts par succès.`,
+      `Doit cibler un cadavre. Ce dernier libère une énergie mortelle et blesse toutes les créatures sur 3m autour de lui. Lancez autant de d6 que le maximum de dé de ${AttributsName.SPIRITHIUM} du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}. Vous infligez 3 point de dégâts par succès.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -340,7 +340,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Griffe dimensionnelle",
-      `Vous réalisez un jet d'attaque en opposant vos dés d'ésotérisme restant à la défense de la cible. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous réalisez un jet d'attaque en opposant vos dés de ${AttributsName.SPIRITHIUM} restant à la défense de la cible. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 dé d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -349,7 +349,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Echophagie",
-      `A chaque fois que vous regagnez au moins 1 dé d'${AttributsName.ÉSOTÉRISME}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
+      `A chaque fois que vous regagnez au moins 1 dé d'${AttributsName.SPIRITHIUM}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.SURVIE, 1],
@@ -412,7 +412,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Anticipation surnaturelle",
-      `Vous pouvez à tout moment décider de consommer autant de dé d'ésotérisme que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}.`,
+      `Vous pouvez à tout moment décider de consommer autant de dé de ${AttributsName.SPIRITHIUM} que votre score de ${CompetenceName.PERSPICACITÉ} pour les ajouter à vos dés de ${AttributsName.REFLEXES}.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.PERSPICACITÉ, 1],
@@ -430,7 +430,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Foulée de l'ombre",
-      `Vous vous déplacez instantanément sans déclencher d'attaque d'opportunité jusqu'à la créature ciblée sur une distance de 9m pour chaque rang en ${CompetenceName.ATHLÉTISME}. Votre prochaine attaque au corps à corps ou ${AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS} coûte 1 point d'action en moins (minimum 1). Vous consommez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous vous déplacez instantanément sans déclencher d'attaque d'opportunité jusqu'à la créature ciblée sur une distance de 9m pour chaque rang en ${CompetenceName.ATHLÉTISME}. Votre prochaine attaque au corps à corps ou ${AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS} coûte 1 point d'action en moins (minimum 1). Vous consommez 1 dé d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.MAGOUILLE, 1],
@@ -439,7 +439,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Sanctuaire",
-      `Les cibles de la bénédiction ne peuvent pas être la cible d'agressions. La bénédiction est retirée immédiatement si la cible de la bénédiction effectue une attaque ou une aptitude qui blesse une creature. A chaque début de tour du lanceur, il consomme et lance 1 dé d'${AttributsName.ÉSOTÉRISME}. Si la valeur du dé est supérieur à la somme de sa valeur de ${CompetenceName.NÉGOCIATION} et de ${CompetenceName.CHARME}, la bénédiction prend fin immédiatement.`,
+      `Les cibles de la bénédiction ne peuvent pas être la cible d'agressions. La bénédiction est retirée immédiatement si la cible de la bénédiction effectue une attaque ou une aptitude qui blesse une creature. A chaque début de tour du lanceur, il consomme et lance 1 dé d'${AttributsName.SPIRITHIUM}. Si la valeur du dé est supérieur à la somme de sa valeur de ${CompetenceName.NÉGOCIATION} et de ${CompetenceName.CHARME}, la bénédiction prend fin immédiatement.`,
       AptitudeTypeName.BENEDICTION,
       new Map([
         [CompetenceName.CHARME, 1],
@@ -475,7 +475,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Fuite de pouvoir",
-      `Vous dépensez 1 dé d'${AttributsName.ÉSOTÉRISME}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.EVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous dépensez 1 dé d'${AttributsName.SPIRITHIUM}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.EVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.OCCULTISME, 1],
@@ -484,7 +484,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Extraction de pensée",
-      `La cible doit être neutralisée. Vous dépensez 1 dés d'${AttributsName.ÉSOTÉRISME}. Vous pouvez alors extirper de sa mémoire une pensée qui répond à une indication que vous pouvez intuiter clairement, quelques seconde d'un événement qu'elle aurait vécu et qui vous apparaît comme si vous vous y étiez à sa place. Pour chaque avantage vous pouvez préciser la pensée, étendre la durée du souvenir. Si il n'y a aucun succès mais quelques avantages, vous pouvez récupéré des pensée autres mais aucune correspondant à ce que vous cherchiez précisément`,
+      `La cible doit être neutralisée. Vous dépensez 1 dés d'${AttributsName.SPIRITHIUM}. Vous pouvez alors extirper de sa mémoire une pensée qui répond à une indication que vous pouvez intuiter clairement, quelques seconde d'un événement qu'elle aurait vécu et qui vous apparaît comme si vous vous y étiez à sa place. Pour chaque avantage vous pouvez préciser la pensée, étendre la durée du souvenir. Si il n'y a aucun succès mais quelques avantages, vous pouvez récupéré des pensée autres mais aucune correspondant à ce que vous cherchiez précisément`,
       AptitudeTypeName.EVOCATION,
       new Map([
         [CompetenceName.PERSPICACITÉ, 1],
@@ -493,7 +493,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Morsure de Namtar",
-      "Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé d'ésotérisme par Triomphes et par avantages.",
+      `Vous réaliser un jet d'attaque et infligez 2 point de dégât par succès. Vous volez à la cible 1 dé de ${AttributsName.SPIRITHIUM} par Triomphes et par avantages.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -503,7 +503,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Vœu de puissance",
-      `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé d'${AttributsName.ÉSOTÉRISME} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
+      `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé d'${AttributsName.SPIRITHIUM} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -513,7 +513,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Foulée démoniaque",
-      `Vous pouvez dépenser un dé d'${AttributsName.ÉSOTÉRISME} pour gagnez 1 point d'action qui doit être dépensé pour effectuer un mouvement. Vous ne pouvez utiliser cette aptitude qu'une seule fois par tour.`,
+      `Vous pouvez dépenser un dé d'${AttributsName.SPIRITHIUM} pour gagnez 1 point d'action qui doit être dépensé pour effectuer un mouvement. Vous ne pouvez utiliser cette aptitude qu'une seule fois par tour.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -523,7 +523,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Vampire d'âme",
-      `Vous absorbez l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
+      `Vous absorbez l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.SPIRITHIUM}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -534,7 +534,7 @@ export class ServiceAptitude {
     // RANK MAJEUR
     new Aptitude(
       "Puits de flétrissure",
-      `Le cadavre visé à moins de 27m dégage une aura nécrotique. Toutes les creatures à moins de 9m subissent subissent autant de dés de handicap que de dé d'${AttributsName.ÉSOTÉRISME} sur tout leurs jet d'attaque.`,
+      `Le cadavre visé à moins de 27m dégage une aura nécrotique. Toutes les creatures à moins de 9m subissent subissent autant de dés de handicap que de dé d'${AttributsName.SPIRITHIUM} sur tout leurs jet d'attaque.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 2],
@@ -600,7 +600,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Singularité",
-      `Vous créez un nano trou noir sur l'emplacement de votre choix à 18m ou moins de vous. Toutes les creatures à 9m ou moins de la singularité et dont le score de ${CaracteristiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés d'${AttributsName.ÉSOTÉRISME} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
+      `Vous créez un nano trou noir sur l'emplacement de votre choix à 18m ou moins de vous. Toutes les creatures à 9m ou moins de la singularité et dont le score de ${CaracteristiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés d'${AttributsName.SPIRITHIUM} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
@@ -615,7 +615,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Revers cinétique",
-      `Vous dépensez autant de dé d'${AttributsName.ÉSOTÉRISME} au jets de défense de la cible de votre choix à 9m ou moins de vous. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous dépensez autant de dé d'${AttributsName.SPIRITHIUM} au jets de défense de la cible de votre choix à 9m ou moins de vous. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -630,13 +630,13 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Eruption",
-      `Vous incinérez toute la zone en face de vous, sur un cone de 9m de long et jusqu'a 3m de large. Toutes les creatures subissent 3 point de dégâts par succès et par triomphe. Vous dépensez 2 dé d'${AttributsName.ÉSOTÉRISME}`,
+      `Vous incinérez toute la zone en face de vous, sur un cone de 9m de long et jusqu'a 3m de large. Toutes les creatures subissent 3 point de dégâts par succès et par triomphe. Vous dépensez 2 dé d'${AttributsName.SPIRITHIUM}`,
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]])
     ),
     new Aptitude(
       "Cri de frustration",
-      `La cible qui tente d'attaquer perd tout ses dés de supériorité et subit 1 point de dégât part dé perdu de cette manière.Vous dépensé 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      `La cible qui tente d'attaquer perd tout ses dés de supériorité et subit 1 point de dégât part dé perdu de cette manière.Vous dépensé 1 dé d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.DISCRETION, 2]])
     ),
@@ -673,7 +673,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Aura de la liche",
-      `Vous gagnez 1 dés de supériorité pour chaque cadavres a moins de 27m  de vous, jusqu'a un maximum égal a votre score d'${AttributsName.ÉSOTÉRISME}.`,
+      `Vous gagnez 1 dés de supériorité pour chaque cadavres a moins de 27m  de vous, jusqu'a un maximum égal a votre score d'${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.MÉDECINE, 2],
@@ -718,7 +718,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Evocations rapides",
-      `Vous pouvez dépensez 1 dé d'${AttributsName.ÉSOTÉRISME} en plus lors de vos aptitudes de type ${AptitudeTypeName.EVOCATION}, et vous ne provoquez plus d'attaque d’opportunités`,
+      `Vous pouvez dépensez 1 dé d'${AttributsName.SPIRITHIUM} en plus lors de vos aptitudes de type ${AptitudeTypeName.EVOCATION}, et vous ne provoquez plus d'attaque d’opportunités`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.TROMPERIE, 2],
@@ -727,7 +727,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Arme consciente",
-      `L'arme semble habité et murmure des conseil dans une langue inconnue que seul son porteur au moment du déclenchement de l'aptitude peut entendre. Son porteur gagne 1 Réaction par tour tant qu'il possède l'arme en mains mais perd 1 dé d'${AttributsName.ÉSOTÉRISME} par désastre sur ses jet d'attaques.`,
+      `L'arme semble habité et murmure des conseil dans une langue inconnue que seul son porteur au moment du déclenchement de l'aptitude peut entendre. Son porteur gagne 1 Réaction par tour tant qu'il possède l'arme en mains mais perd 1 dé d'${AttributsName.SPIRITHIUM} par désastre sur ses jet d'attaques.`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.TROMPERIE, 2],
@@ -737,7 +737,7 @@ export class ServiceAptitude {
     // TODO : Aptitudes : Voies Ancestrale (Histoire + compétences martiales)
     // TODO : Aptitudes : Voies Primitives (Survie + compétences martiales)
     // TODO : Creation d'une prothèse d'ingé (ethnotraits ? // entropie du fluide // Aptitude particulière ?)
-    // TODO : Aptitude : régénération de dé d’ésotérisme
+    // TODO : Aptitude : régénération de dé de Spirithium
     // TODO : Aptitude : Ajout de point d'action ou de réaction
     // TODO : Aptitude pour achevez des cibles aux portes de la mort ?
     // TODO : Aptitude spéciales contres les invocation

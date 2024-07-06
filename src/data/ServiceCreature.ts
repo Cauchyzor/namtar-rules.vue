@@ -23,7 +23,7 @@ export class ServiceCreature {
         [AttributsName.PV, "7 + 2d4"],
         [AttributsName.DV, "3d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.ÉSOTÉRISME, "3"],
+        [AttributsName.SPIRITHIUM, "3"],
       ]),
       new Map([
         [CompetenceName.INGÉNIERIE, 1],
@@ -48,7 +48,7 @@ export class ServiceCreature {
         [AttributsName.PV, "12 + 2d4"],
         [AttributsName.DV, "3d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.ÉSOTÉRISME, "2d6"],
+        [AttributsName.SPIRITHIUM, "2d6"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -78,7 +78,7 @@ export class ServiceCreature {
         [AttributsName.PV, "16 + 7d4"],
         [AttributsName.DV, "8d4"],
         [AttributsName.REFLEXES, "4d6"],
-        [AttributsName.ÉSOTÉRISME, "4d6"],
+        [AttributsName.SPIRITHIUM, "4d6"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -114,7 +114,7 @@ export class ServiceCreature {
         [AttributsName.PV, "28 + 12d4"],
         [AttributsName.DV, "13d4"],
         [AttributsName.REFLEXES, "3d6"],
-        [AttributsName.ÉSOTÉRISME, "7d6"],
+        [AttributsName.SPIRITHIUM, "7d6"],
       ]),
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],

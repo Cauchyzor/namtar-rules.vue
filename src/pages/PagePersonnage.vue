@@ -115,15 +115,15 @@
           <q-item-section avatar>
             <q-icon
               color="primary"
-              :name="AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Icon"
+              :name="AttributesMap.get(AttributsName.SPIRITHIUM)?.Icon"
             ></q-icon>
           </q-item-section>
           <q-item-section>
             <q-item-label>{{
-              AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Nom
+              AttributesMap.get(AttributsName.SPIRITHIUM)?.Nom
             }}</q-item-label>
             <q-item-label caption>{{
-              AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Description
+              AttributesMap.get(AttributsName.SPIRITHIUM)?.Description
             }}</q-item-label>
           </q-item-section>
         </q-item>

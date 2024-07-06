@@ -111,7 +111,7 @@
                 <q-item-section avatar>
                   <q-icon
                     color="primary"
-                    :name="AttributesMap.get(AttributsName.ÉSOTÉRISME)?.Icon"
+                    :name="AttributesMap.get(AttributsName.SPIRITHIUM)?.Icon"
                   ></q-icon>
                 </q-item-section>
                 <q-item-section>

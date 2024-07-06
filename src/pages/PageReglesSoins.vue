@@ -26,7 +26,7 @@
       </li>
     </ul>
     <p>
-      Les <strong>dés d'ésotérisme</strong> se récupèrent totalement lors des
+      Les <strong>dés de Spirithium</strong> se récupèrent totalement lors des
       repos long.
     </p>
     <h4>Médecine</h4>

@@ -17,12 +17,12 @@ export type Attribut = {
 export enum AttributsName {
   PV = "Point de vie",
   REFLEXES = "Réflexes",
-  ÉSOTÉRISME = "Ésotérisme", //TODO : Remplacer par Sprithium ?
+  SPIRITHIUM = "Spirithium",
   DV = "Dès de vie",
   INITIATIVE = "Initiative",
   DÉPLACEMENT = "Déplacement",
   //TODO : Ajouter la vision
-  //TODO : Notion de Puissance ?: Le spiritum serait uniquement sur l’intelligence, et la puissance sur le charisme -> Spiritum ajoutes des dés d'ésotérisme, la puissance guide la létalité des sorts (ou l'inverse)
+  //TODO : Notion de Puissance ?: Le spiritum serait uniquement sur l’intelligence, et la puissance sur le charisme
 }
 
 export class AttributService {
@@ -49,9 +49,8 @@ export class AttributService {
     },
 
     {
-      Nom: AttributsName.ÉSOTÉRISME,
-      Description:
-        "Qualifie votre lien avec le fluide et la puissance que vous pouvez en tirer. Vous gagnez 1d6 à votre pool de dés d’ésotérisme par point en Intelligence et en Charisme.",
+      Nom: AttributsName.SPIRITHIUM,
+      Description: `Qualifie votre lien avec le fluide et la puissance que vous pouvez en tirer. Vous gagnez 1d6 à votre pool de dés de ${AttributsName.SPIRITHIUM} par point en Intelligence et en Charisme.`,
       Icon: mdiLightningBolt,
     },
     {

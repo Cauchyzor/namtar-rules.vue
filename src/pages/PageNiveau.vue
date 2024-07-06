@@ -14,7 +14,6 @@
     <ul>
       <li>Choisissez une nouvelle aptitude parmi celles disponibles</li>
       <li>Mettez à jour votre nombre de point de vie</li>
-      <li>Mettez à jour votre nombre de dé d'ésotérisme</li>
     </ul>
     <p>
       Pour chaque palier de 2 niveau a partir du niveau 1 (niveaux 3, 5 ...)

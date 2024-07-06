@@ -160,7 +160,7 @@
       <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
         <q-item-section top>
           <q-item-label>2 désavantage - épuisement</q-item-label>
-          <q-item-label caption> Vous perdez 1 dé d'ésotérisme. </q-item-label>
+          <q-item-label caption> Vous perdez 1 dé de Spirithium. </q-item-label>
         </q-item-section>
       </q-item>
       <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">
@@ -177,7 +177,9 @@
       <q-item class="col">
         <q-item-section top>
           <q-item-label>1 triomphe - gain de pouvoir</q-item-label>
-          <q-item-label caption> Vous regagnez 1 dé d'ésotérisme </q-item-label>
+          <q-item-label caption>
+            Vous regagnez 1 dé de Spirithium
+          </q-item-label>
         </q-item-section>
       </q-item>
       <q-item class="col-12 col-sm-4 col-md-3 col-xl-2">

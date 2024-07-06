@@ -51,7 +51,7 @@ export class Creature {
       [AttributsName.PV, "1+1d4"],
       [AttributsName.DV, "0"],
       [AttributsName.REFLEXES, "0"],
-      [AttributsName.ÉSOTÉRISME, "0"],
+      [AttributsName.SPIRITHIUM, "0"],
     ]),
     competences: Map<CompetenceName, number> = new Map([]),
     aptitudes: Array<Aptitude> = [],
