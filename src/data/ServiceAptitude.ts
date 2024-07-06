@@ -84,10 +84,28 @@ export class ServiceAptitude {
       new Map([[CompetenceName.ARME_A_DISTANCE, 1]])
     ),
     new Aptitude(
+      "Forte tête",
+      `Lorsque vous êtes la cible d'${AptitudeTypeName.INJONCTION}, la cible subit 1 dé de handicap un 1 dé supplémentaire pour tout les deux point de ${CaracteristiqueName.CHARISME} que vous possédez. Vous montez au rang 1 votre compétence de ${CompetenceName.NÉGOCIATION}, ou d'${CompetenceName.INTIMIDATION} `,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.DISCRETION, 2]])
+    ),
+    new Aptitude(
       "Attraction",
       "La cible est projetée à terre dans votre direction sur une distance de 1m par succès net au maximum. Elle subit également 1 point de dégâts par avantages net.",
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
+    ),
+    new Aptitude(
+      "Riposte",
+      `Vous mettez fin a votre ${AptitudeTypeName.POSTURE} si vous en aviez une, et vous ajoutez votre rang de ${CompetenceName.CORPS_A_CORPS} ou de ${CompetenceName.COORDINATION} a votre prochain jet de défense.`,
+      AptitudeTypeName.REACTION,
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
+    ),
+    new Aptitude(
+      "Couteaux de glace",
+      "Vous augmentez de 2m votre vitesse de déplacement. Cette posture prend fin si vous effectuez une attaque ou une aptitude.",
+      AptitudeTypeName.POSTURE,
+      new Map([[CompetenceName.ATHLÉTISME, 1]])
     ),
     new Aptitude(
       "Ruée",
@@ -136,8 +154,8 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Pacte de maîtrise",
-      `Vous pouvez utiliser votre caractéristique de ${CaracteristiqueName.CHARISME} au lieu de celle requise pour l'arme au corps a corps que vous désignez.`,
-      AptitudeTypeName.EVOCATION,
+      `Vous pouvez utiliser votre caractéristique de ${CaracteristiqueName.CHARISME} au lieu de celle requise pour l'arme au corps a corps que vous désignez pour effectuer vos jet d'attaques au corps à corps.`,
+      AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -146,7 +164,7 @@ export class ServiceAptitude {
     new Aptitude(
       "Pacte de précision",
       `Vous pouvez utiliser votre caractéristique de ${CaracteristiqueName.CHARISME} au lieu de celle requise pour l'arme à distance que vous désignez.`,
-      AptitudeTypeName.EVOCATION,
+      AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],
@@ -178,7 +196,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Illusion Cauchemardesque",
-      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé d'${AttributsName.ÉSOTÉRISME} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteristiqueName.CHARISME} inférieur au résultat net sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé d'${AttributsName.ÉSOTÉRISME} par menaces net.`,
+      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé d'${AttributsName.ÉSOTÉRISME} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteristiqueName.CHARISME} inférieur au résultat sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé d'${AttributsName.ÉSOTÉRISME} par menaces net.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.TROMPERIE, 1],
@@ -306,6 +324,12 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Fureur",
+      `Lors d'un jet d'attaque, vous pouvez choisir de sacrifier un ou plusieurs dé de ${AttributsName.REFLEXES} pour relancer autant de d6 sur votre jet d'attaque.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
+    ),
+    new Aptitude(
       "Nova morbide",
       `Doit cibler un cadavre. Ce dernier libère une énergie mortelle et blesse toutes les créatures sur 3m autour de lui. Lancez autant de d6 que le maximum dé d’ésotérisme du cadavre, et opposez le résultat à chacun de leur score de ${AttributsName.REFLEXES}. Vous infligez 3 point de dégâts par succès.`,
       AptitudeTypeName.NÉCROMANCIE,
@@ -325,7 +349,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Echophagie",
-      `A chaque fois que vous regagnez au moins 1 dés d'${AttributsName.ÉSOTÉRISME}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
+      `A chaque fois que vous regagnez au moins 1 dé d'${AttributsName.ÉSOTÉRISME}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.SURVIE, 1],
@@ -334,8 +358,8 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Mage de guerre",
-      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque à l'arme en dépensant 1 point d'action supplémentaire et déclarant quelle aptitude vous appliquez avec votre arme.. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le résultat net des avantages et des triomphe (chacun comptant pour 1 succès). Les dégâts de l'arme sont compté normalement.`,
-      AptitudeTypeName.MANTRA,
+      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque à l'arme en dépensant 1 point d'action supplémentaire et déclarant quelle aptitude vous appliquez avec votre arme.. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le nombre d'avantages et de triomphe (chacun comptant pour 1 succès). Les dégâts de l'arme sont compté normalement.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -442,11 +466,20 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Expertise",
-      "Vous augmentez jusqu'au rang 1 deux compétences au choix.",
+      "Vous augmentez jusqu'au rang 1 deux compétences de votre choix.",
       AptitudeTypeName.ENTRAÎNEMENT,
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.MAGOUILLE, 1],
+      ])
+    ),
+    new Aptitude(
+      "Fuite de pouvoir",
+      `Vous dépensez 1 dé d'${AttributsName.ÉSOTÉRISME}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.EVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.REACTION,
+      new Map([
+        [CompetenceName.OCCULTISME, 1],
+        [CompetenceName.VIGILANCE, 1],
       ])
     ),
     new Aptitude(
@@ -479,6 +512,16 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
+      "Foulée démoniaque",
+      `Vous pouvez dépenser un dé d'${AttributsName.ÉSOTÉRISME} pour gagnez 1 point d'action qui doit être dépensé pour effectuer un mouvement. Vous ne pouvez utiliser cette aptitude qu'une seule fois par tour.`,
+      AptitudeTypeName.MANTRA,
+      new Map([
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
+        [CompetenceName.ATHLÉTISME, 1],
+        [CompetenceName.COORDINATION, 1],
+      ])
+    ),
+    new Aptitude(
       "Vampire d'âme",
       `Vous absorbez l’énergie résiduelle de la creature neutralisée ou récemment morte et regagnez 1 dé ${AttributsName.ÉSOTÉRISME}. Vous gagnez 1 dé supplémentaire si vous touchez la cible.`,
       AptitudeTypeName.NÉCROMANCIE,
@@ -489,6 +532,15 @@ export class ServiceAptitude {
       ])
     ),
     // RANK MAJEUR
+    new Aptitude(
+      "Puits de flétrissure",
+      `Le cadavre visé à moins de 27m dégage une aura nécrotique. Toutes les creatures à moins de 9m subissent subissent autant de dés de handicap que de dé d'${AttributsName.ÉSOTÉRISME} sur tout leurs jet d'attaque.`,
+      AptitudeTypeName.NÉCROMANCIE,
+      new Map([
+        [CompetenceName.CORPS_A_CORPS, 2],
+        [CompetenceName.PERSPICACITÉ, 1],
+      ])
+    ),
     new Aptitude(
       "Posture d'attrition",
       "A chacune de vos attaques au corps à corps, vous pouvez choisir de remplacer jusqu'à 2 succès par autant avantages.",
@@ -577,19 +629,16 @@ export class ServiceAptitude {
       new Map([[CompetenceName.OCCULTISME, 2]])
     ),
     new Aptitude(
-      "Fuite de pouvoir",
-      `Vous dépensez 1 dé d'${AttributsName.ÉSOTÉRISME}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.EVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
-      AptitudeTypeName.REACTION,
-      new Map([
-        [CompetenceName.OCCULTISME, 1],
-        [CompetenceName.VIGILANCE, 1],
-      ])
-    ),
-    new Aptitude(
       "Eruption",
       `Vous incinérez toute la zone en face de vous, sur un cone de 9m de long et jusqu'a 3m de large. Toutes les creatures subissent 3 point de dégâts par succès et par triomphe. Vous dépensez 2 dé d'${AttributsName.ÉSOTÉRISME}`,
       AptitudeTypeName.EVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]])
+    ),
+    new Aptitude(
+      "Cri de frustration",
+      `La cible qui tente d'attaquer perd tout ses dés de supériorité et subit 1 point de dégât part dé perdu de cette manière.Vous dépensé 1 dé d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.DISCRETION, 2]])
     ),
     new Aptitude(
       "Festin morbide",
@@ -599,6 +648,18 @@ export class ServiceAptitude {
         [CompetenceName.MÉDECINE, 1],
         [CompetenceName.OCCULTISME, 2],
       ])
+    ),
+    new Aptitude(
+      "Précision risquée",
+      "Sur le résultat net de vos jet d'attaques, vous pouvez choisir de remplacer deux succès par 1 triomphe.",
+      AptitudeTypeName.NÉCROMANCIE,
+      new Map([[CompetenceName.COORDINATION, 2]])
+    ),
+    new Aptitude(
+      "L'ombre me protège",
+      "Vous gagnez autant de dès de supériorité que votre valeurs de discretion sur vos jet d'attaques et de défense. Si une aptitude qui vous vise génère de la lumière (feu, lumière..), vous ne pouvez pas lancer de dès en opposition.",
+      AptitudeTypeName.MANTRA,
+      new Map([[CompetenceName.DISCRETION, 2]])
     ),
     // RANK SUPÉRIEUR
     new Aptitude(
@@ -611,12 +672,12 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
-      "Maîtrise somatiques",
-      `Toutes les aptitudes de type ${AptitudeTypeName.EVOCATION} et de rang ${AptitudeRang.MINEURE} coûtent 1 point d'action en moins (minimum 1).`,
-      AptitudeTypeName.ENTRAÎNEMENT,
+      "Aura de la liche",
+      `Vous gagnez 1 dés de supériorité pour chaque cadavres a moins de 27m  de vous, jusqu'a un maximum égal a votre score d'${AttributsName.ÉSOTÉRISME}.`,
+      AptitudeTypeName.MANTRA,
       new Map([
-        [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
-        [CompetenceName.COORDINATION, 2],
+        [CompetenceName.MÉDECINE, 2],
+        [CompetenceName.OCCULTISME, 2],
       ])
     ),
     new Aptitude(
@@ -629,12 +690,48 @@ export class ServiceAptitude {
       ])
     ),
     new Aptitude(
-      "Aura de la liche",
-      `Vous gagnez 1 dés de supériorité pour chaque cadavres a moins de 27m  de vous, jusqu'a un maximum égal a votre score d'${AttributsName.ÉSOTÉRISME}.`,
-      AptitudeTypeName.MANTRA,
+      "Maîtrise somatiques",
+      `Toutes les aptitudes de type ${AptitudeTypeName.EVOCATION} et de rang ${AptitudeRang.MINEURE} coûtent 1 point d'action en moins (minimum 1).`,
+      AptitudeTypeName.ENTRAÎNEMENT,
       new Map([
-        [CompetenceName.MÉDECINE, 2],
-        [CompetenceName.OCCULTISME, 2],
+        [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
+        [CompetenceName.COORDINATION, 2],
+      ])
+    ),
+    new Aptitude(
+      "Affûtage moléculaire",
+      "L'arme tranchante ciblée inflige 1 point de dégât supplémentaire par avantage et par triomphe.",
+      AptitudeTypeName.AMELIORATION,
+      new Map([
+        [CompetenceName.TROMPERIE, 2],
+        [CompetenceName.VIGILANCE, 2],
+      ])
+    ),
+    new Aptitude(
+      "Maladresse",
+      "Si la cible génère au moins 3 menaces ou 1 Désastre sur sont jet d'attaque, elle subit immédiatement 1 point de dégât par menaces et son attaque rate.",
+      AptitudeTypeName.REACTION,
+      new Map([
+        [CompetenceName.TROMPERIE, 2],
+        [CompetenceName.VIGILANCE, 2],
+      ])
+    ),
+    new Aptitude(
+      "Evocations rapides",
+      `Vous pouvez dépensez 1 dé d'${AttributsName.ÉSOTÉRISME} en plus lors de vos aptitudes de type ${AptitudeTypeName.EVOCATION}, et vous ne provoquez plus d'attaque d’opportunités`,
+      AptitudeTypeName.REACTION,
+      new Map([
+        [CompetenceName.TROMPERIE, 2],
+        [CompetenceName.VIGILANCE, 2],
+      ])
+    ),
+    new Aptitude(
+      "Arme consciente",
+      `L'arme semble habité et murmure des conseil dans une langue inconnue que seul son porteur au moment du déclenchement de l'aptitude peut entendre. Son porteur gagne 1 Réaction par tour tant qu'il possède l'arme en mains mais perd 1 dé d'${AttributsName.ÉSOTÉRISME} par désastre sur ses jet d'attaques.`,
+      AptitudeTypeName.REACTION,
+      new Map([
+        [CompetenceName.TROMPERIE, 2],
+        [CompetenceName.VIGILANCE, 2],
       ])
     ),
     // TODO : Aptitudes : Voies Ancestrale (Histoire + compétences martiales)
