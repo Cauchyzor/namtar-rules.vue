@@ -9,7 +9,7 @@
         {{ Arme.Nom }} ({{ Arme.Competence }})
       </div>
       <div class="text-overline">
-        {{ Arme.Degats }}
+        {{ Arme.Dégâts }}
       </div>
       <div class="text-caption text-grey">{{ Arme.Description }}</div>
       <div

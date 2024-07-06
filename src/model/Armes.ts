@@ -2,7 +2,7 @@ import { CompetenceName } from "./Competence";
 import { Equipement } from "./Equipement";
 
 export interface Arme extends Equipement {
-  Degats: string;
+  Dégâts: string;
   Special: Array<string>;
   Competence: CompetenceName;
 }

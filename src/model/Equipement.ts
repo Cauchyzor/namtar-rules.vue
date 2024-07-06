@@ -1,7 +1,7 @@
 export type Equipement = {
   Nom: string;
   Encombrement: number;
-  Rarete: number;
+  Rareté: number;
   Description: string;
   Prix: number;
 };

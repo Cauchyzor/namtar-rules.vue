@@ -3,7 +3,7 @@
     <q-card-section vertical>
       <div class="text-overline">
         Encombrement : {{ Armure.Encombrement }} - Prix : {{ Armure.Prix }} -
-        Raretée : {{ Armure.Rarete }}
+        Raretée : {{ Armure.Rareté }}
       </div>
       <div class="text-h5 q-mt-sm q-mb-xs">
         {{ Armure.Nom }}
