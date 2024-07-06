@@ -14,6 +14,7 @@ export enum AptitudeTypeName {
   MANTRA = "Mantra",
   ENTRAÎNEMENT = "Entraînement",
   NÉCROMANCIE = "Nécromancie",
+  PROJECTILE_PHYSIQUE = "Projectile physique",
   POSTURE = "Posture",
   REACTION = "Réaction",
   TECHNIQUE_CORPS_A_CORPS = "Technique au corps à corps",
@@ -24,6 +25,10 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.EVOCATION,
       Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) contre une cible. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+    },
+    {
+      Nom: AptitudeTypeName.PROJECTILE_PHYSIQUE,
+      Description: `Vous effectuez un jet d'attaque a distance avec compétence d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}). Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
       Nom: AptitudeTypeName.INVOCATION,
@@ -103,9 +108,9 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Couteaux de glace",
-      "Vous augmentez de 2m votre vitesse de déplacement. Cette posture prend fin si vous effectuez une attaque ou une aptitude.",
-      AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.ATHLÉTISME, 1]])
+      `Vous formez de fines lames nées de condensation et les projetez a une vitesse démesurée sur la cible. Vous formez autant de couteaux que votre valeur de ${AttributsName.SPIRITHIUM} et chacun des couteau inflige 1 point de dégât par succès et par triomphe. Vous pouvez cibler plusieurs creature sur lesquelles vous avez une ligne de vue, jusqu'à 27m`,
+      AptitudeTypeName.PROJECTILE_PHYSIQUE,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
     ),
     new Aptitude(
       "Ruée",
@@ -358,7 +363,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Mage de guerre",
-      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque à l'arme en dépensant 1 point d'action supplémentaire et déclarant quelle aptitude vous appliquez avec votre arme.. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le nombre d'avantages et de triomphe (chacun comptant pour 1 succès). Les dégâts de l'arme sont compté normalement.`,
+      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque à l'arme en dépensant 1 point d'action supplémentaire et déclarant quelle aptitude vous appliquez avec votre arme. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le nombre d'avantages et de triomphe (chacun comptant pour 1 succès). Les dégâts de l'arme sont compté normalement.`,
       AptitudeTypeName.ENTRAÎNEMENT,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
@@ -422,7 +427,7 @@ export class ServiceAptitude {
     new Aptitude(
       "Fracture temporelle",
       `Vous effectuez un test d'${CompetenceName.OCCULTISME} (${CaracteristiqueName.INTELLIGENCE}) opposé à la cible. Si elle échoue, elle pert 1 point d'action et 1 point d'action supplémentaire par triomphe (maximum 2).`,
-      AptitudeTypeName.EVOCATION,
+      AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.OCCULTISME, 1],
         [CompetenceName.HISTOIRE, 1],
@@ -631,7 +636,7 @@ export class ServiceAptitude {
     new Aptitude(
       "Eruption",
       `Vous incinérez toute la zone en face de vous, sur un cone de 9m de long et jusqu'a 3m de large. Toutes les creatures subissent 3 point de dégâts par succès et par triomphe. Vous dépensez 2 dé d'${AttributsName.SPIRITHIUM}`,
-      AptitudeTypeName.EVOCATION,
+      AptitudeTypeName.INVOCATION,
       new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]])
     ),
     new Aptitude(
