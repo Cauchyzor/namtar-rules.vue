@@ -34,7 +34,9 @@ export class ServiceArme {
       Nom: "Matraque électrique",
       Dégâts:
         "2 point de dommages par triomphe net + 1 point de dommage par succès",
-      Special: ["Vous pouvez dépenser 3 avantages pour étourdir la cible."],
+      Special: [
+        "Vous pouvez dépenser 3 avantages pour étourdir la cible jusqu'à sont prochain tour.",
+      ],
       Competence: CompetenceName.CORPS_A_CORPS,
       Description: "Aucun",
       Encombrement: 1,

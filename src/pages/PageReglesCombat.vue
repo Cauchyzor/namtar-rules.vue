@@ -565,6 +565,15 @@
 
       <q-item class="col-12 col-sm-4 col-md-3">
         <q-item-section>
+          <q-item-label header>Etourdi</q-item-label>
+          <q-item-label
+            >Vous ne pouvez plus utiliser de réaction.
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item class="col-12 col-sm-4 col-md-3">
+        <q-item-section>
           <q-item-label header>Empoigné</q-item-label>
           <q-item-label
             >Une créature empoignée est entravée, mais elle peut utiliser une
