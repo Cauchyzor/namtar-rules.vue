@@ -25,7 +25,7 @@ export class ServiceAptitude {
   private static Types: Array<AptitudeType> = [
     {
       Nom: AptitudeTypeName.CONJURATION,
-      Description: `Vous effectuez jet d'attaque d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) contre un jet de sauvegarde de la ou des cible(s). Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+      Description: `Vous effectuez jet d'attaque d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) contre un jet de sauvegarde de la cible située à un maximum de 18m. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
       Nom: AptitudeTypeName.PROJECTILE_EVOCATION,
@@ -218,7 +218,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Observateur éclairé",
-      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
+      `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation. Vous montez également votre rang de ${CompetenceName.VIGILANCE} à 1.`,
       AptitudeTypeName.ENTRAÎNEMENT,
       new Map([[CompetenceName.HISTOIRE, 1]]),
       "Toujours actif"
@@ -267,7 +267,7 @@ export class ServiceAptitude {
     new Aptitude(
       "Aux limites du corps",
       `Sacrifiez 1 dé de ${AttributsName.SPIRITHIUM} et 1 ${AttributsName.DV}. Gagnez immédiatement 2 actions pour ce tour.`,
-      AptitudeTypeName.CONJURATION,
+      AptitudeTypeName.INVOCATION,
       new Map([[CompetenceName.ATHLÉTISME, 1]]),
       "Immédiatement lors de votre tour"
     ),
@@ -463,7 +463,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Vol de vitesse",
-      `La cible à moins de 18m de vous perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à 18m ou moins de vous bénéficie d'autant de dés de supériorités supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
+      `La cible perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à 18m ou moins de vous bénéficie d'autant de dés de supériorités supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
       AptitudeTypeName.CONJURATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
@@ -749,6 +749,13 @@ export class ServiceAptitude {
       AptitudeTypeName.MANTRA,
       new Map([[CompetenceName.DISCRETION, 2]]),
       "Toujours actif"
+    ),
+    new Aptitude(
+      "Terreur nocturne",
+      `Si la cible est aveuglée et ne dispose pas de vision aveugle, elle doit lancer un jet de sauvegarde de ${CaracteristiqueName.VIGUEUR} et subit 3 point de dégât par échec et 1 point de dégât par avantage. `,
+      AptitudeTypeName.CONJURATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]]),
+      "1 action"
     ),
     new Aptitude(
       "Festin morbide",
