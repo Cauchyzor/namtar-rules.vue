@@ -37,7 +37,7 @@ export class AttributService {
     {
       Nom: AttributsName.REFLEXES,
       Description:
-        "Avec votre équipement, ils constituent votre principale défense. Vous ajoutez 1d6 à votre pool de dés de réflexes par point en Agilité. ",
+        "Avec votre équipement, ils constituent votre principale défense. Vous ajoutez 1d6 à votre pool de dés de réflexes par point en Agilité. En situation de stress, cette pool de dés est remplie au début de votre tour. ",
       Icon: mdiShieldHalfFull,
     },
 
@@ -50,13 +50,13 @@ export class AttributService {
 
     {
       Nom: AttributsName.SPIRITHIUM,
-      Description: `Qualifie votre lien avec le fluide et la puissance que vous pouvez en tirer. Vous gagnez 1d6 à votre pool de dés de ${AttributsName.SPIRITHIUM} par point en Intelligence et en Charisme.`,
+      Description: `Qualifie votre lien avec le fluide et la puissance que vous pouvez en tirer. Vous gagnez 1d6 à votre pool de dés de ${AttributsName.SPIRITHIUM} par point en Intelligence et en Charisme. Cette pool est remplie à chaque repos long.`,
       Icon: mdiLightningBolt,
     },
     {
       Nom: AttributsName.DV,
       Description:
-        "Ils représente votre capacité de récupération et permettent de vous soigner. Vous gagnez 1d4 à votre pool de dés de vie par point de Vigueur et par niveau.",
+        "Ils représente votre capacité de récupération et permettent de vous soigner. Vous gagnez 1d4 à votre pool de dés de vie par point de Vigueur et par niveau. Vous regagnez tous vos DV lors d'un repos long.",
       Icon: mdiHeartCircleOutline,
     },
     {
