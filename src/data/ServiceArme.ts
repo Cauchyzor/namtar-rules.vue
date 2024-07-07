@@ -123,11 +123,13 @@ export class ServiceArme {
   private static ARME_DISTANCE: Array<ArmeDistanceItem> = [
     {
       Nom: "Cutter a plasma",
-      Dégâts: "3 + 2 point de dommage par succès",
-      Special: ["Aucun"],
+      Dégâts: "2 point de dommage par succès et par avantage",
+      Special: [
+        "Vous ne déclencher pas de frappe d'opportunité lorsque vous tirer sur une personne au corps à corps avec vous.",
+      ],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
-        "Un bricolage simple permet de surcharger l'apport en énergie de l'outil, et d'en faire une 'arme a distance non létale' très utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Très douloureux.",
+        "Un bricolage simple permet de surcharger l'apport en énergie de l'outil, et d'en faire une 'arme a distance non létale' très utilisée dans les milieux industriel qui projette de la grenaille de metal en fusion. Très douloureux, la gerbe de grenaille est également difficile à éviter ou a parer.",
       Encombrement: 3,
       Rareté: 2,
       Prix: 400,
@@ -137,9 +139,7 @@ export class ServiceArme {
     {
       Nom: "Pacificateur",
       Dégâts: "2 point de dommage par succès et par triomphe",
-      Special: [
-        "La cible perd 1 dé de réflexes par triomphe sur le jet d'attaque jusqu'au prochain repos court.",
-      ],
+      Special: ["La cible perd 1 dé de réflexes par triomphe."],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
         "Arme anti-émeute conçus dans un contexte ou l’intégrité physique des émeutiers n'est pas prise en compte dans le cahier des charges.",
@@ -151,7 +151,7 @@ export class ServiceArme {
     },
     {
       Nom: "Fusil anti-nuisible",
-      Dégâts: "3 point de dommage par succès et par avantages net",
+      Dégâts: "3 point de dommage par succès et par triomphe net",
       Special: [
         "Inflige 2 blessure à l'utilisateur par désavantages net sur un jet d'attaque à distance avec cette arme.",
         "Requis 3 en vigueur.",
@@ -171,7 +171,7 @@ export class ServiceArme {
       Special: [],
       Competence: CompetenceName.ARME_A_DISTANCE,
       Description:
-        "Arme des troupes régulière de l'empire. Comme toutes les armes à énergie, celui qui possède ce fusil et dispose d'assez de cellule haute densité n'a globalement pas grands chose à craindre de ses congénères humanoïdes.",
+        "Arme des troupes régulière des super-civilisations. Comme toutes les armes à énergie, celui qui possède ce fusil et dispose d'assez de cellule haute densité n'a globalement pas grands chose à craindre de ses congénères humanoïdes.",
       Encombrement: 4,
       Rareté: 5,
       Prix: 3000,
