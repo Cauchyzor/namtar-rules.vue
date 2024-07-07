@@ -12,7 +12,6 @@ import { CompetenceName } from "./Competence";
 export type AptitudeType = {
   Nom: AptitudeTypeName;
   Description: string;
-  Activation: string;
 };
 
 export enum AptitudeRang {
@@ -26,17 +25,20 @@ export class Aptitude {
   Description: string;
   Type: AptitudeType;
   MaîtrisesRequise: Map<CompetenceName, number>;
+  TempActivation: string;
 
   constructor(
     nom: string,
     description: string,
     typeName: AptitudeTypeName,
-    maîtrises: Map<CompetenceName, number>
+    maîtrises: Map<CompetenceName, number>,
+    tempActivation: string
   ) {
     this.Nom = nom;
     this.Description = description;
     this.Type = ServiceAptitude.findAptTypeByName(typeName);
     this.MaîtrisesRequise = maîtrises;
+    this.TempActivation = tempActivation;
   }
 
   get NiveauDeMaîtrise(): number {

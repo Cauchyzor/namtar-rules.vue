@@ -8,13 +8,14 @@ export enum AptitudeTypeName {
   // TODO : Mutation (liée aux concept de 'ethnotraits') - Aptitude liée a un trait
   AMELIORATION = "Amélioration",
   BENEDICTION = "Bénédiction",
-  EVOCATION = "Évocation",
+  CONJURATION = "Conjuration",
   INVOCATION = "Invocation",
   INJONCTION = "Injonction",
   MANTRA = "Mantra",
   ENTRAÎNEMENT = "Entraînement",
+  EVOCATION_CONTACT = "Evocation au contact",
   NÉCROMANCIE = "Nécromancie",
-  PROJECTILE_PHYSIQUE = "Projectile physique",
+  PROJECTILE_EVOCATION = "Projectile d'Evocation",
   POSTURE = "Posture",
   REACTION = "Réaction",
   TECHNIQUE_CORPS_A_CORPS = "Technique au corps à corps",
@@ -23,136 +24,146 @@ export enum AptitudeTypeName {
 export class ServiceAptitude {
   private static Types: Array<AptitudeType> = [
     {
-      Nom: AptitudeTypeName.EVOCATION,
-      Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) contre une cible. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
-      Activation: "2 action",
+      Nom: AptitudeTypeName.CONJURATION,
+      Description: `Vous effectuez jet d'attaque d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) contre un jet de sauvegarde de la ou des cible(s). Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
     },
     {
-      Nom: AptitudeTypeName.PROJECTILE_PHYSIQUE,
+      Nom: AptitudeTypeName.PROJECTILE_EVOCATION,
       Description: `Vous effectuez un jet d'attaque a distance avec compétence d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}). Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
-      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.INVOCATION,
       Description: `Vous appliquez les effets de l'aptitude sur la zone ciblée en effectuant en test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) de DD3. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
-      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
         "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum), ou des personnes neutralisée. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
-      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
         "Toute les créatures au choix à 9m ou moins de vous lors de l'appel de la benediction reçoivent des bonus jusqu'au prochain repos long. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
-      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
         "Un mantra vous octroie des bonus passifs de manière permanente. Il représente une alteration permanente du personnage provoquée par ses interactions passées avec le fluide.",
-      Activation: "Toujours actif",
     },
     {
       Nom: AptitudeTypeName.ENTRAÎNEMENT,
       Description:
         "Un Entraînement vous octroie des bonus passifs de manière permanente. Il représente une longue experience théorique et pratique pour perfectionner ses aptitudes.",
-      Activation: "Toujours actif",
+    },
+    {
+      Nom: AptitudeTypeName.EVOCATION_CONTACT,
+      Description:
+        "Les évocations au contact permettent de décharger d'immense quantité d'énergie sur la cible affin d'infligez de terrible dommages.",
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       Description:
         "Vous effectuez un jet d'attaque avec la compétence et la caractéristique requise par votre arme et appliquez des effets supplémentaire selon l'aptitude.",
-      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
-        "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer avec une action libre. Le lanceur de cette aptitude ne peut l'affecter qu'à une seule pièce d'équipement à la fois, ou alors l'amélioration s'estompe immédiatement de l'ancienne pièce d'équipement.",
-      Activation: "2 action",
+        "Une amélioration octroie un bonus sur la pièce d'équipement touchée jusqu'à ce que l'utilisateur décide de la retirer avec une action libre. Le lanceur de cette aptitude ne peut l'affecter qu'à une seule pièce d'équipement à la fois, ou alors l'amélioration s'estompe immédiatement de l'ancienne pièce d'équipement.",
     },
     {
       Nom: AptitudeTypeName.INJONCTION,
       Description:
         "Vous appliquez vos effets sur une cible qui vous voit et vous entend.",
-      Activation: "1 action",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
       Description:
         "La posture vous octroie des bonus situationnel jusqu'à ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurément.",
-      Activation: "Instantané pendant un tour",
     },
     {
       Nom: AptitudeTypeName.REACTION,
       Description: "Cette aptitude peut être déclenché lors d'une réaction.",
-      Activation: "1 réaction",
     },
   ];
 
   private static AptitudeList: Array<Aptitude> = [
     // APTITUDES MINEURE
     new Aptitude(
-      "Concentration",
-      `Vous sacrifiez vos dés de ${AttributsName.REFLEXES} ainsi que votre mouvement afin d'ajouter autant de dés de supériorités (d4) que votre rang d'${CompetenceName.ARME_A_DISTANCE} à vos jets d'attaques. Lorsque cette posture se termine, vous ne pouvez regagner vos dés de ${AttributsName.REFLEXES} qu'au début de votre prochain tour.`,
+      "Recharge rapide",
+      `Sacrifiez 1 dé de ${AttributsName.REFLEXES} et recharger votre arme en main. Vous devez avoir votre munition à portée de main.`,
       AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.ARME_A_DISTANCE, 1]])
+      new Map([[CompetenceName.ARME_A_DISTANCE, 1]]),
+      "1 action"
     ),
     new Aptitude(
       "Forte tête",
       `Lorsque vous êtes la cible d'${AptitudeTypeName.INJONCTION}, la cible subit 1 dé de handicap un 1 dé supplémentaire pour tout les deux point de ${CaracteristiqueName.CHARISME} que vous possédez. Vous montez au rang 1 votre compétence de ${CompetenceName.NÉGOCIATION}, ou d'${CompetenceName.INTIMIDATION} `,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.DISCRETION, 2]])
+      new Map([[CompetenceName.DISCRETION, 2]]),
+      "Toujours actif"
+    ),
+    new Aptitude(
+      "Frappe à la tempe",
+      `Coûte 1 dé de ${AttributsName.REFLEXES}. Si la cible est touchée, elle est étourdie.`,
+      AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
+      new Map([[CompetenceName.DISCRETION, 2]]),
+      "2 action"
     ),
     new Aptitude(
       "Attraction",
       "La cible est projetée à terre dans votre direction sur une distance de 1m par succès net au maximum. Elle subit également 1 point de dégâts par avantages net.",
-      AptitudeTypeName.EVOCATION,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
+      AptitudeTypeName.CONJURATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]]),
+      "2 action"
     ),
     new Aptitude(
       "Riposte",
       `Vous mettez fin a votre ${AptitudeTypeName.POSTURE} si vous en aviez une, et vous ajoutez votre rang de ${CompetenceName.CORPS_A_CORPS} ou de ${CompetenceName.COORDINATION} a votre prochain jet de défense.`,
       AptitudeTypeName.REACTION,
-      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]]),
+      "1 réaction"
     ),
     new Aptitude(
       "Couteaux de glace",
       `Vous formez de fines lames nées de condensation et les projetez a une vitesse démesurée sur la cible. Vous formez autant de couteaux que votre valeur de ${AttributsName.SPIRITHIUM} et chacun des couteau inflige 1 point de dégât par succès et par triomphe. Vous pouvez cibler plusieurs creature sur lesquelles vous avez une ligne de vue, jusqu'à 27m`,
-      AptitudeTypeName.PROJECTILE_PHYSIQUE,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
+      AptitudeTypeName.PROJECTILE_EVOCATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]]),
+      "2 action"
     ),
     new Aptitude(
       "Ruée",
       "Vous augmentez de 2m votre vitesse de déplacement. Cette posture prend fin si vous effectuez une attaque ou une aptitude.",
       AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.ATHLÉTISME, 1]])
+      new Map([[CompetenceName.ATHLÉTISME, 1]]),
+      "Instantané à votre tour"
     ),
     new Aptitude(
       "Présence envoûtante",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.CHARME} lors de vos test avec cette compétence.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.CHARME, 1]])
+      new Map([[CompetenceName.CHARME, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Pose prudente",
       `Vous augmentez votre valeur de ${AttributsName.REFLEXES} de 1 par rang de ${CompetenceName.COORDINATION}`,
       AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.COORDINATION, 1]])
+      new Map([[CompetenceName.COORDINATION, 1]]),
+      "Instantané à votre tour"
     ),
     new Aptitude(
       "Feinte",
       `Pour chaque avantage généré lors du jet d'attaque, l'adversaire perd 1 dé de ${AttributsName.REFLEXES} jusqu'à son prochain tour. Cette technique ne peut pas infliger de dégâts.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
-      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]]),
+      "2 action"
     ),
     new Aptitude(
       "Couverture improbable",
       `Vous pouvez réaliser immédiatement mouvement gratuit et puis effectuez un test de ${CompetenceName.DISCRETION} dont le DD est égale à la somme des rang de ${CompetenceName.VIGILANCE} des adversaires. Le test échoue si vous êtes toujours dans le champs de vision de l'une d'entre elle. Si le test est réussi, vous êtes considéré comme caché auprès de ces adversaires.`,
       AptitudeTypeName.REACTION,
-      new Map([[CompetenceName.DISCRETION, 1]])
+      new Map([[CompetenceName.DISCRETION, 1]]),
+      "1 réaction"
     ),
     new Aptitude(
       "Frappe primitive",
@@ -161,13 +172,15 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
         [CompetenceName.SURVIE, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Drain spirituel",
-      `La cible perd 1 dés d'${AttributsName.SPIRITHIUM} par succès net et vous en gagnez 1 par avantage net.`,
-      AptitudeTypeName.EVOCATION,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]])
+      `La cible perd 1 dés de ${AttributsName.SPIRITHIUM} par succès net et vous en gagnez 1 par avantage net.`,
+      AptitudeTypeName.CONJURATION,
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 1]]),
+      "2 action"
     ),
     new Aptitude(
       "Pacte de maîtrise",
@@ -176,7 +189,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.CORPS_A_CORPS, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Pacte de précision",
@@ -185,106 +199,140 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Équilibrage",
       "L'arme qui reçois l'amélioration ajoute 1 dé de supériorité à tout les jet d'attaque fait avec celle-ci",
       AptitudeTypeName.AMELIORATION,
-      new Map([[CompetenceName.INGÉNIERIE, 1]])
+      new Map([[CompetenceName.INGÉNIERIE, 1]]),
+      "1 action"
     ),
     new Aptitude(
       '"Craignez-moi !"',
       `Coûte 1 dé de ${AttributsName.SPIRITHIUM}. Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteristiqueName.CHARISME}) ou (${CaracteristiqueName.VIGUEUR}) qui peut vous entendre et vous voir. Si la cible rate son test, elle est Terrorisée`,
       AptitudeTypeName.INJONCTION,
-      new Map([[CompetenceName.INTIMIDATION, 1]])
+      new Map([[CompetenceName.INTIMIDATION, 1]]),
+      "1 action"
     ),
     new Aptitude(
       "Observateur éclairé",
       `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.HISTOIRE} lors de vos test ou vous pouvez faire intervenir des notions d'histoire ou d'investigation.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.HISTOIRE, 1]])
+      new Map([[CompetenceName.HISTOIRE, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Coup bas",
       "Vous pouvez utiliser votre réaction pour effectuer une attaque d'opportunité avec une arme de jet ou un objet à porté de main contre un adversaire qui ce déplace à 9m ou moins de vous.",
       AptitudeTypeName.REACTION,
-      new Map([[CompetenceName.MAGOUILLE, 1]])
+      new Map([[CompetenceName.MAGOUILLE, 1]]),
+      "1 réaction"
     ),
     new Aptitude(
       "Illusion Cauchemardesque",
-      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé d'${AttributsName.SPIRITHIUM} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteristiqueName.CHARISME} inférieur au résultat sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé d'${AttributsName.SPIRITHIUM} par menaces net.`,
+      `Vous effectuez un test de ${CompetenceName.TROMPERIE} de DD2 et consommez 1 dé de ${AttributsName.SPIRITHIUM} et invoquez un fantasme sur la position ciblée au maximum à 9m. Toutes les creatures qui voient ce fantasme et qui ont un score de ${CaracteristiqueName.CHARISME} inférieur au résultat sont terrifiés tant que l'illusions est présentant. L'illusion dure 1 tour et un tour supplémentaire pour chaque avantages net. Vous perdez 1 dé de ${AttributsName.SPIRITHIUM} par menaces net.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.TROMPERIE, 1],
         [CompetenceName.INTIMIDATION, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Animation morbide",
-      `Une créature que vous pouvez contrôler à son tour emerge du cadavre organique le plus proche. Cette creature possède 2 point dans toutes ses caractéristique, est considéré de niveau 1, ce déplace de 1m par action, et attaque à mains nue. Elle attaque aussitôt après être invoquée et lance ensuite son initiative comme n'importe quelle creature. Vous devez consommer autant de dés d'${AttributsName.SPIRITHIUM} que le niveau du cadavre ciblé. Les creatures peuvent vivre autant de tour que votre valeur d'${CaracteristiqueName.INTELLIGENCE}, et vous pouvez en contrôler autant que la somme de vos rang en ${CompetenceName.MÉDECINE} et ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
+      `Une créature que vous pouvez contrôler à son tour emerge du cadavre organique le plus proche. Cette creature possède 2 point dans toutes ses caractéristique, est considéré de niveau 1, ce déplace de 1m par action, et attaque à mains nue. Elle attaque aussitôt après être invoquée et lance ensuite son initiative comme n'importe quelle creature. Vous devez consommer autant de dés de ${AttributsName.SPIRITHIUM} que le niveau du cadavre ciblé. Les creatures peuvent vivre autant de tour que votre valeur d'${CaracteristiqueName.INTELLIGENCE}, et vous pouvez en contrôler autant que la somme de vos rang en ${CompetenceName.MÉDECINE} et ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.MÉDECINE, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-      ])
+      ]),
+      "3 action"
     ),
     new Aptitude(
       "Médecine de terrain",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.MÉDECINE} lors de vos tests avec cette compétence.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.MÉDECINE, 1]])
+      new Map([[CompetenceName.MÉDECINE, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Ordre de douleur",
       "Avant d'effectuer une attaque, vous pouvez choisir de subir 1 point de dégâts par avantages générés lors du jet l'attaque, et d'infliger un point de dégât aux adversaires également.",
       AptitudeTypeName.BENEDICTION,
-      new Map([[CompetenceName.OCCULTISME, 1]])
+      new Map([[CompetenceName.OCCULTISME, 1]]),
+      "2 action"
+    ),
+    new Aptitude(
+      "Aux limites du corps",
+      `Sacrifiez 1 dé de ${AttributsName.SPIRITHIUM} et 1 ${AttributsName.DV}. Gagnez immédiatement 2 actions pour ce tour.`,
+      AptitudeTypeName.CONJURATION,
+      new Map([[CompetenceName.ATHLÉTISME, 1]]),
+      "Immédiatement lors de votre tour"
     ),
     new Aptitude(
       "Attitude diplomatique",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.NÉGOCIATION} sur vos tests lors d'interaction sociales pour demander des faveurs ou un service.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.NÉGOCIATION, 1]])
+      new Map([[CompetenceName.NÉGOCIATION, 1]]),
+      "Toujours actif"
+    ),
+    new Aptitude(
+      "Conviction et scepticisme",
+      `Votre experience vous permet d'anticiper les effets de contrôle des manipulateurs du fluide et mieux detecter les failles de vos adversaires. Vous ajoutez au choix votre rang de ${CompetenceName.CHARME}, ${CompetenceName.TROMPERIE} ou de ${CompetenceName.PERSPICACITÉ} a vos jets de sauvegarde d'${CaracteristiqueName.INTELLIGENCE} et de ${CaracteristiqueName.CHARISME}. De plus, vous pouvez convertir autant d'avantage en succès sur vos aptitudes de type ${AptitudeTypeName.INJONCTION} que votre rang maximum dans les compétence de ${CompetenceName.CHARME}, ${CompetenceName.PERSPICACITÉ} ou ${CompetenceName.TROMPERIE}.`,
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([
+        [CompetenceName.CHARME, 1],
+        [CompetenceName.TROMPERIE, 1],
+        [CompetenceName.PERSPICACITÉ, 1],
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Armure de l'impassible",
       `Vous bénéficiez d'autant de dés de supériorité que votre rang de ${CompetenceName.PERSPICACITÉ} lors vous subissez des tests en opposition de ${CompetenceName.CHARME}, ${CompetenceName.NÉGOCIATION} ou de ${CompetenceName.TROMPERIE}`,
-      AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.PERSPICACITÉ, 1]])
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.PERSPICACITÉ, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       '"Comme à l’entraînement"',
       `Vous consommez 1 dé de ${AttributsName.SPIRITHIUM} et relancez immédiatement un dé au choix sur le résultat d'un test de ${CompetenceName.PILOTAGE}.`,
       AptitudeTypeName.POSTURE,
-      new Map([[CompetenceName.PILOTAGE, 1]])
+      new Map([[CompetenceName.PILOTAGE, 1]]),
+      "Immédiatement lors de votre tour"
     ),
     new Aptitude(
       "Instincts de survie",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.SURVIE} lors de vos tests avec cette compétence.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.SURVIE, 1]])
+      new Map([[CompetenceName.SURVIE, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Menteur né",
       `Vous pouvez relancer autant de dés que votre rang de ${CompetenceName.TROMPERIE} lors de vos test avec cette compétence.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.TROMPERIE, 1]])
+      new Map([[CompetenceName.TROMPERIE, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Sauvegarde instinctive",
       `Lorsque vous êtes la cible d'un jet d'attaque, vous pouvez relancer autant de dés ${AttributsName.REFLEXES} que votre rang de ${CompetenceName.VIGILANCE}`,
       AptitudeTypeName.REACTION,
-      new Map([[CompetenceName.VIGILANCE, 1]])
+      new Map([[CompetenceName.VIGILANCE, 1]]),
+      "1 réaction"
     ),
     new Aptitude(
       "Mémoires liquides",
-      `Vous avez la possibilité de ceder des connaissances ésotériques dans une manifestation du fluide afin de garder l'esprit clair. A chaque gains de niveau, vous choisissez une aptitude que vous ne connaissez pas et vous la renseignée dans vos mémoires liquides. A n'importe quel moment, vous pouvez dépensez 3 point d'action pour échanger une aptitude connue contre une autre sauvegardée dans vos mémoires liquides. Vous ne pouvez renseigner que des aptitudes des types : ${AptitudeTypeName.EVOCATION},  ${AptitudeTypeName.INVOCATION} et ${AptitudeTypeName.NÉCROMANCIE}`,
+      `Vous avez la possibilité de ceder des connaissances ésotériques dans une manifestation du fluide afin de garder l'esprit clair. A chaque gains de niveau, vous choisissez une aptitude que vous ne connaissez pas et vous la renseignée dans vos mémoires liquides. A n'importe quel moment, vous pouvez dépensez 3 point d'action pour échanger une aptitude connue contre une autre sauvegardée dans vos mémoires liquides. Vous ne pouvez renseigner que des aptitudes des types : ${AptitudeTypeName.CONJURATION},  ${AptitudeTypeName.INVOCATION} et ${AptitudeTypeName.NÉCROMANCIE}`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.HISTOIRE, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Rupture mentale",
@@ -293,16 +341,18 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.CHARME, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Balise victorieuse",
-      `Vous invoquez sur votre position une représentation de vos convictions que seul vous pouvez voir, et qui galvanise toutes les créatures autours. Cette balise possède autant de charges que votre valeur d'${AttributsName.SPIRITHIUM}. Les membres à moins de 9m de la balise peuvent à chacun de leur tour relancer un dé lors de leur jet d'attaque, et consommer alors une charge de la balise. Lorsqu'elle atteint 0 charge, elle se désintègre.`,
+      `Vous invoquez sur votre position une représentation de vos convictions que seul vous pouvez voir, et qui galvanise toutes les créatures autours. Cette balise possède autant de charges que votre valeur de ${AttributsName.SPIRITHIUM}. Les membres à moins de 9m de la balise peuvent à chacun de leur tour relancer un dé lors de leur jet d'attaque, et consommer alors une charge de la balise. Lorsqu'elle atteint 0 charge, elle se désintègre.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.HISTOIRE, 1],
         [CompetenceName.CHARME, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Blindage",
@@ -311,7 +361,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.INGÉNIERIE, 1],
         [CompetenceName.SURVIE, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "En joue",
@@ -320,16 +371,18 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ARME_A_DISTANCE, 1],
         [CompetenceName.VIGILANCE, 1],
-      ])
+      ]),
+      "Immédiatement à votre tour"
     ),
     new Aptitude(
       "Égide",
-      `Vous gagnez 1 dé de supériorité par rang de ${CompetenceName.VIGILANCE} contre les attaques au corps à corps contre vous. Pour chaque attaque menaces générées sur le jet d'attaque contre vous, celui qui maintient la bénédiction consomme 1 dé d'${AttributsName.SPIRITHIUM}. La bénédiction prends fin si le prodigue n'a plus de dés d'${AttributsName.SPIRITHIUM}.`,
+      `Vous gagnez 1 dé de supériorité par rang de ${CompetenceName.VIGILANCE} du lanceur contre les attaques au corps à corps contre vous. Pour chaque attaque menaces générées sur le jet d'attaque contre vous, celui qui maintient la bénédiction consomme 1 dé de ${AttributsName.SPIRITHIUM} ou il peut également décider de rompre la bénédiction. La bénédiction prends fin si le prodigue n'a plus de dés de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.BENEDICTION,
       new Map([
         [CompetenceName.OCCULTISME, 1],
         [CompetenceName.VIGILANCE, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Frappes sournoises",
@@ -338,13 +391,15 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.DISCRETION, 1],
         [CompetenceName.CORPS_A_CORPS, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Fureur",
       `Lors d'un jet d'attaque, vous pouvez choisir de sacrifier un ou plusieurs dé de ${AttributsName.REFLEXES} pour relancer autant de d6 sur votre jet d'attaque.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.CORPS_A_CORPS, 1]])
+      new Map([[CompetenceName.CORPS_A_CORPS, 1]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Nova morbide",
@@ -353,34 +408,38 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.MÉDECINE, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Griffe dimensionnelle",
-      `Vous réalisez un jet d'attaque en opposant vos dés de ${AttributsName.SPIRITHIUM} restant à la défense de la cible. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 dé d'${AttributsName.SPIRITHIUM}.`,
+      `Vous réalisez un jet d'attaque en opposant vos dés de ${AttributsName.SPIRITHIUM} restant à la défense de la cible. Vous infligez autant de dégât par succès et par triomphe que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous dépensez 1 dé de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Echophagie",
-      `A chaque fois que vous regagnez au moins 1 dé d'${AttributsName.SPIRITHIUM}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
+      `A chaque fois que vous regagnez au moins 1 dé de ${AttributsName.SPIRITHIUM}, y compris pendant les repos court, vous pouvez lancer gratuitement 1 dé de vie pour vous soigner immédiatement. Vous ne regagnez plus de dès de vie lors des repos long.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.SURVIE, 1],
         [CompetenceName.OCCULTISME, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Mage de guerre",
-      `Vous pouvez lancer toutes vos ${AptitudeTypeName.EVOCATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque à l'arme en dépensant 1 point d'action supplémentaire et déclarant quelle aptitude vous appliquez avec votre arme. L'${AptitudeTypeName.EVOCATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le nombre d'avantages et de triomphe (chacun comptant pour 1 succès). Les dégâts de l'arme sont compté normalement.`,
+      `Vous pouvez lancer toutes vos ${AptitudeTypeName.CONJURATION} par le biais d'une arme au corps à corps. Vous effectuez alors un jet d'attaque à l'arme en dépensant 1 point d'action supplémentaire et déclarant quelle aptitude vous appliquez avec votre arme. L'${AptitudeTypeName.CONJURATION} n'applique ses effets que si l'attaque réussie. Le nombre de succès qui determine alors les effets de l'aptitude est déterminé par le nombre d'avantages et de triomphe (chacun comptant pour 1 succès). Les dégâts de l'arme sont compté normalement.`,
       AptitudeTypeName.ENTRAÎNEMENT,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Bombe improvisée",
@@ -389,7 +448,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.INGÉNIERIE, 1],
         [CompetenceName.ARME_A_DISTANCE, 1],
-      ])
+      ]),
+      "3 action"
     ),
     new Aptitude(
       "Vivacité impossible",
@@ -398,16 +458,18 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.MAGOUILLE, 1],
         [CompetenceName.CORPS_A_CORPS, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Vol de vitesse",
       `La cible à moins de 18m de vous perd autant de dé de réflexes (d6) que votre rang d'${CompetenceName.ENTROPIE_DU_FLUIDE}. Vous ou un allié à 18m ou moins de vous bénéficie d'autant de dés de supériorités supplémentaires à son prochain jet d'attaque ou de défense. L'effet cesse à ce moment.`,
-      AptitudeTypeName.EVOCATION,
+      AptitudeTypeName.CONJURATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.TROMPERIE, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Rejet primitif",
@@ -416,16 +478,18 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.INTIMIDATION, 1],
         [CompetenceName.SURVIE, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
-      "Terreur nocturne",
-      "La cible a moins de 9m est aveuglée pendant 1 tour et 1 tours supplémentaire par triomphe.Elle subit 1 point de dégât par succès tant qu'elle reste aveuglée.",
-      AptitudeTypeName.EVOCATION,
+      "Visions infernales",
+      "Vous hypnotisez la cible a moins de 9m et perturbez sa vision, en lui infligeant des douleurs mentales. Elles est aveuglée pendant 1 tour et 1 tours supplémentaire par triomphe.Elle subit 1 point de dégât par succès tant qu'elle reste aveuglée.",
+      AptitudeTypeName.CONJURATION,
       new Map([
         [CompetenceName.TROMPERIE, 1],
         [CompetenceName.CHARME, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Anticipation surnaturelle",
@@ -434,7 +498,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.PERSPICACITÉ, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Fracture temporelle",
@@ -443,25 +508,28 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.OCCULTISME, 1],
         [CompetenceName.HISTOIRE, 1],
-      ])
+      ]),
+      "3 action"
     ),
     new Aptitude(
       "Foulée de l'ombre",
-      `Vous vous déplacez instantanément sans déclencher d'attaque d'opportunité jusqu'à la créature ciblée sur une distance de 9m pour chaque rang en ${CompetenceName.ATHLÉTISME}. Votre prochaine attaque au corps à corps ou ${AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS} coûte 1 point d'action en moins (minimum 1). Vous consommez 1 dé d'${AttributsName.SPIRITHIUM}.`,
+      `Vous vous déplacez instantanément sans déclencher d'attaque d'opportunité jusqu'à la créature ciblée sur une distance de 9m pour chaque rang en ${CompetenceName.ATHLÉTISME}. Vous consommez 1 dé de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.MAGOUILLE, 1],
         [CompetenceName.DISCRETION, 1],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Sanctuaire",
-      `Les cibles de la bénédiction ne peuvent pas être la cible d'agressions. La bénédiction est retirée immédiatement si la cible de la bénédiction effectue une attaque ou une aptitude qui blesse une creature. A chaque début de tour du lanceur, il consomme et lance 1 dé d'${AttributsName.SPIRITHIUM}. Si la valeur du dé est supérieur à la somme de sa valeur de ${CompetenceName.NÉGOCIATION} et de ${CompetenceName.CHARME}, la bénédiction prend fin immédiatement.`,
+      `Les cibles de la bénédiction ne peuvent pas être la cible d'agressions. La bénédiction est retirée immédiatement si la cible de la bénédiction effectue une attaque ou une aptitude qui blesse une creature. A chaque début de tour du lanceur, il consomme et lance 1 dé de ${AttributsName.SPIRITHIUM}. Si la valeur du dé est supérieur à la somme de sa valeur de ${CompetenceName.NÉGOCIATION} et de ${CompetenceName.CHARME}, la bénédiction prend fin immédiatement.`,
       AptitudeTypeName.BENEDICTION,
       new Map([
         [CompetenceName.CHARME, 1],
         [CompetenceName.NÉGOCIATION, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Technique du pugiliste",
@@ -470,7 +538,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.ATHLÉTISME, 1],
         [CompetenceName.CORPS_A_CORPS, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Tir à bout portant",
@@ -479,7 +548,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.MAGOUILLE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Expertise",
@@ -488,25 +558,28 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.NÉGOCIATION, 1],
         [CompetenceName.MAGOUILLE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Fuite de pouvoir",
-      `Vous dépensez 1 dé d'${AttributsName.SPIRITHIUM}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.EVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé d'${AttributsName.SPIRITHIUM}.`,
+      `Vous dépensez 1 dé de ${AttributsName.SPIRITHIUM}. Si la cible a moins de 18m est en train d'utiliser une aptitude de type ${AptitudeTypeName.CONJURATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.INVOCATION}, ${AptitudeTypeName.NÉCROMANCIE} ou ${AptitudeTypeName.BENEDICTION}, elle est immédiatement interrompue. Vous récupérez 1 dé de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.OCCULTISME, 1],
         [CompetenceName.VIGILANCE, 1],
-      ])
+      ]),
+      "1 réaction"
     ),
     new Aptitude(
       "Extraction de pensée",
-      `La cible doit être neutralisée. Vous dépensez 1 dés d'${AttributsName.SPIRITHIUM}. Vous pouvez alors extirper de sa mémoire une pensée qui répond à une indication que vous pouvez intuiter clairement, quelques seconde d'un événement qu'elle aurait vécu et qui vous apparaît comme si vous vous y étiez à sa place. Pour chaque avantage vous pouvez préciser la pensée, étendre la durée du souvenir. Si il n'y a aucun succès mais quelques avantages, vous pouvez récupéré des pensée autres mais aucune correspondant à ce que vous cherchiez précisément`,
-      AptitudeTypeName.EVOCATION,
+      `La cible doit être neutralisée. Vous dépensez 1 dés de ${AttributsName.SPIRITHIUM}. Vous pouvez alors extirper de sa mémoire une pensée qui répond à une indication que vous pouvez intuiter clairement, quelques seconde d'un événement qu'elle aurait vécu et qui vous apparaît comme si vous vous y étiez à sa place. Pour chaque avantage vous pouvez préciser la pensée, étendre la durée du souvenir. Si il n'y a aucun succès mais quelques avantages, vous pouvez récupéré des pensée autres mais aucune correspondant à ce que vous cherchiez précisément`,
+      AptitudeTypeName.CONJURATION,
       new Map([
         [CompetenceName.PERSPICACITÉ, 1],
         [CompetenceName.MÉDECINE, 1],
-      ])
+      ]),
+      "rituel"
     ),
     new Aptitude(
       "Morsure de Namtar",
@@ -516,27 +589,30 @@ export class ServiceAptitude {
         [CompetenceName.CORPS_A_CORPS, 1],
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.SURVIE, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Vœu de puissance",
-      `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé d'${AttributsName.SPIRITHIUM} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
+      `Pactiser avec les puissances obscures est un jeu dangereux, mais vous n'êtes pas mauvais. Vous augmentez de manière permanente votre total de dé de ${AttributsName.SPIRITHIUM} de 1 pour chaque rang investis en ${CompetenceName.ENTROPIE_DU_FLUIDE}.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.OCCULTISME, 1],
         [CompetenceName.NÉGOCIATION, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Foulée démoniaque",
-      `Vous pouvez dépenser un dé d'${AttributsName.SPIRITHIUM} pour gagnez 1 point d'action qui doit être dépensé pour effectuer un mouvement. Vous ne pouvez utiliser cette aptitude qu'une seule fois par tour.`,
+      `Vous pouvez dépenser un dé de ${AttributsName.SPIRITHIUM} pour gagnez 1 point d'action qui doit être dépensé pour effectuer un mouvement. Vous ne pouvez utiliser cette aptitude qu'une seule fois par tour.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.ATHLÉTISME, 1],
         [CompetenceName.COORDINATION, 1],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Vampire d'âme",
@@ -546,17 +622,19 @@ export class ServiceAptitude {
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.MÉDECINE, 1],
         [CompetenceName.OCCULTISME, 1],
-      ])
+      ]),
+      "2 action"
     ),
     // RANK MAJEUR
     new Aptitude(
       "Puits de flétrissure",
-      `Le cadavre visé à moins de 27m dégage une aura nécrotique. Toutes les creatures à moins de 9m subissent subissent autant de dés de handicap que de dé d'${AttributsName.SPIRITHIUM} sur tout leurs jet d'attaque.`,
+      `Le cadavre visé à moins de 27m dégage une aura nécrotique. Toutes les creatures à moins de 9m subissent subissent autant de dés de handicap que de dé de ${AttributsName.SPIRITHIUM} sur tout leurs jet d'attaque.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.CORPS_A_CORPS, 2],
         [CompetenceName.PERSPICACITÉ, 1],
-      ])
+      ]),
+      "3 action"
     ),
     new Aptitude(
       "Posture d'attrition",
@@ -565,118 +643,136 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.CORPS_A_CORPS, 2],
         [CompetenceName.PERSPICACITÉ, 1],
-      ])
+      ]),
+      "Immédiatement à votre tour"
     ),
     new Aptitude(
       "Chrono-stase",
       "La cible bénéficie d'un point d'action supplémentaire par tour pendant 1 tour et 1 tour supplémentaire tout les deux succès net. La chrono-stase est fragile et peut se rompre si la cible génère des menaces lors de ses actions.",
       AptitudeTypeName.INVOCATION,
-      new Map([[CompetenceName.HISTOIRE, 2]])
+      new Map([[CompetenceName.HISTOIRE, 2]]),
+      "1 action"
     ),
     new Aptitude(
       "Communication maîtrisée",
       `Vous augmentez votre valeur de ${CaracteristiqueName.CHARISME} de 1 point.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.CHARME, 2]])
+      new Map([[CompetenceName.CHARME, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Enchaînement",
       `Lorsque vous choisissez d'attaquer une creature au corps à corps ou d'effectuer une ${AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS}, la prochaine attaque au corps à corps coûte 1 point d'action en moins (minimum 1).`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.CORPS_A_CORPS, 2]])
+      new Map([[CompetenceName.CORPS_A_CORPS, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Entraînement physique",
       "Vous Augmentez votre valeur de Vigueur de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.ATHLÉTISME, 2]])
+      new Map([[CompetenceName.ATHLÉTISME, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Entraînement tactique",
       "Vous Augmentez votre valeur d'Agilité de 1 de manière permanente. Vous êtes plutôt quelqu'un de discipliné.",
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.COORDINATION, 2]])
+      new Map([[CompetenceName.COORDINATION, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Entraînement spécial au tir",
       `Vous Augmentez votre valeur d'${CaracteristiqueName.ADRESSE} de 1 de manière permanente.`,
       AptitudeTypeName.ENTRAÎNEMENT,
-      new Map([[CompetenceName.ARME_A_DISTANCE, 2]])
+      new Map([[CompetenceName.ARME_A_DISTANCE, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Présence déstabilisante",
       "Lors d'un test en opposition ou d'un jet d'attaque contre elle, votre cible est terrifiée jusqu'à son prochain tour si le résultat des dés génère au moins 2 avantages.",
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.INTIMIDATION, 2]])
+      new Map([[CompetenceName.INTIMIDATION, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Signature de rebond de puissance",
       `Vous pouvez octroyer chacune de vos amélioration à une cible supplémentaire par rang en ${CompetenceName.INGÉNIERIE}. Une pièce d'équipement ne peut pas bénéficier de la même ${AptitudeTypeName.AMELIORATION} deux fois.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.INGÉNIERIE, 2]])
+      new Map([[CompetenceName.INGÉNIERIE, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Singularité",
-      `Vous créez un nano trou noir sur l'emplacement de votre choix à 18m ou moins de vous. Toutes les creatures à 9m ou moins de la singularité et dont le score de ${CaracteristiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés d'${AttributsName.SPIRITHIUM} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
+      `Vous créez un nano trou noir sur l'emplacement de votre choix à 18m ou moins de vous. Toutes les creatures à 9m ou moins de la singularité et dont le score de ${CaracteristiqueName.VIGUEUR} est inférieur au nombre de succès net sont immédiatement projetées sur 3m vers la singularité et sont à terre. Vous pouvez augmenter la projection de 1m par avantages net, et vous infligez également 3 point de dégâts par triomphe. Chaque début de tour du lanceur provoque une pulsation qui applique ces effets. Le lanceur perd 2 dés de ${AttributsName.SPIRITHIUM} jusqu'à ce qu'il n'ai plus de dés ou que l'invocation soit brisée.`,
       AptitudeTypeName.INVOCATION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
         [CompetenceName.OCCULTISME, 1],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Savoir sublimé",
       `Vous Augmentez votre valeur d'${CaracteristiqueName.INTELLIGENCE} de 1 de manière permanente.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]])
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Revers cinétique",
-      `Vous dépensez autant de dé d'${AttributsName.SPIRITHIUM} au jets de défense de la cible de votre choix à 9m ou moins de vous. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé d'${AttributsName.SPIRITHIUM}.`,
+      `Vous dépensez autant de dé de ${AttributsName.SPIRITHIUM} au jets de défense de la cible de votre choix à 9m ou moins de vous. Si l'attaque est bloquée de cette manière, vous regagnez 1 dé de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.REACTION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
         [CompetenceName.VIGILANCE, 2],
-      ])
+      ]),
+      "1 réaction"
     ),
     new Aptitude(
       "Volonté de fer",
       `Vous pouvez octroyer autant de bénédiction que votre valeur de ${CaracteristiqueName.CHARISME} en même temps.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.OCCULTISME, 2]])
+      new Map([[CompetenceName.OCCULTISME, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Eruption",
-      `Vous incinérez toute la zone en face de vous, sur un cone de 9m de long et jusqu'a 3m de large. Toutes les creatures subissent 3 point de dégâts par succès et par triomphe. Vous dépensez 2 dé d'${AttributsName.SPIRITHIUM}`,
+      `Vous incinérez toute la zone en face de vous, sur un cone de 9m de long et jusqu'a 3m de large. Toutes les creatures subissent 3 point de dégâts par succès et par triomphe. Vous dépensez 2 dé de ${AttributsName.SPIRITHIUM}`,
       AptitudeTypeName.INVOCATION,
-      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]])
+      new Map([[CompetenceName.ENTROPIE_DU_FLUIDE, 2]]),
+      "2 action"
     ),
     new Aptitude(
       "Cri de frustration",
-      `La cible qui tente d'attaquer perd tout ses dés de supériorité et subit 1 point de dégât part dé perdu de cette manière.Vous dépensé 1 dé d'${AttributsName.SPIRITHIUM}.`,
+      `La cible qui tente d'attaquer perd tout ses dés de supériorité et subit 1 point de dégât part dé perdu de cette manière.Vous dépensé 1 dé de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.DISCRETION, 2]])
+      new Map([[CompetenceName.DISCRETION, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Festin morbide",
-      `Vous regagnez autant de ${AttributsName.DV} que la moitié des DV du cadavre le plus proche.`,
+      `Vous regagnez autant de ${AttributsName.DV} que la moitié des ${AttributsName.DV} maximum du cadavre le plus proche.`,
       AptitudeTypeName.NÉCROMANCIE,
       new Map([
         [CompetenceName.MÉDECINE, 1],
         [CompetenceName.OCCULTISME, 2],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Précision risquée",
       "Sur le résultat net de vos jet d'attaques, vous pouvez choisir de remplacer deux succès par 1 triomphe.",
-      AptitudeTypeName.NÉCROMANCIE,
-      new Map([[CompetenceName.COORDINATION, 2]])
+      AptitudeTypeName.ENTRAÎNEMENT,
+      new Map([[CompetenceName.COORDINATION, 2]]),
+      "Toujours actif"
     ),
     new Aptitude(
       "L'ombre me protège",
       "Vous gagnez autant de dès de supériorité que votre valeurs de discretion sur vos jet d'attaques et de défense. Si une aptitude qui vous vise génère de la lumière (feu, lumière..), vous ne pouvez pas lancer de dès en opposition.",
       AptitudeTypeName.MANTRA,
-      new Map([[CompetenceName.DISCRETION, 2]])
+      new Map([[CompetenceName.DISCRETION, 2]]),
+      "Toujours actif"
     ),
     // RANK SUPÉRIEUR
     new Aptitude(
@@ -686,34 +782,38 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.CORPS_A_CORPS, 2],
         [CompetenceName.ATHLÉTISME, 2],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Aura de la liche",
-      `Vous gagnez 1 dés de supériorité pour chaque cadavres a moins de 27m  de vous, jusqu'a un maximum égal a votre score d'${AttributsName.SPIRITHIUM}.`,
+      `Vous gagnez 1 dés de supériorité pour chaque cadavres a moins de 27m  de vous, jusqu'a un maximum égal a votre score de ${AttributsName.SPIRITHIUM}.`,
       AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.MÉDECINE, 2],
         [CompetenceName.OCCULTISME, 2],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Lumière aveuglante",
       "Vous provoquez un flash lumineux aveuglant sur votre position. Toutes les creatures à moins de 27m de vous et regardant dans votre direction qui ratent leurs test sont aveuglées pendant 1 tout et 1 tour supplémentaire par triomphe. Elles subissent également 1 point de dégât par avantages net.",
-      AptitudeTypeName.EVOCATION,
+      AptitudeTypeName.CONJURATION,
       new Map([
         [CompetenceName.HISTOIRE, 2],
         [CompetenceName.OCCULTISME, 2],
-      ])
+      ]),
+      "2 action"
     ),
     new Aptitude(
       "Maîtrise somatiques",
-      `Toutes les aptitudes de type ${AptitudeTypeName.EVOCATION} et de rang ${AptitudeRang.MINEURE} coûtent 1 point d'action en moins (minimum 1).`,
+      `Toutes les aptitudes de type ${AptitudeTypeName.CONJURATION} et de rang ${AptitudeRang.MINEURE} coûtent 1 point d'action en moins (minimum 1).`,
       AptitudeTypeName.ENTRAÎNEMENT,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 2],
         [CompetenceName.COORDINATION, 2],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Affûtage moléculaire",
@@ -722,7 +822,8 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.TROMPERIE, 2],
         [CompetenceName.VIGILANCE, 2],
-      ])
+      ]),
+      "1 action"
     ),
     new Aptitude(
       "Maladresse",
@@ -731,25 +832,28 @@ export class ServiceAptitude {
       new Map([
         [CompetenceName.TROMPERIE, 2],
         [CompetenceName.VIGILANCE, 2],
-      ])
+      ]),
+      "1 réaction"
     ),
     new Aptitude(
       "Evocations rapides",
-      `Vous pouvez dépensez 1 dé d'${AttributsName.SPIRITHIUM} en plus lors de vos aptitudes de type ${AptitudeTypeName.EVOCATION}, et vous ne provoquez plus d'attaque d’opportunités`,
-      AptitudeTypeName.REACTION,
+      `Vous pouvez dépensez 1 dé de ${AttributsName.SPIRITHIUM} en plus lors de vos aptitudes de type ${AptitudeTypeName.CONJURATION}, et vous ne provoquez plus d'attaque d’opportunités`,
+      AptitudeTypeName.MANTRA,
       new Map([
         [CompetenceName.TROMPERIE, 2],
         [CompetenceName.VIGILANCE, 2],
-      ])
+      ]),
+      "Toujours actif"
     ),
     new Aptitude(
       "Arme consciente",
-      `L'arme semble habité et murmure des conseil dans une langue inconnue que seul son porteur au moment du déclenchement de l'aptitude peut entendre. Son porteur gagne 1 Réaction par tour tant qu'il possède l'arme en mains mais perd 1 dé d'${AttributsName.SPIRITHIUM} par désastre sur ses jet d'attaques.`,
-      AptitudeTypeName.REACTION,
+      `L'arme semble habité et murmure des conseil dans une langue inconnue que seul son porteur au moment du déclenchement de l'aptitude peut entendre. Son porteur gagne 1 Réaction par tour tant qu'il possède l'arme en mains mais perd 1 dé de ${AttributsName.SPIRITHIUM} par désastre sur ses jet d'attaques.`,
+      AptitudeTypeName.AMELIORATION,
       new Map([
         [CompetenceName.TROMPERIE, 2],
         [CompetenceName.VIGILANCE, 2],
-      ])
+      ]),
+      "rituel"
     ),
     // TODO : Aptitudes : Voies Ancestrale (Histoire + compétences martiales)
     // TODO : Aptitudes : Voies Primitives (Survie + compétences martiales)
