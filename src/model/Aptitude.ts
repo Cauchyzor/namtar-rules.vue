@@ -12,6 +12,7 @@ import { CompetenceName } from "./Competence";
 export type AptitudeType = {
   Nom: AptitudeTypeName;
   Description: string;
+  Activation: string;
 };
 
 export enum AptitudeRang {

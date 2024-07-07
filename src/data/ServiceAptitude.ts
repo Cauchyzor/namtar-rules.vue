@@ -25,58 +25,70 @@ export class ServiceAptitude {
     {
       Nom: AptitudeTypeName.EVOCATION,
       Description: `Vous effectuez un test en opposition d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) contre une cible. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.PROJECTILE_PHYSIQUE,
       Description: `Vous effectuez un jet d'attaque a distance avec compétence d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}). Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.INVOCATION,
       Description: `Vous appliquez les effets de l'aptitude sur la zone ciblée en effectuant en test d'${CompetenceName.ENTROPIE_DU_FLUIDE} (${CaracteristiqueName.INTELLIGENCE}) de DD3. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.`,
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.NÉCROMANCIE,
       Description:
         "L'aptitude consomme l'énergie résiduelle d'un ou plusieurs cadavres frais (quelques heures maximum), ou des personnes neutralisée. Vous n'avez pas besoin de voir la cible. Vous devez avoir une main libre pour effectuer des composantes somatique. Vous provoquez immédiatement une attaque d'opportunité contre vous.",
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.BENEDICTION,
       Description:
         "Toute les créatures au choix à 9m ou moins de vous lors de l'appel de la benediction reçoivent des bonus jusqu'au prochain repos long. Le lanceur ne peut prodiguer qu'une seule benediction à la fois.",
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.MANTRA,
       Description:
         "Un mantra vous octroie des bonus passifs de manière permanente. Il représente une alteration permanente du personnage provoquée par ses interactions passées avec le fluide.",
+      Activation: "Toujours actif",
     },
     {
       Nom: AptitudeTypeName.ENTRAÎNEMENT,
       Description:
         "Un Entraînement vous octroie des bonus passifs de manière permanente. Il représente une longue experience théorique et pratique pour perfectionner ses aptitudes.",
+      Activation: "Toujours actif",
     },
     {
       Nom: AptitudeTypeName.TECHNIQUE_CORPS_A_CORPS,
       Description:
         "Vous effectuez un jet d'attaque avec la compétence et la caractéristique requise par votre arme et appliquez des effets supplémentaire selon l'aptitude.",
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.AMELIORATION,
       Description:
         "Une amélioration octroie un bonus sur la pièce d'équipement ciblée jusqu'à ce que l'utilisateur décide de la retirer avec une action libre. Le lanceur de cette aptitude ne peut l'affecter qu'à une seule pièce d'équipement à la fois, ou alors l'amélioration s'estompe immédiatement de l'ancienne pièce d'équipement.",
+      Activation: "2 action",
     },
     {
       Nom: AptitudeTypeName.INJONCTION,
       Description:
         "Vous appliquez vos effets sur une cible qui vous voit et vous entend.",
+      Activation: "1 action",
     },
     {
       Nom: AptitudeTypeName.POSTURE,
       Description:
         "La posture vous octroie des bonus situationnel jusqu'à ce que vous décidiez de la rompre gratuitement à votre tour, ou qu'elle ce termine prématurément.",
+      Activation: "Instantané pendant un tour",
     },
     {
       Nom: AptitudeTypeName.REACTION,
       Description: "Cette aptitude peut être déclenché lors d'une réaction.",
+      Activation: "1 réaction",
     },
   ];
 
@@ -183,7 +195,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       '"Craignez-moi !"',
-      `Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteristiqueName.CHARISME}) ou (${CaracteristiqueName.VIGUEUR}) qui peut vous entendre et vous voir. Si la cible rate son test, elle est Terrorisée`,
+      `Coûte 1 dé de ${AttributsName.SPIRITHIUM}. Vous faite un test en opposition d'${CompetenceName.INTIMIDATION} (${CaracteristiqueName.CHARISME}) ou (${CaracteristiqueName.VIGUEUR}) qui peut vous entendre et vous voir. Si la cible rate son test, elle est Terrorisée`,
       AptitudeTypeName.INJONCTION,
       new Map([[CompetenceName.INTIMIDATION, 1]])
     ),
@@ -276,7 +288,7 @@ export class ServiceAptitude {
     ),
     new Aptitude(
       "Rupture mentale",
-      `Vous consommez autant de dé d’${AttributsName.SPIRITHIUM} que souhaitez et les opposez aux dés d’${AttributsName.SPIRITHIUM} restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction par défaut jusqu'à son prochain tour.`,
+      `Vous consommez autant de dé de ${AttributsName.SPIRITHIUM} que souhaitez et les opposez aux dés d’${AttributsName.SPIRITHIUM} restant de la cible. La cible subit 3 point de dégât par succès. Si vous avez plus d'avantage que sa valeur de Vigueur, elle perd sa réaction par défaut jusqu'à son prochain tour.`,
       AptitudeTypeName.INJONCTION,
       new Map([
         [CompetenceName.ENTROPIE_DU_FLUIDE, 1],
