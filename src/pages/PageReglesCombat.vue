@@ -463,7 +463,6 @@
       </q-list>
     </div>
 
-    <!-- TODO : Ajouter les jets de sauvegardes par défauts pour les aptitudes et les effets environnementaux-->
     <h3 id="jet">Les jets d'attaques</h3>
 
     <h4>Attaques au corps-à-corps</h4>
@@ -499,6 +498,15 @@
       cible au delà de deux fois la portée efficace rate automatiquement.
     </p>
 
+    <h4>Jet de sauvegarde</h4>
+    <p>
+      Lorsqu'il s'agit d’éviter un piège, un effets naturelle ou certaine
+      aptitude, les personnages devront effectuer des jet de sauvegarde. Il
+      s'agit généralement de lancer un pool de dé positif constitué d'autant de
+      dés que la valeur de
+      <strong>Vigueur, Agilité, Intelligence ou Charisme</strong> en fonction de
+      la situation.
+    </p>
     <h3 id="degat">Dégâts</h3>
     <p>
       Pour chaque arme ou capacité offensive, les dégâts infligés sont décrits
