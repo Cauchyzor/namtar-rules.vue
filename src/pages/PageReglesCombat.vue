@@ -419,7 +419,7 @@
         <q-separator margin padding inset></q-separator>
         <q-item>
           <q-item-section>
-            <q-item-label header>Frappe d'opportunité</q-item-label>
+            <q-item-label header>Attaque d’opportunité: Frappe</q-item-label>
             <q-item-label caption
               >Attaquer un adversaire, engagé au corps à corps avec vous, qui
               tente de s'enfui sans ce désengager.</q-item-label
@@ -431,7 +431,7 @@
         </q-item>
         <q-item>
           <q-item-section>
-            <q-item-label header>Tir d'opportunité</q-item-label>
+            <q-item-label header>Attaque d’opportunité: Tir</q-item-label>
             <q-item-label caption
               >Attaquer un adversaire qui se déplace ou qui sort de sa
               couverture avec votre arme à distance alors que vous êtes en joue
