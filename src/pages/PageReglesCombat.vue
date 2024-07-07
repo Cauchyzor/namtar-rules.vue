@@ -463,6 +463,7 @@
       </q-list>
     </div>
 
+    <!-- TODO : Ajouter les jets de sauvegardes par défauts pour les aptitudes et les effets environnementaux-->
     <h3 id="jet">Les jets d'attaques</h3>
 
     <h4>Attaques au corps-à-corps</h4>
@@ -565,9 +566,9 @@
 
       <q-item class="col-12 col-sm-4 col-md-3">
         <q-item-section>
-          <q-item-label header>Etourdi</q-item-label>
+          <q-item-label header>Étourdi</q-item-label>
           <q-item-label
-            >Vous ne pouvez plus utiliser de réaction.
+            >Une creature étourdie ne peut plus utiliser de réaction.
           </q-item-label>
         </q-item-section>
       </q-item>
